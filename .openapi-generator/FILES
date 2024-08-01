@@ -294,6 +294,7 @@ docs/TrainingStatusEnum.md
 docs/Usage.md
 docs/UseMainCreds.md
 docs/UserAllChatMemoryView.md
+docs/UserCatalogItemMemoryView.md
 docs/UserChatFeedback.md
 docs/UserChatFeedbackCount.md
 docs/UserChatMemoryStatusRequestView.md
@@ -621,6 +622,7 @@ iblai/models/training_status_enum.py
 iblai/models/usage.py
 iblai/models/use_main_creds.py
 iblai/models/user_all_chat_memory_view.py
+iblai/models/user_catalog_item_memory_view.py
 iblai/models/user_chat_feedback.py
 iblai/models/user_chat_feedback_count.py
 iblai/models/user_chat_memory_status_request_view.py
@@ -947,6 +949,7 @@ test/test_training_status_enum.py
 test/test_usage.py
 test/test_use_main_creds.py
 test/test_user_all_chat_memory_view.py
+test/test_user_catalog_item_memory_view.py
 test/test_user_chat_feedback.py
 test/test_user_chat_feedback_count.py
 test/test_user_chat_memory_status_request_view.py

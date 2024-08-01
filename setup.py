@@ -36,7 +36,7 @@ setup(
     description="ibl-data-manager",
     author="OpenAPI Generator community",
     author_email="team@openapitools.org",
-    url="https://github.com/iblai/ibl-ai-python-sdk",
+    url="https://github.com/iblai/iblai-python-sdk",
     keywords=["OpenAPI", "OpenAPI-Generator", "ibl-data-manager"],
     install_requires=REQUIRES,
     packages=find_packages(exclude=["test", "tests"]),

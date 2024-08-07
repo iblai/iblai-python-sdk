@@ -2931,11 +2931,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **ai_prompt_orgs_users_user_catalog_item_memory_create**
-> UserCatalogItemMemoryView ai_prompt_orgs_users_user_catalog_item_memory_create(org, user_id, user_catalog_item_memory_view=user_catalog_item_memory_view)
+> UserCatalogItemMemoryView ai_prompt_orgs_users_user_catalog_item_memory_create(org, user_id, user_catalog_item_memory_view)
 
 
 
-Endpoint for Adding user catalog item memory.  Accessible to tenant admins and students.  Returns:      201: user catalog item  memory Object.      400: When data is not valid.    Example:      POST: /api/ai-prompt/orgs/main/users/johndoe/user-catalog-item-memory/      Request:        {                         \"id\": 1,                         \"student\": \"johndoes\",                         \"platform\": \"main\",                         \"catalog_item\": \"Loves programming\",                         \"lessons\": \"i learnt about x and y\",                         \"next_steps\": \"learning about z\"                     }      Response:       {                         \"id\": 1,                         \"student\": \"johndoes\",                         \"platform\": \"main\",                         \"catalog_item\": \"Loves programming\",                         \"lessons\": \"i learnt about x and y\",                         \"next_steps\": \"learning about z\"                     }
+    Endpoint for Adding user catalog item memory.      Accessible to tenant admins and students.      Returns:          201: user catalog item  memory Object.          400: When data is not valid.        Example:          POST: /api/ai-prompt/orgs/main/users/johndoe/user-catalog-item-memory/          Request:        {                             \"id\": 1,                             \"student\": \"johndoes\",                             \"platform\": \"main\",                             \"catalog_item\": \"Loves programming\",                             \"lessons\": {                                 \"gaming\": \"i learnt how to play chess\"                             },                             \"next_steps\": {                                 \"gaming\": \"I want to learn how to play golf\",                                 \"singing\": \"I want to learn how to sing pop music\"                             }                         }          Response:       {                             \"id\": 1,                             \"student\": \"johndoes\",                             \"platform\": \"main\",                             \"catalog_item\": \"Loves programming\",                             \"lessons\": {     \"gaming\": \"i learnt how to play chess\" }, \"next_steps\": {     \"gaming\": \"I want to learn how to play golf\",     \"singing\": \"I want to learn how to sing pop music\" }                         }
 
 ### Example
 
@@ -2963,10 +2963,10 @@ client = get_platform_api_client(
 api_instance = iblai.AiPromptApi(api_client)
 org = 'org_example' # str | 
 user_id = 'user_id_example' # str | 
-user_catalog_item_memory_view = iblai.UserCatalogItemMemoryView() # UserCatalogItemMemoryView |  (optional)
+user_catalog_item_memory_view = iblai.UserCatalogItemMemoryView() # UserCatalogItemMemoryView | 
 
 try:
-    api_response = api_instance.ai_prompt_orgs_users_user_catalog_item_memory_create(org, user_id, user_catalog_item_memory_view=user_catalog_item_memory_view)
+    api_response = api_instance.ai_prompt_orgs_users_user_catalog_item_memory_create(org, user_id, user_catalog_item_memory_view)
     print("The response of AiPromptApi->ai_prompt_orgs_users_user_catalog_item_memory_create:\n")
     pprint(api_response)
 except Exception as e:
@@ -2982,7 +2982,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **org** | **str**|  | 
  **user_id** | **str**|  | 
- **user_catalog_item_memory_view** | [**UserCatalogItemMemoryView**](UserCatalogItemMemoryView.md)|  | [optional] 
+ **user_catalog_item_memory_view** | [**UserCatalogItemMemoryView**](UserCatalogItemMemoryView.md)|  | 
 
 ### Return type
 
@@ -3152,7 +3152,7 @@ void (empty response body)
 
 
 
-Endpoint for getting user catalog item memories.  Accessible to tenant admins and students.  Returns:      200: List of user catalog item memories.  Example:      GET: /api/ai-prompt/orgs/main/users/johndoe/user-catalog-item-memory/      Response:    [                     {                         \"id\": 1,                         \"student\": \"johndoes\",                         \"platform\": \"main\",                         \"catalog_item\": \"Loves programming\",                         \"lessons\": \"i learnt about x and y\",                         \"next_steps\": \"learning about z\",                      }                  ]
+Endpoint for getting user catalog item memories.  Accessible to tenant admins and students.  Returns:      200: List of user catalog item memories.  Example:      GET: /api/ai-prompt/orgs/main/users/johndoe/user-catalog-item-memory/      Response:    [                     {                         \"id\": 1,                         \"student\": \"johndoes\",                         \"platform\": \"main\",                         \"catalog_item\": \"Loves programming\",                         \"lessons\": {                             \"gaming\": \"i learnt how to play chess\"                         },                         \"next_steps\": {                             \"gaming\": \"I want to learn how to play golf\",                             \"singing\": \"I want to learn how to sing pop music\"                         },                      }                  ]
 
 ### Example
 
@@ -3221,11 +3221,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **ai_prompt_orgs_users_user_catalog_item_memory_update**
-> UserCatalogItemMemoryView ai_prompt_orgs_users_user_catalog_item_memory_update(memory_id, org, user_id, user_catalog_item_memory_view=user_catalog_item_memory_view)
+> UserCatalogItemMemoryView ai_prompt_orgs_users_user_catalog_item_memory_update(memory_id, org, user_id, user_catalog_item_memory_view)
 
 
 
-Endpoint for updating user catalog item memory.  Accessible to tenant admins and students.  Returns:      200: user catalog item memory object.      400: When data is not valid.  Example:      POST: /api/ai-prompt/orgs/main/users/johndoe/user-catalog-item-memory/1/      Request:        {                         \"id\": 1,                         \"student\": \"johndoes\",                         \"platform\": \"main\",                         \"catalog_item\": \"Loves programming\",                         \"lessons\": \"i learnt about x and y\",                         \"next_steps\": \"learning about z\"                     }      Response:       {                         \"id\": 1,                         \"student\": \"johndoes\",                         \"platform\": \"main\",                         \"catalog_item\": \"Loves programming\",                         \"lessons\": \"i learnt about x and y\",                         \"next_steps\": \"learning about z\"                     }
+Endpoint for updating user catalog item memory.  Accessible to tenant admins and students.  Returns:      200: user catalog item memory object.      400: When data is not valid.  Example:      POST: /api/ai-prompt/orgs/main/users/johndoe/user-catalog-item-memory/1/      Request:        {                         \"id\": 1,                         \"student\": \"johndoes\",                         \"platform\": \"main\",                         \"catalog_item\": \"Loves programming\",                         \"lessons\": \"i learnt about x and y\",                         \"next_steps\": \"learning about z\"                     }      Response:       {                         \"id\": 1,                         \"student\": \"johndoes\",                         \"platform\": \"main\",                         \"catalog_item\": \"Loves programming\",                         \"lessons\": {                             \"gaming\": \"i learnt how to play chess\"                         },                         \"next_steps\": {                             \"gaming\": \"I want to learn how to play golf\",                             \"singing\": \"I want to learn how to sing pop music\"                         }                     }
 
 ### Example
 
@@ -3254,10 +3254,10 @@ api_instance = iblai.AiPromptApi(api_client)
 memory_id = 56 # int | 
 org = 'org_example' # str | 
 user_id = 'user_id_example' # str | 
-user_catalog_item_memory_view = iblai.UserCatalogItemMemoryView() # UserCatalogItemMemoryView |  (optional)
+user_catalog_item_memory_view = iblai.UserCatalogItemMemoryView() # UserCatalogItemMemoryView | 
 
 try:
-    api_response = api_instance.ai_prompt_orgs_users_user_catalog_item_memory_update(memory_id, org, user_id, user_catalog_item_memory_view=user_catalog_item_memory_view)
+    api_response = api_instance.ai_prompt_orgs_users_user_catalog_item_memory_update(memory_id, org, user_id, user_catalog_item_memory_view)
     print("The response of AiPromptApi->ai_prompt_orgs_users_user_catalog_item_memory_update:\n")
     pprint(api_response)
 except Exception as e:
@@ -3274,7 +3274,7 @@ Name | Type | Description  | Notes
  **memory_id** | **int**|  | 
  **org** | **str**|  | 
  **user_id** | **str**|  | 
- **user_catalog_item_memory_view** | [**UserCatalogItemMemoryView**](UserCatalogItemMemoryView.md)|  | [optional] 
+ **user_catalog_item_memory_view** | [**UserCatalogItemMemoryView**](UserCatalogItemMemoryView.md)|  | 
 
 ### Return type
 

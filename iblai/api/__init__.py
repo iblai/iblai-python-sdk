@@ -6,7 +6,6 @@ from iblai.api.ai_analytics_api import AiAnalyticsApi
 from iblai.api.ai_bot_api import AiBotApi
 from iblai.api.ai_finetuning_api import AiFinetuningApi
 from iblai.api.ai_index_api import AiIndexApi
-from iblai.api.ai_math_api import AiMathApi
 from iblai.api.ai_mentor_api import AiMentorApi
 from iblai.api.ai_prompt_api import AiPromptApi
 from iblai.api.analytics_api import AnalyticsApi

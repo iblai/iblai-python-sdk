@@ -6,8 +6,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** |  | [readonly] 
-**student** | **str** | edX username | [optional] 
-**platform** | **str** | The platform key | [optional] 
+**student** | **str** | edX username | 
+**platform** | **str** | The platform key | 
 **catalog_item** | **str** |  | [optional] 
 **lessons** | **object** |  | [optional] 
 **next_steps** | **object** |  | [optional] 

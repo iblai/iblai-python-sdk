@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **message** | **object** |  | [optional] 
 **inserted_at** | **datetime** |  | [readonly] 
 **title** | **str** |  | [optional] 
-**feedback** | **str** |  | [readonly] 
+**feedback** | **object** |  | [readonly] 
 **document_sources** | **object** |  | [optional] 
 
 ## Example

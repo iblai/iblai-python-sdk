@@ -5,9 +5,27 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**entity_id** | **str** |  | 
 **name** | **str** |  | 
-**value** | **object** |  | [optional] 
-**platform** | **str** | The platform key | 
+**name_override** | **str** |  | [optional] 
+**description** | **str** |  | [optional] 
+**criteria_url** | **str** |  | 
+**criteria_narrative** | **str** |  | 
+**created_at** | **datetime** |  | 
+**icon_image** | **str** |  | 
+**background_image** | **str** |  | 
+**thumbnail_image** | **str** |  | 
+**catalog_items** | **List[str]** |  | [readonly] 
+**courses** | **List[Dict[str, str]]** |  | [readonly] 
+**programs** | **List[Dict[str, str]]** |  | [readonly] 
+**issuer_details** | **Dict[str, str]** |  | [readonly] 
+**html_template** | **str** |  | [optional] 
+**css_template** | **str** |  | [optional] 
+**metadata** | **object** |  | [optional] 
+**credential_type** | **str** |  | 
+**expires** | **Dict[str, int]** |  | [readonly] 
+**tags** | **object** |  | [optional] 
+**signatories** | **List[Dict[str, str]]** |  | [readonly] 
 
 ## Example
 

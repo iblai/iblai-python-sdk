@@ -5,6 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**mentor_name** | **str** |  | [optional] 
 **display_name** | **str** |  | [optional] 
 **profile_image** | **str** |  | [optional] 
 **initial_message** | **str** |  | [optional] 
@@ -16,19 +17,27 @@ Name | Type | Description | Notes
 **system_prompt** | **str** |  | [optional] 
 **llm_provider** | **str** |  | [optional] 
 **llm_name** | **str** |  | [optional] 
-**featured** | **str** |  | [optional] 
+**featured** | **bool** |  | [optional] 
 **metadata** | **object** |  | [optional] 
 **custom_css** | **str** |  | [optional] 
 **mentor_visibility** | **str** |  | [optional] 
-**enable_image_generation** | **str** |  | [optional] 
-**enable_web_browsing** | **str** |  | [optional] 
-**enable_code_interpreter** | **str** |  | [optional] 
-**allow_anonymous** | **str** |  | [optional] 
+**enable_image_generation** | **bool** |  | [optional] 
+**enable_web_browsing** | **bool** |  | [optional] 
+**enable_code_interpreter** | **bool** |  | [optional] 
+**allow_anonymous** | **bool** |  | [optional] 
 **mentor_description** | **str** |  | [optional] 
 **uploaded_profile_image** | **str** |  | [optional] 
 **proactive_message** | **str** |  | [optional] 
+**can_use_tools** | **bool** |  | [optional] 
 **tool_slugs** | **List[str]** |  | [optional] 
 **llm_temperature** | **float** |  | [optional] 
+**proactive_prompt** | **str** |  | [optional] 
+**moderation_system_prompt** | **str** |  | [optional] 
+**moderation_response** | **str** |  | [optional] 
+**enable_moderation** | **bool** |  | [optional] [default to False]
+**safety_system_prompt** | **str** |  | [optional] 
+**safety_response** | **str** |  | [optional] 
+**enable_safety_system** | **bool** |  | [optional] [default to False]
 
 ## Example
 

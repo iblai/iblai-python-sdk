@@ -18,6 +18,8 @@ Name | Type | Description | Notes
 **one_off** | **str** |  | [optional] [readonly] 
 **platform_key** | **str** |  | [optional] [readonly] 
 **pathway** | **str** |  | [optional] 
+**callback_url** | **str** |  | [optional] 
+**callback_secret** | **str** |  | [optional] 
 **parent_session_id** | **str** |  | [optional] 
 **parent_mentor_id** | **int** |  | [optional] 
 **previous_agent** | **int** | Agent that needs to run before the current agent runs. | [optional] 

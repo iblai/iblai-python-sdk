@@ -11,6 +11,9 @@ Name | Type | Description | Notes
 **type** | **str** | Type of document e.g file | 
 **file** | **bytearray** | File to be trained | [optional] 
 **access** | **str** | Accessibilityto the file | [optional] [default to 'private']
+**branch** | **str** | Branch of the repository | [optional] 
+**google_drive_auth_data** | **object** | Authentication and scoped details of google drive | [optional] 
+**dropbox_auth_data** | **object** | Authentication and scoped details of dropbox | [optional] 
 
 ## Example
 

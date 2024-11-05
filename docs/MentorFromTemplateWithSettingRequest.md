@@ -32,6 +32,9 @@ Name | Type | Description | Notes
 **seo_tags** | **object** |  | [optional] 
 **marketing_conversations** | **object** |  | [optional] 
 **proactive_prompt** | **str** |  | [optional] 
+**moderation_system_prompt** | **str** |  | [optional] 
+**moderation_response** | **str** |  | [optional] 
+**enable_moderation** | **bool** |  | [optional] [default to False]
 
 ## Example
 

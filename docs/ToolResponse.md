@@ -7,9 +7,11 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** |  | [readonly] 
 **name** | **str** |  | 
+**display_name** | **str** |  | [optional] 
 **slug** | **str** |  | [optional] 
 **description** | **str** |  | [optional] 
 **metadata** | **object** |  | [optional] 
+**allow_retriever_mentors** | **bool** |  | [optional] 
 
 ## Example
 

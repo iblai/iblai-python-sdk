@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **topics** | [**List[TopicModel]**](TopicModel.md) |  | 
 **id** | **str** |  | 
 **user_id** | **str** |  | 
-**message_count** | **str** |  | [readonly] 
+**message_count** | **int** |  | [readonly] 
 **model** | **str** |  | 
 **inserted_at** | **datetime** |  | 
 **user_sentiment** | **str** |  | [readonly] 

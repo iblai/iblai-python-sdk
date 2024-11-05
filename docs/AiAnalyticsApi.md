@@ -4,6 +4,9 @@ All URIs are relative to *https://base.manager.iblai.app*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**ai_analytics_orgs_users_chat_history_filter_retrieve**](AiAnalyticsApi.md#ai_analytics_orgs_users_chat_history_filter_retrieve) | **GET** /api/ai-analytics/orgs/{org}/users/{user_id}/chat-history-filter/ | 
+[**ai_analytics_orgs_users_chat_history_list**](AiAnalyticsApi.md#ai_analytics_orgs_users_chat_history_list) | **GET** /api/ai-analytics/orgs/{org}/users/{user_id}/chat-history/ | 
+[**ai_analytics_orgs_users_chat_history_retrieve**](AiAnalyticsApi.md#ai_analytics_orgs_users_chat_history_retrieve) | **GET** /api/ai-analytics/orgs/{org}/users/{user_id}/chat-history/{id}/ | 
 [**ai_analytics_orgs_users_conversation_retrieve**](AiAnalyticsApi.md#ai_analytics_orgs_users_conversation_retrieve) | **GET** /api/ai-analytics/orgs/{org}/users/{user_id}/conversation/ | 
 [**ai_analytics_orgs_users_costs_model_retrieve**](AiAnalyticsApi.md#ai_analytics_orgs_users_costs_model_retrieve) | **GET** /api/ai-analytics/orgs/{org}/users/{user_id}/costs/model/ | 
 [**ai_analytics_orgs_users_costs_model_usage_retrieve**](AiAnalyticsApi.md#ai_analytics_orgs_users_costs_model_usage_retrieve) | **GET** /api/ai-analytics/orgs/{org}/users/{user_id}/costs/model-usage/ | 
@@ -22,8 +25,257 @@ Method | HTTP request | Description
 [**ai_analytics_orgs_users_user_feedback_retrieve**](AiAnalyticsApi.md#ai_analytics_orgs_users_user_feedback_retrieve) | **GET** /api/ai-analytics/orgs/{org}/users/{user_id}/user-feedback/ | 
 
 
+# **ai_analytics_orgs_users_chat_history_filter_retrieve**
+> ChatHistoryFilterData ai_analytics_orgs_users_chat_history_filter_retrieve(org, user_id)
+
+
+
+Retrieve the chat history for a tenant  Filter parameters for period are start_date and end date  Accessible to tenant Admins only.
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.chat_history_filter_data import ChatHistoryFilterData
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+
+# Create an instance of the API class
+api_instance = iblai.AiAnalyticsApi(api_client)
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+
+try:
+    api_response = api_instance.ai_analytics_orgs_users_chat_history_filter_retrieve(org, user_id)
+    print("The response of AiAnalyticsApi->ai_analytics_orgs_users_chat_history_filter_retrieve:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiAnalyticsApi->ai_analytics_orgs_users_chat_history_filter_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+
+### Return type
+
+[**ChatHistoryFilterData**](ChatHistoryFilterData.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ai_analytics_orgs_users_chat_history_list**
+> PaginatedConversationsList ai_analytics_orgs_users_chat_history_list(org, user_id, end_date=end_date, mentor=mentor, page=page, page_size=page_size, sentiment=sentiment, start_date=start_date, topics=topics, user_id2=user_id2)
+
+
+
+Mixin that includes the StudentTokenAuthentication and IsPlatformAdmin
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.paginated_conversations_list import PaginatedConversationsList
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+
+# Create an instance of the API class
+api_instance = iblai.AiAnalyticsApi(api_client)
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+end_date = '2013-10-20' # date |  (optional)
+mentor = 'mentor_example' # str |  (optional)
+page = 56 # int | A page number within the paginated result set. (optional)
+page_size = 56 # int | Number of results to return per page. (optional)
+sentiment = 'sentiment_example' # str |  (optional)
+start_date = '2013-10-20' # date |  (optional)
+topics = 'topics_example' # str |  (optional)
+user_id2 = 'user_id_example' # str |  (optional)
+
+try:
+    api_response = api_instance.ai_analytics_orgs_users_chat_history_list(org, user_id, end_date=end_date, mentor=mentor, page=page, page_size=page_size, sentiment=sentiment, start_date=start_date, topics=topics, user_id2=user_id2)
+    print("The response of AiAnalyticsApi->ai_analytics_orgs_users_chat_history_list:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiAnalyticsApi->ai_analytics_orgs_users_chat_history_list: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+ **end_date** | **date**|  | [optional] 
+ **mentor** | **str**|  | [optional] 
+ **page** | **int**| A page number within the paginated result set. | [optional] 
+ **page_size** | **int**| Number of results to return per page. | [optional] 
+ **sentiment** | **str**|  | [optional] 
+ **start_date** | **date**|  | [optional] 
+ **topics** | **str**|  | [optional] 
+ **user_id2** | **str**|  | [optional] 
+
+### Return type
+
+[**PaginatedConversationsList**](PaginatedConversationsList.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ai_analytics_orgs_users_chat_history_retrieve**
+> Conversations ai_analytics_orgs_users_chat_history_retrieve(id, org, user_id, end_date=end_date, mentor=mentor, sentiment=sentiment, start_date=start_date, topics=topics, user_id2=user_id2)
+
+
+
+Mixin that includes the StudentTokenAuthentication and IsPlatformAdmin
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.conversations import Conversations
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+
+# Create an instance of the API class
+api_instance = iblai.AiAnalyticsApi(api_client)
+id = 'id_example' # str | A UUID string identifying this session.
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+end_date = '2013-10-20' # date |  (optional)
+mentor = 'mentor_example' # str |  (optional)
+sentiment = 'sentiment_example' # str |  (optional)
+start_date = '2013-10-20' # date |  (optional)
+topics = 'topics_example' # str |  (optional)
+user_id2 = 'user_id_example' # str |  (optional)
+
+try:
+    api_response = api_instance.ai_analytics_orgs_users_chat_history_retrieve(id, org, user_id, end_date=end_date, mentor=mentor, sentiment=sentiment, start_date=start_date, topics=topics, user_id2=user_id2)
+    print("The response of AiAnalyticsApi->ai_analytics_orgs_users_chat_history_retrieve:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiAnalyticsApi->ai_analytics_orgs_users_chat_history_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**| A UUID string identifying this session. | 
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+ **end_date** | **date**|  | [optional] 
+ **mentor** | **str**|  | [optional] 
+ **sentiment** | **str**|  | [optional] 
+ **start_date** | **date**|  | [optional] 
+ **topics** | **str**|  | [optional] 
+ **user_id2** | **str**|  | [optional] 
+
+### Return type
+
+[**Conversations**](Conversations.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **ai_analytics_orgs_users_conversation_retrieve**
-> ConversationVolume ai_analytics_orgs_users_conversation_retrieve(org, user_id, period=period)
+> ConversationVolume ai_analytics_orgs_users_conversation_retrieve(org, user_id, end_date=end_date, start_date=start_date)
 
 
 
@@ -55,10 +307,11 @@ client = get_platform_api_client(
 api_instance = iblai.AiAnalyticsApi(api_client)
 org = 'org_example' # str | 
 user_id = 'user_id_example' # str | 
-period = '7d' # str |  (optional) (default to '7d')
+end_date = '2013-10-20' # date |  (optional)
+start_date = '2013-10-20' # date |  (optional)
 
 try:
-    api_response = api_instance.ai_analytics_orgs_users_conversation_retrieve(org, user_id, period=period)
+    api_response = api_instance.ai_analytics_orgs_users_conversation_retrieve(org, user_id, end_date=end_date, start_date=start_date)
     print("The response of AiAnalyticsApi->ai_analytics_orgs_users_conversation_retrieve:\n")
     pprint(api_response)
 except Exception as e:
@@ -74,7 +327,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **org** | **str**|  | 
  **user_id** | **str**|  | 
- **period** | **str**|  | [optional] [default to &#39;7d&#39;]
+ **end_date** | **date**|  | [optional] 
+ **start_date** | **date**|  | [optional] 
 
 ### Return type
 
@@ -1122,9 +1376,9 @@ client = get_platform_api_client(
 api_instance = iblai.AiAnalyticsApi(api_client)
 org = 'org_example' # str | 
 user_id = 'user_id_example' # str | 
-end_date = '2013-10-20T19:20:30+01:00' # datetime |  (optional)
+end_date = '2013-10-20' # date |  (optional)
 mentor = 'mentor_example' # str |  (optional)
-start_date = '2013-10-20T19:20:30+01:00' # datetime |  (optional)
+start_date = '2013-10-20' # date |  (optional)
 topics = 'topics_example' # str |  (optional)
 
 try:
@@ -1144,9 +1398,9 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **org** | **str**|  | 
  **user_id** | **str**|  | 
- **end_date** | **datetime**|  | [optional] 
+ **end_date** | **date**|  | [optional] 
  **mentor** | **str**|  | [optional] 
- **start_date** | **datetime**|  | [optional] 
+ **start_date** | **date**|  | [optional] 
  **topics** | **str**|  | [optional] 
 
 ### Return type

@@ -15,7 +15,7 @@ from iblai.api.core_api import CoreApi
 from iblai.api.credentials_api import CredentialsApi
 from iblai.api.engagement_api import EngagementApi
 from iblai.api.finance_api import FinanceApi
-from iblai.api.monitoring_api import MonitoringApi
+from iblai.api.notification_api import NotificationApi
 from iblai.api.overview_api import OverviewApi
 from iblai.api.performance_api import PerformanceApi
 from iblai.api.perlearner_api import PerlearnerApi

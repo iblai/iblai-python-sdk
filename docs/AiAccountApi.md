@@ -21,7 +21,7 @@ Method | HTTP request | Description
 
 
 # **ai_account_orgs_credential_create**
-> Credential ai_account_orgs_credential_create(org, credential_request)
+> LLMCredentialResponse ai_account_orgs_credential_create(org, credential_request)
 
 
 
@@ -33,8 +33,8 @@ This is for creating llm credentials for a tenant.  Accessible to tenant admins 
 
 ```python
 import iblai
-from iblai.models.credential import Credential
 from iblai.models.credential_request import CredentialRequest
+from iblai.models.llm_credential_response import LLMCredentialResponse
 from iblai.rest import ApiException
 from pprint import pprint
 
@@ -75,7 +75,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Credential**](Credential.md)
+[**LLMCredentialResponse**](LLMCredentialResponse.md)
 
 ### Authorization
 
@@ -95,7 +95,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **ai_account_orgs_credential_partial_update**
-> Credential ai_account_orgs_credential_partial_update(org, patched_credential_request=patched_credential_request)
+> LLMCredentialResponse ai_account_orgs_credential_partial_update(org, patched_credential_request=patched_credential_request)
 
 
 
@@ -107,7 +107,7 @@ This is for updating llm credentials for a tenant.  Accessible to tenant admins 
 
 ```python
 import iblai
-from iblai.models.credential import Credential
+from iblai.models.llm_credential_response import LLMCredentialResponse
 from iblai.models.patched_credential_request import PatchedCredentialRequest
 from iblai.rest import ApiException
 from pprint import pprint
@@ -149,7 +149,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Credential**](Credential.md)
+[**LLMCredentialResponse**](LLMCredentialResponse.md)
 
 ### Authorization
 
@@ -169,7 +169,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **ai_account_orgs_credential_retrieve**
-> Credential ai_account_orgs_credential_retrieve(org, name=name)
+> LLMCredentialResponse ai_account_orgs_credential_retrieve(org, name=name)
 
 
 
@@ -181,7 +181,7 @@ This is for getting list of llm credentials for a tenant.  You can also filter t
 
 ```python
 import iblai
-from iblai.models.credential import Credential
+from iblai.models.llm_credential_response import LLMCredentialResponse
 from iblai.rest import ApiException
 from pprint import pprint
 
@@ -222,7 +222,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Credential**](Credential.md)
+[**LLMCredentialResponse**](LLMCredentialResponse.md)
 
 ### Authorization
 
@@ -976,7 +976,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **ai_account_orgs_users_free_trial_list**
-> List[Credential] ai_account_orgs_users_free_trial_list(org, user_id)
+> List[LLMCredentialResponse] ai_account_orgs_users_free_trial_list(org, user_id)
 
 
 
@@ -988,7 +988,7 @@ This is for getting list of free trial status for a tenant.  Accessible to tenan
 
 ```python
 import iblai
-from iblai.models.credential import Credential
+from iblai.models.llm_credential_response import LLMCredentialResponse
 from iblai.rest import ApiException
 from pprint import pprint
 
@@ -1029,7 +1029,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List[Credential]**](Credential.md)
+[**List[LLMCredentialResponse]**](LLMCredentialResponse.md)
 
 ### Authorization
 

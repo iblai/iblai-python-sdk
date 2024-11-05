@@ -5,6 +5,7 @@ All URIs are relative to *https://base.manager.iblai.app*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**ai_index_orgs_users_documents_destroy**](AiIndexApi.md#ai_index_orgs_users_documents_destroy) | **DELETE** /api/ai-index/orgs/{org}/users/{user_id}/documents/{document_id}/ | 
+[**ai_index_orgs_users_documents_graph_train_create**](AiIndexApi.md#ai_index_orgs_users_documents_graph_train_create) | **POST** /api/ai-index/orgs/{org}/users/{user_id}/documents/graph-train/ | 
 [**ai_index_orgs_users_documents_pathways_retrieve**](AiIndexApi.md#ai_index_orgs_users_documents_pathways_retrieve) | **GET** /api/ai-index/orgs/{org}/users/{user_id}/documents/pathways/{pathway}/ | 
 [**ai_index_orgs_users_documents_retrieve**](AiIndexApi.md#ai_index_orgs_users_documents_retrieve) | **GET** /api/ai-index/orgs/{org}/users/{user_id}/documents/{document_id}/ | 
 [**ai_index_orgs_users_documents_search_create**](AiIndexApi.md#ai_index_orgs_users_documents_search_create) | **POST** /api/ai-index/orgs/{org}/users/{user_id}/documents/search/ | 
@@ -14,6 +15,9 @@ Method | HTTP request | Description
 [**ai_index_orgs_users_documents_train_retriever_create**](AiIndexApi.md#ai_index_orgs_users_documents_train_retriever_create) | **POST** /api/ai-index/orgs/{org}/users/{user_id}/documents/train/retriever/ | 
 [**ai_index_orgs_users_documents_train_sessions_create**](AiIndexApi.md#ai_index_orgs_users_documents_train_sessions_create) | **POST** /api/ai-index/orgs/{org}/users/{user_id}/documents/train/sessions/{session_id}/ | 
 [**ai_index_orgs_users_documents_update**](AiIndexApi.md#ai_index_orgs_users_documents_update) | **PUT** /api/ai-index/orgs/{org}/users/{user_id}/documents/{document_id}/ | 
+[**ai_index_orgs_users_resource_data_scrapped_retrieve**](AiIndexApi.md#ai_index_orgs_users_resource_data_scrapped_retrieve) | **GET** /api/ai-index/orgs/{org}/users/{user_id}/resource/data/scrapped/ | 
+[**ai_index_orgs_users_resource_data_scrapped_retrieve2**](AiIndexApi.md#ai_index_orgs_users_resource_data_scrapped_retrieve2) | **GET** /api/ai-index/orgs/{org}/users/{user_id}/resource/{resource_id}/data/scrapped/ | 
+[**ai_index_webhook_scan_create**](AiIndexApi.md#ai_index_webhook_scan_create) | **POST** /api/ai-index/webhook/scan/ | 
 
 
 # **ai_index_orgs_users_documents_destroy**
@@ -85,6 +89,82 @@ void (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **204** | No response body |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ai_index_orgs_users_documents_graph_train_create**
+> TrainDocumentViewResponse ai_index_orgs_users_documents_graph_train_create(org, user_id, train_document_view_request)
+
+
+
+This is for training graph - based documents through the worker. Accessible to tenant admins only.
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.train_document_view_request import TrainDocumentViewRequest
+from iblai.models.train_document_view_response import TrainDocumentViewResponse
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+
+# Create an instance of the API class
+api_instance = iblai.AiIndexApi(api_client)
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+train_document_view_request = iblai.TrainDocumentViewRequest() # TrainDocumentViewRequest | 
+
+try:
+    api_response = api_instance.ai_index_orgs_users_documents_graph_train_create(org, user_id, train_document_view_request)
+    print("The response of AiIndexApi->ai_index_orgs_users_documents_graph_train_create:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiIndexApi->ai_index_orgs_users_documents_graph_train_create: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+ **train_document_view_request** | [**TrainDocumentViewRequest**](TrainDocumentViewRequest.md)|  | 
+
+### Return type
+
+[**TrainDocumentViewResponse**](TrainDocumentViewResponse.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -759,6 +839,222 @@ Name | Type | Description  | Notes
 ### Authorization
 
 [PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ai_index_orgs_users_resource_data_scrapped_retrieve**
+> ResourceScrappedData ai_index_orgs_users_resource_data_scrapped_retrieve(org, user_id, is_archive=is_archive, is_like=is_like, is_video=is_video, search_key=search_key)
+
+
+
+Mixin that includes the StudentTokenAuthentication and IsAdminUserOrStudent
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.resource_scrapped_data import ResourceScrappedData
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+
+# Create an instance of the API class
+api_instance = iblai.AiIndexApi(api_client)
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+is_archive = True # bool |  (optional)
+is_like = True # bool |  (optional)
+is_video = True # bool |  (optional)
+search_key = 'search_key_example' # str |  (optional)
+
+try:
+    api_response = api_instance.ai_index_orgs_users_resource_data_scrapped_retrieve(org, user_id, is_archive=is_archive, is_like=is_like, is_video=is_video, search_key=search_key)
+    print("The response of AiIndexApi->ai_index_orgs_users_resource_data_scrapped_retrieve:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiIndexApi->ai_index_orgs_users_resource_data_scrapped_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+ **is_archive** | **bool**|  | [optional] 
+ **is_like** | **bool**|  | [optional] 
+ **is_video** | **bool**|  | [optional] 
+ **search_key** | **str**|  | [optional] 
+
+### Return type
+
+[**ResourceScrappedData**](ResourceScrappedData.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ai_index_orgs_users_resource_data_scrapped_retrieve2**
+> ResourceScrappedData ai_index_orgs_users_resource_data_scrapped_retrieve2(org, resource_id, user_id)
+
+
+
+Mixin that includes the StudentTokenAuthentication and IsAdminUserOrStudent
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.resource_scrapped_data import ResourceScrappedData
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+
+# Create an instance of the API class
+api_instance = iblai.AiIndexApi(api_client)
+org = 'org_example' # str | 
+resource_id = 'resource_id_example' # str | 
+user_id = 'user_id_example' # str | 
+
+try:
+    api_response = api_instance.ai_index_orgs_users_resource_data_scrapped_retrieve2(org, resource_id, user_id)
+    print("The response of AiIndexApi->ai_index_orgs_users_resource_data_scrapped_retrieve2:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiIndexApi->ai_index_orgs_users_resource_data_scrapped_retrieve2: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **org** | **str**|  | 
+ **resource_id** | **str**|  | 
+ **user_id** | **str**|  | 
+
+### Return type
+
+[**ResourceScrappedData**](ResourceScrappedData.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ai_index_webhook_scan_create**
+> ScanWebhookResponse ai_index_webhook_scan_create(scan_webhook_request)
+
+
+
+Webhook endpoint to receive file scan status.
+
+### Example
+
+
+```python
+import iblai
+from iblai.models.scan_webhook_request import ScanWebhookRequest
+from iblai.models.scan_webhook_response import ScanWebhookResponse
+from iblai.rest import ApiException
+from pprint import pprint
+
+
+# Create an instance of the API class
+api_instance = iblai.AiIndexApi(api_client)
+scan_webhook_request = iblai.ScanWebhookRequest() # ScanWebhookRequest | 
+
+try:
+    api_response = api_instance.ai_index_webhook_scan_create(scan_webhook_request)
+    print("The response of AiIndexApi->ai_index_webhook_scan_create:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiIndexApi->ai_index_webhook_scan_create: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **scan_webhook_request** | [**ScanWebhookRequest**](ScanWebhookRequest.md)|  | 
+
+### Return type
+
+[**ScanWebhookResponse**](ScanWebhookResponse.md)
+
+### Authorization
+
+No authorization required
 
 ### HTTP request headers
 

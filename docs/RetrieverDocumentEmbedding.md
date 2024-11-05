@@ -6,8 +6,10 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** |  | [readonly] 
+**metadata** | **object** |  | [optional] 
 **document_name** | **str** |  | [optional] 
 **document_type** | **str** |  | [optional] 
+**training_status** | [**RetrieverDocumentEmbeddingTrainingStatus**](RetrieverDocumentEmbeddingTrainingStatus.md) |  | [optional] 
 **pathway** | **str** |  | 
 **url** | **str** |  | [optional] 
 **tokens** | **int** |  | [optional] 

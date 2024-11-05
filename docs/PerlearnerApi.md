@@ -594,7 +594,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **perlearner_orgs_users_courses_overview_time_over_time_retrieve**
-> Overtime perlearner_orgs_users_courses_overview_time_over_time_retrieve(course_id, org, user_id, end_date=end_date, format=format, include_main_platform=include_main_platform, start_date=start_date)
+> OverTimeWithTotal perlearner_orgs_users_courses_overview_time_over_time_retrieve(course_id, org, user_id, end_date=end_date, format=format, include_main_platform=include_main_platform, start_date=start_date)
 
 
 
@@ -606,7 +606,7 @@ Time spent within a course in secs on a per-day basis  Kwargs 1. course_id  e.g 
 
 ```python
 import iblai
-from iblai.models.overtime import Overtime
+from iblai.models.over_time_with_total import OverTimeWithTotal
 from iblai.rest import ApiException
 from pprint import pprint
 
@@ -657,7 +657,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Overtime**](Overtime.md)
+[**OverTimeWithTotal**](OverTimeWithTotal.md)
 
 ### Authorization
 
@@ -677,7 +677,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **perlearner_orgs_users_courses_videos_over_time_retrieve**
-> Overtime perlearner_orgs_users_courses_videos_over_time_retrieve(course_id, org, user_id, end_date=end_date, format=format, include_main_platform=include_main_platform, start_date=start_date)
+> OverTimeWithTotal perlearner_orgs_users_courses_videos_over_time_retrieve(course_id, org, user_id, end_date=end_date, format=format, include_main_platform=include_main_platform, start_date=start_date)
 
 
 
@@ -689,7 +689,7 @@ Name | Type | Description  | Notes
 
 ```python
 import iblai
-from iblai.models.overtime import Overtime
+from iblai.models.over_time_with_total import OverTimeWithTotal
 from iblai.rest import ApiException
 from pprint import pprint
 
@@ -740,7 +740,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Overtime**](Overtime.md)
+[**OverTimeWithTotal**](OverTimeWithTotal.md)
 
 ### Authorization
 
@@ -1313,7 +1313,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **perlearner_orgs_users_overview_time_over_time_retrieve**
-> Overtime perlearner_orgs_users_overview_time_over_time_retrieve(org, user_id, end_date=end_date, format=format, include_main_platform=include_main_platform, start_date=start_date)
+> OverTimeWithTotal perlearner_orgs_users_overview_time_over_time_retrieve(org, user_id, end_date=end_date, format=format, include_main_platform=include_main_platform, start_date=start_date)
 
 
 
@@ -1325,7 +1325,7 @@ Time spent in secs on a per-day basis  Query Params 1. course_id <optional> e.g 
 
 ```python
 import iblai
-from iblai.models.overtime import Overtime
+from iblai.models.over_time_with_total import OverTimeWithTotal
 from iblai.rest import ApiException
 from pprint import pprint
 
@@ -1374,7 +1374,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Overtime**](Overtime.md)
+[**OverTimeWithTotal**](OverTimeWithTotal.md)
 
 ### Authorization
 
@@ -1475,7 +1475,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **perlearner_orgs_users_videos_over_time_retrieve**
-> Overtime perlearner_orgs_users_videos_over_time_retrieve(org, user_id, end_date=end_date, format=format, include_main_platform=include_main_platform, start_date=start_date)
+> OverTimeWithTotal perlearner_orgs_users_videos_over_time_retrieve(org, user_id, end_date=end_date, format=format, include_main_platform=include_main_platform, start_date=start_date)
 
 
 
@@ -1487,7 +1487,7 @@ Name | Type | Description  | Notes
 
 ```python
 import iblai
-from iblai.models.overtime import Overtime
+from iblai.models.over_time_with_total import OverTimeWithTotal
 from iblai.rest import ApiException
 from pprint import pprint
 
@@ -1536,7 +1536,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Overtime**](Overtime.md)
+[**OverTimeWithTotal**](OverTimeWithTotal.md)
 
 ### Authorization
 

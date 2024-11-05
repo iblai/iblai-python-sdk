@@ -1,30 +1,28 @@
-# Overtime
+# OverTime
 
-Returns     {         \"data\": {             \"2022-04-26\": 0,             \"2022-04-27\": 0,             ...             \"2023-01-01\": 0         },         \"total\": 0     }
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | **Dict[str, object]** | Dates are keys and values are the value for the date in the key. e,g &#x60;{\&quot;2020-01-01\&quot;: 30. ...}&#x60; | [optional] 
-**total** | **int** | Total | [optional] 
+**data** | **Dict[str, object]** |  | 
 
 ## Example
 
 ```python
-from iblai.models.overtime import Overtime
+from iblai.models.over_time import OverTime
 
 # TODO update the JSON string below
 json = "{}"
-# create an instance of Overtime from a JSON string
-overtime_instance = Overtime.from_json(json)
+# create an instance of OverTime from a JSON string
+over_time_instance = OverTime.from_json(json)
 # print the JSON string representation of the object
-print(Overtime.to_json())
+print(OverTime.to_json())
 
 # convert the object into a dict
-overtime_dict = overtime_instance.to_dict()
-# create an instance of Overtime from a dict
-overtime_from_dict = Overtime.from_dict(overtime_dict)
+over_time_dict = over_time_instance.to_dict()
+# create an instance of OverTime from a dict
+over_time_from_dict = OverTime.from_dict(over_time_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

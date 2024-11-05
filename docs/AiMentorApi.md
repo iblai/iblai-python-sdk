@@ -6,7 +6,11 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**ai_mentor_orgs_metadata_create**](AiMentorApi.md#ai_mentor_orgs_metadata_create) | **POST** /api/ai-mentor/orgs/{org}/metadata/ | 
 [**ai_mentor_orgs_sessions_create**](AiMentorApi.md#ai_mentor_orgs_sessions_create) | **POST** /api/ai-mentor/orgs/{org}/sessions/ | 
+[**ai_mentor_orgs_users_ai_generated_images_destroy**](AiMentorApi.md#ai_mentor_orgs_users_ai_generated_images_destroy) | **DELETE** /api/ai-mentor/orgs/{org}/users/{user_id}/ai-generated-images/{id}/ | 
+[**ai_mentor_orgs_users_ai_generated_images_list**](AiMentorApi.md#ai_mentor_orgs_users_ai_generated_images_list) | **GET** /api/ai-mentor/orgs/{org}/users/{user_id}/ai-generated-images/ | 
+[**ai_mentor_orgs_users_ai_generated_images_retrieve**](AiMentorApi.md#ai_mentor_orgs_users_ai_generated_images_retrieve) | **GET** /api/ai-mentor/orgs/{org}/users/{user_id}/ai-generated-images/{id}/ | 
 [**ai_mentor_orgs_users_audio_to_text_create**](AiMentorApi.md#ai_mentor_orgs_users_audio_to_text_create) | **POST** /api/ai-mentor/orgs/{org}/users/{user_id}/audio-to-text/ | 
+[**ai_mentor_orgs_users_available_template_mentors_retrieve**](AiMentorApi.md#ai_mentor_orgs_users_available_template_mentors_retrieve) | **GET** /api/ai-mentor/orgs/{org}/users/{user_id}/available-template-mentors/ | 
 [**ai_mentor_orgs_users_clear_chathistory_destroy**](AiMentorApi.md#ai_mentor_orgs_users_clear_chathistory_destroy) | **DELETE** /api/ai-mentor/orgs/{org}/users/{user_id}/clear-chathistory | 
 [**ai_mentor_orgs_users_create**](AiMentorApi.md#ai_mentor_orgs_users_create) | **POST** /api/ai-mentor/orgs/{org}/users/{user_id}/ | 
 [**ai_mentor_orgs_users_create_mentor_wizard_create**](AiMentorApi.md#ai_mentor_orgs_users_create_mentor_wizard_create) | **POST** /api/ai-mentor/orgs/{org}/users/{user_id}/create-mentor-wizard/ | 
@@ -29,13 +33,22 @@ Method | HTTP request | Description
 [**ai_mentor_orgs_users_mentor_feedback_update**](AiMentorApi.md#ai_mentor_orgs_users_mentor_feedback_update) | **PUT** /api/ai-mentor/orgs/{org}/users/{user_id}/mentor-feedback/{feedback_id}/ | 
 [**ai_mentor_orgs_users_mentor_from_template_create**](AiMentorApi.md#ai_mentor_orgs_users_mentor_from_template_create) | **POST** /api/ai-mentor/orgs/{org}/users/{user_id}/mentor-from-template/ | 
 [**ai_mentor_orgs_users_mentor_llms_retrieve**](AiMentorApi.md#ai_mentor_orgs_users_mentor_llms_retrieve) | **GET** /api/ai-mentor/orgs/{org}/users/{user_id}/mentor-llms/ | 
+[**ai_mentor_orgs_users_mentor_seed_retrieve**](AiMentorApi.md#ai_mentor_orgs_users_mentor_seed_retrieve) | **GET** /api/ai-mentor/orgs/{org}/users/{user_id}/mentor/seed/ | 
 [**ai_mentor_orgs_users_mentor_tools_retrieve**](AiMentorApi.md#ai_mentor_orgs_users_mentor_tools_retrieve) | **GET** /api/ai-mentor/orgs/{org}/users/{user_id}/mentor-tools/ | 
 [**ai_mentor_orgs_users_mentor_with_settings_create**](AiMentorApi.md#ai_mentor_orgs_users_mentor_with_settings_create) | **POST** /api/ai-mentor/orgs/{org}/users/{user_id}/mentor-with-settings/ | 
+[**ai_mentor_orgs_users_mentors_available_tools_retrieve**](AiMentorApi.md#ai_mentor_orgs_users_mentors_available_tools_retrieve) | **GET** /api/ai-mentor/orgs/{org}/users/{user_id}/mentors/{mentor}/available-tools/ | 
+[**ai_mentor_orgs_users_mentors_memory_component_settings_retrieve**](AiMentorApi.md#ai_mentor_orgs_users_mentors_memory_component_settings_retrieve) | **GET** /api/ai-mentor/orgs/{org}/users/{user_id}/mentors/{mentor}/memory-component-settings/ | 
+[**ai_mentor_orgs_users_mentors_memory_component_settings_update**](AiMentorApi.md#ai_mentor_orgs_users_mentors_memory_component_settings_update) | **PUT** /api/ai-mentor/orgs/{org}/users/{user_id}/mentors/{mentor}/memory-component-settings/ | 
 [**ai_mentor_orgs_users_mentors_public_settings_retrieve**](AiMentorApi.md#ai_mentor_orgs_users_mentors_public_settings_retrieve) | **GET** /api/ai-mentor/orgs/{org}/users/{user_id}/mentors/{mentor}/public-settings/ | 
 [**ai_mentor_orgs_users_mentors_retrieve**](AiMentorApi.md#ai_mentor_orgs_users_mentors_retrieve) | **GET** /api/ai-mentor/orgs/{org}/users/{user_id}/mentors/{mentor}/ | 
+[**ai_mentor_orgs_users_mentors_scenarios_retrieve**](AiMentorApi.md#ai_mentor_orgs_users_mentors_scenarios_retrieve) | **GET** /api/ai-mentor/orgs/{org}/users/{user_id}/mentors/{mentor}/scenarios/ | 
+[**ai_mentor_orgs_users_mentors_scenarios_update**](AiMentorApi.md#ai_mentor_orgs_users_mentors_scenarios_update) | **PUT** /api/ai-mentor/orgs/{org}/users/{user_id}/mentors/{mentor}/scenarios/ | 
 [**ai_mentor_orgs_users_mentors_settings_retrieve**](AiMentorApi.md#ai_mentor_orgs_users_mentors_settings_retrieve) | **GET** /api/ai-mentor/orgs/{org}/users/{user_id}/mentors/{mentor}/settings/ | 
 [**ai_mentor_orgs_users_mentors_settings_update**](AiMentorApi.md#ai_mentor_orgs_users_mentors_settings_update) | **PUT** /api/ai-mentor/orgs/{org}/users/{user_id}/mentors/{mentor}/settings/ | 
 [**ai_mentor_orgs_users_metadata_retrieve**](AiMentorApi.md#ai_mentor_orgs_users_metadata_retrieve) | **GET** /api/ai-mentor/orgs/{org}/users/{user_id}/metadata | 
+[**ai_mentor_orgs_users_moderation_logs_destroy**](AiMentorApi.md#ai_mentor_orgs_users_moderation_logs_destroy) | **DELETE** /api/ai-mentor/orgs/{org}/users/{user_id}/moderation-logs/{id}/ | 
+[**ai_mentor_orgs_users_moderation_logs_list**](AiMentorApi.md#ai_mentor_orgs_users_moderation_logs_list) | **GET** /api/ai-mentor/orgs/{org}/users/{user_id}/moderation-logs/ | 
+[**ai_mentor_orgs_users_moderation_logs_retrieve**](AiMentorApi.md#ai_mentor_orgs_users_moderation_logs_retrieve) | **GET** /api/ai-mentor/orgs/{org}/users/{user_id}/moderation-logs/{id}/ | 
 [**ai_mentor_orgs_users_partial_update**](AiMentorApi.md#ai_mentor_orgs_users_partial_update) | **PATCH** /api/ai-mentor/orgs/{org}/users/{user_id}/{name}/ | 
 [**ai_mentor_orgs_users_periodic_agent_logs_list**](AiMentorApi.md#ai_mentor_orgs_users_periodic_agent_logs_list) | **GET** /api/ai-mentor/orgs/{org}/users/{user_id}/periodic-agent-logs/ | 
 [**ai_mentor_orgs_users_periodic_agent_logs_retrieve**](AiMentorApi.md#ai_mentor_orgs_users_periodic_agent_logs_retrieve) | **GET** /api/ai-mentor/orgs/{org}/users/{user_id}/periodic-agent-logs/{id}/ | 
@@ -61,6 +74,9 @@ Method | HTTP request | Description
 [**ai_mentor_orgs_users_recommend_courses_block_retrieve**](AiMentorApi.md#ai_mentor_orgs_users_recommend_courses_block_retrieve) | **GET** /api/ai-mentor/orgs/{org}/users/{user_id}/recommend-courses-block/ | 
 [**ai_mentor_orgs_users_recommend_courses_retrieve**](AiMentorApi.md#ai_mentor_orgs_users_recommend_courses_retrieve) | **GET** /api/ai-mentor/orgs/{org}/users/{user_id}/recommend-courses/ | 
 [**ai_mentor_orgs_users_retrieve**](AiMentorApi.md#ai_mentor_orgs_users_retrieve) | **GET** /api/ai-mentor/orgs/{org}/users/{user_id}/{name}/ | 
+[**ai_mentor_orgs_users_safety_logs_destroy**](AiMentorApi.md#ai_mentor_orgs_users_safety_logs_destroy) | **DELETE** /api/ai-mentor/orgs/{org}/users/{user_id}/safety-logs/{id}/ | 
+[**ai_mentor_orgs_users_safety_logs_list**](AiMentorApi.md#ai_mentor_orgs_users_safety_logs_list) | **GET** /api/ai-mentor/orgs/{org}/users/{user_id}/safety-logs/ | 
+[**ai_mentor_orgs_users_safety_logs_retrieve**](AiMentorApi.md#ai_mentor_orgs_users_safety_logs_retrieve) | **GET** /api/ai-mentor/orgs/{org}/users/{user_id}/safety-logs/{id}/ | 
 [**ai_mentor_orgs_users_session_detail_mentors_retrieve**](AiMentorApi.md#ai_mentor_orgs_users_session_detail_mentors_retrieve) | **GET** /api/ai-mentor/orgs/{org}/users/{user_id}/session-detail/mentors/{mentor}/ | 
 [**ai_mentor_orgs_users_sessionid_list**](AiMentorApi.md#ai_mentor_orgs_users_sessionid_list) | **GET** /api/ai-mentor/orgs/{org}/users/{user_id}/sessionid/ | 
 [**ai_mentor_orgs_users_sessions_browser_screenshot_retrieve**](AiMentorApi.md#ai_mentor_orgs_users_sessions_browser_screenshot_retrieve) | **GET** /api/ai-mentor/orgs/{org}/users/{user_id}/sessions/{session_id}/browser-screenshot/ | 
@@ -81,11 +97,11 @@ Method | HTTP request | Description
 
 
 # **ai_mentor_orgs_metadata_create**
-> ai_mentor_orgs_metadata_create(org)
+> MentorMetadata ai_mentor_orgs_metadata_create(org, mentor_metadata)
 
 
 
-Endpoint for adding mentor metadata.  Accessible to tenant admins and students.  Returns:      201: Metadata Object.      400: When data is not valid.  Example:      POST: /api/ai-prompt/orgs/main/users/johndoe/metadata/      Request:        {                         \"metadata\": {                             \"test\": \"test\"                         },                         \"mentor\": \"testing\"                     }      Response:       {                         \"metadata\": {                             \"test\": \"test\"                         },                         \"mentor\": \"testing\"                     }
+Endpoint for adding mentor metadata.  Accessible to tenant admins and students.  Returns:      200: Metadata Object.      400: When data is not valid.  Example:      POST: /api/ai-prompt/orgs/main/users/johndoe/metadata/      Request:        {                         \"metadata\": {                             \"test\": \"test\"                         },                         \"mentor\": \"testing\",                         \"mentor_id: 1                     }      Response:       {                         \"metadata\": {                             \"test\": \"test\"                         },                         \"mentor\": \"testing\",                         \"mentor_id: 1                     }
 
 ### Example
 
@@ -93,6 +109,7 @@ Endpoint for adding mentor metadata.  Accessible to tenant admins and students. 
 
 ```python
 import iblai
+from iblai.models.mentor_metadata import MentorMetadata
 from iblai.rest import ApiException
 from pprint import pprint
 
@@ -111,9 +128,12 @@ client = get_platform_api_client(
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 org = 'org_example' # str | 
+mentor_metadata = iblai.MentorMetadata() # MentorMetadata | 
 
 try:
-    api_instance.ai_mentor_orgs_metadata_create(org)
+    api_response = api_instance.ai_mentor_orgs_metadata_create(org, mentor_metadata)
+    print("The response of AiMentorApi->ai_mentor_orgs_metadata_create:\n")
+    pprint(api_response)
 except Exception as e:
     print("Exception when calling AiMentorApi->ai_mentor_orgs_metadata_create: %s\n" % e)
 ```
@@ -126,10 +146,11 @@ except Exception as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **org** | **str**|  | 
+ **mentor_metadata** | [**MentorMetadata**](MentorMetadata.md)|  | 
 
 ### Return type
 
-void (empty response body)
+[**MentorMetadata**](MentorMetadata.md)
 
 ### Authorization
 
@@ -137,14 +158,14 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Accept**: application/json
 
 ### HTTP response details
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | No response body |  -  |
+**200** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -200,6 +221,240 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ai_mentor_orgs_users_ai_generated_images_destroy**
+> ai_mentor_orgs_users_ai_generated_images_destroy(id, org, user_id)
+
+
+
+Endpoint to view and delete AI generated images for a user.  AI Generated images are images generated during chat with AI. They are cached to allow retrieval and deletion.  optional filtering parameters allowed are - username: The username of the user for which this image was stored. - provider: The provider used to generate the image. eg. openai, nvidia (nim), replicate. - model: the text to image model on the provider used to generate the image.  This endpoint is accessible to both students and platform admins.
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+
+# Create an instance of the API class
+api_instance = iblai.AiMentorApi(api_client)
+id = 56 # int | A unique integer value identifying this ai generated image.
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+
+try:
+    api_instance.ai_mentor_orgs_users_ai_generated_images_destroy(id, org, user_id)
+except Exception as e:
+    print("Exception when calling AiMentorApi->ai_mentor_orgs_users_ai_generated_images_destroy: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| A unique integer value identifying this ai generated image. | 
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**204** | No response body |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ai_mentor_orgs_users_ai_generated_images_list**
+> PaginatedAIGeneratedImageList ai_mentor_orgs_users_ai_generated_images_list(org, user_id, model=model, ordering=ordering, page=page, page_size=page_size, provider=provider, search=search, username=username)
+
+
+
+Endpoint to view and delete AI generated images for a user.  AI Generated images are images generated during chat with AI. They are cached to allow retrieval and deletion.  optional filtering parameters allowed are - username: The username of the user for which this image was stored. - provider: The provider used to generate the image. eg. openai, nvidia (nim), replicate. - model: the text to image model on the provider used to generate the image.  This endpoint is accessible to both students and platform admins.
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.paginated_ai_generated_image_list import PaginatedAIGeneratedImageList
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+
+# Create an instance of the API class
+api_instance = iblai.AiMentorApi(api_client)
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+model = 'model_example' # str |  (optional)
+ordering = 'ordering_example' # str | Which field to use when ordering the results. (optional)
+page = 56 # int | A page number within the paginated result set. (optional)
+page_size = 56 # int | Number of results to return per page. (optional)
+provider = 'provider_example' # str |  (optional)
+search = 'search_example' # str | A search term. (optional)
+username = 'username_example' # str |  (optional)
+
+try:
+    api_response = api_instance.ai_mentor_orgs_users_ai_generated_images_list(org, user_id, model=model, ordering=ordering, page=page, page_size=page_size, provider=provider, search=search, username=username)
+    print("The response of AiMentorApi->ai_mentor_orgs_users_ai_generated_images_list:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiMentorApi->ai_mentor_orgs_users_ai_generated_images_list: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+ **model** | **str**|  | [optional] 
+ **ordering** | **str**| Which field to use when ordering the results. | [optional] 
+ **page** | **int**| A page number within the paginated result set. | [optional] 
+ **page_size** | **int**| Number of results to return per page. | [optional] 
+ **provider** | **str**|  | [optional] 
+ **search** | **str**| A search term. | [optional] 
+ **username** | **str**|  | [optional] 
+
+### Return type
+
+[**PaginatedAIGeneratedImageList**](PaginatedAIGeneratedImageList.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ai_mentor_orgs_users_ai_generated_images_retrieve**
+> AIGeneratedImage ai_mentor_orgs_users_ai_generated_images_retrieve(id, org, user_id)
+
+
+
+Endpoint to view and delete AI generated images for a user.  AI Generated images are images generated during chat with AI. They are cached to allow retrieval and deletion.  optional filtering parameters allowed are - username: The username of the user for which this image was stored. - provider: The provider used to generate the image. eg. openai, nvidia (nim), replicate. - model: the text to image model on the provider used to generate the image.  This endpoint is accessible to both students and platform admins.
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.ai_generated_image import AIGeneratedImage
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+
+# Create an instance of the API class
+api_instance = iblai.AiMentorApi(api_client)
+id = 56 # int | A unique integer value identifying this ai generated image.
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+
+try:
+    api_response = api_instance.ai_mentor_orgs_users_ai_generated_images_retrieve(id, org, user_id)
+    print("The response of AiMentorApi->ai_mentor_orgs_users_ai_generated_images_retrieve:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiMentorApi->ai_mentor_orgs_users_ai_generated_images_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| A unique integer value identifying this ai generated image. | 
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+
+### Return type
+
+[**AIGeneratedImage**](AIGeneratedImage.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 ### HTTP response details
@@ -286,12 +541,85 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **ai_mentor_orgs_users_available_template_mentors_retrieve**
+> TemplateMentor ai_mentor_orgs_users_available_template_mentors_retrieve(org, user_id)
+
+
+
+This endpoint list available template mentors for a tenant  Returns:      200 : List of Tool objects   Example :      GET : api/ai-mentor/orgs/main/users/johndoe/available-template-mentors/  Response:   [                 {                     \"id\": 1,                     \"name\": \"AI Mentor\",                     \"platform\": \"main\",                     \"slug\": \"ai-mentor\",                     \"unique_id\": \"8485a252-eecf-436b-ba25-3f4ea3e7cda9\",                     \"description\": \"Upbeat, encouraging tutor helping students understand concepts by explaining ideas and asking questions.\",                     \"system_prompt\": \"Wrap all responses in MARKDOWN formatted text.\",                  }             ]
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.template_mentor import TemplateMentor
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+
+# Create an instance of the API class
+api_instance = iblai.AiMentorApi(api_client)
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+
+try:
+    api_response = api_instance.ai_mentor_orgs_users_available_template_mentors_retrieve(org, user_id)
+    print("The response of AiMentorApi->ai_mentor_orgs_users_available_template_mentors_retrieve:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiMentorApi->ai_mentor_orgs_users_available_template_mentors_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+
+### Return type
+
+[**TemplateMentor**](TemplateMentor.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **ai_mentor_orgs_users_clear_chathistory_destroy**
 > ai_mentor_orgs_users_clear_chathistory_destroy(org, user_id)
 
 
 
-Endpoint to clear user's chat history  Returns:      200: No responde data
+Endpoint to clear user's chat history  Returns:      204: No responde data
 
 ### Example
 
@@ -446,7 +774,7 @@ Name | Type | Description  | Notes
 
 
 
-        Endpoint to automatically create a mentor given a name and a description of the mentor.         All other parameters for the mentor will be automatically populated using an llm.         This includes but not limitted to marketing conversations, system prompt, proactive prompt, profile icon and more.           Url Args:             org (str): The organization's platform key.             user_id (str): The username  identifier of the individual.          Returns:              201: a Mentor instance             400: An error occurred when validating inputs or creating mentor.          Example:              **Create a mentor**              POST: /api/ai-mentor/orgs/main/users/johndoe/create-mentor-wizard/              Request:    {                             \"name\": \"Fashion Expert\",                             \"description\": \"An expert at Fashion Design                         }             Response:   {                             \"name\": \"Fashion Agent\",                             \"unique_id\": \"ef425893-877c-4538-9e79-54eb1eebd165\",                             \"platform\": \"main\",                             \"slug\": \"df57c4b3-32c5-4a3a-81a4-97e9e2ac8d25\",                             \"description\": \"An agent that can teach different fashion ways including dressings, clothes, shoes, makeups and latest trends.\",                             \"allow_anonymous\": false,                             \"pathways\": [],                             \"session_information\": {                                 \"user_count\": 0,                                 \"session_count\": 0,                                 \"users\": {}                             },                             \"suggested_prompts\": [],                             \"llm_provider\": \"groq\",                             \"llm_name\": \"llama3-8b-8192\",                             \"system_prompt\": \"You are an expert in fashion. Your role is to educate users on the latest fashion trends, styles, and tips in dressing, clothes, shoes, and makeup. Explain concepts clearly and provide practical examples.\",                             \"metadata\": {                                 \"category\": \"Fashion\"                             },                             \"proactive_message\": \"Hello, I'm Fashion Agent. I can guide you through different fashion tips including dressings, clothes, shoes, makeups and the latest trends.\",                             \"moderation_system_prompt\": \"You are a moderator tasked with identifying whether a prompt from a user is appropriate or inappropriate. Any prompt that is immoral or contains abusive words, insults, query that involve damaging content, and law breaking acts, etc should be deemed inappropriate. Otherwise it is deemed appropriate.\",                             \"moderation_response\": \"Please keep the conversation within the bounds of what the agent is tasked to do and per your platform's rules.\",                             \"enable_moderation\": false,                             \"is_proactive\": false,                             \"proactive_prompt\": \"Check if there are any previous chats available. If there are previous chats, mention them and offer assistance based on the last conversation. If there are no previous chats, provide a general greeting and introduce yourself with an offer to suggest a topic to learn about.  Examples:  If there are previous chats:  Welcome back! Last time, we discussed [topic from previous chat]. How can I assist you further with that? If there are no previous chats:  Hello, I'm Fashion Agent. I can guide you through different fashion tips including dressings, clothes, shoes, makeups and the latest trends.  If no chat history is available, do not tell the user that there is no chat history, just answer with the above instructions. Do not make the response specific to a given topic, ask the user for the topic.\",                             \"created_at\": \"2024-07-16T13:53:48.583825+00:00\",                             \"updated_at\": \"2024-07-16T13:53:48.612369+00:00\",                             \"seo_tags\": [                                 {                                 \"name\": \"viewport\",                                 \"content\": \"width=device-width, initial-scale=1.0\"                                 },                                 {                                 \"name\": \"description\",                                 \"content\": \"An agent that can teach different fashion ways including dressings, clothes, shoes, makeups and latest trends.\"                                 },                                 {                                 \"name\": \"keywords\",                                 \"content\": \"Fashion, Dressing, Clothes, Shoes, Makeup, Trends\"                                 }                             ],                             \"marketing_conversations\": [                                 {                                 \"type\": \"ai\",                                 \"content\": \"Hello, I'm Fashion Agent. I can guide you through different fashion tips including dressings, clothes, shoes, makeups and the latest trends. What would you like to learn about today?\"                                 },                                 {                                 \"type\": \"human\",                                 \"content\": \"Can you suggest some trendy outfits for this season?\"                                 },                                 {                                 \"type\": \"ai\",                                 \"content\": \"Absolutely! This season, oversized blazers, high-waisted trousers, and statement boots are trending. Pair these with minimalist accessories for a chic look. Would you like to know more about any specific item?\"                                 },                                 {                                 \"type\": \"human\",                                 \"content\": \"What makeup trends are popular right now?\"                                 },                                 {                                 \"type\": \"ai\",                                 \"content\": \"Current makeup trends include bold eyeliner, glitter accents, and natural, glowing skin. Bright lip colors are also making a comeback. Which of these trends would you like to explore more?\"                                 }                             ],                             \"tools\": [],                             \"can_use_tools\": false,                             \"llm_temperature\": null,                             \"created_by\": null,                             \"settings\": {                                 \"id\": 98,                                 \"display_name\": \"Fashion Agent\",                                 \"profile_image\": \"http://localhost:8000/media/public/mentor/profile/2fc32125-2404-4ca9-8261-bcb66f48f4bb.png\",                                 \"initial_message\": null,                                 \"suggested_message\": null,                                 \"theme\": \"light\",                                 \"user_message_color\": \"#2467EB\",                                 \"mentor_bubble_color\": \"#000000\",                                 \"align_mentor_bubble\": \"left\",                                 \"mentor\": \"Fashion Agent\",                                 \"metadata\": {                                 \"category\": \"Fashion\"                                 },                                 \"mentor_visibility\": \"viewable_by_anyone\",                                 \"enable_image_generation\": true,                                 \"enable_web_browsing\": false,                                 \"enable_code_interpreter\": false,                                 \"custom_css\": null,                                 \"allow_anonymous\": false,                                 \"mentor_description\": \"An agent that can teach different fashion ways including dressings, clothes, shoes, makeups and latest trends.\",                                 \"suggested_prompts\": [],                                 \"proactive_message\": \"Hello, I'm Fashion Agent. I can guide you through different fashion tips including dressings, clothes, shoes, makeups and the latest trends.\",                                 \"mentor_tools\": [],                                 \"can_use_tools\": false,                                 \"llm_temperature\": null,                                 \"llm_provider\": \"groq\",                                 \"llm_name\": \"llama3-8b-8192\",                                 \"proactive_prompt\": \"Check if there are any previous chats available. If there are previous chats, mention them and offer assistance based on the last conversation. If there are no previous chats, provide a general greeting and introduce yourself with an offer to suggest a topic to learn about.  Examples:  If there are previous chats:  Welcome back! Last time, we discussed [topic from previous chat]. How can I assist you further with that? If there are no previous chats:  Hello, I'm Fashion Agent. I can guide you through different fashion tips including dressings, clothes, shoes, makeups and the latest trends.  If no chat history is available, do not tell the user that there is no chat history, just answer with the above instructions. Do not make the response specific to a given topic, ask the user for the topic.\"                             }                         }         - Get a single UserEdxMemory object             GET: /api/ai-mentor/orgs/main/users/johndoe/edx-memory/1/              Request:        None             Response:       {                                 \"student\": 1,                                 \"course_id\": \"course-v1:main+CARBON+2024_Fall\",                                 \"data\": {},                                 \"date_created\": \"2024-06-25T15:30:26.257140\",                                 \"last_modified\": \"2024-06-25T15:30:26.257140\"                             }
+        Endpoint to automatically create a mentor given a name and a description of the mentor.         All other parameters for the mentor will be automatically populated using an llm.         This includes but not limitted to marketing conversations, system prompt, proactive prompt, profile icon and more.           Url Args:             org (str): The organization's platform key.             user_id (str): The username  identifier of the individual.          Returns:              201: a Mentor instance             400: An error occurred when validating inputs or creating mentor.          Example:              **Create a mentor**              POST: /api/ai-mentor/orgs/main/users/johndoe/create-mentor-wizard/              Request:    {                             \"name\": \"Fashion Expert\",                             \"description\": \"An expert at Fashion Design                         }             Response:   {                             \"name\": \"Fashion Agent\",                             \"unique_id\": \"ef425893-877c-4538-9e79-54eb1eebd165\",                             \"platform\": \"main\",                             \"slug\": \"df57c4b3-32c5-4a3a-81a4-97e9e2ac8d25\",                             \"description\": \"An agent that can teach different fashion ways including dressings, clothes, shoes, makeups and latest trends.\",                             \"allow_anonymous\": false,                             \"pathways\": [],                             \"session_information\": {                                 \"user_count\": 0,                                 \"session_count\": 0,                                 \"users\": {}                             },                             \"suggested_prompts\": [],                             \"llm_provider\": \"groq\",                             \"llm_name\": \"llama3-8b-8192\",                             \"system_prompt\": \"You are an expert in fashion. Your role is to educate users on the latest fashion trends, styles, and tips in dressing, clothes, shoes, and makeup. Explain concepts clearly and provide practical examples.\",                             \"metadata\": {                                 \"category\": \"Fashion\"                             },                             \"proactive_message\": \"Hello, I'm Fashion Agent. I can guide you through different fashion tips including dressings, clothes, shoes, makeups and the latest trends.\",                             \"moderation_system_prompt\": \"You are a moderator tasked with identifying whether a prompt from a user is appropriate or inappropriate. Any prompt that is immoral or contains abusive words, insults, query that involve damaging content, and law breaking acts, etc should be deemed inappropriate. Otherwise it is deemed appropriate.\",                             \"moderation_response\": \"Please keep the conversation within the bounds of what the agent is tasked to do and per your platform's rules.\",                             \"enable_moderation\": false,                             \"safety_system_prompt\": \"You are a moderator tasked with identifying whether a message from an ai model to a user is is appropriate or inappropriate. If the message is immoral or contains abusive words, insults, damaging content, and law breaking acts, etc it should be deemed inappropriate. Otherwise it is deemed appropriate.\",                             \"safety_response\":  \"Sorry, the AI model generated an inappropriate response. Kindly refine your prompt or try again with a different prompt.\",                             \"enable_safety_system\": false,                             \"is_proactive\": false,                             \"proactive_prompt\": \"Check if there are any previous chats available. If there are previous chats, mention them and offer assistance based on the last conversation. If there are no previous chats, provide a general greeting and introduce yourself with an offer to suggest a topic to learn about.  Examples:  If there are previous chats:  Welcome back! Last time, we discussed [topic from previous chat]. How can I assist you further with that? If there are no previous chats:  Hello, I'm Fashion Agent. I can guide you through different fashion tips including dressings, clothes, shoes, makeups and the latest trends.  If no chat history is available, do not tell the user that there is no chat history, just answer with the above instructions. Do not make the response specific to a given topic, ask the user for the topic.\",                             \"created_at\": \"2024-07-16T13:53:48.583825+00:00\",                             \"updated_at\": \"2024-07-16T13:53:48.612369+00:00\",                             \"seo_tags\": [                                 {                                 \"name\": \"viewport\",                                 \"content\": \"width=device-width, initial-scale=1.0\"                                 },                                 {                                 \"name\": \"description\",                                 \"content\": \"An agent that can teach different fashion ways including dressings, clothes, shoes, makeups and latest trends.\"                                 },                                 {                                 \"name\": \"keywords\",                                 \"content\": \"Fashion, Dressing, Clothes, Shoes, Makeup, Trends\"                                 }                             ],                             \"marketing_conversations\": [                                 {                                 \"type\": \"ai\",                                 \"content\": \"Hello, I'm Fashion Agent. I can guide you through different fashion tips including dressings, clothes, shoes, makeups and the latest trends. What would you like to learn about today?\"                                 },                                 {                                 \"type\": \"human\",                                 \"content\": \"Can you suggest some trendy outfits for this season?\"                                 },                                 {                                 \"type\": \"ai\",                                 \"content\": \"Absolutely! This season, oversized blazers, high-waisted trousers, and statement boots are trending. Pair these with minimalist accessories for a chic look. Would you like to know more about any specific item?\"                                 },                                 {                                 \"type\": \"human\",                                 \"content\": \"What makeup trends are popular right now?\"                                 },                                 {                                 \"type\": \"ai\",                                 \"content\": \"Current makeup trends include bold eyeliner, glitter accents, and natural, glowing skin. Bright lip colors are also making a comeback. Which of these trends would you like to explore more?\"                                 }                             ],                             \"tools\": [],                             \"can_use_tools\": false,                             \"llm_temperature\": null,                             \"created_by\": null,                             \"settings\": {                                 \"id\": 98,                                 \"display_name\": \"Fashion Agent\",                                 \"profile_image\": \"http://localhost:8000/media/public/mentor/profile/2fc32125-2404-4ca9-8261-bcb66f48f4bb.png\",                                 \"initial_message\": null,                                 \"suggested_message\": null,                                 \"theme\": \"light\",                                 \"user_message_color\": \"#2467EB\",                                 \"mentor_bubble_color\": \"#000000\",                                 \"align_mentor_bubble\": \"left\",                                 \"mentor\": \"Fashion Agent\",                                 \"metadata\": {                                 \"category\": \"Fashion\"                                 },                                 \"mentor_visibility\": \"viewable_by_anyone\",                                 \"enable_image_generation\": true,                                 \"enable_web_browsing\": false,                                 \"enable_code_interpreter\": false,                                 \"custom_css\": null,                                 \"allow_anonymous\": false,                                 \"mentor_description\": \"An agent that can teach different fashion ways including dressings, clothes, shoes, makeups and latest trends.\",                                 \"suggested_prompts\": [],                                 \"proactive_message\": \"Hello, I'm Fashion Agent. I can guide you through different fashion tips including dressings, clothes, shoes, makeups and the latest trends.\",                                 \"mentor_tools\": [],                                 \"can_use_tools\": false,                                 \"llm_temperature\": null,                                 \"llm_provider\": \"groq\",                                 \"llm_name\": \"llama3-8b-8192\",                                 \"proactive_prompt\": \"Check if there are any previous chats available. If there are previous chats, mention them and offer assistance based on the last conversation. If there are no previous chats, provide a general greeting and introduce yourself with an offer to suggest a topic to learn about.  Examples:  If there are previous chats:  Welcome back! Last time, we discussed [topic from previous chat]. How can I assist you further with that? If there are no previous chats:  Hello, I'm Fashion Agent. I can guide you through different fashion tips including dressings, clothes, shoes, makeups and the latest trends.  If no chat history is available, do not tell the user that there is no chat history, just answer with the above instructions. Do not make the response specific to a given topic, ask the user for the topic.\"                             }                         }         - Get a single UserEdxMemory object             GET: /api/ai-mentor/orgs/main/users/johndoe/edx-memory/1/              Request:        None             Response:       {                                 \"student\": 1,                                 \"course_id\": \"course-v1:main+CARBON+2024_Fall\",                                 \"data\": {},                                 \"date_created\": \"2024-06-25T15:30:26.257140\",                                 \"last_modified\": \"2024-06-25T15:30:26.257140\"                             }
 
 ### Example
 
@@ -1211,7 +1539,7 @@ Name | Type | Description  | Notes
 
 
 
-Endpoint to get free usage count.  Retrieve the number of questions left for a tenant  Accessible to tenant admins and students.  Returns:      200: free usage count.      404: When tenant not found.      400: When data is not valid.  Example:      GET: /api/ai-mentor/orgs/main/users/johndoe/free-usage-count/      Response:       {                         \"count\": 3                     }
+Endpoint to get free usage count.  Retrieve the number of questions left for a tenant  Accessible to tenant admins and students.  Returns:      200: free usage count.      404: When tenant is not found.      400: When data is not valid.  Example:      GET: /api/ai-mentor/orgs/main/users/johndoe/free-usage-count/      Response:       {                         \"count\": 3                     }
 
 ### Example
 
@@ -1593,7 +1921,6 @@ Endpoint to add chat feedback.  Accessible to tenant admins and students.  Retur
 
 ### Example
 
-* Api Key Authentication (PlatformApiKeyAuthentication):
 
 ```python
 import iblai
@@ -1601,17 +1928,6 @@ from iblai.models.user_chat_feedback import UserChatFeedback
 from iblai.rest import ApiException
 from pprint import pprint
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
-# You can generate an authenticated client using the following helper method
-client = get_platform_api_client(
-    host="https://base.manager.iblai.app", 
-    key=os.environ["API_KEY"]
-)
 
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
@@ -1644,7 +1960,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+No authorization required
 
 ### HTTP request headers
 
@@ -1668,7 +1984,6 @@ Endpoint to get feedback detail.  Accessible to tenant admins and students.  Ret
 
 ### Example
 
-* Api Key Authentication (PlatformApiKeyAuthentication):
 
 ```python
 import iblai
@@ -1676,17 +1991,6 @@ from iblai.models.user_chat_feedback import UserChatFeedback
 from iblai.rest import ApiException
 from pprint import pprint
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
-# You can generate an authenticated client using the following helper method
-client = get_platform_api_client(
-    host="https://base.manager.iblai.app", 
-    key=os.environ["API_KEY"]
-)
 
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
@@ -1719,7 +2023,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+No authorization required
 
 ### HTTP request headers
 
@@ -1743,7 +2047,6 @@ Endpoint to update chat feedback.  Accessible to tenant admins and students.  Re
 
 ### Example
 
-* Api Key Authentication (PlatformApiKeyAuthentication):
 
 ```python
 import iblai
@@ -1751,17 +2054,6 @@ from iblai.models.user_chat_feedback import UserChatFeedback
 from iblai.rest import ApiException
 from pprint import pprint
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
-# You can generate an authenticated client using the following helper method
-client = get_platform_api_client(
-    host="https://base.manager.iblai.app", 
-    key=os.environ["API_KEY"]
-)
 
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
@@ -1796,7 +2088,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+No authorization required
 
 ### HTTP request headers
 
@@ -1942,6 +2234,79 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**LLMResponse**](LLMResponse.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ai_mentor_orgs_users_mentor_seed_retrieve**
+> SeedMentorsView ai_mentor_orgs_users_mentor_seed_retrieve(org, user_id)
+
+
+
+Endpoint for seed mentors and prompts for a tenant.  Accessible to tenant admins only.  Returns:      200: status of seeding.  Example:      GET: /api/ai-prompt/orgs/main/users/johndoe/seed-mentors/      Response:    {                         \"detail\": \"Mentors seeded\"                     }
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.seed_mentors_view import SeedMentorsView
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+
+# Create an instance of the API class
+api_instance = iblai.AiMentorApi(api_client)
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+
+try:
+    api_response = api_instance.ai_mentor_orgs_users_mentor_seed_retrieve(org, user_id)
+    print("The response of AiMentorApi->ai_mentor_orgs_users_mentor_seed_retrieve:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiMentorApi->ai_mentor_orgs_users_mentor_seed_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+
+### Return type
+
+[**SeedMentorsView**](SeedMentorsView.md)
 
 ### Authorization
 
@@ -2109,6 +2474,225 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **ai_mentor_orgs_users_mentors_available_tools_retrieve**
+> ToolResponse ai_mentor_orgs_users_mentors_available_tools_retrieve(mentor, org, user_id)
+
+
+
+This endpoint list tools allowed for a particular mentor.  Accessible to tenant admins and students.  Returns:      200 : List of Tool objects   Example :      GET : api/ai-mentor/orgs/main/users/johndoe/mentors/ai-mentor/available-tools/      Response:       [                         {                             \"id\": 1,                             \"name\": \"openai\",                             \"metadata\": null                         },                         {                             \"id\": 2,                             \"name\": \"google\",                             \"metadata\": null                         }                     ]
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.tool_response import ToolResponse
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+
+# Create an instance of the API class
+api_instance = iblai.AiMentorApi(api_client)
+mentor = 'mentor_example' # str | 
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+
+try:
+    api_response = api_instance.ai_mentor_orgs_users_mentors_available_tools_retrieve(mentor, org, user_id)
+    print("The response of AiMentorApi->ai_mentor_orgs_users_mentors_available_tools_retrieve:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiMentorApi->ai_mentor_orgs_users_mentors_available_tools_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **mentor** | **str**|  | 
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+
+### Return type
+
+[**ToolResponse**](ToolResponse.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ai_mentor_orgs_users_mentors_memory_component_settings_retrieve**
+> ai_mentor_orgs_users_mentors_memory_component_settings_retrieve(mentor, org, user_id)
+
+
+
+Endpoint for toggling the memory component.  Accessible to tenant admins and students.  Returns:      200: Learner memory status for given mentor and student.      400: When data is not valid.    Example:      PUT: /api/ai-mentor/orgs/main/users/student0/mentors/main/memory-component-settings/      Request:        {                         \"enabled\": true                     }      Response:       {                         \"detail\": \"Request was successful.\", \"enabled\": true                     }
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+
+# Create an instance of the API class
+api_instance = iblai.AiMentorApi(api_client)
+mentor = 'mentor_example' # str | 
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+
+try:
+    api_instance.ai_mentor_orgs_users_mentors_memory_component_settings_retrieve(mentor, org, user_id)
+except Exception as e:
+    print("Exception when calling AiMentorApi->ai_mentor_orgs_users_mentors_memory_component_settings_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **mentor** | **str**|  | 
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | No response body |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ai_mentor_orgs_users_mentors_memory_component_settings_update**
+> ai_mentor_orgs_users_mentors_memory_component_settings_update(mentor, org, user_id)
+
+
+
+Endpoint for toggling the memory component.  Accessible to tenant admins and students.  Returns:      200: Learner memory status for given mentor and student.      400: When data is not valid.    Example:      PUT: /api/ai-mentor/orgs/main/users/student0/mentors/main/memory-component-settings/      Request:        {                         \"enabled\": true                     }      Response:       {                         \"detail\": \"Request was successful.\", \"enabled\": true                     }
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+
+# Create an instance of the API class
+api_instance = iblai.AiMentorApi(api_client)
+mentor = 'mentor_example' # str | 
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+
+try:
+    api_instance.ai_mentor_orgs_users_mentors_memory_component_settings_update(mentor, org, user_id)
+except Exception as e:
+    print("Exception when calling AiMentorApi->ai_mentor_orgs_users_mentors_memory_component_settings_update: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **mentor** | **str**|  | 
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | No response body |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **ai_mentor_orgs_users_mentors_public_settings_retrieve**
 > MentorSettings ai_mentor_orgs_users_mentors_public_settings_retrieve(mentor, org, user_id)
 
@@ -2177,7 +2761,7 @@ No authorization required
 
 
 
-This endpoint get mentor detail data.  Accessible to tenant admins and students.  Returns:      200 : Mentor object.   Example :      GET : api/ai-mentor/orgs/main/users/johndoe/mentors/ai-mentor/      Response:       {                         \"name\": \"AI Mentor\",                         \"platform\": \"main\",                         \"slug\": \"ai-mentor\",                         \"description\": \"Upbeat, encouraging tutor helping students understand concepts by explaining ideas and asking questions.\",                         \"allow_anonymous\": false,                         \"pathways\": [],                         \"suggested_prompts\": [                             \"\"                         ],                         \"llm_provider\": \"IBLChatOpenAI\",                         \"system_prompt\": \"Wrap all responses in MARKDOWN formatted text.\",                         \"metadata\": {                             \"admin\": true,                             \"student\": true,                             \"featured\": true,                             \"allow_to_use_as_template\": true                         },                         \"proactive_message\": \"\",                         \"moderation_system_prompt\": \"You are a moderator tasked with identifying whether a prompt from a user is appropriate or inappropriate. \",                         \"enable_moderation\": false,                         \"created_by\": \"system\"                     }
+This endpoint get mentor detail data.  Accessible to tenant admins and students.  Returns:      200 : Mentor object.   Example :      GET : api/ai-mentor/orgs/main/users/johndoe/mentors/ai-mentor/      Response:       {                         \"name\": \"AI Mentor\",                         \"platform\": \"main\",                         \"slug\": \"ai-mentor\",                         \"description\": \"Upbeat, encouraging tutor helping students understand concepts by explaining ideas and asking questions.\",                         \"allow_anonymous\": false,                         \"pathways\": [],                         \"suggested_prompts\": [                             \"\"                         ],                         \"llm_provider\": \"IBLChatOpenAI\",                         \"system_prompt\": \"Wrap all responses in MARKDOWN formatted text.\",                         \"metadata\": {                             \"admin\": true,                             \"student\": true,                             \"featured\": true,                             \"allow_to_use_as_template\": true                         },                         \"proactive_message\": \"\",                         \"moderation_system_prompt\": \"You are a moderator tasked with identifying whether a prompt from a user is appropriate or inappropriate. \",                         \"enable_moderation\": false,                         \"safety_system_prompt\": \"You are a moderator tasked with identifying whether a message from an ai model to a user is is appropriate or inappropriate. If the message is immoral or contains abusive words, insults, damaging content, and law breaking acts, etc it should be deemed inappropriate. Otherwise it is deemed appropriate.\",                         \"safety_response\":  \"Sorry, the AI model generated an inappropriate response. Kindly refine your prompt or try again with a different prompt.\",                         \"enable_safety_system\": false,                         \"created_by\": \"system\"                     }
 
 ### Example
 
@@ -2247,12 +2831,12 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **ai_mentor_orgs_users_mentors_settings_retrieve**
-> ai_mentor_orgs_users_mentors_settings_retrieve(mentor, org, user_id)
+# **ai_mentor_orgs_users_mentors_scenarios_retrieve**
+> ai_mentor_orgs_users_mentors_scenarios_retrieve(mentor, org, user_id)
 
 
 
-Endpoint to  get mentor  settings.  Accessible to tenant admins only.
+Mixin that includes the StudentTokenAuthentication and IsAdminUserOrStudent
 
 ### Example
 
@@ -2282,9 +2866,9 @@ org = 'org_example' # str |
 user_id = 'user_id_example' # str | 
 
 try:
-    api_instance.ai_mentor_orgs_users_mentors_settings_retrieve(mentor, org, user_id)
+    api_instance.ai_mentor_orgs_users_mentors_scenarios_retrieve(mentor, org, user_id)
 except Exception as e:
-    print("Exception when calling AiMentorApi->ai_mentor_orgs_users_mentors_settings_retrieve: %s\n" % e)
+    print("Exception when calling AiMentorApi->ai_mentor_orgs_users_mentors_scenarios_retrieve: %s\n" % e)
 ```
 
 
@@ -2316,6 +2900,153 @@ void (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | No response body |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ai_mentor_orgs_users_mentors_scenarios_update**
+> ai_mentor_orgs_users_mentors_scenarios_update(mentor, org, user_id)
+
+
+
+Mixin that includes the StudentTokenAuthentication and IsAdminUserOrStudent
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+
+# Create an instance of the API class
+api_instance = iblai.AiMentorApi(api_client)
+mentor = 'mentor_example' # str | 
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+
+try:
+    api_instance.ai_mentor_orgs_users_mentors_scenarios_update(mentor, org, user_id)
+except Exception as e:
+    print("Exception when calling AiMentorApi->ai_mentor_orgs_users_mentors_scenarios_update: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **mentor** | **str**|  | 
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | No response body |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ai_mentor_orgs_users_mentors_settings_retrieve**
+> MentorSettings ai_mentor_orgs_users_mentors_settings_retrieve(mentor, org, user_id)
+
+
+
+Endpoint to  get mentor  settings.  Accessible to tenant admins only.
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.mentor_settings import MentorSettings
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+
+# Create an instance of the API class
+api_instance = iblai.AiMentorApi(api_client)
+mentor = 'mentor_example' # str | 
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+
+try:
+    api_response = api_instance.ai_mentor_orgs_users_mentors_settings_retrieve(mentor, org, user_id)
+    print("The response of AiMentorApi->ai_mentor_orgs_users_mentors_settings_retrieve:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiMentorApi->ai_mentor_orgs_users_mentors_settings_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **mentor** | **str**|  | 
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+
+### Return type
+
+[**MentorSettings**](MentorSettings.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -2398,11 +3129,84 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **ai_mentor_orgs_users_metadata_retrieve**
-> ai_mentor_orgs_users_metadata_retrieve(org, user_id)
+> MentorMetadata ai_mentor_orgs_users_metadata_retrieve(org, user_id)
 
 
 
 Endpoint for getting mentor metadata.  Accessible to tenant admins and students.  Returns:      200: Metadata Object.  Example:      GET: /api/ai-prompt/orgs/main/users/johndoe/metadata/      Response:       {                         \"metadata\": {                             \"test\": \"test\"                         },                         \"mentor\": \"testing\"                     }
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.mentor_metadata import MentorMetadata
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+
+# Create an instance of the API class
+api_instance = iblai.AiMentorApi(api_client)
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+
+try:
+    api_response = api_instance.ai_mentor_orgs_users_metadata_retrieve(org, user_id)
+    print("The response of AiMentorApi->ai_mentor_orgs_users_metadata_retrieve:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiMentorApi->ai_mentor_orgs_users_metadata_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+
+### Return type
+
+[**MentorMetadata**](MentorMetadata.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ai_mentor_orgs_users_moderation_logs_destroy**
+> ai_mentor_orgs_users_moderation_logs_destroy(id, org, user_id)
+
+
+
+Endpoint to view and delete Moderation Logs for a tenant.  These can be filtered by username, platform_key and  mentor id   A search query can be conducted to search through the prompts and reason for the moderation catch event.
 
 ### Example
 
@@ -2427,13 +3231,14 @@ client = get_platform_api_client(
 
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
+id = 56 # int | A unique integer value identifying this moderation log.
 org = 'org_example' # str | 
 user_id = 'user_id_example' # str | 
 
 try:
-    api_instance.ai_mentor_orgs_users_metadata_retrieve(org, user_id)
+    api_instance.ai_mentor_orgs_users_moderation_logs_destroy(id, org, user_id)
 except Exception as e:
-    print("Exception when calling AiMentorApi->ai_mentor_orgs_users_metadata_retrieve: %s\n" % e)
+    print("Exception when calling AiMentorApi->ai_mentor_orgs_users_moderation_logs_destroy: %s\n" % e)
 ```
 
 
@@ -2443,6 +3248,7 @@ except Exception as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **id** | **int**| A unique integer value identifying this moderation log. | 
  **org** | **str**|  | 
  **user_id** | **str**|  | 
 
@@ -2463,7 +3269,171 @@ void (empty response body)
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | No response body |  -  |
+**204** | No response body |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ai_mentor_orgs_users_moderation_logs_list**
+> PaginatedModerationLogList ai_mentor_orgs_users_moderation_logs_list(org, user_id, mentor=mentor, ordering=ordering, page=page, page_size=page_size, platform_key=platform_key, search=search, target_system=target_system, username=username)
+
+
+
+Endpoint to view and delete Moderation Logs for a tenant.  These can be filtered by username, platform_key and  mentor id   A search query can be conducted to search through the prompts and reason for the moderation catch event.
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.paginated_moderation_log_list import PaginatedModerationLogList
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+
+# Create an instance of the API class
+api_instance = iblai.AiMentorApi(api_client)
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+mentor = 56 # int |  (optional)
+ordering = 'ordering_example' # str | Which field to use when ordering the results. (optional)
+page = 56 # int | A page number within the paginated result set. (optional)
+page_size = 56 # int | Number of results to return per page. (optional)
+platform_key = 'platform_key_example' # str |  (optional)
+search = 'search_example' # str | A search term. (optional)
+target_system = 'target_system_example' # str | * `Safety System` - Safety System * `Moderation System` - Moderation System (optional)
+username = 'username_example' # str |  (optional)
+
+try:
+    api_response = api_instance.ai_mentor_orgs_users_moderation_logs_list(org, user_id, mentor=mentor, ordering=ordering, page=page, page_size=page_size, platform_key=platform_key, search=search, target_system=target_system, username=username)
+    print("The response of AiMentorApi->ai_mentor_orgs_users_moderation_logs_list:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiMentorApi->ai_mentor_orgs_users_moderation_logs_list: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+ **mentor** | **int**|  | [optional] 
+ **ordering** | **str**| Which field to use when ordering the results. | [optional] 
+ **page** | **int**| A page number within the paginated result set. | [optional] 
+ **page_size** | **int**| Number of results to return per page. | [optional] 
+ **platform_key** | **str**|  | [optional] 
+ **search** | **str**| A search term. | [optional] 
+ **target_system** | **str**| * &#x60;Safety System&#x60; - Safety System * &#x60;Moderation System&#x60; - Moderation System | [optional] 
+ **username** | **str**|  | [optional] 
+
+### Return type
+
+[**PaginatedModerationLogList**](PaginatedModerationLogList.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ai_mentor_orgs_users_moderation_logs_retrieve**
+> ModerationLog ai_mentor_orgs_users_moderation_logs_retrieve(id, org, user_id)
+
+
+
+Endpoint to view and delete Moderation Logs for a tenant.  These can be filtered by username, platform_key and  mentor id   A search query can be conducted to search through the prompts and reason for the moderation catch event.
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.moderation_log import ModerationLog
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+
+# Create an instance of the API class
+api_instance = iblai.AiMentorApi(api_client)
+id = 56 # int | A unique integer value identifying this moderation log.
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+
+try:
+    api_response = api_instance.ai_mentor_orgs_users_moderation_logs_retrieve(id, org, user_id)
+    print("The response of AiMentorApi->ai_mentor_orgs_users_moderation_logs_retrieve:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiMentorApi->ai_mentor_orgs_users_moderation_logs_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| A unique integer value identifying this moderation log. | 
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+
+### Return type
+
+[**ModerationLog**](ModerationLog.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -2726,7 +3696,7 @@ Name | Type | Description  | Notes
 
 
 
-Endpoint to create and view, update and delete periodic agents.  Periodic agents are schedulers issued for mentors. These are configured with input prompt (if any) as well as a cron schedule to trigger the periodic agent.  Access to these are restricted to platform admins and tenant administrators  Session information for running the periodic agent will be generated with the credentials of the user (platform administrator) who created the agent.
+Endpoint to create and view, update and delete periodic agents.  Periodic agents are schedulers issued for mentors. These are configured with input prompt (if any) as well as a cron schedule to trigger the periodic agent.  Access to these are restricted to platform admins and tenant administrators  Session information for running the periodic agent will be generated with the credentials of the user (platform administrator) who created the agent.  A Periodic Agent is allowed to have a `callback_url` and `callback_secret`. When a `callback_url` is set for a Periodic Agent, a post request with data entries containing the log and timestamp of the run will be made to the callback_url provided. Here is the payload structure:         ```         {             \"timestamp\": \"timestamp when the run completed\",             \"status\": \"status of the periodic agent\",             \"prompt\": \"input prompt to agent,             \"agent_output\": \"...final response of agent\",             \"log\": \"... full agent run log\",             \"log_id\": periodic agent log id.,         }         ``` The payload is encrypted using the `callback_secret` provided.  You can validate the payload using the X-Hub-Signature-256 signature header for request data. This is a Sha256 encoded HMAC hex digest of the payload body.  ```python import hmac import haslib  def validate_payload(request: HttpRequest, callback_secret: str):     # Get the X-Hub-Signature-256 header from the request     received_signature = request.META.get(\"HTTP_X_HUB_SIGNATURE_256\", \"\")      if not received_signature.startswith(\"sha256=\"):         # Invalid signature format         return False      received_signature = received_signature[len(\"sha256=\") :]      try:         # Get the raw request body         payload = request.body          # Compute the expected signature using the app_secret         expected_signature = hmac.new(             callback_secret.encode(), payload, hashlib.sha256         ).hexdigest()          if hmac.compare_digest(received_signature, expected_signature):             # Signatures match, the payload is genuine             return True         else:             # Signatures don't match             return False     except Exception as e:         # Handle any errors that may occur during validation         return False  ```
 
 ### Example
 
@@ -2801,7 +3771,7 @@ Name | Type | Description  | Notes
 
 
 
-Endpoint to create and view, update and delete periodic agents.  Periodic agents are schedulers issued for mentors. These are configured with input prompt (if any) as well as a cron schedule to trigger the periodic agent.  Access to these are restricted to platform admins and tenant administrators  Session information for running the periodic agent will be generated with the credentials of the user (platform administrator) who created the agent.
+Endpoint to create and view, update and delete periodic agents.  Periodic agents are schedulers issued for mentors. These are configured with input prompt (if any) as well as a cron schedule to trigger the periodic agent.  Access to these are restricted to platform admins and tenant administrators  Session information for running the periodic agent will be generated with the credentials of the user (platform administrator) who created the agent.  A Periodic Agent is allowed to have a `callback_url` and `callback_secret`. When a `callback_url` is set for a Periodic Agent, a post request with data entries containing the log and timestamp of the run will be made to the callback_url provided. Here is the payload structure:         ```         {             \"timestamp\": \"timestamp when the run completed\",             \"status\": \"status of the periodic agent\",             \"prompt\": \"input prompt to agent,             \"agent_output\": \"...final response of agent\",             \"log\": \"... full agent run log\",             \"log_id\": periodic agent log id.,         }         ``` The payload is encrypted using the `callback_secret` provided.  You can validate the payload using the X-Hub-Signature-256 signature header for request data. This is a Sha256 encoded HMAC hex digest of the payload body.  ```python import hmac import haslib  def validate_payload(request: HttpRequest, callback_secret: str):     # Get the X-Hub-Signature-256 header from the request     received_signature = request.META.get(\"HTTP_X_HUB_SIGNATURE_256\", \"\")      if not received_signature.startswith(\"sha256=\"):         # Invalid signature format         return False      received_signature = received_signature[len(\"sha256=\") :]      try:         # Get the raw request body         payload = request.body          # Compute the expected signature using the app_secret         expected_signature = hmac.new(             callback_secret.encode(), payload, hashlib.sha256         ).hexdigest()          if hmac.compare_digest(received_signature, expected_signature):             # Signatures match, the payload is genuine             return True         else:             # Signatures don't match             return False     except Exception as e:         # Handle any errors that may occur during validation         return False  ```
 
 ### Example
 
@@ -2873,7 +3843,7 @@ void (empty response body)
 
 
 
-Endpoint to create and view, update and delete periodic agents.  Periodic agents are schedulers issued for mentors. These are configured with input prompt (if any) as well as a cron schedule to trigger the periodic agent.  Access to these are restricted to platform admins and tenant administrators  Session information for running the periodic agent will be generated with the credentials of the user (platform administrator) who created the agent.
+Endpoint to create and view, update and delete periodic agents.  Periodic agents are schedulers issued for mentors. These are configured with input prompt (if any) as well as a cron schedule to trigger the periodic agent.  Access to these are restricted to platform admins and tenant administrators  Session information for running the periodic agent will be generated with the credentials of the user (platform administrator) who created the agent.  A Periodic Agent is allowed to have a `callback_url` and `callback_secret`. When a `callback_url` is set for a Periodic Agent, a post request with data entries containing the log and timestamp of the run will be made to the callback_url provided. Here is the payload structure:         ```         {             \"timestamp\": \"timestamp when the run completed\",             \"status\": \"status of the periodic agent\",             \"prompt\": \"input prompt to agent,             \"agent_output\": \"...final response of agent\",             \"log\": \"... full agent run log\",             \"log_id\": periodic agent log id.,         }         ``` The payload is encrypted using the `callback_secret` provided.  You can validate the payload using the X-Hub-Signature-256 signature header for request data. This is a Sha256 encoded HMAC hex digest of the payload body.  ```python import hmac import haslib  def validate_payload(request: HttpRequest, callback_secret: str):     # Get the X-Hub-Signature-256 header from the request     received_signature = request.META.get(\"HTTP_X_HUB_SIGNATURE_256\", \"\")      if not received_signature.startswith(\"sha256=\"):         # Invalid signature format         return False      received_signature = received_signature[len(\"sha256=\") :]      try:         # Get the raw request body         payload = request.body          # Compute the expected signature using the app_secret         expected_signature = hmac.new(             callback_secret.encode(), payload, hashlib.sha256         ).hexdigest()          if hmac.compare_digest(received_signature, expected_signature):             # Signatures match, the payload is genuine             return True         else:             # Signatures don't match             return False     except Exception as e:         # Handle any errors that may occur during validation         return False  ```
 
 ### Example
 
@@ -2970,7 +3940,7 @@ Name | Type | Description  | Notes
 
 
 
-Endpoint to create and view, update and delete periodic agents.  Periodic agents are schedulers issued for mentors. These are configured with input prompt (if any) as well as a cron schedule to trigger the periodic agent.  Access to these are restricted to platform admins and tenant administrators  Session information for running the periodic agent will be generated with the credentials of the user (platform administrator) who created the agent.
+Endpoint to create and view, update and delete periodic agents.  Periodic agents are schedulers issued for mentors. These are configured with input prompt (if any) as well as a cron schedule to trigger the periodic agent.  Access to these are restricted to platform admins and tenant administrators  Session information for running the periodic agent will be generated with the credentials of the user (platform administrator) who created the agent.  A Periodic Agent is allowed to have a `callback_url` and `callback_secret`. When a `callback_url` is set for a Periodic Agent, a post request with data entries containing the log and timestamp of the run will be made to the callback_url provided. Here is the payload structure:         ```         {             \"timestamp\": \"timestamp when the run completed\",             \"status\": \"status of the periodic agent\",             \"prompt\": \"input prompt to agent,             \"agent_output\": \"...final response of agent\",             \"log\": \"... full agent run log\",             \"log_id\": periodic agent log id.,         }         ``` The payload is encrypted using the `callback_secret` provided.  You can validate the payload using the X-Hub-Signature-256 signature header for request data. This is a Sha256 encoded HMAC hex digest of the payload body.  ```python import hmac import haslib  def validate_payload(request: HttpRequest, callback_secret: str):     # Get the X-Hub-Signature-256 header from the request     received_signature = request.META.get(\"HTTP_X_HUB_SIGNATURE_256\", \"\")      if not received_signature.startswith(\"sha256=\"):         # Invalid signature format         return False      received_signature = received_signature[len(\"sha256=\") :]      try:         # Get the raw request body         payload = request.body          # Compute the expected signature using the app_secret         expected_signature = hmac.new(             callback_secret.encode(), payload, hashlib.sha256         ).hexdigest()          if hmac.compare_digest(received_signature, expected_signature):             # Signatures match, the payload is genuine             return True         else:             # Signatures don't match             return False     except Exception as e:         # Handle any errors that may occur during validation         return False  ```
 
 ### Example
 
@@ -3048,7 +4018,7 @@ Name | Type | Description  | Notes
 
 
 
-Endpoint to create and view, update and delete periodic agents.  Periodic agents are schedulers issued for mentors. These are configured with input prompt (if any) as well as a cron schedule to trigger the periodic agent.  Access to these are restricted to platform admins and tenant administrators  Session information for running the periodic agent will be generated with the credentials of the user (platform administrator) who created the agent.
+Endpoint to create and view, update and delete periodic agents.  Periodic agents are schedulers issued for mentors. These are configured with input prompt (if any) as well as a cron schedule to trigger the periodic agent.  Access to these are restricted to platform admins and tenant administrators  Session information for running the periodic agent will be generated with the credentials of the user (platform administrator) who created the agent.  A Periodic Agent is allowed to have a `callback_url` and `callback_secret`. When a `callback_url` is set for a Periodic Agent, a post request with data entries containing the log and timestamp of the run will be made to the callback_url provided. Here is the payload structure:         ```         {             \"timestamp\": \"timestamp when the run completed\",             \"status\": \"status of the periodic agent\",             \"prompt\": \"input prompt to agent,             \"agent_output\": \"...final response of agent\",             \"log\": \"... full agent run log\",             \"log_id\": periodic agent log id.,         }         ``` The payload is encrypted using the `callback_secret` provided.  You can validate the payload using the X-Hub-Signature-256 signature header for request data. This is a Sha256 encoded HMAC hex digest of the payload body.  ```python import hmac import haslib  def validate_payload(request: HttpRequest, callback_secret: str):     # Get the X-Hub-Signature-256 header from the request     received_signature = request.META.get(\"HTTP_X_HUB_SIGNATURE_256\", \"\")      if not received_signature.startswith(\"sha256=\"):         # Invalid signature format         return False      received_signature = received_signature[len(\"sha256=\") :]      try:         # Get the raw request body         payload = request.body          # Compute the expected signature using the app_secret         expected_signature = hmac.new(             callback_secret.encode(), payload, hashlib.sha256         ).hexdigest()          if hmac.compare_digest(received_signature, expected_signature):             # Signatures match, the payload is genuine             return True         else:             # Signatures don't match             return False     except Exception as e:         # Handle any errors that may occur during validation         return False  ```
 
 ### Example
 
@@ -3123,7 +4093,7 @@ Name | Type | Description  | Notes
 
 
 
-Endpoint to create and view, update and delete periodic agents.  Periodic agents are schedulers issued for mentors. These are configured with input prompt (if any) as well as a cron schedule to trigger the periodic agent.  Access to these are restricted to platform admins and tenant administrators  Session information for running the periodic agent will be generated with the credentials of the user (platform administrator) who created the agent.
+Endpoint to create and view, update and delete periodic agents.  Periodic agents are schedulers issued for mentors. These are configured with input prompt (if any) as well as a cron schedule to trigger the periodic agent.  Access to these are restricted to platform admins and tenant administrators  Session information for running the periodic agent will be generated with the credentials of the user (platform administrator) who created the agent.  A Periodic Agent is allowed to have a `callback_url` and `callback_secret`. When a `callback_url` is set for a Periodic Agent, a post request with data entries containing the log and timestamp of the run will be made to the callback_url provided. Here is the payload structure:         ```         {             \"timestamp\": \"timestamp when the run completed\",             \"status\": \"status of the periodic agent\",             \"prompt\": \"input prompt to agent,             \"agent_output\": \"...final response of agent\",             \"log\": \"... full agent run log\",             \"log_id\": periodic agent log id.,         }         ``` The payload is encrypted using the `callback_secret` provided.  You can validate the payload using the X-Hub-Signature-256 signature header for request data. This is a Sha256 encoded HMAC hex digest of the payload body.  ```python import hmac import haslib  def validate_payload(request: HttpRequest, callback_secret: str):     # Get the X-Hub-Signature-256 header from the request     received_signature = request.META.get(\"HTTP_X_HUB_SIGNATURE_256\", \"\")      if not received_signature.startswith(\"sha256=\"):         # Invalid signature format         return False      received_signature = received_signature[len(\"sha256=\") :]      try:         # Get the raw request body         payload = request.body          # Compute the expected signature using the app_secret         expected_signature = hmac.new(             callback_secret.encode(), payload, hashlib.sha256         ).hexdigest()          if hmac.compare_digest(received_signature, expected_signature):             # Signatures match, the payload is genuine             return True         else:             # Signatures don't match             return False     except Exception as e:         # Handle any errors that may occur during validation         return False  ```
 
 ### Example
 
@@ -4041,7 +5011,7 @@ Name | Type | Description  | Notes
 
 
 
-This is for getting predictive analytics.  Accessible to tenant admins only.  Returns:      200 : Object of List of predicted data.      400 : When ai response can not be loaded to json.      404: When openai key for tenant is not set.      429: When openai request have exceeded the rate limit.  Example :      POST : /api/ai-prompt/orgs/main/users/johndoe/predictive-analytics/      Requests:       {                         \"prompt\": {                             \"data_variables\": [                                 {                                     \"variable_name\": \"registered_users\",                                     \"data_set\": {                                         \"2023-10-06\": 4,                                         \"2023-10-07\": 1,                                         \"2023-10-08\": 0,                                         \"2023-10-09\": 5,                                         \"2023-10-10\": 4                                      },                                     \"number_of_data_points\": 5                                 },                                 {                                     \"variable_name\": \"courses_enrolled\",                                     \"data_set\": {                                         \"2023-08-09\": 0,                                         \"2023-08-10\": 0,                                         \"2023-08-11\": 0,                                         \"2023-08-12\": 0,                                         \"2023-08-13\": 0                                     },                                     \"number_of_data_points\": 6                                 },                                 {                                     \"variable_name\": \"completed_courses\",                                     \"data_set\": {                                         \"2023-10-04\": 0,                                         \"2023-10-05\": 4,                                         \"2023-10-06\": 4,                                         \"2023-10-07\": 1,                                         \"2023-10-08\": 0,                                     },                                     \"number_of_data_points\": 5                                 }                             ]                         }                     }      Response:       {                         \"predictions\": [                             {                                 \"variable_name\": \"registered_users\",                                 \"predicted_data\": {                                     \"2023-10-11\": 2,                                     \"2023-10-12\": 2,                                     \"2023-10-13\": 1,                                     \"2023-10-14\": 1,                                     \"2023-10-15\": 1                                 },                                 \"narrative\": \"The number of registered users has been relatively stable with some fluctuations. There is a slight increase in the number of registered users over time.\"                             },                             {                                 \"variable_name\": \"courses_enrolled\",                                 \"predicted_data\": {                                     \"2023-10-09\": 0,                                     \"2023-10-10\": 0,                                     \"2023-10-11\": 0,                                     \"2023-10-12\": 0,                                     \"2023-10-13\": 0                                 },                                 \"narrative\": \"No courses have been enrolled recently, indicating a decline in enrollment. It is expected that the number of courses enrolled will remain at 0 for the next 31 data points.\"                             },                             {                                 \"variable_name\": \"completed_courses\",                                 \"predicted_data\": {                                     \"2023-10-10\": 4,                                     \"2023-10-11\": 4,                                     \"2023-10-12\": 4,                                     \"2023-10-13\": 4,                                     \"2023-10-14\": 4                                 },                                 \"narrative\": \"The number of completed courses has remained constant at 4. There is no indication of any change in the near future.\"                             }                         ]                     }
+This is for getting predictive analytics.  Accessible to tenant admins only.  Returns:      200 : Object of List of predicted data.      400 : When ai response can not be loaded to json.      404: When OpenAI key for tenant is not set.      429: When OpenAI request have exceeded the rate limit.  Example :      POST : /api/ai-prompt/orgs/main/users/johndoe/predictive-analytics/      Requests:       {                         \"prompt\": {                             \"data_variables\": [                                 {                                     \"variable_name\": \"registered_users\",                                     \"data_set\": {                                         \"2023-10-06\": 4,                                         \"2023-10-07\": 1,                                         \"2023-10-08\": 0,                                         \"2023-10-09\": 5,                                         \"2023-10-10\": 4                                      },                                     \"number_of_data_points\": 5                                 },                                 {                                     \"variable_name\": \"courses_enrolled\",                                     \"data_set\": {                                         \"2023-08-09\": 0,                                         \"2023-08-10\": 0,                                         \"2023-08-11\": 0,                                         \"2023-08-12\": 0,                                         \"2023-08-13\": 0                                     },                                     \"number_of_data_points\": 6                                 },                                 {                                     \"variable_name\": \"completed_courses\",                                     \"data_set\": {                                         \"2023-10-04\": 0,                                         \"2023-10-05\": 4,                                         \"2023-10-06\": 4,                                         \"2023-10-07\": 1,                                         \"2023-10-08\": 0,                                     },                                     \"number_of_data_points\": 5                                 }                             ]                         }                     }      Response:       {                         \"predictions\": [                             {                                 \"variable_name\": \"registered_users\",                                 \"predicted_data\": {                                     \"2023-10-11\": 2,                                     \"2023-10-12\": 2,                                     \"2023-10-13\": 1,                                     \"2023-10-14\": 1,                                     \"2023-10-15\": 1                                 },                                 \"narrative\": \"The number of registered users has been relatively stable with some fluctuations. There is a slight increase in the number of registered users over time.\"                             },                             {                                 \"variable_name\": \"courses_enrolled\",                                 \"predicted_data\": {                                     \"2023-10-09\": 0,                                     \"2023-10-10\": 0,                                     \"2023-10-11\": 0,                                     \"2023-10-12\": 0,                                     \"2023-10-13\": 0                                 },                                 \"narrative\": \"No courses have been enrolled recently, indicating a decline in enrollment. It is expected that the number of courses enrolled will remain at 0 for the next 31 data points.\"                             },                             {                                 \"variable_name\": \"completed_courses\",                                 \"predicted_data\": {                                     \"2023-10-10\": 4,                                     \"2023-10-11\": 4,                                     \"2023-10-12\": 4,                                     \"2023-10-13\": 4,                                     \"2023-10-14\": 4                                 },                                 \"narrative\": \"The number of completed courses has remained constant at 4. There is no indication of any change in the near future.\"                             }                         ]                     }
 
 ### Example
 
@@ -4442,6 +5412,242 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **ai_mentor_orgs_users_safety_logs_destroy**
+> ai_mentor_orgs_users_safety_logs_destroy(id, org, user_id)
+
+
+
+Endpoint to view and delete Safety System Logs for a tenant.  These can be filtered by username, platform_key and  mentor id   A search query can be conducted to search through the prompts and reason for the moderation catch event.
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+
+# Create an instance of the API class
+api_instance = iblai.AiMentorApi(api_client)
+id = 56 # int | A unique integer value identifying this moderation log.
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+
+try:
+    api_instance.ai_mentor_orgs_users_safety_logs_destroy(id, org, user_id)
+except Exception as e:
+    print("Exception when calling AiMentorApi->ai_mentor_orgs_users_safety_logs_destroy: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| A unique integer value identifying this moderation log. | 
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**204** | No response body |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ai_mentor_orgs_users_safety_logs_list**
+> PaginatedModerationLogList ai_mentor_orgs_users_safety_logs_list(org, user_id, mentor=mentor, ordering=ordering, page=page, page_size=page_size, platform_key=platform_key, search=search, target_system=target_system, username=username)
+
+
+
+Endpoint to view and delete Safety System Logs for a tenant.  These can be filtered by username, platform_key and  mentor id   A search query can be conducted to search through the prompts and reason for the moderation catch event.
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.paginated_moderation_log_list import PaginatedModerationLogList
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+
+# Create an instance of the API class
+api_instance = iblai.AiMentorApi(api_client)
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+mentor = 56 # int |  (optional)
+ordering = 'ordering_example' # str | Which field to use when ordering the results. (optional)
+page = 56 # int | A page number within the paginated result set. (optional)
+page_size = 56 # int | Number of results to return per page. (optional)
+platform_key = 'platform_key_example' # str |  (optional)
+search = 'search_example' # str | A search term. (optional)
+target_system = 'target_system_example' # str | * `Safety System` - Safety System * `Moderation System` - Moderation System (optional)
+username = 'username_example' # str |  (optional)
+
+try:
+    api_response = api_instance.ai_mentor_orgs_users_safety_logs_list(org, user_id, mentor=mentor, ordering=ordering, page=page, page_size=page_size, platform_key=platform_key, search=search, target_system=target_system, username=username)
+    print("The response of AiMentorApi->ai_mentor_orgs_users_safety_logs_list:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiMentorApi->ai_mentor_orgs_users_safety_logs_list: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+ **mentor** | **int**|  | [optional] 
+ **ordering** | **str**| Which field to use when ordering the results. | [optional] 
+ **page** | **int**| A page number within the paginated result set. | [optional] 
+ **page_size** | **int**| Number of results to return per page. | [optional] 
+ **platform_key** | **str**|  | [optional] 
+ **search** | **str**| A search term. | [optional] 
+ **target_system** | **str**| * &#x60;Safety System&#x60; - Safety System * &#x60;Moderation System&#x60; - Moderation System | [optional] 
+ **username** | **str**|  | [optional] 
+
+### Return type
+
+[**PaginatedModerationLogList**](PaginatedModerationLogList.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ai_mentor_orgs_users_safety_logs_retrieve**
+> ModerationLog ai_mentor_orgs_users_safety_logs_retrieve(id, org, user_id)
+
+
+
+Endpoint to view and delete Safety System Logs for a tenant.  These can be filtered by username, platform_key and  mentor id   A search query can be conducted to search through the prompts and reason for the moderation catch event.
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.moderation_log import ModerationLog
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+
+# Create an instance of the API class
+api_instance = iblai.AiMentorApi(api_client)
+id = 56 # int | A unique integer value identifying this moderation log.
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+
+try:
+    api_response = api_instance.ai_mentor_orgs_users_safety_logs_retrieve(id, org, user_id)
+    print("The response of AiMentorApi->ai_mentor_orgs_users_safety_logs_retrieve:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiMentorApi->ai_mentor_orgs_users_safety_logs_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| A unique integer value identifying this moderation log. | 
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+
+### Return type
+
+[**ModerationLog**](ModerationLog.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **ai_mentor_orgs_users_session_detail_mentors_retrieve**
 > SessionDetail ai_mentor_orgs_users_session_detail_mentors_retrieve(mentor, org, user_id)
 
@@ -4738,28 +5944,14 @@ No authorization required
 
 
 
-Mixin that includes the StudentTokenAuthentication and IsAdminUserOrStudent
-
 ### Example
 
-* Api Key Authentication (PlatformApiKeyAuthentication):
 
 ```python
 import iblai
 from iblai.rest import ApiException
 from pprint import pprint
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
-# You can generate an authenticated client using the following helper method
-client = get_platform_api_client(
-    host="https://base.manager.iblai.app", 
-    key=os.environ["API_KEY"]
-)
 
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
@@ -4790,7 +5982,7 @@ void (empty response body)
 
 ### Authorization
 
-[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+No authorization required
 
 ### HTTP request headers
 
@@ -4889,7 +6081,6 @@ Name | Type | Description  | Notes
 
 ### Example
 
-* Api Key Authentication (PlatformApiKeyAuthentication):
 
 ```python
 import iblai
@@ -4897,17 +6088,6 @@ from iblai.models.message_view import MessageView
 from iblai.rest import ApiException
 from pprint import pprint
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
-# You can generate an authenticated client using the following helper method
-client = get_platform_api_client(
-    host="https://base.manager.iblai.app", 
-    key=os.environ["API_KEY"]
-)
 
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
@@ -4942,7 +6122,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+No authorization required
 
 ### HTTP request headers
 
@@ -5197,7 +6377,6 @@ Name | Type | Description  | Notes
 
 ### Example
 
-* Api Key Authentication (PlatformApiKeyAuthentication):
 
 ```python
 import iblai
@@ -5206,17 +6385,6 @@ from iblai.models.message_view_updat_response import MessageViewUpdatResponse
 from iblai.rest import ApiException
 from pprint import pprint
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
-# You can generate an authenticated client using the following helper method
-client = get_platform_api_client(
-    host="https://base.manager.iblai.app", 
-    key=os.environ["API_KEY"]
-)
 
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
@@ -5251,7 +6419,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+No authorization required
 
 ### HTTP request headers
 

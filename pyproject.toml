@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "iblai"
-version = "2.4.1+ai.plus"
+version = "3.6.0+ai.plus"
 description = "ibl-data-manager"
 authors = ["OpenAPI Generator Community <team@openapitools.org>"]
 license = "NoLicense"

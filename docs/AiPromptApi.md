@@ -19,6 +19,13 @@ Method | HTTP request | Description
 [**ai_prompt_orgs_users_languages_update**](AiPromptApi.md#ai_prompt_orgs_users_languages_update) | **PUT** /api/ai-prompt/orgs/{org}/users/{user_id}/languages/{language_id}/ | 
 [**ai_prompt_orgs_users_memory_context_retrieve**](AiPromptApi.md#ai_prompt_orgs_users_memory_context_retrieve) | **GET** /api/ai-prompt/orgs/{org}/users/{user_id}/memory-context/ | 
 [**ai_prompt_orgs_users_memory_context_update**](AiPromptApi.md#ai_prompt_orgs_users_memory_context_update) | **PUT** /api/ai-prompt/orgs/{org}/users/{user_id}/memory-context/ | 
+[**ai_prompt_orgs_users_memory_create**](AiPromptApi.md#ai_prompt_orgs_users_memory_create) | **POST** /api/ai-prompt/orgs/{org}/users/{user_id}/memory/ | 
+[**ai_prompt_orgs_users_memory_destroy**](AiPromptApi.md#ai_prompt_orgs_users_memory_destroy) | **DELETE** /api/ai-prompt/orgs/{org}/users/{user_id}/memory/ | 
+[**ai_prompt_orgs_users_memory_destroy2**](AiPromptApi.md#ai_prompt_orgs_users_memory_destroy2) | **DELETE** /api/ai-prompt/orgs/{org}/users/{user_id}/memory/{memory_id}/ | 
+[**ai_prompt_orgs_users_memory_retrieve**](AiPromptApi.md#ai_prompt_orgs_users_memory_retrieve) | **GET** /api/ai-prompt/orgs/{org}/users/{user_id}/memory/ | 
+[**ai_prompt_orgs_users_memory_status_retrieve**](AiPromptApi.md#ai_prompt_orgs_users_memory_status_retrieve) | **GET** /api/ai-prompt/orgs/{org}/users/{user_id}/memory-status/ | 
+[**ai_prompt_orgs_users_memory_status_update**](AiPromptApi.md#ai_prompt_orgs_users_memory_status_update) | **PUT** /api/ai-prompt/orgs/{org}/users/{user_id}/memory-status/ | 
+[**ai_prompt_orgs_users_memory_update**](AiPromptApi.md#ai_prompt_orgs_users_memory_update) | **PUT** /api/ai-prompt/orgs/{org}/users/{user_id}/memory/{memory_id}/ | 
 [**ai_prompt_orgs_users_metadata_retrieve**](AiPromptApi.md#ai_prompt_orgs_users_metadata_retrieve) | **GET** /api/ai-prompt/orgs/{org}/users/{user_id}/metadata | 
 [**ai_prompt_orgs_users_prompt_create**](AiPromptApi.md#ai_prompt_orgs_users_prompt_create) | **POST** /api/ai-prompt/orgs/{org}/users/{user_id}/prompt/ | 
 [**ai_prompt_orgs_users_prompt_destroy**](AiPromptApi.md#ai_prompt_orgs_users_prompt_destroy) | **DELETE** /api/ai-prompt/orgs/{org}/users/{user_id}/prompt/{id}/ | 
@@ -42,15 +49,10 @@ Method | HTTP request | Description
 [**ai_prompt_orgs_users_tones_destroy**](AiPromptApi.md#ai_prompt_orgs_users_tones_destroy) | **DELETE** /api/ai-prompt/orgs/{org}/users/{user_id}/tones/{tone_id}/ | 
 [**ai_prompt_orgs_users_tones_retrieve**](AiPromptApi.md#ai_prompt_orgs_users_tones_retrieve) | **GET** /api/ai-prompt/orgs/{org}/users/{user_id}/tones/ | 
 [**ai_prompt_orgs_users_tones_update**](AiPromptApi.md#ai_prompt_orgs_users_tones_update) | **PUT** /api/ai-prompt/orgs/{org}/users/{user_id}/tones/{tone_id}/ | 
-[**ai_prompt_orgs_users_user_catalog_item_memory_create**](AiPromptApi.md#ai_prompt_orgs_users_user_catalog_item_memory_create) | **POST** /api/ai-prompt/orgs/{org}/users/{user_id}/user-catalog-item-memory/ | 
-[**ai_prompt_orgs_users_user_catalog_item_memory_destroy**](AiPromptApi.md#ai_prompt_orgs_users_user_catalog_item_memory_destroy) | **DELETE** /api/ai-prompt/orgs/{org}/users/{user_id}/user-catalog-item-memory/ | 
-[**ai_prompt_orgs_users_user_catalog_item_memory_destroy2**](AiPromptApi.md#ai_prompt_orgs_users_user_catalog_item_memory_destroy2) | **DELETE** /api/ai-prompt/orgs/{org}/users/{user_id}/user-catalog-item-memory/{memory_id}/ | 
-[**ai_prompt_orgs_users_user_catalog_item_memory_retrieve**](AiPromptApi.md#ai_prompt_orgs_users_user_catalog_item_memory_retrieve) | **GET** /api/ai-prompt/orgs/{org}/users/{user_id}/user-catalog-item-memory/ | 
-[**ai_prompt_orgs_users_user_catalog_item_memory_update**](AiPromptApi.md#ai_prompt_orgs_users_user_catalog_item_memory_update) | **PUT** /api/ai-prompt/orgs/{org}/users/{user_id}/user-catalog-item-memory/{memory_id}/ | 
 
 
 # **ai_prompt_orgs_metadata_create**
-> ai_prompt_orgs_metadata_create(org)
+> Metadata ai_prompt_orgs_metadata_create(org, metadata)
 
 
 
@@ -62,6 +64,7 @@ Endpoint for adding prompt metadata.  Accessible to tenant admins and students. 
 
 ```python
 import iblai
+from iblai.models.metadata import Metadata
 from iblai.rest import ApiException
 from pprint import pprint
 
@@ -80,9 +83,12 @@ client = get_platform_api_client(
 # Create an instance of the API class
 api_instance = iblai.AiPromptApi(api_client)
 org = 'org_example' # str | 
+metadata = iblai.Metadata() # Metadata | 
 
 try:
-    api_instance.ai_prompt_orgs_metadata_create(org)
+    api_response = api_instance.ai_prompt_orgs_metadata_create(org, metadata)
+    print("The response of AiPromptApi->ai_prompt_orgs_metadata_create:\n")
+    pprint(api_response)
 except Exception as e:
     print("Exception when calling AiPromptApi->ai_prompt_orgs_metadata_create: %s\n" % e)
 ```
@@ -95,10 +101,11 @@ except Exception as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **org** | **str**|  | 
+ **metadata** | [**Metadata**](Metadata.md)|  | 
 
 ### Return type
 
-void (empty response body)
+[**Metadata**](Metadata.md)
 
 ### Authorization
 
@@ -106,14 +113,14 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Accept**: application/json
 
 ### HTTP response details
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | No response body |  -  |
+**200** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -408,7 +415,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **ai_prompt_orgs_users_all_chats_memory_update**
-> UserChatMemoryUpdateView ai_prompt_orgs_users_all_chats_memory_update(org, user_id)
+> UserChatMemoryUpdateView ai_prompt_orgs_users_all_chats_memory_update(org, user_id, user_all_chat_memory_view)
 
 
 
@@ -420,6 +427,7 @@ Endpoint for updating all user chat memories from previous chat histories.  Acce
 
 ```python
 import iblai
+from iblai.models.user_all_chat_memory_view import UserAllChatMemoryView
 from iblai.models.user_chat_memory_update_view import UserChatMemoryUpdateView
 from iblai.rest import ApiException
 from pprint import pprint
@@ -440,9 +448,10 @@ client = get_platform_api_client(
 api_instance = iblai.AiPromptApi(api_client)
 org = 'org_example' # str | 
 user_id = 'user_id_example' # str | 
+user_all_chat_memory_view = iblai.UserAllChatMemoryView() # UserAllChatMemoryView | 
 
 try:
-    api_response = api_instance.ai_prompt_orgs_users_all_chats_memory_update(org, user_id)
+    api_response = api_instance.ai_prompt_orgs_users_all_chats_memory_update(org, user_id, user_all_chat_memory_view)
     print("The response of AiPromptApi->ai_prompt_orgs_users_all_chats_memory_update:\n")
     pprint(api_response)
 except Exception as e:
@@ -458,6 +467,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **org** | **str**|  | 
  **user_id** | **str**|  | 
+ **user_all_chat_memory_view** | [**UserAllChatMemoryView**](UserAllChatMemoryView.md)|  | 
 
 ### Return type
 
@@ -469,7 +479,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -1152,12 +1162,87 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **ai_prompt_orgs_users_metadata_retrieve**
-> ai_prompt_orgs_users_metadata_retrieve(org, user_id)
+# **ai_prompt_orgs_users_memory_create**
+> UserCatalogItemMemoryView ai_prompt_orgs_users_memory_create(org, user_id, user_catalog_item_memory_view)
 
 
 
-Endpoint for getting prompt metadata.  Accessible to tenant admins and students.  Returns:      200: Metadata Object.  Example:      GET: /api/ai-prompt/orgs/main/users/johndoe/metadata/      Response:       {                         \"metadata\": {                             \"test\": \"test\"                         },                         \"prompt\": \"testing\"                     }
+    Endpoint for Adding user catalog item memory.      Accessible to tenant admins and students.      Returns:          201: user catalog item  memory Object.          400: When data is not valid.        Example:          POST: /api/ai-prompt/orgs/main/users/johndoe/memory/          Request:        {                             \"id\": 1,                             \"student\": \"johndoes\",                             \"platform\": \"main\",                             \"catalog_item\": \"Loves programming\",                             \"lessons\": {                                 \"gaming\": \"i learnt how to play chess\"                             },                             \"next_steps\": {                                 \"gaming\": \"I want to learn how to play golf\",                                 \"singing\": \"I want to learn how to sing pop music\"                             }                         }          Response:       {                             \"id\": 1,                             \"student\": \"johndoes\",                             \"platform\": \"main\",                             \"catalog_item\": \"Loves programming\",                             \"lessons\": {     \"gaming\": \"i learnt how to play chess\" }, \"next_steps\": {     \"gaming\": \"I want to learn how to play golf\",     \"singing\": \"I want to learn how to sing pop music\" }                         }
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.user_catalog_item_memory_view import UserCatalogItemMemoryView
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+
+# Create an instance of the API class
+api_instance = iblai.AiPromptApi(api_client)
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+user_catalog_item_memory_view = iblai.UserCatalogItemMemoryView() # UserCatalogItemMemoryView | 
+
+try:
+    api_response = api_instance.ai_prompt_orgs_users_memory_create(org, user_id, user_catalog_item_memory_view)
+    print("The response of AiPromptApi->ai_prompt_orgs_users_memory_create:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiPromptApi->ai_prompt_orgs_users_memory_create: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+ **user_catalog_item_memory_view** | [**UserCatalogItemMemoryView**](UserCatalogItemMemoryView.md)|  | 
+
+### Return type
+
+[**UserCatalogItemMemoryView**](UserCatalogItemMemoryView.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ai_prompt_orgs_users_memory_destroy**
+> ai_prompt_orgs_users_memory_destroy(org, user_id)
+
+
+
+Endpoint for clearing user catalog item memories.  Accessible to tenant admins and students.  Returns:      204: No response data.      400: When data is not valid.  Example:      POST: /api/ai-prompt/orgs/main/users/johndoe/memory/      Response:       No response Data
 
 ### Example
 
@@ -1186,9 +1271,9 @@ org = 'org_example' # str |
 user_id = 'user_id_example' # str | 
 
 try:
-    api_instance.ai_prompt_orgs_users_metadata_retrieve(org, user_id)
+    api_instance.ai_prompt_orgs_users_memory_destroy(org, user_id)
 except Exception as e:
-    print("Exception when calling AiPromptApi->ai_prompt_orgs_users_metadata_retrieve: %s\n" % e)
+    print("Exception when calling AiPromptApi->ai_prompt_orgs_users_memory_destroy: %s\n" % e)
 ```
 
 
@@ -1218,7 +1303,451 @@ void (empty response body)
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | No response body |  -  |
+**204** | No response body |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ai_prompt_orgs_users_memory_destroy2**
+> ai_prompt_orgs_users_memory_destroy2(memory_id, org, user_id)
+
+
+
+Endpoint for deleting user catalog item memory  Accessible to tenant admins and students.  Returns:      204: No response data.      400: When data is not valid.  Example:      POST: /api/ai-prompt/orgs/main/users/johndoe/memory/1/      Response:       No response Data
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+
+# Create an instance of the API class
+api_instance = iblai.AiPromptApi(api_client)
+memory_id = 56 # int | 
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+
+try:
+    api_instance.ai_prompt_orgs_users_memory_destroy2(memory_id, org, user_id)
+except Exception as e:
+    print("Exception when calling AiPromptApi->ai_prompt_orgs_users_memory_destroy2: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **memory_id** | **int**|  | 
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**204** | No response body |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ai_prompt_orgs_users_memory_retrieve**
+> UserCatalogItemMemoryView ai_prompt_orgs_users_memory_retrieve(org, user_id)
+
+
+
+Endpoint for getting user catalog item memories.  Accessible to tenant admins and students.  Returns:      200: List of user catalog item memories.  Example:      GET: /api/ai-prompt/orgs/main/users/johndoe/memory/      Response:    [                     {                         \"id\": 1,                         \"student\": \"johndoes\",                         \"platform\": \"main\",                         \"catalog_item\": \"Loves programming\",                         \"lessons\": {                             \"gaming\": \"i learnt how to play chess\"                         },                         \"next_steps\": {                             \"gaming\": \"I want to learn how to play golf\",                             \"singing\": \"I want to learn how to sing pop music\"                         },                      }                  ]
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.user_catalog_item_memory_view import UserCatalogItemMemoryView
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+
+# Create an instance of the API class
+api_instance = iblai.AiPromptApi(api_client)
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+
+try:
+    api_response = api_instance.ai_prompt_orgs_users_memory_retrieve(org, user_id)
+    print("The response of AiPromptApi->ai_prompt_orgs_users_memory_retrieve:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiPromptApi->ai_prompt_orgs_users_memory_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+
+### Return type
+
+[**UserCatalogItemMemoryView**](UserCatalogItemMemoryView.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ai_prompt_orgs_users_memory_status_retrieve**
+> MemoryStatusView ai_prompt_orgs_users_memory_status_retrieve(org, user_id)
+
+
+
+Endpoint for getting memory status.  Accessible to tenant admins and students.  Returns:      200: Obbject of memory status.  Example:      GET: /api/ai-prompt/orgs/main/users/johndoe/memory-status/      Response:       {                         \"id\": 1,                         \"username\": \"johndoes\",                         \"platform_key\": \"main\",                         \"enabled\": false                     }
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.memory_status_view import MemoryStatusView
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+
+# Create an instance of the API class
+api_instance = iblai.AiPromptApi(api_client)
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+
+try:
+    api_response = api_instance.ai_prompt_orgs_users_memory_status_retrieve(org, user_id)
+    print("The response of AiPromptApi->ai_prompt_orgs_users_memory_status_retrieve:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiPromptApi->ai_prompt_orgs_users_memory_status_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+
+### Return type
+
+[**MemoryStatusView**](MemoryStatusView.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ai_prompt_orgs_users_memory_status_update**
+> MemoryStatusView ai_prompt_orgs_users_memory_status_update(org, user_id, memory_status_request_view)
+
+
+
+Endpoint for updating user memory status.  Accessible to tenant admins and students.  Returns:      200: user chat memory status Object.      400: When data is not valid.    Example:      PUT: /api/ai-prompt/orgs/main/users/johndoe/memory-status/      Request:        {                         \"enabled\": false                     }      Response:       {                         \"id\": 1,                         \"username\": \"johndoes\",                         \"platform_key\": \"main\",                         \"enabled\": false                     }
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.memory_status_request_view import MemoryStatusRequestView
+from iblai.models.memory_status_view import MemoryStatusView
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+
+# Create an instance of the API class
+api_instance = iblai.AiPromptApi(api_client)
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+memory_status_request_view = iblai.MemoryStatusRequestView() # MemoryStatusRequestView | 
+
+try:
+    api_response = api_instance.ai_prompt_orgs_users_memory_status_update(org, user_id, memory_status_request_view)
+    print("The response of AiPromptApi->ai_prompt_orgs_users_memory_status_update:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiPromptApi->ai_prompt_orgs_users_memory_status_update: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+ **memory_status_request_view** | [**MemoryStatusRequestView**](MemoryStatusRequestView.md)|  | 
+
+### Return type
+
+[**MemoryStatusView**](MemoryStatusView.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ai_prompt_orgs_users_memory_update**
+> UserCatalogItemMemoryView ai_prompt_orgs_users_memory_update(memory_id, org, user_id, user_catalog_item_memory_view)
+
+
+
+Endpoint for updating user catalog item memory.  Accessible to tenant admins and students.  Returns:      200: user catalog item memory object.      400: When data is not valid.  Example:      POST: /api/ai-prompt/orgs/main/users/johndoe/memory/1/      Request:        {                         \"id\": 1,                         \"student\": \"johndoes\",                         \"platform\": \"main\",                         \"catalog_item\": \"Loves programming\",                         \"lessons\": \"i learnt about x and y\",                         \"next_steps\": \"learning about z\"                     }      Response:       {                         \"id\": 1,                         \"student\": \"johndoes\",                         \"platform\": \"main\",                         \"catalog_item\": \"Loves programming\",                         \"lessons\": {                             \"gaming\": \"i learnt how to play chess\"                         },                         \"next_steps\": {                             \"gaming\": \"I want to learn how to play golf\",                             \"singing\": \"I want to learn how to sing pop music\"                         }                     }
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.user_catalog_item_memory_view import UserCatalogItemMemoryView
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+
+# Create an instance of the API class
+api_instance = iblai.AiPromptApi(api_client)
+memory_id = 56 # int | 
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+user_catalog_item_memory_view = iblai.UserCatalogItemMemoryView() # UserCatalogItemMemoryView | 
+
+try:
+    api_response = api_instance.ai_prompt_orgs_users_memory_update(memory_id, org, user_id, user_catalog_item_memory_view)
+    print("The response of AiPromptApi->ai_prompt_orgs_users_memory_update:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiPromptApi->ai_prompt_orgs_users_memory_update: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **memory_id** | **int**|  | 
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+ **user_catalog_item_memory_view** | [**UserCatalogItemMemoryView**](UserCatalogItemMemoryView.md)|  | 
+
+### Return type
+
+[**UserCatalogItemMemoryView**](UserCatalogItemMemoryView.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ai_prompt_orgs_users_metadata_retrieve**
+> Metadata ai_prompt_orgs_users_metadata_retrieve(org, user_id)
+
+
+
+Endpoint for getting prompt metadata.  Accessible to tenant admins and students.  Returns:      200: Metadata Object.  Example:      GET: /api/ai-prompt/orgs/main/users/johndoe/metadata/      Response:       {                         \"metadata\": {                             \"test\": \"test\"                         },                         \"prompt\": \"testing\"                     }
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.metadata import Metadata
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+
+# Create an instance of the API class
+api_instance = iblai.AiPromptApi(api_client)
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+
+try:
+    api_response = api_instance.ai_prompt_orgs_users_metadata_retrieve(org, user_id)
+    print("The response of AiPromptApi->ai_prompt_orgs_users_metadata_retrieve:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiPromptApi->ai_prompt_orgs_users_metadata_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+
+### Return type
+
+[**Metadata**](Metadata.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1969,7 +2498,7 @@ Name | Type | Description  | Notes
 
 
 
-This is for getting guided prompts for a chat session session.  Accessible to tenant admins and students.  Returns:      200 : Object of list of guided prompts.      500 : When ai response can not be loaded to json.      404: When openai key for tenant is not set.      429: When openai request have exceeded the rate limit.  Example :      GET : /api/ai-prompt/orgs/main/users/johndoe/sessions/4194d20c-37d5-4148-882f-f7d2d91f7769/guided-prompts/      Response:       {                         \"ai_prompts\": [                             \"What are the benefits of regular exercise?\",                             \"How can I create a healthy meal plan?\",                             \"What are some effective stress management techniques?\"                         ]                     }
+This is for getting guided prompts for a chat session session.  Accessible to tenant admins and students.  Returns:      200 : Object of list of guided prompts.      500 : When ai response can not be loaded to json.      404: When OpenAI key for tenant is not set.      429: When OpenAI requests have exceeded the rate limit.  Example :      GET : /api/ai-prompt/orgs/main/users/johndoe/sessions/4194d20c-37d5-4148-882f-f7d2d91f7769/guided-prompts/      Response:       {                         \"ai_prompts\": [                             \"What are the benefits of regular exercise?\",                             \"How can I create a healthy meal plan?\",                             \"What are some effective stress management techniques?\"                         ]                     }
 
 ### Example
 
@@ -2912,373 +3441,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**TonesView**](TonesView.md)
-
-### Authorization
-
-[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** |  |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **ai_prompt_orgs_users_user_catalog_item_memory_create**
-> UserCatalogItemMemoryView ai_prompt_orgs_users_user_catalog_item_memory_create(org, user_id, user_catalog_item_memory_view)
-
-
-
-    Endpoint for Adding user catalog item memory.      Accessible to tenant admins and students.      Returns:          201: user catalog item  memory Object.          400: When data is not valid.        Example:          POST: /api/ai-prompt/orgs/main/users/johndoe/user-catalog-item-memory/          Request:        {                             \"id\": 1,                             \"student\": \"johndoes\",                             \"platform\": \"main\",                             \"catalog_item\": \"Loves programming\",                             \"lessons\": {                                 \"gaming\": \"i learnt how to play chess\"                             },                             \"next_steps\": {                                 \"gaming\": \"I want to learn how to play golf\",                                 \"singing\": \"I want to learn how to sing pop music\"                             }                         }          Response:       {                             \"id\": 1,                             \"student\": \"johndoes\",                             \"platform\": \"main\",                             \"catalog_item\": \"Loves programming\",                             \"lessons\": {     \"gaming\": \"i learnt how to play chess\" }, \"next_steps\": {     \"gaming\": \"I want to learn how to play golf\",     \"singing\": \"I want to learn how to sing pop music\" }                         }
-
-### Example
-
-* Api Key Authentication (PlatformApiKeyAuthentication):
-
-```python
-import iblai
-from iblai.models.user_catalog_item_memory_view import UserCatalogItemMemoryView
-from iblai.rest import ApiException
-from pprint import pprint
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
-# You can generate an authenticated client using the following helper method
-client = get_platform_api_client(
-    host="https://base.manager.iblai.app", 
-    key=os.environ["API_KEY"]
-)
-
-# Create an instance of the API class
-api_instance = iblai.AiPromptApi(api_client)
-org = 'org_example' # str | 
-user_id = 'user_id_example' # str | 
-user_catalog_item_memory_view = iblai.UserCatalogItemMemoryView() # UserCatalogItemMemoryView | 
-
-try:
-    api_response = api_instance.ai_prompt_orgs_users_user_catalog_item_memory_create(org, user_id, user_catalog_item_memory_view)
-    print("The response of AiPromptApi->ai_prompt_orgs_users_user_catalog_item_memory_create:\n")
-    pprint(api_response)
-except Exception as e:
-    print("Exception when calling AiPromptApi->ai_prompt_orgs_users_user_catalog_item_memory_create: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **org** | **str**|  | 
- **user_id** | **str**|  | 
- **user_catalog_item_memory_view** | [**UserCatalogItemMemoryView**](UserCatalogItemMemoryView.md)|  | 
-
-### Return type
-
-[**UserCatalogItemMemoryView**](UserCatalogItemMemoryView.md)
-
-### Authorization
-
-[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**201** |  |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **ai_prompt_orgs_users_user_catalog_item_memory_destroy**
-> ai_prompt_orgs_users_user_catalog_item_memory_destroy(org, user_id)
-
-
-
-Endpoint for clearing user catalog item memories.  Accessible to tenant admins and students.  Returns:      204: No response data.      400: When data is not valid.  Example:      POST: /api/ai-prompt/orgs/main/users/johndoe/user-catalog-item-memory/      Response:       No response Data
-
-### Example
-
-* Api Key Authentication (PlatformApiKeyAuthentication):
-
-```python
-import iblai
-from iblai.rest import ApiException
-from pprint import pprint
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
-# You can generate an authenticated client using the following helper method
-client = get_platform_api_client(
-    host="https://base.manager.iblai.app", 
-    key=os.environ["API_KEY"]
-)
-
-# Create an instance of the API class
-api_instance = iblai.AiPromptApi(api_client)
-org = 'org_example' # str | 
-user_id = 'user_id_example' # str | 
-
-try:
-    api_instance.ai_prompt_orgs_users_user_catalog_item_memory_destroy(org, user_id)
-except Exception as e:
-    print("Exception when calling AiPromptApi->ai_prompt_orgs_users_user_catalog_item_memory_destroy: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **org** | **str**|  | 
- **user_id** | **str**|  | 
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**204** | No response body |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **ai_prompt_orgs_users_user_catalog_item_memory_destroy2**
-> ai_prompt_orgs_users_user_catalog_item_memory_destroy2(memory_id, org, user_id)
-
-
-
-Endpoint for deleting user catalog item memory  Accessible to tenant admins and students.  Returns:      204: No response data.      400: When data is not valid.  Example:      POST: /api/ai-prompt/orgs/main/users/johndoe/user-catalog-item-memory/1/      Response:       No response Data
-
-### Example
-
-* Api Key Authentication (PlatformApiKeyAuthentication):
-
-```python
-import iblai
-from iblai.rest import ApiException
-from pprint import pprint
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
-# You can generate an authenticated client using the following helper method
-client = get_platform_api_client(
-    host="https://base.manager.iblai.app", 
-    key=os.environ["API_KEY"]
-)
-
-# Create an instance of the API class
-api_instance = iblai.AiPromptApi(api_client)
-memory_id = 56 # int | 
-org = 'org_example' # str | 
-user_id = 'user_id_example' # str | 
-
-try:
-    api_instance.ai_prompt_orgs_users_user_catalog_item_memory_destroy2(memory_id, org, user_id)
-except Exception as e:
-    print("Exception when calling AiPromptApi->ai_prompt_orgs_users_user_catalog_item_memory_destroy2: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **memory_id** | **int**|  | 
- **org** | **str**|  | 
- **user_id** | **str**|  | 
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**204** | No response body |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **ai_prompt_orgs_users_user_catalog_item_memory_retrieve**
-> UserCatalogItemMemoryView ai_prompt_orgs_users_user_catalog_item_memory_retrieve(org, user_id)
-
-
-
-Endpoint for getting user catalog item memories.  Accessible to tenant admins and students.  Returns:      200: List of user catalog item memories.  Example:      GET: /api/ai-prompt/orgs/main/users/johndoe/user-catalog-item-memory/      Response:    [                     {                         \"id\": 1,                         \"student\": \"johndoes\",                         \"platform\": \"main\",                         \"catalog_item\": \"Loves programming\",                         \"lessons\": {                             \"gaming\": \"i learnt how to play chess\"                         },                         \"next_steps\": {                             \"gaming\": \"I want to learn how to play golf\",                             \"singing\": \"I want to learn how to sing pop music\"                         },                      }                  ]
-
-### Example
-
-* Api Key Authentication (PlatformApiKeyAuthentication):
-
-```python
-import iblai
-from iblai.models.user_catalog_item_memory_view import UserCatalogItemMemoryView
-from iblai.rest import ApiException
-from pprint import pprint
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
-# You can generate an authenticated client using the following helper method
-client = get_platform_api_client(
-    host="https://base.manager.iblai.app", 
-    key=os.environ["API_KEY"]
-)
-
-# Create an instance of the API class
-api_instance = iblai.AiPromptApi(api_client)
-org = 'org_example' # str | 
-user_id = 'user_id_example' # str | 
-
-try:
-    api_response = api_instance.ai_prompt_orgs_users_user_catalog_item_memory_retrieve(org, user_id)
-    print("The response of AiPromptApi->ai_prompt_orgs_users_user_catalog_item_memory_retrieve:\n")
-    pprint(api_response)
-except Exception as e:
-    print("Exception when calling AiPromptApi->ai_prompt_orgs_users_user_catalog_item_memory_retrieve: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **org** | **str**|  | 
- **user_id** | **str**|  | 
-
-### Return type
-
-[**UserCatalogItemMemoryView**](UserCatalogItemMemoryView.md)
-
-### Authorization
-
-[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** |  |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **ai_prompt_orgs_users_user_catalog_item_memory_update**
-> UserCatalogItemMemoryView ai_prompt_orgs_users_user_catalog_item_memory_update(memory_id, org, user_id, user_catalog_item_memory_view)
-
-
-
-Endpoint for updating user catalog item memory.  Accessible to tenant admins and students.  Returns:      200: user catalog item memory object.      400: When data is not valid.  Example:      POST: /api/ai-prompt/orgs/main/users/johndoe/user-catalog-item-memory/1/      Request:        {                         \"id\": 1,                         \"student\": \"johndoes\",                         \"platform\": \"main\",                         \"catalog_item\": \"Loves programming\",                         \"lessons\": \"i learnt about x and y\",                         \"next_steps\": \"learning about z\"                     }      Response:       {                         \"id\": 1,                         \"student\": \"johndoes\",                         \"platform\": \"main\",                         \"catalog_item\": \"Loves programming\",                         \"lessons\": {                             \"gaming\": \"i learnt how to play chess\"                         },                         \"next_steps\": {                             \"gaming\": \"I want to learn how to play golf\",                             \"singing\": \"I want to learn how to sing pop music\"                         }                     }
-
-### Example
-
-* Api Key Authentication (PlatformApiKeyAuthentication):
-
-```python
-import iblai
-from iblai.models.user_catalog_item_memory_view import UserCatalogItemMemoryView
-from iblai.rest import ApiException
-from pprint import pprint
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
-# You can generate an authenticated client using the following helper method
-client = get_platform_api_client(
-    host="https://base.manager.iblai.app", 
-    key=os.environ["API_KEY"]
-)
-
-# Create an instance of the API class
-api_instance = iblai.AiPromptApi(api_client)
-memory_id = 56 # int | 
-org = 'org_example' # str | 
-user_id = 'user_id_example' # str | 
-user_catalog_item_memory_view = iblai.UserCatalogItemMemoryView() # UserCatalogItemMemoryView | 
-
-try:
-    api_response = api_instance.ai_prompt_orgs_users_user_catalog_item_memory_update(memory_id, org, user_id, user_catalog_item_memory_view)
-    print("The response of AiPromptApi->ai_prompt_orgs_users_user_catalog_item_memory_update:\n")
-    pprint(api_response)
-except Exception as e:
-    print("Exception when calling AiPromptApi->ai_prompt_orgs_users_user_catalog_item_memory_update: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **memory_id** | **int**|  | 
- **org** | **str**|  | 
- **user_id** | **str**|  | 
- **user_catalog_item_memory_view** | [**UserCatalogItemMemoryView**](UserCatalogItemMemoryView.md)|  | 
-
-### Return type
-
-[**UserCatalogItemMemoryView**](UserCatalogItemMemoryView.md)
 
 ### Authorization
 

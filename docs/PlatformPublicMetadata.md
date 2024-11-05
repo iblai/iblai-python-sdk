@@ -8,8 +8,6 @@ Name | Type | Description | Notes
 **platform_key** | **str** |  | [readonly] 
 **platform_name** | **str** |  | [readonly] 
 **metadata** | **object** | The public metadata | [optional] 
-**created_on** | **datetime** |  | [readonly] 
-**last_updated** | **datetime** |  | [readonly] 
 
 ## Example
 

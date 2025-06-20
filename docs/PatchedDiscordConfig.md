@@ -6,10 +6,10 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** |  | [optional] [readonly] 
-**user** | **int** | edX user ID | [optional] [readonly] 
-**discord_user_id** | **str** |  | [optional] 
-**date_created** | **datetime** |  | [optional] [readonly] 
-**last_modified** | **datetime** |  | [optional] [readonly] 
+**bot** | **int** |  | [optional] [readonly] 
+**client_id** | **str** |  | [optional] 
+**token** | **str** |  | [optional] 
+**client_secret** | **str** |  | [optional] 
 
 ## Example
 

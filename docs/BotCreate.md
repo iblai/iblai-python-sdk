@@ -7,13 +7,13 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** |  | [readonly] 
 **name** | **str** |  | 
-**client_id** | **str** |  | 
-**client_secret** | **str** |  | 
-**app_token** | **str** |  | 
-**verification_token** | **str** |  | 
-**provider** | [**ProviderBd1Enum**](ProviderBd1Enum.md) |  | 
-**config** | **object** |  | [optional] 
+**provider** | [**Provider05cEnum**](Provider05cEnum.md) |  | 
+**is_configured** | **bool** |  | [readonly] 
 **webhook_url** | **str** |  | [readonly] 
+**discord_config** | **int** |  | [readonly] 
+**webex_config** | **int** |  | [readonly] 
+**whatsapp_config** | **int** |  | [readonly] 
+**teams_config** | **int** |  | [readonly] 
 
 ## Example
 

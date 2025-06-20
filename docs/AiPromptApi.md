@@ -36,7 +36,9 @@ Method | HTTP request | Description
 [**ai_prompt_orgs_users_prompts_category_create**](AiPromptApi.md#ai_prompt_orgs_users_prompts_category_create) | **POST** /api/ai-prompt/orgs/{org}/users/{user_id}/prompts/category/ | 
 [**ai_prompt_orgs_users_prompts_category_destroy**](AiPromptApi.md#ai_prompt_orgs_users_prompts_category_destroy) | **DELETE** /api/ai-prompt/orgs/{org}/users/{user_id}/prompts/category/ | 
 [**ai_prompt_orgs_users_prompts_category_retrieve**](AiPromptApi.md#ai_prompt_orgs_users_prompts_category_retrieve) | **GET** /api/ai-prompt/orgs/{org}/users/{user_id}/prompts/category/ | 
-[**ai_prompt_orgs_users_sessions_guided_prompts_retrieve**](AiPromptApi.md#ai_prompt_orgs_users_sessions_guided_prompts_retrieve) | **GET** /api/ai-prompt/orgs/{org}/users/{user_id}/sessions/{session_id}/guided-prompts/ | 
+[**ai_prompt_orgs_users_prompts_public_list**](AiPromptApi.md#ai_prompt_orgs_users_prompts_public_list) | **GET** /api/ai-prompt/orgs/{org}/users/{user_id}/prompts/public/ | 
+[**ai_prompt_orgs_users_prompts_public_retrieve**](AiPromptApi.md#ai_prompt_orgs_users_prompts_public_retrieve) | **GET** /api/ai-prompt/orgs/{org}/users/{user_id}/prompts/public/{id}/ | 
+[**ai_prompt_orgs_users_sessions_guided_prompts_retrieve**](AiPromptApi.md#ai_prompt_orgs_users_sessions_guided_prompts_retrieve) | **GET** /api/ai-prompt/orgs/{org}/users/{user_id}/sessions/{session_id}/guided-prompts/ | Retrieve guided prompts for a chat session
 [**ai_prompt_orgs_users_styles_create**](AiPromptApi.md#ai_prompt_orgs_users_styles_create) | **POST** /api/ai-prompt/orgs/{org}/users/{user_id}/styles/ | 
 [**ai_prompt_orgs_users_styles_destroy**](AiPromptApi.md#ai_prompt_orgs_users_styles_destroy) | **DELETE** /api/ai-prompt/orgs/{org}/users/{user_id}/styles/{style_id}/ | 
 [**ai_prompt_orgs_users_styles_retrieve**](AiPromptApi.md#ai_prompt_orgs_users_styles_retrieve) | **GET** /api/ai-prompt/orgs/{org}/users/{user_id}/styles/ | 
@@ -56,7 +58,7 @@ Method | HTTP request | Description
 
 
 
-Endpoint for adding prompt metadata.  Accessible to tenant admins and students.  Returns:      200: Metadata Object.      404: When data is not valid.  Example:      POST: /api/ai-prompt/orgs/main/metadata/      Request:        {                         \"metadata\": {                             \"test\": \"test\"                         },                         \"prompt\": \"testing\"                     }      Response:       {                         \"metadata\": {                             \"test\": \"test\"                         },                         \"prompt\": \"testing\"                     }
+Create or update metadata for a prompt.  Args:     request: The HTTP request containing the metadata.     org: The organization/tenant identifier.  Returns:     Response: The created or updated prompt metadata.  Raises:     BadRequest: If the provided data is invalid.
 
 ### Example
 
@@ -83,7 +85,7 @@ client = get_platform_api_client(
 # Create an instance of the API class
 api_instance = iblai.AiPromptApi(api_client)
 org = 'org_example' # str | 
-metadata = iblai.Metadata() # Metadata | 
+metadata = {"metadata":{"category":"technical","difficulty":"intermediate","tags":["python","programming"]},"prompt_id":123} # Metadata | 
 
 try:
     api_response = api_instance.ai_prompt_orgs_metadata_create(org, metadata)
@@ -121,6 +123,7 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** |  |  -  |
+**400** | Invalid data |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -129,7 +132,7 @@ Name | Type | Description  | Notes
 
 
 
-Endpoint for Adding user all chat memory.  Accessible to tenant admins and students.  Returns:      201: user all chat memory Object.      400: When data is not valid.    Example:      POST: /api/ai-prompt/orgs/main/users/johndoe/all-chats-memory/      Request:        {                         \"username\": \"johndoes\",                         \"platform_key\": \"main\",                         \"content\": \"Loves programming\"                     }      Response:       {                         \"id\": 1,                         \"username\": \"johndoes\",                         \"platform_key\": \"main\",                         \"content\": \"Loves programming\"                     }
+Create a new chat memory entry for a user.  Args:     request: The HTTP request containing the chat memory data.     org: The organization/tenant identifier.     user_id: The ID of the user to create chat memory for.  Returns:     Response: The created chat memory entry.  Raises:     BadRequest: If the provided data is invalid.
 
 ### Example
 
@@ -157,7 +160,7 @@ client = get_platform_api_client(
 api_instance = iblai.AiPromptApi(api_client)
 org = 'org_example' # str | 
 user_id = 'user_id_example' # str | 
-user_all_chat_memory_view = iblai.UserAllChatMemoryView() # UserAllChatMemoryView | 
+user_all_chat_memory_view = {"username":"johndoe","platform_key":"main","content":"Previous conversation context about machine learning concepts.","session_id":"937d3d46-3048-4f9d-aa5c-ce7c51d85332"} # UserAllChatMemoryView | 
 
 try:
     api_response = api_instance.ai_prompt_orgs_users_all_chats_memory_create(org, user_id, user_all_chat_memory_view)
@@ -196,6 +199,7 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** |  |  -  |
+**400** | Invalid data |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -204,7 +208,7 @@ Name | Type | Description  | Notes
 
 
 
-Endpoint for clearing all user chat memories.  Accessible to tenant admins and students.  Returns:      204: No response data.      400: When data is not valid.  Example:      POST: /api/ai-prompt/orgs/main/users/johndoe/all-chats-memory/      Response:       No response Data
+Delete all chat memory for a specific user.  Args:     request: The HTTP request.     org: The organization/tenant identifier.     user_id: The ID of the user to delete chat memory for.  Returns:     Response: A success message if the memory was deleted.  Raises:     NotFound: If no chat memory exists for the user.
 
 ### Example
 
@@ -265,7 +269,8 @@ void (empty response body)
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**204** | No response body |  -  |
+**204** | Memory successfully deleted |  -  |
+**404** | Memory not found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -274,7 +279,7 @@ void (empty response body)
 
 
 
-Endpoint for deleting user chat memories..  Accessible to tenant admins and students.  Returns:      204: No response data.      400: When data is not valid.  Example:      POST: /api/ai-prompt/orgs/main/users/johndoe/all-chats-memory/1/      Response:       No response Data
+Delete a specific chat memory entry.  Args:     request: The HTTP request.     org: The organization/tenant identifier.     user_id: The ID of the user who owns the memory.     memory_id: The ID of the specific memory entry to delete.  Returns:     Response: A success message if the memory was deleted.  Raises:     NotFound: If the specified memory entry does not exist.
 
 ### Example
 
@@ -337,7 +342,8 @@ void (empty response body)
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**204** | No response body |  -  |
+**204** | Memory successfully deleted |  -  |
+**404** | Memory not found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -346,7 +352,7 @@ void (empty response body)
 
 
 
-Endpoint for getting user all chats memories.  Accessible to tenant admins and students.  Returns:      200: List of user all chats memories.  Example:      GET: /api/ai-prompt/orgs/main/users/johndoe/all-chats-memory/      Response:       [                         {                             \"id\": 1,                             \"username\": \"johndoes\",                             \"platform_key\": \"main\",                             \"content\": \"Loves programming\"                         }                     ]
+Retrieve chat memory for a specific user.  Args:     request: The HTTP request.     org: The organization/tenant identifier.     user_id: The ID of the user to retrieve chat memory for.  Returns:     Response: The user's chat memory entries.  Raises:     NotFound: If no chat memory exists for the user.
 
 ### Example
 
@@ -411,6 +417,7 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** |  |  -  |
+**404** | Memory not found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -419,7 +426,7 @@ Name | Type | Description  | Notes
 
 
 
-Endpoint for updating all user chat memories from previous chat histories.  Accessible to tenant admins and students.  Returns:      20o: task information object.  Example:      PUT: /api/ai-prompt/orgs/main/users/johndoe/all-chats-memory/      Response:       {                         \"task_id\": \"4194d20c-37d5-4148-882f-f7d2d91f7769\",                          \"message\": \"Your request to create memories from previous chat histories has been queued.\",                      }
+Update chat memory for a specific user.  Args:     request: The HTTP request containing the updated chat memory data.     org: The organization/tenant identifier.     user_id: The ID of the user to update chat memory for.  Returns:     Response: A confirmation of the scheduled update task.  Raises:     BadRequest: If the provided data is invalid.     NotFound: If no chat memory exists for the user.
 
 ### Example
 
@@ -487,6 +494,8 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** |  |  -  |
+**400** | Invalid data |  -  |
+**404** | Memory not found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -495,7 +504,7 @@ Name | Type | Description  | Notes
 
 
 
-Endpoint for updating user chat memories.  Accessible to tenant admins and students.  Returns:      200: user chat memory object.      400: When data is not valid.  Example:      POST: /api/ai-prompt/orgs/main/users/johndoe/all-chats-memory/1/      Request:        {                         \"username\": \"johndoes\",                         \"platform_key\": \"main\",                         \"content\": \"Loves programming\"                     }      Response:       {                         \"id\": 1,                         \"username\": \"johndoes\",                         \"platform_key\": \"main\",                         \"content\": \"Loves programming\"                     }
+Update a specific chat memory entry.  Args:     request: The HTTP request containing the updated chat memory data.     org: The organization/tenant identifier.     user_id: The ID of the user who owns the memory.     memory_id: The ID of the specific memory entry to update.  Returns:     Response: The updated chat memory entry.  Raises:     BadRequest: If the provided data is invalid.     NotFound: If the specified memory entry does not exist.
 
 ### Example
 
@@ -524,7 +533,7 @@ api_instance = iblai.AiPromptApi(api_client)
 memory_id = 56 # int | 
 org = 'org_example' # str | 
 user_id = 'user_id_example' # str | 
-user_all_chat_memory_view = iblai.UserAllChatMemoryView() # UserAllChatMemoryView | 
+user_all_chat_memory_view = {"username":"johndoe","platform_key":"main","content":"Updated conversation context about machine learning concepts.","session_id":"937d3d46-3048-4f9d-aa5c-ce7c51d85332"} # UserAllChatMemoryView | 
 
 try:
     api_response = api_instance.ai_prompt_orgs_users_all_chats_memory_update2(memory_id, org, user_id, user_all_chat_memory_view)
@@ -564,6 +573,8 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** |  |  -  |
+**400** | Invalid data |  -  |
+**404** | Memory not found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -572,7 +583,7 @@ Name | Type | Description  | Notes
 
 
 
-Endpoint for getting user chat memory status.  Accessible to tenant admins and students.  Returns:      200: Obbject of user chat memory status.  Example:      GET: /api/ai-prompt/orgs/main/users/johndoe/chat-memory-status/      Response:       {                         \"id\": 1,                         \"username\": \"johndoes\",                         \"platform_key\": \"main\",                         \"enabled\": false                     }
+Retrieve the chat memory status for a specific user.  Args:     request: The HTTP request.     org: The organization/tenant identifier.     user_id: The ID of the user to retrieve memory status for.  Returns:     Response: The user's chat memory status.  Raises:     NotFound: If no memory status exists for the user.
 
 ### Example
 
@@ -637,6 +648,7 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** |  |  -  |
+**404** | Memory status not found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -645,7 +657,7 @@ Name | Type | Description  | Notes
 
 
 
-Endpoint for updating user chat memory status.  Accessible to tenant admins and students.  Returns:      200: user chat memory status Object.      400: When data is not valid.    Example:      PUT: /api/ai-prompt/orgs/main/users/johndoe/chat-memory-status/      Request:        {                         \"enabled\": false                     }      Response:       {                         \"id\": 1,                         \"username\": \"johndoes\",                         \"platform_key\": \"main\",                         \"enabled\": false                     }
+Update the chat memory status for a specific user.  Args:     request: The HTTP request containing the updated status.     org: The organization/tenant identifier.     user_id: The ID of the user to update memory status for.  Returns:     Response: The updated chat memory status.  Raises:     BadRequest: If the provided data is invalid.
 
 ### Example
 
@@ -674,7 +686,7 @@ client = get_platform_api_client(
 api_instance = iblai.AiPromptApi(api_client)
 org = 'org_example' # str | 
 user_id = 'user_id_example' # str | 
-user_chat_memory_status_request_view = iblai.UserChatMemoryStatusRequestView() # UserChatMemoryStatusRequestView | 
+user_chat_memory_status_request_view = {"enabled":false} # UserChatMemoryStatusRequestView | 
 
 try:
     api_response = api_instance.ai_prompt_orgs_users_chat_memory_status_update(org, user_id, user_chat_memory_status_request_view)
@@ -713,6 +725,7 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** |  |  -  |
+**400** | Invalid data |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -721,7 +734,7 @@ Name | Type | Description  | Notes
 
 
 
-Endpoint for Adding prompt language.  Accessible to tenant admins only.  Returns:      201: Language Object.      400: When data is not valid.    Example:      POST: /api/ai-prompt/orgs/main/users/johndoe/languages/      Request:        Response:       {                         \"name\": \"English\",                         \"code\": \"en\"                     }      Response:       {                         \"id\": 1,                         \"name\": \"English\",                         \"code\": \"en\"                     }
+Create a new prompt language.  Args:     request: The HTTP request containing the language data.     org: The organization/tenant identifier.     user_id: The ID of the user creating the language.  Returns:     Response: The created prompt language.  Raises:     BadRequest: If the provided data is invalid.
 
 ### Example
 
@@ -749,7 +762,7 @@ client = get_platform_api_client(
 api_instance = iblai.AiPromptApi(api_client)
 org = 'org_example' # str | 
 user_id = 'user_id_example' # str | 
-languages_view = iblai.LanguagesView() # LanguagesView | 
+languages_view = {"name":"French","code":"fr"} # LanguagesView | 
 
 try:
     api_response = api_instance.ai_prompt_orgs_users_languages_create(org, user_id, languages_view)
@@ -788,6 +801,7 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** |  |  -  |
+**400** | Invalid data |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -796,7 +810,7 @@ Name | Type | Description  | Notes
 
 
 
-Endpoint for deleting prompt language.  Accessible to tenant admins and students.  Returns:      204: No response data.      400: When data is not valid.  Example:      POST: /api/ai-prompt/orgs/main/users/johndoe/languages/1/      Response:       No response Data
+Delete a specific prompt language.  Args:     request: The HTTP request.     org: The organization/tenant identifier.     user_id: The ID of the user making the request.     language_id: The ID of the language to delete.  Returns:     Response: A success message if the language was deleted.  Raises:     NotFound: If the specified language does not exist.
 
 ### Example
 
@@ -859,7 +873,8 @@ void (empty response body)
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**204** | No response body |  -  |
+**204** | Language successfully deleted |  -  |
+**404** | Language not found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -868,7 +883,7 @@ void (empty response body)
 
 
 
-Endpoint for getting prompt languages.  Accessible to tenant admins and students.  Returns:      200: List of languages.  Example:      GET: /api/ai-prompt/orgs/main/users/johndoe/languages/      Response:       [                         {                             \"id\": 1,                             \"name\": \"English\",                             \"code\": \"en\"                         }                     ]
+Retrieve all available prompt languages.  Args:     request: The HTTP request.     org: The organization/tenant identifier.     user_id: The ID of the user making the request.  Returns:     Response: A list of available prompt languages.
 
 ### Example
 
@@ -941,7 +956,7 @@ Name | Type | Description  | Notes
 
 
 
-Endpoint for Adding prompt language.  Accessible to tenant admins only.  Returns:      200: Language Object.      400: When data is not valid.  Example:      POST: /api/ai-prompt/orgs/main/users/johndoe/languages/1/      Request:        {                         \"name\": \"English\",                         \"code\": \"en\"                     }      Response:       {                         \"id\": 1,                         \"name\": \"English\",                         \"code\": \"en\"                     }
+Update a specific prompt language.  Args:     request: The HTTP request containing the updated language data.     org: The organization/tenant identifier.     user_id: The ID of the user making the request.     language_id: The ID of the language to update.  Returns:     Response: The updated prompt language.  Raises:     BadRequest: If the provided data is invalid.     NotFound: If the specified language does not exist.
 
 ### Example
 
@@ -970,7 +985,7 @@ api_instance = iblai.AiPromptApi(api_client)
 language_id = 56 # int | 
 org = 'org_example' # str | 
 user_id = 'user_id_example' # str | 
-languages_view = iblai.LanguagesView() # LanguagesView | 
+languages_view = {"name":"French (Updated)","code":"fr"} # LanguagesView | 
 
 try:
     api_response = api_instance.ai_prompt_orgs_users_languages_update(language_id, org, user_id, languages_view)
@@ -1010,6 +1025,8 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** |  |  -  |
+**400** | Invalid data |  -  |
+**404** | Language not found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1018,7 +1035,7 @@ Name | Type | Description  | Notes
 
 
 
-Endpoint to get user memory context.  Accessible to tenant admins and students only.  Returns:      200: list of user memory context data.   Example:      GET: /api/ai-prompt/orgs/main/users/johndoe/user-memory-context/       Response:       {                         \"username\": \"johndoe\",                         \"platform_key\": \"main\",                         \"extra_data\": null,                         \"use_reported_skills\": false,                         \"use_desired_skills\": false,                         \"use_credentials\": false,                         \"use_enrolled_courses\": false,                         \"use_time_spent\": false,                         \"use_completed_courses\": false,                         \"use_completed_programs\": false                     }
+Retrieve a user's memory context settings.
 
 ### Example
 
@@ -1091,7 +1108,7 @@ Name | Type | Description  | Notes
 
 
 
-Endpoint to update user memory context.  Accessible to tenant admins and students only.  Returns:      200: list of user memory context data.   Example:      PUT: /api/ai-mentor/orgs/main/users/johndoe/user-memory-context/     Request:       {                         \"extra_data\": \"Keep in mind that i also love football\",                         \"use_reported_skills\": false,                         \"use_desired_skills\": false,                         \"use_credentials\": false,                         \"use_enrolled_courses\": false,                         \"use_time_spent\": false,                         \"use_completed_courses\": false,                         \"use_completed_programs\": false                     }      Response:       {                         \"username\": \"johndoe\",                         \"platform_key\": \"main\",                         \"extra_data\": \"Keep in mind that i also love football\",                         \"use_reported_skills\": false,                         \"use_desired_skills\": false,                         \"use_credentials\": false,                         \"use_enrolled_courses\": false,                         \"use_time_spent\": false,                         \"use_completed_courses\": false,                         \"use_completed_programs\": false                     }
+Updates the user's memory context settings.  Returns:      200: list of user memory context data.
 
 ### Example
 
@@ -1120,7 +1137,7 @@ client = get_platform_api_client(
 api_instance = iblai.AiPromptApi(api_client)
 org = 'org_example' # str | 
 user_id = 'user_id_example' # str | 
-user_memory_context_request = iblai.UserMemoryContextRequest() # UserMemoryContextRequest |  (optional)
+user_memory_context_request = {"extra_data":"Keep in mind that i also love football","use_reported_skills":false,"use_desired_skills":false,"use_credentials":false,"use_enrolled_courses":false,"use_time_spent":false,"use_completed_courses":false,"use_completed_programs":false} # UserMemoryContextRequest |  (optional)
 
 try:
     api_response = api_instance.ai_prompt_orgs_users_memory_context_update(org, user_id, user_memory_context_request=user_memory_context_request)
@@ -1167,7 +1184,7 @@ Name | Type | Description  | Notes
 
 
 
-    Endpoint for Adding user catalog item memory.      Accessible to tenant admins and students.      Returns:          201: user catalog item  memory Object.          400: When data is not valid.        Example:          POST: /api/ai-prompt/orgs/main/users/johndoe/memory/          Request:        {                             \"id\": 1,                             \"student\": \"johndoes\",                             \"platform\": \"main\",                             \"catalog_item\": \"Loves programming\",                             \"lessons\": {                                 \"gaming\": \"i learnt how to play chess\"                             },                             \"next_steps\": {                                 \"gaming\": \"I want to learn how to play golf\",                                 \"singing\": \"I want to learn how to sing pop music\"                             }                         }          Response:       {                             \"id\": 1,                             \"student\": \"johndoes\",                             \"platform\": \"main\",                             \"catalog_item\": \"Loves programming\",                             \"lessons\": {     \"gaming\": \"i learnt how to play chess\" }, \"next_steps\": {     \"gaming\": \"I want to learn how to play golf\",     \"singing\": \"I want to learn how to sing pop music\" }                         }
+Create a new catalog item memory entry for a user.  Args:     request: The HTTP request containing the catalog item memory data.     org: The organization/tenant identifier.     user_id: The ID of the user to create catalog item memory for.  Returns:     Response: The created catalog item memory entry.  Raises:     BadRequest: If the provided data is invalid.
 
 ### Example
 
@@ -1195,7 +1212,7 @@ client = get_platform_api_client(
 api_instance = iblai.AiPromptApi(api_client)
 org = 'org_example' # str | 
 user_id = 'user_id_example' # str | 
-user_catalog_item_memory_view = iblai.UserCatalogItemMemoryView() # UserCatalogItemMemoryView | 
+user_catalog_item_memory_view = {"student":"johndoe","platform":"main","catalog_item":"course-v1:edX+DemoX+Demo_Course","lessons":{"completed":["lesson1","lesson2"],"in_progress":["lesson3"]},"next_steps":{"recommended":["lesson4","lesson5"]}} # UserCatalogItemMemoryView | 
 
 try:
     api_response = api_instance.ai_prompt_orgs_users_memory_create(org, user_id, user_catalog_item_memory_view)
@@ -1234,6 +1251,7 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** |  |  -  |
+**400** | Invalid data |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1242,7 +1260,7 @@ Name | Type | Description  | Notes
 
 
 
-Endpoint for clearing user catalog item memories.  Accessible to tenant admins and students.  Returns:      204: No response data.      400: When data is not valid.  Example:      POST: /api/ai-prompt/orgs/main/users/johndoe/memory/      Response:       No response Data
+Delete all catalog item memory for a specific user.  Args:     request: The HTTP request.     org: The organization/tenant identifier.     user_id: The ID of the user to delete catalog item memory for.  Returns:     Response: A success message if the memory was deleted.  Raises:     NotFound: If no catalog item memory exists for the user.
 
 ### Example
 
@@ -1303,7 +1321,8 @@ void (empty response body)
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**204** | No response body |  -  |
+**204** | Memory successfully deleted |  -  |
+**404** | Memory not found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1312,7 +1331,7 @@ void (empty response body)
 
 
 
-Endpoint for deleting user catalog item memory  Accessible to tenant admins and students.  Returns:      204: No response data.      400: When data is not valid.  Example:      POST: /api/ai-prompt/orgs/main/users/johndoe/memory/1/      Response:       No response Data
+Delete a specific catalog item memory entry.  Args:     request: The HTTP request.     org: The organization/tenant identifier.     user_id: The ID of the user who owns the memory.     memory_id: The ID of the specific memory entry to delete.  Returns:     Response: A success message if the memory was deleted.  Raises:     NotFound: If the specified memory entry does not exist.
 
 ### Example
 
@@ -1375,7 +1394,8 @@ void (empty response body)
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**204** | No response body |  -  |
+**204** | Memory successfully deleted |  -  |
+**404** | Memory not found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1384,7 +1404,7 @@ void (empty response body)
 
 
 
-Endpoint for getting user catalog item memories.  Accessible to tenant admins and students.  Returns:      200: List of user catalog item memories.  Example:      GET: /api/ai-prompt/orgs/main/users/johndoe/memory/      Response:    [                     {                         \"id\": 1,                         \"student\": \"johndoes\",                         \"platform\": \"main\",                         \"catalog_item\": \"Loves programming\",                         \"lessons\": {                             \"gaming\": \"i learnt how to play chess\"                         },                         \"next_steps\": {                             \"gaming\": \"I want to learn how to play golf\",                             \"singing\": \"I want to learn how to sing pop music\"                         },                      }                  ]
+Retrieve catalog item memory for a specific user.  Args:     request: The HTTP request.     org: The organization/tenant identifier.     user_id: The ID of the user to retrieve catalog item memory for.  Returns:     Response: The user's catalog item memory entries.  Raises:     NotFound: If no catalog item memory exists for the user.
 
 ### Example
 
@@ -1449,6 +1469,7 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** |  |  -  |
+**404** | Memory not found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1457,7 +1478,7 @@ Name | Type | Description  | Notes
 
 
 
-Endpoint for getting memory status.  Accessible to tenant admins and students.  Returns:      200: Obbject of memory status.  Example:      GET: /api/ai-prompt/orgs/main/users/johndoe/memory-status/      Response:       {                         \"id\": 1,                         \"username\": \"johndoes\",                         \"platform_key\": \"main\",                         \"enabled\": false                     }
+Retrieve the memory status for a specific user.  Args:     request: The HTTP request.     org: The organization/tenant identifier.     user_id: The ID of the user to retrieve memory status for.  Returns:     Response: The user's memory status.  Raises:     NotFound: If no memory status exists for the user.
 
 ### Example
 
@@ -1522,6 +1543,7 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** |  |  -  |
+**404** | Memory status not found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1530,7 +1552,7 @@ Name | Type | Description  | Notes
 
 
 
-Endpoint for updating user memory status.  Accessible to tenant admins and students.  Returns:      200: user chat memory status Object.      400: When data is not valid.    Example:      PUT: /api/ai-prompt/orgs/main/users/johndoe/memory-status/      Request:        {                         \"enabled\": false                     }      Response:       {                         \"id\": 1,                         \"username\": \"johndoes\",                         \"platform_key\": \"main\",                         \"enabled\": false                     }
+Update the memory status for a specific user.  Args:     request: The HTTP request containing the updated status.     org: The organization/tenant identifier.     user_id: The ID of the user to update memory status for.  Returns:     Response: The updated memory status.  Raises:     BadRequest: If the provided data is invalid.
 
 ### Example
 
@@ -1559,7 +1581,7 @@ client = get_platform_api_client(
 api_instance = iblai.AiPromptApi(api_client)
 org = 'org_example' # str | 
 user_id = 'user_id_example' # str | 
-memory_status_request_view = iblai.MemoryStatusRequestView() # MemoryStatusRequestView | 
+memory_status_request_view = {"enabled":false} # MemoryStatusRequestView | 
 
 try:
     api_response = api_instance.ai_prompt_orgs_users_memory_status_update(org, user_id, memory_status_request_view)
@@ -1598,6 +1620,7 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** |  |  -  |
+**400** | Invalid data |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1606,7 +1629,7 @@ Name | Type | Description  | Notes
 
 
 
-Endpoint for updating user catalog item memory.  Accessible to tenant admins and students.  Returns:      200: user catalog item memory object.      400: When data is not valid.  Example:      POST: /api/ai-prompt/orgs/main/users/johndoe/memory/1/      Request:        {                         \"id\": 1,                         \"student\": \"johndoes\",                         \"platform\": \"main\",                         \"catalog_item\": \"Loves programming\",                         \"lessons\": \"i learnt about x and y\",                         \"next_steps\": \"learning about z\"                     }      Response:       {                         \"id\": 1,                         \"student\": \"johndoes\",                         \"platform\": \"main\",                         \"catalog_item\": \"Loves programming\",                         \"lessons\": {                             \"gaming\": \"i learnt how to play chess\"                         },                         \"next_steps\": {                             \"gaming\": \"I want to learn how to play golf\",                             \"singing\": \"I want to learn how to sing pop music\"                         }                     }
+Update a specific catalog item memory entry.  Args:     request: The HTTP request containing the updated catalog item memory data.     org: The organization/tenant identifier.     user_id: The ID of the user who owns the memory.     memory_id: The ID of the specific memory entry to update.  Returns:     Response: The updated catalog item memory entry.  Raises:     BadRequest: If the provided data is invalid.     NotFound: If the specified memory entry does not exist.
 
 ### Example
 
@@ -1635,7 +1658,7 @@ api_instance = iblai.AiPromptApi(api_client)
 memory_id = 56 # int | 
 org = 'org_example' # str | 
 user_id = 'user_id_example' # str | 
-user_catalog_item_memory_view = iblai.UserCatalogItemMemoryView() # UserCatalogItemMemoryView | 
+user_catalog_item_memory_view = {"student":"johndoe","platform":"main","catalog_item":"course-v1:edX+DemoX+Demo_Course","lessons":{"completed":["lesson1","lesson2","lesson3"],"in_progress":["lesson4"]},"next_steps":{"recommended":["lesson5","lesson6"]}} # UserCatalogItemMemoryView | 
 
 try:
     api_response = api_instance.ai_prompt_orgs_users_memory_update(memory_id, org, user_id, user_catalog_item_memory_view)
@@ -1675,6 +1698,8 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** |  |  -  |
+**400** | Invalid data |  -  |
+**404** | Memory not found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1683,7 +1708,7 @@ Name | Type | Description  | Notes
 
 
 
-Endpoint for getting prompt metadata.  Accessible to tenant admins and students.  Returns:      200: Metadata Object.  Example:      GET: /api/ai-prompt/orgs/main/users/johndoe/metadata/      Response:       {                         \"metadata\": {                             \"test\": \"test\"                         },                         \"prompt\": \"testing\"                     }
+Retrieve metadata for a prompt.  Args:     request: The HTTP request.     org: The organization/tenant identifier.     user_id: The ID of the user making the request.  Returns:     Response: The prompt metadata.  Raises:     NotFound: If no metadata exists for the specific prompt
 
 ### Example
 
@@ -1748,6 +1773,7 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** |  |  -  |
+**404** | Metadata not found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1756,7 +1782,7 @@ Name | Type | Description  | Notes
 
 
 
-View to create/retrieve/update a prompt.  Accessible to both tenant admins and students.
+Create a new prompt.  Args:     request: HTTP request containing prompt data.  Returns:     Response with created prompt details.  Raises:     ValidationError: If the input data is invalid.
 
 ### Example
 
@@ -1784,7 +1810,7 @@ client = get_platform_api_client(
 api_instance = iblai.AiPromptApi(api_client)
 org = 'org_example' # str | 
 user_id = 'user_id_example' # str | 
-prompt = iblai.Prompt() # Prompt | 
+prompt = {"text":"What are the benefits of exercise?","category":"health","tags":[1,2],"mentor":3,"prompt_visibility":"viewable_by_anyone"} # Prompt | 
 category = 56 # int | Category of the prompt (optional)
 created_by = 'created_by_example' # str | Option to filter by username of the prompt creators. (optional)
 filter_by = 'filter_by_example' # str | Filter options include, date, prompt, default is date (optional)
@@ -1843,7 +1869,7 @@ Name | Type | Description  | Notes
 
 
 
-View to create/retrieve/update a prompt.  Accessible to both tenant admins and students.
+API viewset for managing prompts.  This view allows tenant admins and students to create, retrieve, update, and filter prompts based on various parameters.  Permissions:     - Accessible to both tenant administrators and students
 
 ### Example
 
@@ -1927,7 +1953,7 @@ void (empty response body)
 
 
 
-View to create/retrieve/update a prompt.  Accessible to both tenant admins and students.
+API viewset for managing prompts.  This view allows tenant admins and students to create, retrieve, update, and filter prompts based on various parameters.  Permissions:     - Accessible to both tenant administrators and students
 
 ### Example
 
@@ -2012,7 +2038,7 @@ Name | Type | Description  | Notes
 
 
 
-View to create/retrieve/update a prompt.  Accessible to both tenant admins and students.
+API viewset for managing prompts.  This view allows tenant admins and students to create, retrieve, update, and filter prompts based on various parameters.  Permissions:     - Accessible to both tenant administrators and students
 
 ### Example
 
@@ -2102,7 +2128,7 @@ Name | Type | Description  | Notes
 
 
 
-View to create/retrieve/update a prompt.  Accessible to both tenant admins and students.
+API viewset for managing prompts.  This view allows tenant admins and students to create, retrieve, update, and filter prompts based on various parameters.  Permissions:     - Accessible to both tenant administrators and students
 
 ### Example
 
@@ -2189,7 +2215,7 @@ Name | Type | Description  | Notes
 
 
 
-View to create/retrieve/update a prompt.  Accessible to both tenant admins and students.
+Update an existing prompt.  Args:     request: HTTP request containing updated prompt data.  Returns:     Response with updated prompt details.  Raises:     ValidationError: If the input data is invalid.     PermissionDenied: If the prompt is system-generated and cannot be edited.
 
 ### Example
 
@@ -2218,7 +2244,7 @@ api_instance = iblai.AiPromptApi(api_client)
 id = 56 # int | A unique integer value identifying this prompt.
 org = 'org_example' # str | 
 user_id = 'user_id_example' # str | 
-prompt = iblai.Prompt() # Prompt | 
+prompt = {"text":"Updated prompt text","category":"updated_category","tags":[3,4],"mentor":1,"prompt_visibility":"viewable_by_admins"} # Prompt | 
 category = 56 # int | Category of the prompt (optional)
 created_by = 'created_by_example' # str | Option to filter by username of the prompt creators. (optional)
 filter_by = 'filter_by_example' # str | Filter options include, date, prompt, default is date (optional)
@@ -2278,7 +2304,7 @@ Name | Type | Description  | Notes
 
 
 
-This is for adding prompt categories  Accessible to tenant admins only.  Returns:      200 : Prompt category detail.   Example :      POST : /api/ai-prompt/orgs/main/users/johndoe/prompts/category      Request:        {                         \"name\": \"Education\",                         \"description\": \"education testing\"                     }      Response:       {                         \"id\": 1,                         \"name\": \"Education\",                         \"description\": \"education testing\"                     }
+Create a new prompt category.  Args:     request: The HTTP request containing category information.     org: Organization key identifier.     user_id: User performing the request.  Returns:     - 201: Created prompt category.     - 401: If the user is not a tenant admin.     - 400: If request data is invalid.
 
 ### Example
 
@@ -2344,7 +2370,7 @@ Name | Type | Description  | Notes
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** |  |  -  |
+**201** | Created prompt category |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -2353,7 +2379,7 @@ Name | Type | Description  | Notes
 
 
 
-This is for deleting prompt category  Accessible to tenant admins only.  Returns:      204 : No Content.      400 : When data is invalid.      400 : When data is invalid.  Example :      DELETE : /api/ai-prompt/orgs/main/users/johndoe/prompts/category      Request:        {                         \"category\": \"Education\"                     }      Response:       No response body.
+Delete a prompt category.  Args:     request: The HTTP request containing the category to delete.     org: Organization key identifier.     user_id: User performing the request.  Returns:     - 204: No Content (successful deletion).     - 401: If the user is not a tenant admin.     - 400: If request data is invalid.     - 404: If the category does not exist.
 
 ### Example
 
@@ -2414,7 +2440,9 @@ void (empty response body)
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**204** | No response body |  -  |
+**204** | Prompt category deleted successfully. |  -  |
+**400** | Invalid request data. |  -  |
+**404** | Prompt category not found. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -2423,7 +2451,7 @@ void (empty response body)
 
 
 
-This is for getting prompt categories  Accessible to tenant admins and students.  Returns:      200 : List of prompt categories.  Example :      GET : /api/ai-prompt/orgs/main/users/johndoe/prompts/category      Response:       [                         {                             \"id\": 1,                             \"name\": \"Education\",                             \"description\": \"education testing\"                         }                     ]
+Retrieve a list of prompt categories.  Query Parameters:     - filter_by (optional): Sorts categories by name if set to \"name\".  Args:     request: The HTTP request.     org: Organization key identifier.  Returns:     - 200: List of prompt categories.     - 400: If query parameters are invalid.
 
 ### Example
 
@@ -2493,16 +2521,163 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **ai_prompt_orgs_users_sessions_guided_prompts_retrieve**
-> GuidedPromptsResponse ai_prompt_orgs_users_sessions_guided_prompts_retrieve(org, session_id, user_id)
+# **ai_prompt_orgs_users_prompts_public_list**
+> List[Prompt] ai_prompt_orgs_users_prompts_public_list(org, user_id, category=category, created_by=created_by, filter_by=filter_by, mentor_unique_id=mentor_unique_id, tag=tag, visibility=visibility)
 
 
 
-This is for getting guided prompts for a chat session session.  Accessible to tenant admins and students.  Returns:      200 : Object of list of guided prompts.      500 : When ai response can not be loaded to json.      404: When OpenAI key for tenant is not set.      429: When OpenAI requests have exceeded the rate limit.  Example :      GET : /api/ai-prompt/orgs/main/users/johndoe/sessions/4194d20c-37d5-4148-882f-f7d2d91f7769/guided-prompts/      Response:       {                         \"ai_prompts\": [                             \"What are the benefits of regular exercise?\",                             \"How can I create a healthy meal plan?\",                             \"What are some effective stress management techniques?\"                         ]                     }
+API viewset for managing prompts.  This view allows anyone to retrieve, and filter prompts based on various parameters.  Permissions:     - Accessible to anyone
 
 ### Example
 
-* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.prompt import Prompt
+from iblai.rest import ApiException
+from pprint import pprint
+
+
+# Create an instance of the API class
+api_instance = iblai.AiPromptApi(api_client)
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+category = 56 # int | Category of the prompt (optional)
+created_by = 'created_by_example' # str | Option to filter by username of the prompt creators. (optional)
+filter_by = 'filter_by_example' # str | Filter options include, date, prompt, default is date (optional)
+mentor_unique_id = 'mentor_unique_id_example' # str | Mentor unique id of the prompt (optional)
+tag = 56 # int | Tag of the prompt (optional)
+visibility = 'visibility_example' # str | Visibility trype the mentor of the prompt (optional)
+
+try:
+    api_response = api_instance.ai_prompt_orgs_users_prompts_public_list(org, user_id, category=category, created_by=created_by, filter_by=filter_by, mentor_unique_id=mentor_unique_id, tag=tag, visibility=visibility)
+    print("The response of AiPromptApi->ai_prompt_orgs_users_prompts_public_list:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiPromptApi->ai_prompt_orgs_users_prompts_public_list: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+ **category** | **int**| Category of the prompt | [optional] 
+ **created_by** | **str**| Option to filter by username of the prompt creators. | [optional] 
+ **filter_by** | **str**| Filter options include, date, prompt, default is date | [optional] 
+ **mentor_unique_id** | **str**| Mentor unique id of the prompt | [optional] 
+ **tag** | **int**| Tag of the prompt | [optional] 
+ **visibility** | **str**| Visibility trype the mentor of the prompt | [optional] 
+
+### Return type
+
+[**List[Prompt]**](Prompt.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ai_prompt_orgs_users_prompts_public_retrieve**
+> Prompt ai_prompt_orgs_users_prompts_public_retrieve(id, org, user_id, category=category, created_by=created_by, filter_by=filter_by, mentor_unique_id=mentor_unique_id, tag=tag, visibility=visibility)
+
+
+
+API viewset for managing prompts.  This view allows anyone to retrieve, and filter prompts based on various parameters.  Permissions:     - Accessible to anyone
+
+### Example
+
+
+```python
+import iblai
+from iblai.models.prompt import Prompt
+from iblai.rest import ApiException
+from pprint import pprint
+
+
+# Create an instance of the API class
+api_instance = iblai.AiPromptApi(api_client)
+id = 56 # int | A unique integer value identifying this prompt.
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+category = 56 # int | Category of the prompt (optional)
+created_by = 'created_by_example' # str | Option to filter by username of the prompt creators. (optional)
+filter_by = 'filter_by_example' # str | Filter options include, date, prompt, default is date (optional)
+mentor_unique_id = 'mentor_unique_id_example' # str | Mentor unique id of the prompt (optional)
+tag = 56 # int | Tag of the prompt (optional)
+visibility = 'visibility_example' # str | Visibility trype the mentor of the prompt (optional)
+
+try:
+    api_response = api_instance.ai_prompt_orgs_users_prompts_public_retrieve(id, org, user_id, category=category, created_by=created_by, filter_by=filter_by, mentor_unique_id=mentor_unique_id, tag=tag, visibility=visibility)
+    print("The response of AiPromptApi->ai_prompt_orgs_users_prompts_public_retrieve:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiPromptApi->ai_prompt_orgs_users_prompts_public_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| A unique integer value identifying this prompt. | 
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+ **category** | **int**| Category of the prompt | [optional] 
+ **created_by** | **str**| Option to filter by username of the prompt creators. | [optional] 
+ **filter_by** | **str**| Filter options include, date, prompt, default is date | [optional] 
+ **mentor_unique_id** | **str**| Mentor unique id of the prompt | [optional] 
+ **tag** | **int**| Tag of the prompt | [optional] 
+ **visibility** | **str**| Visibility trype the mentor of the prompt | [optional] 
+
+### Return type
+
+[**Prompt**](Prompt.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ai_prompt_orgs_users_sessions_guided_prompts_retrieve**
+> GuidedPromptsResponse ai_prompt_orgs_users_sessions_guided_prompts_retrieve(org, session_id, user_id)
+
+Retrieve guided prompts for a chat session
+
+Fetches AI-generated guided prompts for a given session and organization.
+
+### Example
+
 
 ```python
 import iblai
@@ -2510,17 +2685,6 @@ from iblai.models.guided_prompts_response import GuidedPromptsResponse
 from iblai.rest import ApiException
 from pprint import pprint
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
-# You can generate an authenticated client using the following helper method
-client = get_platform_api_client(
-    host="https://base.manager.iblai.app", 
-    key=os.environ["API_KEY"]
-)
 
 # Create an instance of the API class
 api_instance = iblai.AiPromptApi(api_client)
@@ -2529,6 +2693,7 @@ session_id = 'session_id_example' # str |
 user_id = 'user_id_example' # str | 
 
 try:
+    # Retrieve guided prompts for a chat session
     api_response = api_instance.ai_prompt_orgs_users_sessions_guided_prompts_retrieve(org, session_id, user_id)
     print("The response of AiPromptApi->ai_prompt_orgs_users_sessions_guided_prompts_retrieve:\n")
     pprint(api_response)
@@ -2553,7 +2718,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+No authorization required
 
 ### HTTP request headers
 
@@ -2565,6 +2730,9 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** |  |  -  |
+**404** |  |  -  |
+**429** |  |  -  |
+**500** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -2573,7 +2741,7 @@ Name | Type | Description  | Notes
 
 
 
-Endpoint for Adding prompt style.  Accessible to tenant admins only.  Returns:      201: style Object.      400: When data is not valid.    Example:      POST: /api/ai-prompt/orgs/main/users/johndoe/styles/      Request:        Response:       {                         \"description\": \"Sympathetic\"                     }      Response:       {                         \"id\": 1,                         \"description\": \"Sympathetic\"                     }
+Endpoint for Adding prompt style.  Accessible to tenant admins only.  Returns:      201: style Object.      400: When data is not valid.
 
 ### Example
 
@@ -2601,7 +2769,7 @@ client = get_platform_api_client(
 api_instance = iblai.AiPromptApi(api_client)
 org = 'org_example' # str | 
 user_id = 'user_id_example' # str | 
-styles_view = iblai.StylesView() # StylesView | 
+styles_view = {"description":"Sympathetic"} # StylesView | 
 
 try:
     api_response = api_instance.ai_prompt_orgs_users_styles_create(org, user_id, styles_view)
@@ -2648,7 +2816,7 @@ Name | Type | Description  | Notes
 
 
 
-Endpoint for deleting prompt style.  Accessible to tenant admins and students.  Returns:      204: No response data.      400: When data is not valid.  Example:      POST: /api/ai-prompt/orgs/main/users/johndoe/styles/1/      Response:       No response Data
+Endpoint for deleting prompt style.  Accessible to tenant admins and students.  Returns:      204: No response data.      400: When data is not valid.
 
 ### Example
 
@@ -2720,7 +2888,7 @@ void (empty response body)
 
 
 
-Endpoint for getting prompt styles.  Accessible to tenant admins and students.  Returns:      200: List of styles.  Example:      GET: /api/ai-prompt/orgs/main/users/johndoe/styles/      Response:       [                         {                             \"id\": 1,                             \"description\": \"Sympathetic\"                         }                     ]
+Endpoint for getting prompt styles.  Accessible to tenant admins and students.  Returns:      200: List of styles.
 
 ### Example
 
@@ -2793,7 +2961,7 @@ Name | Type | Description  | Notes
 
 
 
-Endpoint for Adding prompt style.  Accessible to tenant admins only.  Returns:      200: style Object.      400: When data is not valid.  Example:      POST: /api/ai-prompt/orgs/main/users/johndoe/styles/1/      Request:        {                         \"description\": \"Sympathetic\"                     }      Response:       {                         \"id\": 1,                         \"description\": \"Sympathetic\"                     }
+Endpoint for Adding prompt style.  Accessible to tenant admins only.  Returns:      200: style Object.      400: When data is not valid.
 
 ### Example
 
@@ -2822,7 +2990,7 @@ api_instance = iblai.AiPromptApi(api_client)
 org = 'org_example' # str | 
 style_id = 56 # int | 
 user_id = 'user_id_example' # str | 
-styles_view = iblai.StylesView() # StylesView | 
+styles_view = {"description":"Sympathetic"} # StylesView | 
 
 try:
     api_response = api_instance.ai_prompt_orgs_users_styles_update(org, style_id, user_id, styles_view)
@@ -2898,7 +3066,7 @@ client = get_platform_api_client(
 api_instance = iblai.AiPromptApi(api_client)
 org = 'org_example' # str | 
 user_id = 'user_id_example' # str | 
-tags_view = iblai.TagsView() # TagsView | 
+tags_view = {"name":"Programming","description":"tags for programing prompts"} # TagsView | 
 
 try:
     api_response = api_instance.ai_prompt_orgs_users_tags_create(org, user_id, tags_view)
@@ -2945,7 +3113,7 @@ Name | Type | Description  | Notes
 
 
 
-Endpoint for deleting prompt tag.  Accessible to tenant admins and students.  Returns:      204: No response data.      400: When data is not valid.  Example:      POST: /api/ai-prompt/orgs/main/users/johndoe/tags/1/      Response:       No response Data
+Endpoint for deleting prompt tag.  Accessible to tenant admins and students.  Returns:      204: No response data.      400: When data is not valid.
 
 ### Example
 
@@ -3017,7 +3185,7 @@ void (empty response body)
 
 
 
-Endpoint for getting prompt tags.  Accessible to tenant admins and students.  Returns:      200: List of tags.  Example:      GET: /api/ai-prompt/orgs/main/users/johndoe/tags/      Response:       [                         {                             \"id\": 1,                             \"name\": \"Programming\",                             \"description\": \"tags for programing prompts\"                         }                     ]
+Endpoint for getting prompt tags.  Accessible to tenant admins and students.  Returns:      200: List of tags.
 
 ### Example
 
@@ -3090,7 +3258,7 @@ Name | Type | Description  | Notes
 
 
 
-Endpoint for updating prompt tag.  Accessible to tenant admins and students.  Returns:      200: tag Object.      400: When data is not valid.  Example:      POST: /api/ai-prompt/orgs/main/users/johndoe/tags/1/      Request:        {                         \"name\": \"Programming\",                         \"description\": \"tags for programing prompts\"                     }      Response:       {                         \"id\": 1,                         \"name\": \"Programming\",                         \"description\": \"tags for programing prompts\"                     }
+Endpoint for updating prompt tag.  Accessible to tenant admins and students.  Returns:      200: tag Object.      400: When data is not valid.
 
 ### Example
 
@@ -3119,7 +3287,7 @@ api_instance = iblai.AiPromptApi(api_client)
 org = 'org_example' # str | 
 tag_id = 56 # int | 
 user_id = 'user_id_example' # str | 
-tags_view = iblai.TagsView() # TagsView | 
+tags_view = {"name":"Programming","description":"tags for programing prompts"} # TagsView | 
 
 try:
     api_response = api_instance.ai_prompt_orgs_users_tags_update(org, tag_id, user_id, tags_view)
@@ -3167,7 +3335,7 @@ Name | Type | Description  | Notes
 
 
 
-Endpoint for Adding prompt tone.  Accessible to tenant admins only.  Returns:      201: tone Object.      400: When data is not valid.    Example:      POST: /api/ai-prompt/orgs/main/users/johndoe/tones/      Request:        Response:       {                         \"description\": \"Sympathetic\"                     }      Response:       {                         \"id\": 1,                         \"description\": \"Sympathetic\"                     }
+Endpoint for Adding prompt tone.  Accessible to tenant admins only.  Returns:      201: tone Object.      400: When data is not valid.
 
 ### Example
 
@@ -3195,7 +3363,7 @@ client = get_platform_api_client(
 api_instance = iblai.AiPromptApi(api_client)
 org = 'org_example' # str | 
 user_id = 'user_id_example' # str | 
-tones_view = iblai.TonesView() # TonesView |  (optional)
+tones_view = {"description":"Sympathetic"} # TonesView |  (optional)
 
 try:
     api_response = api_instance.ai_prompt_orgs_users_tones_create(org, user_id, tones_view=tones_view)
@@ -3242,7 +3410,7 @@ Name | Type | Description  | Notes
 
 
 
-Endpoint for deleting prompt tone.  Accessible to tenant admins and students.  Returns:      204: No response data.      400: When data is not valid.  Example:      POST: /api/ai-prompt/orgs/main/users/johndoe/tone/1/      Response:       No response Data
+Endpoint for deleting prompt tone.  Accessible to tenant admins and students.  Returns:      204: No response data.      400: When data is not valid.
 
 ### Example
 
@@ -3314,7 +3482,7 @@ void (empty response body)
 
 
 
-Endpoint for getting prompt tones.  Accessible to tenant admins and students.  Returns:      200: List of tones.  Example:      GET: /api/ai-prompt/orgs/main/users/johndoe/tones/      Response:       [                         {                             \"id\": 1,                             \"description\": \"Sympathetic\"                         }                     ]
+Endpoint for getting prompt tones.  Accessible to tenant admins and students.  Returns:      200: List of tones.
 
 ### Example
 
@@ -3387,7 +3555,7 @@ Name | Type | Description  | Notes
 
 
 
-Endpoint for updating prompt tone.  Accessible to tenant admins only.  Returns:      200: tone Object.      400: When data is not valid.  Example:      POST: /api/ai-prompt/orgs/main/users/johndoe/tones/1/      Request:        {                         \"description\": \"Sympathetic\"                     }      Response:       {                         \"id\": 1,                         \"description\": \"Sympathetic\"                     }
+Endpoint for updating prompt tone.  Accessible to tenant admins only.  Returns:      200: tone Object.      400: When data is not valid.
 
 ### Example
 
@@ -3416,7 +3584,7 @@ api_instance = iblai.AiPromptApi(api_client)
 org = 'org_example' # str | 
 tone_id = 56 # int | 
 user_id = 'user_id_example' # str | 
-tones_view = iblai.TonesView() # TonesView |  (optional)
+tones_view = {"description":"Sympathetic"} # TonesView |  (optional)
 
 try:
     api_response = api_instance.ai_prompt_orgs_users_tones_update(org, tone_id, user_id, tones_view=tones_view)

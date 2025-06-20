@@ -6,17 +6,19 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**ai_index_orgs_users_documents_destroy**](AiIndexApi.md#ai_index_orgs_users_documents_destroy) | **DELETE** /api/ai-index/orgs/{org}/users/{user_id}/documents/{document_id}/ | 
 [**ai_index_orgs_users_documents_graph_train_create**](AiIndexApi.md#ai_index_orgs_users_documents_graph_train_create) | **POST** /api/ai-index/orgs/{org}/users/{user_id}/documents/graph-train/ | 
-[**ai_index_orgs_users_documents_pathways_retrieve**](AiIndexApi.md#ai_index_orgs_users_documents_pathways_retrieve) | **GET** /api/ai-index/orgs/{org}/users/{user_id}/documents/pathways/{pathway}/ | 
+[**ai_index_orgs_users_documents_pathways_list**](AiIndexApi.md#ai_index_orgs_users_documents_pathways_list) | **GET** /api/ai-index/orgs/{org}/users/{user_id}/documents/pathways/{pathway}/ | 
 [**ai_index_orgs_users_documents_retrieve**](AiIndexApi.md#ai_index_orgs_users_documents_retrieve) | **GET** /api/ai-index/orgs/{org}/users/{user_id}/documents/{document_id}/ | 
 [**ai_index_orgs_users_documents_search_create**](AiIndexApi.md#ai_index_orgs_users_documents_search_create) | **POST** /api/ai-index/orgs/{org}/users/{user_id}/documents/search/ | 
+[**ai_index_orgs_users_documents_settings_create**](AiIndexApi.md#ai_index_orgs_users_documents_settings_create) | **POST** /api/ai-index/orgs/{org}/users/{user_id}/documents/{document_id}/settings/ | 
+[**ai_index_orgs_users_documents_settings_retrieve**](AiIndexApi.md#ai_index_orgs_users_documents_settings_retrieve) | **GET** /api/ai-index/orgs/{org}/users/{user_id}/documents/{document_id}/settings/ | 
 [**ai_index_orgs_users_documents_sources_create**](AiIndexApi.md#ai_index_orgs_users_documents_sources_create) | **POST** /api/ai-index/orgs/{org}/users/{user_id}/documents/sources/ | 
 [**ai_index_orgs_users_documents_tasks_retrieve**](AiIndexApi.md#ai_index_orgs_users_documents_tasks_retrieve) | **GET** /api/ai-index/orgs/{org}/users/{user_id}/documents/tasks/{task_id}/ | 
 [**ai_index_orgs_users_documents_train_create**](AiIndexApi.md#ai_index_orgs_users_documents_train_create) | **POST** /api/ai-index/orgs/{org}/users/{user_id}/documents/train/ | 
 [**ai_index_orgs_users_documents_train_retriever_create**](AiIndexApi.md#ai_index_orgs_users_documents_train_retriever_create) | **POST** /api/ai-index/orgs/{org}/users/{user_id}/documents/train/retriever/ | 
 [**ai_index_orgs_users_documents_train_sessions_create**](AiIndexApi.md#ai_index_orgs_users_documents_train_sessions_create) | **POST** /api/ai-index/orgs/{org}/users/{user_id}/documents/train/sessions/{session_id}/ | 
 [**ai_index_orgs_users_documents_update**](AiIndexApi.md#ai_index_orgs_users_documents_update) | **PUT** /api/ai-index/orgs/{org}/users/{user_id}/documents/{document_id}/ | 
-[**ai_index_orgs_users_resource_data_scrapped_retrieve**](AiIndexApi.md#ai_index_orgs_users_resource_data_scrapped_retrieve) | **GET** /api/ai-index/orgs/{org}/users/{user_id}/resource/data/scrapped/ | 
-[**ai_index_orgs_users_resource_data_scrapped_retrieve2**](AiIndexApi.md#ai_index_orgs_users_resource_data_scrapped_retrieve2) | **GET** /api/ai-index/orgs/{org}/users/{user_id}/resource/{resource_id}/data/scrapped/ | 
+[**ai_index_orgs_users_resource_data_scrapped_list**](AiIndexApi.md#ai_index_orgs_users_resource_data_scrapped_list) | **GET** /api/ai-index/orgs/{org}/users/{user_id}/resource/data/scrapped/ | 
+[**ai_index_orgs_users_resource_data_scrapped_retrieve**](AiIndexApi.md#ai_index_orgs_users_resource_data_scrapped_retrieve) | **GET** /api/ai-index/orgs/{org}/users/{user_id}/resource/{resource_id}/data/scrapped/ | 
 [**ai_index_webhook_scan_create**](AiIndexApi.md#ai_index_webhook_scan_create) | **POST** /api/ai-index/webhook/scan/ | 
 
 
@@ -25,7 +27,7 @@ Method | HTTP request | Description
 
 
 
-This is for deleting resource document details for a tenant.  Accessible to tenant admins only.  Returns:      404 : When document not found.      204 : No Content.  Example :      DELETE : /api/ai-index/orgs/main/users/johndoe/documents/1/ .      Response:
+Delete a specific document embedding.  This endpoint removes a document embedding from the system, including untraining it from any associated pathways.  Args:     request: The HTTP request.     org: Organization key identifier.     document_id: The ID of the document embedding to delete.  Returns:     Response: An empty response with a 204 status code if successful.  Raises:     NotFound: If the specified document embedding does not exist.
 
 ### Example
 
@@ -88,16 +90,17 @@ void (empty response body)
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**204** | No response body |  -  |
+**204** | Document successfully deleted |  -  |
+**404** | Document not found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **ai_index_orgs_users_documents_graph_train_create**
-> TrainDocumentViewResponse ai_index_orgs_users_documents_graph_train_create(org, user_id, train_document_view_request)
+> TrainDocumentViewResponse ai_index_orgs_users_documents_graph_train_create(org, user_id, pathway, type, url=url, text=text, translate=translate, file=file, access=access, branch=branch, google_drive_auth_data=google_drive_auth_data, dropbox_auth_data=dropbox_auth_data)
 
 
 
-This is for training graph - based documents through the worker. Accessible to tenant admins only.
+Train a graph-based document through a worker process.  This endpoint queues graph-based documents for training through a specialized worker process that handles knowledge graph processing.  Args:     request: The HTTP request containing the document information.     org: Organization key identifier.  Returns:     Response: A confirmation that the document was queued for training,              including a task ID for tracking the progress.  Raises:     ValidationError: If the request data is invalid.     BadRequest: If there was an error processing the document.
 
 ### Example
 
@@ -105,7 +108,6 @@ This is for training graph - based documents through the worker. Accessible to t
 
 ```python
 import iblai
-from iblai.models.train_document_view_request import TrainDocumentViewRequest
 from iblai.models.train_document_view_response import TrainDocumentViewResponse
 from iblai.rest import ApiException
 from pprint import pprint
@@ -126,10 +128,19 @@ client = get_platform_api_client(
 api_instance = iblai.AiIndexApi(api_client)
 org = 'org_example' # str | 
 user_id = 'user_id_example' # str | 
-train_document_view_request = iblai.TrainDocumentViewRequest() # TrainDocumentViewRequest | 
+pathway = 'pathway_example' # str | Pathway for document to be trained in
+type = 'type_example' # str | Type of document e.g file
+url = 'url_example' # str | Url of the document to be trained (optional)
+text = 'text_example' # str | Search text for wikipedia (optional)
+translate = False # bool | If file should be translated (optional) (default to False)
+file = None # bytearray | File to be trained (optional)
+access = 'private' # str | Accessibilityto the file (optional) (default to 'private')
+branch = 'branch_example' # str | Branch of the repository (optional)
+google_drive_auth_data = None # object | Authentication and scoped details of google drive (optional)
+dropbox_auth_data = None # object | Authentication and scoped details of dropbox (optional)
 
 try:
-    api_response = api_instance.ai_index_orgs_users_documents_graph_train_create(org, user_id, train_document_view_request)
+    api_response = api_instance.ai_index_orgs_users_documents_graph_train_create(org, user_id, pathway, type, url=url, text=text, translate=translate, file=file, access=access, branch=branch, google_drive_auth_data=google_drive_auth_data, dropbox_auth_data=dropbox_auth_data)
     print("The response of AiIndexApi->ai_index_orgs_users_documents_graph_train_create:\n")
     pprint(api_response)
 except Exception as e:
@@ -145,7 +156,16 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **org** | **str**|  | 
  **user_id** | **str**|  | 
- **train_document_view_request** | [**TrainDocumentViewRequest**](TrainDocumentViewRequest.md)|  | 
+ **pathway** | **str**| Pathway for document to be trained in | 
+ **type** | **str**| Type of document e.g file | 
+ **url** | **str**| Url of the document to be trained | [optional] 
+ **text** | **str**| Search text for wikipedia | [optional] 
+ **translate** | **bool**| If file should be translated | [optional] [default to False]
+ **file** | **bytearray**| File to be trained | [optional] 
+ **access** | **str**| Accessibilityto the file | [optional] [default to &#39;private&#39;]
+ **branch** | **str**| Branch of the repository | [optional] 
+ **google_drive_auth_data** | [**object**](object.md)| Authentication and scoped details of google drive | [optional] 
+ **dropbox_auth_data** | [**object**](object.md)| Authentication and scoped details of dropbox | [optional] 
 
 ### Return type
 
@@ -157,7 +177,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: multipart/form-data, application/x-www-form-urlencoded, application/json
  - **Accept**: application/json
 
 ### HTTP response details
@@ -165,15 +185,16 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** |  |  -  |
+**400** | Invalid request data or document processing error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **ai_index_orgs_users_documents_pathways_retrieve**
-> RetrieverDocumentEmbedding ai_index_orgs_users_documents_pathways_retrieve(org, pathway, user_id)
+# **ai_index_orgs_users_documents_pathways_list**
+> PaginatedRetrieverDocumentEmbeddingList ai_index_orgs_users_documents_pathways_list(org, pathway, user_id, limit=limit, offset=offset, search=search)
 
 
 
-This is for getting a list of resource documents for a tenant and pathway.  Accessible to tenant admins only.  Returns:      200 : List of resource documents .  Example :      GET : /api/ai-index/orgs/main/users/johndoe/documents/pathways/test-pathway/      Response:       [{                         \"id\": 1,                         \"document_name\": \"CareerClustersPathways_0\",                         \"document_type\": \"pdf\",                         \"pathway\": \"test-pathway\",                         \"url\": \"https://careertech.org/wp-content/uploads/sites/default/files/CareerClustersPathways_0.pdf\",                         \"tokens\": 46578,                         \"platform_key\": \"main\",                         \"is_trained\": true                     }]
+Description: Retrieves a list of document embeddings for a specific pathway with optional search and pagination.  Methods: - GET: Retrieves document embeddings that match the specified search criteria and are paginated according to offset and limit.  Parameters: - search (str): Search query to filter document names or URLs. - offset (int): Offset number for pagination. - limit (int): Limit number for pagination.  Returns: - GET: A paginated list of document embeddings with their details. {     \"count\": 10,     \"next\": \"http://api.example.com/retriever_documents/?offset=10&limit=2\",     \"previous\": \"http://api.example.com/retriever_documents/?offset=0&limit=2\",     \"results\": [     {         \"document_name\": \"Document2\",         \"platform_key\": \"example_platform\",         \"pathway\": \"example_pathway\"     }     ] }  Error Responses: - 400 Bad Request: Invalid query parameters. - 404 Not Found: No document embeddings found for the specified criteria.
 
 ### Example
 
@@ -181,7 +202,7 @@ This is for getting a list of resource documents for a tenant and pathway.  Acce
 
 ```python
 import iblai
-from iblai.models.retriever_document_embedding import RetrieverDocumentEmbedding
+from iblai.models.paginated_retriever_document_embedding_list import PaginatedRetrieverDocumentEmbeddingList
 from iblai.rest import ApiException
 from pprint import pprint
 
@@ -202,13 +223,16 @@ api_instance = iblai.AiIndexApi(api_client)
 org = 'org_example' # str | 
 pathway = 'pathway_example' # str | 
 user_id = 'user_id_example' # str | 
+limit = 56 # int | limit number (optional)
+offset = 56 # int | Offset number (optional)
+search = 'search_example' # str | Search query (optional)
 
 try:
-    api_response = api_instance.ai_index_orgs_users_documents_pathways_retrieve(org, pathway, user_id)
-    print("The response of AiIndexApi->ai_index_orgs_users_documents_pathways_retrieve:\n")
+    api_response = api_instance.ai_index_orgs_users_documents_pathways_list(org, pathway, user_id, limit=limit, offset=offset, search=search)
+    print("The response of AiIndexApi->ai_index_orgs_users_documents_pathways_list:\n")
     pprint(api_response)
 except Exception as e:
-    print("Exception when calling AiIndexApi->ai_index_orgs_users_documents_pathways_retrieve: %s\n" % e)
+    print("Exception when calling AiIndexApi->ai_index_orgs_users_documents_pathways_list: %s\n" % e)
 ```
 
 
@@ -221,10 +245,13 @@ Name | Type | Description  | Notes
  **org** | **str**|  | 
  **pathway** | **str**|  | 
  **user_id** | **str**|  | 
+ **limit** | **int**| limit number | [optional] 
+ **offset** | **int**| Offset number | [optional] 
+ **search** | **str**| Search query | [optional] 
 
 ### Return type
 
-[**RetrieverDocumentEmbedding**](RetrieverDocumentEmbedding.md)
+[**PaginatedRetrieverDocumentEmbeddingList**](PaginatedRetrieverDocumentEmbeddingList.md)
 
 ### Authorization
 
@@ -248,7 +275,7 @@ Name | Type | Description  | Notes
 
 
 
-This is for getting resource document details for a tenant.  Accessible to tenant admins only.  Returns:      404 : When document not found.      200 : Resource document details.  Example :      GET : /api/ai-index/orgs/main/users/johndoe/documents/1/ .      Response:       {                         \"id\": 1,                         \"document_name\": \"CareerClustersPathways_0\",                         \"document_type\": \"pdf\",                         \"pathway\": \"test-pathway\",                         \"url\": \"https://careertech.org/wp-content/uploads/sites/default/files/CareerClustersPathways_0.pdf\",                         \"tokens\": 9223372036854776000,                         \"platform_key\": \"main\",                         \"is_trained\": true                     }
+Retrieve details of a specific document embedding.  This endpoint returns detailed information about a specific document embedding identified by its ID.  Args:     request: The HTTP request.     org: Organization key identifier.     document_id: The ID of the document embedding to retrieve.  Returns:     Response: Detailed information about the document embedding.  Raises:     NotFound: If the specified document embedding does not exist.
 
 ### Example
 
@@ -315,6 +342,7 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** |  |  -  |
+**404** | Document not found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -323,7 +351,7 @@ Name | Type | Description  | Notes
 
 
 
-This is for getting data from resource documents that are similar to the query.  Accessible to tenant admins and students.  Returns:      400 : When request data is not valid.      200 : Object of list of similar data to the query.  Example :      POST : /api/ai-index/orgs/main/users/johndoe/documents/search/.      Request:        {                         \"query\": \"Computational thinking\",                         \"pathway\": \"test-pathway\"                      }      Response:       {                         \"results\": [                             {                                 \"page_content\": \"computational thinking can go from a thought exercise to \"                             },                          ]                     }
+Retrieve resource documents similar to the given query.  This endpoint performs a semantic search to find documents that are relevant to the provided query within the specified pathway.  Args:     request: The HTTP request containing the search query.     org: Organization key identifier.  Returns:     Response: A list of documents relevant to the search query.  Raises:     ValidationError: If the request data is invalid.
 
 ### Example
 
@@ -352,7 +380,7 @@ client = get_platform_api_client(
 api_instance = iblai.AiIndexApi(api_client)
 org = 'org_example' # str | 
 user_id = 'user_id_example' # str | 
-retriever_request_search = iblai.RetrieverRequestSearch() # RetrieverRequestSearch | 
+retriever_request_search = {"query":"Computational thinking","pathway":"test-pathway"} # RetrieverRequestSearch | 
 
 try:
     api_response = api_instance.ai_index_orgs_users_documents_search_create(org, user_id, retriever_request_search)
@@ -391,15 +419,168 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** |  |  -  |
+**400** | Invalid request data |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ai_index_orgs_users_documents_settings_create**
+> DocumentSettingsResponse ai_index_orgs_users_documents_settings_create(document_id, org, user_id, document_settings_response=document_settings_response)
+
+
+
+Mixin that includes the StudentTokenAuthentication and IsPlatformAdmin
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.document_settings_response import DocumentSettingsResponse
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+
+# Create an instance of the API class
+api_instance = iblai.AiIndexApi(api_client)
+document_id = 'document_id_example' # str | 
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+document_settings_response = iblai.DocumentSettingsResponse() # DocumentSettingsResponse |  (optional)
+
+try:
+    api_response = api_instance.ai_index_orgs_users_documents_settings_create(document_id, org, user_id, document_settings_response=document_settings_response)
+    print("The response of AiIndexApi->ai_index_orgs_users_documents_settings_create:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiIndexApi->ai_index_orgs_users_documents_settings_create: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **document_id** | **str**|  | 
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+ **document_settings_response** | [**DocumentSettingsResponse**](DocumentSettingsResponse.md)|  | [optional] 
+
+### Return type
+
+[**DocumentSettingsResponse**](DocumentSettingsResponse.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ai_index_orgs_users_documents_settings_retrieve**
+> DocumentSettingsResponse ai_index_orgs_users_documents_settings_retrieve(document_id, org, user_id)
+
+
+
+Mixin that includes the StudentTokenAuthentication and IsPlatformAdmin
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.document_settings_response import DocumentSettingsResponse
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+
+# Create an instance of the API class
+api_instance = iblai.AiIndexApi(api_client)
+document_id = 'document_id_example' # str | 
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+
+try:
+    api_response = api_instance.ai_index_orgs_users_documents_settings_retrieve(document_id, org, user_id)
+    print("The response of AiIndexApi->ai_index_orgs_users_documents_settings_retrieve:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiIndexApi->ai_index_orgs_users_documents_settings_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **document_id** | **str**|  | 
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+
+### Return type
+
+[**DocumentSettingsResponse**](DocumentSettingsResponse.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **ai_index_orgs_users_documents_sources_create**
-> RetrieverRequestSearchDocument ai_index_orgs_users_documents_sources_create(org, user_id, retriever_request_search)
+> List[RetrieverRequestSearchDocument] ai_index_orgs_users_documents_sources_create(org, user_id, retriever_request_search)
 
 
 
-This is for getting  resource documents urls whose data is similar to the query.  Accessible to tenant admins only.  Returns:      400 : When request data is not valid.      200 : List of document urls whose data is similar to the query.  Example :      POST : /api/ai-index/orgs/main/users/johndoe/documents/sources/.      Request:        {                         \"query\": \"Computational thinking\",                         \"pathway\": \"test-pathway\"                      }      Response:       [                         {                             \"source\": \"https://xxxxxx.com/media/private/mentor-documents/1.1%20Introduction.pdf\",                             \"confidence_level\": 90.38                         }                     ]
+Retrieve document sources related to a given query.  This endpoint performs a semantic search to find document sources that are relevant to the provided query within the specified pathway, and returns them along with confidence levels.  Args:     request: The HTTP request containing the search query.     org: Organization key identifier.  Returns:     Response: A list of document sources with confidence levels.  Raises:     ValidationError: If the request data is invalid.
 
 ### Example
 
@@ -428,7 +609,7 @@ client = get_platform_api_client(
 api_instance = iblai.AiIndexApi(api_client)
 org = 'org_example' # str | 
 user_id = 'user_id_example' # str | 
-retriever_request_search = iblai.RetrieverRequestSearch() # RetrieverRequestSearch | 
+retriever_request_search = {"query":"Computational thinking","pathway":"test-pathway"} # RetrieverRequestSearch | 
 
 try:
     api_response = api_instance.ai_index_orgs_users_documents_sources_create(org, user_id, retriever_request_search)
@@ -451,7 +632,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**RetrieverRequestSearchDocument**](RetrieverRequestSearchDocument.md)
+[**List[RetrieverRequestSearchDocument]**](RetrieverRequestSearchDocument.md)
 
 ### Authorization
 
@@ -467,6 +648,7 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** |  |  -  |
+**400** | Invalid request data |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -475,7 +657,7 @@ Name | Type | Description  | Notes
 
 
 
-This is for checking the document training status.  Accessible to tenant admins only.  Returns:      200 : Document training status.  Example :      GET : /api/ai-index/orgs/main/users/johndoe/documents/pathways/tasks/4194d20c-37d5-4148-882f-f7d2d91f7769/      Response:       {                         \"status\": \"pending\",                         \"message\": \"Training document pending\"                     }
+Check the status of a document training task.  This endpoint retrieves the current status of an asynchronous document training task that was previously initiated.  Args:     request: The HTTP request.     org: Organization key identifier.     task_id: The ID of the training task to check.  Returns:     Response: The current status of the document training task,              which can be \"pending\", \"completed\", or \"failed\".
 
 ### Example
 
@@ -546,11 +728,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **ai_index_orgs_users_documents_train_create**
-> TrainDocumentViewResponse ai_index_orgs_users_documents_train_create(org, user_id, train_document_view_request)
+> TrainDocumentViewResponse ai_index_orgs_users_documents_train_create(org, user_id, pathway, type, url=url, text=text, translate=translate, file=file, access=access, branch=branch, google_drive_auth_data=google_drive_auth_data, dropbox_auth_data=dropbox_auth_data)
 
 
 
-This is for training  documents through the worker, used for larger documents.  Accessible to tenant admins only.  Returns:      400 : When request data is not valid.      200 : Training details.   Example :      POST : /api/ai-index/orgs/main/users/johndoe/documents/train/.      Request:        {                         \"pathway\": \"test-pathway\",                         \"url\": \"https://xxxxxx.com/media/private/mentor-documents/1.1%20Introduction.pdf\",                         \"type\": \"url\",                         \"access\": \"public\"                      }      Response:       {                         \"task_id\": \"4194d20c-37d5-4148-882f-f7d2d91f7769\",                         \"message\": \"Document received, Your request to train is queued\",                         \"tokens\": 877                     }
+Train a document through a worker process.  This endpoint queues larger documents for training through a worker process, which is more suitable for handling documents that would take too long to process directly.  Args:     request: The HTTP request containing the document information.     org: Organization key identifier.  Returns:     Response: A confirmation that the document was queued for training,              including a task ID for tracking the progress.  Raises:     ValidationError: If the request data is invalid.     BadRequest: If there was an error processing the document.
 
 ### Example
 
@@ -558,7 +740,6 @@ This is for training  documents through the worker, used for larger documents.  
 
 ```python
 import iblai
-from iblai.models.train_document_view_request import TrainDocumentViewRequest
 from iblai.models.train_document_view_response import TrainDocumentViewResponse
 from iblai.rest import ApiException
 from pprint import pprint
@@ -579,10 +760,19 @@ client = get_platform_api_client(
 api_instance = iblai.AiIndexApi(api_client)
 org = 'org_example' # str | 
 user_id = 'user_id_example' # str | 
-train_document_view_request = iblai.TrainDocumentViewRequest() # TrainDocumentViewRequest | 
+pathway = 'pathway_example' # str | Pathway for document to be trained in
+type = 'type_example' # str | Type of document e.g file
+url = 'url_example' # str | Url of the document to be trained (optional)
+text = 'text_example' # str | Search text for wikipedia (optional)
+translate = False # bool | If file should be translated (optional) (default to False)
+file = None # bytearray | File to be trained (optional)
+access = 'private' # str | Accessibilityto the file (optional) (default to 'private')
+branch = 'branch_example' # str | Branch of the repository (optional)
+google_drive_auth_data = None # object | Authentication and scoped details of google drive (optional)
+dropbox_auth_data = None # object | Authentication and scoped details of dropbox (optional)
 
 try:
-    api_response = api_instance.ai_index_orgs_users_documents_train_create(org, user_id, train_document_view_request)
+    api_response = api_instance.ai_index_orgs_users_documents_train_create(org, user_id, pathway, type, url=url, text=text, translate=translate, file=file, access=access, branch=branch, google_drive_auth_data=google_drive_auth_data, dropbox_auth_data=dropbox_auth_data)
     print("The response of AiIndexApi->ai_index_orgs_users_documents_train_create:\n")
     pprint(api_response)
 except Exception as e:
@@ -598,7 +788,16 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **org** | **str**|  | 
  **user_id** | **str**|  | 
- **train_document_view_request** | [**TrainDocumentViewRequest**](TrainDocumentViewRequest.md)|  | 
+ **pathway** | **str**| Pathway for document to be trained in | 
+ **type** | **str**| Type of document e.g file | 
+ **url** | **str**| Url of the document to be trained | [optional] 
+ **text** | **str**| Search text for wikipedia | [optional] 
+ **translate** | **bool**| If file should be translated | [optional] [default to False]
+ **file** | **bytearray**| File to be trained | [optional] 
+ **access** | **str**| Accessibilityto the file | [optional] [default to &#39;private&#39;]
+ **branch** | **str**| Branch of the repository | [optional] 
+ **google_drive_auth_data** | [**object**](object.md)| Authentication and scoped details of google drive | [optional] 
+ **dropbox_auth_data** | [**object**](object.md)| Authentication and scoped details of dropbox | [optional] 
 
 ### Return type
 
@@ -610,7 +809,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: multipart/form-data, application/x-www-form-urlencoded, application/json
  - **Accept**: application/json
 
 ### HTTP response details
@@ -618,15 +817,16 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** |  |  -  |
+**400** | Invalid request data |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **ai_index_orgs_users_documents_train_retriever_create**
-> RetreiverTrainViewResponse ai_index_orgs_users_documents_train_retriever_create(org, user_id, retreiver_train_view_request)
+> RetreiverTrainViewResponse ai_index_orgs_users_documents_train_retriever_create(org, user_id, pathway, url)
 
 
 
-This is for training  documents directly i.e not through the worker. Use this when training smaller documents.  Accessible to tenant admins only.  Returns:      400 : When request data is not valid.      400 : When document training failed.      200 : When document is already trained.      200 : When document is trained successfully.   Example :      POST : /api/ai-index/orgs/main/users/johndoe/documents/train/retriever/.      Request:        {                         \"pathway\": \"test-pathway\",                         \"url\": \"https://xxxxxx.com/media/private/mentor-documents/1.1%20Introduction.pdf\"                      }      Response:       {                         \"detail\": \"Document trained successfully\"                     }
+Train a document directly without using a worker.  This endpoint is designed for training smaller documents directly without queuing them through a worker process. For larger documents, use the TrainDocumentView endpoint instead.  Args:     request: The HTTP request containing the document information.     org: Organization key identifier.  Returns:     Response: A confirmation that the document was trained successfully.  Raises:     ValidationError: If the request data is invalid.     BadRequest: If the document training failed.
 
 ### Example
 
@@ -634,7 +834,6 @@ This is for training  documents directly i.e not through the worker. Use this wh
 
 ```python
 import iblai
-from iblai.models.retreiver_train_view_request import RetreiverTrainViewRequest
 from iblai.models.retreiver_train_view_response import RetreiverTrainViewResponse
 from iblai.rest import ApiException
 from pprint import pprint
@@ -655,10 +854,11 @@ client = get_platform_api_client(
 api_instance = iblai.AiIndexApi(api_client)
 org = 'org_example' # str | 
 user_id = 'user_id_example' # str | 
-retreiver_train_view_request = iblai.RetreiverTrainViewRequest() # RetreiverTrainViewRequest | 
+pathway = 'pathway_example' # str | Pathway for document to be trained in
+url = 'url_example' # str | Url of the document to be trained
 
 try:
-    api_response = api_instance.ai_index_orgs_users_documents_train_retriever_create(org, user_id, retreiver_train_view_request)
+    api_response = api_instance.ai_index_orgs_users_documents_train_retriever_create(org, user_id, pathway, url)
     print("The response of AiIndexApi->ai_index_orgs_users_documents_train_retriever_create:\n")
     pprint(api_response)
 except Exception as e:
@@ -674,7 +874,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **org** | **str**|  | 
  **user_id** | **str**|  | 
- **retreiver_train_view_request** | [**RetreiverTrainViewRequest**](RetreiverTrainViewRequest.md)|  | 
+ **pathway** | **str**| Pathway for document to be trained in | 
+ **url** | **str**| Url of the document to be trained | 
 
 ### Return type
 
@@ -686,7 +887,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: multipart/form-data, application/x-www-form-urlencoded, application/json
  - **Accept**: application/json
 
 ### HTTP response details
@@ -694,15 +895,16 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** |  |  -  |
+**400** | Invalid request data or training failed |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **ai_index_orgs_users_documents_train_sessions_create**
-> TrainChatSessionDocumentView ai_index_orgs_users_documents_train_sessions_create(org, session_id, user_id, train_chat_session_document_view_request)
+> TrainChatSessionDocumentView ai_index_orgs_users_documents_train_sessions_create(org, session_id, user_id, file)
 
 
 
-This is for training  chat documents.  Accessible to tenant admins and students.  Returns:      400 : When request data is not valid.      200 : Training details.   Example :      POST : /api/ai-index/orgs/main/users/johndoe/documents/train/sessions/0843d0f4-a7b7-4608-a791-4545dcf9db2a/.      Request:        {                         \"file\": binary                     }      Response:       {                         \"message\": \"Document trained successfully\",                         \"tokens\": 877                     }
+Description: Submit a document file  in a chat session. Checks file type, size, and ensures the session exists, then processes the file. Process  document for use in a specific chat session. which will be processed and made available for the AI to reference when responding to queries in that session.  Methods: - POST: Submits a document or media file for training within a specified chat session.  Parameters: - org (str): - session_id (str): UUID of the chat session for which the document is being submitted. - *args, **kwargs: Additional arguments. - file (file): Multipart file input.  Returns: - POST: Returns a JSON message with the result of the upload process. Response code 200 on success. {     \"message\": \"File processed.\" }  Error Responses: - 400 Bad Request: - \"File field is required\" if the 'file' parameter is missing. - \"invalid file object\" if the file object is not valid. - Specific error message if an exception occurs while saving to Redis. - 404 Not Found: - \"Session not found\" if the provided session_id does not match any existing session. - 413 Request Entity Too Large: - \"file is too large\" including specific limits for document and media files if the file exceeds size limits.  Access Control: Requires authentication with a Bearer token in the Authorization header. The user associated with the session must exist and be authorized for the request.
 
 ### Example
 
@@ -711,7 +913,6 @@ This is for training  chat documents.  Accessible to tenant admins and students.
 ```python
 import iblai
 from iblai.models.train_chat_session_document_view import TrainChatSessionDocumentView
-from iblai.models.train_chat_session_document_view_request import TrainChatSessionDocumentViewRequest
 from iblai.rest import ApiException
 from pprint import pprint
 
@@ -732,10 +933,10 @@ api_instance = iblai.AiIndexApi(api_client)
 org = 'org_example' # str | 
 session_id = 'session_id_example' # str | 
 user_id = 'user_id_example' # str | 
-train_chat_session_document_view_request = iblai.TrainChatSessionDocumentViewRequest() # TrainChatSessionDocumentViewRequest | 
+file = None # bytearray | File to be trained
 
 try:
-    api_response = api_instance.ai_index_orgs_users_documents_train_sessions_create(org, session_id, user_id, train_chat_session_document_view_request)
+    api_response = api_instance.ai_index_orgs_users_documents_train_sessions_create(org, session_id, user_id, file)
     print("The response of AiIndexApi->ai_index_orgs_users_documents_train_sessions_create:\n")
     pprint(api_response)
 except Exception as e:
@@ -752,7 +953,7 @@ Name | Type | Description  | Notes
  **org** | **str**|  | 
  **session_id** | **str**|  | 
  **user_id** | **str**|  | 
- **train_chat_session_document_view_request** | [**TrainChatSessionDocumentViewRequest**](TrainChatSessionDocumentViewRequest.md)|  | 
+ **file** | **bytearray**| File to be trained | 
 
 ### Return type
 
@@ -764,7 +965,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: multipart/form-data, application/x-www-form-urlencoded, application/json
  - **Accept**: application/json
 
 ### HTTP response details
@@ -772,15 +973,17 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** |  |  -  |
+**400** | Invalid file or processing error |  -  |
+**413** | File too large |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **ai_index_orgs_users_documents_update**
-> RetrieverDocumentEmbedding ai_index_orgs_users_documents_update(document_id, org, user_id, retriever_document_embedding_request)
+> RetrieverDocumentEmbedding ai_index_orgs_users_documents_update(document_id, org, user_id, pathway, document_name=document_name, document_type=document_type, url=url, train=train, access=access)
 
 
 
-This is for updating resource document details for a tenant.  Accessible to tenant admins only.  Returns:      404 : When document not found.      200 : Resource document details.  Example :      PUT : /api/ai-index/orgs/main/users/johndoe/documents/1/.      Request:        {                         \"document_name\": \"Sample\",                         \"document_type\": \"pdf\",                         \"pathway\": \"test-pathway\",                         \"url\": \"https://careertech.org/wp-content/uploads/sites/default/files/CareerClustersPathways_0.pdf\",                         \"platform_key\": \"main\",                         \"train\": true                     }      Response:       {                         \"id\": 1,                         \"document_name\": \"Sample\",                         \"document_type\": \"pdf\",                         \"pathway\": \"test-pathway\",                         \"url\": \"https://careertech.org/wp-content/uploads/sites/default/files/CareerClustersPathways_0.pdf\",                         \"tokens\": 9223372036854776000,                         \"platform_key\": \"main\",                         \"is_trained\": true                     }
+Update a specific document embedding.  This endpoint allows updating various properties of a document embedding, including its name, type, pathway, and training status.  Args:     request: The HTTP request containing the updated document data.     org: Organization key identifier.     document_id: The ID of the document embedding to update.  Returns:     Response: The updated document embedding information.  Raises:     BadRequest: If the provided data is invalid.     NotFound: If the specified document embedding does not exist.
 
 ### Example
 
@@ -789,7 +992,6 @@ This is for updating resource document details for a tenant.  Accessible to tena
 ```python
 import iblai
 from iblai.models.retriever_document_embedding import RetrieverDocumentEmbedding
-from iblai.models.retriever_document_embedding_request import RetrieverDocumentEmbeddingRequest
 from iblai.rest import ApiException
 from pprint import pprint
 
@@ -810,10 +1012,15 @@ api_instance = iblai.AiIndexApi(api_client)
 document_id = 'document_id_example' # str | 
 org = 'org_example' # str | 
 user_id = 'user_id_example' # str | 
-retriever_document_embedding_request = iblai.RetrieverDocumentEmbeddingRequest() # RetrieverDocumentEmbeddingRequest | 
+pathway = 'pathway_example' # str | The pathway to retrain the document in
+document_name = 'document_name_example' # str | The name of the document (optional)
+document_type = 'document_type_example' # str | The type of the document (optional)
+url = 'url_example' # str | The url of the document (optional)
+train = True # bool | The type of the document (optional)
+access = iblai.AccessEnum() # AccessEnum | The access of the document.  * `public` - Public * `private` - Private (optional)
 
 try:
-    api_response = api_instance.ai_index_orgs_users_documents_update(document_id, org, user_id, retriever_document_embedding_request)
+    api_response = api_instance.ai_index_orgs_users_documents_update(document_id, org, user_id, pathway, document_name=document_name, document_type=document_type, url=url, train=train, access=access)
     print("The response of AiIndexApi->ai_index_orgs_users_documents_update:\n")
     pprint(api_response)
 except Exception as e:
@@ -830,7 +1037,12 @@ Name | Type | Description  | Notes
  **document_id** | **str**|  | 
  **org** | **str**|  | 
  **user_id** | **str**|  | 
- **retriever_document_embedding_request** | [**RetrieverDocumentEmbeddingRequest**](RetrieverDocumentEmbeddingRequest.md)|  | 
+ **pathway** | **str**| The pathway to retrain the document in | 
+ **document_name** | **str**| The name of the document | [optional] 
+ **document_type** | **str**| The type of the document | [optional] 
+ **url** | **str**| The url of the document | [optional] 
+ **train** | **bool**| The type of the document | [optional] 
+ **access** | [**AccessEnum**](AccessEnum.md)| The access of the document.  * &#x60;public&#x60; - Public * &#x60;private&#x60; - Private | [optional] 
 
 ### Return type
 
@@ -842,7 +1054,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: multipart/form-data, application/x-www-form-urlencoded, application/json
  - **Accept**: application/json
 
 ### HTTP response details
@@ -850,15 +1062,17 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** |  |  -  |
+**400** | Invalid request data |  -  |
+**404** | Document not found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **ai_index_orgs_users_resource_data_scrapped_retrieve**
-> ResourceScrappedData ai_index_orgs_users_resource_data_scrapped_retrieve(org, user_id, is_archive=is_archive, is_like=is_like, is_video=is_video, search_key=search_key)
+# **ai_index_orgs_users_resource_data_scrapped_list**
+> List[ResourceScrappedData] ai_index_orgs_users_resource_data_scrapped_list(org, user_id, is_archive=is_archive, is_like=is_like, is_video=is_video, search_key=search_key)
 
 
 
-Mixin that includes the StudentTokenAuthentication and IsAdminUserOrStudent
+Retrieve and filter scraped data from resources.  This endpoint returns a list of scraped data from resources associated with the specified user, with optional filtering based on query parameters.  Args:     request: The HTTP request containing filter query parameters.     org: Organization key identifier.     user_id: The username of the user whose resources to retrieve.  Returns:     Response: A list of scraped resource data matching the filter criteria.  Raises:     BadRequest: If the username is invalid or query parameters are incorrect.
 
 ### Example
 
@@ -892,11 +1106,11 @@ is_video = True # bool |  (optional)
 search_key = 'search_key_example' # str |  (optional)
 
 try:
-    api_response = api_instance.ai_index_orgs_users_resource_data_scrapped_retrieve(org, user_id, is_archive=is_archive, is_like=is_like, is_video=is_video, search_key=search_key)
-    print("The response of AiIndexApi->ai_index_orgs_users_resource_data_scrapped_retrieve:\n")
+    api_response = api_instance.ai_index_orgs_users_resource_data_scrapped_list(org, user_id, is_archive=is_archive, is_like=is_like, is_video=is_video, search_key=search_key)
+    print("The response of AiIndexApi->ai_index_orgs_users_resource_data_scrapped_list:\n")
     pprint(api_response)
 except Exception as e:
-    print("Exception when calling AiIndexApi->ai_index_orgs_users_resource_data_scrapped_retrieve: %s\n" % e)
+    print("Exception when calling AiIndexApi->ai_index_orgs_users_resource_data_scrapped_list: %s\n" % e)
 ```
 
 
@@ -915,7 +1129,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ResourceScrappedData**](ResourceScrappedData.md)
+[**List[ResourceScrappedData]**](ResourceScrappedData.md)
 
 ### Authorization
 
@@ -931,15 +1145,16 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** |  |  -  |
+**400** | Invalid username or query parameters |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **ai_index_orgs_users_resource_data_scrapped_retrieve2**
-> ResourceScrappedData ai_index_orgs_users_resource_data_scrapped_retrieve2(org, resource_id, user_id)
+# **ai_index_orgs_users_resource_data_scrapped_retrieve**
+> ResourceScrappedData ai_index_orgs_users_resource_data_scrapped_retrieve(org, resource_id, user_id)
 
 
 
-Mixin that includes the StudentTokenAuthentication and IsAdminUserOrStudent
+Retrieve detailed information about a specific scraped resource.  This endpoint returns the complete scraped data for a specific resource identified by its ID.  Args:     request: The HTTP request.     org: Organization key identifier.     user_id: The username of the user associated with the resource.     resource_id: The ID of the resource to retrieve.  Returns:     Response: The complete scraped data for the specified resource.  Raises:     NotFound: If the specified resource data does not exist.
 
 ### Example
 
@@ -970,11 +1185,11 @@ resource_id = 'resource_id_example' # str |
 user_id = 'user_id_example' # str | 
 
 try:
-    api_response = api_instance.ai_index_orgs_users_resource_data_scrapped_retrieve2(org, resource_id, user_id)
-    print("The response of AiIndexApi->ai_index_orgs_users_resource_data_scrapped_retrieve2:\n")
+    api_response = api_instance.ai_index_orgs_users_resource_data_scrapped_retrieve(org, resource_id, user_id)
+    print("The response of AiIndexApi->ai_index_orgs_users_resource_data_scrapped_retrieve:\n")
     pprint(api_response)
 except Exception as e:
-    print("Exception when calling AiIndexApi->ai_index_orgs_users_resource_data_scrapped_retrieve2: %s\n" % e)
+    print("Exception when calling AiIndexApi->ai_index_orgs_users_resource_data_scrapped_retrieve: %s\n" % e)
 ```
 
 
@@ -1006,6 +1221,7 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** |  |  -  |
+**404** | Resource data not found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1014,7 +1230,7 @@ Name | Type | Description  | Notes
 
 
 
-Webhook endpoint to receive file scan status.
+Receive and process file scan status from external security scanning services.  This webhook endpoint receives scan results for files that have been submitted for security scanning. It processes the results asynchronously and determines if the files are safe for further processing.  Args:     request: The HTTP request containing scan result data.  Returns:     Response: A confirmation that the scan result was received and is being processed.  Raises:     BadRequest: If the provided scan result data is invalid.
 
 ### Example
 
@@ -1029,7 +1245,7 @@ from pprint import pprint
 
 # Create an instance of the API class
 api_instance = iblai.AiIndexApi(api_client)
-scan_webhook_request = iblai.ScanWebhookRequest() # ScanWebhookRequest | 
+scan_webhook_request = {"file_id":"f12345","filename":"document.pdf","status":"clean","message":"No threats detected"} # ScanWebhookRequest | 
 
 try:
     api_response = api_instance.ai_index_webhook_scan_create(scan_webhook_request)
@@ -1066,6 +1282,7 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** |  |  -  |
+**400** | Invalid request data |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

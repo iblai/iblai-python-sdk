@@ -4,6 +4,10 @@ All URIs are relative to *https://base.manager.iblai.app*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**notification_v1_campaigns_unsubscribe_retrieve**](NotificationApi.md#notification_v1_campaigns_unsubscribe_retrieve) | **GET** /api/notification/v1/campaigns/unsubscribe/{unsubscribe_hash}/ | 
+[**notification_v1_orgs_campaigns_enable_create**](NotificationApi.md#notification_v1_orgs_campaigns_enable_create) | **POST** /api/notification/v1/orgs/{platform_key}/campaigns/enable/ | 
+[**notification_v1_orgs_campaigns_exclude_create**](NotificationApi.md#notification_v1_orgs_campaigns_exclude_create) | **POST** /api/notification/v1/orgs/{platform_key}/campaigns/exclude/ | 
+[**notification_v1_orgs_mark_all_as_read_create**](NotificationApi.md#notification_v1_orgs_mark_all_as_read_create) | **POST** /api/notification/v1/orgs/{platform_key}/mark-all-as-read | 
 [**notification_v1_orgs_notifications_bulk_update_partial_update**](NotificationApi.md#notification_v1_orgs_notifications_bulk_update_partial_update) | **PATCH** /api/notification/v1/orgs/{org}/notifications/bulk-update/ | 
 [**notification_v1_orgs_notifications_retrieve**](NotificationApi.md#notification_v1_orgs_notifications_retrieve) | **GET** /api/notification/v1/orgs/{org}/notifications/ | 
 [**notification_v1_orgs_notifications_update**](NotificationApi.md#notification_v1_orgs_notifications_update) | **PUT** /api/notification/v1/orgs/{org}/notifications/ | 
@@ -13,6 +17,287 @@ Method | HTTP request | Description
 [**notification_v1_orgs_users_notifications_retrieve**](NotificationApi.md#notification_v1_orgs_users_notifications_retrieve) | **GET** /api/notification/v1/orgs/{org}/users/{user_id}/notifications/ | 
 [**notification_v1_orgs_users_notifications_update**](NotificationApi.md#notification_v1_orgs_users_notifications_update) | **PUT** /api/notification/v1/orgs/{org}/users/{user_id}/notifications/ | 
 
+
+# **notification_v1_campaigns_unsubscribe_retrieve**
+> NotificationV1CampaignsUnsubscribeRetrieve200Response notification_v1_campaigns_unsubscribe_retrieve(unsubscribe_hash)
+
+
+
+Unsubscribe from a campaign using a hash
+
+### Example
+
+
+```python
+import iblai
+from iblai.models.notification_v1_campaigns_unsubscribe_retrieve200_response import NotificationV1CampaignsUnsubscribeRetrieve200Response
+from iblai.rest import ApiException
+from pprint import pprint
+
+
+# Create an instance of the API class
+api_instance = iblai.NotificationApi(api_client)
+unsubscribe_hash = 'unsubscribe_hash_example' # str | 
+
+try:
+    api_response = api_instance.notification_v1_campaigns_unsubscribe_retrieve(unsubscribe_hash)
+    print("The response of NotificationApi->notification_v1_campaigns_unsubscribe_retrieve:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling NotificationApi->notification_v1_campaigns_unsubscribe_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **unsubscribe_hash** | **str**|  | 
+
+### Return type
+
+[**NotificationV1CampaignsUnsubscribeRetrieve200Response**](NotificationV1CampaignsUnsubscribeRetrieve200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **notification_v1_orgs_campaigns_enable_create**
+> NotificationV1CampaignsUnsubscribeRetrieve200Response notification_v1_orgs_campaigns_enable_create(platform_key, campaign_enablement=campaign_enablement)
+
+
+
+Re-enable campaigns for a user
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.campaign_enablement import CampaignEnablement
+from iblai.models.notification_v1_campaigns_unsubscribe_retrieve200_response import NotificationV1CampaignsUnsubscribeRetrieve200Response
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+
+# Create an instance of the API class
+api_instance = iblai.NotificationApi(api_client)
+platform_key = 'platform_key_example' # str | 
+campaign_enablement = iblai.CampaignEnablement() # CampaignEnablement |  (optional)
+
+try:
+    api_response = api_instance.notification_v1_orgs_campaigns_enable_create(platform_key, campaign_enablement=campaign_enablement)
+    print("The response of NotificationApi->notification_v1_orgs_campaigns_enable_create:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling NotificationApi->notification_v1_orgs_campaigns_enable_create: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **platform_key** | **str**|  | 
+ **campaign_enablement** | [**CampaignEnablement**](CampaignEnablement.md)|  | [optional] 
+
+### Return type
+
+[**NotificationV1CampaignsUnsubscribeRetrieve200Response**](NotificationV1CampaignsUnsubscribeRetrieve200Response.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **notification_v1_orgs_campaigns_exclude_create**
+> NotificationV1CampaignsUnsubscribeRetrieve200Response notification_v1_orgs_campaigns_exclude_create(platform_key, campaign_exclusion=campaign_exclusion)
+
+
+
+Exclude a user from specified campaigns
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.campaign_exclusion import CampaignExclusion
+from iblai.models.notification_v1_campaigns_unsubscribe_retrieve200_response import NotificationV1CampaignsUnsubscribeRetrieve200Response
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+
+# Create an instance of the API class
+api_instance = iblai.NotificationApi(api_client)
+platform_key = 'platform_key_example' # str | 
+campaign_exclusion = iblai.CampaignExclusion() # CampaignExclusion |  (optional)
+
+try:
+    api_response = api_instance.notification_v1_orgs_campaigns_exclude_create(platform_key, campaign_exclusion=campaign_exclusion)
+    print("The response of NotificationApi->notification_v1_orgs_campaigns_exclude_create:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling NotificationApi->notification_v1_orgs_campaigns_exclude_create: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **platform_key** | **str**|  | 
+ **campaign_exclusion** | [**CampaignExclusion**](CampaignExclusion.md)|  | [optional] 
+
+### Return type
+
+[**NotificationV1CampaignsUnsubscribeRetrieve200Response**](NotificationV1CampaignsUnsubscribeRetrieve200Response.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **notification_v1_orgs_mark_all_as_read_create**
+> MarkAllReadResponse notification_v1_orgs_mark_all_as_read_create(platform_key, mark_all_read_request=mark_all_read_request)
+
+
+
+Mark all notifications as read for a user. Optionally provide specific notification IDs.
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.mark_all_read_request import MarkAllReadRequest
+from iblai.models.mark_all_read_response import MarkAllReadResponse
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+
+# Create an instance of the API class
+api_instance = iblai.NotificationApi(api_client)
+platform_key = 'platform_key_example' # str | 
+mark_all_read_request = iblai.MarkAllReadRequest() # MarkAllReadRequest |  (optional)
+
+try:
+    api_response = api_instance.notification_v1_orgs_mark_all_as_read_create(platform_key, mark_all_read_request=mark_all_read_request)
+    print("The response of NotificationApi->notification_v1_orgs_mark_all_as_read_create:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling NotificationApi->notification_v1_orgs_mark_all_as_read_create: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **platform_key** | **str**|  | 
+ **mark_all_read_request** | [**MarkAllReadRequest**](MarkAllReadRequest.md)|  | [optional] 
+
+### Return type
+
+[**MarkAllReadResponse**](MarkAllReadResponse.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **notification_v1_orgs_notifications_bulk_update_partial_update**
 > Notification notification_v1_orgs_notifications_bulk_update_partial_update(org, patched_notification=patched_notification)

@@ -6,11 +6,11 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** |  | [readonly] 
-**user** | **int** | edX user ID | [readonly] 
-**slack_team_domain** | **str** | Team Domain in the stated slack workspace. This is also the workspace name. | 
-**slack_username** | **str** | Username in the stated slack workspace | 
-**date_created** | **datetime** |  | [readonly] 
-**last_modified** | **datetime** |  | [readonly] 
+**bot** | **int** |  | 
+**client_id** | **str** |  | 
+**client_secret** | **str** |  | 
+**app_token** | **str** |  | 
+**verification_token** | **str** |  | 
 
 ## Example
 

@@ -17,11 +17,11 @@ Method | HTTP request | Description
 
 
 # **audience_orgs_active_users_over_time_retrieve**
-> OvertimeWithChangeInfo audience_orgs_active_users_over_time_retrieve(org, end_date=end_date, format=format, include_main_platform=include_main_platform, start_date=start_date)
+> OvertimeWithChangeInfo audience_orgs_active_users_over_time_retrieve(org, department_id=department_id, end_date=end_date, format=format, include_main_platform=include_main_platform, start_date=start_date)
 
 
 
-Count of users with known activity within the past 30 days on a per day basis  Query Params 1. start_date e.g 2020-10-01 2. end_date e.g 2020-10-10  Default result when no query param is added is last_7_days (today inclusive) Returns ``` {     \"data\": {         \"2022-04-26\": 0,         \"2022-04-27\": 0,         \"2022-04-28\": 0,         \"2022-04-29\": 60,         ...         \"2022-05-05\": 0     },     \"total\": 60,     \"meta\": {         \"change_last_seven_days\": 0,         \"change_last_seven_days_percent\": 0.0,         \"change_last_thirty_days\": 0,         \"change_last_thirty_days_percent\": 0.0,         \"change_range\": 0,         \"change_range_percent\": 0.0,         \"total\": 0,     } }
+Get active user counts over time.  This endpoint provides daily counts of active users (users with known activity) over a specified time period.  Query Parameters:     start_date (str, optional): Start date for the time range (ISO format)     end_date (str, optional): End date for the time range (ISO format)  Returns:     Daily active user counts over the specified time period, with change metrics     compared to previous periods.  Default time range is the last 7 days if no dates are specified.  An active user is defined as a user with any activity within the past 30 days.
 
 ### Example
 
@@ -48,13 +48,14 @@ client = get_platform_api_client(
 # Create an instance of the API class
 api_instance = iblai.AudienceApi(api_client)
 org = 'org_example' # str | 
+department_id = 56 # int | When `department_mode=1` is passed, it allows to filter data for only user content groups for the specified department  (optional)
 end_date = 'end_date_example' # str | end date. ISO 8601 (optional)
 format = json # str | Format  * `json` - json (optional) (default to json)
 include_main_platform = True # bool | Include main platform data (optional) (default to True)
 start_date = 'start_date_example' # str | start date. ISO 8601 (optional)
 
 try:
-    api_response = api_instance.audience_orgs_active_users_over_time_retrieve(org, end_date=end_date, format=format, include_main_platform=include_main_platform, start_date=start_date)
+    api_response = api_instance.audience_orgs_active_users_over_time_retrieve(org, department_id=department_id, end_date=end_date, format=format, include_main_platform=include_main_platform, start_date=start_date)
     print("The response of AudienceApi->audience_orgs_active_users_over_time_retrieve:\n")
     pprint(api_response)
 except Exception as e:
@@ -69,6 +70,7 @@ except Exception as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **org** | **str**|  | 
+ **department_id** | **int**| When &#x60;department_mode&#x3D;1&#x60; is passed, it allows to filter data for only user content groups for the specified department  | [optional] 
  **end_date** | **str**| end date. ISO 8601 | [optional] 
  **format** | **str**| Format  * &#x60;json&#x60; - json | [optional] [default to json]
  **include_main_platform** | **bool**| Include main platform data | [optional] [default to True]
@@ -96,11 +98,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **audience_orgs_active_users_per_course_retrieve**
-> ActiveUsersPerCourse audience_orgs_active_users_per_course_retrieve(org, end_date=end_date, format=format, include_main_platform=include_main_platform, start_date=start_date)
+> ActiveUsersPerCourse audience_orgs_active_users_per_course_retrieve(org, department_id=department_id, end_date=end_date, format=format, include_main_platform=include_main_platform, start_date=start_date)
 
 
 
-Count of users with known activity within specified date_range on a per-course basis  Query Params 1. start_date e.g 2020-10-01 2. end_date e.g 2020-10-10  Default result when no query param is added is last_7_days (today inclusive)
+Get active user counts on a per-course basis.  This endpoint provides counts of active users for each course within the specified date range.  Query Parameters:     start_date (str, optional): Start date for filtering (ISO format)     end_date (str, optional): End date for filtering (ISO format)  Returns:     A list of courses with their active user counts.  Default time range is the last 7 days if no dates are specified.
 
 ### Example
 
@@ -127,13 +129,14 @@ client = get_platform_api_client(
 # Create an instance of the API class
 api_instance = iblai.AudienceApi(api_client)
 org = 'org_example' # str | 
+department_id = 56 # int | When `department_mode=1` is passed, it allows to filter data for only user content groups for the specified department  (optional)
 end_date = 'end_date_example' # str | end date. ISO 8601 (optional)
 format = json # str | Format  * `json` - json (optional) (default to json)
 include_main_platform = True # bool | Include main platform data (optional) (default to True)
 start_date = 'start_date_example' # str | start date. ISO 8601 (optional)
 
 try:
-    api_response = api_instance.audience_orgs_active_users_per_course_retrieve(org, end_date=end_date, format=format, include_main_platform=include_main_platform, start_date=start_date)
+    api_response = api_instance.audience_orgs_active_users_per_course_retrieve(org, department_id=department_id, end_date=end_date, format=format, include_main_platform=include_main_platform, start_date=start_date)
     print("The response of AudienceApi->audience_orgs_active_users_per_course_retrieve:\n")
     pprint(api_response)
 except Exception as e:
@@ -148,6 +151,7 @@ except Exception as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **org** | **str**|  | 
+ **department_id** | **int**| When &#x60;department_mode&#x3D;1&#x60; is passed, it allows to filter data for only user content groups for the specified department  | [optional] 
  **end_date** | **str**| end date. ISO 8601 | [optional] 
  **format** | **str**| Format  * &#x60;json&#x60; - json | [optional] [default to json]
  **include_main_platform** | **bool**| Include main platform data | [optional] [default to True]
@@ -175,11 +179,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **audience_orgs_active_users_users_retrieve**
-> ActiveUsersList audience_orgs_active_users_users_retrieve(org, format=format, include_main_platform=include_main_platform, length=length, page=page)
+> ActiveUsersList audience_orgs_active_users_users_retrieve(org, department_id=department_id, format=format, include_main_platform=include_main_platform, length=length, page=page)
 
 
 
-List of users with known activity within the specified date range  default is all time  Query Params 1. start_date e.g 2020-10-01 2. end_date e.g 2020-10-10 3. course_id <optional> e.g course-v1:Org+Course4+Run  Default result when no query param is added is last_7_days (today inclusive)
+Get a list of active users with activity metrics.  This endpoint provides a paginated list of users who have had activity within the specified date range.  Query Parameters:     start_date (str, optional): Start date for filtering (ISO format)     end_date (str, optional): End date for filtering (ISO format)     course_id (str, optional): Filter by course ID     page (int, optional): Page number for pagination     length (int, optional): Number of items per page  Returns:     A paginated list of active users with their activity metrics.  Default time range is the last 7 days if no dates are specified.
 
 ### Example
 
@@ -206,13 +210,14 @@ client = get_platform_api_client(
 # Create an instance of the API class
 api_instance = iblai.AudienceApi(api_client)
 org = 'org_example' # str | 
+department_id = 56 # int | When `department_mode=1` is passed, it allows to filter data for only user content groups for the specified department  (optional)
 format = json # str | Format  * `json` - json (optional) (default to json)
 include_main_platform = True # bool | Include main platform data (optional) (default to True)
 length = 56 # int | Size of data to return (optional)
 page = 56 # int | Page offset (optional)
 
 try:
-    api_response = api_instance.audience_orgs_active_users_users_retrieve(org, format=format, include_main_platform=include_main_platform, length=length, page=page)
+    api_response = api_instance.audience_orgs_active_users_users_retrieve(org, department_id=department_id, format=format, include_main_platform=include_main_platform, length=length, page=page)
     print("The response of AudienceApi->audience_orgs_active_users_users_retrieve:\n")
     pprint(api_response)
 except Exception as e:
@@ -227,6 +232,7 @@ except Exception as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **org** | **str**|  | 
+ **department_id** | **int**| When &#x60;department_mode&#x3D;1&#x60; is passed, it allows to filter data for only user content groups for the specified department  | [optional] 
  **format** | **str**| Format  * &#x60;json&#x60; - json | [optional] [default to json]
  **include_main_platform** | **bool**| Include main platform data | [optional] [default to True]
  **length** | **int**| Size of data to return | [optional] 
@@ -254,11 +260,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **audience_orgs_enrollments_courses_over_time_retrieve**
-> OvertimeWithChangeInfo audience_orgs_enrollments_courses_over_time_retrieve(course_id, org, active=active, end_date=end_date, format=format, include_main_platform=include_main_platform, start_date=start_date)
+> OvertimeWithChangeInfo audience_orgs_enrollments_courses_over_time_retrieve(course_id, org, active=active, department_id=department_id, end_date=end_date, format=format, include_main_platform=include_main_platform, start_date=start_date)
 
 
 
-Aggregated count of  new enrollments/ unenrollments on a per day basis   Params 1. course_id <optional> e.g course-v1:Org+Course4+Run 2. start_date e.g 2020-10-01 3. end_date e.g 2020-10-10 4. active e.g true/false would mean not active enrollments  Default result when no query param is added is last_7_days (today inclusive)
+Get enrollment or unenrollment counts over time.  This endpoint provides daily counts of new enrollments or unenrollments over a specified time period.  Query Parameters:     start_date (str, optional): Start date for the time range (ISO format)     end_date (str, optional): End date for the time range (ISO format)     course_id (str, optional): Filter by course ID     active (bool): Get enrollments when true, unenrollments when false  Returns:     Daily counts over the specified time period, with change metrics     compared to previous periods.  Default time range is the last 7 days if no dates are specified.
 
 ### Example
 
@@ -287,13 +293,14 @@ api_instance = iblai.AudienceApi(api_client)
 course_id = 'course_id_example' # str | 
 org = 'org_example' # str | 
 active = y # str | Any of `y`, `yes`, `true`. set to false or no for unenrollments   * `y` - y * `yes` - yes * `true` - true * `True` - True * `n` - n * `no` - no * `false` - false * `False` - False (optional) (default to y)
+department_id = 56 # int | When `department_mode=1` is passed, it allows to filter data for only user content groups for the specified department  (optional)
 end_date = 'end_date_example' # str | end date. ISO 8601 (optional)
 format = json # str | Format  * `json` - json (optional) (default to json)
 include_main_platform = True # bool | Include main platform data (optional) (default to True)
 start_date = 'start_date_example' # str | start date. ISO 8601 (optional)
 
 try:
-    api_response = api_instance.audience_orgs_enrollments_courses_over_time_retrieve(course_id, org, active=active, end_date=end_date, format=format, include_main_platform=include_main_platform, start_date=start_date)
+    api_response = api_instance.audience_orgs_enrollments_courses_over_time_retrieve(course_id, org, active=active, department_id=department_id, end_date=end_date, format=format, include_main_platform=include_main_platform, start_date=start_date)
     print("The response of AudienceApi->audience_orgs_enrollments_courses_over_time_retrieve:\n")
     pprint(api_response)
 except Exception as e:
@@ -310,6 +317,7 @@ Name | Type | Description  | Notes
  **course_id** | **str**|  | 
  **org** | **str**|  | 
  **active** | **str**| Any of &#x60;y&#x60;, &#x60;yes&#x60;, &#x60;true&#x60;. set to false or no for unenrollments   * &#x60;y&#x60; - y * &#x60;yes&#x60; - yes * &#x60;true&#x60; - true * &#x60;True&#x60; - True * &#x60;n&#x60; - n * &#x60;no&#x60; - no * &#x60;false&#x60; - false * &#x60;False&#x60; - False | [optional] [default to y]
+ **department_id** | **int**| When &#x60;department_mode&#x3D;1&#x60; is passed, it allows to filter data for only user content groups for the specified department  | [optional] 
  **end_date** | **str**| end date. ISO 8601 | [optional] 
  **format** | **str**| Format  * &#x60;json&#x60; - json | [optional] [default to json]
  **include_main_platform** | **bool**| Include main platform data | [optional] [default to True]
@@ -337,11 +345,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **audience_orgs_enrollments_courses_users_retrieve**
-> EnrollmentsPerUser audience_orgs_enrollments_courses_users_retrieve(course_id, org, active=active, end_date=end_date, format=format, include_main_platform=include_main_platform, length=length, page=page, start_date=start_date)
+> EnrollmentsPerUser audience_orgs_enrollments_courses_users_retrieve(course_id, org, active=active, department_id=department_id, end_date=end_date, format=format, include_main_platform=include_main_platform, length=length, page=page, start_date=start_date)
 
 
 
-List of users who are enrolled/not enrolled in specified course  Query Params 1. course_id 2. active e.g true/false would mean not active enrollments
+List users enrolled in a specific course.  This endpoint provides a list of users who are enrolled or unenrolled in a specified course.  Query Parameters:     course_id (str): The course ID to get enrollments for     active (bool): Filter for active enrollments when true, inactive when false     page (int, optional): Page number for pagination     length (int, optional): Number of items per page  Returns:     A paginated list of users with:     - Username     - Full name     - Email     - Enrollment timestamp
 
 ### Example
 
@@ -370,6 +378,7 @@ api_instance = iblai.AudienceApi(api_client)
 course_id = 'course_id_example' # str | 
 org = 'org_example' # str | 
 active = y # str | Any of `y`, `yes`, `true`. set to false or no for unenrollments   * `y` - y * `yes` - yes * `true` - true * `True` - True * `n` - n * `no` - no * `false` - false * `False` - False (optional) (default to y)
+department_id = 56 # int | When `department_mode=1` is passed, it allows to filter data for only user content groups for the specified department  (optional)
 end_date = 'end_date_example' # str | end date. ISO 8601 (optional)
 format = json # str | Format  * `json` - json (optional) (default to json)
 include_main_platform = True # bool | Include main platform data (optional) (default to True)
@@ -378,7 +387,7 @@ page = 56 # int | Page offset (optional)
 start_date = 'start_date_example' # str | start date. ISO 8601 (optional)
 
 try:
-    api_response = api_instance.audience_orgs_enrollments_courses_users_retrieve(course_id, org, active=active, end_date=end_date, format=format, include_main_platform=include_main_platform, length=length, page=page, start_date=start_date)
+    api_response = api_instance.audience_orgs_enrollments_courses_users_retrieve(course_id, org, active=active, department_id=department_id, end_date=end_date, format=format, include_main_platform=include_main_platform, length=length, page=page, start_date=start_date)
     print("The response of AudienceApi->audience_orgs_enrollments_courses_users_retrieve:\n")
     pprint(api_response)
 except Exception as e:
@@ -395,6 +404,7 @@ Name | Type | Description  | Notes
  **course_id** | **str**|  | 
  **org** | **str**|  | 
  **active** | **str**| Any of &#x60;y&#x60;, &#x60;yes&#x60;, &#x60;true&#x60;. set to false or no for unenrollments   * &#x60;y&#x60; - y * &#x60;yes&#x60; - yes * &#x60;true&#x60; - true * &#x60;True&#x60; - True * &#x60;n&#x60; - n * &#x60;no&#x60; - no * &#x60;false&#x60; - false * &#x60;False&#x60; - False | [optional] [default to y]
+ **department_id** | **int**| When &#x60;department_mode&#x3D;1&#x60; is passed, it allows to filter data for only user content groups for the specified department  | [optional] 
  **end_date** | **str**| end date. ISO 8601 | [optional] 
  **format** | **str**| Format  * &#x60;json&#x60; - json | [optional] [default to json]
  **include_main_platform** | **bool**| Include main platform data | [optional] [default to True]
@@ -424,11 +434,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **audience_orgs_enrollments_over_time_retrieve**
-> OvertimeWithChangeInfo audience_orgs_enrollments_over_time_retrieve(org, active=active, end_date=end_date, format=format, include_main_platform=include_main_platform, start_date=start_date)
+> OvertimeWithChangeInfo audience_orgs_enrollments_over_time_retrieve(org, active=active, department_id=department_id, end_date=end_date, format=format, include_main_platform=include_main_platform, start_date=start_date)
 
 
 
-Aggregated count of  new enrollments/ unenrollments on a per day basis   Params 1. course_id <optional> e.g course-v1:Org+Course4+Run 2. start_date e.g 2020-10-01 3. end_date e.g 2020-10-10 4. active e.g true/false would mean not active enrollments  Default result when no query param is added is last_7_days (today inclusive)
+Get enrollment or unenrollment counts over time.  This endpoint provides daily counts of new enrollments or unenrollments over a specified time period.  Query Parameters:     start_date (str, optional): Start date for the time range (ISO format)     end_date (str, optional): End date for the time range (ISO format)     course_id (str, optional): Filter by course ID     active (bool): Get enrollments when true, unenrollments when false  Returns:     Daily counts over the specified time period, with change metrics     compared to previous periods.  Default time range is the last 7 days if no dates are specified.
 
 ### Example
 
@@ -456,13 +466,14 @@ client = get_platform_api_client(
 api_instance = iblai.AudienceApi(api_client)
 org = 'org_example' # str | 
 active = y # str | Any of `y`, `yes`, `true`. set to false or no for unenrollments   * `y` - y * `yes` - yes * `true` - true * `True` - True * `n` - n * `no` - no * `false` - false * `False` - False (optional) (default to y)
+department_id = 56 # int | When `department_mode=1` is passed, it allows to filter data for only user content groups for the specified department  (optional)
 end_date = 'end_date_example' # str | end date. ISO 8601 (optional)
 format = json # str | Format  * `json` - json (optional) (default to json)
 include_main_platform = True # bool | Include main platform data (optional) (default to True)
 start_date = 'start_date_example' # str | start date. ISO 8601 (optional)
 
 try:
-    api_response = api_instance.audience_orgs_enrollments_over_time_retrieve(org, active=active, end_date=end_date, format=format, include_main_platform=include_main_platform, start_date=start_date)
+    api_response = api_instance.audience_orgs_enrollments_over_time_retrieve(org, active=active, department_id=department_id, end_date=end_date, format=format, include_main_platform=include_main_platform, start_date=start_date)
     print("The response of AudienceApi->audience_orgs_enrollments_over_time_retrieve:\n")
     pprint(api_response)
 except Exception as e:
@@ -478,6 +489,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **org** | **str**|  | 
  **active** | **str**| Any of &#x60;y&#x60;, &#x60;yes&#x60;, &#x60;true&#x60;. set to false or no for unenrollments   * &#x60;y&#x60; - y * &#x60;yes&#x60; - yes * &#x60;true&#x60; - true * &#x60;True&#x60; - True * &#x60;n&#x60; - n * &#x60;no&#x60; - no * &#x60;false&#x60; - false * &#x60;False&#x60; - False | [optional] [default to y]
+ **department_id** | **int**| When &#x60;department_mode&#x3D;1&#x60; is passed, it allows to filter data for only user content groups for the specified department  | [optional] 
  **end_date** | **str**| end date. ISO 8601 | [optional] 
  **format** | **str**| Format  * &#x60;json&#x60; - json | [optional] [default to json]
  **include_main_platform** | **bool**| Include main platform data | [optional] [default to True]
@@ -505,11 +517,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **audience_orgs_enrollments_per_course_retrieve**
-> Enrollments audience_orgs_enrollments_per_course_retrieve(org, active=active, end_date=end_date, format=format, include_main_platform=include_main_platform, length=length, page=page, start_date=start_date)
+> Enrollments audience_orgs_enrollments_per_course_retrieve(org, active=active, department_id=department_id, end_date=end_date, format=format, include_main_platform=include_main_platform, length=length, page=page, start_date=start_date)
 
 
 
-Aggregated count of active/inactive enrollments on a per course basis Query Params     active e.g true/false would mean not active enrollments
+List enrollment statistics on a per-course basis.  This endpoint provides enrollment counts for all courses, with options to filter for active or inactive enrollments and to include time-based data.  Query Parameters:     active (bool): Filter for active enrollments when true, inactive when false     start_date (str, optional): Start date for time-based filtering (ISO format)     end_date (str, optional): End date for time-based filtering (ISO format)     page (int, optional): Page number for pagination     length (int, optional): Number of items per page  Returns:     A paginated list of courses with their enrollment counts and percentages.
 
 ### Example
 
@@ -537,6 +549,7 @@ client = get_platform_api_client(
 api_instance = iblai.AudienceApi(api_client)
 org = 'org_example' # str | 
 active = y # str | Any of `y`, `yes`, `true`. set to false or no for unenrollments   * `y` - y * `yes` - yes * `true` - true * `True` - True * `n` - n * `no` - no * `false` - false * `False` - False (optional) (default to y)
+department_id = 56 # int | When `department_mode=1` is passed, it allows to filter data for only user content groups for the specified department  (optional)
 end_date = 'end_date_example' # str | end date. ISO 8601 (optional)
 format = json # str | Format  * `json` - json (optional) (default to json)
 include_main_platform = True # bool | Include main platform data (optional) (default to True)
@@ -545,7 +558,7 @@ page = 56 # int | Page offset (optional)
 start_date = 'start_date_example' # str | start date. ISO 8601 (optional)
 
 try:
-    api_response = api_instance.audience_orgs_enrollments_per_course_retrieve(org, active=active, end_date=end_date, format=format, include_main_platform=include_main_platform, length=length, page=page, start_date=start_date)
+    api_response = api_instance.audience_orgs_enrollments_per_course_retrieve(org, active=active, department_id=department_id, end_date=end_date, format=format, include_main_platform=include_main_platform, length=length, page=page, start_date=start_date)
     print("The response of AudienceApi->audience_orgs_enrollments_per_course_retrieve:\n")
     pprint(api_response)
 except Exception as e:
@@ -561,6 +574,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **org** | **str**|  | 
  **active** | **str**| Any of &#x60;y&#x60;, &#x60;yes&#x60;, &#x60;true&#x60;. set to false or no for unenrollments   * &#x60;y&#x60; - y * &#x60;yes&#x60; - yes * &#x60;true&#x60; - true * &#x60;True&#x60; - True * &#x60;n&#x60; - n * &#x60;no&#x60; - no * &#x60;false&#x60; - false * &#x60;False&#x60; - False | [optional] [default to y]
+ **department_id** | **int**| When &#x60;department_mode&#x3D;1&#x60; is passed, it allows to filter data for only user content groups for the specified department  | [optional] 
  **end_date** | **str**| end date. ISO 8601 | [optional] 
  **format** | **str**| Format  * &#x60;json&#x60; - json | [optional] [default to json]
  **include_main_platform** | **bool**| Include main platform data | [optional] [default to True]
@@ -590,11 +604,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **audience_orgs_registered_users_over_time_retrieve**
-> OvertimeWithChangeInfo audience_orgs_registered_users_over_time_retrieve(org, end_date=end_date, format=format, include_main_platform=include_main_platform, start_date=start_date)
+> OvertimeWithChangeInfo audience_orgs_registered_users_over_time_retrieve(org, department_id=department_id, end_date=end_date, format=format, include_main_platform=include_main_platform, start_date=start_date)
 
 
 
-Registered users count on a per day basis  Query Params 1. start_date e.g 2020-10-01 2. end_date e.g 2020-10-10  Default result when no query param is added is last_7_days (today inclusive)
+Get registered user counts over time.  This endpoint provides daily counts of new user registrations over a specified time period.  Query Parameters:     start_date (str, optional): Start date for the time range (ISO format)     end_date (str, optional): End date for the time range (ISO format)  Returns:     Daily registration counts over the specified time period, with change metrics     compared to previous periods.  Default time range is the last 7 days if no dates are specified.
 
 ### Example
 
@@ -621,13 +635,14 @@ client = get_platform_api_client(
 # Create an instance of the API class
 api_instance = iblai.AudienceApi(api_client)
 org = 'org_example' # str | 
+department_id = 56 # int | When `department_mode=1` is passed, it allows to filter data for only user content groups for the specified department  (optional)
 end_date = 'end_date_example' # str | end date. ISO 8601 (optional)
 format = json # str | Format  * `json` - json (optional) (default to json)
 include_main_platform = True # bool | Include main platform data (optional) (default to True)
 start_date = 'start_date_example' # str | start date. ISO 8601 (optional)
 
 try:
-    api_response = api_instance.audience_orgs_registered_users_over_time_retrieve(org, end_date=end_date, format=format, include_main_platform=include_main_platform, start_date=start_date)
+    api_response = api_instance.audience_orgs_registered_users_over_time_retrieve(org, department_id=department_id, end_date=end_date, format=format, include_main_platform=include_main_platform, start_date=start_date)
     print("The response of AudienceApi->audience_orgs_registered_users_over_time_retrieve:\n")
     pprint(api_response)
 except Exception as e:
@@ -642,6 +657,7 @@ except Exception as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **org** | **str**|  | 
+ **department_id** | **int**| When &#x60;department_mode&#x3D;1&#x60; is passed, it allows to filter data for only user content groups for the specified department  | [optional] 
  **end_date** | **str**| end date. ISO 8601 | [optional] 
  **format** | **str**| Format  * &#x60;json&#x60; - json | [optional] [default to json]
  **include_main_platform** | **bool**| Include main platform data | [optional] [default to True]
@@ -669,11 +685,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **audience_orgs_registered_users_per_course_retrieve**
-> Enrollments audience_orgs_registered_users_per_course_retrieve(org, active=active, end_date=end_date, format=format, include_main_platform=include_main_platform, length=length, page=page, start_date=start_date)
+> Enrollments audience_orgs_registered_users_per_course_retrieve(org, active=active, department_id=department_id, end_date=end_date, format=format, include_main_platform=include_main_platform, length=length, page=page, start_date=start_date)
 
 
 
-Aggregated count of active/inactive enrollments on a per course basis Query Params     active e.g true/false would mean not active enrollments
+List enrollment statistics on a per-course basis.  This endpoint provides enrollment counts for all courses, with options to filter for active or inactive enrollments and to include time-based data.  Query Parameters:     active (bool): Filter for active enrollments when true, inactive when false     start_date (str, optional): Start date for time-based filtering (ISO format)     end_date (str, optional): End date for time-based filtering (ISO format)     page (int, optional): Page number for pagination     length (int, optional): Number of items per page  Returns:     A paginated list of courses with their enrollment counts and percentages.
 
 ### Example
 
@@ -701,6 +717,7 @@ client = get_platform_api_client(
 api_instance = iblai.AudienceApi(api_client)
 org = 'org_example' # str | 
 active = y # str | Any of `y`, `yes`, `true`. set to false or no for unenrollments   * `y` - y * `yes` - yes * `true` - true * `True` - True * `n` - n * `no` - no * `false` - false * `False` - False (optional) (default to y)
+department_id = 56 # int | When `department_mode=1` is passed, it allows to filter data for only user content groups for the specified department  (optional)
 end_date = 'end_date_example' # str | end date. ISO 8601 (optional)
 format = json # str | Format  * `json` - json (optional) (default to json)
 include_main_platform = True # bool | Include main platform data (optional) (default to True)
@@ -709,7 +726,7 @@ page = 56 # int | Page offset (optional)
 start_date = 'start_date_example' # str | start date. ISO 8601 (optional)
 
 try:
-    api_response = api_instance.audience_orgs_registered_users_per_course_retrieve(org, active=active, end_date=end_date, format=format, include_main_platform=include_main_platform, length=length, page=page, start_date=start_date)
+    api_response = api_instance.audience_orgs_registered_users_per_course_retrieve(org, active=active, department_id=department_id, end_date=end_date, format=format, include_main_platform=include_main_platform, length=length, page=page, start_date=start_date)
     print("The response of AudienceApi->audience_orgs_registered_users_per_course_retrieve:\n")
     pprint(api_response)
 except Exception as e:
@@ -725,6 +742,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **org** | **str**|  | 
  **active** | **str**| Any of &#x60;y&#x60;, &#x60;yes&#x60;, &#x60;true&#x60;. set to false or no for unenrollments   * &#x60;y&#x60; - y * &#x60;yes&#x60; - yes * &#x60;true&#x60; - true * &#x60;True&#x60; - True * &#x60;n&#x60; - n * &#x60;no&#x60; - no * &#x60;false&#x60; - false * &#x60;False&#x60; - False | [optional] [default to y]
+ **department_id** | **int**| When &#x60;department_mode&#x3D;1&#x60; is passed, it allows to filter data for only user content groups for the specified department  | [optional] 
  **end_date** | **str**| end date. ISO 8601 | [optional] 
  **format** | **str**| Format  * &#x60;json&#x60; - json | [optional] [default to json]
  **include_main_platform** | **bool**| Include main platform data | [optional] [default to True]
@@ -754,11 +772,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **audience_orgs_registered_users_retrieve**
-> PerlearnerUserList audience_orgs_registered_users_retrieve(org, format=format, include_main_platform=include_main_platform, length=length, page=page, search=search)
+> PerlearnerUserList audience_orgs_registered_users_retrieve(org, department_id=department_id, format=format, include_main_platform=include_main_platform, length=length, page=page, search=search)
 
 
 
-List of entire learners on the platform with aggregated enrollments, completions and time spent
+List all learners on the platform with aggregated metrics.  This endpoint returns a paginated list of all learners with key metrics including: - Enrollment counts - Completion counts - Time spent on platform  Query Parameters:     page (int): Page number for pagination     length (int): Number of items per page     search (str): Filter learners by username, email, or name  Returns:     A paginated list of learners with their associated metrics.
 
 ### Example
 
@@ -785,6 +803,7 @@ client = get_platform_api_client(
 # Create an instance of the API class
 api_instance = iblai.AudienceApi(api_client)
 org = 'org_example' # str | 
+department_id = 56 # int | When `department_mode=1` is passed, it allows to filter data for only user content groups for the specified department  (optional)
 format = json # str | Format  * `json` - json (optional) (default to json)
 include_main_platform = True # bool | Include main platform data (optional) (default to True)
 length = 56 # int | Size of data to return (optional)
@@ -792,7 +811,7 @@ page = 56 # int | Page offset (optional)
 search = 'search_example' # str | Search string for learner (optional)
 
 try:
-    api_response = api_instance.audience_orgs_registered_users_retrieve(org, format=format, include_main_platform=include_main_platform, length=length, page=page, search=search)
+    api_response = api_instance.audience_orgs_registered_users_retrieve(org, department_id=department_id, format=format, include_main_platform=include_main_platform, length=length, page=page, search=search)
     print("The response of AudienceApi->audience_orgs_registered_users_retrieve:\n")
     pprint(api_response)
 except Exception as e:
@@ -807,6 +826,7 @@ except Exception as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **org** | **str**|  | 
+ **department_id** | **int**| When &#x60;department_mode&#x3D;1&#x60; is passed, it allows to filter data for only user content groups for the specified department  | [optional] 
  **format** | **str**| Format  * &#x60;json&#x60; - json | [optional] [default to json]
  **include_main_platform** | **bool**| Include main platform data | [optional] [default to True]
  **length** | **int**| Size of data to return | [optional] 

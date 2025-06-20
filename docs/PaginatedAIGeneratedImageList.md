@@ -5,10 +5,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**count** | **int** |  | [optional] 
+**count** | **int** |  | 
 **next** | **str** |  | [optional] 
 **previous** | **str** |  | [optional] 
-**results** | [**List[AIGeneratedImage]**](AIGeneratedImage.md) |  | [optional] 
+**results** | [**List[AIGeneratedImage]**](AIGeneratedImage.md) |  | 
 
 ## Example
 

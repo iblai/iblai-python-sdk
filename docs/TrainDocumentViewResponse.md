@@ -5,8 +5,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**task_id** | **str** | Task ID of the training | 
+**document_id** | **str** | Document id for document in training | [optional] 
+**task_id** | **str** | Task id for document in training | [optional] 
 **message** | **str** | Message of the training | 
+**error** | **str** |  | [optional] 
 
 ## Example
 

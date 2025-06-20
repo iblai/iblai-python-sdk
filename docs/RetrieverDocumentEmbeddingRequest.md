@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **pathway** | **str** | The pathway to retrain the document in | 
 **url** | **str** | The url of the document | [optional] 
 **train** | **bool** | The type of the document | [optional] 
+**access** | [**AccessEnum**](AccessEnum.md) | The access of the document.  * &#x60;public&#x60; - Public * &#x60;private&#x60; - Private | [optional] 
 
 ## Example
 

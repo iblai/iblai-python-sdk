@@ -6,11 +6,13 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **timestamp** | **datetime** | Time when the event occurred, ensure it is UTC (ISO 8601 format) | 
-**course_id** | **str** |  | [optional] 
-**block_id** | **str** |  | [optional] 
-**count** | **int** |  | 
-**url** | **str** |  | 
-**metadata** | **object** |  | [optional] 
+**course_id** | **str** | Course ID to track time spent | [optional] 
+**mentor_uuid** | **str** | Mentor UUID to track time spent | [optional] 
+**block_id** | **str** | Block ID to track time spent | [optional] 
+**count** | **int** | Time spent in seconds | 
+**url** | **str** | Source URL | 
+**metadata** | **object** | Additional metadata | [optional] 
+**session_uuid** | **str** | Session UUID to track time spent | [optional] 
 
 ## Example
 

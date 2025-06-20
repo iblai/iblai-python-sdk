@@ -7,7 +7,6 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** | edX user ID | 
 **username** | **str** | edX username | [optional] 
-**name** | **str** |  | 
 **email** | **str** |  | 
 **active** | **bool** |  | 
 **edx_data** | **object** |  | 

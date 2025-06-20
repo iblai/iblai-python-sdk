@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | **object** | Data to be added | 
+**data** | **object** | Platform metadata including LLM configurations and active services | 
 
 ## Example
 

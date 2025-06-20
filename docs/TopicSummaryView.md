@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**total_topics** | **int** |  | 
-**topics_summary** | [**List[TopicConversation]**](TopicConversation.md) |  | 
+**name** | **str** |  | 
+**conversation_count** | **int** |  | 
 
 ## Example
 

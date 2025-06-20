@@ -10,10 +10,11 @@ Name | Type | Description | Notes
 **title** | **str** |  | [optional] [readonly] 
 **body** | **str** |  | [optional] [readonly] 
 **status** | [**MessageStatus**](MessageStatus.md) |  | [optional] 
-**channel** | **int** |  | [optional] 
+**channel** | **str** |  | [optional] [readonly] 
 **context** | **object** |  | [optional] 
 **short_message** | **str** |  | [optional] [readonly] 
 **created_at** | **datetime** |  | [optional] 
+**updated_at** | **datetime** |  | [optional] [readonly] 
 
 ## Example
 

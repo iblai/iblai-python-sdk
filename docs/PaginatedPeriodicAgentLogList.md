@@ -5,10 +5,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**count** | **int** |  | [optional] 
+**count** | **int** |  | 
 **next** | **str** |  | [optional] 
 **previous** | **str** |  | [optional] 
-**results** | [**List[PeriodicAgentLog]**](PeriodicAgentLog.md) |  | [optional] 
+**results** | [**List[PeriodicAgentLog]**](PeriodicAgentLog.md) |  | 
 
 ## Example
 

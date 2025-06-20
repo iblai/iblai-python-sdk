@@ -5,10 +5,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**mentor** | **str** |  | 
+**mentor_unique_id** | **str** |  | 
+**mentor_name** | **str** |  | 
 **total_cost** | **float** |  | 
-**total_latency** | **float** |  | 
-**mentor_traces** | [**List[MentorTrace]**](MentorTrace.md) |  | 
+**mentor_sessions** | [**List[MentorSession]**](MentorSession.md) |  | 
 
 ## Example
 

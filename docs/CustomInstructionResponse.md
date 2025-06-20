@@ -8,6 +8,8 @@ Name | Type | Description | Notes
 **id** | **int** |  | [readonly] 
 **about_user** | **str** |  | [optional] 
 **mentor_tone** | **str** |  | [optional] 
+**profession** | **str** | Position or work. eg: Engineer, student etc. | [optional] 
+**desired_mentor_traits** | **str** | Comma separated list of expected traits for mentor. | [optional] 
 
 ## Example
 

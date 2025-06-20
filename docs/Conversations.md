@@ -11,15 +11,19 @@ Name | Type | Description | Notes
 **sentiment** | **str** |  | [readonly] 
 **mentor** | **str** |  | 
 **student** | **str** |  | [readonly] 
+**email** | **str** |  | [readonly] 
 **model** | **str** |  | 
-**rating** | **str** |  | [readonly] 
+**rating** | **int** |  | [readonly] 
+**platform** | **str** |  | 
+**lti_email** | **str** | Email claim from LTI1.3 JWT if an LTI user and available | [readonly] 
+**lti_username** | **str** | Username claim from LTI1.3 JWT if an LTI user and available | [readonly] 
 **inserted_at** | **datetime** |  | [readonly] 
 **has_document** | **bool** |  | [optional] 
 **memory_tracked** | **bool** |  | [optional] 
 **llm_name** | **str** |  | [optional] 
 **llm_provider** | **str** |  | [optional] 
 **metadata** | **object** |  | [optional] 
-**platform** | **int** |  | [optional] 
+**tools** | **List[int]** |  | [optional] 
 
 ## Example
 

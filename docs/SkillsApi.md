@@ -23,7 +23,7 @@ Method | HTTP request | Description
 
 
 
-Mixin that includes the StudentTokenAuthentication and IsAdminUserOrStudent
+List all available skills on the platform.  This endpoint returns information about all skills that can be acquired on the platform.  Path Parameters:     org (str): The platform/organization identifier  Returns:     A list of all skills with basic information about each skill.  Access Control:     - Platform admins can access this information     - All authenticated users can access this information
 
 ### Example
 
@@ -165,7 +165,7 @@ Name | Type | Description  | Notes
 
 
 
-Mixin that includes the StudentTokenAuthentication and IsAdminUserOrStudent
+Retrieve percentile distribution for a specific skill.  This endpoint returns the percentile distribution of points earned by users for a specific skill.  Path Parameters:     skill_id (int): The ID of the skill to retrieve percentile information for     org (str, optional): The platform/organization identifier to filter results  Returns:     A list of percentile breakpoints for the specified skill.  Error Responses:     404 Not Found: If the specified skill doesn't exist  Access Control:     - Platform admins can access this information     - All authenticated users can access this information
 
 ### Example
 
@@ -238,7 +238,7 @@ Name | Type | Description  | Notes
 
 
 
-Mixin that includes the StudentTokenAuthentication and IsAdminUserOrStudent
+Retrieve detailed information about a specific skill.  This endpoint returns comprehensive information about a specific skill, including its description, categories, and related courses.  Path Parameters:     org (str): The platform/organization identifier     skill_name (str): The name of the skill to retrieve details for  Returns:     Detailed information about the specified skill.  Error Responses:     404 Not Found: If the specified skill doesn't exist  Access Control:     - Platform admins can access this information     - All authenticated users can access this information
 
 ### Example
 
@@ -311,6 +311,8 @@ Name | Type | Description  | Notes
 
 
 
+Manage skill thresholds for a platform.  This endpoint allows platform administrators to view, create, update, and delete skill thresholds. Skill thresholds define the minimum points required to consider a skill as acquired or mastered.  Path Parameters:     org (str): The platform/organization identifier  Methods:     GET: Retrieve all skill thresholds for the platform     POST: Create a new skill threshold     PATCH: Update an existing skill threshold     DELETE: Delete all skill thresholds for the platform  Request Body (POST):     name (str, required): The name of the threshold level (e.g., \"Beginner\", \"Intermediate\")     threshold (int, required): The minimum points required to reach this threshold  Request Body (PATCH):     name (str, required): The name of the existing threshold to update     threshold (int, required): The new minimum points value for this threshold  Returns:     GET: A list of all skill thresholds for the platform     POST/PATCH: The created or updated skill threshold with format:         {             \"name\": \"threshold_name\",             \"threshold\": threshold_value         }     DELETE: No content (204)  Error Responses:     400 Bad Request: If the request data is invalid or missing required fields     404 Not Found: If the specified platform doesn't exist or the threshold                   to update cannot be found  Access Control:     - Only platform administrators can access this endpoint
+
 ### Example
 
 * Api Key Authentication (PlatformApiKeyAuthentication):
@@ -382,6 +384,8 @@ Name | Type | Description  | Notes
 
 
 
+Manage skill thresholds for a platform.  This endpoint allows platform administrators to view, create, update, and delete skill thresholds. Skill thresholds define the minimum points required to consider a skill as acquired or mastered.  Path Parameters:     org (str): The platform/organization identifier  Methods:     GET: Retrieve all skill thresholds for the platform     POST: Create a new skill threshold     PATCH: Update an existing skill threshold     DELETE: Delete all skill thresholds for the platform  Request Body (POST):     name (str, required): The name of the threshold level (e.g., \"Beginner\", \"Intermediate\")     threshold (int, required): The minimum points required to reach this threshold  Request Body (PATCH):     name (str, required): The name of the existing threshold to update     threshold (int, required): The new minimum points value for this threshold  Returns:     GET: A list of all skill thresholds for the platform     POST/PATCH: The created or updated skill threshold with format:         {             \"name\": \"threshold_name\",             \"threshold\": threshold_value         }     DELETE: No content (204)  Error Responses:     400 Bad Request: If the request data is invalid or missing required fields     404 Not Found: If the specified platform doesn't exist or the threshold                   to update cannot be found  Access Control:     - Only platform administrators can access this endpoint
+
 ### Example
 
 * Api Key Authentication (PlatformApiKeyAuthentication):
@@ -447,6 +451,8 @@ void (empty response body)
 > SkillThreshold skills_orgs_skills_thresholds_partial_update(org, patched_skill_threshold=patched_skill_threshold)
 
 
+
+Manage skill thresholds for a platform.  This endpoint allows platform administrators to view, create, update, and delete skill thresholds. Skill thresholds define the minimum points required to consider a skill as acquired or mastered.  Path Parameters:     org (str): The platform/organization identifier  Methods:     GET: Retrieve all skill thresholds for the platform     POST: Create a new skill threshold     PATCH: Update an existing skill threshold     DELETE: Delete all skill thresholds for the platform  Request Body (POST):     name (str, required): The name of the threshold level (e.g., \"Beginner\", \"Intermediate\")     threshold (int, required): The minimum points required to reach this threshold  Request Body (PATCH):     name (str, required): The name of the existing threshold to update     threshold (int, required): The new minimum points value for this threshold  Returns:     GET: A list of all skill thresholds for the platform     POST/PATCH: The created or updated skill threshold with format:         {             \"name\": \"threshold_name\",             \"threshold\": threshold_value         }     DELETE: No content (204)  Error Responses:     400 Bad Request: If the request data is invalid or missing required fields     404 Not Found: If the specified platform doesn't exist or the threshold                   to update cannot be found  Access Control:     - Only platform administrators can access this endpoint
 
 ### Example
 
@@ -520,6 +526,8 @@ Name | Type | Description  | Notes
 
 
 
+Manage skill thresholds for a platform.  This endpoint allows platform administrators to view, create, update, and delete skill thresholds. Skill thresholds define the minimum points required to consider a skill as acquired or mastered.  Path Parameters:     org (str): The platform/organization identifier  Methods:     GET: Retrieve all skill thresholds for the platform     POST: Create a new skill threshold     PATCH: Update an existing skill threshold     DELETE: Delete all skill thresholds for the platform  Request Body (POST):     name (str, required): The name of the threshold level (e.g., \"Beginner\", \"Intermediate\")     threshold (int, required): The minimum points required to reach this threshold  Request Body (PATCH):     name (str, required): The name of the existing threshold to update     threshold (int, required): The new minimum points value for this threshold  Returns:     GET: A list of all skill thresholds for the platform     POST/PATCH: The created or updated skill threshold with format:         {             \"name\": \"threshold_name\",             \"threshold\": threshold_value         }     DELETE: No content (204)  Error Responses:     400 Bad Request: If the request data is invalid or missing required fields     404 Not Found: If the specified platform doesn't exist or the threshold                   to update cannot be found  Access Control:     - Only platform administrators can access this endpoint
+
 ### Example
 
 * Api Key Authentication (PlatformApiKeyAuthentication):
@@ -589,7 +597,7 @@ Name | Type | Description  | Notes
 
 
 
-Mixin that includes the StudentTokenAuthentication and IsAdminUserOrStudent
+Retrieve a user's desired skills.  This endpoint returns the skills that a user has indicated they want to develop or acquire through the platform.  Path Parameters:     org (str): The platform/organization identifier     user_id (str): The username of the user to retrieve skill information for  Returns:     The user's desired skills information.  Error Responses:     400 Bad Request: If the user doesn't exist in the platform or has no desired skills     404 Not Found: If the specified platform doesn't exist  Access Control:     - Platform admins can access any user's information     - Users can access their own information
 
 ### Example
 
@@ -662,7 +670,7 @@ Name | Type | Description  | Notes
 
 
 
-Mixin that includes the StudentTokenAuthentication and IsAdminUserOrStudent
+Retrieve a user's total skill points and percentile ranking.  This endpoint returns the total skill points a user has earned across all skills and their percentile ranking compared to other users on the platform.  Path Parameters:     org (str): The platform/organization identifier     user_id (str): The username of the user to retrieve information for  Returns:     The user's total skill points and percentile ranking information:     - Username     - Total points earned across all skills     - Percentile ranking compared to other users  Access Control:     - Platform admins can access any user's information     - Users can access their own information
 
 ### Example
 
@@ -735,7 +743,7 @@ Name | Type | Description  | Notes
 
 
 
-Mixin that includes the StudentTokenAuthentication and IsAdminUserOrStudent
+Retrieve a user's self-reported skills.  This endpoint returns the skills that a user has reported having prior to or outside of the platform learning experience.  Path Parameters:     org (str): The platform/organization identifier     user_id (str): The username of the user to retrieve skill information for  Returns:     The user's self-reported skills information.  Error Responses:     400 Bad Request: If the user doesn't exist in the platform or has no reported skills     404 Not Found: If the specified platform doesn't exist  Access Control:     - Platform admins can access any user's information     - Users can access their own information
 
 ### Example
 
@@ -808,7 +816,7 @@ Name | Type | Description  | Notes
 
 
 
-Mixin that includes the StudentTokenAuthentication and IsAdminUserOrStudent
+Retrieve a user's skill information.  This endpoint returns information about skills that a user has acquired through the platform. It can return all skills or filter by a specific skill.  Path Parameters:     org (str): The platform/organization identifier     user_id (str): The username of the user to retrieve skill information for  Query Parameters:     skill_name (str, optional): Filter results to a specific skill  Returns:     When skill_name is provided:         Details about the specific skill including points earned and percentile ranking      When skill_name is not provided:         A list of all skills the user has acquired with their points  Access Control:     - Platform admins can access any user's skill information     - Users can access their own skill information
 
 ### Example
 

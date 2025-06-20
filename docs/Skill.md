@@ -6,7 +6,10 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** |  | [readonly] 
-**name** | **str** | Display name | [optional] 
+**name** | **str** | Display name | [readonly] 
+**platform_key** | **str** |  | [optional] 
+**slug** | **str** | An additional unique slug field. (Optional) | [readonly] 
+**data** | **object** | Metadata | [readonly] 
 
 ## Example
 

@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **topics** | [**List[TopicModel]**](TopicModel.md) |  | 
 **date_ranges** | [**List[DateRange]**](DateRange.md) |  | [optional] 
 **sentiment** | **List[str]** |  | [optional] 
+**users** | [**List[ChatHistoryFilterUser]**](ChatHistoryFilterUser.md) |  | 
 
 ## Example
 

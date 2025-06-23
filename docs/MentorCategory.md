@@ -8,6 +8,9 @@ Name | Type | Description | Notes
 **id** | **int** |  | [readonly] 
 **name** | **str** |  | 
 **description** | **str** |  | [optional] 
+**category_group** | **int** |  | [optional] 
+**audience** | [**MentorAudience**](MentorAudience.md) |  | 
+**audiences** | [**List[MentorAudience]**](MentorAudience.md) |  | 
 
 ## Example
 

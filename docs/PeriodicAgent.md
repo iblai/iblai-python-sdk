@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **created_at** | **datetime** |  | [readonly] 
 **modified_at** | **datetime** |  | [readonly] 
 **enabled** | **bool** |  | [readonly] 
-**one_off** | **str** |  | [readonly] 
+**one_off** | **bool** |  | [readonly] 
 **platform_key** | **str** |  | [readonly] 
 **pathway** | **str** |  | [optional] 
 **callback_url** | **str** |  | [optional] 

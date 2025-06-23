@@ -7,11 +7,11 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** |  | [readonly] 
 **name** | **str** |  | 
-**slug** | **str** |  | 
+**slug** | **str** |  | [optional] 
 **unique_id** | **str** |  | [optional] 
 **description** | **str** |  | [optional] 
 **system_prompt** | **str** |  | [optional] 
-**platform_key** | **str** |  | [optional] 
+**platform_key** | **str** |  | 
 
 ## Example
 

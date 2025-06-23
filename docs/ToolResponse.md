@@ -12,6 +12,8 @@ Name | Type | Description | Notes
 **description** | **str** |  | [optional] 
 **metadata** | **object** |  | [optional] 
 **allow_retriever_mentors** | **bool** |  | [optional] 
+**allow_openai_agent** | **bool** |  | [optional] 
+**allow_google_agent** | **bool** |  | [optional] 
 
 ## Example
 

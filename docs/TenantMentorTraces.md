@@ -7,9 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **tenant** | **str** |  | 
 **tenant_total_cost** | **float** |  | 
-**tenant_average_latency** | **float** |  | 
-**total_traces** | **int** |  | 
-**mentor_traces** | [**List[MentorData]**](MentorData.md) |  | 
+**mentor_data** | [**List[MentorData]**](MentorData.md) |  | 
 
 ## Example
 

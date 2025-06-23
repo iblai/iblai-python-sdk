@@ -6,6 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** |  | [readonly] 
+**status** | [**ResourceScrappedDataStatus**](ResourceScrappedDataStatus.md) |  | [optional] 
 **date_created** | **datetime** |  | [readonly] 
 **last_modified** | **datetime** |  | [readonly] 
 **resource** | **int** |  | 

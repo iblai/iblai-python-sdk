@@ -26,11 +26,11 @@ Method | HTTP request | Description
 
 
 # **engagement_orgs_activity_retrieve**
-> EngagementPerCourse engagement_orgs_activity_retrieve(org, format=format, include_main_platform=include_main_platform, length=length, page=page)
+> EngagementPerCourse engagement_orgs_activity_retrieve(org, department_id=department_id, format=format, include_main_platform=include_main_platform, length=length, page=page)
 
 
 
-Engagement information on a per-course basis
+Get engagement metrics on a per-course basis.  This endpoint provides a paginated list of courses with engagement metrics including activity counts, time spent, and interaction data.  Query Parameters:     page (int, optional): Page number for pagination     length (int, optional): Number of items per page  Returns:     A paginated list of courses with their engagement metrics.
 
 ### Example
 
@@ -57,13 +57,14 @@ client = get_platform_api_client(
 # Create an instance of the API class
 api_instance = iblai.EngagementApi(api_client)
 org = 'org_example' # str | 
+department_id = 56 # int | When `department_mode=1` is passed, it allows to filter data for only user content groups for the specified department  (optional)
 format = json # str | Format  * `json` - json (optional) (default to json)
 include_main_platform = True # bool | Include main platform data (optional) (default to True)
 length = 56 # int | Size of data to return (optional)
 page = 56 # int | Page offset (optional)
 
 try:
-    api_response = api_instance.engagement_orgs_activity_retrieve(org, format=format, include_main_platform=include_main_platform, length=length, page=page)
+    api_response = api_instance.engagement_orgs_activity_retrieve(org, department_id=department_id, format=format, include_main_platform=include_main_platform, length=length, page=page)
     print("The response of EngagementApi->engagement_orgs_activity_retrieve:\n")
     pprint(api_response)
 except Exception as e:
@@ -78,6 +79,7 @@ except Exception as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **org** | **str**|  | 
+ **department_id** | **int**| When &#x60;department_mode&#x3D;1&#x60; is passed, it allows to filter data for only user content groups for the specified department  | [optional] 
  **format** | **str**| Format  * &#x60;json&#x60; - json | [optional] [default to json]
  **include_main_platform** | **bool**| Include main platform data | [optional] [default to True]
  **length** | **int**| Size of data to return | [optional] 
@@ -105,7 +107,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **engagement_orgs_course_completion_over_time_retrieve**
-> OvertimeWithChangeInfo engagement_orgs_course_completion_over_time_retrieve(org, end_date=end_date, format=format, include_main_platform=include_main_platform, start_date=start_date)
+> OvertimeWithChangeInfo engagement_orgs_course_completion_over_time_retrieve(org, department_id=department_id, end_date=end_date, format=format, include_main_platform=include_main_platform, start_date=start_date)
 
 
 
@@ -136,13 +138,14 @@ client = get_platform_api_client(
 # Create an instance of the API class
 api_instance = iblai.EngagementApi(api_client)
 org = 'org_example' # str | 
+department_id = 56 # int | When `department_mode=1` is passed, it allows to filter data for only user content groups for the specified department  (optional)
 end_date = 'end_date_example' # str | end date. ISO 8601 (optional)
 format = json # str | Format  * `json` - json (optional) (default to json)
 include_main_platform = True # bool | Include main platform data (optional) (default to True)
 start_date = 'start_date_example' # str | start date. ISO 8601 (optional)
 
 try:
-    api_response = api_instance.engagement_orgs_course_completion_over_time_retrieve(org, end_date=end_date, format=format, include_main_platform=include_main_platform, start_date=start_date)
+    api_response = api_instance.engagement_orgs_course_completion_over_time_retrieve(org, department_id=department_id, end_date=end_date, format=format, include_main_platform=include_main_platform, start_date=start_date)
     print("The response of EngagementApi->engagement_orgs_course_completion_over_time_retrieve:\n")
     pprint(api_response)
 except Exception as e:
@@ -157,6 +160,7 @@ except Exception as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **org** | **str**|  | 
+ **department_id** | **int**| When &#x60;department_mode&#x3D;1&#x60; is passed, it allows to filter data for only user content groups for the specified department  | [optional] 
  **end_date** | **str**| end date. ISO 8601 | [optional] 
  **format** | **str**| Format  * &#x60;json&#x60; - json | [optional] [default to json]
  **include_main_platform** | **bool**| Include main platform data | [optional] [default to True]
@@ -184,11 +188,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **engagement_orgs_course_completion_per_course_retrieve**
-> CourseCompletionPerCourse engagement_orgs_course_completion_per_course_retrieve(org, format=format, include_main_platform=include_main_platform, length=length, page=page)
+> CourseCompletionPerCourse engagement_orgs_course_completion_per_course_retrieve(org, department_id=department_id, format=format, include_main_platform=include_main_platform, length=length, page=page)
 
 
 
-Aggregated table of enrollments,and completed count on a per-course basis
+List course completion metrics on a per-course basis.  This endpoint provides a paginated table of courses with enrollment and completion statistics for each course.  Returns:     A paginated list of courses with:     - Course identification (ID and name)     - Enrollment count     - Completion count     - Average completion rate
 
 ### Example
 
@@ -215,13 +219,14 @@ client = get_platform_api_client(
 # Create an instance of the API class
 api_instance = iblai.EngagementApi(api_client)
 org = 'org_example' # str | 
+department_id = 56 # int | When `department_mode=1` is passed, it allows to filter data for only user content groups for the specified department  (optional)
 format = json # str | Format  * `json` - json (optional) (default to json)
 include_main_platform = True # bool | Include main platform data (optional) (default to True)
 length = 56 # int | Size of data to return (optional)
 page = 56 # int | Page offset (optional)
 
 try:
-    api_response = api_instance.engagement_orgs_course_completion_per_course_retrieve(org, format=format, include_main_platform=include_main_platform, length=length, page=page)
+    api_response = api_instance.engagement_orgs_course_completion_per_course_retrieve(org, department_id=department_id, format=format, include_main_platform=include_main_platform, length=length, page=page)
     print("The response of EngagementApi->engagement_orgs_course_completion_per_course_retrieve:\n")
     pprint(api_response)
 except Exception as e:
@@ -236,6 +241,7 @@ except Exception as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **org** | **str**|  | 
+ **department_id** | **int**| When &#x60;department_mode&#x3D;1&#x60; is passed, it allows to filter data for only user content groups for the specified department  | [optional] 
  **format** | **str**| Format  * &#x60;json&#x60; - json | [optional] [default to json]
  **include_main_platform** | **bool**| Include main platform data | [optional] [default to True]
  **length** | **int**| Size of data to return | [optional] 
@@ -263,7 +269,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **engagement_orgs_courses_time_average_retrieve**
-> AverageOvertime engagement_orgs_courses_time_average_retrieve(course_id, org, end_date=end_date, format=format, include_main_platform=include_main_platform, start_date=start_date)
+> AverageOvertime engagement_orgs_courses_time_average_retrieve(course_id, org, department_id=department_id, end_date=end_date, format=format, include_main_platform=include_main_platform, start_date=start_date)
 
 
 
@@ -295,13 +301,14 @@ client = get_platform_api_client(
 api_instance = iblai.EngagementApi(api_client)
 course_id = 'course_id_example' # str | 
 org = 'org_example' # str | 
+department_id = 56 # int | When `department_mode=1` is passed, it allows to filter data for only user content groups for the specified department  (optional)
 end_date = 'end_date_example' # str | end date. ISO 8601 (optional)
 format = json # str | Format  * `json` - json (optional) (default to json)
 include_main_platform = True # bool | Include main platform data (optional) (default to True)
 start_date = 'start_date_example' # str | start date. ISO 8601 (optional)
 
 try:
-    api_response = api_instance.engagement_orgs_courses_time_average_retrieve(course_id, org, end_date=end_date, format=format, include_main_platform=include_main_platform, start_date=start_date)
+    api_response = api_instance.engagement_orgs_courses_time_average_retrieve(course_id, org, department_id=department_id, end_date=end_date, format=format, include_main_platform=include_main_platform, start_date=start_date)
     print("The response of EngagementApi->engagement_orgs_courses_time_average_retrieve:\n")
     pprint(api_response)
 except Exception as e:
@@ -317,6 +324,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **course_id** | **str**|  | 
  **org** | **str**|  | 
+ **department_id** | **int**| When &#x60;department_mode&#x3D;1&#x60; is passed, it allows to filter data for only user content groups for the specified department  | [optional] 
  **end_date** | **str**| end date. ISO 8601 | [optional] 
  **format** | **str**| Format  * &#x60;json&#x60; - json | [optional] [default to json]
  **include_main_platform** | **bool**| Include main platform data | [optional] [default to True]
@@ -344,7 +352,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **engagement_orgs_courses_time_detail_retrieve**
-> TimeDetail engagement_orgs_courses_time_detail_retrieve(course_id, org, format=format, include_main_platform=include_main_platform)
+> TimeDetail engagement_orgs_courses_time_detail_retrieve(course_id, org, department_id=department_id, format=format, include_main_platform=include_main_platform)
 
 
 
@@ -376,11 +384,12 @@ client = get_platform_api_client(
 api_instance = iblai.EngagementApi(api_client)
 course_id = 'course_id_example' # str | 
 org = 'org_example' # str | 
+department_id = 56 # int | When `department_mode=1` is passed, it allows to filter data for only user content groups for the specified department  (optional)
 format = json # str | Format  * `json` - json (optional) (default to json)
 include_main_platform = True # bool | Include main platform data (optional) (default to True)
 
 try:
-    api_response = api_instance.engagement_orgs_courses_time_detail_retrieve(course_id, org, format=format, include_main_platform=include_main_platform)
+    api_response = api_instance.engagement_orgs_courses_time_detail_retrieve(course_id, org, department_id=department_id, format=format, include_main_platform=include_main_platform)
     print("The response of EngagementApi->engagement_orgs_courses_time_detail_retrieve:\n")
     pprint(api_response)
 except Exception as e:
@@ -396,6 +405,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **course_id** | **str**|  | 
  **org** | **str**|  | 
+ **department_id** | **int**| When &#x60;department_mode&#x3D;1&#x60; is passed, it allows to filter data for only user content groups for the specified department  | [optional] 
  **format** | **str**| Format  * &#x60;json&#x60; - json | [optional] [default to json]
  **include_main_platform** | **bool**| Include main platform data | [optional] [default to True]
 
@@ -421,7 +431,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **engagement_orgs_courses_time_over_time_retrieve**
-> OverTimeWithTotal engagement_orgs_courses_time_over_time_retrieve(course_id, org, end_date=end_date, format=format, include_main_platform=include_main_platform, start_date=start_date)
+> OverTimeWithTotal engagement_orgs_courses_time_over_time_retrieve(course_id, org, department_id=department_id, end_date=end_date, format=format, include_main_platform=include_main_platform, start_date=start_date)
 
 
 
@@ -453,13 +463,14 @@ client = get_platform_api_client(
 api_instance = iblai.EngagementApi(api_client)
 course_id = 'course_id_example' # str | 
 org = 'org_example' # str | 
+department_id = 56 # int | When `department_mode=1` is passed, it allows to filter data for only user content groups for the specified department  (optional)
 end_date = 'end_date_example' # str | end date. ISO 8601 (optional)
 format = json # str | Format  * `json` - json (optional) (default to json)
 include_main_platform = True # bool | Include main platform data (optional) (default to True)
 start_date = 'start_date_example' # str | start date. ISO 8601 (optional)
 
 try:
-    api_response = api_instance.engagement_orgs_courses_time_over_time_retrieve(course_id, org, end_date=end_date, format=format, include_main_platform=include_main_platform, start_date=start_date)
+    api_response = api_instance.engagement_orgs_courses_time_over_time_retrieve(course_id, org, department_id=department_id, end_date=end_date, format=format, include_main_platform=include_main_platform, start_date=start_date)
     print("The response of EngagementApi->engagement_orgs_courses_time_over_time_retrieve:\n")
     pprint(api_response)
 except Exception as e:
@@ -475,6 +486,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **course_id** | **str**|  | 
  **org** | **str**|  | 
+ **department_id** | **int**| When &#x60;department_mode&#x3D;1&#x60; is passed, it allows to filter data for only user content groups for the specified department  | [optional] 
  **end_date** | **str**| end date. ISO 8601 | [optional] 
  **format** | **str**| Format  * &#x60;json&#x60; - json | [optional] [default to json]
  **include_main_platform** | **bool**| Include main platform data | [optional] [default to True]
@@ -502,7 +514,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **engagement_orgs_courses_time_users_detail_retrieve**
-> PerLearnerTimeSpentInCourseTree engagement_orgs_courses_time_users_detail_retrieve(course_id, org, user_id, end_date=end_date, format=format, include_main_platform=include_main_platform, start_date=start_date)
+> PerLearnerTimeSpentInCourseTree engagement_orgs_courses_time_users_detail_retrieve(course_id, org, user_id, department_id=department_id, end_date=end_date, format=format, include_main_platform=include_main_platform, start_date=start_date)
 
 
 
@@ -535,13 +547,14 @@ api_instance = iblai.EngagementApi(api_client)
 course_id = 'course_id_example' # str | 
 org = 'org_example' # str | 
 user_id = 'user_id_example' # str | 
+department_id = 56 # int | When `department_mode=1` is passed, it allows to filter data for only user content groups for the specified department  (optional)
 end_date = 'end_date_example' # str | end date. ISO 8601 (optional)
 format = json # str | Format  * `json` - json (optional) (default to json)
 include_main_platform = True # bool | Include main platform data (optional) (default to True)
 start_date = 'start_date_example' # str | start date. ISO 8601 (optional)
 
 try:
-    api_response = api_instance.engagement_orgs_courses_time_users_detail_retrieve(course_id, org, user_id, end_date=end_date, format=format, include_main_platform=include_main_platform, start_date=start_date)
+    api_response = api_instance.engagement_orgs_courses_time_users_detail_retrieve(course_id, org, user_id, department_id=department_id, end_date=end_date, format=format, include_main_platform=include_main_platform, start_date=start_date)
     print("The response of EngagementApi->engagement_orgs_courses_time_users_detail_retrieve:\n")
     pprint(api_response)
 except Exception as e:
@@ -558,6 +571,7 @@ Name | Type | Description  | Notes
  **course_id** | **str**|  | 
  **org** | **str**|  | 
  **user_id** | **str**|  | 
+ **department_id** | **int**| When &#x60;department_mode&#x3D;1&#x60; is passed, it allows to filter data for only user content groups for the specified department  | [optional] 
  **end_date** | **str**| end date. ISO 8601 | [optional] 
  **format** | **str**| Format  * &#x60;json&#x60; - json | [optional] [default to json]
  **include_main_platform** | **bool**| Include main platform data | [optional] [default to True]
@@ -585,7 +599,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **engagement_orgs_courses_time_users_over_time_retrieve**
-> OverTimeWithTotal engagement_orgs_courses_time_users_over_time_retrieve(course_id, org, user_id, end_date=end_date, format=format, include_main_platform=include_main_platform, start_date=start_date)
+> OverTimeWithTotal engagement_orgs_courses_time_users_over_time_retrieve(course_id, org, user_id, department_id=department_id, end_date=end_date, format=format, include_main_platform=include_main_platform, start_date=start_date)
 
 
 
@@ -618,13 +632,14 @@ api_instance = iblai.EngagementApi(api_client)
 course_id = 'course_id_example' # str | 
 org = 'org_example' # str | 
 user_id = 'user_id_example' # str | 
+department_id = 56 # int | When `department_mode=1` is passed, it allows to filter data for only user content groups for the specified department  (optional)
 end_date = 'end_date_example' # str | end date. ISO 8601 (optional)
 format = json # str | Format  * `json` - json (optional) (default to json)
 include_main_platform = True # bool | Include main platform data (optional) (default to True)
 start_date = 'start_date_example' # str | start date. ISO 8601 (optional)
 
 try:
-    api_response = api_instance.engagement_orgs_courses_time_users_over_time_retrieve(course_id, org, user_id, end_date=end_date, format=format, include_main_platform=include_main_platform, start_date=start_date)
+    api_response = api_instance.engagement_orgs_courses_time_users_over_time_retrieve(course_id, org, user_id, department_id=department_id, end_date=end_date, format=format, include_main_platform=include_main_platform, start_date=start_date)
     print("The response of EngagementApi->engagement_orgs_courses_time_users_over_time_retrieve:\n")
     pprint(api_response)
 except Exception as e:
@@ -641,6 +656,7 @@ Name | Type | Description  | Notes
  **course_id** | **str**|  | 
  **org** | **str**|  | 
  **user_id** | **str**|  | 
+ **department_id** | **int**| When &#x60;department_mode&#x3D;1&#x60; is passed, it allows to filter data for only user content groups for the specified department  | [optional] 
  **end_date** | **str**| end date. ISO 8601 | [optional] 
  **format** | **str**| Format  * &#x60;json&#x60; - json | [optional] [default to json]
  **include_main_platform** | **bool**| Include main platform data | [optional] [default to True]
@@ -668,7 +684,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **engagement_orgs_courses_time_users_retrieve**
-> TimeSpentByUsersInCourse engagement_orgs_courses_time_users_retrieve(course_id, org, end_date=end_date, format=format, include_main_platform=include_main_platform, length=length, page=page, start_date=start_date)
+> TimeSpentByUsersInCourse engagement_orgs_courses_time_users_retrieve(course_id, org, department_id=department_id, end_date=end_date, format=format, include_main_platform=include_main_platform, length=length, page=page, start_date=start_date)
 
 
 
@@ -700,6 +716,7 @@ client = get_platform_api_client(
 api_instance = iblai.EngagementApi(api_client)
 course_id = 'course_id_example' # str | 
 org = 'org_example' # str | 
+department_id = 56 # int | When `department_mode=1` is passed, it allows to filter data for only user content groups for the specified department  (optional)
 end_date = 'end_date_example' # str | end date. ISO 8601 (optional)
 format = json # str | Format  * `json` - json (optional) (default to json)
 include_main_platform = True # bool | Include main platform data (optional) (default to True)
@@ -708,7 +725,7 @@ page = 56 # int | Page offset (optional)
 start_date = 'start_date_example' # str | start date. ISO 8601 (optional)
 
 try:
-    api_response = api_instance.engagement_orgs_courses_time_users_retrieve(course_id, org, end_date=end_date, format=format, include_main_platform=include_main_platform, length=length, page=page, start_date=start_date)
+    api_response = api_instance.engagement_orgs_courses_time_users_retrieve(course_id, org, department_id=department_id, end_date=end_date, format=format, include_main_platform=include_main_platform, length=length, page=page, start_date=start_date)
     print("The response of EngagementApi->engagement_orgs_courses_time_users_retrieve:\n")
     pprint(api_response)
 except Exception as e:
@@ -724,6 +741,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **course_id** | **str**|  | 
  **org** | **str**|  | 
+ **department_id** | **int**| When &#x60;department_mode&#x3D;1&#x60; is passed, it allows to filter data for only user content groups for the specified department  | [optional] 
  **end_date** | **str**| end date. ISO 8601 | [optional] 
  **format** | **str**| Format  * &#x60;json&#x60; - json | [optional] [default to json]
  **include_main_platform** | **bool**| Include main platform data | [optional] [default to True]
@@ -753,11 +771,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **engagement_orgs_courses_videos_over_time_retrieve**
-> OverTimeWithTotal engagement_orgs_courses_videos_over_time_retrieve(course_id, org, end_date=end_date, format=format, include_main_platform=include_main_platform, start_date=start_date)
+> OverTimeWithTotal engagement_orgs_courses_videos_over_time_retrieve(course_id, org, department_id=department_id, end_date=end_date, format=format, include_main_platform=include_main_platform, start_date=start_date)
 
 
 
- Watched Videos count on a per-day basis  Kwargs  1. course_id <optional> e.g course-v1:Org+Course4+Run  2. user_id <optional> e.g developer@ibleducation.com or dev123 (username|email)   Query Params  3. start_date e.g 2020-10-01  4. end_date e.g 2020-10-10   Default result when no query param is added is last_7_days (today inclusive)
+Get video watch counts over time.  This endpoint provides daily counts of videos watched over a specified time period, with options to filter by course or user.  Query Parameters:     start_date (str, optional): Start date for the time range (ISO format)     end_date (str, optional): End date for the time range (ISO format)     course_id (str, optional): Filter by course ID     user_id (str, optional): Filter by username or email  Returns:     Daily video watch counts over the specified time period.  Default time range is the last 7 days if no dates are specified.  Access Control:     - Platform admins can access any video watch data     - Learners can access their own video watch data
 
 ### Example
 
@@ -785,13 +803,14 @@ client = get_platform_api_client(
 api_instance = iblai.EngagementApi(api_client)
 course_id = 'course_id_example' # str | 
 org = 'org_example' # str | 
+department_id = 56 # int | When `department_mode=1` is passed, it allows to filter data for only user content groups for the specified department  (optional)
 end_date = 'end_date_example' # str | end date. ISO 8601 (optional)
 format = json # str | Format  * `json` - json (optional) (default to json)
 include_main_platform = True # bool | Include main platform data (optional) (default to True)
 start_date = 'start_date_example' # str | start date. ISO 8601 (optional)
 
 try:
-    api_response = api_instance.engagement_orgs_courses_videos_over_time_retrieve(course_id, org, end_date=end_date, format=format, include_main_platform=include_main_platform, start_date=start_date)
+    api_response = api_instance.engagement_orgs_courses_videos_over_time_retrieve(course_id, org, department_id=department_id, end_date=end_date, format=format, include_main_platform=include_main_platform, start_date=start_date)
     print("The response of EngagementApi->engagement_orgs_courses_videos_over_time_retrieve:\n")
     pprint(api_response)
 except Exception as e:
@@ -807,6 +826,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **course_id** | **str**|  | 
  **org** | **str**|  | 
+ **department_id** | **int**| When &#x60;department_mode&#x3D;1&#x60; is passed, it allows to filter data for only user content groups for the specified department  | [optional] 
  **end_date** | **str**| end date. ISO 8601 | [optional] 
  **format** | **str**| Format  * &#x60;json&#x60; - json | [optional] [default to json]
  **include_main_platform** | **bool**| Include main platform data | [optional] [default to True]
@@ -834,11 +854,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **engagement_orgs_courses_videos_retrieve**
-> VideosSpecificCourse engagement_orgs_courses_videos_retrieve(course_id, org, format=format, include_main_platform=include_main_platform)
+> VideosSpecificCourse engagement_orgs_courses_videos_retrieve(course_id, org, department_id=department_id, format=format, include_main_platform=include_main_platform)
 
 
 
-Engagement information (video) for a specific course
+Get video engagement metrics for a specific course.  This endpoint provides detailed video engagement statistics for a single course, including view counts, completion rates, and time spent on videos.  Query Parameters:     course_id (str): The course ID to get video engagement data for  Returns:     Detailed video engagement metrics for the specified course.
 
 ### Example
 
@@ -866,11 +886,12 @@ client = get_platform_api_client(
 api_instance = iblai.EngagementApi(api_client)
 course_id = 'course_id_example' # str | 
 org = 'org_example' # str | 
+department_id = 56 # int | When `department_mode=1` is passed, it allows to filter data for only user content groups for the specified department  (optional)
 format = json # str | Format  * `json` - json (optional) (default to json)
 include_main_platform = True # bool | Include main platform data (optional) (default to True)
 
 try:
-    api_response = api_instance.engagement_orgs_courses_videos_retrieve(course_id, org, format=format, include_main_platform=include_main_platform)
+    api_response = api_instance.engagement_orgs_courses_videos_retrieve(course_id, org, department_id=department_id, format=format, include_main_platform=include_main_platform)
     print("The response of EngagementApi->engagement_orgs_courses_videos_retrieve:\n")
     pprint(api_response)
 except Exception as e:
@@ -886,6 +907,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **course_id** | **str**|  | 
  **org** | **str**|  | 
+ **department_id** | **int**| When &#x60;department_mode&#x3D;1&#x60; is passed, it allows to filter data for only user content groups for the specified department  | [optional] 
  **format** | **str**| Format  * &#x60;json&#x60; - json | [optional] [default to json]
  **include_main_platform** | **bool**| Include main platform data | [optional] [default to True]
 
@@ -911,11 +933,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **engagement_orgs_courses_videos_summary_retrieve**
-> VideosInCourseSummary engagement_orgs_courses_videos_summary_retrieve(course_id, org, format=format, include_main_platform=include_main_platform)
+> VideosInCourseSummary engagement_orgs_courses_videos_summary_retrieve(course_id, org, department_id=department_id, format=format, include_main_platform=include_main_platform)
 
 
 
-Returns a Simplified tree structure of videos watched in course Kwargs course_id  e.g course-v1:Org+Course4+Run
+Get a summary of video watch statistics for a specific course.  This endpoint provides a structured summary of video watch data for a course, organized in a tree-like format by course sections and subsections.  Query Parameters:     course_id (str): The course ID to get video summary for  Returns:     A hierarchical structure of video watch data for the course, including:     - Section and subsection organization     - Video identification and metadata     - Watch counts and completion rates
 
 ### Example
 
@@ -943,11 +965,12 @@ client = get_platform_api_client(
 api_instance = iblai.EngagementApi(api_client)
 course_id = 'course_id_example' # str | 
 org = 'org_example' # str | 
+department_id = 56 # int | When `department_mode=1` is passed, it allows to filter data for only user content groups for the specified department  (optional)
 format = json # str | Format  * `json` - json (optional) (default to json)
 include_main_platform = True # bool | Include main platform data (optional) (default to True)
 
 try:
-    api_response = api_instance.engagement_orgs_courses_videos_summary_retrieve(course_id, org, format=format, include_main_platform=include_main_platform)
+    api_response = api_instance.engagement_orgs_courses_videos_summary_retrieve(course_id, org, department_id=department_id, format=format, include_main_platform=include_main_platform)
     print("The response of EngagementApi->engagement_orgs_courses_videos_summary_retrieve:\n")
     pprint(api_response)
 except Exception as e:
@@ -963,6 +986,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **course_id** | **str**|  | 
  **org** | **str**|  | 
+ **department_id** | **int**| When &#x60;department_mode&#x3D;1&#x60; is passed, it allows to filter data for only user content groups for the specified department  | [optional] 
  **format** | **str**| Format  * &#x60;json&#x60; - json | [optional] [default to json]
  **include_main_platform** | **bool**| Include main platform data | [optional] [default to True]
 
@@ -988,7 +1012,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **engagement_orgs_courses_videos_users_retrieve**
-> WatchedVideosPerUser engagement_orgs_courses_videos_users_retrieve(course_id, org, format=format, include_main_platform=include_main_platform)
+> WatchedVideosPerUser engagement_orgs_courses_videos_users_retrieve(course_id, org, department_id=department_id, format=format, include_main_platform=include_main_platform)
 
 
 
@@ -1020,11 +1044,12 @@ client = get_platform_api_client(
 api_instance = iblai.EngagementApi(api_client)
 course_id = 'course_id_example' # str | 
 org = 'org_example' # str | 
+department_id = 56 # int | When `department_mode=1` is passed, it allows to filter data for only user content groups for the specified department  (optional)
 format = json # str | Format  * `json` - json (optional) (default to json)
 include_main_platform = True # bool | Include main platform data (optional) (default to True)
 
 try:
-    api_response = api_instance.engagement_orgs_courses_videos_users_retrieve(course_id, org, format=format, include_main_platform=include_main_platform)
+    api_response = api_instance.engagement_orgs_courses_videos_users_retrieve(course_id, org, department_id=department_id, format=format, include_main_platform=include_main_platform)
     print("The response of EngagementApi->engagement_orgs_courses_videos_users_retrieve:\n")
     pprint(api_response)
 except Exception as e:
@@ -1040,6 +1065,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **course_id** | **str**|  | 
  **org** | **str**|  | 
+ **department_id** | **int**| When &#x60;department_mode&#x3D;1&#x60; is passed, it allows to filter data for only user content groups for the specified department  | [optional] 
  **format** | **str**| Format  * &#x60;json&#x60; - json | [optional] [default to json]
  **include_main_platform** | **bool**| Include main platform data | [optional] [default to True]
 
@@ -1065,7 +1091,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **engagement_orgs_time_average_perlearner_percourse_retrieve**
-> AverageOvertime engagement_orgs_time_average_perlearner_percourse_retrieve(org, end_date=end_date, format=format, include_main_platform=include_main_platform, start_date=start_date)
+> AverageOvertime engagement_orgs_time_average_perlearner_percourse_retrieve(org, department_id=department_id, end_date=end_date, format=format, include_main_platform=include_main_platform, start_date=start_date)
 
 
 
@@ -1096,13 +1122,14 @@ client = get_platform_api_client(
 # Create an instance of the API class
 api_instance = iblai.EngagementApi(api_client)
 org = 'org_example' # str | 
+department_id = 56 # int | When `department_mode=1` is passed, it allows to filter data for only user content groups for the specified department  (optional)
 end_date = 'end_date_example' # str | end date. ISO 8601 (optional)
 format = json # str | Format  * `json` - json (optional) (default to json)
 include_main_platform = True # bool | Include main platform data (optional) (default to True)
 start_date = 'start_date_example' # str | start date. ISO 8601 (optional)
 
 try:
-    api_response = api_instance.engagement_orgs_time_average_perlearner_percourse_retrieve(org, end_date=end_date, format=format, include_main_platform=include_main_platform, start_date=start_date)
+    api_response = api_instance.engagement_orgs_time_average_perlearner_percourse_retrieve(org, department_id=department_id, end_date=end_date, format=format, include_main_platform=include_main_platform, start_date=start_date)
     print("The response of EngagementApi->engagement_orgs_time_average_perlearner_percourse_retrieve:\n")
     pprint(api_response)
 except Exception as e:
@@ -1117,6 +1144,7 @@ except Exception as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **org** | **str**|  | 
+ **department_id** | **int**| When &#x60;department_mode&#x3D;1&#x60; is passed, it allows to filter data for only user content groups for the specified department  | [optional] 
  **end_date** | **str**| end date. ISO 8601 | [optional] 
  **format** | **str**| Format  * &#x60;json&#x60; - json | [optional] [default to json]
  **include_main_platform** | **bool**| Include main platform data | [optional] [default to True]
@@ -1144,7 +1172,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **engagement_orgs_time_average_with_over_time_retrieve**
-> AverageOvertime engagement_orgs_time_average_with_over_time_retrieve(org, end_date=end_date, format=format, include_main_platform=include_main_platform, start_date=start_date)
+> AverageOvertime engagement_orgs_time_average_with_over_time_retrieve(org, department_id=department_id, end_date=end_date, format=format, include_main_platform=include_main_platform, start_date=start_date)
 
 
 
@@ -1175,13 +1203,14 @@ client = get_platform_api_client(
 # Create an instance of the API class
 api_instance = iblai.EngagementApi(api_client)
 org = 'org_example' # str | 
+department_id = 56 # int | When `department_mode=1` is passed, it allows to filter data for only user content groups for the specified department  (optional)
 end_date = 'end_date_example' # str | end date. ISO 8601 (optional)
 format = json # str | Format  * `json` - json (optional) (default to json)
 include_main_platform = True # bool | Include main platform data (optional) (default to True)
 start_date = 'start_date_example' # str | start date. ISO 8601 (optional)
 
 try:
-    api_response = api_instance.engagement_orgs_time_average_with_over_time_retrieve(org, end_date=end_date, format=format, include_main_platform=include_main_platform, start_date=start_date)
+    api_response = api_instance.engagement_orgs_time_average_with_over_time_retrieve(org, department_id=department_id, end_date=end_date, format=format, include_main_platform=include_main_platform, start_date=start_date)
     print("The response of EngagementApi->engagement_orgs_time_average_with_over_time_retrieve:\n")
     pprint(api_response)
 except Exception as e:
@@ -1196,6 +1225,7 @@ except Exception as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **org** | **str**|  | 
+ **department_id** | **int**| When &#x60;department_mode&#x3D;1&#x60; is passed, it allows to filter data for only user content groups for the specified department  | [optional] 
  **end_date** | **str**| end date. ISO 8601 | [optional] 
  **format** | **str**| Format  * &#x60;json&#x60; - json | [optional] [default to json]
  **include_main_platform** | **bool**| Include main platform data | [optional] [default to True]
@@ -1223,11 +1253,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **engagement_orgs_time_over_time_retrieve**
-> OvertimeWithChangeInfo engagement_orgs_time_over_time_retrieve(org, end_date=end_date, format=format, include_main_platform=include_main_platform, start_date=start_date)
+> OvertimeWithChangeInfo engagement_orgs_time_over_time_retrieve(org, department_id=department_id, end_date=end_date, format=format, include_main_platform=include_main_platform, start_date=start_date)
 
 
 
-Time spent in secs on a per-day basis  Query Params 1. start_date e.g 2020-10-01 2. end_date e.g 2020-10-10  Default result when no query param is added is last_7_days (today inclusive)
+Get time spent on the platform over time.  This endpoint provides daily time spent values (in seconds) across the platform over a specified time period.  Query Parameters:     start_date (str, optional): Start date for the time range (ISO format)     end_date (str, optional): End date for the time range (ISO format)  Returns:     Daily time spent values over the specified time period, with change metrics     compared to previous periods.  Default time range is the last 7 days if no dates are specified.
 
 ### Example
 
@@ -1254,13 +1284,14 @@ client = get_platform_api_client(
 # Create an instance of the API class
 api_instance = iblai.EngagementApi(api_client)
 org = 'org_example' # str | 
+department_id = 56 # int | When `department_mode=1` is passed, it allows to filter data for only user content groups for the specified department  (optional)
 end_date = 'end_date_example' # str | end date. ISO 8601 (optional)
 format = json # str | Format  * `json` - json (optional) (default to json)
 include_main_platform = True # bool | Include main platform data (optional) (default to True)
 start_date = 'start_date_example' # str | start date. ISO 8601 (optional)
 
 try:
-    api_response = api_instance.engagement_orgs_time_over_time_retrieve(org, end_date=end_date, format=format, include_main_platform=include_main_platform, start_date=start_date)
+    api_response = api_instance.engagement_orgs_time_over_time_retrieve(org, department_id=department_id, end_date=end_date, format=format, include_main_platform=include_main_platform, start_date=start_date)
     print("The response of EngagementApi->engagement_orgs_time_over_time_retrieve:\n")
     pprint(api_response)
 except Exception as e:
@@ -1275,6 +1306,7 @@ except Exception as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **org** | **str**|  | 
+ **department_id** | **int**| When &#x60;department_mode&#x3D;1&#x60; is passed, it allows to filter data for only user content groups for the specified department  | [optional] 
  **end_date** | **str**| end date. ISO 8601 | [optional] 
  **format** | **str**| Format  * &#x60;json&#x60; - json | [optional] [default to json]
  **include_main_platform** | **bool**| Include main platform data | [optional] [default to True]
@@ -1302,11 +1334,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **engagement_orgs_time_per_course_retrieve**
-> TimeSpentPerCourse engagement_orgs_time_per_course_retrieve(org, end_date=end_date, format=format, include_main_platform=include_main_platform, length=length, page=page, start_date=start_date)
+> TimeSpentPerCourse engagement_orgs_time_per_course_retrieve(org, department_id=department_id, end_date=end_date, format=format, include_main_platform=include_main_platform, length=length, page=page, start_date=start_date)
 
 
 
-Aggregated time spent value on a per course basis
+Get time spent statistics on a per-course basis.  This endpoint provides a paginated list of courses with the total time spent by users in each course.  Query Parameters:     start_date (str, optional): Start date for filtering (ISO format)     end_date (str, optional): End date for filtering (ISO format)     page (int, optional): Page number for pagination     length (int, optional): Number of items per page  Returns:     A paginated list of courses with:     - Course identification (ID and name)     - Total time spent (in seconds)     - Formatted time spent (human-readable)     - Percentage of total platform time
 
 ### Example
 
@@ -1333,6 +1365,7 @@ client = get_platform_api_client(
 # Create an instance of the API class
 api_instance = iblai.EngagementApi(api_client)
 org = 'org_example' # str | 
+department_id = 56 # int | When `department_mode=1` is passed, it allows to filter data for only user content groups for the specified department  (optional)
 end_date = 'end_date_example' # str | end date. ISO 8601 (optional)
 format = json # str | Format  * `json` - json (optional) (default to json)
 include_main_platform = True # bool | Include main platform data (optional) (default to True)
@@ -1341,7 +1374,7 @@ page = 56 # int | Page offset (optional)
 start_date = 'start_date_example' # str | start date. ISO 8601 (optional)
 
 try:
-    api_response = api_instance.engagement_orgs_time_per_course_retrieve(org, end_date=end_date, format=format, include_main_platform=include_main_platform, length=length, page=page, start_date=start_date)
+    api_response = api_instance.engagement_orgs_time_per_course_retrieve(org, department_id=department_id, end_date=end_date, format=format, include_main_platform=include_main_platform, length=length, page=page, start_date=start_date)
     print("The response of EngagementApi->engagement_orgs_time_per_course_retrieve:\n")
     pprint(api_response)
 except Exception as e:
@@ -1356,6 +1389,7 @@ except Exception as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **org** | **str**|  | 
+ **department_id** | **int**| When &#x60;department_mode&#x3D;1&#x60; is passed, it allows to filter data for only user content groups for the specified department  | [optional] 
  **end_date** | **str**| end date. ISO 8601 | [optional] 
  **format** | **str**| Format  * &#x60;json&#x60; - json | [optional] [default to json]
  **include_main_platform** | **bool**| Include main platform data | [optional] [default to True]
@@ -1385,11 +1419,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **engagement_orgs_videos_over_time_retrieve**
-> OverTimeWithTotal engagement_orgs_videos_over_time_retrieve(org, end_date=end_date, format=format, include_main_platform=include_main_platform, start_date=start_date)
+> OverTimeWithTotal engagement_orgs_videos_over_time_retrieve(org, department_id=department_id, end_date=end_date, format=format, include_main_platform=include_main_platform, start_date=start_date)
 
 
 
- Watched Videos count on a per-day basis  Kwargs  1. course_id <optional> e.g course-v1:Org+Course4+Run  2. user_id <optional> e.g developer@ibleducation.com or dev123 (username|email)   Query Params  3. start_date e.g 2020-10-01  4. end_date e.g 2020-10-10   Default result when no query param is added is last_7_days (today inclusive)
+Get video watch counts over time.  This endpoint provides daily counts of videos watched over a specified time period, with options to filter by course or user.  Query Parameters:     start_date (str, optional): Start date for the time range (ISO format)     end_date (str, optional): End date for the time range (ISO format)     course_id (str, optional): Filter by course ID     user_id (str, optional): Filter by username or email  Returns:     Daily video watch counts over the specified time period.  Default time range is the last 7 days if no dates are specified.  Access Control:     - Platform admins can access any video watch data     - Learners can access their own video watch data
 
 ### Example
 
@@ -1416,13 +1450,14 @@ client = get_platform_api_client(
 # Create an instance of the API class
 api_instance = iblai.EngagementApi(api_client)
 org = 'org_example' # str | 
+department_id = 56 # int | When `department_mode=1` is passed, it allows to filter data for only user content groups for the specified department  (optional)
 end_date = 'end_date_example' # str | end date. ISO 8601 (optional)
 format = json # str | Format  * `json` - json (optional) (default to json)
 include_main_platform = True # bool | Include main platform data (optional) (default to True)
 start_date = 'start_date_example' # str | start date. ISO 8601 (optional)
 
 try:
-    api_response = api_instance.engagement_orgs_videos_over_time_retrieve(org, end_date=end_date, format=format, include_main_platform=include_main_platform, start_date=start_date)
+    api_response = api_instance.engagement_orgs_videos_over_time_retrieve(org, department_id=department_id, end_date=end_date, format=format, include_main_platform=include_main_platform, start_date=start_date)
     print("The response of EngagementApi->engagement_orgs_videos_over_time_retrieve:\n")
     pprint(api_response)
 except Exception as e:
@@ -1437,6 +1472,7 @@ except Exception as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **org** | **str**|  | 
+ **department_id** | **int**| When &#x60;department_mode&#x3D;1&#x60; is passed, it allows to filter data for only user content groups for the specified department  | [optional] 
  **end_date** | **str**| end date. ISO 8601 | [optional] 
  **format** | **str**| Format  * &#x60;json&#x60; - json | [optional] [default to json]
  **include_main_platform** | **bool**| Include main platform data | [optional] [default to True]
@@ -1464,11 +1500,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **engagement_orgs_videos_retrieve**
-> VideoEngagementPerCourse engagement_orgs_videos_retrieve(org, format=format, include_main_platform=include_main_platform, length=length, page=page)
+> VideoEngagementPerCourse engagement_orgs_videos_retrieve(org, department_id=department_id, format=format, include_main_platform=include_main_platform, length=length, page=page)
 
 
 
-Video Engagement information on a per-course basis
+Get video engagement metrics on a per-course basis.  This endpoint provides a paginated list of courses with video engagement metrics including view counts, completion rates, and time spent on videos.  Query Parameters:     page (int, optional): Page number for pagination     length (int, optional): Number of items per page  Returns:     A paginated list of courses with their video engagement metrics.
 
 ### Example
 
@@ -1495,13 +1531,14 @@ client = get_platform_api_client(
 # Create an instance of the API class
 api_instance = iblai.EngagementApi(api_client)
 org = 'org_example' # str | 
+department_id = 56 # int | When `department_mode=1` is passed, it allows to filter data for only user content groups for the specified department  (optional)
 format = json # str | Format  * `json` - json (optional) (default to json)
 include_main_platform = True # bool | Include main platform data (optional) (default to True)
 length = 56 # int | Size of data to return (optional)
 page = 56 # int | Page offset (optional)
 
 try:
-    api_response = api_instance.engagement_orgs_videos_retrieve(org, format=format, include_main_platform=include_main_platform, length=length, page=page)
+    api_response = api_instance.engagement_orgs_videos_retrieve(org, department_id=department_id, format=format, include_main_platform=include_main_platform, length=length, page=page)
     print("The response of EngagementApi->engagement_orgs_videos_retrieve:\n")
     pprint(api_response)
 except Exception as e:
@@ -1516,6 +1553,7 @@ except Exception as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **org** | **str**|  | 
+ **department_id** | **int**| When &#x60;department_mode&#x3D;1&#x60; is passed, it allows to filter data for only user content groups for the specified department  | [optional] 
  **format** | **str**| Format  * &#x60;json&#x60; - json | [optional] [default to json]
  **include_main_platform** | **bool**| Include main platform data | [optional] [default to True]
  **length** | **int**| Size of data to return | [optional] 

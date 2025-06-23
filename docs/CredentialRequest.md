@@ -5,9 +5,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**name** | **str** | Name of the credential provider | 
-**value** | **object** | Value of the credential provider | 
-**platform** | **str** | Key of the tenant | 
+**name** | **str** | Name of the credential provider (e.g., &#39;openai&#39;, &#39;google-drive&#39;) | 
+**value** | **object** | Credential data for the provider (API keys, service account details, etc.) | 
+**platform** | **str** | Organization key identifier for the tenant | 
 
 ## Example
 

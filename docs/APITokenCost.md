@@ -5,9 +5,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**var_date** | **date** |  | 
-**completion_tokens** | **int** |  | 
-**prompt_tokens** | **int** |  | 
+**var_date** | **date** | Week start date for token usage aggregation | 
+**completion_tokens** | **int** | Total completion tokens used in this week | 
+**prompt_tokens** | **int** | Total prompt tokens used in this week | 
 
 ## Example
 

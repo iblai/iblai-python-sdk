@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**week** | **datetime** |  | 
+**period** | **datetime** |  | 
 **feedback_count** | **int** |  | 
 
 ## Example

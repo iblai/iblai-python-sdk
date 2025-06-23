@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **tokens** | **int** |  | [optional] 
 **platform_key** | **str** |  | 
 **is_trained** | **bool** |  | [optional] 
+**access** | [**RetrieverDocumentEmbeddingAccess**](RetrieverDocumentEmbeddingAccess.md) |  | [optional] 
 
 ## Example
 

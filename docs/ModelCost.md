@@ -6,7 +6,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **model** | **str** |  | 
-**total_tokens** | **int** |  | 
 **total_cost** | **float** |  | 
 
 ## Example

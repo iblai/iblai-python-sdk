@@ -6,10 +6,11 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** |  | [optional] [readonly] 
-**user** | **int** | edX user ID | [optional] [readonly] 
-**phone_number** | **str** |  | [optional] 
-**date_created** | **datetime** |  | [optional] [readonly] 
-**last_modified** | **datetime** |  | [optional] [readonly] 
+**bot** | **int** |  | [optional] [readonly] 
+**phone_number_id** | **str** |  | [optional] 
+**application_secret** | **str** |  | [optional] 
+**webhook_verification_token** | **str** |  | [optional] 
+**access_token** | **str** | Access token to the bot. This can also be a temporary access token. | [optional] 
 
 ## Example
 

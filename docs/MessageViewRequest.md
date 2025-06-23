@@ -6,6 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **title** | **str** |  | [optional] 
+**tools** | **List[str]** | List of tools slugs to use | [optional] [default to []]
 
 ## Example
 

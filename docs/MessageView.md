@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **title** | **str** |  | 
 **proactive_prompt** | **str** |  | 
 **mentor_unique_id** | **str** |  | 
+**platform_key** | **str** |  | 
 **previous** | **str** |  | 
 **next** | **str** |  | 
 **results** | **List[object]** |  | 

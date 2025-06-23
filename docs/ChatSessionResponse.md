@@ -6,6 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **session_id** | **str** |  | 
+**tools** | [**List[ToolResponse]**](ToolResponse.md) |  | 
 
 ## Example
 

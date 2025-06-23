@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **url** | **str** | Url of the document to be trained | [optional] 
 **text** | **str** | Search text for wikipedia | [optional] 
 **type** | **str** | Type of document e.g file | 
+**translate** | **bool** | If file should be translated | [optional] [default to False]
 **file** | **bytearray** | File to be trained | [optional] 
 **access** | **str** | Accessibilityto the file | [optional] [default to 'private']
 **branch** | **str** | Branch of the repository | [optional] 

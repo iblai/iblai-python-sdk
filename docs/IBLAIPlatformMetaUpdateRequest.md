@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**active_llm** | **str** | Active llm | [optional] 
-**llms** | **List[str]** |  | [optional] 
+**active_llm** | **str** | The LLM provider to set as active (e.g., &#39;openai&#39;, &#39;google&#39;) | [optional] 
+**llms** | **List[str]** | List of LLM providers to add to available providers | [optional] 
 
 ## Example
 

@@ -11504,11 +11504,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **catalog_skills_reported_create**
-> ReportedSkill catalog_skills_reported_create(reported_skill, user_id=user_id, username=username)
+> ReportedSkill catalog_skills_reported_create(reported_skill_create_update_request, user_id=user_id, username=username)
 
 
 
-POST Add or update a skill.  Params: user_id/username skills data  This method allows adding or updating a user's reported skills. It requires either a user_id or username to identify the user, along with a list of skills and additional data. If the user is identified and the skills are successfully saved, the serialized skill data is returned. A status code of 201 indicates that a new skill was created, while a status code of 200 indicates an update to an existing skill.  Error Conditions: - If the user cannot be identified, a 400 status code is returned. - If the skills cannot be saved, a 400 status code is returned.  Side Effects: - If a new skill is created, it will be persisted in the database. - If an existing skill is updated, the changes will be saved in the database.
+Add or update reported skills for a user.
 
 ### Example
 
@@ -11517,6 +11517,7 @@ POST Add or update a skill.  Params: user_id/username skills data  This method a
 ```python
 import iblai
 from iblai.models.reported_skill import ReportedSkill
+from iblai.models.reported_skill_create_update_request import ReportedSkillCreateUpdateRequest
 from iblai.rest import ApiException
 from pprint import pprint
 
@@ -11534,12 +11535,12 @@ client = get_platform_api_client(
 
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
-reported_skill = iblai.ReportedSkill() # ReportedSkill | 
+reported_skill_create_update_request = iblai.ReportedSkillCreateUpdateRequest() # ReportedSkillCreateUpdateRequest | 
 user_id = 56 # int | User ID (optional)
 username = 'username_example' # str | Username (optional)
 
 try:
-    api_response = api_instance.catalog_skills_reported_create(reported_skill, user_id=user_id, username=username)
+    api_response = api_instance.catalog_skills_reported_create(reported_skill_create_update_request, user_id=user_id, username=username)
     print("The response of CatalogApi->catalog_skills_reported_create:\n")
     pprint(api_response)
 except Exception as e:
@@ -11553,7 +11554,7 @@ except Exception as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **reported_skill** | [**ReportedSkill**](ReportedSkill.md)|  | 
+ **reported_skill_create_update_request** | [**ReportedSkillCreateUpdateRequest**](ReportedSkillCreateUpdateRequest.md)|  | 
  **user_id** | **int**| User ID | [optional] 
  **username** | **str**| Username | [optional] 
 
@@ -11575,6 +11576,7 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** |  |  -  |
+**201** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -11583,7 +11585,7 @@ Name | Type | Description  | Notes
 
 
 
-GET Retrieve desired skills for user  Params: name id slug  This method retrieves the skills reported by a user. It requires either a user_id or username to identify the user. If the user is found and has reported skills, the first reported skill is serialized and returned with a status code of 200. If no skills are found, a status code of 400 is returned.  Error Conditions: - If the user cannot be identified, a 400 status code is returned. - If no reported skills exist for the user, a 400 status code is returned.
+Retrieve reported skills for a user.
 
 ### Example
 

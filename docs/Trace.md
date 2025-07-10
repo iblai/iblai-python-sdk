@@ -6,24 +6,20 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **str** |  | 
-**username** | **str** |  | [optional] 
-**external_id** | **str** |  | 
 **timestamp** | **datetime** |  | 
 **name** | **str** |  | 
-**totalprice** | **float** |  | 
-**user_id** | **str** |  | 
-**metadata** | **Dict[str, object]** |  | 
-**release** | **str** |  | 
-**version** | **str** |  | 
-**project_id** | **str** |  | 
-**public** | **bool** |  | 
-**bookmarked** | **bool** |  | 
+**user_id** | **str** |  | [optional] 
+**metadata** | **object** |  | 
+**release** | **str** |  | [optional] 
+**version** | **str** |  | [optional] 
 **tags** | **List[str]** |  | 
-**input** | **object** |  | 
-**output** | **object** |  | 
-**session_id** | **str** |  | 
-**scores** | **List[Dict[str, object]]** |  | 
-**observations** | [**List[Observation]**](Observation.md) |  | 
+**input** | **str** |  | [optional] 
+**output** | **str** |  | [optional] 
+**session_id** | **str** |  | [optional] 
+**created_at** | **datetime** |  | [readonly] 
+**updated_at** | **datetime** |  | [optional] 
+**event_ts** | **datetime** |  | 
+**is_deleted** | **int** |  | 
 
 ## Example
 

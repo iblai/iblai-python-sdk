@@ -152,7 +152,7 @@ skill_id = 'skill_id_example' # str | Filter by specific skill ID (optional)
 skills = ['skills_example'] # List[str] | Filter by skills (optional)
 subject = ['subject_example'] # List[str] | Filter by subject areas (optional)
 tags = ['tags_example'] # List[str] | Filter by tags (optional)
-tenant = ['tenant_example'] # List[str] | Filter by tenant/organization (optional)
+tenant = 'tenant_example' # str | Filter by tenant/organization (optional)
 topics = ['topics_example'] # List[str] | Filter by topic areas (optional)
 update_facet = 'update_facet_example' # str | Force facet update (optional)
 
@@ -197,7 +197,7 @@ Name | Type | Description  | Notes
  **skills** | [**List[str]**](str.md)| Filter by skills | [optional] 
  **subject** | [**List[str]**](str.md)| Filter by subject areas | [optional] 
  **tags** | [**List[str]**](str.md)| Filter by tags | [optional] 
- **tenant** | [**List[str]**](str.md)| Filter by tenant/organization | [optional] 
+ **tenant** | **str**| Filter by tenant/organization | [optional] 
  **topics** | [**List[str]**](str.md)| Filter by topic areas | [optional] 
  **update_facet** | **str**| Force facet update | [optional] 
 
@@ -305,7 +305,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **search_mentors_retrieve**
-> MentorSearchResponse search_mentors_retrieve(audience=audience, category=category, created_by=created_by, featured=featured, id=id, limit=limit, llm=llm, offset=offset, order_by=order_by, order_direction=order_direction, query=query, tags=tags, tenant=tenant, unique_id=unique_id)
+> MentorSearchResponse search_mentors_retrieve(audience=audience, category=category, created_by=created_by, featured=featured, id=id, include_main_public_mentors=include_main_public_mentors, limit=limit, llm=llm, offset=offset, order_by=order_by, order_direction=order_direction, query=query, tags=tags, tenant=tenant, unique_id=unique_id)
 
 
 
@@ -328,6 +328,7 @@ category = ['category_example'] # List[str] | Filter by mentor category (optiona
 created_by = 'created_by_example' # str | Filter mentors created by specific user (optional)
 featured = True # bool | Filter by featured status (optional)
 id = 56 # int | Retrieve a specific mentor by ID (optional)
+include_main_public_mentors = False # bool | Include public mentors from main tenant (optional) (default to False)
 limit = 12 # int | Number of results per page (optional) (default to 12)
 llm = ['llm_example'] # List[str] | Filter by language model type (optional)
 offset = 0 # int | Starting position for pagination (optional) (default to 0)
@@ -339,7 +340,7 @@ tenant = 'tenant_example' # str | Filter by tenant/organization (optional)
 unique_id = 'unique_id_example' # str | Retrieve a specific mentor by UUID (optional)
 
 try:
-    api_response = api_instance.search_mentors_retrieve(audience=audience, category=category, created_by=created_by, featured=featured, id=id, limit=limit, llm=llm, offset=offset, order_by=order_by, order_direction=order_direction, query=query, tags=tags, tenant=tenant, unique_id=unique_id)
+    api_response = api_instance.search_mentors_retrieve(audience=audience, category=category, created_by=created_by, featured=featured, id=id, include_main_public_mentors=include_main_public_mentors, limit=limit, llm=llm, offset=offset, order_by=order_by, order_direction=order_direction, query=query, tags=tags, tenant=tenant, unique_id=unique_id)
     print("The response of SearchApi->search_mentors_retrieve:\n")
     pprint(api_response)
 except Exception as e:
@@ -358,6 +359,7 @@ Name | Type | Description  | Notes
  **created_by** | **str**| Filter mentors created by specific user | [optional] 
  **featured** | **bool**| Filter by featured status | [optional] 
  **id** | **int**| Retrieve a specific mentor by ID | [optional] 
+ **include_main_public_mentors** | **bool**| Include public mentors from main tenant | [optional] [default to False]
  **limit** | **int**| Number of results per page | [optional] [default to 12]
  **llm** | [**List[str]**](str.md)| Filter by language model type | [optional] 
  **offset** | **int**| Starting position for pagination | [optional] [default to 0]
@@ -392,7 +394,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **search_orgs_users_mentors_retrieve**
-> MentorSearchResponse search_orgs_users_mentors_retrieve(org, username, audience=audience, category=category, created_by=created_by, featured=featured, id=id, limit=limit, llm=llm, offset=offset, order_by=order_by, order_direction=order_direction, query=query, tags=tags, tenant=tenant, unique_id=unique_id)
+> MentorSearchResponse search_orgs_users_mentors_retrieve(org, username, audience=audience, category=category, created_by=created_by, featured=featured, id=id, include_main_public_mentors=include_main_public_mentors, limit=limit, llm=llm, offset=offset, order_by=order_by, order_direction=order_direction, query=query, tags=tags, tenant=tenant, unique_id=unique_id)
 
 
 
@@ -417,6 +419,7 @@ category = ['category_example'] # List[str] | Filter by mentor category (optiona
 created_by = 'created_by_example' # str | Filter mentors created by specific user (optional)
 featured = True # bool | Filter by featured status (optional)
 id = 56 # int | Retrieve a specific mentor by ID (optional)
+include_main_public_mentors = False # bool | Include public mentors from main tenant (optional) (default to False)
 limit = 12 # int | Number of results per page (optional) (default to 12)
 llm = ['llm_example'] # List[str] | Filter by language model type (optional)
 offset = 0 # int | Starting position for pagination (optional) (default to 0)
@@ -428,7 +431,7 @@ tenant = 'tenant_example' # str | Filter by tenant/organization (optional)
 unique_id = 'unique_id_example' # str | Retrieve a specific mentor by UUID (optional)
 
 try:
-    api_response = api_instance.search_orgs_users_mentors_retrieve(org, username, audience=audience, category=category, created_by=created_by, featured=featured, id=id, limit=limit, llm=llm, offset=offset, order_by=order_by, order_direction=order_direction, query=query, tags=tags, tenant=tenant, unique_id=unique_id)
+    api_response = api_instance.search_orgs_users_mentors_retrieve(org, username, audience=audience, category=category, created_by=created_by, featured=featured, id=id, include_main_public_mentors=include_main_public_mentors, limit=limit, llm=llm, offset=offset, order_by=order_by, order_direction=order_direction, query=query, tags=tags, tenant=tenant, unique_id=unique_id)
     print("The response of SearchApi->search_orgs_users_mentors_retrieve:\n")
     pprint(api_response)
 except Exception as e:
@@ -449,6 +452,7 @@ Name | Type | Description  | Notes
  **created_by** | **str**| Filter mentors created by specific user | [optional] 
  **featured** | **bool**| Filter by featured status | [optional] 
  **id** | **int**| Retrieve a specific mentor by ID | [optional] 
+ **include_main_public_mentors** | **bool**| Include public mentors from main tenant | [optional] [default to False]
  **limit** | **int**| Number of results per page | [optional] [default to 12]
  **llm** | [**List[str]**](str.md)| Filter by language model type | [optional] 
  **offset** | **int**| Starting position for pagination | [optional] [default to 0]
@@ -574,7 +578,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **search_orgs_users_recommended_retrieve**
-> RecommendedCoursesResponse search_orgs_users_recommended_retrieve(org, username, certificate=certificate, content=content, course_id=course_id, duration=duration, language=language, level=level, limit=limit, offset=offset, pathway_id=pathway_id, price=price, program_id=program_id, program_type=program_type, query=query, resource_id=resource_id, resource_type=resource_type, role_id=role_id, self_paced=self_paced, skill_id=skill_id, skills=skills, subject=subject, tags=tags, topics=topics)
+> RecommendedCoursesResponse search_orgs_users_recommended_retrieve(org, username, certificate=certificate, content=content, course_id=course_id, duration=duration, language=language, level=level, limit=limit, offset=offset, pathway_id=pathway_id, price=price, program_id=program_id, program_type=program_type, query=query, resource_id=resource_id, resource_type=resource_type, role_id=role_id, self_paced=self_paced, skill_id=skill_id, skills=skills, subject=subject, tags=tags, tenant=tenant, topics=topics)
 
 
 
@@ -627,10 +631,11 @@ skill_id = 'skill_id_example' # str | Retrieve a specific skill by ID (optional)
 skills = ['skills_example'] # List[str] | Filter by skills (optional)
 subject = ['subject_example'] # List[str] | Filter by subject areas (optional)
 tags = ['tags_example'] # List[str] | Filter by tags (optional)
+tenant = 'tenant_example' # str | Filter by tenant/organization (optional)
 topics = ['topics_example'] # List[str] | Filter by topic areas (optional)
 
 try:
-    api_response = api_instance.search_orgs_users_recommended_retrieve(org, username, certificate=certificate, content=content, course_id=course_id, duration=duration, language=language, level=level, limit=limit, offset=offset, pathway_id=pathway_id, price=price, program_id=program_id, program_type=program_type, query=query, resource_id=resource_id, resource_type=resource_type, role_id=role_id, self_paced=self_paced, skill_id=skill_id, skills=skills, subject=subject, tags=tags, topics=topics)
+    api_response = api_instance.search_orgs_users_recommended_retrieve(org, username, certificate=certificate, content=content, course_id=course_id, duration=duration, language=language, level=level, limit=limit, offset=offset, pathway_id=pathway_id, price=price, program_id=program_id, program_type=program_type, query=query, resource_id=resource_id, resource_type=resource_type, role_id=role_id, self_paced=self_paced, skill_id=skill_id, skills=skills, subject=subject, tags=tags, tenant=tenant, topics=topics)
     print("The response of SearchApi->search_orgs_users_recommended_retrieve:\n")
     pprint(api_response)
 except Exception as e:
@@ -667,6 +672,7 @@ Name | Type | Description  | Notes
  **skills** | [**List[str]**](str.md)| Filter by skills | [optional] 
  **subject** | [**List[str]**](str.md)| Filter by subject areas | [optional] 
  **tags** | [**List[str]**](str.md)| Filter by tags | [optional] 
+ **tenant** | **str**| Filter by tenant/organization | [optional] 
  **topics** | [**List[str]**](str.md)| Filter by topic areas | [optional] 
 
 ### Return type
@@ -741,7 +747,7 @@ skill_id = 'skill_id_example' # str | Retrieve a specific skill by ID (optional)
 skills = ['skills_example'] # List[str] | Filter by skills (optional)
 subject = ['subject_example'] # List[str] | Filter by subject areas (optional)
 tags = ['tags_example'] # List[str] | Filter by tags (optional)
-tenant = ['tenant_example'] # List[str] | Filter by tenant/organization (optional)
+tenant = 'tenant_example' # str | Filter by tenant/organization (optional)
 topics = ['topics_example'] # List[str] | Filter by topic areas (optional)
 update_facet = 'update_facet_example' # str | Force facet update (optional)
 
@@ -790,7 +796,7 @@ Name | Type | Description  | Notes
  **skills** | [**List[str]**](str.md)| Filter by skills | [optional] 
  **subject** | [**List[str]**](str.md)| Filter by subject areas | [optional] 
  **tags** | [**List[str]**](str.md)| Filter by tags | [optional] 
- **tenant** | [**List[str]**](str.md)| Filter by tenant/organization | [optional] 
+ **tenant** | **str**| Filter by tenant/organization | [optional] 
  **topics** | [**List[str]**](str.md)| Filter by topic areas | [optional] 
  **update_facet** | **str**| Force facet update | [optional] 
 

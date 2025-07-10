@@ -96,7 +96,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **ai_index_orgs_users_documents_graph_train_create**
-> TrainDocumentViewResponse ai_index_orgs_users_documents_graph_train_create(org, user_id, pathway, type, url=url, text=text, translate=translate, file=file, access=access, branch=branch, google_drive_auth_data=google_drive_auth_data, dropbox_auth_data=dropbox_auth_data)
+> TrainDocumentViewResponse ai_index_orgs_users_documents_graph_train_create(org, user_id, pathway, type, url=url, text=text, translate=translate, file=file, access=access, branch=branch, google_drive_auth_data=google_drive_auth_data, dropbox_auth_data=dropbox_auth_data, crawler_max_depth=crawler_max_depth, crawler_max_pages_limit=crawler_max_pages_limit, crawler_max_concurrency=crawler_max_concurrency, crawler_match_patterns=crawler_match_patterns, crawler_pattern_type=crawler_pattern_type)
 
 
 
@@ -138,9 +138,14 @@ access = 'private' # str | Accessibilityto the file (optional) (default to 'priv
 branch = 'branch_example' # str | Branch of the repository (optional)
 google_drive_auth_data = None # object | Authentication and scoped details of google drive (optional)
 dropbox_auth_data = None # object | Authentication and scoped details of dropbox (optional)
+crawler_max_depth = 56 # int | The max depth of the crawler (optional)
+crawler_max_pages_limit = 56 # int | The max pages limit of the crawler (optional)
+crawler_max_concurrency = 56 # int | The max concurrency of the crawler (optional)
+crawler_match_patterns = ['crawler_match_patterns_example'] # List[str] | The patterns that the crawler should use to match urls. Patterns may be a glob pattern or a full regex pattern. Indicate the specified type in `crawler_pattern_type`. (optional)
+crawler_pattern_type = iblai.CrawlerPatternTypeEnum() # CrawlerPatternTypeEnum | Pattern type for the crawler  * `glob` - Glob * `regex` - Regex (optional)
 
 try:
-    api_response = api_instance.ai_index_orgs_users_documents_graph_train_create(org, user_id, pathway, type, url=url, text=text, translate=translate, file=file, access=access, branch=branch, google_drive_auth_data=google_drive_auth_data, dropbox_auth_data=dropbox_auth_data)
+    api_response = api_instance.ai_index_orgs_users_documents_graph_train_create(org, user_id, pathway, type, url=url, text=text, translate=translate, file=file, access=access, branch=branch, google_drive_auth_data=google_drive_auth_data, dropbox_auth_data=dropbox_auth_data, crawler_max_depth=crawler_max_depth, crawler_max_pages_limit=crawler_max_pages_limit, crawler_max_concurrency=crawler_max_concurrency, crawler_match_patterns=crawler_match_patterns, crawler_pattern_type=crawler_pattern_type)
     print("The response of AiIndexApi->ai_index_orgs_users_documents_graph_train_create:\n")
     pprint(api_response)
 except Exception as e:
@@ -166,6 +171,11 @@ Name | Type | Description  | Notes
  **branch** | **str**| Branch of the repository | [optional] 
  **google_drive_auth_data** | [**object**](object.md)| Authentication and scoped details of google drive | [optional] 
  **dropbox_auth_data** | [**object**](object.md)| Authentication and scoped details of dropbox | [optional] 
+ **crawler_max_depth** | **int**| The max depth of the crawler | [optional] 
+ **crawler_max_pages_limit** | **int**| The max pages limit of the crawler | [optional] 
+ **crawler_max_concurrency** | **int**| The max concurrency of the crawler | [optional] 
+ **crawler_match_patterns** | [**List[str]**](str.md)| The patterns that the crawler should use to match urls. Patterns may be a glob pattern or a full regex pattern. Indicate the specified type in &#x60;crawler_pattern_type&#x60;. | [optional] 
+ **crawler_pattern_type** | [**CrawlerPatternTypeEnum**](CrawlerPatternTypeEnum.md)| Pattern type for the crawler  * &#x60;glob&#x60; - Glob * &#x60;regex&#x60; - Regex | [optional] 
 
 ### Return type
 
@@ -728,7 +738,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **ai_index_orgs_users_documents_train_create**
-> TrainDocumentViewResponse ai_index_orgs_users_documents_train_create(org, user_id, pathway, type, url=url, text=text, translate=translate, file=file, access=access, branch=branch, google_drive_auth_data=google_drive_auth_data, dropbox_auth_data=dropbox_auth_data)
+> TrainDocumentViewResponse ai_index_orgs_users_documents_train_create(org, user_id, pathway, type, url=url, text=text, translate=translate, file=file, access=access, branch=branch, google_drive_auth_data=google_drive_auth_data, dropbox_auth_data=dropbox_auth_data, crawler_max_depth=crawler_max_depth, crawler_max_pages_limit=crawler_max_pages_limit, crawler_max_concurrency=crawler_max_concurrency, crawler_match_patterns=crawler_match_patterns, crawler_pattern_type=crawler_pattern_type)
 
 
 
@@ -770,9 +780,14 @@ access = 'private' # str | Accessibilityto the file (optional) (default to 'priv
 branch = 'branch_example' # str | Branch of the repository (optional)
 google_drive_auth_data = None # object | Authentication and scoped details of google drive (optional)
 dropbox_auth_data = None # object | Authentication and scoped details of dropbox (optional)
+crawler_max_depth = 56 # int | The max depth of the crawler (optional)
+crawler_max_pages_limit = 56 # int | The max pages limit of the crawler (optional)
+crawler_max_concurrency = 56 # int | The max concurrency of the crawler (optional)
+crawler_match_patterns = ['crawler_match_patterns_example'] # List[str] | The patterns that the crawler should use to match urls. Patterns may be a glob pattern or a full regex pattern. Indicate the specified type in `crawler_pattern_type`. (optional)
+crawler_pattern_type = iblai.CrawlerPatternTypeEnum() # CrawlerPatternTypeEnum | Pattern type for the crawler  * `glob` - Glob * `regex` - Regex (optional)
 
 try:
-    api_response = api_instance.ai_index_orgs_users_documents_train_create(org, user_id, pathway, type, url=url, text=text, translate=translate, file=file, access=access, branch=branch, google_drive_auth_data=google_drive_auth_data, dropbox_auth_data=dropbox_auth_data)
+    api_response = api_instance.ai_index_orgs_users_documents_train_create(org, user_id, pathway, type, url=url, text=text, translate=translate, file=file, access=access, branch=branch, google_drive_auth_data=google_drive_auth_data, dropbox_auth_data=dropbox_auth_data, crawler_max_depth=crawler_max_depth, crawler_max_pages_limit=crawler_max_pages_limit, crawler_max_concurrency=crawler_max_concurrency, crawler_match_patterns=crawler_match_patterns, crawler_pattern_type=crawler_pattern_type)
     print("The response of AiIndexApi->ai_index_orgs_users_documents_train_create:\n")
     pprint(api_response)
 except Exception as e:
@@ -798,6 +813,11 @@ Name | Type | Description  | Notes
  **branch** | **str**| Branch of the repository | [optional] 
  **google_drive_auth_data** | [**object**](object.md)| Authentication and scoped details of google drive | [optional] 
  **dropbox_auth_data** | [**object**](object.md)| Authentication and scoped details of dropbox | [optional] 
+ **crawler_max_depth** | **int**| The max depth of the crawler | [optional] 
+ **crawler_max_pages_limit** | **int**| The max pages limit of the crawler | [optional] 
+ **crawler_max_concurrency** | **int**| The max concurrency of the crawler | [optional] 
+ **crawler_match_patterns** | [**List[str]**](str.md)| The patterns that the crawler should use to match urls. Patterns may be a glob pattern or a full regex pattern. Indicate the specified type in &#x60;crawler_pattern_type&#x60;. | [optional] 
+ **crawler_pattern_type** | [**CrawlerPatternTypeEnum**](CrawlerPatternTypeEnum.md)| Pattern type for the crawler  * &#x60;glob&#x60; - Glob * &#x60;regex&#x60; - Regex | [optional] 
 
 ### Return type
 
@@ -979,7 +999,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **ai_index_orgs_users_documents_update**
-> RetrieverDocumentEmbedding ai_index_orgs_users_documents_update(document_id, org, user_id, pathway, document_name=document_name, document_type=document_type, url=url, train=train, access=access)
+> RetrieverDocumentEmbedding ai_index_orgs_users_documents_update(document_id, org, user_id, pathway, document_name=document_name, document_type=document_type, url=url, train=train, crawler_max_depth=crawler_max_depth, crawler_max_pages_limit=crawler_max_pages_limit, crawler_max_concurrency=crawler_max_concurrency, crawler_match_patterns=crawler_match_patterns, crawler_pattern_type=crawler_pattern_type, access=access, google_drive_auth_data=google_drive_auth_data, dropbox_auth_data=dropbox_auth_data)
 
 
 
@@ -1017,10 +1037,17 @@ document_name = 'document_name_example' # str | The name of the document (option
 document_type = 'document_type_example' # str | The type of the document (optional)
 url = 'url_example' # str | The url of the document (optional)
 train = True # bool | The type of the document (optional)
+crawler_max_depth = 56 # int | The max depth of the crawler (optional)
+crawler_max_pages_limit = 56 # int | The max pages limit of the crawler (optional)
+crawler_max_concurrency = 56 # int | The max concurrency of the crawler (optional)
+crawler_match_patterns = ['crawler_match_patterns_example'] # List[str] | The patterns that the crawler should use to match urls. Patterns may be a glob pattern or a full regex pattern. Indicate the specified type in `crawler_pattern_type`. (optional)
+crawler_pattern_type = iblai.CrawlerPatternTypeEnum() # CrawlerPatternTypeEnum | Pattern type for the crawler  * `glob` - Glob * `regex` - Regex (optional)
 access = iblai.AccessEnum() # AccessEnum | The access of the document.  * `public` - Public * `private` - Private (optional)
+google_drive_auth_data = None # object | Authentication and scoped details of google drive. (optional)
+dropbox_auth_data = None # object | Authentication and scoped details of dropbox (optional)
 
 try:
-    api_response = api_instance.ai_index_orgs_users_documents_update(document_id, org, user_id, pathway, document_name=document_name, document_type=document_type, url=url, train=train, access=access)
+    api_response = api_instance.ai_index_orgs_users_documents_update(document_id, org, user_id, pathway, document_name=document_name, document_type=document_type, url=url, train=train, crawler_max_depth=crawler_max_depth, crawler_max_pages_limit=crawler_max_pages_limit, crawler_max_concurrency=crawler_max_concurrency, crawler_match_patterns=crawler_match_patterns, crawler_pattern_type=crawler_pattern_type, access=access, google_drive_auth_data=google_drive_auth_data, dropbox_auth_data=dropbox_auth_data)
     print("The response of AiIndexApi->ai_index_orgs_users_documents_update:\n")
     pprint(api_response)
 except Exception as e:
@@ -1042,7 +1069,14 @@ Name | Type | Description  | Notes
  **document_type** | **str**| The type of the document | [optional] 
  **url** | **str**| The url of the document | [optional] 
  **train** | **bool**| The type of the document | [optional] 
+ **crawler_max_depth** | **int**| The max depth of the crawler | [optional] 
+ **crawler_max_pages_limit** | **int**| The max pages limit of the crawler | [optional] 
+ **crawler_max_concurrency** | **int**| The max concurrency of the crawler | [optional] 
+ **crawler_match_patterns** | [**List[str]**](str.md)| The patterns that the crawler should use to match urls. Patterns may be a glob pattern or a full regex pattern. Indicate the specified type in &#x60;crawler_pattern_type&#x60;. | [optional] 
+ **crawler_pattern_type** | [**CrawlerPatternTypeEnum**](CrawlerPatternTypeEnum.md)| Pattern type for the crawler  * &#x60;glob&#x60; - Glob * &#x60;regex&#x60; - Regex | [optional] 
  **access** | [**AccessEnum**](AccessEnum.md)| The access of the document.  * &#x60;public&#x60; - Public * &#x60;private&#x60; - Private | [optional] 
+ **google_drive_auth_data** | [**object**](object.md)| Authentication and scoped details of google drive. | [optional] 
+ **dropbox_auth_data** | [**object**](object.md)| Authentication and scoped details of dropbox | [optional] 
 
 ### Return type
 

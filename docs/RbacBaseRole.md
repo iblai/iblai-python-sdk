@@ -9,7 +9,8 @@ Name | Type | Description | Notes
 **id** | **int** |  | [readonly] 
 **name** | **str** |  | 
 **platform_key** | **str** | Platform key where this role belongs | 
-**actions** | **List[str]** | List of actions/permissions this role can perform (e.g., [&#39;Ibl.Mentor/Settings/read&#39;, &#39;Ibl.Mentor/Settings/write&#39;]) | 
+**actions** | **List[str]** | List of actions/permissions this role can perform (e.g., [&#39;Ibl.Mentor/Settings/read&#39;, &#39;Ibl.Mentor/Settings/write&#39;]) | [optional] 
+**data_actions** | **List[str]** | List of data actions/permissions this role can perform for field-level access (e.g., [&#39;Ibl.Mentor/Settings/name/read&#39;, &#39;Ibl.Mentor/Settings/email/write&#39;]) | [optional] 
 
 ## Example
 

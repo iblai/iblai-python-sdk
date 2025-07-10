@@ -16,6 +16,11 @@ Name | Type | Description | Notes
 **platform_key** | **str** |  | 
 **is_trained** | **bool** |  | [optional] 
 **access** | [**RetrieverDocumentEmbeddingAccess**](RetrieverDocumentEmbeddingAccess.md) |  | [optional] 
+**crawler_max_depth** | **int** |  | [optional] 
+**crawler_max_pages_limit** | **int** |  | [optional] 
+**crawler_max_concurrency** | **int** |  | [optional] 
+**crawler_match_patterns** | **object** | List of patterns that the crawler should use to match urls.          Patterns may be a glob pattern or a full regex pattern.          Indicate the specified type in &#x60;crawler_pattern_type&#x60;. | [optional] 
+**crawler_pattern_type** | [**RetrieverDocumentEmbeddingCrawlerPatternType**](RetrieverDocumentEmbeddingCrawlerPatternType.md) |  | [optional] 
 
 ## Example
 

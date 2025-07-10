@@ -44,6 +44,12 @@ Name | Type | Description | Notes
 **enable_safety_system** | **bool** |  | [readonly] 
 **forkable** | **bool** |  | [readonly] 
 **forkable_with_training_data** | **bool** |  | [readonly] 
+**mentor_name** | **str** |  | [readonly] 
+**categories** | **List[object]** |  | [readonly] 
+**recently_accessed_at** | **datetime** |  | [readonly] 
+**created_by** | **str** |  | [readonly] 
+**created_at** | **datetime** |  | [readonly] 
+**updated_at** | **datetime** |  | [readonly] 
 
 ## Example
 

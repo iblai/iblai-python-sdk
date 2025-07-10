@@ -52,6 +52,8 @@ Method | HTTP request | Description
 [**ai_analytics_orgs_users_mentor_summary_retrieve**](AiAnalyticsApi.md#ai_analytics_orgs_users_mentor_summary_retrieve) | **GET** /api/ai-analytics/orgs/{org}/users/{user_id}/mentor-summary/ | 
 [**ai_analytics_orgs_users_mentors_cost_retrieve**](AiAnalyticsApi.md#ai_analytics_orgs_users_mentors_cost_retrieve) | **GET** /api/ai-analytics/orgs/{org}/users/{user_id}/mentors/{mentor_unique_id}/cost/ | 
 [**ai_analytics_orgs_users_most_discussed_topics_list**](AiAnalyticsApi.md#ai_analytics_orgs_users_most_discussed_topics_list) | **GET** /api/ai-analytics/orgs/{org}/users/{user_id}/most-discussed-topics/ | 
+[**ai_analytics_orgs_users_observations_list**](AiAnalyticsApi.md#ai_analytics_orgs_users_observations_list) | **GET** /api/ai-analytics/orgs/{org}/users/{user_id}/observations/ | 
+[**ai_analytics_orgs_users_observations_retrieve**](AiAnalyticsApi.md#ai_analytics_orgs_users_observations_retrieve) | **GET** /api/ai-analytics/orgs/{org}/users/{user_id}/observations/{id}/ | 
 [**ai_analytics_orgs_users_overview_summary_retrieve**](AiAnalyticsApi.md#ai_analytics_orgs_users_overview_summary_retrieve) | **GET** /api/ai-analytics/orgs/{org}/users/{user_id}/overview-summary/ | 
 [**ai_analytics_orgs_users_rating_summary_list**](AiAnalyticsApi.md#ai_analytics_orgs_users_rating_summary_list) | **GET** /api/ai-analytics/orgs/{org}/users/{user_id}/rating-summary/ | 
 [**ai_analytics_orgs_users_registered_users_trend_list**](AiAnalyticsApi.md#ai_analytics_orgs_users_registered_users_trend_list) | **GET** /api/ai-analytics/orgs/{org}/users/{user_id}/registered-users-trend/ | 
@@ -62,6 +64,8 @@ Method | HTTP request | Description
 [**ai_analytics_orgs_users_topic_statistics_retrieve**](AiAnalyticsApi.md#ai_analytics_orgs_users_topic_statistics_retrieve) | **GET** /api/ai-analytics/orgs/{org}/users/{user_id}/topic-statistics/ | 
 [**ai_analytics_orgs_users_topics_summary_list**](AiAnalyticsApi.md#ai_analytics_orgs_users_topics_summary_list) | **GET** /api/ai-analytics/orgs/{org}/users/{user_id}/topics/summary/ | 
 [**ai_analytics_orgs_users_total_users_by_mentor_list**](AiAnalyticsApi.md#ai_analytics_orgs_users_total_users_by_mentor_list) | **GET** /api/ai-analytics/orgs/{org}/users/{user_id}/total-users-by-mentor/ | 
+[**ai_analytics_orgs_users_traces_list**](AiAnalyticsApi.md#ai_analytics_orgs_users_traces_list) | **GET** /api/ai-analytics/orgs/{org}/users/{user_id}/traces/ | 
+[**ai_analytics_orgs_users_traces_retrieve**](AiAnalyticsApi.md#ai_analytics_orgs_users_traces_retrieve) | **GET** /api/ai-analytics/orgs/{org}/users/{user_id}/traces/{id}/ | 
 [**ai_analytics_orgs_users_transcripts_list**](AiAnalyticsApi.md#ai_analytics_orgs_users_transcripts_list) | **GET** /api/ai-analytics/orgs/{org}/users/{user_id}/transcripts/ | 
 [**ai_analytics_orgs_users_usage_summary_list**](AiAnalyticsApi.md#ai_analytics_orgs_users_usage_summary_list) | **GET** /api/ai-analytics/orgs/{org}/users/{user_id}/usage-summary/ | 
 [**ai_analytics_orgs_users_user_cohorts_over_time_retrieve**](AiAnalyticsApi.md#ai_analytics_orgs_users_user_cohorts_over_time_retrieve) | **GET** /api/ai-analytics/orgs/{org}/users/{user_id}/user-cohorts-over-time/ | 
@@ -105,6 +109,96 @@ Method | HTTP request | Description
 [**ai_analytics_perlearner_orgs_users_videos_over_time_retrieve**](AiAnalyticsApi.md#ai_analytics_perlearner_orgs_users_videos_over_time_retrieve) | **GET** /api/ai-analytics/perlearner/orgs/{org}/users/{user_id}/videos/over-time | 
 [**ai_analytics_perlearner_orgs_users_videos_per_course_retrieve**](AiAnalyticsApi.md#ai_analytics_perlearner_orgs_users_videos_per_course_retrieve) | **GET** /api/ai-analytics/perlearner/orgs/{org}/users/{user_id}/videos/per-course | 
 [**ai_analytics_user_groups_orgs_retrieve**](AiAnalyticsApi.md#ai_analytics_user_groups_orgs_retrieve) | **GET** /api/ai-analytics/user-groups/orgs/{org}/ | 
+[**analytics_orgs_time_update_create**](AiAnalyticsApi.md#analytics_orgs_time_update_create) | **POST** /api/analytics/orgs/{org}/time/update/ | 
+[**analytics_time_spent_user_retrieve**](AiAnalyticsApi.md#analytics_time_spent_user_retrieve) | **GET** /api/analytics/time-spent/user/ | Get total time spent for current user
+[**audience_orgs_active_users_over_time_retrieve**](AiAnalyticsApi.md#audience_orgs_active_users_over_time_retrieve) | **GET** /api/audience/orgs/{org}/active-users/over-time | 
+[**audience_orgs_active_users_per_course_retrieve**](AiAnalyticsApi.md#audience_orgs_active_users_per_course_retrieve) | **GET** /api/audience/orgs/{org}/active-users/per-course | 
+[**audience_orgs_active_users_users_retrieve**](AiAnalyticsApi.md#audience_orgs_active_users_users_retrieve) | **GET** /api/audience/orgs/{org}/active-users/users | 
+[**audience_orgs_enrollments_courses_over_time_retrieve**](AiAnalyticsApi.md#audience_orgs_enrollments_courses_over_time_retrieve) | **GET** /api/audience/orgs/{org}/enrollments/courses/{course_id}/over-time | 
+[**audience_orgs_enrollments_courses_users_retrieve**](AiAnalyticsApi.md#audience_orgs_enrollments_courses_users_retrieve) | **GET** /api/audience/orgs/{org}/enrollments/courses/{course_id}/users | 
+[**audience_orgs_enrollments_over_time_retrieve**](AiAnalyticsApi.md#audience_orgs_enrollments_over_time_retrieve) | **GET** /api/audience/orgs/{org}/enrollments/over-time | 
+[**audience_orgs_enrollments_per_course_retrieve**](AiAnalyticsApi.md#audience_orgs_enrollments_per_course_retrieve) | **GET** /api/audience/orgs/{org}/enrollments/per-course | 
+[**audience_orgs_registered_users_over_time_retrieve**](AiAnalyticsApi.md#audience_orgs_registered_users_over_time_retrieve) | **GET** /api/audience/orgs/{org}/registered-users/over-time | 
+[**audience_orgs_registered_users_per_course_retrieve**](AiAnalyticsApi.md#audience_orgs_registered_users_per_course_retrieve) | **GET** /api/audience/orgs/{org}/registered-users/per-course | 
+[**audience_orgs_registered_users_retrieve**](AiAnalyticsApi.md#audience_orgs_registered_users_retrieve) | **GET** /api/audience/orgs/{org}/registered-users/ | 
+[**engagement_orgs_activity_retrieve**](AiAnalyticsApi.md#engagement_orgs_activity_retrieve) | **GET** /api/engagement/orgs/{org}/activity | 
+[**engagement_orgs_course_completion_over_time_retrieve**](AiAnalyticsApi.md#engagement_orgs_course_completion_over_time_retrieve) | **GET** /api/engagement/orgs/{org}/course_completion/over-time | 
+[**engagement_orgs_course_completion_per_course_retrieve**](AiAnalyticsApi.md#engagement_orgs_course_completion_per_course_retrieve) | **GET** /api/engagement/orgs/{org}/course_completion/per-course | 
+[**engagement_orgs_courses_time_average_retrieve**](AiAnalyticsApi.md#engagement_orgs_courses_time_average_retrieve) | **GET** /api/engagement/orgs/{org}/courses/{course_id}/time/average | 
+[**engagement_orgs_courses_time_detail_retrieve**](AiAnalyticsApi.md#engagement_orgs_courses_time_detail_retrieve) | **GET** /api/engagement/orgs/{org}/courses/{course_id}/time/detail | 
+[**engagement_orgs_courses_time_over_time_retrieve**](AiAnalyticsApi.md#engagement_orgs_courses_time_over_time_retrieve) | **GET** /api/engagement/orgs/{org}/courses/{course_id}/time/over-time | 
+[**engagement_orgs_courses_time_users_detail_retrieve**](AiAnalyticsApi.md#engagement_orgs_courses_time_users_detail_retrieve) | **GET** /api/engagement/orgs/{org}/courses/{course_id}/time/users/{user_id}/detail | 
+[**engagement_orgs_courses_time_users_over_time_retrieve**](AiAnalyticsApi.md#engagement_orgs_courses_time_users_over_time_retrieve) | **GET** /api/engagement/orgs/{org}/courses/{course_id}/time/users/{user_id}/over-time | 
+[**engagement_orgs_courses_time_users_retrieve**](AiAnalyticsApi.md#engagement_orgs_courses_time_users_retrieve) | **GET** /api/engagement/orgs/{org}/courses/{course_id}/time/users | 
+[**engagement_orgs_courses_videos_over_time_retrieve**](AiAnalyticsApi.md#engagement_orgs_courses_videos_over_time_retrieve) | **GET** /api/engagement/orgs/{org}/courses/{course_id}/videos/over-time | 
+[**engagement_orgs_courses_videos_retrieve**](AiAnalyticsApi.md#engagement_orgs_courses_videos_retrieve) | **GET** /api/engagement/orgs/{org}/courses/{course_id}/videos/ | 
+[**engagement_orgs_courses_videos_summary_retrieve**](AiAnalyticsApi.md#engagement_orgs_courses_videos_summary_retrieve) | **GET** /api/engagement/orgs/{org}/courses/{course_id}/videos/summary | 
+[**engagement_orgs_courses_videos_users_retrieve**](AiAnalyticsApi.md#engagement_orgs_courses_videos_users_retrieve) | **GET** /api/engagement/orgs/{org}/courses/{course_id}/videos/users | 
+[**engagement_orgs_time_average_perlearner_percourse_retrieve**](AiAnalyticsApi.md#engagement_orgs_time_average_perlearner_percourse_retrieve) | **GET** /api/engagement/orgs/{org}/time/average-perlearner-percourse | 
+[**engagement_orgs_time_average_with_over_time_retrieve**](AiAnalyticsApi.md#engagement_orgs_time_average_with_over_time_retrieve) | **GET** /api/engagement/orgs/{org}/time/average-with-over-time | 
+[**engagement_orgs_time_over_time_retrieve**](AiAnalyticsApi.md#engagement_orgs_time_over_time_retrieve) | **GET** /api/engagement/orgs/{org}/time/over-time | 
+[**engagement_orgs_time_per_course_retrieve**](AiAnalyticsApi.md#engagement_orgs_time_per_course_retrieve) | **GET** /api/engagement/orgs/{org}/time/per-course | 
+[**engagement_orgs_videos_over_time_retrieve**](AiAnalyticsApi.md#engagement_orgs_videos_over_time_retrieve) | **GET** /api/engagement/orgs/{org}/videos/over-time | 
+[**engagement_orgs_videos_retrieve**](AiAnalyticsApi.md#engagement_orgs_videos_retrieve) | **GET** /api/engagement/orgs/{org}/videos/ | 
+[**overview_orgs_active_users_retrieve**](AiAnalyticsApi.md#overview_orgs_active_users_retrieve) | **GET** /api/overview/orgs/{org}/active-users | 
+[**overview_orgs_average_grade_retrieve**](AiAnalyticsApi.md#overview_orgs_average_grade_retrieve) | **GET** /api/overview/orgs/{org}/average-grade | 
+[**overview_orgs_courses_completions_retrieve**](AiAnalyticsApi.md#overview_orgs_courses_completions_retrieve) | **GET** /api/overview/orgs/{org}/courses/completions | 
+[**overview_orgs_learners_retrieve**](AiAnalyticsApi.md#overview_orgs_learners_retrieve) | **GET** /api/overview/orgs/{org}/learners | 
+[**overview_orgs_most_active_courses_retrieve**](AiAnalyticsApi.md#overview_orgs_most_active_courses_retrieve) | **GET** /api/overview/orgs/{org}/most-active-courses | 
+[**overview_orgs_registered_users_retrieve**](AiAnalyticsApi.md#overview_orgs_registered_users_retrieve) | **GET** /api/overview/orgs/{org}/registered-users | 
+[**performance_orgs_courses_grading_average_retrieve**](AiAnalyticsApi.md#performance_orgs_courses_grading_average_retrieve) | **GET** /api/performance/orgs/{org}/courses/{course_id}/grading/average | 
+[**performance_orgs_courses_grading_average_with_cutoff_retrieve**](AiAnalyticsApi.md#performance_orgs_courses_grading_average_with_cutoff_retrieve) | **GET** /api/performance/orgs/{org}/courses/{course_id}/grading/average-with-cutoff | 
+[**performance_orgs_courses_grading_detail_retrieve**](AiAnalyticsApi.md#performance_orgs_courses_grading_detail_retrieve) | **GET** /api/performance/orgs/{org}/courses/{course_id}/grading/detail | 
+[**performance_orgs_courses_grading_per_learner_retrieve**](AiAnalyticsApi.md#performance_orgs_courses_grading_per_learner_retrieve) | **GET** /api/performance/orgs/{org}/courses/{course_id}/grading/per-learner | 
+[**performance_orgs_courses_grading_summary_retrieve**](AiAnalyticsApi.md#performance_orgs_courses_grading_summary_retrieve) | **GET** /api/performance/orgs/{org}/courses/{course_id}/grading/summary | 
+[**performance_orgs_grading_average_retrieve**](AiAnalyticsApi.md#performance_orgs_grading_average_retrieve) | **GET** /api/performance/orgs/{org}/grading/average | 
+[**performance_orgs_grading_per_course_retrieve**](AiAnalyticsApi.md#performance_orgs_grading_per_course_retrieve) | **GET** /api/performance/orgs/{org}/grading/per-course | 
+[**perlearner_orgs_learners_retrieve**](AiAnalyticsApi.md#perlearner_orgs_learners_retrieve) | **GET** /api/perlearner/orgs/{org}/learners | 
+[**perlearner_orgs_users_activity_retrieve**](AiAnalyticsApi.md#perlearner_orgs_users_activity_retrieve) | **GET** /api/perlearner/orgs/{org}/users/{user_id}/activity/ | 
+[**perlearner_orgs_users_courses_grading_cutoffs_retrieve**](AiAnalyticsApi.md#perlearner_orgs_users_courses_grading_cutoffs_retrieve) | **GET** /api/perlearner/orgs/{org}/users/{user_id}/courses/{course_id}/grading/cutoffs | 
+[**perlearner_orgs_users_courses_grading_detail_retrieve**](AiAnalyticsApi.md#perlearner_orgs_users_courses_grading_detail_retrieve) | **GET** /api/perlearner/orgs/{org}/users/{user_id}/courses/{course_id}/grading/detail | 
+[**perlearner_orgs_users_courses_grading_summary_retrieve**](AiAnalyticsApi.md#perlearner_orgs_users_courses_grading_summary_retrieve) | **GET** /api/perlearner/orgs/{org}/users/{user_id}/courses/{course_id}/grading/summary | 
+[**perlearner_orgs_users_courses_overview_engagement_index_retrieve**](AiAnalyticsApi.md#perlearner_orgs_users_courses_overview_engagement_index_retrieve) | **GET** /api/perlearner/orgs/{org}/users/{user_id}/courses/{course_id}/overview/engagement-index | 
+[**perlearner_orgs_users_courses_overview_grade_retrieve**](AiAnalyticsApi.md#perlearner_orgs_users_courses_overview_grade_retrieve) | **GET** /api/perlearner/orgs/{org}/users/{user_id}/courses/{course_id}/overview/grade | 
+[**perlearner_orgs_users_courses_overview_performance_index_retrieve**](AiAnalyticsApi.md#perlearner_orgs_users_courses_overview_performance_index_retrieve) | **GET** /api/perlearner/orgs/{org}/users/{user_id}/courses/{course_id}/overview/performance-index | 
+[**perlearner_orgs_users_courses_overview_time_over_time_retrieve**](AiAnalyticsApi.md#perlearner_orgs_users_courses_overview_time_over_time_retrieve) | **GET** /api/perlearner/orgs/{org}/users/{user_id}/courses/{course_id}/overview/time/over-time | 
+[**perlearner_orgs_users_courses_videos_over_time_retrieve**](AiAnalyticsApi.md#perlearner_orgs_users_courses_videos_over_time_retrieve) | **GET** /api/perlearner/orgs/{org}/users/{user_id}/courses/{course_id}/videos/over-time | 
+[**perlearner_orgs_users_courses_videos_retrieve**](AiAnalyticsApi.md#perlearner_orgs_users_courses_videos_retrieve) | **GET** /api/perlearner/orgs/{org}/users/{user_id}/courses/{course_id}/videos | 
+[**perlearner_orgs_users_grades_per_course_retrieve**](AiAnalyticsApi.md#perlearner_orgs_users_grades_per_course_retrieve) | **GET** /api/perlearner/orgs/{org}/users/{user_id}/grades/per-course | 
+[**perlearner_orgs_users_info_retrieve**](AiAnalyticsApi.md#perlearner_orgs_users_info_retrieve) | **GET** /api/perlearner/orgs/{org}/users/{user_id}/info | 
+[**perlearner_orgs_users_last_access_retrieve**](AiAnalyticsApi.md#perlearner_orgs_users_last_access_retrieve) | **GET** /api/perlearner/orgs/{org}/users/{user_id}/last-access | 
+[**perlearner_orgs_users_overview_engagement_index_retrieve**](AiAnalyticsApi.md#perlearner_orgs_users_overview_engagement_index_retrieve) | **GET** /api/perlearner/orgs/{org}/users/{user_id}/overview/engagement-index | 
+[**perlearner_orgs_users_overview_grades_average_retrieve**](AiAnalyticsApi.md#perlearner_orgs_users_overview_grades_average_retrieve) | **GET** /api/perlearner/orgs/{org}/users/{user_id}/overview/grades/average | 
+[**perlearner_orgs_users_overview_performance_index_retrieve**](AiAnalyticsApi.md#perlearner_orgs_users_overview_performance_index_retrieve) | **GET** /api/perlearner/orgs/{org}/users/{user_id}/overview/performance-index | 
+[**perlearner_orgs_users_overview_time_over_time_retrieve**](AiAnalyticsApi.md#perlearner_orgs_users_overview_time_over_time_retrieve) | **GET** /api/perlearner/orgs/{org}/users/{user_id}/overview/time/over-time | 
+[**perlearner_orgs_users_retrieve**](AiAnalyticsApi.md#perlearner_orgs_users_retrieve) | **GET** /api/perlearner/orgs/{org}/users | 
+[**perlearner_orgs_users_videos_over_time_retrieve**](AiAnalyticsApi.md#perlearner_orgs_users_videos_over_time_retrieve) | **GET** /api/perlearner/orgs/{org}/users/{user_id}/videos/over-time | 
+[**perlearner_orgs_users_videos_per_course_retrieve**](AiAnalyticsApi.md#perlearner_orgs_users_videos_per_course_retrieve) | **GET** /api/perlearner/orgs/{org}/users/{user_id}/videos/per-course | 
+[**platform_orgs_courses_count_retrieve**](AiAnalyticsApi.md#platform_orgs_courses_count_retrieve) | **GET** /api/platform/orgs/{org}/courses/count | 
+[**platform_orgs_courses_grades_retrieve**](AiAnalyticsApi.md#platform_orgs_courses_grades_retrieve) | **GET** /api/platform/orgs/{org}/courses/grades | 
+[**platform_orgs_courses_progress_average_days_to_complete_retrieve**](AiAnalyticsApi.md#platform_orgs_courses_progress_average_days_to_complete_retrieve) | **GET** /api/platform/orgs/{org}/courses/{course_id}/progress/average-days-to-complete | 
+[**platform_orgs_courses_progress_average_time_to_complete_retrieve**](AiAnalyticsApi.md#platform_orgs_courses_progress_average_time_to_complete_retrieve) | **GET** /api/platform/orgs/{org}/courses/{course_id}/progress/average-time-to-complete | 
+[**platform_orgs_courses_progress_completed_retrieve**](AiAnalyticsApi.md#platform_orgs_courses_progress_completed_retrieve) | **GET** /api/platform/orgs/{org}/courses/{course_id}/progress/completed | 
+[**platform_orgs_courses_progress_completion_rate_retrieve**](AiAnalyticsApi.md#platform_orgs_courses_progress_completion_rate_retrieve) | **GET** /api/platform/orgs/{org}/courses/{course_id}/progress/completion-rate | 
+[**platform_orgs_courses_progress_in_progress_retrieve**](AiAnalyticsApi.md#platform_orgs_courses_progress_in_progress_retrieve) | **GET** /api/platform/orgs/{org}/courses/{course_id}/progress/in-progress | 
+[**platform_orgs_courses_progress_retrieve**](AiAnalyticsApi.md#platform_orgs_courses_progress_retrieve) | **GET** /api/platform/orgs/{org}/courses/{course_id}/progress/ | 
+[**platform_orgs_courses_progress_started_retrieve**](AiAnalyticsApi.md#platform_orgs_courses_progress_started_retrieve) | **GET** /api/platform/orgs/{org}/courses/{course_id}/progress/started | 
+[**platform_orgs_courses_users_grades_passed_retrieve**](AiAnalyticsApi.md#platform_orgs_courses_users_grades_passed_retrieve) | **GET** /api/platform/orgs/{org}/courses/{course_id}/users/{user_id}/grades/passed | 
+[**platform_orgs_courses_users_progress_days_to_complete_retrieve**](AiAnalyticsApi.md#platform_orgs_courses_users_progress_days_to_complete_retrieve) | **GET** /api/platform/orgs/{org}/courses/{course_id}/users/{user_id}/progress/days-to-complete | 
+[**platform_orgs_courses_users_progress_retrieve**](AiAnalyticsApi.md#platform_orgs_courses_users_progress_retrieve) | **GET** /api/platform/orgs/{org}/courses/{course_id}/users/{user_id}/progress | 
+[**platform_orgs_courses_users_time_count_retrieve**](AiAnalyticsApi.md#platform_orgs_courses_users_time_count_retrieve) | **GET** /api/platform/orgs/{org}/courses/{course_id}/users/{user_id}/time/count | 
+[**platform_orgs_courses_users_videos_count_retrieve**](AiAnalyticsApi.md#platform_orgs_courses_users_videos_count_retrieve) | **GET** /api/platform/orgs/{org}/courses/{course_id}/users/{user_id}/videos/count | 
+[**platform_orgs_courses_videos_retrieve**](AiAnalyticsApi.md#platform_orgs_courses_videos_retrieve) | **GET** /api/platform/orgs/{org}/courses/videos | 
+[**platform_orgs_courses_videos_retrieve2**](AiAnalyticsApi.md#platform_orgs_courses_videos_retrieve2) | **GET** /api/platform/orgs/{org}/courses/{course_id}/videos/ | 
+[**platform_orgs_progress_completed_retrieve**](AiAnalyticsApi.md#platform_orgs_progress_completed_retrieve) | **GET** /api/platform/orgs/{org}/progress/completed | 
+[**platform_orgs_progress_completion_rate_retrieve**](AiAnalyticsApi.md#platform_orgs_progress_completion_rate_retrieve) | **GET** /api/platform/orgs/{org}/progress/completion-rate | 
+[**platform_orgs_progress_in_progress_retrieve**](AiAnalyticsApi.md#platform_orgs_progress_in_progress_retrieve) | **GET** /api/platform/orgs/{org}/progress/in-progress | 
+[**platform_orgs_progress_started_retrieve**](AiAnalyticsApi.md#platform_orgs_progress_started_retrieve) | **GET** /api/platform/orgs/{org}/progress/started | 
+[**platform_orgs_retrieve**](AiAnalyticsApi.md#platform_orgs_retrieve) | **GET** /api/platform/orgs/{org}/ | 
+[**platform_orgs_time_count_retrieve**](AiAnalyticsApi.md#platform_orgs_time_count_retrieve) | **GET** /api/platform/orgs/{org}/time/count | 
+[**platform_orgs_users_active_count_retrieve**](AiAnalyticsApi.md#platform_orgs_users_active_count_retrieve) | **GET** /api/platform/orgs/{org}/users/active/count | 
+[**platform_orgs_users_count_retrieve**](AiAnalyticsApi.md#platform_orgs_users_count_retrieve) | **GET** /api/platform/orgs/{org}/users/count | 
+[**platform_orgs_users_courses_completed_count_retrieve**](AiAnalyticsApi.md#platform_orgs_users_courses_completed_count_retrieve) | **GET** /api/platform/orgs/{org}/users/courses-completed/count | 
 
 
 # **ai_analytics_audience_orgs_active_users_over_time_retrieve**
@@ -4072,6 +4166,162 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **ai_analytics_orgs_users_observations_list**
+> PaginatedObservationList ai_analytics_orgs_users_observations_list(org, user_id, limit=limit, offset=offset, ordering=ordering, search=search)
+
+
+
+Viewset for retrieving and listing Langfuse observations.  This viewset provides read-only access to Langfuse observations data for platform admins. Observations represent detailed tracking of AI model interactions and responses.  Permissions:     - Restricted to platform administrators only
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.paginated_observation_list import PaginatedObservationList
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+
+# Create an instance of the API class
+api_instance = iblai.AiAnalyticsApi(api_client)
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+limit = 56 # int | Number of results to return per page. (optional)
+offset = 56 # int | The initial index from which to return the results. (optional)
+ordering = 'ordering_example' # str | Which field to use when ordering the results. (optional)
+search = 'search_example' # str | A search term. (optional)
+
+try:
+    api_response = api_instance.ai_analytics_orgs_users_observations_list(org, user_id, limit=limit, offset=offset, ordering=ordering, search=search)
+    print("The response of AiAnalyticsApi->ai_analytics_orgs_users_observations_list:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiAnalyticsApi->ai_analytics_orgs_users_observations_list: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+ **limit** | **int**| Number of results to return per page. | [optional] 
+ **offset** | **int**| The initial index from which to return the results. | [optional] 
+ **ordering** | **str**| Which field to use when ordering the results. | [optional] 
+ **search** | **str**| A search term. | [optional] 
+
+### Return type
+
+[**PaginatedObservationList**](PaginatedObservationList.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ai_analytics_orgs_users_observations_retrieve**
+> Observation ai_analytics_orgs_users_observations_retrieve(id, org, user_id)
+
+
+
+Viewset for retrieving and listing Langfuse observations.  This viewset provides read-only access to Langfuse observations data for platform admins. Observations represent detailed tracking of AI model interactions and responses.  Permissions:     - Restricted to platform administrators only
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.observation import Observation
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+
+# Create an instance of the API class
+api_instance = iblai.AiAnalyticsApi(api_client)
+id = 'id_example' # str | 
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+
+try:
+    api_response = api_instance.ai_analytics_orgs_users_observations_retrieve(id, org, user_id)
+    print("The response of AiAnalyticsApi->ai_analytics_orgs_users_observations_retrieve:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiAnalyticsApi->ai_analytics_orgs_users_observations_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**|  | 
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+
+### Return type
+
+[**Observation**](Observation.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **ai_analytics_orgs_users_overview_summary_retrieve**
 > AnalyticsOverview ai_analytics_orgs_users_overview_summary_retrieve(org, user_id, group_by=group_by, mentor_id=mentor_id)
 
@@ -4870,6 +5120,162 @@ Name | Type | Description  | Notes
 **200** |  |  -  |
 **400** | Invalid parameters |  -  |
 **404** | Organization or mentor not found |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ai_analytics_orgs_users_traces_list**
+> PaginatedTraceList ai_analytics_orgs_users_traces_list(org, user_id, limit=limit, offset=offset, ordering=ordering, search=search)
+
+
+
+Viewset for retrieving and listing Langfuse traces.  This viewset provides read-only access to Langfuse traces data for platform admins. Traces represent high-level tracking of user interactions and AI responses.  Permissions:     - Restricted to platform administrators only
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.paginated_trace_list import PaginatedTraceList
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+
+# Create an instance of the API class
+api_instance = iblai.AiAnalyticsApi(api_client)
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+limit = 56 # int | Number of results to return per page. (optional)
+offset = 56 # int | The initial index from which to return the results. (optional)
+ordering = 'ordering_example' # str | Which field to use when ordering the results. (optional)
+search = 'search_example' # str | A search term. (optional)
+
+try:
+    api_response = api_instance.ai_analytics_orgs_users_traces_list(org, user_id, limit=limit, offset=offset, ordering=ordering, search=search)
+    print("The response of AiAnalyticsApi->ai_analytics_orgs_users_traces_list:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiAnalyticsApi->ai_analytics_orgs_users_traces_list: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+ **limit** | **int**| Number of results to return per page. | [optional] 
+ **offset** | **int**| The initial index from which to return the results. | [optional] 
+ **ordering** | **str**| Which field to use when ordering the results. | [optional] 
+ **search** | **str**| A search term. | [optional] 
+
+### Return type
+
+[**PaginatedTraceList**](PaginatedTraceList.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ai_analytics_orgs_users_traces_retrieve**
+> Trace ai_analytics_orgs_users_traces_retrieve(id, org, user_id)
+
+
+
+Viewset for retrieving and listing Langfuse traces.  This viewset provides read-only access to Langfuse traces data for platform admins. Traces represent high-level tracking of user interactions and AI responses.  Permissions:     - Restricted to platform administrators only
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.trace import Trace
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+
+# Create an instance of the API class
+api_instance = iblai.AiAnalyticsApi(api_client)
+id = 'id_example' # str | 
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+
+try:
+    api_response = api_instance.ai_analytics_orgs_users_traces_retrieve(id, org, user_id)
+    print("The response of AiAnalyticsApi->ai_analytics_orgs_users_traces_retrieve:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiAnalyticsApi->ai_analytics_orgs_users_traces_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**|  | 
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+
+### Return type
+
+[**Trace**](Trace.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -8384,6 +8790,7159 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**GroupList**](GroupList.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **analytics_orgs_time_update_create**
+> TimeSpentUpdateResponse analytics_orgs_time_update_create(org, time_spent_update_request)
+
+
+
+Update time spent tracking data from client-side events.  This endpoint receives time spent data collected on the client side and stores it in the analytics database. It requires a valid authentication token.  Methods:     POST: Submit time spent tracking data    Returns:     A response indicating success or failure:     {         \"success\": true|false,         \"message\": \"Error message if failed\" (optional)     }  Error Responses:     400 Bad Request: If the request data is invalid or the API is disabled  Notes:     This API must be enabled via the ENABLE_TIME_SPENT_UPDATE_API setting.
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.time_spent_update_request import TimeSpentUpdateRequest
+from iblai.models.time_spent_update_response import TimeSpentUpdateResponse
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+
+# Create an instance of the API class
+api_instance = iblai.AiAnalyticsApi(api_client)
+org = 'org_example' # str | 
+time_spent_update_request = iblai.TimeSpentUpdateRequest() # TimeSpentUpdateRequest | 
+
+try:
+    api_response = api_instance.analytics_orgs_time_update_create(org, time_spent_update_request)
+    print("The response of AiAnalyticsApi->analytics_orgs_time_update_create:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiAnalyticsApi->analytics_orgs_time_update_create: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **org** | **str**|  | 
+ **time_spent_update_request** | [**TimeSpentUpdateRequest**](TimeSpentUpdateRequest.md)|  | 
+
+### Return type
+
+[**TimeSpentUpdateResponse**](TimeSpentUpdateResponse.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **analytics_time_spent_user_retrieve**
+> TimeSpentPerUserResponse analytics_time_spent_user_retrieve(course_id=course_id, end_date=end_date, include_main_platform=include_main_platform, learner_id=learner_id, mentor_uuid=mentor_uuid, platform=platform, session_uuid=session_uuid, start_date=start_date, url=url)
+
+Get total time spent for current user
+
+         Returns the total time spent (in seconds) for the current authenticated user.         Can be filtered by platform, date range, course ID, URL, mentor UUID, and session UUID.         
+
+### Example
+
+
+```python
+import iblai
+from iblai.models.time_spent_per_user_response import TimeSpentPerUserResponse
+from iblai.rest import ApiException
+from pprint import pprint
+
+
+# Create an instance of the API class
+api_instance = iblai.AiAnalyticsApi(api_client)
+course_id = 'course_id_example' # str | Course ID to filter by (can be partial) (optional)
+end_date = '2013-10-20' # date | End date for time range (YYYY-MM-DD) (optional)
+include_main_platform = True # bool | Whether to include main platform data (optional) (default to True)
+learner_id = 'learner_id_example' # str | Username to get data for (admin users only) (optional)
+mentor_uuid = 'mentor_uuid_example' # str | Mentor UUID to filter by (optional)
+platform = 'platform_example' # str | Platform name or key to filter by (optional)
+session_uuid = 'session_uuid_example' # str | Session UUID to filter by (optional)
+start_date = '2013-10-20' # date | Start date for time range (YYYY-MM-DD) (optional)
+url = 'url_example' # str | URL to filter by (can be partial) (optional)
+
+try:
+    # Get total time spent for current user
+    api_response = api_instance.analytics_time_spent_user_retrieve(course_id=course_id, end_date=end_date, include_main_platform=include_main_platform, learner_id=learner_id, mentor_uuid=mentor_uuid, platform=platform, session_uuid=session_uuid, start_date=start_date, url=url)
+    print("The response of AiAnalyticsApi->analytics_time_spent_user_retrieve:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiAnalyticsApi->analytics_time_spent_user_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **course_id** | **str**| Course ID to filter by (can be partial) | [optional] 
+ **end_date** | **date**| End date for time range (YYYY-MM-DD) | [optional] 
+ **include_main_platform** | **bool**| Whether to include main platform data | [optional] [default to True]
+ **learner_id** | **str**| Username to get data for (admin users only) | [optional] 
+ **mentor_uuid** | **str**| Mentor UUID to filter by | [optional] 
+ **platform** | **str**| Platform name or key to filter by | [optional] 
+ **session_uuid** | **str**| Session UUID to filter by | [optional] 
+ **start_date** | **date**| Start date for time range (YYYY-MM-DD) | [optional] 
+ **url** | **str**| URL to filter by (can be partial) | [optional] 
+
+### Return type
+
+[**TimeSpentPerUserResponse**](TimeSpentPerUserResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**400** | Bad request |  -  |
+**401** | Unauthorized |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **audience_orgs_active_users_over_time_retrieve**
+> OvertimeWithChangeInfo audience_orgs_active_users_over_time_retrieve(org, department_id=department_id, end_date=end_date, format=format, include_main_platform=include_main_platform, start_date=start_date)
+
+
+
+Get active user counts over time.  This endpoint provides daily counts of active users (users with known activity) over a specified time period.  Query Parameters:     start_date (str, optional): Start date for the time range (ISO format)     end_date (str, optional): End date for the time range (ISO format)  Returns:     Daily active user counts over the specified time period, with change metrics     compared to previous periods.  Default time range is the last 7 days if no dates are specified.  An active user is defined as a user with any activity within the past 30 days.
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.overtime_with_change_info import OvertimeWithChangeInfo
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+
+# Create an instance of the API class
+api_instance = iblai.AiAnalyticsApi(api_client)
+org = 'org_example' # str | 
+department_id = 56 # int | When `department_mode=1` is passed, it allows to filter data for only user content groups for the specified department  (optional)
+end_date = 'end_date_example' # str | end date. ISO 8601 (optional)
+format = json # str | Format  * `json` - json (optional) (default to json)
+include_main_platform = True # bool | Include main platform data (optional) (default to True)
+start_date = 'start_date_example' # str | start date. ISO 8601 (optional)
+
+try:
+    api_response = api_instance.audience_orgs_active_users_over_time_retrieve(org, department_id=department_id, end_date=end_date, format=format, include_main_platform=include_main_platform, start_date=start_date)
+    print("The response of AiAnalyticsApi->audience_orgs_active_users_over_time_retrieve:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiAnalyticsApi->audience_orgs_active_users_over_time_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **org** | **str**|  | 
+ **department_id** | **int**| When &#x60;department_mode&#x3D;1&#x60; is passed, it allows to filter data for only user content groups for the specified department  | [optional] 
+ **end_date** | **str**| end date. ISO 8601 | [optional] 
+ **format** | **str**| Format  * &#x60;json&#x60; - json | [optional] [default to json]
+ **include_main_platform** | **bool**| Include main platform data | [optional] [default to True]
+ **start_date** | **str**| start date. ISO 8601 | [optional] 
+
+### Return type
+
+[**OvertimeWithChangeInfo**](OvertimeWithChangeInfo.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **audience_orgs_active_users_per_course_retrieve**
+> ActiveUsersPerCourse audience_orgs_active_users_per_course_retrieve(org, department_id=department_id, end_date=end_date, format=format, include_main_platform=include_main_platform, start_date=start_date)
+
+
+
+Get active user counts on a per-course basis.  This endpoint provides counts of active users for each course within the specified date range.  Query Parameters:     start_date (str, optional): Start date for filtering (ISO format)     end_date (str, optional): End date for filtering (ISO format)  Returns:     A list of courses with their active user counts.  Default time range is the last 7 days if no dates are specified.
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.active_users_per_course import ActiveUsersPerCourse
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+
+# Create an instance of the API class
+api_instance = iblai.AiAnalyticsApi(api_client)
+org = 'org_example' # str | 
+department_id = 56 # int | When `department_mode=1` is passed, it allows to filter data for only user content groups for the specified department  (optional)
+end_date = 'end_date_example' # str | end date. ISO 8601 (optional)
+format = json # str | Format  * `json` - json (optional) (default to json)
+include_main_platform = True # bool | Include main platform data (optional) (default to True)
+start_date = 'start_date_example' # str | start date. ISO 8601 (optional)
+
+try:
+    api_response = api_instance.audience_orgs_active_users_per_course_retrieve(org, department_id=department_id, end_date=end_date, format=format, include_main_platform=include_main_platform, start_date=start_date)
+    print("The response of AiAnalyticsApi->audience_orgs_active_users_per_course_retrieve:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiAnalyticsApi->audience_orgs_active_users_per_course_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **org** | **str**|  | 
+ **department_id** | **int**| When &#x60;department_mode&#x3D;1&#x60; is passed, it allows to filter data for only user content groups for the specified department  | [optional] 
+ **end_date** | **str**| end date. ISO 8601 | [optional] 
+ **format** | **str**| Format  * &#x60;json&#x60; - json | [optional] [default to json]
+ **include_main_platform** | **bool**| Include main platform data | [optional] [default to True]
+ **start_date** | **str**| start date. ISO 8601 | [optional] 
+
+### Return type
+
+[**ActiveUsersPerCourse**](ActiveUsersPerCourse.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **audience_orgs_active_users_users_retrieve**
+> ActiveUsersList audience_orgs_active_users_users_retrieve(org, department_id=department_id, format=format, include_main_platform=include_main_platform, length=length, page=page)
+
+
+
+Get a list of active users with activity metrics.  This endpoint provides a paginated list of users who have had activity within the specified date range.  Query Parameters:     start_date (str, optional): Start date for filtering (ISO format)     end_date (str, optional): End date for filtering (ISO format)     course_id (str, optional): Filter by course ID     page (int, optional): Page number for pagination     length (int, optional): Number of items per page  Returns:     A paginated list of active users with their activity metrics.  Default time range is the last 7 days if no dates are specified.
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.active_users_list import ActiveUsersList
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+
+# Create an instance of the API class
+api_instance = iblai.AiAnalyticsApi(api_client)
+org = 'org_example' # str | 
+department_id = 56 # int | When `department_mode=1` is passed, it allows to filter data for only user content groups for the specified department  (optional)
+format = json # str | Format  * `json` - json (optional) (default to json)
+include_main_platform = True # bool | Include main platform data (optional) (default to True)
+length = 56 # int | Size of data to return (optional)
+page = 56 # int | Page offset (optional)
+
+try:
+    api_response = api_instance.audience_orgs_active_users_users_retrieve(org, department_id=department_id, format=format, include_main_platform=include_main_platform, length=length, page=page)
+    print("The response of AiAnalyticsApi->audience_orgs_active_users_users_retrieve:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiAnalyticsApi->audience_orgs_active_users_users_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **org** | **str**|  | 
+ **department_id** | **int**| When &#x60;department_mode&#x3D;1&#x60; is passed, it allows to filter data for only user content groups for the specified department  | [optional] 
+ **format** | **str**| Format  * &#x60;json&#x60; - json | [optional] [default to json]
+ **include_main_platform** | **bool**| Include main platform data | [optional] [default to True]
+ **length** | **int**| Size of data to return | [optional] 
+ **page** | **int**| Page offset | [optional] 
+
+### Return type
+
+[**ActiveUsersList**](ActiveUsersList.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **audience_orgs_enrollments_courses_over_time_retrieve**
+> OvertimeWithChangeInfo audience_orgs_enrollments_courses_over_time_retrieve(course_id, org, active=active, department_id=department_id, end_date=end_date, format=format, include_main_platform=include_main_platform, start_date=start_date)
+
+
+
+Get enrollment or unenrollment counts over time.  This endpoint provides daily counts of new enrollments or unenrollments over a specified time period.  Query Parameters:     start_date (str, optional): Start date for the time range (ISO format)     end_date (str, optional): End date for the time range (ISO format)     course_id (str, optional): Filter by course ID     active (bool): Get enrollments when true, unenrollments when false  Returns:     Daily counts over the specified time period, with change metrics     compared to previous periods.  Default time range is the last 7 days if no dates are specified.
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.overtime_with_change_info import OvertimeWithChangeInfo
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+
+# Create an instance of the API class
+api_instance = iblai.AiAnalyticsApi(api_client)
+course_id = 'course_id_example' # str | 
+org = 'org_example' # str | 
+active = y # str | Any of `y`, `yes`, `true`. set to false or no for unenrollments   * `y` - y * `yes` - yes * `true` - true * `True` - True * `n` - n * `no` - no * `false` - false * `False` - False (optional) (default to y)
+department_id = 56 # int | When `department_mode=1` is passed, it allows to filter data for only user content groups for the specified department  (optional)
+end_date = 'end_date_example' # str | end date. ISO 8601 (optional)
+format = json # str | Format  * `json` - json (optional) (default to json)
+include_main_platform = True # bool | Include main platform data (optional) (default to True)
+start_date = 'start_date_example' # str | start date. ISO 8601 (optional)
+
+try:
+    api_response = api_instance.audience_orgs_enrollments_courses_over_time_retrieve(course_id, org, active=active, department_id=department_id, end_date=end_date, format=format, include_main_platform=include_main_platform, start_date=start_date)
+    print("The response of AiAnalyticsApi->audience_orgs_enrollments_courses_over_time_retrieve:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiAnalyticsApi->audience_orgs_enrollments_courses_over_time_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **course_id** | **str**|  | 
+ **org** | **str**|  | 
+ **active** | **str**| Any of &#x60;y&#x60;, &#x60;yes&#x60;, &#x60;true&#x60;. set to false or no for unenrollments   * &#x60;y&#x60; - y * &#x60;yes&#x60; - yes * &#x60;true&#x60; - true * &#x60;True&#x60; - True * &#x60;n&#x60; - n * &#x60;no&#x60; - no * &#x60;false&#x60; - false * &#x60;False&#x60; - False | [optional] [default to y]
+ **department_id** | **int**| When &#x60;department_mode&#x3D;1&#x60; is passed, it allows to filter data for only user content groups for the specified department  | [optional] 
+ **end_date** | **str**| end date. ISO 8601 | [optional] 
+ **format** | **str**| Format  * &#x60;json&#x60; - json | [optional] [default to json]
+ **include_main_platform** | **bool**| Include main platform data | [optional] [default to True]
+ **start_date** | **str**| start date. ISO 8601 | [optional] 
+
+### Return type
+
+[**OvertimeWithChangeInfo**](OvertimeWithChangeInfo.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **audience_orgs_enrollments_courses_users_retrieve**
+> EnrollmentsPerUser audience_orgs_enrollments_courses_users_retrieve(course_id, org, active=active, department_id=department_id, end_date=end_date, format=format, include_main_platform=include_main_platform, length=length, page=page, start_date=start_date)
+
+
+
+List users enrolled in a specific course.  This endpoint provides a list of users who are enrolled or unenrolled in a specified course.  Query Parameters:     course_id (str): The course ID to get enrollments for     active (bool): Filter for active enrollments when true, inactive when false     page (int, optional): Page number for pagination     length (int, optional): Number of items per page  Returns:     A paginated list of users with:     - Username     - Full name     - Email     - Enrollment timestamp
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.enrollments_per_user import EnrollmentsPerUser
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+
+# Create an instance of the API class
+api_instance = iblai.AiAnalyticsApi(api_client)
+course_id = 'course_id_example' # str | 
+org = 'org_example' # str | 
+active = y # str | Any of `y`, `yes`, `true`. set to false or no for unenrollments   * `y` - y * `yes` - yes * `true` - true * `True` - True * `n` - n * `no` - no * `false` - false * `False` - False (optional) (default to y)
+department_id = 56 # int | When `department_mode=1` is passed, it allows to filter data for only user content groups for the specified department  (optional)
+end_date = 'end_date_example' # str | end date. ISO 8601 (optional)
+format = json # str | Format  * `json` - json (optional) (default to json)
+include_main_platform = True # bool | Include main platform data (optional) (default to True)
+length = 56 # int | Size of data to return (optional)
+page = 56 # int | Page offset (optional)
+start_date = 'start_date_example' # str | start date. ISO 8601 (optional)
+
+try:
+    api_response = api_instance.audience_orgs_enrollments_courses_users_retrieve(course_id, org, active=active, department_id=department_id, end_date=end_date, format=format, include_main_platform=include_main_platform, length=length, page=page, start_date=start_date)
+    print("The response of AiAnalyticsApi->audience_orgs_enrollments_courses_users_retrieve:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiAnalyticsApi->audience_orgs_enrollments_courses_users_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **course_id** | **str**|  | 
+ **org** | **str**|  | 
+ **active** | **str**| Any of &#x60;y&#x60;, &#x60;yes&#x60;, &#x60;true&#x60;. set to false or no for unenrollments   * &#x60;y&#x60; - y * &#x60;yes&#x60; - yes * &#x60;true&#x60; - true * &#x60;True&#x60; - True * &#x60;n&#x60; - n * &#x60;no&#x60; - no * &#x60;false&#x60; - false * &#x60;False&#x60; - False | [optional] [default to y]
+ **department_id** | **int**| When &#x60;department_mode&#x3D;1&#x60; is passed, it allows to filter data for only user content groups for the specified department  | [optional] 
+ **end_date** | **str**| end date. ISO 8601 | [optional] 
+ **format** | **str**| Format  * &#x60;json&#x60; - json | [optional] [default to json]
+ **include_main_platform** | **bool**| Include main platform data | [optional] [default to True]
+ **length** | **int**| Size of data to return | [optional] 
+ **page** | **int**| Page offset | [optional] 
+ **start_date** | **str**| start date. ISO 8601 | [optional] 
+
+### Return type
+
+[**EnrollmentsPerUser**](EnrollmentsPerUser.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **audience_orgs_enrollments_over_time_retrieve**
+> OvertimeWithChangeInfo audience_orgs_enrollments_over_time_retrieve(org, active=active, department_id=department_id, end_date=end_date, format=format, include_main_platform=include_main_platform, start_date=start_date)
+
+
+
+Get enrollment or unenrollment counts over time.  This endpoint provides daily counts of new enrollments or unenrollments over a specified time period.  Query Parameters:     start_date (str, optional): Start date for the time range (ISO format)     end_date (str, optional): End date for the time range (ISO format)     course_id (str, optional): Filter by course ID     active (bool): Get enrollments when true, unenrollments when false  Returns:     Daily counts over the specified time period, with change metrics     compared to previous periods.  Default time range is the last 7 days if no dates are specified.
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.overtime_with_change_info import OvertimeWithChangeInfo
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+
+# Create an instance of the API class
+api_instance = iblai.AiAnalyticsApi(api_client)
+org = 'org_example' # str | 
+active = y # str | Any of `y`, `yes`, `true`. set to false or no for unenrollments   * `y` - y * `yes` - yes * `true` - true * `True` - True * `n` - n * `no` - no * `false` - false * `False` - False (optional) (default to y)
+department_id = 56 # int | When `department_mode=1` is passed, it allows to filter data for only user content groups for the specified department  (optional)
+end_date = 'end_date_example' # str | end date. ISO 8601 (optional)
+format = json # str | Format  * `json` - json (optional) (default to json)
+include_main_platform = True # bool | Include main platform data (optional) (default to True)
+start_date = 'start_date_example' # str | start date. ISO 8601 (optional)
+
+try:
+    api_response = api_instance.audience_orgs_enrollments_over_time_retrieve(org, active=active, department_id=department_id, end_date=end_date, format=format, include_main_platform=include_main_platform, start_date=start_date)
+    print("The response of AiAnalyticsApi->audience_orgs_enrollments_over_time_retrieve:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiAnalyticsApi->audience_orgs_enrollments_over_time_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **org** | **str**|  | 
+ **active** | **str**| Any of &#x60;y&#x60;, &#x60;yes&#x60;, &#x60;true&#x60;. set to false or no for unenrollments   * &#x60;y&#x60; - y * &#x60;yes&#x60; - yes * &#x60;true&#x60; - true * &#x60;True&#x60; - True * &#x60;n&#x60; - n * &#x60;no&#x60; - no * &#x60;false&#x60; - false * &#x60;False&#x60; - False | [optional] [default to y]
+ **department_id** | **int**| When &#x60;department_mode&#x3D;1&#x60; is passed, it allows to filter data for only user content groups for the specified department  | [optional] 
+ **end_date** | **str**| end date. ISO 8601 | [optional] 
+ **format** | **str**| Format  * &#x60;json&#x60; - json | [optional] [default to json]
+ **include_main_platform** | **bool**| Include main platform data | [optional] [default to True]
+ **start_date** | **str**| start date. ISO 8601 | [optional] 
+
+### Return type
+
+[**OvertimeWithChangeInfo**](OvertimeWithChangeInfo.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **audience_orgs_enrollments_per_course_retrieve**
+> Enrollments audience_orgs_enrollments_per_course_retrieve(org, active=active, department_id=department_id, end_date=end_date, format=format, include_main_platform=include_main_platform, length=length, page=page, start_date=start_date)
+
+
+
+List enrollment statistics on a per-course basis.  This endpoint provides enrollment counts for all courses, with options to filter for active or inactive enrollments and to include time-based data.  Query Parameters:     active (bool): Filter for active enrollments when true, inactive when false     start_date (str, optional): Start date for time-based filtering (ISO format)     end_date (str, optional): End date for time-based filtering (ISO format)     page (int, optional): Page number for pagination     length (int, optional): Number of items per page  Returns:     A paginated list of courses with their enrollment counts and percentages.
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.enrollments import Enrollments
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+
+# Create an instance of the API class
+api_instance = iblai.AiAnalyticsApi(api_client)
+org = 'org_example' # str | 
+active = y # str | Any of `y`, `yes`, `true`. set to false or no for unenrollments   * `y` - y * `yes` - yes * `true` - true * `True` - True * `n` - n * `no` - no * `false` - false * `False` - False (optional) (default to y)
+department_id = 56 # int | When `department_mode=1` is passed, it allows to filter data for only user content groups for the specified department  (optional)
+end_date = 'end_date_example' # str | end date. ISO 8601 (optional)
+format = json # str | Format  * `json` - json (optional) (default to json)
+include_main_platform = True # bool | Include main platform data (optional) (default to True)
+length = 56 # int | Size of data to return (optional)
+page = 56 # int | Page offset (optional)
+start_date = 'start_date_example' # str | start date. ISO 8601 (optional)
+
+try:
+    api_response = api_instance.audience_orgs_enrollments_per_course_retrieve(org, active=active, department_id=department_id, end_date=end_date, format=format, include_main_platform=include_main_platform, length=length, page=page, start_date=start_date)
+    print("The response of AiAnalyticsApi->audience_orgs_enrollments_per_course_retrieve:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiAnalyticsApi->audience_orgs_enrollments_per_course_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **org** | **str**|  | 
+ **active** | **str**| Any of &#x60;y&#x60;, &#x60;yes&#x60;, &#x60;true&#x60;. set to false or no for unenrollments   * &#x60;y&#x60; - y * &#x60;yes&#x60; - yes * &#x60;true&#x60; - true * &#x60;True&#x60; - True * &#x60;n&#x60; - n * &#x60;no&#x60; - no * &#x60;false&#x60; - false * &#x60;False&#x60; - False | [optional] [default to y]
+ **department_id** | **int**| When &#x60;department_mode&#x3D;1&#x60; is passed, it allows to filter data for only user content groups for the specified department  | [optional] 
+ **end_date** | **str**| end date. ISO 8601 | [optional] 
+ **format** | **str**| Format  * &#x60;json&#x60; - json | [optional] [default to json]
+ **include_main_platform** | **bool**| Include main platform data | [optional] [default to True]
+ **length** | **int**| Size of data to return | [optional] 
+ **page** | **int**| Page offset | [optional] 
+ **start_date** | **str**| start date. ISO 8601 | [optional] 
+
+### Return type
+
+[**Enrollments**](Enrollments.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **audience_orgs_registered_users_over_time_retrieve**
+> OvertimeWithChangeInfo audience_orgs_registered_users_over_time_retrieve(org, department_id=department_id, end_date=end_date, format=format, include_main_platform=include_main_platform, start_date=start_date)
+
+
+
+Get registered user counts over time.  This endpoint provides daily counts of new user registrations over a specified time period.  Query Parameters:     start_date (str, optional): Start date for the time range (ISO format)     end_date (str, optional): End date for the time range (ISO format)  Returns:     Daily registration counts over the specified time period, with change metrics     compared to previous periods.  Default time range is the last 7 days if no dates are specified.
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.overtime_with_change_info import OvertimeWithChangeInfo
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+
+# Create an instance of the API class
+api_instance = iblai.AiAnalyticsApi(api_client)
+org = 'org_example' # str | 
+department_id = 56 # int | When `department_mode=1` is passed, it allows to filter data for only user content groups for the specified department  (optional)
+end_date = 'end_date_example' # str | end date. ISO 8601 (optional)
+format = json # str | Format  * `json` - json (optional) (default to json)
+include_main_platform = True # bool | Include main platform data (optional) (default to True)
+start_date = 'start_date_example' # str | start date. ISO 8601 (optional)
+
+try:
+    api_response = api_instance.audience_orgs_registered_users_over_time_retrieve(org, department_id=department_id, end_date=end_date, format=format, include_main_platform=include_main_platform, start_date=start_date)
+    print("The response of AiAnalyticsApi->audience_orgs_registered_users_over_time_retrieve:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiAnalyticsApi->audience_orgs_registered_users_over_time_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **org** | **str**|  | 
+ **department_id** | **int**| When &#x60;department_mode&#x3D;1&#x60; is passed, it allows to filter data for only user content groups for the specified department  | [optional] 
+ **end_date** | **str**| end date. ISO 8601 | [optional] 
+ **format** | **str**| Format  * &#x60;json&#x60; - json | [optional] [default to json]
+ **include_main_platform** | **bool**| Include main platform data | [optional] [default to True]
+ **start_date** | **str**| start date. ISO 8601 | [optional] 
+
+### Return type
+
+[**OvertimeWithChangeInfo**](OvertimeWithChangeInfo.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **audience_orgs_registered_users_per_course_retrieve**
+> Enrollments audience_orgs_registered_users_per_course_retrieve(org, active=active, department_id=department_id, end_date=end_date, format=format, include_main_platform=include_main_platform, length=length, page=page, start_date=start_date)
+
+
+
+List enrollment statistics on a per-course basis.  This endpoint provides enrollment counts for all courses, with options to filter for active or inactive enrollments and to include time-based data.  Query Parameters:     active (bool): Filter for active enrollments when true, inactive when false     start_date (str, optional): Start date for time-based filtering (ISO format)     end_date (str, optional): End date for time-based filtering (ISO format)     page (int, optional): Page number for pagination     length (int, optional): Number of items per page  Returns:     A paginated list of courses with their enrollment counts and percentages.
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.enrollments import Enrollments
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+
+# Create an instance of the API class
+api_instance = iblai.AiAnalyticsApi(api_client)
+org = 'org_example' # str | 
+active = y # str | Any of `y`, `yes`, `true`. set to false or no for unenrollments   * `y` - y * `yes` - yes * `true` - true * `True` - True * `n` - n * `no` - no * `false` - false * `False` - False (optional) (default to y)
+department_id = 56 # int | When `department_mode=1` is passed, it allows to filter data for only user content groups for the specified department  (optional)
+end_date = 'end_date_example' # str | end date. ISO 8601 (optional)
+format = json # str | Format  * `json` - json (optional) (default to json)
+include_main_platform = True # bool | Include main platform data (optional) (default to True)
+length = 56 # int | Size of data to return (optional)
+page = 56 # int | Page offset (optional)
+start_date = 'start_date_example' # str | start date. ISO 8601 (optional)
+
+try:
+    api_response = api_instance.audience_orgs_registered_users_per_course_retrieve(org, active=active, department_id=department_id, end_date=end_date, format=format, include_main_platform=include_main_platform, length=length, page=page, start_date=start_date)
+    print("The response of AiAnalyticsApi->audience_orgs_registered_users_per_course_retrieve:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiAnalyticsApi->audience_orgs_registered_users_per_course_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **org** | **str**|  | 
+ **active** | **str**| Any of &#x60;y&#x60;, &#x60;yes&#x60;, &#x60;true&#x60;. set to false or no for unenrollments   * &#x60;y&#x60; - y * &#x60;yes&#x60; - yes * &#x60;true&#x60; - true * &#x60;True&#x60; - True * &#x60;n&#x60; - n * &#x60;no&#x60; - no * &#x60;false&#x60; - false * &#x60;False&#x60; - False | [optional] [default to y]
+ **department_id** | **int**| When &#x60;department_mode&#x3D;1&#x60; is passed, it allows to filter data for only user content groups for the specified department  | [optional] 
+ **end_date** | **str**| end date. ISO 8601 | [optional] 
+ **format** | **str**| Format  * &#x60;json&#x60; - json | [optional] [default to json]
+ **include_main_platform** | **bool**| Include main platform data | [optional] [default to True]
+ **length** | **int**| Size of data to return | [optional] 
+ **page** | **int**| Page offset | [optional] 
+ **start_date** | **str**| start date. ISO 8601 | [optional] 
+
+### Return type
+
+[**Enrollments**](Enrollments.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **audience_orgs_registered_users_retrieve**
+> PerlearnerUserList audience_orgs_registered_users_retrieve(org, department_id=department_id, format=format, include_main_platform=include_main_platform, length=length, page=page, search=search)
+
+
+
+List all learners on the platform with aggregated metrics.  This endpoint returns a paginated list of all learners with key metrics including: - Enrollment counts - Completion counts - Time spent on platform  Query Parameters:     page (int): Page number for pagination     length (int): Number of items per page     search (str): Filter learners by username, email, or name  Returns:     A paginated list of learners with their associated metrics.
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.perlearner_user_list import PerlearnerUserList
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+
+# Create an instance of the API class
+api_instance = iblai.AiAnalyticsApi(api_client)
+org = 'org_example' # str | 
+department_id = 56 # int | When `department_mode=1` is passed, it allows to filter data for only user content groups for the specified department  (optional)
+format = json # str | Format  * `json` - json (optional) (default to json)
+include_main_platform = True # bool | Include main platform data (optional) (default to True)
+length = 56 # int | Size of data to return (optional)
+page = 56 # int | Page offset (optional)
+search = 'search_example' # str | Search string for learner (optional)
+
+try:
+    api_response = api_instance.audience_orgs_registered_users_retrieve(org, department_id=department_id, format=format, include_main_platform=include_main_platform, length=length, page=page, search=search)
+    print("The response of AiAnalyticsApi->audience_orgs_registered_users_retrieve:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiAnalyticsApi->audience_orgs_registered_users_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **org** | **str**|  | 
+ **department_id** | **int**| When &#x60;department_mode&#x3D;1&#x60; is passed, it allows to filter data for only user content groups for the specified department  | [optional] 
+ **format** | **str**| Format  * &#x60;json&#x60; - json | [optional] [default to json]
+ **include_main_platform** | **bool**| Include main platform data | [optional] [default to True]
+ **length** | **int**| Size of data to return | [optional] 
+ **page** | **int**| Page offset | [optional] 
+ **search** | **str**| Search string for learner | [optional] 
+
+### Return type
+
+[**PerlearnerUserList**](PerlearnerUserList.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **engagement_orgs_activity_retrieve**
+> EngagementPerCourse engagement_orgs_activity_retrieve(org, department_id=department_id, format=format, include_main_platform=include_main_platform, length=length, page=page)
+
+
+
+Get engagement metrics on a per-course basis.  This endpoint provides a paginated list of courses with engagement metrics including activity counts, time spent, and interaction data.  Query Parameters:     page (int, optional): Page number for pagination     length (int, optional): Number of items per page  Returns:     A paginated list of courses with their engagement metrics.
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.engagement_per_course import EngagementPerCourse
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+
+# Create an instance of the API class
+api_instance = iblai.AiAnalyticsApi(api_client)
+org = 'org_example' # str | 
+department_id = 56 # int | When `department_mode=1` is passed, it allows to filter data for only user content groups for the specified department  (optional)
+format = json # str | Format  * `json` - json (optional) (default to json)
+include_main_platform = True # bool | Include main platform data (optional) (default to True)
+length = 56 # int | Size of data to return (optional)
+page = 56 # int | Page offset (optional)
+
+try:
+    api_response = api_instance.engagement_orgs_activity_retrieve(org, department_id=department_id, format=format, include_main_platform=include_main_platform, length=length, page=page)
+    print("The response of AiAnalyticsApi->engagement_orgs_activity_retrieve:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiAnalyticsApi->engagement_orgs_activity_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **org** | **str**|  | 
+ **department_id** | **int**| When &#x60;department_mode&#x3D;1&#x60; is passed, it allows to filter data for only user content groups for the specified department  | [optional] 
+ **format** | **str**| Format  * &#x60;json&#x60; - json | [optional] [default to json]
+ **include_main_platform** | **bool**| Include main platform data | [optional] [default to True]
+ **length** | **int**| Size of data to return | [optional] 
+ **page** | **int**| Page offset | [optional] 
+
+### Return type
+
+[**EngagementPerCourse**](EngagementPerCourse.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **engagement_orgs_course_completion_over_time_retrieve**
+> OvertimeWithChangeInfo engagement_orgs_course_completion_over_time_retrieve(org, department_id=department_id, end_date=end_date, format=format, include_main_platform=include_main_platform, start_date=start_date)
+
+
+
+Completion count per user per course across the platform  Query Params 1. start_date e.g 2020-10-01 2. end_date e.g 2020-10-10  Default result when no query param is added is last_7_days (today inclusive)
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.overtime_with_change_info import OvertimeWithChangeInfo
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+
+# Create an instance of the API class
+api_instance = iblai.AiAnalyticsApi(api_client)
+org = 'org_example' # str | 
+department_id = 56 # int | When `department_mode=1` is passed, it allows to filter data for only user content groups for the specified department  (optional)
+end_date = 'end_date_example' # str | end date. ISO 8601 (optional)
+format = json # str | Format  * `json` - json (optional) (default to json)
+include_main_platform = True # bool | Include main platform data (optional) (default to True)
+start_date = 'start_date_example' # str | start date. ISO 8601 (optional)
+
+try:
+    api_response = api_instance.engagement_orgs_course_completion_over_time_retrieve(org, department_id=department_id, end_date=end_date, format=format, include_main_platform=include_main_platform, start_date=start_date)
+    print("The response of AiAnalyticsApi->engagement_orgs_course_completion_over_time_retrieve:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiAnalyticsApi->engagement_orgs_course_completion_over_time_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **org** | **str**|  | 
+ **department_id** | **int**| When &#x60;department_mode&#x3D;1&#x60; is passed, it allows to filter data for only user content groups for the specified department  | [optional] 
+ **end_date** | **str**| end date. ISO 8601 | [optional] 
+ **format** | **str**| Format  * &#x60;json&#x60; - json | [optional] [default to json]
+ **include_main_platform** | **bool**| Include main platform data | [optional] [default to True]
+ **start_date** | **str**| start date. ISO 8601 | [optional] 
+
+### Return type
+
+[**OvertimeWithChangeInfo**](OvertimeWithChangeInfo.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **engagement_orgs_course_completion_per_course_retrieve**
+> CourseCompletionPerCourse engagement_orgs_course_completion_per_course_retrieve(org, department_id=department_id, format=format, include_main_platform=include_main_platform, length=length, page=page)
+
+
+
+List course completion metrics on a per-course basis.  This endpoint provides a paginated table of courses with enrollment and completion statistics for each course.  Returns:     A paginated list of courses with:     - Course identification (ID and name)     - Enrollment count     - Completion count     - Average completion rate
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.course_completion_per_course import CourseCompletionPerCourse
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+
+# Create an instance of the API class
+api_instance = iblai.AiAnalyticsApi(api_client)
+org = 'org_example' # str | 
+department_id = 56 # int | When `department_mode=1` is passed, it allows to filter data for only user content groups for the specified department  (optional)
+format = json # str | Format  * `json` - json (optional) (default to json)
+include_main_platform = True # bool | Include main platform data (optional) (default to True)
+length = 56 # int | Size of data to return (optional)
+page = 56 # int | Page offset (optional)
+
+try:
+    api_response = api_instance.engagement_orgs_course_completion_per_course_retrieve(org, department_id=department_id, format=format, include_main_platform=include_main_platform, length=length, page=page)
+    print("The response of AiAnalyticsApi->engagement_orgs_course_completion_per_course_retrieve:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiAnalyticsApi->engagement_orgs_course_completion_per_course_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **org** | **str**|  | 
+ **department_id** | **int**| When &#x60;department_mode&#x3D;1&#x60; is passed, it allows to filter data for only user content groups for the specified department  | [optional] 
+ **format** | **str**| Format  * &#x60;json&#x60; - json | [optional] [default to json]
+ **include_main_platform** | **bool**| Include main platform data | [optional] [default to True]
+ **length** | **int**| Size of data to return | [optional] 
+ **page** | **int**| Page offset | [optional] 
+
+### Return type
+
+[**CourseCompletionPerCourse**](CourseCompletionPerCourse.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **engagement_orgs_courses_time_average_retrieve**
+> AverageOvertime engagement_orgs_courses_time_average_retrieve(course_id, org, department_id=department_id, end_date=end_date, format=format, include_main_platform=include_main_platform, start_date=start_date)
+
+
+
+Average time spent in secs on a per-day basis  Query Params 1. start_date e.g 2020-10-01 2. end_date e.g 2020-10-10 3. course_id <optional>  Default result when no query param is added is last_7_days (today inclusive)
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.average_overtime import AverageOvertime
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+
+# Create an instance of the API class
+api_instance = iblai.AiAnalyticsApi(api_client)
+course_id = 'course_id_example' # str | 
+org = 'org_example' # str | 
+department_id = 56 # int | When `department_mode=1` is passed, it allows to filter data for only user content groups for the specified department  (optional)
+end_date = 'end_date_example' # str | end date. ISO 8601 (optional)
+format = json # str | Format  * `json` - json (optional) (default to json)
+include_main_platform = True # bool | Include main platform data (optional) (default to True)
+start_date = 'start_date_example' # str | start date. ISO 8601 (optional)
+
+try:
+    api_response = api_instance.engagement_orgs_courses_time_average_retrieve(course_id, org, department_id=department_id, end_date=end_date, format=format, include_main_platform=include_main_platform, start_date=start_date)
+    print("The response of AiAnalyticsApi->engagement_orgs_courses_time_average_retrieve:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiAnalyticsApi->engagement_orgs_courses_time_average_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **course_id** | **str**|  | 
+ **org** | **str**|  | 
+ **department_id** | **int**| When &#x60;department_mode&#x3D;1&#x60; is passed, it allows to filter data for only user content groups for the specified department  | [optional] 
+ **end_date** | **str**| end date. ISO 8601 | [optional] 
+ **format** | **str**| Format  * &#x60;json&#x60; - json | [optional] [default to json]
+ **include_main_platform** | **bool**| Include main platform data | [optional] [default to True]
+ **start_date** | **str**| start date. ISO 8601 | [optional] 
+
+### Return type
+
+[**AverageOvertime**](AverageOvertime.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **engagement_orgs_courses_time_detail_retrieve**
+> TimeDetail engagement_orgs_courses_time_detail_retrieve(course_id, org, department_id=department_id, format=format, include_main_platform=include_main_platform)
+
+
+
+Time spent per course in secs in a tree like form  Kwargs course_id e.g course-v1:Org+Course4+Run  Query Params 1. start_date <optional> e.g 2020-10-01 2. end_date <optional> e.g 2020-10-10
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.time_detail import TimeDetail
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+
+# Create an instance of the API class
+api_instance = iblai.AiAnalyticsApi(api_client)
+course_id = 'course_id_example' # str | 
+org = 'org_example' # str | 
+department_id = 56 # int | When `department_mode=1` is passed, it allows to filter data for only user content groups for the specified department  (optional)
+format = json # str | Format  * `json` - json (optional) (default to json)
+include_main_platform = True # bool | Include main platform data (optional) (default to True)
+
+try:
+    api_response = api_instance.engagement_orgs_courses_time_detail_retrieve(course_id, org, department_id=department_id, format=format, include_main_platform=include_main_platform)
+    print("The response of AiAnalyticsApi->engagement_orgs_courses_time_detail_retrieve:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiAnalyticsApi->engagement_orgs_courses_time_detail_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **course_id** | **str**|  | 
+ **org** | **str**|  | 
+ **department_id** | **int**| When &#x60;department_mode&#x3D;1&#x60; is passed, it allows to filter data for only user content groups for the specified department  | [optional] 
+ **format** | **str**| Format  * &#x60;json&#x60; - json | [optional] [default to json]
+ **include_main_platform** | **bool**| Include main platform data | [optional] [default to True]
+
+### Return type
+
+[**TimeDetail**](TimeDetail.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **engagement_orgs_courses_time_over_time_retrieve**
+> OverTimeWithTotal engagement_orgs_courses_time_over_time_retrieve(course_id, org, department_id=department_id, end_date=end_date, format=format, include_main_platform=include_main_platform, start_date=start_date)
+
+
+
+Time spent per course in secs on a per-day basis  Query Params 1. start_date e.g 2020-10-01 2. end_date e.g 2020-10-10 Kwargs 3. course_id  Default result when no query param is added is last_7_days (today inclusive)
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.over_time_with_total import OverTimeWithTotal
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+
+# Create an instance of the API class
+api_instance = iblai.AiAnalyticsApi(api_client)
+course_id = 'course_id_example' # str | 
+org = 'org_example' # str | 
+department_id = 56 # int | When `department_mode=1` is passed, it allows to filter data for only user content groups for the specified department  (optional)
+end_date = 'end_date_example' # str | end date. ISO 8601 (optional)
+format = json # str | Format  * `json` - json (optional) (default to json)
+include_main_platform = True # bool | Include main platform data (optional) (default to True)
+start_date = 'start_date_example' # str | start date. ISO 8601 (optional)
+
+try:
+    api_response = api_instance.engagement_orgs_courses_time_over_time_retrieve(course_id, org, department_id=department_id, end_date=end_date, format=format, include_main_platform=include_main_platform, start_date=start_date)
+    print("The response of AiAnalyticsApi->engagement_orgs_courses_time_over_time_retrieve:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiAnalyticsApi->engagement_orgs_courses_time_over_time_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **course_id** | **str**|  | 
+ **org** | **str**|  | 
+ **department_id** | **int**| When &#x60;department_mode&#x3D;1&#x60; is passed, it allows to filter data for only user content groups for the specified department  | [optional] 
+ **end_date** | **str**| end date. ISO 8601 | [optional] 
+ **format** | **str**| Format  * &#x60;json&#x60; - json | [optional] [default to json]
+ **include_main_platform** | **bool**| Include main platform data | [optional] [default to True]
+ **start_date** | **str**| start date. ISO 8601 | [optional] 
+
+### Return type
+
+[**OverTimeWithTotal**](OverTimeWithTotal.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **engagement_orgs_courses_time_users_detail_retrieve**
+> PerLearnerTimeSpentInCourseTree engagement_orgs_courses_time_users_detail_retrieve(course_id, org, user_id, department_id=department_id, end_date=end_date, format=format, include_main_platform=include_main_platform, start_date=start_date)
+
+
+
+Time spent within a course in ordered hierarchical format  Kwargs 1. course_id  e.g course-v1:Org+Course4+Run 2. user_id e.g developer@ibleducation.com or dev123 (username|email) Query Params 3. start_date <optional> e.g 2020-10-01 4. end_date <optional> e.g 2020-10-10
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.per_learner_time_spent_in_course_tree import PerLearnerTimeSpentInCourseTree
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+
+# Create an instance of the API class
+api_instance = iblai.AiAnalyticsApi(api_client)
+course_id = 'course_id_example' # str | 
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+department_id = 56 # int | When `department_mode=1` is passed, it allows to filter data for only user content groups for the specified department  (optional)
+end_date = 'end_date_example' # str | end date. ISO 8601 (optional)
+format = json # str | Format  * `json` - json (optional) (default to json)
+include_main_platform = True # bool | Include main platform data (optional) (default to True)
+start_date = 'start_date_example' # str | start date. ISO 8601 (optional)
+
+try:
+    api_response = api_instance.engagement_orgs_courses_time_users_detail_retrieve(course_id, org, user_id, department_id=department_id, end_date=end_date, format=format, include_main_platform=include_main_platform, start_date=start_date)
+    print("The response of AiAnalyticsApi->engagement_orgs_courses_time_users_detail_retrieve:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiAnalyticsApi->engagement_orgs_courses_time_users_detail_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **course_id** | **str**|  | 
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+ **department_id** | **int**| When &#x60;department_mode&#x3D;1&#x60; is passed, it allows to filter data for only user content groups for the specified department  | [optional] 
+ **end_date** | **str**| end date. ISO 8601 | [optional] 
+ **format** | **str**| Format  * &#x60;json&#x60; - json | [optional] [default to json]
+ **include_main_platform** | **bool**| Include main platform data | [optional] [default to True]
+ **start_date** | **str**| start date. ISO 8601 | [optional] 
+
+### Return type
+
+[**PerLearnerTimeSpentInCourseTree**](PerLearnerTimeSpentInCourseTree.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **engagement_orgs_courses_time_users_over_time_retrieve**
+> OverTimeWithTotal engagement_orgs_courses_time_users_over_time_retrieve(course_id, org, user_id, department_id=department_id, end_date=end_date, format=format, include_main_platform=include_main_platform, start_date=start_date)
+
+
+
+Time spent in secs on a per-day basis  Query Params 1. course_id <optional> e.g course-v1:Org+Course4+Run 2. user_id <optional> e.g developer@ibleducation.com or dev123 (username|email) 3. start_date e.g 2020-10-01 4. end_date e.g 2020-10-10  Default result when no query param is added is last_7_days (today inclusive)
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.over_time_with_total import OverTimeWithTotal
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+
+# Create an instance of the API class
+api_instance = iblai.AiAnalyticsApi(api_client)
+course_id = 'course_id_example' # str | 
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+department_id = 56 # int | When `department_mode=1` is passed, it allows to filter data for only user content groups for the specified department  (optional)
+end_date = 'end_date_example' # str | end date. ISO 8601 (optional)
+format = json # str | Format  * `json` - json (optional) (default to json)
+include_main_platform = True # bool | Include main platform data (optional) (default to True)
+start_date = 'start_date_example' # str | start date. ISO 8601 (optional)
+
+try:
+    api_response = api_instance.engagement_orgs_courses_time_users_over_time_retrieve(course_id, org, user_id, department_id=department_id, end_date=end_date, format=format, include_main_platform=include_main_platform, start_date=start_date)
+    print("The response of AiAnalyticsApi->engagement_orgs_courses_time_users_over_time_retrieve:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiAnalyticsApi->engagement_orgs_courses_time_users_over_time_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **course_id** | **str**|  | 
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+ **department_id** | **int**| When &#x60;department_mode&#x3D;1&#x60; is passed, it allows to filter data for only user content groups for the specified department  | [optional] 
+ **end_date** | **str**| end date. ISO 8601 | [optional] 
+ **format** | **str**| Format  * &#x60;json&#x60; - json | [optional] [default to json]
+ **include_main_platform** | **bool**| Include main platform data | [optional] [default to True]
+ **start_date** | **str**| start date. ISO 8601 | [optional] 
+
+### Return type
+
+[**OverTimeWithTotal**](OverTimeWithTotal.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **engagement_orgs_courses_time_users_retrieve**
+> TimeSpentByUsersInCourse engagement_orgs_courses_time_users_retrieve(course_id, org, department_id=department_id, end_date=end_date, format=format, include_main_platform=include_main_platform, length=length, page=page, start_date=start_date)
+
+
+
+Time spent by users in a course  Query Params course_id  e.g course-v1:Org+Course4+Run
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.time_spent_by_users_in_course import TimeSpentByUsersInCourse
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+
+# Create an instance of the API class
+api_instance = iblai.AiAnalyticsApi(api_client)
+course_id = 'course_id_example' # str | 
+org = 'org_example' # str | 
+department_id = 56 # int | When `department_mode=1` is passed, it allows to filter data for only user content groups for the specified department  (optional)
+end_date = 'end_date_example' # str | end date. ISO 8601 (optional)
+format = json # str | Format  * `json` - json (optional) (default to json)
+include_main_platform = True # bool | Include main platform data (optional) (default to True)
+length = 56 # int | Size of data to return (optional)
+page = 56 # int | Page offset (optional)
+start_date = 'start_date_example' # str | start date. ISO 8601 (optional)
+
+try:
+    api_response = api_instance.engagement_orgs_courses_time_users_retrieve(course_id, org, department_id=department_id, end_date=end_date, format=format, include_main_platform=include_main_platform, length=length, page=page, start_date=start_date)
+    print("The response of AiAnalyticsApi->engagement_orgs_courses_time_users_retrieve:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiAnalyticsApi->engagement_orgs_courses_time_users_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **course_id** | **str**|  | 
+ **org** | **str**|  | 
+ **department_id** | **int**| When &#x60;department_mode&#x3D;1&#x60; is passed, it allows to filter data for only user content groups for the specified department  | [optional] 
+ **end_date** | **str**| end date. ISO 8601 | [optional] 
+ **format** | **str**| Format  * &#x60;json&#x60; - json | [optional] [default to json]
+ **include_main_platform** | **bool**| Include main platform data | [optional] [default to True]
+ **length** | **int**| Size of data to return | [optional] 
+ **page** | **int**| Page offset | [optional] 
+ **start_date** | **str**| start date. ISO 8601 | [optional] 
+
+### Return type
+
+[**TimeSpentByUsersInCourse**](TimeSpentByUsersInCourse.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **engagement_orgs_courses_videos_over_time_retrieve**
+> OverTimeWithTotal engagement_orgs_courses_videos_over_time_retrieve(course_id, org, department_id=department_id, end_date=end_date, format=format, include_main_platform=include_main_platform, start_date=start_date)
+
+
+
+Get video watch counts over time.  This endpoint provides daily counts of videos watched over a specified time period, with options to filter by course or user.  Query Parameters:     start_date (str, optional): Start date for the time range (ISO format)     end_date (str, optional): End date for the time range (ISO format)     course_id (str, optional): Filter by course ID     user_id (str, optional): Filter by username or email  Returns:     Daily video watch counts over the specified time period.  Default time range is the last 7 days if no dates are specified.  Access Control:     - Platform admins can access any video watch data     - Learners can access their own video watch data
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.over_time_with_total import OverTimeWithTotal
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+
+# Create an instance of the API class
+api_instance = iblai.AiAnalyticsApi(api_client)
+course_id = 'course_id_example' # str | 
+org = 'org_example' # str | 
+department_id = 56 # int | When `department_mode=1` is passed, it allows to filter data for only user content groups for the specified department  (optional)
+end_date = 'end_date_example' # str | end date. ISO 8601 (optional)
+format = json # str | Format  * `json` - json (optional) (default to json)
+include_main_platform = True # bool | Include main platform data (optional) (default to True)
+start_date = 'start_date_example' # str | start date. ISO 8601 (optional)
+
+try:
+    api_response = api_instance.engagement_orgs_courses_videos_over_time_retrieve(course_id, org, department_id=department_id, end_date=end_date, format=format, include_main_platform=include_main_platform, start_date=start_date)
+    print("The response of AiAnalyticsApi->engagement_orgs_courses_videos_over_time_retrieve:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiAnalyticsApi->engagement_orgs_courses_videos_over_time_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **course_id** | **str**|  | 
+ **org** | **str**|  | 
+ **department_id** | **int**| When &#x60;department_mode&#x3D;1&#x60; is passed, it allows to filter data for only user content groups for the specified department  | [optional] 
+ **end_date** | **str**| end date. ISO 8601 | [optional] 
+ **format** | **str**| Format  * &#x60;json&#x60; - json | [optional] [default to json]
+ **include_main_platform** | **bool**| Include main platform data | [optional] [default to True]
+ **start_date** | **str**| start date. ISO 8601 | [optional] 
+
+### Return type
+
+[**OverTimeWithTotal**](OverTimeWithTotal.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **engagement_orgs_courses_videos_retrieve**
+> VideosSpecificCourse engagement_orgs_courses_videos_retrieve(course_id, org, department_id=department_id, format=format, include_main_platform=include_main_platform)
+
+
+
+Get video engagement metrics for a specific course.  This endpoint provides detailed video engagement statistics for a single course, including view counts, completion rates, and time spent on videos.  Query Parameters:     course_id (str): The course ID to get video engagement data for  Returns:     Detailed video engagement metrics for the specified course.
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.videos_specific_course import VideosSpecificCourse
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+
+# Create an instance of the API class
+api_instance = iblai.AiAnalyticsApi(api_client)
+course_id = 'course_id_example' # str | 
+org = 'org_example' # str | 
+department_id = 56 # int | When `department_mode=1` is passed, it allows to filter data for only user content groups for the specified department  (optional)
+format = json # str | Format  * `json` - json (optional) (default to json)
+include_main_platform = True # bool | Include main platform data (optional) (default to True)
+
+try:
+    api_response = api_instance.engagement_orgs_courses_videos_retrieve(course_id, org, department_id=department_id, format=format, include_main_platform=include_main_platform)
+    print("The response of AiAnalyticsApi->engagement_orgs_courses_videos_retrieve:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiAnalyticsApi->engagement_orgs_courses_videos_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **course_id** | **str**|  | 
+ **org** | **str**|  | 
+ **department_id** | **int**| When &#x60;department_mode&#x3D;1&#x60; is passed, it allows to filter data for only user content groups for the specified department  | [optional] 
+ **format** | **str**| Format  * &#x60;json&#x60; - json | [optional] [default to json]
+ **include_main_platform** | **bool**| Include main platform data | [optional] [default to True]
+
+### Return type
+
+[**VideosSpecificCourse**](VideosSpecificCourse.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **engagement_orgs_courses_videos_summary_retrieve**
+> VideosInCourseSummary engagement_orgs_courses_videos_summary_retrieve(course_id, org, department_id=department_id, format=format, include_main_platform=include_main_platform)
+
+
+
+Get a summary of video watch statistics for a specific course.  This endpoint provides a structured summary of video watch data for a course, organized in a tree-like format by course sections and subsections.  Query Parameters:     course_id (str): The course ID to get video summary for  Returns:     A hierarchical structure of video watch data for the course, including:     - Section and subsection organization     - Video identification and metadata     - Watch counts and completion rates
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.videos_in_course_summary import VideosInCourseSummary
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+
+# Create an instance of the API class
+api_instance = iblai.AiAnalyticsApi(api_client)
+course_id = 'course_id_example' # str | 
+org = 'org_example' # str | 
+department_id = 56 # int | When `department_mode=1` is passed, it allows to filter data for only user content groups for the specified department  (optional)
+format = json # str | Format  * `json` - json (optional) (default to json)
+include_main_platform = True # bool | Include main platform data (optional) (default to True)
+
+try:
+    api_response = api_instance.engagement_orgs_courses_videos_summary_retrieve(course_id, org, department_id=department_id, format=format, include_main_platform=include_main_platform)
+    print("The response of AiAnalyticsApi->engagement_orgs_courses_videos_summary_retrieve:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiAnalyticsApi->engagement_orgs_courses_videos_summary_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **course_id** | **str**|  | 
+ **org** | **str**|  | 
+ **department_id** | **int**| When &#x60;department_mode&#x3D;1&#x60; is passed, it allows to filter data for only user content groups for the specified department  | [optional] 
+ **format** | **str**| Format  * &#x60;json&#x60; - json | [optional] [default to json]
+ **include_main_platform** | **bool**| Include main platform data | [optional] [default to True]
+
+### Return type
+
+[**VideosInCourseSummary**](VideosInCourseSummary.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **engagement_orgs_courses_videos_users_retrieve**
+> WatchedVideosPerUser engagement_orgs_courses_videos_users_retrieve(course_id, org, department_id=department_id, format=format, include_main_platform=include_main_platform)
+
+
+
+List of users' videos completed records for a specific course  Kwargs course_id  e.g course-v1:Org+Course4+Run
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.watched_videos_per_user import WatchedVideosPerUser
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+
+# Create an instance of the API class
+api_instance = iblai.AiAnalyticsApi(api_client)
+course_id = 'course_id_example' # str | 
+org = 'org_example' # str | 
+department_id = 56 # int | When `department_mode=1` is passed, it allows to filter data for only user content groups for the specified department  (optional)
+format = json # str | Format  * `json` - json (optional) (default to json)
+include_main_platform = True # bool | Include main platform data (optional) (default to True)
+
+try:
+    api_response = api_instance.engagement_orgs_courses_videos_users_retrieve(course_id, org, department_id=department_id, format=format, include_main_platform=include_main_platform)
+    print("The response of AiAnalyticsApi->engagement_orgs_courses_videos_users_retrieve:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiAnalyticsApi->engagement_orgs_courses_videos_users_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **course_id** | **str**|  | 
+ **org** | **str**|  | 
+ **department_id** | **int**| When &#x60;department_mode&#x3D;1&#x60; is passed, it allows to filter data for only user content groups for the specified department  | [optional] 
+ **format** | **str**| Format  * &#x60;json&#x60; - json | [optional] [default to json]
+ **include_main_platform** | **bool**| Include main platform data | [optional] [default to True]
+
+### Return type
+
+[**WatchedVideosPerUser**](WatchedVideosPerUser.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **engagement_orgs_time_average_perlearner_percourse_retrieve**
+> AverageOvertime engagement_orgs_time_average_perlearner_percourse_retrieve(org, department_id=department_id, end_date=end_date, format=format, include_main_platform=include_main_platform, start_date=start_date)
+
+
+
+Average time spent by a learner in enrolled courses. Gives a rough estimate of whats the average time that would be spent by a learner in a course  Query Params 1. start_date e.g 2020-10-01 2. end_date e.g 2020-10-10
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.average_overtime import AverageOvertime
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+
+# Create an instance of the API class
+api_instance = iblai.AiAnalyticsApi(api_client)
+org = 'org_example' # str | 
+department_id = 56 # int | When `department_mode=1` is passed, it allows to filter data for only user content groups for the specified department  (optional)
+end_date = 'end_date_example' # str | end date. ISO 8601 (optional)
+format = json # str | Format  * `json` - json (optional) (default to json)
+include_main_platform = True # bool | Include main platform data (optional) (default to True)
+start_date = 'start_date_example' # str | start date. ISO 8601 (optional)
+
+try:
+    api_response = api_instance.engagement_orgs_time_average_perlearner_percourse_retrieve(org, department_id=department_id, end_date=end_date, format=format, include_main_platform=include_main_platform, start_date=start_date)
+    print("The response of AiAnalyticsApi->engagement_orgs_time_average_perlearner_percourse_retrieve:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiAnalyticsApi->engagement_orgs_time_average_perlearner_percourse_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **org** | **str**|  | 
+ **department_id** | **int**| When &#x60;department_mode&#x3D;1&#x60; is passed, it allows to filter data for only user content groups for the specified department  | [optional] 
+ **end_date** | **str**| end date. ISO 8601 | [optional] 
+ **format** | **str**| Format  * &#x60;json&#x60; - json | [optional] [default to json]
+ **include_main_platform** | **bool**| Include main platform data | [optional] [default to True]
+ **start_date** | **str**| start date. ISO 8601 | [optional] 
+
+### Return type
+
+[**AverageOvertime**](AverageOvertime.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **engagement_orgs_time_average_with_over_time_retrieve**
+> AverageOvertime engagement_orgs_time_average_with_over_time_retrieve(org, department_id=department_id, end_date=end_date, format=format, include_main_platform=include_main_platform, start_date=start_date)
+
+
+
+Average time spent in secs on a per-day basis  Query Params 1. start_date e.g 2020-10-01 2. end_date e.g 2020-10-10 3. course_id <optional>  Default result when no query param is added is last_7_days (today inclusive)
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.average_overtime import AverageOvertime
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+
+# Create an instance of the API class
+api_instance = iblai.AiAnalyticsApi(api_client)
+org = 'org_example' # str | 
+department_id = 56 # int | When `department_mode=1` is passed, it allows to filter data for only user content groups for the specified department  (optional)
+end_date = 'end_date_example' # str | end date. ISO 8601 (optional)
+format = json # str | Format  * `json` - json (optional) (default to json)
+include_main_platform = True # bool | Include main platform data (optional) (default to True)
+start_date = 'start_date_example' # str | start date. ISO 8601 (optional)
+
+try:
+    api_response = api_instance.engagement_orgs_time_average_with_over_time_retrieve(org, department_id=department_id, end_date=end_date, format=format, include_main_platform=include_main_platform, start_date=start_date)
+    print("The response of AiAnalyticsApi->engagement_orgs_time_average_with_over_time_retrieve:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiAnalyticsApi->engagement_orgs_time_average_with_over_time_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **org** | **str**|  | 
+ **department_id** | **int**| When &#x60;department_mode&#x3D;1&#x60; is passed, it allows to filter data for only user content groups for the specified department  | [optional] 
+ **end_date** | **str**| end date. ISO 8601 | [optional] 
+ **format** | **str**| Format  * &#x60;json&#x60; - json | [optional] [default to json]
+ **include_main_platform** | **bool**| Include main platform data | [optional] [default to True]
+ **start_date** | **str**| start date. ISO 8601 | [optional] 
+
+### Return type
+
+[**AverageOvertime**](AverageOvertime.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **engagement_orgs_time_over_time_retrieve**
+> OvertimeWithChangeInfo engagement_orgs_time_over_time_retrieve(org, department_id=department_id, end_date=end_date, format=format, include_main_platform=include_main_platform, start_date=start_date)
+
+
+
+Get time spent on the platform over time.  This endpoint provides daily time spent values (in seconds) across the platform over a specified time period.  Query Parameters:     start_date (str, optional): Start date for the time range (ISO format)     end_date (str, optional): End date for the time range (ISO format)  Returns:     Daily time spent values over the specified time period, with change metrics     compared to previous periods.  Default time range is the last 7 days if no dates are specified.
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.overtime_with_change_info import OvertimeWithChangeInfo
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+
+# Create an instance of the API class
+api_instance = iblai.AiAnalyticsApi(api_client)
+org = 'org_example' # str | 
+department_id = 56 # int | When `department_mode=1` is passed, it allows to filter data for only user content groups for the specified department  (optional)
+end_date = 'end_date_example' # str | end date. ISO 8601 (optional)
+format = json # str | Format  * `json` - json (optional) (default to json)
+include_main_platform = True # bool | Include main platform data (optional) (default to True)
+start_date = 'start_date_example' # str | start date. ISO 8601 (optional)
+
+try:
+    api_response = api_instance.engagement_orgs_time_over_time_retrieve(org, department_id=department_id, end_date=end_date, format=format, include_main_platform=include_main_platform, start_date=start_date)
+    print("The response of AiAnalyticsApi->engagement_orgs_time_over_time_retrieve:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiAnalyticsApi->engagement_orgs_time_over_time_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **org** | **str**|  | 
+ **department_id** | **int**| When &#x60;department_mode&#x3D;1&#x60; is passed, it allows to filter data for only user content groups for the specified department  | [optional] 
+ **end_date** | **str**| end date. ISO 8601 | [optional] 
+ **format** | **str**| Format  * &#x60;json&#x60; - json | [optional] [default to json]
+ **include_main_platform** | **bool**| Include main platform data | [optional] [default to True]
+ **start_date** | **str**| start date. ISO 8601 | [optional] 
+
+### Return type
+
+[**OvertimeWithChangeInfo**](OvertimeWithChangeInfo.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **engagement_orgs_time_per_course_retrieve**
+> TimeSpentPerCourse engagement_orgs_time_per_course_retrieve(org, department_id=department_id, end_date=end_date, format=format, include_main_platform=include_main_platform, length=length, page=page, start_date=start_date)
+
+
+
+Get time spent statistics on a per-course basis.  This endpoint provides a paginated list of courses with the total time spent by users in each course.  Query Parameters:     start_date (str, optional): Start date for filtering (ISO format)     end_date (str, optional): End date for filtering (ISO format)     page (int, optional): Page number for pagination     length (int, optional): Number of items per page  Returns:     A paginated list of courses with:     - Course identification (ID and name)     - Total time spent (in seconds)     - Formatted time spent (human-readable)     - Percentage of total platform time
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.time_spent_per_course import TimeSpentPerCourse
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+
+# Create an instance of the API class
+api_instance = iblai.AiAnalyticsApi(api_client)
+org = 'org_example' # str | 
+department_id = 56 # int | When `department_mode=1` is passed, it allows to filter data for only user content groups for the specified department  (optional)
+end_date = 'end_date_example' # str | end date. ISO 8601 (optional)
+format = json # str | Format  * `json` - json (optional) (default to json)
+include_main_platform = True # bool | Include main platform data (optional) (default to True)
+length = 56 # int | Size of data to return (optional)
+page = 56 # int | Page offset (optional)
+start_date = 'start_date_example' # str | start date. ISO 8601 (optional)
+
+try:
+    api_response = api_instance.engagement_orgs_time_per_course_retrieve(org, department_id=department_id, end_date=end_date, format=format, include_main_platform=include_main_platform, length=length, page=page, start_date=start_date)
+    print("The response of AiAnalyticsApi->engagement_orgs_time_per_course_retrieve:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiAnalyticsApi->engagement_orgs_time_per_course_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **org** | **str**|  | 
+ **department_id** | **int**| When &#x60;department_mode&#x3D;1&#x60; is passed, it allows to filter data for only user content groups for the specified department  | [optional] 
+ **end_date** | **str**| end date. ISO 8601 | [optional] 
+ **format** | **str**| Format  * &#x60;json&#x60; - json | [optional] [default to json]
+ **include_main_platform** | **bool**| Include main platform data | [optional] [default to True]
+ **length** | **int**| Size of data to return | [optional] 
+ **page** | **int**| Page offset | [optional] 
+ **start_date** | **str**| start date. ISO 8601 | [optional] 
+
+### Return type
+
+[**TimeSpentPerCourse**](TimeSpentPerCourse.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **engagement_orgs_videos_over_time_retrieve**
+> OverTimeWithTotal engagement_orgs_videos_over_time_retrieve(org, department_id=department_id, end_date=end_date, format=format, include_main_platform=include_main_platform, start_date=start_date)
+
+
+
+Get video watch counts over time.  This endpoint provides daily counts of videos watched over a specified time period, with options to filter by course or user.  Query Parameters:     start_date (str, optional): Start date for the time range (ISO format)     end_date (str, optional): End date for the time range (ISO format)     course_id (str, optional): Filter by course ID     user_id (str, optional): Filter by username or email  Returns:     Daily video watch counts over the specified time period.  Default time range is the last 7 days if no dates are specified.  Access Control:     - Platform admins can access any video watch data     - Learners can access their own video watch data
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.over_time_with_total import OverTimeWithTotal
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+
+# Create an instance of the API class
+api_instance = iblai.AiAnalyticsApi(api_client)
+org = 'org_example' # str | 
+department_id = 56 # int | When `department_mode=1` is passed, it allows to filter data for only user content groups for the specified department  (optional)
+end_date = 'end_date_example' # str | end date. ISO 8601 (optional)
+format = json # str | Format  * `json` - json (optional) (default to json)
+include_main_platform = True # bool | Include main platform data (optional) (default to True)
+start_date = 'start_date_example' # str | start date. ISO 8601 (optional)
+
+try:
+    api_response = api_instance.engagement_orgs_videos_over_time_retrieve(org, department_id=department_id, end_date=end_date, format=format, include_main_platform=include_main_platform, start_date=start_date)
+    print("The response of AiAnalyticsApi->engagement_orgs_videos_over_time_retrieve:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiAnalyticsApi->engagement_orgs_videos_over_time_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **org** | **str**|  | 
+ **department_id** | **int**| When &#x60;department_mode&#x3D;1&#x60; is passed, it allows to filter data for only user content groups for the specified department  | [optional] 
+ **end_date** | **str**| end date. ISO 8601 | [optional] 
+ **format** | **str**| Format  * &#x60;json&#x60; - json | [optional] [default to json]
+ **include_main_platform** | **bool**| Include main platform data | [optional] [default to True]
+ **start_date** | **str**| start date. ISO 8601 | [optional] 
+
+### Return type
+
+[**OverTimeWithTotal**](OverTimeWithTotal.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **engagement_orgs_videos_retrieve**
+> VideoEngagementPerCourse engagement_orgs_videos_retrieve(org, department_id=department_id, format=format, include_main_platform=include_main_platform, length=length, page=page)
+
+
+
+Get video engagement metrics on a per-course basis.  This endpoint provides a paginated list of courses with video engagement metrics including view counts, completion rates, and time spent on videos.  Query Parameters:     page (int, optional): Page number for pagination     length (int, optional): Number of items per page  Returns:     A paginated list of courses with their video engagement metrics.
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.video_engagement_per_course import VideoEngagementPerCourse
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+
+# Create an instance of the API class
+api_instance = iblai.AiAnalyticsApi(api_client)
+org = 'org_example' # str | 
+department_id = 56 # int | When `department_mode=1` is passed, it allows to filter data for only user content groups for the specified department  (optional)
+format = json # str | Format  * `json` - json (optional) (default to json)
+include_main_platform = True # bool | Include main platform data (optional) (default to True)
+length = 56 # int | Size of data to return (optional)
+page = 56 # int | Page offset (optional)
+
+try:
+    api_response = api_instance.engagement_orgs_videos_retrieve(org, department_id=department_id, format=format, include_main_platform=include_main_platform, length=length, page=page)
+    print("The response of AiAnalyticsApi->engagement_orgs_videos_retrieve:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiAnalyticsApi->engagement_orgs_videos_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **org** | **str**|  | 
+ **department_id** | **int**| When &#x60;department_mode&#x3D;1&#x60; is passed, it allows to filter data for only user content groups for the specified department  | [optional] 
+ **format** | **str**| Format  * &#x60;json&#x60; - json | [optional] [default to json]
+ **include_main_platform** | **bool**| Include main platform data | [optional] [default to True]
+ **length** | **int**| Size of data to return | [optional] 
+ **page** | **int**| Page offset | [optional] 
+
+### Return type
+
+[**VideoEngagementPerCourse**](VideoEngagementPerCourse.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **overview_orgs_active_users_retrieve**
+> OvertimeWithChangeInfo overview_orgs_active_users_retrieve(org, department_id=department_id, end_date=end_date, format=format, include_main_platform=include_main_platform, start_date=start_date)
+
+
+
+Get active user counts over time.  This endpoint provides daily counts of active users (users with known activity) over a specified time period.  Query Parameters:     start_date (str, optional): Start date for the time range (ISO format)     end_date (str, optional): End date for the time range (ISO format)  Returns:     Daily active user counts over the specified time period, with change metrics     compared to previous periods.  Default time range is the last 7 days if no dates are specified.  An active user is defined as a user with any activity within the past 30 days.
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.overtime_with_change_info import OvertimeWithChangeInfo
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+
+# Create an instance of the API class
+api_instance = iblai.AiAnalyticsApi(api_client)
+org = 'org_example' # str | 
+department_id = 56 # int | When `department_mode=1` is passed, it allows to filter data for only user content groups for the specified department  (optional)
+end_date = 'end_date_example' # str | end date. ISO 8601 (optional)
+format = json # str | Format  * `json` - json (optional) (default to json)
+include_main_platform = True # bool | Include main platform data (optional) (default to True)
+start_date = 'start_date_example' # str | start date. ISO 8601 (optional)
+
+try:
+    api_response = api_instance.overview_orgs_active_users_retrieve(org, department_id=department_id, end_date=end_date, format=format, include_main_platform=include_main_platform, start_date=start_date)
+    print("The response of AiAnalyticsApi->overview_orgs_active_users_retrieve:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiAnalyticsApi->overview_orgs_active_users_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **org** | **str**|  | 
+ **department_id** | **int**| When &#x60;department_mode&#x3D;1&#x60; is passed, it allows to filter data for only user content groups for the specified department  | [optional] 
+ **end_date** | **str**| end date. ISO 8601 | [optional] 
+ **format** | **str**| Format  * &#x60;json&#x60; - json | [optional] [default to json]
+ **include_main_platform** | **bool**| Include main platform data | [optional] [default to True]
+ **start_date** | **str**| start date. ISO 8601 | [optional] 
+
+### Return type
+
+[**OvertimeWithChangeInfo**](OvertimeWithChangeInfo.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **overview_orgs_average_grade_retrieve**
+> Average overview_orgs_average_grade_retrieve(org, department_id=department_id, format=format, include_main_platform=include_main_platform)
+
+
+
+Get average grade value for platform, course, or user.  This endpoint returns the average grade at different levels: - Platform level: Average grade across all courses - Course level: Average grade for a specific course - Learner level: Average grade for a specific learner - Course-learner level: Grade for a specific learner in a specific course  Query Parameters:     course_id (str, optional): Filter by course ID     learner_id (str, optional): Filter by username or email  Returns:     The average grade value based on the specified filters.  Access Control:     - Platform admins can access any grade data     - Learners can access their own grade data
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.average import Average
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+
+# Create an instance of the API class
+api_instance = iblai.AiAnalyticsApi(api_client)
+org = 'org_example' # str | 
+department_id = 56 # int | When `department_mode=1` is passed, it allows to filter data for only user content groups for the specified department  (optional)
+format = json # str | Format  * `json` - json (optional) (default to json)
+include_main_platform = True # bool | Include main platform data (optional) (default to True)
+
+try:
+    api_response = api_instance.overview_orgs_average_grade_retrieve(org, department_id=department_id, format=format, include_main_platform=include_main_platform)
+    print("The response of AiAnalyticsApi->overview_orgs_average_grade_retrieve:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiAnalyticsApi->overview_orgs_average_grade_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **org** | **str**|  | 
+ **department_id** | **int**| When &#x60;department_mode&#x3D;1&#x60; is passed, it allows to filter data for only user content groups for the specified department  | [optional] 
+ **format** | **str**| Format  * &#x60;json&#x60; - json | [optional] [default to json]
+ **include_main_platform** | **bool**| Include main platform data | [optional] [default to True]
+
+### Return type
+
+[**Average**](Average.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **overview_orgs_courses_completions_retrieve**
+> CourseCompletionSummaryOvertime overview_orgs_courses_completions_retrieve(org, department_id=department_id, end_date=end_date, format=format, include_main_platform=include_main_platform, start_date=start_date)
+
+
+
+Get course completion summary metrics over time.  This endpoint provides completion statistics across the platform over a specified time period, including daily completion counts and overall metrics.  Query Parameters:     start_date (str): Start date for the time range (ISO format)     end_date (str): End date for the time range (ISO format)  Returns:     Completion data including:     - Daily completion counts over time     - Total unique user count     - Total completion count     - Completion percentage     - Change metrics compared to previous periods  Default time range is the last 7 days if no dates are specified.
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.course_completion_summary_overtime import CourseCompletionSummaryOvertime
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+
+# Create an instance of the API class
+api_instance = iblai.AiAnalyticsApi(api_client)
+org = 'org_example' # str | 
+department_id = 56 # int | When `department_mode=1` is passed, it allows to filter data for only user content groups for the specified department  (optional)
+end_date = 'end_date_example' # str | end date. ISO 8601 (optional)
+format = json # str | Format  * `json` - json (optional) (default to json)
+include_main_platform = True # bool | Include main platform data (optional) (default to True)
+start_date = 'start_date_example' # str | start date. ISO 8601 (optional)
+
+try:
+    api_response = api_instance.overview_orgs_courses_completions_retrieve(org, department_id=department_id, end_date=end_date, format=format, include_main_platform=include_main_platform, start_date=start_date)
+    print("The response of AiAnalyticsApi->overview_orgs_courses_completions_retrieve:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiAnalyticsApi->overview_orgs_courses_completions_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **org** | **str**|  | 
+ **department_id** | **int**| When &#x60;department_mode&#x3D;1&#x60; is passed, it allows to filter data for only user content groups for the specified department  | [optional] 
+ **end_date** | **str**| end date. ISO 8601 | [optional] 
+ **format** | **str**| Format  * &#x60;json&#x60; - json | [optional] [default to json]
+ **include_main_platform** | **bool**| Include main platform data | [optional] [default to True]
+ **start_date** | **str**| start date. ISO 8601 | [optional] 
+
+### Return type
+
+[**CourseCompletionSummaryOvertime**](CourseCompletionSummaryOvertime.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **overview_orgs_learners_retrieve**
+> PerlearnerUserList overview_orgs_learners_retrieve(org, department_id=department_id, format=format, include_main_platform=include_main_platform, length=length, page=page, search=search)
+
+
+
+List all learners on the platform with aggregated metrics.  This endpoint returns a paginated list of all learners with key metrics including: - Enrollment counts - Completion counts - Time spent on platform  Query Parameters:     page (int): Page number for pagination     length (int): Number of items per page     search (str): Filter learners by username, email, or name  Returns:     A paginated list of learners with their associated metrics.
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.perlearner_user_list import PerlearnerUserList
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+
+# Create an instance of the API class
+api_instance = iblai.AiAnalyticsApi(api_client)
+org = 'org_example' # str | 
+department_id = 56 # int | When `department_mode=1` is passed, it allows to filter data for only user content groups for the specified department  (optional)
+format = json # str | Format  * `json` - json (optional) (default to json)
+include_main_platform = True # bool | Include main platform data (optional) (default to True)
+length = 56 # int | Size of data to return (optional)
+page = 56 # int | Page offset (optional)
+search = 'search_example' # str | Search string for learner (optional)
+
+try:
+    api_response = api_instance.overview_orgs_learners_retrieve(org, department_id=department_id, format=format, include_main_platform=include_main_platform, length=length, page=page, search=search)
+    print("The response of AiAnalyticsApi->overview_orgs_learners_retrieve:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiAnalyticsApi->overview_orgs_learners_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **org** | **str**|  | 
+ **department_id** | **int**| When &#x60;department_mode&#x3D;1&#x60; is passed, it allows to filter data for only user content groups for the specified department  | [optional] 
+ **format** | **str**| Format  * &#x60;json&#x60; - json | [optional] [default to json]
+ **include_main_platform** | **bool**| Include main platform data | [optional] [default to True]
+ **length** | **int**| Size of data to return | [optional] 
+ **page** | **int**| Page offset | [optional] 
+ **search** | **str**| Search string for learner | [optional] 
+
+### Return type
+
+[**PerlearnerUserList**](PerlearnerUserList.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **overview_orgs_most_active_courses_retrieve**
+> TimeSpentPerCourse overview_orgs_most_active_courses_retrieve(org, department_id=department_id, end_date=end_date, format=format, include_main_platform=include_main_platform, length=length, page=page, start_date=start_date)
+
+
+
+Get time spent statistics on a per-course basis.  This endpoint provides a paginated list of courses with the total time spent by users in each course.  Query Parameters:     start_date (str, optional): Start date for filtering (ISO format)     end_date (str, optional): End date for filtering (ISO format)     page (int, optional): Page number for pagination     length (int, optional): Number of items per page  Returns:     A paginated list of courses with:     - Course identification (ID and name)     - Total time spent (in seconds)     - Formatted time spent (human-readable)     - Percentage of total platform time
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.time_spent_per_course import TimeSpentPerCourse
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+
+# Create an instance of the API class
+api_instance = iblai.AiAnalyticsApi(api_client)
+org = 'org_example' # str | 
+department_id = 56 # int | When `department_mode=1` is passed, it allows to filter data for only user content groups for the specified department  (optional)
+end_date = 'end_date_example' # str | end date. ISO 8601 (optional)
+format = json # str | Format  * `json` - json (optional) (default to json)
+include_main_platform = True # bool | Include main platform data (optional) (default to True)
+length = 56 # int | Size of data to return (optional)
+page = 56 # int | Page offset (optional)
+start_date = 'start_date_example' # str | start date. ISO 8601 (optional)
+
+try:
+    api_response = api_instance.overview_orgs_most_active_courses_retrieve(org, department_id=department_id, end_date=end_date, format=format, include_main_platform=include_main_platform, length=length, page=page, start_date=start_date)
+    print("The response of AiAnalyticsApi->overview_orgs_most_active_courses_retrieve:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiAnalyticsApi->overview_orgs_most_active_courses_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **org** | **str**|  | 
+ **department_id** | **int**| When &#x60;department_mode&#x3D;1&#x60; is passed, it allows to filter data for only user content groups for the specified department  | [optional] 
+ **end_date** | **str**| end date. ISO 8601 | [optional] 
+ **format** | **str**| Format  * &#x60;json&#x60; - json | [optional] [default to json]
+ **include_main_platform** | **bool**| Include main platform data | [optional] [default to True]
+ **length** | **int**| Size of data to return | [optional] 
+ **page** | **int**| Page offset | [optional] 
+ **start_date** | **str**| start date. ISO 8601 | [optional] 
+
+### Return type
+
+[**TimeSpentPerCourse**](TimeSpentPerCourse.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **overview_orgs_registered_users_retrieve**
+> OvertimeWithChangeInfo overview_orgs_registered_users_retrieve(org, department_id=department_id, end_date=end_date, format=format, include_main_platform=include_main_platform, start_date=start_date)
+
+
+
+Get registered user counts over time.  This endpoint provides daily counts of new user registrations over a specified time period.  Query Parameters:     start_date (str, optional): Start date for the time range (ISO format)     end_date (str, optional): End date for the time range (ISO format)  Returns:     Daily registration counts over the specified time period, with change metrics     compared to previous periods.  Default time range is the last 7 days if no dates are specified.
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.overtime_with_change_info import OvertimeWithChangeInfo
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+
+# Create an instance of the API class
+api_instance = iblai.AiAnalyticsApi(api_client)
+org = 'org_example' # str | 
+department_id = 56 # int | When `department_mode=1` is passed, it allows to filter data for only user content groups for the specified department  (optional)
+end_date = 'end_date_example' # str | end date. ISO 8601 (optional)
+format = json # str | Format  * `json` - json (optional) (default to json)
+include_main_platform = True # bool | Include main platform data (optional) (default to True)
+start_date = 'start_date_example' # str | start date. ISO 8601 (optional)
+
+try:
+    api_response = api_instance.overview_orgs_registered_users_retrieve(org, department_id=department_id, end_date=end_date, format=format, include_main_platform=include_main_platform, start_date=start_date)
+    print("The response of AiAnalyticsApi->overview_orgs_registered_users_retrieve:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiAnalyticsApi->overview_orgs_registered_users_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **org** | **str**|  | 
+ **department_id** | **int**| When &#x60;department_mode&#x3D;1&#x60; is passed, it allows to filter data for only user content groups for the specified department  | [optional] 
+ **end_date** | **str**| end date. ISO 8601 | [optional] 
+ **format** | **str**| Format  * &#x60;json&#x60; - json | [optional] [default to json]
+ **include_main_platform** | **bool**| Include main platform data | [optional] [default to True]
+ **start_date** | **str**| start date. ISO 8601 | [optional] 
+
+### Return type
+
+[**OvertimeWithChangeInfo**](OvertimeWithChangeInfo.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **performance_orgs_courses_grading_average_retrieve**
+> Average performance_orgs_courses_grading_average_retrieve(course_id, org, department_id=department_id, format=format, include_main_platform=include_main_platform)
+
+
+
+Get average grade value for platform, course, or user.  This endpoint returns the average grade at different levels: - Platform level: Average grade across all courses - Course level: Average grade for a specific course - Learner level: Average grade for a specific learner - Course-learner level: Grade for a specific learner in a specific course  Query Parameters:     course_id (str, optional): Filter by course ID     learner_id (str, optional): Filter by username or email  Returns:     The average grade value based on the specified filters.  Access Control:     - Platform admins can access any grade data     - Learners can access their own grade data
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.average import Average
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+
+# Create an instance of the API class
+api_instance = iblai.AiAnalyticsApi(api_client)
+course_id = 'course_id_example' # str | 
+org = 'org_example' # str | 
+department_id = 56 # int | When `department_mode=1` is passed, it allows to filter data for only user content groups for the specified department  (optional)
+format = json # str | Format  * `json` - json (optional) (default to json)
+include_main_platform = True # bool | Include main platform data (optional) (default to True)
+
+try:
+    api_response = api_instance.performance_orgs_courses_grading_average_retrieve(course_id, org, department_id=department_id, format=format, include_main_platform=include_main_platform)
+    print("The response of AiAnalyticsApi->performance_orgs_courses_grading_average_retrieve:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiAnalyticsApi->performance_orgs_courses_grading_average_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **course_id** | **str**|  | 
+ **org** | **str**|  | 
+ **department_id** | **int**| When &#x60;department_mode&#x3D;1&#x60; is passed, it allows to filter data for only user content groups for the specified department  | [optional] 
+ **format** | **str**| Format  * &#x60;json&#x60; - json | [optional] [default to json]
+ **include_main_platform** | **bool**| Include main platform data | [optional] [default to True]
+
+### Return type
+
+[**Average**](Average.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **performance_orgs_courses_grading_average_with_cutoff_retrieve**
+> AvgCourseGradeWithCutoff performance_orgs_courses_grading_average_with_cutoff_retrieve(course_id, org, department_id=department_id, format=format, include_main_platform=include_main_platform)
+
+
+
+Returns average course grade and grade cuttoff  e.g ``` {     \"data\": {         \"grade_cutoffs\": {             \"A\": 90,             \"B\": 80,             \"C\": 70,         },         \"average_grade\": 50.0,     } } ```  Kwargs course_id
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.avg_course_grade_with_cutoff import AvgCourseGradeWithCutoff
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+
+# Create an instance of the API class
+api_instance = iblai.AiAnalyticsApi(api_client)
+course_id = 'course_id_example' # str | 
+org = 'org_example' # str | 
+department_id = 56 # int | When `department_mode=1` is passed, it allows to filter data for only user content groups for the specified department  (optional)
+format = json # str | Format  * `json` - json (optional) (default to json)
+include_main_platform = True # bool | Include main platform data (optional) (default to True)
+
+try:
+    api_response = api_instance.performance_orgs_courses_grading_average_with_cutoff_retrieve(course_id, org, department_id=department_id, format=format, include_main_platform=include_main_platform)
+    print("The response of AiAnalyticsApi->performance_orgs_courses_grading_average_with_cutoff_retrieve:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiAnalyticsApi->performance_orgs_courses_grading_average_with_cutoff_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **course_id** | **str**|  | 
+ **org** | **str**|  | 
+ **department_id** | **int**| When &#x60;department_mode&#x3D;1&#x60; is passed, it allows to filter data for only user content groups for the specified department  | [optional] 
+ **format** | **str**| Format  * &#x60;json&#x60; - json | [optional] [default to json]
+ **include_main_platform** | **bool**| Include main platform data | [optional] [default to True]
+
+### Return type
+
+[**AvgCourseGradeWithCutoff**](AvgCourseGradeWithCutoff.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **performance_orgs_courses_grading_detail_retrieve**
+> CourseGradingDetail performance_orgs_courses_grading_detail_retrieve(course_id, org, department_id=department_id, format=format, include_main_platform=include_main_platform)
+
+
+
+Grading summary for the entire course overview in a tree-like format  Kwargs course_id <required>
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.course_grading_detail import CourseGradingDetail
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+
+# Create an instance of the API class
+api_instance = iblai.AiAnalyticsApi(api_client)
+course_id = 'course_id_example' # str | 
+org = 'org_example' # str | 
+department_id = 56 # int | When `department_mode=1` is passed, it allows to filter data for only user content groups for the specified department  (optional)
+format = json # str | Format  * `json` - json (optional) (default to json)
+include_main_platform = True # bool | Include main platform data (optional) (default to True)
+
+try:
+    api_response = api_instance.performance_orgs_courses_grading_detail_retrieve(course_id, org, department_id=department_id, format=format, include_main_platform=include_main_platform)
+    print("The response of AiAnalyticsApi->performance_orgs_courses_grading_detail_retrieve:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiAnalyticsApi->performance_orgs_courses_grading_detail_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **course_id** | **str**|  | 
+ **org** | **str**|  | 
+ **department_id** | **int**| When &#x60;department_mode&#x3D;1&#x60; is passed, it allows to filter data for only user content groups for the specified department  | [optional] 
+ **format** | **str**| Format  * &#x60;json&#x60; - json | [optional] [default to json]
+ **include_main_platform** | **bool**| Include main platform data | [optional] [default to True]
+
+### Return type
+
+[**CourseGradingDetail**](CourseGradingDetail.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **performance_orgs_courses_grading_per_learner_retrieve**
+> GradingPerUser performance_orgs_courses_grading_per_learner_retrieve(course_id, org, department_id=department_id, format=format, include_main_platform=include_main_platform)
+
+
+
+Grading information per enrolled user in a course  Kwargs course_id <required>
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.grading_per_user import GradingPerUser
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+
+# Create an instance of the API class
+api_instance = iblai.AiAnalyticsApi(api_client)
+course_id = 'course_id_example' # str | 
+org = 'org_example' # str | 
+department_id = 56 # int | When `department_mode=1` is passed, it allows to filter data for only user content groups for the specified department  (optional)
+format = json # str | Format  * `json` - json (optional) (default to json)
+include_main_platform = True # bool | Include main platform data (optional) (default to True)
+
+try:
+    api_response = api_instance.performance_orgs_courses_grading_per_learner_retrieve(course_id, org, department_id=department_id, format=format, include_main_platform=include_main_platform)
+    print("The response of AiAnalyticsApi->performance_orgs_courses_grading_per_learner_retrieve:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiAnalyticsApi->performance_orgs_courses_grading_per_learner_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **course_id** | **str**|  | 
+ **org** | **str**|  | 
+ **department_id** | **int**| When &#x60;department_mode&#x3D;1&#x60; is passed, it allows to filter data for only user content groups for the specified department  | [optional] 
+ **format** | **str**| Format  * &#x60;json&#x60; - json | [optional] [default to json]
+ **include_main_platform** | **bool**| Include main platform data | [optional] [default to True]
+
+### Return type
+
+[**GradingPerUser**](GradingPerUser.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **performance_orgs_courses_grading_summary_retrieve**
+> CourseGradeSummary performance_orgs_courses_grading_summary_retrieve(course_id, org, department_id=department_id, format=format, include_main_platform=include_main_platform)
+
+
+
+Returns average grades across various assignment types in a course  Query Params course_id  Returns:     dict     {         \"data\": [             {                 \"assignment_type': <str>,                 \"weight\": <float>,                 \"average_weighted_grade\": <float>,                 \"average_section_grade\": <float>             }, ...         ]     }
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.course_grade_summary import CourseGradeSummary
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+
+# Create an instance of the API class
+api_instance = iblai.AiAnalyticsApi(api_client)
+course_id = 'course_id_example' # str | 
+org = 'org_example' # str | 
+department_id = 56 # int | When `department_mode=1` is passed, it allows to filter data for only user content groups for the specified department  (optional)
+format = json # str | Format  * `json` - json (optional) (default to json)
+include_main_platform = True # bool | Include main platform data (optional) (default to True)
+
+try:
+    api_response = api_instance.performance_orgs_courses_grading_summary_retrieve(course_id, org, department_id=department_id, format=format, include_main_platform=include_main_platform)
+    print("The response of AiAnalyticsApi->performance_orgs_courses_grading_summary_retrieve:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiAnalyticsApi->performance_orgs_courses_grading_summary_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **course_id** | **str**|  | 
+ **org** | **str**|  | 
+ **department_id** | **int**| When &#x60;department_mode&#x3D;1&#x60; is passed, it allows to filter data for only user content groups for the specified department  | [optional] 
+ **format** | **str**| Format  * &#x60;json&#x60; - json | [optional] [default to json]
+ **include_main_platform** | **bool**| Include main platform data | [optional] [default to True]
+
+### Return type
+
+[**CourseGradeSummary**](CourseGradeSummary.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **performance_orgs_grading_average_retrieve**
+> Average performance_orgs_grading_average_retrieve(org, department_id=department_id, format=format, include_main_platform=include_main_platform)
+
+
+
+Get average grade value for platform, course, or user.  This endpoint returns the average grade at different levels: - Platform level: Average grade across all courses - Course level: Average grade for a specific course - Learner level: Average grade for a specific learner - Course-learner level: Grade for a specific learner in a specific course  Query Parameters:     course_id (str, optional): Filter by course ID     learner_id (str, optional): Filter by username or email  Returns:     The average grade value based on the specified filters.  Access Control:     - Platform admins can access any grade data     - Learners can access their own grade data
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.average import Average
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+
+# Create an instance of the API class
+api_instance = iblai.AiAnalyticsApi(api_client)
+org = 'org_example' # str | 
+department_id = 56 # int | When `department_mode=1` is passed, it allows to filter data for only user content groups for the specified department  (optional)
+format = json # str | Format  * `json` - json (optional) (default to json)
+include_main_platform = True # bool | Include main platform data (optional) (default to True)
+
+try:
+    api_response = api_instance.performance_orgs_grading_average_retrieve(org, department_id=department_id, format=format, include_main_platform=include_main_platform)
+    print("The response of AiAnalyticsApi->performance_orgs_grading_average_retrieve:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiAnalyticsApi->performance_orgs_grading_average_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **org** | **str**|  | 
+ **department_id** | **int**| When &#x60;department_mode&#x3D;1&#x60; is passed, it allows to filter data for only user content groups for the specified department  | [optional] 
+ **format** | **str**| Format  * &#x60;json&#x60; - json | [optional] [default to json]
+ **include_main_platform** | **bool**| Include main platform data | [optional] [default to True]
+
+### Return type
+
+[**Average**](Average.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **performance_orgs_grading_per_course_retrieve**
+> PerformanceGradesPerCourse performance_orgs_grading_per_course_retrieve(org, department_id=department_id, format=format, include_main_platform=include_main_platform, length=length, page=page)
+
+
+
+List grade-related performance data for all courses.  This endpoint provides a comprehensive view of grade performance across courses, including enrollment counts, pass rates, and average grades.  Returns:     A paginated list of courses with:     - Course identification (ID and name)     - Enrollment count     - Number of students who passed     - Average grade
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.performance_grades_per_course import PerformanceGradesPerCourse
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+
+# Create an instance of the API class
+api_instance = iblai.AiAnalyticsApi(api_client)
+org = 'org_example' # str | 
+department_id = 56 # int | When `department_mode=1` is passed, it allows to filter data for only user content groups for the specified department  (optional)
+format = json # str | Format  * `json` - json (optional) (default to json)
+include_main_platform = True # bool | Include main platform data (optional) (default to True)
+length = 56 # int | Size of data to return (optional)
+page = 56 # int | Page offset (optional)
+
+try:
+    api_response = api_instance.performance_orgs_grading_per_course_retrieve(org, department_id=department_id, format=format, include_main_platform=include_main_platform, length=length, page=page)
+    print("The response of AiAnalyticsApi->performance_orgs_grading_per_course_retrieve:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiAnalyticsApi->performance_orgs_grading_per_course_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **org** | **str**|  | 
+ **department_id** | **int**| When &#x60;department_mode&#x3D;1&#x60; is passed, it allows to filter data for only user content groups for the specified department  | [optional] 
+ **format** | **str**| Format  * &#x60;json&#x60; - json | [optional] [default to json]
+ **include_main_platform** | **bool**| Include main platform data | [optional] [default to True]
+ **length** | **int**| Size of data to return | [optional] 
+ **page** | **int**| Page offset | [optional] 
+
+### Return type
+
+[**PerformanceGradesPerCourse**](PerformanceGradesPerCourse.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **perlearner_orgs_learners_retrieve**
+> NewPerLearnerList perlearner_orgs_learners_retrieve(org, department_id=department_id, end_date=end_date, format=format, include_main_platform=include_main_platform, is_enrolled=is_enrolled, length=length, location=location, page=page, platform=platform, program=program, search=search, start_date=start_date)
+
+
+
+Enhanced API endpoint for listing learners with comprehensive filtering.  This endpoint provides a paginated list of learners with detailed metrics and supports advanced filtering options. It uses DM token authentication and respects department-based access controls.  Query Parameters:     page (int): Page number for pagination     length (int): Number of items per page     search (str): Filter by username, email, or full name     program (str): Filter by program     location (str): Filter by location     is_enrolled (bool): Filter for users with enrollments     platform (str): Filter by platform     start_date (date): Filter by join date (start range)     end_date (date): Filter by join date (end range)  Returns:     A paginated list of learners with comprehensive metrics including:     - Course enrollments and completions     - Time spent on platform     - Pathway progress     - Certificate and skill information     - Location data  Access Control:     - Platform admins can see all learners     - Department admins can only see learners in their departments
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.new_per_learner_list import NewPerLearnerList
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+
+# Create an instance of the API class
+api_instance = iblai.AiAnalyticsApi(api_client)
+org = 'org_example' # str | 
+department_id = 56 # int | When `department_mode=1` is passed, it allows to filter data for only user content groups for the specified department  (optional)
+end_date = '2013-10-20' # date | Learner date_joined end date. ISO 8601 (optional)
+format = json # str | Format  * `json` - json (optional) (default to json)
+include_main_platform = True # bool | Include main platform data (optional) (default to True)
+is_enrolled = True # bool | Filter for users who have at least an enrollment (optional)
+length = 56 # int | Size of data to return (optional)
+location = 'location_example' # str | Location search string (optional)
+page = 56 # int | Page offset (optional)
+platform = 'platform_example' # str | Platform search string (optional)
+program = 'program_example' # str | Program search string (optional)
+search = 'search_example' # str | Search string for learner. email, username or full name (optional)
+start_date = '2013-10-20' # date | Learner date_joined start date. ISO 8601 (optional)
+
+try:
+    api_response = api_instance.perlearner_orgs_learners_retrieve(org, department_id=department_id, end_date=end_date, format=format, include_main_platform=include_main_platform, is_enrolled=is_enrolled, length=length, location=location, page=page, platform=platform, program=program, search=search, start_date=start_date)
+    print("The response of AiAnalyticsApi->perlearner_orgs_learners_retrieve:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiAnalyticsApi->perlearner_orgs_learners_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **org** | **str**|  | 
+ **department_id** | **int**| When &#x60;department_mode&#x3D;1&#x60; is passed, it allows to filter data for only user content groups for the specified department  | [optional] 
+ **end_date** | **date**| Learner date_joined end date. ISO 8601 | [optional] 
+ **format** | **str**| Format  * &#x60;json&#x60; - json | [optional] [default to json]
+ **include_main_platform** | **bool**| Include main platform data | [optional] [default to True]
+ **is_enrolled** | **bool**| Filter for users who have at least an enrollment | [optional] 
+ **length** | **int**| Size of data to return | [optional] 
+ **location** | **str**| Location search string | [optional] 
+ **page** | **int**| Page offset | [optional] 
+ **platform** | **str**| Platform search string | [optional] 
+ **program** | **str**| Program search string | [optional] 
+ **search** | **str**| Search string for learner. email, username or full name | [optional] 
+ **start_date** | **date**| Learner date_joined start date. ISO 8601 | [optional] 
+
+### Return type
+
+[**NewPerLearnerList**](NewPerLearnerList.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **perlearner_orgs_users_activity_retrieve**
+> ActivityAPI perlearner_orgs_users_activity_retrieve(org, user_id, department_id=department_id, format=format, include_main_platform=include_main_platform)
+
+
+
+Provides information on user enrollments  Params user_id e.g developer@ibleducation.com| developer
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.activity_api import ActivityAPI
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+
+# Create an instance of the API class
+api_instance = iblai.AiAnalyticsApi(api_client)
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+department_id = 56 # int | When `department_mode=1` is passed, it allows to filter data for only user content groups for the specified department  (optional)
+format = json # str | Format  * `json` - json (optional) (default to json)
+include_main_platform = True # bool | Include main platform data (optional) (default to True)
+
+try:
+    api_response = api_instance.perlearner_orgs_users_activity_retrieve(org, user_id, department_id=department_id, format=format, include_main_platform=include_main_platform)
+    print("The response of AiAnalyticsApi->perlearner_orgs_users_activity_retrieve:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiAnalyticsApi->perlearner_orgs_users_activity_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+ **department_id** | **int**| When &#x60;department_mode&#x3D;1&#x60; is passed, it allows to filter data for only user content groups for the specified department  | [optional] 
+ **format** | **str**| Format  * &#x60;json&#x60; - json | [optional] [default to json]
+ **include_main_platform** | **bool**| Include main platform data | [optional] [default to True]
+
+### Return type
+
+[**ActivityAPI**](ActivityAPI.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **perlearner_orgs_users_courses_grading_cutoffs_retrieve**
+> PerlearnerGradeWithCutOff perlearner_orgs_users_courses_grading_cutoffs_retrieve(course_id, org, user_id, department_id=department_id, end_date=end_date, format=format, include_main_platform=include_main_platform, start_date=start_date)
+
+
+
+Provides about a learner current grade in a course with the course cut Kwargs 1. course_id e.g course-v1:Org+Course4+Run 2. user_id e.g developer@ibleducation.com or dev123 (username|email)
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.perlearner_grade_with_cut_off import PerlearnerGradeWithCutOff
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+
+# Create an instance of the API class
+api_instance = iblai.AiAnalyticsApi(api_client)
+course_id = 'course_id_example' # str | 
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+department_id = 56 # int | When `department_mode=1` is passed, it allows to filter data for only user content groups for the specified department  (optional)
+end_date = 'end_date_example' # str | end date. ISO 8601 (optional)
+format = json # str | Format  * `json` - json (optional) (default to json)
+include_main_platform = True # bool | Include main platform data (optional) (default to True)
+start_date = 'start_date_example' # str | start date. ISO 8601 (optional)
+
+try:
+    api_response = api_instance.perlearner_orgs_users_courses_grading_cutoffs_retrieve(course_id, org, user_id, department_id=department_id, end_date=end_date, format=format, include_main_platform=include_main_platform, start_date=start_date)
+    print("The response of AiAnalyticsApi->perlearner_orgs_users_courses_grading_cutoffs_retrieve:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiAnalyticsApi->perlearner_orgs_users_courses_grading_cutoffs_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **course_id** | **str**|  | 
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+ **department_id** | **int**| When &#x60;department_mode&#x3D;1&#x60; is passed, it allows to filter data for only user content groups for the specified department  | [optional] 
+ **end_date** | **str**| end date. ISO 8601 | [optional] 
+ **format** | **str**| Format  * &#x60;json&#x60; - json | [optional] [default to json]
+ **include_main_platform** | **bool**| Include main platform data | [optional] [default to True]
+ **start_date** | **str**| start date. ISO 8601 | [optional] 
+
+### Return type
+
+[**PerlearnerGradeWithCutOff**](PerlearnerGradeWithCutOff.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **perlearner_orgs_users_courses_grading_detail_retrieve**
+> DetailedGradeView perlearner_orgs_users_courses_grading_detail_retrieve(course_id, org, user_id, department_id=department_id, end_date=end_date, format=format, include_main_platform=include_main_platform, start_date=start_date)
+
+
+
+Mixin that includes the StudentTokenAuthentication and IsAdminUserOrStudent
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.detailed_grade_view import DetailedGradeView
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+
+# Create an instance of the API class
+api_instance = iblai.AiAnalyticsApi(api_client)
+course_id = 'course_id_example' # str | 
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+department_id = 56 # int | When `department_mode=1` is passed, it allows to filter data for only user content groups for the specified department  (optional)
+end_date = 'end_date_example' # str | end date. ISO 8601 (optional)
+format = json # str | Format  * `json` - json (optional) (default to json)
+include_main_platform = True # bool | Include main platform data (optional) (default to True)
+start_date = 'start_date_example' # str | start date. ISO 8601 (optional)
+
+try:
+    api_response = api_instance.perlearner_orgs_users_courses_grading_detail_retrieve(course_id, org, user_id, department_id=department_id, end_date=end_date, format=format, include_main_platform=include_main_platform, start_date=start_date)
+    print("The response of AiAnalyticsApi->perlearner_orgs_users_courses_grading_detail_retrieve:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiAnalyticsApi->perlearner_orgs_users_courses_grading_detail_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **course_id** | **str**|  | 
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+ **department_id** | **int**| When &#x60;department_mode&#x3D;1&#x60; is passed, it allows to filter data for only user content groups for the specified department  | [optional] 
+ **end_date** | **str**| end date. ISO 8601 | [optional] 
+ **format** | **str**| Format  * &#x60;json&#x60; - json | [optional] [default to json]
+ **include_main_platform** | **bool**| Include main platform data | [optional] [default to True]
+ **start_date** | **str**| start date. ISO 8601 | [optional] 
+
+### Return type
+
+[**DetailedGradeView**](DetailedGradeView.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **perlearner_orgs_users_courses_grading_summary_retrieve**
+> PerlearnerGradeSummary perlearner_orgs_users_courses_grading_summary_retrieve(course_id, org, user_id, department_id=department_id, end_date=end_date, format=format, include_main_platform=include_main_platform, start_date=start_date)
+
+
+
+Query Params 1. course_id e.g course-v1:Org+Course4+Run 2. user_id e.g developer@ibleducation.com or dev123 (username|email)
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.perlearner_grade_summary import PerlearnerGradeSummary
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+
+# Create an instance of the API class
+api_instance = iblai.AiAnalyticsApi(api_client)
+course_id = 'course_id_example' # str | 
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+department_id = 56 # int | When `department_mode=1` is passed, it allows to filter data for only user content groups for the specified department  (optional)
+end_date = 'end_date_example' # str | end date. ISO 8601 (optional)
+format = json # str | Format  * `json` - json (optional) (default to json)
+include_main_platform = True # bool | Include main platform data (optional) (default to True)
+start_date = 'start_date_example' # str | start date. ISO 8601 (optional)
+
+try:
+    api_response = api_instance.perlearner_orgs_users_courses_grading_summary_retrieve(course_id, org, user_id, department_id=department_id, end_date=end_date, format=format, include_main_platform=include_main_platform, start_date=start_date)
+    print("The response of AiAnalyticsApi->perlearner_orgs_users_courses_grading_summary_retrieve:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiAnalyticsApi->perlearner_orgs_users_courses_grading_summary_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **course_id** | **str**|  | 
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+ **department_id** | **int**| When &#x60;department_mode&#x3D;1&#x60; is passed, it allows to filter data for only user content groups for the specified department  | [optional] 
+ **end_date** | **str**| end date. ISO 8601 | [optional] 
+ **format** | **str**| Format  * &#x60;json&#x60; - json | [optional] [default to json]
+ **include_main_platform** | **bool**| Include main platform data | [optional] [default to True]
+ **start_date** | **str**| start date. ISO 8601 | [optional] 
+
+### Return type
+
+[**PerlearnerGradeSummary**](PerlearnerGradeSummary.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **perlearner_orgs_users_courses_overview_engagement_index_retrieve**
+> Value perlearner_orgs_users_courses_overview_engagement_index_retrieve(course_id, org, user_id)
+
+
+
+Average of days with atleast an activity within ENGAGEMENT_INDEX_PERIOD consecutive days for a learner in a course
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.value import Value
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+
+# Create an instance of the API class
+api_instance = iblai.AiAnalyticsApi(api_client)
+course_id = 'course_id_example' # str | 
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+
+try:
+    api_response = api_instance.perlearner_orgs_users_courses_overview_engagement_index_retrieve(course_id, org, user_id)
+    print("The response of AiAnalyticsApi->perlearner_orgs_users_courses_overview_engagement_index_retrieve:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiAnalyticsApi->perlearner_orgs_users_courses_overview_engagement_index_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **course_id** | **str**|  | 
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+
+### Return type
+
+[**Value**](Value.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **perlearner_orgs_users_courses_overview_grade_retrieve**
+> PerlearnerGradeWithCutOff perlearner_orgs_users_courses_overview_grade_retrieve(course_id, org, user_id, department_id=department_id, end_date=end_date, format=format, include_main_platform=include_main_platform, start_date=start_date)
+
+
+
+Provides about a learner current grade in a course with the course cut Kwargs 1. course_id e.g course-v1:Org+Course4+Run 2. user_id e.g developer@ibleducation.com or dev123 (username|email)
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.perlearner_grade_with_cut_off import PerlearnerGradeWithCutOff
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+
+# Create an instance of the API class
+api_instance = iblai.AiAnalyticsApi(api_client)
+course_id = 'course_id_example' # str | 
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+department_id = 56 # int | When `department_mode=1` is passed, it allows to filter data for only user content groups for the specified department  (optional)
+end_date = 'end_date_example' # str | end date. ISO 8601 (optional)
+format = json # str | Format  * `json` - json (optional) (default to json)
+include_main_platform = True # bool | Include main platform data (optional) (default to True)
+start_date = 'start_date_example' # str | start date. ISO 8601 (optional)
+
+try:
+    api_response = api_instance.perlearner_orgs_users_courses_overview_grade_retrieve(course_id, org, user_id, department_id=department_id, end_date=end_date, format=format, include_main_platform=include_main_platform, start_date=start_date)
+    print("The response of AiAnalyticsApi->perlearner_orgs_users_courses_overview_grade_retrieve:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiAnalyticsApi->perlearner_orgs_users_courses_overview_grade_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **course_id** | **str**|  | 
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+ **department_id** | **int**| When &#x60;department_mode&#x3D;1&#x60; is passed, it allows to filter data for only user content groups for the specified department  | [optional] 
+ **end_date** | **str**| end date. ISO 8601 | [optional] 
+ **format** | **str**| Format  * &#x60;json&#x60; - json | [optional] [default to json]
+ **include_main_platform** | **bool**| Include main platform data | [optional] [default to True]
+ **start_date** | **str**| start date. ISO 8601 | [optional] 
+
+### Return type
+
+[**PerlearnerGradeWithCutOff**](PerlearnerGradeWithCutOff.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **perlearner_orgs_users_courses_overview_performance_index_retrieve**
+> Value perlearner_orgs_users_courses_overview_performance_index_retrieve(course_id, org, user_id, department_id=department_id, end_date=end_date, format=format, include_main_platform=include_main_platform, start_date=start_date)
+
+
+
+Evaluates performance index for platform, per course, per user and per user-per course  Query Params course_id <optional> learner_id <optional>
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.value import Value
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+
+# Create an instance of the API class
+api_instance = iblai.AiAnalyticsApi(api_client)
+course_id = 'course_id_example' # str | 
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+department_id = 56 # int | When `department_mode=1` is passed, it allows to filter data for only user content groups for the specified department  (optional)
+end_date = 'end_date_example' # str | end date. ISO 8601 (optional)
+format = json # str | Format  * `json` - json (optional) (default to json)
+include_main_platform = True # bool | Include main platform data (optional) (default to True)
+start_date = 'start_date_example' # str | start date. ISO 8601 (optional)
+
+try:
+    api_response = api_instance.perlearner_orgs_users_courses_overview_performance_index_retrieve(course_id, org, user_id, department_id=department_id, end_date=end_date, format=format, include_main_platform=include_main_platform, start_date=start_date)
+    print("The response of AiAnalyticsApi->perlearner_orgs_users_courses_overview_performance_index_retrieve:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiAnalyticsApi->perlearner_orgs_users_courses_overview_performance_index_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **course_id** | **str**|  | 
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+ **department_id** | **int**| When &#x60;department_mode&#x3D;1&#x60; is passed, it allows to filter data for only user content groups for the specified department  | [optional] 
+ **end_date** | **str**| end date. ISO 8601 | [optional] 
+ **format** | **str**| Format  * &#x60;json&#x60; - json | [optional] [default to json]
+ **include_main_platform** | **bool**| Include main platform data | [optional] [default to True]
+ **start_date** | **str**| start date. ISO 8601 | [optional] 
+
+### Return type
+
+[**Value**](Value.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **perlearner_orgs_users_courses_overview_time_over_time_retrieve**
+> OverTimeWithTotal perlearner_orgs_users_courses_overview_time_over_time_retrieve(course_id, org, user_id, department_id=department_id, end_date=end_date, format=format, include_main_platform=include_main_platform, start_date=start_date)
+
+
+
+Time spent within a course in secs on a per-day basis  Kwargs 1. course_id  e.g course-v1:Org+Course4+Run 2. user_id e.g developer@ibleducation.com or dev123 (username|email) Query Params 3. start_date e.g 2020-10-01 4. end_date e.g 2020-10-10  Default result when no query param is added is last_7_days (today inclusive)
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.over_time_with_total import OverTimeWithTotal
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+
+# Create an instance of the API class
+api_instance = iblai.AiAnalyticsApi(api_client)
+course_id = 'course_id_example' # str | 
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+department_id = 56 # int | When `department_mode=1` is passed, it allows to filter data for only user content groups for the specified department  (optional)
+end_date = 'end_date_example' # str | end date. ISO 8601 (optional)
+format = json # str | Format  * `json` - json (optional) (default to json)
+include_main_platform = True # bool | Include main platform data (optional) (default to True)
+start_date = 'start_date_example' # str | start date. ISO 8601 (optional)
+
+try:
+    api_response = api_instance.perlearner_orgs_users_courses_overview_time_over_time_retrieve(course_id, org, user_id, department_id=department_id, end_date=end_date, format=format, include_main_platform=include_main_platform, start_date=start_date)
+    print("The response of AiAnalyticsApi->perlearner_orgs_users_courses_overview_time_over_time_retrieve:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiAnalyticsApi->perlearner_orgs_users_courses_overview_time_over_time_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **course_id** | **str**|  | 
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+ **department_id** | **int**| When &#x60;department_mode&#x3D;1&#x60; is passed, it allows to filter data for only user content groups for the specified department  | [optional] 
+ **end_date** | **str**| end date. ISO 8601 | [optional] 
+ **format** | **str**| Format  * &#x60;json&#x60; - json | [optional] [default to json]
+ **include_main_platform** | **bool**| Include main platform data | [optional] [default to True]
+ **start_date** | **str**| start date. ISO 8601 | [optional] 
+
+### Return type
+
+[**OverTimeWithTotal**](OverTimeWithTotal.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **perlearner_orgs_users_courses_videos_over_time_retrieve**
+> OverTimeWithTotal perlearner_orgs_users_courses_videos_over_time_retrieve(course_id, org, user_id, department_id=department_id, end_date=end_date, format=format, include_main_platform=include_main_platform, start_date=start_date)
+
+
+
+Get video watch counts over time.  This endpoint provides daily counts of videos watched over a specified time period, with options to filter by course or user.  Query Parameters:     start_date (str, optional): Start date for the time range (ISO format)     end_date (str, optional): End date for the time range (ISO format)     course_id (str, optional): Filter by course ID     user_id (str, optional): Filter by username or email  Returns:     Daily video watch counts over the specified time period.  Default time range is the last 7 days if no dates are specified.  Access Control:     - Platform admins can access any video watch data     - Learners can access their own video watch data
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.over_time_with_total import OverTimeWithTotal
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+
+# Create an instance of the API class
+api_instance = iblai.AiAnalyticsApi(api_client)
+course_id = 'course_id_example' # str | 
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+department_id = 56 # int | When `department_mode=1` is passed, it allows to filter data for only user content groups for the specified department  (optional)
+end_date = 'end_date_example' # str | end date. ISO 8601 (optional)
+format = json # str | Format  * `json` - json (optional) (default to json)
+include_main_platform = True # bool | Include main platform data (optional) (default to True)
+start_date = 'start_date_example' # str | start date. ISO 8601 (optional)
+
+try:
+    api_response = api_instance.perlearner_orgs_users_courses_videos_over_time_retrieve(course_id, org, user_id, department_id=department_id, end_date=end_date, format=format, include_main_platform=include_main_platform, start_date=start_date)
+    print("The response of AiAnalyticsApi->perlearner_orgs_users_courses_videos_over_time_retrieve:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiAnalyticsApi->perlearner_orgs_users_courses_videos_over_time_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **course_id** | **str**|  | 
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+ **department_id** | **int**| When &#x60;department_mode&#x3D;1&#x60; is passed, it allows to filter data for only user content groups for the specified department  | [optional] 
+ **end_date** | **str**| end date. ISO 8601 | [optional] 
+ **format** | **str**| Format  * &#x60;json&#x60; - json | [optional] [default to json]
+ **include_main_platform** | **bool**| Include main platform data | [optional] [default to True]
+ **start_date** | **str**| start date. ISO 8601 | [optional] 
+
+### Return type
+
+[**OverTimeWithTotal**](OverTimeWithTotal.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **perlearner_orgs_users_courses_videos_retrieve**
+> PerLearnerCourseVideosWatched perlearner_orgs_users_courses_videos_retrieve(course_id, org, user_id, department_id=department_id, format=format, include_main_platform=include_main_platform)
+
+
+
+List of videos within a course a learner has watched  Kwargs 1. course_id e.g course-v1:Org+Course4+Run 2. user_id e.g developer@ibleducation.com or dev123 (username|email)  Default result when no query param is added is [], 0
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.per_learner_course_videos_watched import PerLearnerCourseVideosWatched
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+
+# Create an instance of the API class
+api_instance = iblai.AiAnalyticsApi(api_client)
+course_id = 'course_id_example' # str | 
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+department_id = 56 # int | When `department_mode=1` is passed, it allows to filter data for only user content groups for the specified department  (optional)
+format = json # str | Format  * `json` - json (optional) (default to json)
+include_main_platform = True # bool | Include main platform data (optional) (default to True)
+
+try:
+    api_response = api_instance.perlearner_orgs_users_courses_videos_retrieve(course_id, org, user_id, department_id=department_id, format=format, include_main_platform=include_main_platform)
+    print("The response of AiAnalyticsApi->perlearner_orgs_users_courses_videos_retrieve:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiAnalyticsApi->perlearner_orgs_users_courses_videos_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **course_id** | **str**|  | 
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+ **department_id** | **int**| When &#x60;department_mode&#x3D;1&#x60; is passed, it allows to filter data for only user content groups for the specified department  | [optional] 
+ **format** | **str**| Format  * &#x60;json&#x60; - json | [optional] [default to json]
+ **include_main_platform** | **bool**| Include main platform data | [optional] [default to True]
+
+### Return type
+
+[**PerLearnerCourseVideosWatched**](PerLearnerCourseVideosWatched.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **perlearner_orgs_users_grades_per_course_retrieve**
+> PerlearnerGradingPerCourseAPI perlearner_orgs_users_grades_per_course_retrieve(org, user_id, department_id=department_id, format=format, include_main_platform=include_main_platform)
+
+
+
+Summary Grading Information for a learner on a per-enrollment basis  Query Params 1. user_id e.g developer@ibleducation.com or dev123 (username|email)
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.perlearner_grading_per_course_api import PerlearnerGradingPerCourseAPI
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+
+# Create an instance of the API class
+api_instance = iblai.AiAnalyticsApi(api_client)
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+department_id = 56 # int | When `department_mode=1` is passed, it allows to filter data for only user content groups for the specified department  (optional)
+format = json # str | Format  * `json` - json (optional) (default to json)
+include_main_platform = True # bool | Include main platform data (optional) (default to True)
+
+try:
+    api_response = api_instance.perlearner_orgs_users_grades_per_course_retrieve(org, user_id, department_id=department_id, format=format, include_main_platform=include_main_platform)
+    print("The response of AiAnalyticsApi->perlearner_orgs_users_grades_per_course_retrieve:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiAnalyticsApi->perlearner_orgs_users_grades_per_course_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+ **department_id** | **int**| When &#x60;department_mode&#x3D;1&#x60; is passed, it allows to filter data for only user content groups for the specified department  | [optional] 
+ **format** | **str**| Format  * &#x60;json&#x60; - json | [optional] [default to json]
+ **include_main_platform** | **bool**| Include main platform data | [optional] [default to True]
+
+### Return type
+
+[**PerlearnerGradingPerCourseAPI**](PerlearnerGradingPerCourseAPI.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **perlearner_orgs_users_info_retrieve**
+> LearnerInformationAPI perlearner_orgs_users_info_retrieve(org, user_id, department_id=department_id, format=format, include_main_platform=include_main_platform, meta=meta, search=search)
+
+
+
+Retrieve detailed information about a specific learner.  This endpoint returns personal and activity information about a learner, including profile data, activity metrics, and location information.  Path Parameters:     user_id (str): The username or email of the learner  Query Parameters:     meta (bool): Include additional analytics information when true  Returns:     Detailed learner information including:     - Profile data (username, name, email)     - Registration and activity dates     - Activity metrics (assessments, time spent, videos watched)     - Location and browser information (when available)  Access Control:     - Platform admins can access any learner     - Learners can access their own information     - Department admins can access learners in their departments
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.learner_information_api import LearnerInformationAPI
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+
+# Create an instance of the API class
+api_instance = iblai.AiAnalyticsApi(api_client)
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+department_id = 56 # int | When `department_mode=1` is passed, it allows to filter data for only user content groups for the specified department  (optional)
+format = json # str | Format  * `json` - json (optional) (default to json)
+include_main_platform = True # bool | Include main platform data (optional) (default to True)
+meta = n # str | Include extra analytics information?  * `y` - y * `yes` - yes * `true` - true * `True` - True * `n` - n * `no` - no * `false` - false * `False` - False (optional) (default to n)
+search = 'search_example' # str |  (optional)
+
+try:
+    api_response = api_instance.perlearner_orgs_users_info_retrieve(org, user_id, department_id=department_id, format=format, include_main_platform=include_main_platform, meta=meta, search=search)
+    print("The response of AiAnalyticsApi->perlearner_orgs_users_info_retrieve:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiAnalyticsApi->perlearner_orgs_users_info_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+ **department_id** | **int**| When &#x60;department_mode&#x3D;1&#x60; is passed, it allows to filter data for only user content groups for the specified department  | [optional] 
+ **format** | **str**| Format  * &#x60;json&#x60; - json | [optional] [default to json]
+ **include_main_platform** | **bool**| Include main platform data | [optional] [default to True]
+ **meta** | **str**| Include extra analytics information?  * &#x60;y&#x60; - y * &#x60;yes&#x60; - yes * &#x60;true&#x60; - true * &#x60;True&#x60; - True * &#x60;n&#x60; - n * &#x60;no&#x60; - no * &#x60;false&#x60; - false * &#x60;False&#x60; - False | [optional] [default to n]
+ **search** | **str**|  | [optional] 
+
+### Return type
+
+[**LearnerInformationAPI**](LearnerInformationAPI.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **perlearner_orgs_users_last_access_retrieve**
+> PerLearnerLastAccess perlearner_orgs_users_last_access_retrieve(org, user_id, department_id=department_id, format=format, include_main_platform=include_main_platform)
+
+
+
+Last course accessed by a learner, includes upto unit information as well
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.per_learner_last_access import PerLearnerLastAccess
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+
+# Create an instance of the API class
+api_instance = iblai.AiAnalyticsApi(api_client)
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+department_id = 56 # int | When `department_mode=1` is passed, it allows to filter data for only user content groups for the specified department  (optional)
+format = json # str | Format  * `json` - json (optional) (default to json)
+include_main_platform = True # bool | Include main platform data (optional) (default to True)
+
+try:
+    api_response = api_instance.perlearner_orgs_users_last_access_retrieve(org, user_id, department_id=department_id, format=format, include_main_platform=include_main_platform)
+    print("The response of AiAnalyticsApi->perlearner_orgs_users_last_access_retrieve:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiAnalyticsApi->perlearner_orgs_users_last_access_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+ **department_id** | **int**| When &#x60;department_mode&#x3D;1&#x60; is passed, it allows to filter data for only user content groups for the specified department  | [optional] 
+ **format** | **str**| Format  * &#x60;json&#x60; - json | [optional] [default to json]
+ **include_main_platform** | **bool**| Include main platform data | [optional] [default to True]
+
+### Return type
+
+[**PerLearnerLastAccess**](PerLearnerLastAccess.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **perlearner_orgs_users_overview_engagement_index_retrieve**
+> Value perlearner_orgs_users_overview_engagement_index_retrieve(org, user_id, department_id=department_id, end_date=end_date, format=format, include_main_platform=include_main_platform, start_date=start_date)
+
+
+
+Average of days with atleast an activity within ENGAGEMENT_INDEX_PERIOD consecutive days
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.value import Value
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+
+# Create an instance of the API class
+api_instance = iblai.AiAnalyticsApi(api_client)
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+department_id = 56 # int | When `department_mode=1` is passed, it allows to filter data for only user content groups for the specified department  (optional)
+end_date = 'end_date_example' # str | end date. ISO 8601 (optional)
+format = json # str | Format  * `json` - json (optional) (default to json)
+include_main_platform = True # bool | Include main platform data (optional) (default to True)
+start_date = 'start_date_example' # str | start date. ISO 8601 (optional)
+
+try:
+    api_response = api_instance.perlearner_orgs_users_overview_engagement_index_retrieve(org, user_id, department_id=department_id, end_date=end_date, format=format, include_main_platform=include_main_platform, start_date=start_date)
+    print("The response of AiAnalyticsApi->perlearner_orgs_users_overview_engagement_index_retrieve:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiAnalyticsApi->perlearner_orgs_users_overview_engagement_index_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+ **department_id** | **int**| When &#x60;department_mode&#x3D;1&#x60; is passed, it allows to filter data for only user content groups for the specified department  | [optional] 
+ **end_date** | **str**| end date. ISO 8601 | [optional] 
+ **format** | **str**| Format  * &#x60;json&#x60; - json | [optional] [default to json]
+ **include_main_platform** | **bool**| Include main platform data | [optional] [default to True]
+ **start_date** | **str**| start date. ISO 8601 | [optional] 
+
+### Return type
+
+[**Value**](Value.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **perlearner_orgs_users_overview_grades_average_retrieve**
+> Average perlearner_orgs_users_overview_grades_average_retrieve(org, user_id, department_id=department_id, format=format, include_main_platform=include_main_platform)
+
+
+
+Get average grade value for platform, course, or user.  This endpoint returns the average grade at different levels: - Platform level: Average grade across all courses - Course level: Average grade for a specific course - Learner level: Average grade for a specific learner - Course-learner level: Grade for a specific learner in a specific course  Query Parameters:     course_id (str, optional): Filter by course ID     learner_id (str, optional): Filter by username or email  Returns:     The average grade value based on the specified filters.  Access Control:     - Platform admins can access any grade data     - Learners can access their own grade data
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.average import Average
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+
+# Create an instance of the API class
+api_instance = iblai.AiAnalyticsApi(api_client)
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+department_id = 56 # int | When `department_mode=1` is passed, it allows to filter data for only user content groups for the specified department  (optional)
+format = json # str | Format  * `json` - json (optional) (default to json)
+include_main_platform = True # bool | Include main platform data (optional) (default to True)
+
+try:
+    api_response = api_instance.perlearner_orgs_users_overview_grades_average_retrieve(org, user_id, department_id=department_id, format=format, include_main_platform=include_main_platform)
+    print("The response of AiAnalyticsApi->perlearner_orgs_users_overview_grades_average_retrieve:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiAnalyticsApi->perlearner_orgs_users_overview_grades_average_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+ **department_id** | **int**| When &#x60;department_mode&#x3D;1&#x60; is passed, it allows to filter data for only user content groups for the specified department  | [optional] 
+ **format** | **str**| Format  * &#x60;json&#x60; - json | [optional] [default to json]
+ **include_main_platform** | **bool**| Include main platform data | [optional] [default to True]
+
+### Return type
+
+[**Average**](Average.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **perlearner_orgs_users_overview_performance_index_retrieve**
+> Value perlearner_orgs_users_overview_performance_index_retrieve(org, user_id, department_id=department_id, end_date=end_date, format=format, include_main_platform=include_main_platform, start_date=start_date)
+
+
+
+Evaluates performance index for platform, per course, per user and per user-per course  Query Params course_id <optional> learner_id <optional>
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.value import Value
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+
+# Create an instance of the API class
+api_instance = iblai.AiAnalyticsApi(api_client)
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+department_id = 56 # int | When `department_mode=1` is passed, it allows to filter data for only user content groups for the specified department  (optional)
+end_date = 'end_date_example' # str | end date. ISO 8601 (optional)
+format = json # str | Format  * `json` - json (optional) (default to json)
+include_main_platform = True # bool | Include main platform data (optional) (default to True)
+start_date = 'start_date_example' # str | start date. ISO 8601 (optional)
+
+try:
+    api_response = api_instance.perlearner_orgs_users_overview_performance_index_retrieve(org, user_id, department_id=department_id, end_date=end_date, format=format, include_main_platform=include_main_platform, start_date=start_date)
+    print("The response of AiAnalyticsApi->perlearner_orgs_users_overview_performance_index_retrieve:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiAnalyticsApi->perlearner_orgs_users_overview_performance_index_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+ **department_id** | **int**| When &#x60;department_mode&#x3D;1&#x60; is passed, it allows to filter data for only user content groups for the specified department  | [optional] 
+ **end_date** | **str**| end date. ISO 8601 | [optional] 
+ **format** | **str**| Format  * &#x60;json&#x60; - json | [optional] [default to json]
+ **include_main_platform** | **bool**| Include main platform data | [optional] [default to True]
+ **start_date** | **str**| start date. ISO 8601 | [optional] 
+
+### Return type
+
+[**Value**](Value.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **perlearner_orgs_users_overview_time_over_time_retrieve**
+> OverTimeWithTotal perlearner_orgs_users_overview_time_over_time_retrieve(org, user_id, department_id=department_id, end_date=end_date, format=format, include_main_platform=include_main_platform, start_date=start_date)
+
+
+
+Time spent in secs on a per-day basis  Query Params 1. course_id <optional> e.g course-v1:Org+Course4+Run 2. user_id <optional> e.g developer@ibleducation.com or dev123 (username|email) 3. start_date e.g 2020-10-01 4. end_date e.g 2020-10-10  Default result when no query param is added is last_7_days (today inclusive)
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.over_time_with_total import OverTimeWithTotal
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+
+# Create an instance of the API class
+api_instance = iblai.AiAnalyticsApi(api_client)
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+department_id = 56 # int | When `department_mode=1` is passed, it allows to filter data for only user content groups for the specified department  (optional)
+end_date = 'end_date_example' # str | end date. ISO 8601 (optional)
+format = json # str | Format  * `json` - json (optional) (default to json)
+include_main_platform = True # bool | Include main platform data (optional) (default to True)
+start_date = 'start_date_example' # str | start date. ISO 8601 (optional)
+
+try:
+    api_response = api_instance.perlearner_orgs_users_overview_time_over_time_retrieve(org, user_id, department_id=department_id, end_date=end_date, format=format, include_main_platform=include_main_platform, start_date=start_date)
+    print("The response of AiAnalyticsApi->perlearner_orgs_users_overview_time_over_time_retrieve:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiAnalyticsApi->perlearner_orgs_users_overview_time_over_time_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+ **department_id** | **int**| When &#x60;department_mode&#x3D;1&#x60; is passed, it allows to filter data for only user content groups for the specified department  | [optional] 
+ **end_date** | **str**| end date. ISO 8601 | [optional] 
+ **format** | **str**| Format  * &#x60;json&#x60; - json | [optional] [default to json]
+ **include_main_platform** | **bool**| Include main platform data | [optional] [default to True]
+ **start_date** | **str**| start date. ISO 8601 | [optional] 
+
+### Return type
+
+[**OverTimeWithTotal**](OverTimeWithTotal.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **perlearner_orgs_users_retrieve**
+> PerlearnerUserList perlearner_orgs_users_retrieve(org, department_id=department_id, format=format, include_main_platform=include_main_platform, length=length, page=page, search=search)
+
+
+
+List all learners on the platform with aggregated metrics.  This endpoint returns a paginated list of all learners with key metrics including: - Enrollment counts - Completion counts - Time spent on platform  Query Parameters:     page (int): Page number for pagination     length (int): Number of items per page     search (str): Filter learners by username, email, or name  Returns:     A paginated list of learners with their associated metrics.
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.perlearner_user_list import PerlearnerUserList
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+
+# Create an instance of the API class
+api_instance = iblai.AiAnalyticsApi(api_client)
+org = 'org_example' # str | 
+department_id = 56 # int | When `department_mode=1` is passed, it allows to filter data for only user content groups for the specified department  (optional)
+format = json # str | Format  * `json` - json (optional) (default to json)
+include_main_platform = True # bool | Include main platform data (optional) (default to True)
+length = 56 # int | Size of data to return (optional)
+page = 56 # int | Page offset (optional)
+search = 'search_example' # str | Search string for learner (optional)
+
+try:
+    api_response = api_instance.perlearner_orgs_users_retrieve(org, department_id=department_id, format=format, include_main_platform=include_main_platform, length=length, page=page, search=search)
+    print("The response of AiAnalyticsApi->perlearner_orgs_users_retrieve:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiAnalyticsApi->perlearner_orgs_users_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **org** | **str**|  | 
+ **department_id** | **int**| When &#x60;department_mode&#x3D;1&#x60; is passed, it allows to filter data for only user content groups for the specified department  | [optional] 
+ **format** | **str**| Format  * &#x60;json&#x60; - json | [optional] [default to json]
+ **include_main_platform** | **bool**| Include main platform data | [optional] [default to True]
+ **length** | **int**| Size of data to return | [optional] 
+ **page** | **int**| Page offset | [optional] 
+ **search** | **str**| Search string for learner | [optional] 
+
+### Return type
+
+[**PerlearnerUserList**](PerlearnerUserList.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **perlearner_orgs_users_videos_over_time_retrieve**
+> OverTimeWithTotal perlearner_orgs_users_videos_over_time_retrieve(org, user_id, department_id=department_id, end_date=end_date, format=format, include_main_platform=include_main_platform, start_date=start_date)
+
+
+
+Get video watch counts over time.  This endpoint provides daily counts of videos watched over a specified time period, with options to filter by course or user.  Query Parameters:     start_date (str, optional): Start date for the time range (ISO format)     end_date (str, optional): End date for the time range (ISO format)     course_id (str, optional): Filter by course ID     user_id (str, optional): Filter by username or email  Returns:     Daily video watch counts over the specified time period.  Default time range is the last 7 days if no dates are specified.  Access Control:     - Platform admins can access any video watch data     - Learners can access their own video watch data
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.over_time_with_total import OverTimeWithTotal
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+
+# Create an instance of the API class
+api_instance = iblai.AiAnalyticsApi(api_client)
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+department_id = 56 # int | When `department_mode=1` is passed, it allows to filter data for only user content groups for the specified department  (optional)
+end_date = 'end_date_example' # str | end date. ISO 8601 (optional)
+format = json # str | Format  * `json` - json (optional) (default to json)
+include_main_platform = True # bool | Include main platform data (optional) (default to True)
+start_date = 'start_date_example' # str | start date. ISO 8601 (optional)
+
+try:
+    api_response = api_instance.perlearner_orgs_users_videos_over_time_retrieve(org, user_id, department_id=department_id, end_date=end_date, format=format, include_main_platform=include_main_platform, start_date=start_date)
+    print("The response of AiAnalyticsApi->perlearner_orgs_users_videos_over_time_retrieve:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiAnalyticsApi->perlearner_orgs_users_videos_over_time_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+ **department_id** | **int**| When &#x60;department_mode&#x3D;1&#x60; is passed, it allows to filter data for only user content groups for the specified department  | [optional] 
+ **end_date** | **str**| end date. ISO 8601 | [optional] 
+ **format** | **str**| Format  * &#x60;json&#x60; - json | [optional] [default to json]
+ **include_main_platform** | **bool**| Include main platform data | [optional] [default to True]
+ **start_date** | **str**| start date. ISO 8601 | [optional] 
+
+### Return type
+
+[**OverTimeWithTotal**](OverTimeWithTotal.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **perlearner_orgs_users_videos_per_course_retrieve**
+> PerlearnerEngagementVideosWatchedPerCourse perlearner_orgs_users_videos_per_course_retrieve(org, user_id, department_id=department_id, end_date=end_date, format=format, include_main_platform=include_main_platform, start_date=start_date)
+
+
+
+Summary Videos watched data for a learner per enrollment  Query Params 1. user_id e.g developer@ibleducation.com or dev123 (username|email)
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.perlearner_engagement_videos_watched_per_course import PerlearnerEngagementVideosWatchedPerCourse
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+
+# Create an instance of the API class
+api_instance = iblai.AiAnalyticsApi(api_client)
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+department_id = 56 # int | When `department_mode=1` is passed, it allows to filter data for only user content groups for the specified department  (optional)
+end_date = 'end_date_example' # str | end date. ISO 8601 (optional)
+format = json # str | Format  * `json` - json (optional) (default to json)
+include_main_platform = True # bool | Include main platform data (optional) (default to True)
+start_date = 'start_date_example' # str | start date. ISO 8601 (optional)
+
+try:
+    api_response = api_instance.perlearner_orgs_users_videos_per_course_retrieve(org, user_id, department_id=department_id, end_date=end_date, format=format, include_main_platform=include_main_platform, start_date=start_date)
+    print("The response of AiAnalyticsApi->perlearner_orgs_users_videos_per_course_retrieve:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiAnalyticsApi->perlearner_orgs_users_videos_per_course_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+ **department_id** | **int**| When &#x60;department_mode&#x3D;1&#x60; is passed, it allows to filter data for only user content groups for the specified department  | [optional] 
+ **end_date** | **str**| end date. ISO 8601 | [optional] 
+ **format** | **str**| Format  * &#x60;json&#x60; - json | [optional] [default to json]
+ **include_main_platform** | **bool**| Include main platform data | [optional] [default to True]
+ **start_date** | **str**| start date. ISO 8601 | [optional] 
+
+### Return type
+
+[**PerlearnerEngagementVideosWatchedPerCourse**](PerlearnerEngagementVideosWatchedPerCourse.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **platform_orgs_courses_count_retrieve**
+> Count platform_orgs_courses_count_retrieve(org, department_id=department_id, format=format, include_main_platform=include_main_platform)
+
+
+
+Get total count of courses on the platform.  This endpoint returns the total number of courses available on the platform.  Returns:     The total count of courses on the platform.
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.count import Count
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+
+# Create an instance of the API class
+api_instance = iblai.AiAnalyticsApi(api_client)
+org = 'org_example' # str | 
+department_id = 56 # int | When `department_mode=1` is passed, it allows to filter data for only user content groups for the specified department  (optional)
+format = json # str | Format  * `json` - json (optional) (default to json)
+include_main_platform = True # bool | Include main platform data (optional) (default to True)
+
+try:
+    api_response = api_instance.platform_orgs_courses_count_retrieve(org, department_id=department_id, format=format, include_main_platform=include_main_platform)
+    print("The response of AiAnalyticsApi->platform_orgs_courses_count_retrieve:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiAnalyticsApi->platform_orgs_courses_count_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **org** | **str**|  | 
+ **department_id** | **int**| When &#x60;department_mode&#x3D;1&#x60; is passed, it allows to filter data for only user content groups for the specified department  | [optional] 
+ **format** | **str**| Format  * &#x60;json&#x60; - json | [optional] [default to json]
+ **include_main_platform** | **bool**| Include main platform data | [optional] [default to True]
+
+### Return type
+
+[**Count**](Count.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **platform_orgs_courses_grades_retrieve**
+> platform_orgs_courses_grades_retrieve(org)
+
+
+
+List grading information on a per-course basis.  This endpoint provides grading statistics for all courses, including average grades and completion rates.  Returns:     A list of courses with their associated grading metrics.
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+
+# Create an instance of the API class
+api_instance = iblai.AiAnalyticsApi(api_client)
+org = 'org_example' # str | 
+
+try:
+    api_instance.platform_orgs_courses_grades_retrieve(org)
+except Exception as e:
+    print("Exception when calling AiAnalyticsApi->platform_orgs_courses_grades_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **org** | **str**|  | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | No response body |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **platform_orgs_courses_progress_average_days_to_complete_retrieve**
+> platform_orgs_courses_progress_average_days_to_complete_retrieve(course_id, org)
+
+
+
+Average days used to complete a course  Query Params     1. course_id <optional> e.g course-v1:Org+Course4+Run
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+
+# Create an instance of the API class
+api_instance = iblai.AiAnalyticsApi(api_client)
+course_id = 'course_id_example' # str | 
+org = 'org_example' # str | 
+
+try:
+    api_instance.platform_orgs_courses_progress_average_days_to_complete_retrieve(course_id, org)
+except Exception as e:
+    print("Exception when calling AiAnalyticsApi->platform_orgs_courses_progress_average_days_to_complete_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **course_id** | **str**|  | 
+ **org** | **str**|  | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | No response body |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **platform_orgs_courses_progress_average_time_to_complete_retrieve**
+> platform_orgs_courses_progress_average_time_to_complete_retrieve(course_id, org)
+
+
+
+Average time used to complete a course in secs  Query Params     1. course_id <optional> e.g course-v1:Org+Course4+Run
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+
+# Create an instance of the API class
+api_instance = iblai.AiAnalyticsApi(api_client)
+course_id = 'course_id_example' # str | 
+org = 'org_example' # str | 
+
+try:
+    api_instance.platform_orgs_courses_progress_average_time_to_complete_retrieve(course_id, org)
+except Exception as e:
+    print("Exception when calling AiAnalyticsApi->platform_orgs_courses_progress_average_time_to_complete_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **course_id** | **str**|  | 
+ **org** | **str**|  | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | No response body |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **platform_orgs_courses_progress_completed_retrieve**
+> platform_orgs_courses_progress_completed_retrieve(course_id, org)
+
+
+
+Get completion count statistics.  This endpoint returns completion counts at different levels: - Platform level: Total users who have completed at least one course - Course level: Total completions for a specific course - Learner level: Total courses completed by a specific learner  Query Parameters:     course_id (str, optional): Filter by course ID     user_id (str, optional): Filter by username or email  Returns:     A count of completions based on the specified filters.
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+
+# Create an instance of the API class
+api_instance = iblai.AiAnalyticsApi(api_client)
+course_id = 'course_id_example' # str | 
+org = 'org_example' # str | 
+
+try:
+    api_instance.platform_orgs_courses_progress_completed_retrieve(course_id, org)
+except Exception as e:
+    print("Exception when calling AiAnalyticsApi->platform_orgs_courses_progress_completed_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **course_id** | **str**|  | 
+ **org** | **str**|  | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | No response body |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **platform_orgs_courses_progress_completion_rate_retrieve**
+> platform_orgs_courses_progress_completion_rate_retrieve(course_id, org)
+
+
+
+Average of total completed units
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+
+# Create an instance of the API class
+api_instance = iblai.AiAnalyticsApi(api_client)
+course_id = 'course_id_example' # str | 
+org = 'org_example' # str | 
+
+try:
+    api_instance.platform_orgs_courses_progress_completion_rate_retrieve(course_id, org)
+except Exception as e:
+    print("Exception when calling AiAnalyticsApi->platform_orgs_courses_progress_completion_rate_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **course_id** | **str**|  | 
+ **org** | **str**|  | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | No response body |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **platform_orgs_courses_progress_in_progress_retrieve**
+> platform_orgs_courses_progress_in_progress_retrieve(course_id, org)
+
+
+
+In Progress means any unit completion in the past 30 days  For platform :  Total users who have atleast a course in_progress on the platform For course : Total users For learner : Total courses in progress  Query Params     1. course_id <optional> e.g course-v1:Org+Course4+Run     2. user_id <optional> e.g developer@ibleducation.com or dev123 (username|email)
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+
+# Create an instance of the API class
+api_instance = iblai.AiAnalyticsApi(api_client)
+course_id = 'course_id_example' # str | 
+org = 'org_example' # str | 
+
+try:
+    api_instance.platform_orgs_courses_progress_in_progress_retrieve(course_id, org)
+except Exception as e:
+    print("Exception when calling AiAnalyticsApi->platform_orgs_courses_progress_in_progress_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **course_id** | **str**|  | 
+ **org** | **str**|  | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | No response body |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **platform_orgs_courses_progress_retrieve**
+> platform_orgs_courses_progress_retrieve(course_id, org)
+
+
+
+Completion information per enrolled user  Gives Percentage of units completed in course  Query Params course_id <required> user_id <optional>
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+
+# Create an instance of the API class
+api_instance = iblai.AiAnalyticsApi(api_client)
+course_id = 'course_id_example' # str | 
+org = 'org_example' # str | 
+
+try:
+    api_instance.platform_orgs_courses_progress_retrieve(course_id, org)
+except Exception as e:
+    print("Exception when calling AiAnalyticsApi->platform_orgs_courses_progress_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **course_id** | **str**|  | 
+ **org** | **str**|  | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | No response body |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **platform_orgs_courses_progress_started_retrieve**
+> platform_orgs_courses_progress_started_retrieve(course_id, org)
+
+
+
+Started means an enrollment  For platform :  Total users who have atleast an enrollment For course : Total users enrolled For learner : Total courses in progress  Query Params     1. course_id <optional> e.g course-v1:Org+Course4+Run     2. user_id <optional> e.g developer@ibleducation.com or dev123 (username|email)
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+
+# Create an instance of the API class
+api_instance = iblai.AiAnalyticsApi(api_client)
+course_id = 'course_id_example' # str | 
+org = 'org_example' # str | 
+
+try:
+    api_instance.platform_orgs_courses_progress_started_retrieve(course_id, org)
+except Exception as e:
+    print("Exception when calling AiAnalyticsApi->platform_orgs_courses_progress_started_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **course_id** | **str**|  | 
+ **org** | **str**|  | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | No response body |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **platform_orgs_courses_users_grades_passed_retrieve**
+> platform_orgs_courses_users_grades_passed_retrieve(course_id, org, user_id)
+
+
+
+Base class for API views that return a single count value.  This class formats the response as {\"data\": {value_key: count}} where value_key is configurable (defaults to \"count\").  Attributes:     value_key: The key used in the response for the count value
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+
+# Create an instance of the API class
+api_instance = iblai.AiAnalyticsApi(api_client)
+course_id = 'course_id_example' # str | 
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+
+try:
+    api_instance.platform_orgs_courses_users_grades_passed_retrieve(course_id, org, user_id)
+except Exception as e:
+    print("Exception when calling AiAnalyticsApi->platform_orgs_courses_users_grades_passed_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **course_id** | **str**|  | 
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | No response body |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **platform_orgs_courses_users_progress_days_to_complete_retrieve**
+> platform_orgs_courses_users_progress_days_to_complete_retrieve(course_id, org, user_id)
+
+
+
+Average days used to complete a course  Query Params     1. course_id <optional> e.g course-v1:Org+Course4+Run
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+
+# Create an instance of the API class
+api_instance = iblai.AiAnalyticsApi(api_client)
+course_id = 'course_id_example' # str | 
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+
+try:
+    api_instance.platform_orgs_courses_users_progress_days_to_complete_retrieve(course_id, org, user_id)
+except Exception as e:
+    print("Exception when calling AiAnalyticsApi->platform_orgs_courses_users_progress_days_to_complete_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **course_id** | **str**|  | 
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | No response body |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **platform_orgs_courses_users_progress_retrieve**
+> PerlearnerCourseProgress platform_orgs_courses_users_progress_retrieve(course_id, org, user_id, department_id=department_id, format=format, include_main_platform=include_main_platform)
+
+
+
+Gives Percentage of units completed in course for a specific learner
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.perlearner_course_progress import PerlearnerCourseProgress
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+
+# Create an instance of the API class
+api_instance = iblai.AiAnalyticsApi(api_client)
+course_id = 'course_id_example' # str | 
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+department_id = 56 # int | When `department_mode=1` is passed, it allows to filter data for only user content groups for the specified department  (optional)
+format = json # str | Format  * `json` - json (optional) (default to json)
+include_main_platform = True # bool | Include main platform data (optional) (default to True)
+
+try:
+    api_response = api_instance.platform_orgs_courses_users_progress_retrieve(course_id, org, user_id, department_id=department_id, format=format, include_main_platform=include_main_platform)
+    print("The response of AiAnalyticsApi->platform_orgs_courses_users_progress_retrieve:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiAnalyticsApi->platform_orgs_courses_users_progress_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **course_id** | **str**|  | 
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+ **department_id** | **int**| When &#x60;department_mode&#x3D;1&#x60; is passed, it allows to filter data for only user content groups for the specified department  | [optional] 
+ **format** | **str**| Format  * &#x60;json&#x60; - json | [optional] [default to json]
+ **include_main_platform** | **bool**| Include main platform data | [optional] [default to True]
+
+### Return type
+
+[**PerlearnerCourseProgress**](PerlearnerCourseProgress.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **platform_orgs_courses_users_time_count_retrieve**
+> Count platform_orgs_courses_users_time_count_retrieve(course_id, org, user_id, department_id=department_id, end_date=end_date, format=format, include_main_platform=include_main_platform, start_date=start_date)
+
+
+
+Time spent count in seconds within a course by a learner
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.count import Count
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+
+# Create an instance of the API class
+api_instance = iblai.AiAnalyticsApi(api_client)
+course_id = 'course_id_example' # str | 
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+department_id = 56 # int | When `department_mode=1` is passed, it allows to filter data for only user content groups for the specified department  (optional)
+end_date = 'end_date_example' # str | end date. ISO 8601 (optional)
+format = json # str | Format  * `json` - json (optional) (default to json)
+include_main_platform = True # bool | Include main platform data (optional) (default to True)
+start_date = 'start_date_example' # str | start date. ISO 8601 (optional)
+
+try:
+    api_response = api_instance.platform_orgs_courses_users_time_count_retrieve(course_id, org, user_id, department_id=department_id, end_date=end_date, format=format, include_main_platform=include_main_platform, start_date=start_date)
+    print("The response of AiAnalyticsApi->platform_orgs_courses_users_time_count_retrieve:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiAnalyticsApi->platform_orgs_courses_users_time_count_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **course_id** | **str**|  | 
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+ **department_id** | **int**| When &#x60;department_mode&#x3D;1&#x60; is passed, it allows to filter data for only user content groups for the specified department  | [optional] 
+ **end_date** | **str**| end date. ISO 8601 | [optional] 
+ **format** | **str**| Format  * &#x60;json&#x60; - json | [optional] [default to json]
+ **include_main_platform** | **bool**| Include main platform data | [optional] [default to True]
+ **start_date** | **str**| start date. ISO 8601 | [optional] 
+
+### Return type
+
+[**Count**](Count.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **platform_orgs_courses_users_videos_count_retrieve**
+> VideosCount platform_orgs_courses_users_videos_count_retrieve(course_id, org, user_id, department_id=department_id, format=format, include_main_platform=include_main_platform)
+
+
+
+(Total videos watched / Total Course Videos) or Total Videos watched in a course by a learner
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.videos_count import VideosCount
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+
+# Create an instance of the API class
+api_instance = iblai.AiAnalyticsApi(api_client)
+course_id = 'course_id_example' # str | 
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+department_id = 56 # int | When `department_mode=1` is passed, it allows to filter data for only user content groups for the specified department  (optional)
+format = json # str | Format  * `json` - json (optional) (default to json)
+include_main_platform = True # bool | Include main platform data (optional) (default to True)
+
+try:
+    api_response = api_instance.platform_orgs_courses_users_videos_count_retrieve(course_id, org, user_id, department_id=department_id, format=format, include_main_platform=include_main_platform)
+    print("The response of AiAnalyticsApi->platform_orgs_courses_users_videos_count_retrieve:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiAnalyticsApi->platform_orgs_courses_users_videos_count_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **course_id** | **str**|  | 
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+ **department_id** | **int**| When &#x60;department_mode&#x3D;1&#x60; is passed, it allows to filter data for only user content groups for the specified department  | [optional] 
+ **format** | **str**| Format  * &#x60;json&#x60; - json | [optional] [default to json]
+ **include_main_platform** | **bool**| Include main platform data | [optional] [default to True]
+
+### Return type
+
+[**VideosCount**](VideosCount.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **platform_orgs_courses_videos_retrieve**
+> WatchedVideosPerCourse platform_orgs_courses_videos_retrieve(org, department_id=department_id, format=format, include_main_platform=include_main_platform)
+
+
+
+Get video watch statistics on a per-course basis.  This endpoint provides a list of courses with aggregated video watch metrics, including total views and completion percentages.  Returns:     A list of courses with:     - Course identification (ID and name)     - Video watch count     - Percentage of total videos watched
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.watched_videos_per_course import WatchedVideosPerCourse
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+
+# Create an instance of the API class
+api_instance = iblai.AiAnalyticsApi(api_client)
+org = 'org_example' # str | 
+department_id = 56 # int | When `department_mode=1` is passed, it allows to filter data for only user content groups for the specified department  (optional)
+format = json # str | Format  * `json` - json (optional) (default to json)
+include_main_platform = True # bool | Include main platform data (optional) (default to True)
+
+try:
+    api_response = api_instance.platform_orgs_courses_videos_retrieve(org, department_id=department_id, format=format, include_main_platform=include_main_platform)
+    print("The response of AiAnalyticsApi->platform_orgs_courses_videos_retrieve:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiAnalyticsApi->platform_orgs_courses_videos_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **org** | **str**|  | 
+ **department_id** | **int**| When &#x60;department_mode&#x3D;1&#x60; is passed, it allows to filter data for only user content groups for the specified department  | [optional] 
+ **format** | **str**| Format  * &#x60;json&#x60; - json | [optional] [default to json]
+ **include_main_platform** | **bool**| Include main platform data | [optional] [default to True]
+
+### Return type
+
+[**WatchedVideosPerCourse**](WatchedVideosPerCourse.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **platform_orgs_courses_videos_retrieve2**
+> platform_orgs_courses_videos_retrieve2(course_id, org)
+
+
+
+Count of total videos in a course  Query Params course_id  e.g course-v1:Org+Course4+Run
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+
+# Create an instance of the API class
+api_instance = iblai.AiAnalyticsApi(api_client)
+course_id = 'course_id_example' # str | 
+org = 'org_example' # str | 
+
+try:
+    api_instance.platform_orgs_courses_videos_retrieve2(course_id, org)
+except Exception as e:
+    print("Exception when calling AiAnalyticsApi->platform_orgs_courses_videos_retrieve2: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **course_id** | **str**|  | 
+ **org** | **str**|  | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | No response body |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **platform_orgs_progress_completed_retrieve**
+> platform_orgs_progress_completed_retrieve(org)
+
+
+
+Get completion count statistics.  This endpoint returns completion counts at different levels: - Platform level: Total users who have completed at least one course - Course level: Total completions for a specific course - Learner level: Total courses completed by a specific learner  Query Parameters:     course_id (str, optional): Filter by course ID     user_id (str, optional): Filter by username or email  Returns:     A count of completions based on the specified filters.
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+
+# Create an instance of the API class
+api_instance = iblai.AiAnalyticsApi(api_client)
+org = 'org_example' # str | 
+
+try:
+    api_instance.platform_orgs_progress_completed_retrieve(org)
+except Exception as e:
+    print("Exception when calling AiAnalyticsApi->platform_orgs_progress_completed_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **org** | **str**|  | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | No response body |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **platform_orgs_progress_completion_rate_retrieve**
+> platform_orgs_progress_completion_rate_retrieve(org)
+
+
+
+Average of total completed units
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+
+# Create an instance of the API class
+api_instance = iblai.AiAnalyticsApi(api_client)
+org = 'org_example' # str | 
+
+try:
+    api_instance.platform_orgs_progress_completion_rate_retrieve(org)
+except Exception as e:
+    print("Exception when calling AiAnalyticsApi->platform_orgs_progress_completion_rate_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **org** | **str**|  | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | No response body |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **platform_orgs_progress_in_progress_retrieve**
+> platform_orgs_progress_in_progress_retrieve(org)
+
+
+
+In Progress means any unit completion in the past 30 days  For platform :  Total users who have atleast a course in_progress on the platform For course : Total users For learner : Total courses in progress  Query Params     1. course_id <optional> e.g course-v1:Org+Course4+Run     2. user_id <optional> e.g developer@ibleducation.com or dev123 (username|email)
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+
+# Create an instance of the API class
+api_instance = iblai.AiAnalyticsApi(api_client)
+org = 'org_example' # str | 
+
+try:
+    api_instance.platform_orgs_progress_in_progress_retrieve(org)
+except Exception as e:
+    print("Exception when calling AiAnalyticsApi->platform_orgs_progress_in_progress_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **org** | **str**|  | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | No response body |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **platform_orgs_progress_started_retrieve**
+> platform_orgs_progress_started_retrieve(org)
+
+
+
+Started means an enrollment  For platform :  Total users who have atleast an enrollment For course : Total users enrolled For learner : Total courses in progress  Query Params     1. course_id <optional> e.g course-v1:Org+Course4+Run     2. user_id <optional> e.g developer@ibleducation.com or dev123 (username|email)
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+
+# Create an instance of the API class
+api_instance = iblai.AiAnalyticsApi(api_client)
+org = 'org_example' # str | 
+
+try:
+    api_instance.platform_orgs_progress_started_retrieve(org)
+except Exception as e:
+    print("Exception when calling AiAnalyticsApi->platform_orgs_progress_started_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **org** | **str**|  | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | No response body |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **platform_orgs_retrieve**
+> platform_orgs_retrieve(org)
+
+
+
+Get a list of registered users on the platform.  This endpoint provides a list of all registered users with basic profile information including username, name, email, and registration date.  Returns:     A list of registered users with their profile information.
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+
+# Create an instance of the API class
+api_instance = iblai.AiAnalyticsApi(api_client)
+org = 'org_example' # str | 
+
+try:
+    api_instance.platform_orgs_retrieve(org)
+except Exception as e:
+    print("Exception when calling AiAnalyticsApi->platform_orgs_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **org** | **str**|  | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | No response body |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **platform_orgs_time_count_retrieve**
+> platform_orgs_time_count_retrieve(org)
+
+
+
+Total time spent count on the platform within specified range or all time  Query Params 1. start_date e.g 2020-10-01 2. end_date e.g 2020-10-10  Default result is all time
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+
+# Create an instance of the API class
+api_instance = iblai.AiAnalyticsApi(api_client)
+org = 'org_example' # str | 
+
+try:
+    api_instance.platform_orgs_time_count_retrieve(org)
+except Exception as e:
+    print("Exception when calling AiAnalyticsApi->platform_orgs_time_count_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **org** | **str**|  | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | No response body |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **platform_orgs_users_active_count_retrieve**
+> OverTimeWithTotal platform_orgs_users_active_count_retrieve(org, department_id=department_id, end_date=end_date, format=format, include_main_platform=include_main_platform, start_date=start_date)
+
+
+
+Get count of active users on the platform.  This endpoint returns the number of users who have had activity on the platform, either for all time or within a specified date range.  Query Parameters:     start_date (str, optional): Start date for filtering (ISO format)     end_date (str, optional): End date for filtering (ISO format)  Returns:     The count of active users and change metrics compared to previous periods.  Default behavior returns the count for all time if no date range is specified.
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.over_time_with_total import OverTimeWithTotal
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+
+# Create an instance of the API class
+api_instance = iblai.AiAnalyticsApi(api_client)
+org = 'org_example' # str | 
+department_id = 56 # int | When `department_mode=1` is passed, it allows to filter data for only user content groups for the specified department  (optional)
+end_date = 'end_date_example' # str | end date. ISO 8601 (optional)
+format = json # str | Format  * `json` - json (optional) (default to json)
+include_main_platform = True # bool | Include main platform data (optional) (default to True)
+start_date = 'start_date_example' # str | start date. ISO 8601 (optional)
+
+try:
+    api_response = api_instance.platform_orgs_users_active_count_retrieve(org, department_id=department_id, end_date=end_date, format=format, include_main_platform=include_main_platform, start_date=start_date)
+    print("The response of AiAnalyticsApi->platform_orgs_users_active_count_retrieve:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiAnalyticsApi->platform_orgs_users_active_count_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **org** | **str**|  | 
+ **department_id** | **int**| When &#x60;department_mode&#x3D;1&#x60; is passed, it allows to filter data for only user content groups for the specified department  | [optional] 
+ **end_date** | **str**| end date. ISO 8601 | [optional] 
+ **format** | **str**| Format  * &#x60;json&#x60; - json | [optional] [default to json]
+ **include_main_platform** | **bool**| Include main platform data | [optional] [default to True]
+ **start_date** | **str**| start date. ISO 8601 | [optional] 
+
+### Return type
+
+[**OverTimeWithTotal**](OverTimeWithTotal.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **platform_orgs_users_count_retrieve**
+> OverTimeWithTotal platform_orgs_users_count_retrieve(org, department_id=department_id, end_date=end_date, format=format, include_main_platform=include_main_platform, start_date=start_date)
+
+
+
+Get count of registered users on the platform.  This endpoint returns the number of users registered on the platform, either for all time or within a specified date range.  Query Parameters:     start_date (str, optional): Start date for filtering (ISO format)     end_date (str, optional): End date for filtering (ISO format)  Returns:     The count of registered users and change metrics compared to previous periods.  Default behavior returns the count for all time if no date range is specified.
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.over_time_with_total import OverTimeWithTotal
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+
+# Create an instance of the API class
+api_instance = iblai.AiAnalyticsApi(api_client)
+org = 'org_example' # str | 
+department_id = 56 # int | When `department_mode=1` is passed, it allows to filter data for only user content groups for the specified department  (optional)
+end_date = 'end_date_example' # str | end date. ISO 8601 (optional)
+format = json # str | Format  * `json` - json (optional) (default to json)
+include_main_platform = True # bool | Include main platform data (optional) (default to True)
+start_date = 'start_date_example' # str | start date. ISO 8601 (optional)
+
+try:
+    api_response = api_instance.platform_orgs_users_count_retrieve(org, department_id=department_id, end_date=end_date, format=format, include_main_platform=include_main_platform, start_date=start_date)
+    print("The response of AiAnalyticsApi->platform_orgs_users_count_retrieve:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiAnalyticsApi->platform_orgs_users_count_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **org** | **str**|  | 
+ **department_id** | **int**| When &#x60;department_mode&#x3D;1&#x60; is passed, it allows to filter data for only user content groups for the specified department  | [optional] 
+ **end_date** | **str**| end date. ISO 8601 | [optional] 
+ **format** | **str**| Format  * &#x60;json&#x60; - json | [optional] [default to json]
+ **include_main_platform** | **bool**| Include main platform data | [optional] [default to True]
+ **start_date** | **str**| start date. ISO 8601 | [optional] 
+
+### Return type
+
+[**OverTimeWithTotal**](OverTimeWithTotal.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **platform_orgs_users_courses_completed_count_retrieve**
+> OverTimeWithTotal platform_orgs_users_courses_completed_count_retrieve(org, department_id=department_id, end_date=end_date, format=format, include_main_platform=include_main_platform, start_date=start_date)
+
+
+
+Count of users who have completed a course on the platform within specified range or all time  Query Params 1. start_date e.g 2020-10-01 2. end_date e.g 2020-10-10  Default is all time
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.over_time_with_total import OverTimeWithTotal
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+
+# Create an instance of the API class
+api_instance = iblai.AiAnalyticsApi(api_client)
+org = 'org_example' # str | 
+department_id = 56 # int | When `department_mode=1` is passed, it allows to filter data for only user content groups for the specified department  (optional)
+end_date = 'end_date_example' # str | end date. ISO 8601 (optional)
+format = json # str | Format  * `json` - json (optional) (default to json)
+include_main_platform = True # bool | Include main platform data (optional) (default to True)
+start_date = 'start_date_example' # str | start date. ISO 8601 (optional)
+
+try:
+    api_response = api_instance.platform_orgs_users_courses_completed_count_retrieve(org, department_id=department_id, end_date=end_date, format=format, include_main_platform=include_main_platform, start_date=start_date)
+    print("The response of AiAnalyticsApi->platform_orgs_users_courses_completed_count_retrieve:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiAnalyticsApi->platform_orgs_users_courses_completed_count_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **org** | **str**|  | 
+ **department_id** | **int**| When &#x60;department_mode&#x3D;1&#x60; is passed, it allows to filter data for only user content groups for the specified department  | [optional] 
+ **end_date** | **str**| end date. ISO 8601 | [optional] 
+ **format** | **str**| Format  * &#x60;json&#x60; - json | [optional] [default to json]
+ **include_main_platform** | **bool**| Include main platform data | [optional] [default to True]
+ **start_date** | **str**| start date. ISO 8601 | [optional] 
+
+### Return type
+
+[**OverTimeWithTotal**](OverTimeWithTotal.md)
 
 ### Authorization
 

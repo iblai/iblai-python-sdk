@@ -5,7 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**return_url** | **str** |  | 
+**return_url** | **str** | URL to redirect to when the back button is clicked | 
+**subscription_id** | **str** | Provide a subscription id to set the default landing page to subscription update | [optional] 
 
 ## Example
 

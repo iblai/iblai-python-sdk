@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **user_active** | **bool** |  | 
 **key** | **str** |  | 
 **org** | **str** |  | 
+**platform_name** | **str** |  | 
 **lms_url** | **str** |  | 
 **cms_url** | **str** |  | 
 **portal_url** | **str** |  | 

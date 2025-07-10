@@ -136,7 +136,6 @@ Method | HTTP request | Description
 [**ai_mentor_orgs_users_mentor_feedback_create_create**](AiMentorApi.md#ai_mentor_orgs_users_mentor_feedback_create_create) | **POST** /api/ai-mentor/orgs/{org}/users/{user_id}/mentor-feedback/create/ | 
 [**ai_mentor_orgs_users_mentor_feedback_retrieve**](AiMentorApi.md#ai_mentor_orgs_users_mentor_feedback_retrieve) | **GET** /api/ai-mentor/orgs/{org}/users/{user_id}/mentor-feedback/{feedback_id}/ | 
 [**ai_mentor_orgs_users_mentor_feedback_update**](AiMentorApi.md#ai_mentor_orgs_users_mentor_feedback_update) | **PUT** /api/ai-mentor/orgs/{org}/users/{user_id}/mentor-feedback/{feedback_id}/ | 
-[**ai_mentor_orgs_users_mentor_from_template_create**](AiMentorApi.md#ai_mentor_orgs_users_mentor_from_template_create) | **POST** /api/ai-mentor/orgs/{org}/users/{user_id}/mentor-from-template/ | 
 [**ai_mentor_orgs_users_mentor_llms_list**](AiMentorApi.md#ai_mentor_orgs_users_mentor_llms_list) | **GET** /api/ai-mentor/orgs/{org}/users/{user_id}/mentor-llms/ | 
 [**ai_mentor_orgs_users_mentor_seed_retrieve**](AiMentorApi.md#ai_mentor_orgs_users_mentor_seed_retrieve) | **GET** /api/ai-mentor/orgs/{org}/users/{user_id}/mentor/seed/ | 
 [**ai_mentor_orgs_users_mentor_tools_list**](AiMentorApi.md#ai_mentor_orgs_users_mentor_tools_list) | **GET** /api/ai-mentor/orgs/{org}/users/{user_id}/mentor-tools/ | 
@@ -163,6 +162,10 @@ Method | HTTP request | Description
 [**ai_mentor_orgs_users_mentors_scenarios_retrieve**](AiMentorApi.md#ai_mentor_orgs_users_mentors_scenarios_retrieve) | **GET** /api/ai-mentor/orgs/{org}/users/{user_id}/mentors/{mentor}/scenarios/ | 
 [**ai_mentor_orgs_users_mentors_settings_retrieve**](AiMentorApi.md#ai_mentor_orgs_users_mentors_settings_retrieve) | **GET** /api/ai-mentor/orgs/{org}/users/{user_id}/mentors/{mentor}/settings/ | Retrieve Mentor Settings
 [**ai_mentor_orgs_users_mentors_settings_update**](AiMentorApi.md#ai_mentor_orgs_users_mentors_settings_update) | **PUT** /api/ai-mentor/orgs/{org}/users/{user_id}/mentors/{mentor}/settings/ | Update Mentor Settings
+[**ai_mentor_orgs_users_mentors_sharable_link_create**](AiMentorApi.md#ai_mentor_orgs_users_mentors_sharable_link_create) | **POST** /api/ai-mentor/orgs/{org}/users/{user_id}/mentors/{mentor}/sharable-link | 
+[**ai_mentor_orgs_users_mentors_sharable_link_destroy**](AiMentorApi.md#ai_mentor_orgs_users_mentors_sharable_link_destroy) | **DELETE** /api/ai-mentor/orgs/{org}/users/{user_id}/mentors/{mentor}/sharable-link | 
+[**ai_mentor_orgs_users_mentors_sharable_link_retrieve**](AiMentorApi.md#ai_mentor_orgs_users_mentors_sharable_link_retrieve) | **GET** /api/ai-mentor/orgs/{org}/users/{user_id}/mentors/{mentor}/sharable-link | 
+[**ai_mentor_orgs_users_mentors_sharable_link_update**](AiMentorApi.md#ai_mentor_orgs_users_mentors_sharable_link_update) | **PUT** /api/ai-mentor/orgs/{org}/users/{user_id}/mentors/{mentor}/sharable-link | 
 [**ai_mentor_orgs_users_mentors_spaced_repetition_question_stats_retrieve**](AiMentorApi.md#ai_mentor_orgs_users_mentors_spaced_repetition_question_stats_retrieve) | **GET** /api/ai-mentor/orgs/{org}/users/{user_id}/mentors/{mentor}/spaced-repetition-question-stats/ | 
 [**ai_mentor_orgs_users_mentors_spaced_repetition_recommended_paths_list**](AiMentorApi.md#ai_mentor_orgs_users_mentors_spaced_repetition_recommended_paths_list) | **GET** /api/ai-mentor/orgs/{org}/users/{user_id}/mentors/{mentor}/spaced-repetition-recommended-paths/ | 
 [**ai_mentor_orgs_users_mentors_spaced_repetition_recommended_paths_update**](AiMentorApi.md#ai_mentor_orgs_users_mentors_spaced_repetition_recommended_paths_update) | **PUT** /api/ai-mentor/orgs/{org}/users/{user_id}/mentors/{mentor}/spaced-repetition-recommended-paths/ | 
@@ -218,6 +221,18 @@ Method | HTTP request | Description
 [**ai_mentor_orgs_users_settings_tenant_llm_create**](AiMentorApi.md#ai_mentor_orgs_users_settings_tenant_llm_create) | **POST** /api/ai-mentor/orgs/{org}/users/{user_id}/settings/tenant-llm/ | 
 [**ai_mentor_orgs_users_settings_tenant_llm_list**](AiMentorApi.md#ai_mentor_orgs_users_settings_tenant_llm_list) | **GET** /api/ai-mentor/orgs/{org}/users/{user_id}/settings/tenant-llm/ | 
 [**ai_mentor_orgs_users_starred_mentors_list**](AiMentorApi.md#ai_mentor_orgs_users_starred_mentors_list) | **GET** /api/ai-mentor/orgs/{org}/users/{user_id}/starred-mentors/ | 
+[**ai_mentor_orgs_users_support_ticket_messages_create**](AiMentorApi.md#ai_mentor_orgs_users_support_ticket_messages_create) | **POST** /api/ai-mentor/orgs/{org}/users/{user_id}/support-ticket-messages/ | 
+[**ai_mentor_orgs_users_support_ticket_messages_destroy**](AiMentorApi.md#ai_mentor_orgs_users_support_ticket_messages_destroy) | **DELETE** /api/ai-mentor/orgs/{org}/users/{user_id}/support-ticket-messages/{id}/ | 
+[**ai_mentor_orgs_users_support_ticket_messages_list**](AiMentorApi.md#ai_mentor_orgs_users_support_ticket_messages_list) | **GET** /api/ai-mentor/orgs/{org}/users/{user_id}/support-ticket-messages/ | 
+[**ai_mentor_orgs_users_support_ticket_messages_partial_update**](AiMentorApi.md#ai_mentor_orgs_users_support_ticket_messages_partial_update) | **PATCH** /api/ai-mentor/orgs/{org}/users/{user_id}/support-ticket-messages/{id}/ | 
+[**ai_mentor_orgs_users_support_ticket_messages_retrieve**](AiMentorApi.md#ai_mentor_orgs_users_support_ticket_messages_retrieve) | **GET** /api/ai-mentor/orgs/{org}/users/{user_id}/support-ticket-messages/{id}/ | 
+[**ai_mentor_orgs_users_support_ticket_messages_update**](AiMentorApi.md#ai_mentor_orgs_users_support_ticket_messages_update) | **PUT** /api/ai-mentor/orgs/{org}/users/{user_id}/support-ticket-messages/{id}/ | 
+[**ai_mentor_orgs_users_support_tickets_close_create**](AiMentorApi.md#ai_mentor_orgs_users_support_tickets_close_create) | **POST** /api/ai-mentor/orgs/{org}/users/{user_id}/support-tickets/{id}/close/ | 
+[**ai_mentor_orgs_users_support_tickets_destroy**](AiMentorApi.md#ai_mentor_orgs_users_support_tickets_destroy) | **DELETE** /api/ai-mentor/orgs/{org}/users/{user_id}/support-tickets/{id}/ | 
+[**ai_mentor_orgs_users_support_tickets_list**](AiMentorApi.md#ai_mentor_orgs_users_support_tickets_list) | **GET** /api/ai-mentor/orgs/{org}/users/{user_id}/support-tickets/ | 
+[**ai_mentor_orgs_users_support_tickets_partial_update**](AiMentorApi.md#ai_mentor_orgs_users_support_tickets_partial_update) | **PATCH** /api/ai-mentor/orgs/{org}/users/{user_id}/support-tickets/{id}/ | 
+[**ai_mentor_orgs_users_support_tickets_retrieve**](AiMentorApi.md#ai_mentor_orgs_users_support_tickets_retrieve) | **GET** /api/ai-mentor/orgs/{org}/users/{user_id}/support-tickets/{id}/ | 
+[**ai_mentor_orgs_users_support_tickets_update**](AiMentorApi.md#ai_mentor_orgs_users_support_tickets_update) | **PUT** /api/ai-mentor/orgs/{org}/users/{user_id}/support-tickets/{id}/ | 
 [**ai_mentor_orgs_users_tasks_retrieve**](AiMentorApi.md#ai_mentor_orgs_users_tasks_retrieve) | **GET** /api/ai-mentor/orgs/{org}/users/{user_id}/tasks/{task_id} | 
 [**ai_mentor_orgs_users_tasks_sessions_create**](AiMentorApi.md#ai_mentor_orgs_users_tasks_sessions_create) | **POST** /api/ai-mentor/orgs/{org}/users/{user_id}/tasks/sessions/{session_id}/ | 
 [**ai_mentor_orgs_users_update**](AiMentorApi.md#ai_mentor_orgs_users_update) | **PUT** /api/ai-mentor/orgs/{org}/users/{user_id}/{name}/ | 
@@ -8054,7 +8069,7 @@ Name | Type | Description  | Notes
 
 
 
-Create a new mentor.  Body Parameters:     - name: Mentor name.     - unique_id: Unique identifier.     - platform_key: Associated platform.     - metadata: Additional mentor attributes.
+Create a new mentor. Body Parameters:     - name: Mentor name.     - unique_id: Unique identifier.     - platform_key: Associated platform.     - metadata: Additional mentor attributes.
 
 ### Example
 
@@ -10389,82 +10404,6 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **ai_mentor_orgs_users_mentor_from_template_create**
-> Mentor ai_mentor_orgs_users_mentor_from_template_create(org, user_id, mentor_from_template_request)
-
-
-
-View to create a mentor from a template  Accessible to only tenant admins.
-
-### Example
-
-* Api Key Authentication (PlatformApiKeyAuthentication):
-
-```python
-import iblai
-from iblai.models.mentor import Mentor
-from iblai.models.mentor_from_template_request import MentorFromTemplateRequest
-from iblai.rest import ApiException
-from pprint import pprint
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
-# You can generate an authenticated client using the following helper method
-client = get_platform_api_client(
-    host="https://base.manager.iblai.app", 
-    key=os.environ["API_KEY"]
-)
-
-# Create an instance of the API class
-api_instance = iblai.AiMentorApi(api_client)
-org = 'org_example' # str | 
-user_id = 'user_id_example' # str | 
-mentor_from_template_request = iblai.MentorFromTemplateRequest() # MentorFromTemplateRequest | 
-
-try:
-    api_response = api_instance.ai_mentor_orgs_users_mentor_from_template_create(org, user_id, mentor_from_template_request)
-    print("The response of AiMentorApi->ai_mentor_orgs_users_mentor_from_template_create:\n")
-    pprint(api_response)
-except Exception as e:
-    print("Exception when calling AiMentorApi->ai_mentor_orgs_users_mentor_from_template_create: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **org** | **str**|  | 
- **user_id** | **str**|  | 
- **mentor_from_template_request** | [**MentorFromTemplateRequest**](MentorFromTemplateRequest.md)|  | 
-
-### Return type
-
-[**Mentor**](Mentor.md)
-
-### Authorization
-
-[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** |  |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 # **ai_mentor_orgs_users_mentor_llms_list**
 > List[LLMResponse] ai_mentor_orgs_users_mentor_llms_list(org, user_id, mentor_id=mentor_id)
 
@@ -12638,6 +12577,307 @@ Name | Type | Description  | Notes
 **200** |  |  -  |
 **400** | Invalid request data |  -  |
 **404** | Mentor not found |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ai_mentor_orgs_users_mentors_sharable_link_create**
+> ShareableMentorLink ai_mentor_orgs_users_mentors_sharable_link_create(mentor, org, user_id, shareable_mentor_link=shareable_mentor_link)
+
+
+
+Mixin that includes the StudentTokenAuthentication and IsPlatformAdmin
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.shareable_mentor_link import ShareableMentorLink
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+
+# Create an instance of the API class
+api_instance = iblai.AiMentorApi(api_client)
+mentor = 'mentor_example' # str | 
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+shareable_mentor_link = iblai.ShareableMentorLink() # ShareableMentorLink |  (optional)
+
+try:
+    api_response = api_instance.ai_mentor_orgs_users_mentors_sharable_link_create(mentor, org, user_id, shareable_mentor_link=shareable_mentor_link)
+    print("The response of AiMentorApi->ai_mentor_orgs_users_mentors_sharable_link_create:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiMentorApi->ai_mentor_orgs_users_mentors_sharable_link_create: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **mentor** | **str**|  | 
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+ **shareable_mentor_link** | [**ShareableMentorLink**](ShareableMentorLink.md)|  | [optional] 
+
+### Return type
+
+[**ShareableMentorLink**](ShareableMentorLink.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ai_mentor_orgs_users_mentors_sharable_link_destroy**
+> ai_mentor_orgs_users_mentors_sharable_link_destroy(mentor, org, user_id)
+
+
+
+Mixin that includes the StudentTokenAuthentication and IsPlatformAdmin
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+
+# Create an instance of the API class
+api_instance = iblai.AiMentorApi(api_client)
+mentor = 'mentor_example' # str | 
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+
+try:
+    api_instance.ai_mentor_orgs_users_mentors_sharable_link_destroy(mentor, org, user_id)
+except Exception as e:
+    print("Exception when calling AiMentorApi->ai_mentor_orgs_users_mentors_sharable_link_destroy: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **mentor** | **str**|  | 
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**204** | No response body |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ai_mentor_orgs_users_mentors_sharable_link_retrieve**
+> ShareableMentorLink ai_mentor_orgs_users_mentors_sharable_link_retrieve(mentor, org, user_id)
+
+
+
+Mixin that includes the StudentTokenAuthentication and IsPlatformAdmin
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.shareable_mentor_link import ShareableMentorLink
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+
+# Create an instance of the API class
+api_instance = iblai.AiMentorApi(api_client)
+mentor = 'mentor_example' # str | 
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+
+try:
+    api_response = api_instance.ai_mentor_orgs_users_mentors_sharable_link_retrieve(mentor, org, user_id)
+    print("The response of AiMentorApi->ai_mentor_orgs_users_mentors_sharable_link_retrieve:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiMentorApi->ai_mentor_orgs_users_mentors_sharable_link_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **mentor** | **str**|  | 
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+
+### Return type
+
+[**ShareableMentorLink**](ShareableMentorLink.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ai_mentor_orgs_users_mentors_sharable_link_update**
+> ShareableMentorLink ai_mentor_orgs_users_mentors_sharable_link_update(mentor, org, user_id, shareable_mentor_link=shareable_mentor_link)
+
+
+
+Mixin that includes the StudentTokenAuthentication and IsPlatformAdmin
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.shareable_mentor_link import ShareableMentorLink
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+
+# Create an instance of the API class
+api_instance = iblai.AiMentorApi(api_client)
+mentor = 'mentor_example' # str | 
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+shareable_mentor_link = iblai.ShareableMentorLink() # ShareableMentorLink |  (optional)
+
+try:
+    api_response = api_instance.ai_mentor_orgs_users_mentors_sharable_link_update(mentor, org, user_id, shareable_mentor_link=shareable_mentor_link)
+    print("The response of AiMentorApi->ai_mentor_orgs_users_mentors_sharable_link_update:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiMentorApi->ai_mentor_orgs_users_mentors_sharable_link_update: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **mentor** | **str**|  | 
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+ **shareable_mentor_link** | [**ShareableMentorLink**](ShareableMentorLink.md)|  | [optional] 
+
+### Return type
+
+[**ShareableMentorLink**](ShareableMentorLink.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -16871,6 +17111,923 @@ Name | Type | Description  | Notes
 **200** |  |  -  |
 **400** | Invalid request |  -  |
 **404** | Student not found |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ai_mentor_orgs_users_support_ticket_messages_create**
+> TicketMessage ai_mentor_orgs_users_support_ticket_messages_create(org, user_id, ticket_message)
+
+
+
+ViewSet for managing ticket messages.  This ViewSet provides endpoints to retrieve, create, and update ticket messages.  Permissions:     - Platform Admins:         - Platform admins are able to view all ticket messages for the tenant.     - Students:         - Students are able to view all ticket messages for only the ticket they are associated with.
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.ticket_message import TicketMessage
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+
+# Create an instance of the API class
+api_instance = iblai.AiMentorApi(api_client)
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+ticket_message = iblai.TicketMessage() # TicketMessage | 
+
+try:
+    api_response = api_instance.ai_mentor_orgs_users_support_ticket_messages_create(org, user_id, ticket_message)
+    print("The response of AiMentorApi->ai_mentor_orgs_users_support_ticket_messages_create:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiMentorApi->ai_mentor_orgs_users_support_ticket_messages_create: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+ **ticket_message** | [**TicketMessage**](TicketMessage.md)|  | 
+
+### Return type
+
+[**TicketMessage**](TicketMessage.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ai_mentor_orgs_users_support_ticket_messages_destroy**
+> ai_mentor_orgs_users_support_ticket_messages_destroy(id, org, user_id)
+
+
+
+ViewSet for managing ticket messages.  This ViewSet provides endpoints to retrieve, create, and update ticket messages.  Permissions:     - Platform Admins:         - Platform admins are able to view all ticket messages for the tenant.     - Students:         - Students are able to view all ticket messages for only the ticket they are associated with.
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+
+# Create an instance of the API class
+api_instance = iblai.AiMentorApi(api_client)
+id = 56 # int | A unique integer value identifying this ticket message.
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+
+try:
+    api_instance.ai_mentor_orgs_users_support_ticket_messages_destroy(id, org, user_id)
+except Exception as e:
+    print("Exception when calling AiMentorApi->ai_mentor_orgs_users_support_ticket_messages_destroy: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| A unique integer value identifying this ticket message. | 
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**204** | No response body |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ai_mentor_orgs_users_support_ticket_messages_list**
+> PaginatedTicketMessageList ai_mentor_orgs_users_support_ticket_messages_list(org, user_id, page=page, page_size=page_size, sender=sender, ticket=ticket)
+
+
+
+ViewSet for managing ticket messages.  This ViewSet provides endpoints to retrieve, create, and update ticket messages.  Permissions:     - Platform Admins:         - Platform admins are able to view all ticket messages for the tenant.     - Students:         - Students are able to view all ticket messages for only the ticket they are associated with.
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.paginated_ticket_message_list import PaginatedTicketMessageList
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+
+# Create an instance of the API class
+api_instance = iblai.AiMentorApi(api_client)
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+page = 56 # int | A page number within the paginated result set. (optional)
+page_size = 56 # int | Number of results to return per page. (optional)
+sender = 'sender_example' # str |  (optional)
+ticket = 3.4 # float |  (optional)
+
+try:
+    api_response = api_instance.ai_mentor_orgs_users_support_ticket_messages_list(org, user_id, page=page, page_size=page_size, sender=sender, ticket=ticket)
+    print("The response of AiMentorApi->ai_mentor_orgs_users_support_ticket_messages_list:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiMentorApi->ai_mentor_orgs_users_support_ticket_messages_list: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+ **page** | **int**| A page number within the paginated result set. | [optional] 
+ **page_size** | **int**| Number of results to return per page. | [optional] 
+ **sender** | **str**|  | [optional] 
+ **ticket** | **float**|  | [optional] 
+
+### Return type
+
+[**PaginatedTicketMessageList**](PaginatedTicketMessageList.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ai_mentor_orgs_users_support_ticket_messages_partial_update**
+> TicketMessage ai_mentor_orgs_users_support_ticket_messages_partial_update(id, org, user_id, patched_ticket_message=patched_ticket_message)
+
+
+
+ViewSet for managing ticket messages.  This ViewSet provides endpoints to retrieve, create, and update ticket messages.  Permissions:     - Platform Admins:         - Platform admins are able to view all ticket messages for the tenant.     - Students:         - Students are able to view all ticket messages for only the ticket they are associated with.
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.patched_ticket_message import PatchedTicketMessage
+from iblai.models.ticket_message import TicketMessage
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+
+# Create an instance of the API class
+api_instance = iblai.AiMentorApi(api_client)
+id = 56 # int | A unique integer value identifying this ticket message.
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+patched_ticket_message = iblai.PatchedTicketMessage() # PatchedTicketMessage |  (optional)
+
+try:
+    api_response = api_instance.ai_mentor_orgs_users_support_ticket_messages_partial_update(id, org, user_id, patched_ticket_message=patched_ticket_message)
+    print("The response of AiMentorApi->ai_mentor_orgs_users_support_ticket_messages_partial_update:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiMentorApi->ai_mentor_orgs_users_support_ticket_messages_partial_update: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| A unique integer value identifying this ticket message. | 
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+ **patched_ticket_message** | [**PatchedTicketMessage**](PatchedTicketMessage.md)|  | [optional] 
+
+### Return type
+
+[**TicketMessage**](TicketMessage.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ai_mentor_orgs_users_support_ticket_messages_retrieve**
+> TicketMessage ai_mentor_orgs_users_support_ticket_messages_retrieve(id, org, user_id)
+
+
+
+ViewSet for managing ticket messages.  This ViewSet provides endpoints to retrieve, create, and update ticket messages.  Permissions:     - Platform Admins:         - Platform admins are able to view all ticket messages for the tenant.     - Students:         - Students are able to view all ticket messages for only the ticket they are associated with.
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.ticket_message import TicketMessage
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+
+# Create an instance of the API class
+api_instance = iblai.AiMentorApi(api_client)
+id = 56 # int | A unique integer value identifying this ticket message.
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+
+try:
+    api_response = api_instance.ai_mentor_orgs_users_support_ticket_messages_retrieve(id, org, user_id)
+    print("The response of AiMentorApi->ai_mentor_orgs_users_support_ticket_messages_retrieve:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiMentorApi->ai_mentor_orgs_users_support_ticket_messages_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| A unique integer value identifying this ticket message. | 
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+
+### Return type
+
+[**TicketMessage**](TicketMessage.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ai_mentor_orgs_users_support_ticket_messages_update**
+> TicketMessage ai_mentor_orgs_users_support_ticket_messages_update(id, org, user_id, ticket_message)
+
+
+
+ViewSet for managing ticket messages.  This ViewSet provides endpoints to retrieve, create, and update ticket messages.  Permissions:     - Platform Admins:         - Platform admins are able to view all ticket messages for the tenant.     - Students:         - Students are able to view all ticket messages for only the ticket they are associated with.
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.ticket_message import TicketMessage
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+
+# Create an instance of the API class
+api_instance = iblai.AiMentorApi(api_client)
+id = 56 # int | A unique integer value identifying this ticket message.
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+ticket_message = iblai.TicketMessage() # TicketMessage | 
+
+try:
+    api_response = api_instance.ai_mentor_orgs_users_support_ticket_messages_update(id, org, user_id, ticket_message)
+    print("The response of AiMentorApi->ai_mentor_orgs_users_support_ticket_messages_update:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiMentorApi->ai_mentor_orgs_users_support_ticket_messages_update: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| A unique integer value identifying this ticket message. | 
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+ **ticket_message** | [**TicketMessage**](TicketMessage.md)|  | 
+
+### Return type
+
+[**TicketMessage**](TicketMessage.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ai_mentor_orgs_users_support_tickets_close_create**
+> ai_mentor_orgs_users_support_tickets_close_create(id, org, user_id)
+
+
+
+Endpoint to close a Human support ticket.  This endpoint is used to close a Human support ticket.  Permissions:     - available to both platform admins and the student who created the ticket.  Returns:     Response: A response object containing the closed ticket data.
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+
+# Create an instance of the API class
+api_instance = iblai.AiMentorApi(api_client)
+id = 56 # int | A unique integer value identifying this human support ticket.
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+
+try:
+    api_instance.ai_mentor_orgs_users_support_tickets_close_create(id, org, user_id)
+except Exception as e:
+    print("Exception when calling AiMentorApi->ai_mentor_orgs_users_support_tickets_close_create: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| A unique integer value identifying this human support ticket. | 
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | No response body |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ai_mentor_orgs_users_support_tickets_destroy**
+> ai_mentor_orgs_users_support_tickets_destroy(id, org, user_id)
+
+
+
+ViewSet for managing Human Support Tickets.  This ViewSet provides endpoints to retrieve, create, and update Human Support Tickets.  Permissions:     Platform Admins:         - Platform admins are able to update the ticket status, and view all tickets for the tenant.         - Platform admins can only update the `subject`, `description` and `status` fields.     Students:         - Students are only able to view their own created tickets.         - students can modify only the `subject` and `description` entries      Field Updates:         - subject: Modifiable by both student and platform admin         - description: Modifiable by only student.         - status: Modifiable by only platform admin.
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+
+# Create an instance of the API class
+api_instance = iblai.AiMentorApi(api_client)
+id = 56 # int | A unique integer value identifying this human support ticket.
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+
+try:
+    api_instance.ai_mentor_orgs_users_support_tickets_destroy(id, org, user_id)
+except Exception as e:
+    print("Exception when calling AiMentorApi->ai_mentor_orgs_users_support_tickets_destroy: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| A unique integer value identifying this human support ticket. | 
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**204** | No response body |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ai_mentor_orgs_users_support_tickets_list**
+> PaginatedHumanSupportTicketList ai_mentor_orgs_users_support_tickets_list(org, user_id, mentor_id=mentor_id, page=page, page_size=page_size, session=session, status=status, username=username)
+
+
+
+ViewSet for managing Human Support Tickets.  This ViewSet provides endpoints to retrieve, create, and update Human Support Tickets.  Permissions:     Platform Admins:         - Platform admins are able to update the ticket status, and view all tickets for the tenant.         - Platform admins can only update the `subject`, `description` and `status` fields.     Students:         - Students are only able to view their own created tickets.         - students can modify only the `subject` and `description` entries      Field Updates:         - subject: Modifiable by both student and platform admin         - description: Modifiable by only student.         - status: Modifiable by only platform admin.
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.paginated_human_support_ticket_list import PaginatedHumanSupportTicketList
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+
+# Create an instance of the API class
+api_instance = iblai.AiMentorApi(api_client)
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+mentor_id = 3.4 # float |  (optional)
+page = 56 # int | A page number within the paginated result set. (optional)
+page_size = 56 # int | Number of results to return per page. (optional)
+session = 'session_example' # str |  (optional)
+status = 'status_example' # str | * `open` - Open * `in_progress` - In Progress * `closed` - Closed (optional)
+username = 'username_example' # str |  (optional)
+
+try:
+    api_response = api_instance.ai_mentor_orgs_users_support_tickets_list(org, user_id, mentor_id=mentor_id, page=page, page_size=page_size, session=session, status=status, username=username)
+    print("The response of AiMentorApi->ai_mentor_orgs_users_support_tickets_list:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiMentorApi->ai_mentor_orgs_users_support_tickets_list: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+ **mentor_id** | **float**|  | [optional] 
+ **page** | **int**| A page number within the paginated result set. | [optional] 
+ **page_size** | **int**| Number of results to return per page. | [optional] 
+ **session** | **str**|  | [optional] 
+ **status** | **str**| * &#x60;open&#x60; - Open * &#x60;in_progress&#x60; - In Progress * &#x60;closed&#x60; - Closed | [optional] 
+ **username** | **str**|  | [optional] 
+
+### Return type
+
+[**PaginatedHumanSupportTicketList**](PaginatedHumanSupportTicketList.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ai_mentor_orgs_users_support_tickets_partial_update**
+> HumanSupportTicket ai_mentor_orgs_users_support_tickets_partial_update(id, org, user_id, patched_human_support_ticket=patched_human_support_ticket)
+
+
+
+ViewSet for managing Human Support Tickets.  This ViewSet provides endpoints to retrieve, create, and update Human Support Tickets.  Permissions:     Platform Admins:         - Platform admins are able to update the ticket status, and view all tickets for the tenant.         - Platform admins can only update the `subject`, `description` and `status` fields.     Students:         - Students are only able to view their own created tickets.         - students can modify only the `subject` and `description` entries      Field Updates:         - subject: Modifiable by both student and platform admin         - description: Modifiable by only student.         - status: Modifiable by only platform admin.
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.human_support_ticket import HumanSupportTicket
+from iblai.models.patched_human_support_ticket import PatchedHumanSupportTicket
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+
+# Create an instance of the API class
+api_instance = iblai.AiMentorApi(api_client)
+id = 56 # int | A unique integer value identifying this human support ticket.
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+patched_human_support_ticket = iblai.PatchedHumanSupportTicket() # PatchedHumanSupportTicket |  (optional)
+
+try:
+    api_response = api_instance.ai_mentor_orgs_users_support_tickets_partial_update(id, org, user_id, patched_human_support_ticket=patched_human_support_ticket)
+    print("The response of AiMentorApi->ai_mentor_orgs_users_support_tickets_partial_update:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiMentorApi->ai_mentor_orgs_users_support_tickets_partial_update: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| A unique integer value identifying this human support ticket. | 
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+ **patched_human_support_ticket** | [**PatchedHumanSupportTicket**](PatchedHumanSupportTicket.md)|  | [optional] 
+
+### Return type
+
+[**HumanSupportTicket**](HumanSupportTicket.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ai_mentor_orgs_users_support_tickets_retrieve**
+> HumanSupportTicket ai_mentor_orgs_users_support_tickets_retrieve(id, org, user_id)
+
+
+
+ViewSet for managing Human Support Tickets.  This ViewSet provides endpoints to retrieve, create, and update Human Support Tickets.  Permissions:     Platform Admins:         - Platform admins are able to update the ticket status, and view all tickets for the tenant.         - Platform admins can only update the `subject`, `description` and `status` fields.     Students:         - Students are only able to view their own created tickets.         - students can modify only the `subject` and `description` entries      Field Updates:         - subject: Modifiable by both student and platform admin         - description: Modifiable by only student.         - status: Modifiable by only platform admin.
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.human_support_ticket import HumanSupportTicket
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+
+# Create an instance of the API class
+api_instance = iblai.AiMentorApi(api_client)
+id = 56 # int | A unique integer value identifying this human support ticket.
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+
+try:
+    api_response = api_instance.ai_mentor_orgs_users_support_tickets_retrieve(id, org, user_id)
+    print("The response of AiMentorApi->ai_mentor_orgs_users_support_tickets_retrieve:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiMentorApi->ai_mentor_orgs_users_support_tickets_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| A unique integer value identifying this human support ticket. | 
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+
+### Return type
+
+[**HumanSupportTicket**](HumanSupportTicket.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ai_mentor_orgs_users_support_tickets_update**
+> HumanSupportTicket ai_mentor_orgs_users_support_tickets_update(id, org, user_id, human_support_ticket)
+
+
+
+ViewSet for managing Human Support Tickets.  This ViewSet provides endpoints to retrieve, create, and update Human Support Tickets.  Permissions:     Platform Admins:         - Platform admins are able to update the ticket status, and view all tickets for the tenant.         - Platform admins can only update the `subject`, `description` and `status` fields.     Students:         - Students are only able to view their own created tickets.         - students can modify only the `subject` and `description` entries      Field Updates:         - subject: Modifiable by both student and platform admin         - description: Modifiable by only student.         - status: Modifiable by only platform admin.
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.human_support_ticket import HumanSupportTicket
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+
+# Create an instance of the API class
+api_instance = iblai.AiMentorApi(api_client)
+id = 56 # int | A unique integer value identifying this human support ticket.
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+human_support_ticket = iblai.HumanSupportTicket() # HumanSupportTicket | 
+
+try:
+    api_response = api_instance.ai_mentor_orgs_users_support_tickets_update(id, org, user_id, human_support_ticket)
+    print("The response of AiMentorApi->ai_mentor_orgs_users_support_tickets_update:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiMentorApi->ai_mentor_orgs_users_support_tickets_update: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| A unique integer value identifying this human support ticket. | 
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+ **human_support_ticket** | [**HumanSupportTicket**](HumanSupportTicket.md)|  | 
+
+### Return type
+
+[**HumanSupportTicket**](HumanSupportTicket.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

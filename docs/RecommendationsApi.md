@@ -10,9 +10,8 @@ Method | HTTP request | Description
 # **recommendations_orgs_users_retrieve**
 > RecommendationSearchAPI recommendations_orgs_users_retrieve(org, user_id)
 
-
-
-API endpoint that returns a search api url prepopulated with context data See http://localhost:8000/api/schema/swagger-ui/#/recommendations
+API endpoint that returns a search api url prepopulated with context data
+See http://localhost:8000/api/schema/swagger-ui/#/recommendations
 
 ### Example
 
@@ -35,7 +34,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.RecommendationsApi(api_client)
 org = 'org_example' # str | 

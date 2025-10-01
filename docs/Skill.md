@@ -5,11 +5,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **int** |  | [readonly] 
-**name** | **str** | Display name | [readonly] 
-**platform_key** | **str** |  | [optional] 
-**slug** | **str** | An additional unique slug field. (Optional) | [readonly] 
-**data** | **object** | Metadata | [readonly] 
+**skill_id** | **int** |  | 
+**name** | **str** |  | [optional] 
+**slug** | **str** |  | [optional] 
+**platform** | **str** |  | [optional] 
 
 ## Example
 

@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** |  | [readonly] 
-**message** | **object** |  | [optional] 
+**message** | **object** |  | [readonly] 
 **inserted_at** | **datetime** |  | [readonly] 
 **title** | **str** |  | [optional] 
 **feedback** | **object** |  | [readonly] 

@@ -56,9 +56,17 @@ Method | HTTP request | Description
 # **ai_prompt_orgs_metadata_create**
 > Metadata ai_prompt_orgs_metadata_create(org, metadata)
 
+Create or update metadata for a prompt.
 
+Args:
+    request: The HTTP request containing the metadata.
+    org: The organization/tenant identifier.
 
-Create or update metadata for a prompt.  Args:     request: The HTTP request containing the metadata.     org: The organization/tenant identifier.  Returns:     Response: The created or updated prompt metadata.  Raises:     BadRequest: If the provided data is invalid.
+Returns:
+    Response: The created or updated prompt metadata.
+
+Raises:
+    BadRequest: If the provided data is invalid.
 
 ### Example
 
@@ -81,7 +89,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiPromptApi(api_client)
 org = 'org_example' # str | 
@@ -115,7 +122,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -130,9 +137,18 @@ Name | Type | Description  | Notes
 # **ai_prompt_orgs_users_all_chats_memory_create**
 > UserAllChatMemoryView ai_prompt_orgs_users_all_chats_memory_create(org, user_id, user_all_chat_memory_view)
 
+Create a new chat memory entry for a user.
 
+Args:
+    request: The HTTP request containing the chat memory data.
+    org: The organization/tenant identifier.
+    user_id: The ID of the user to create chat memory for.
 
-Create a new chat memory entry for a user.  Args:     request: The HTTP request containing the chat memory data.     org: The organization/tenant identifier.     user_id: The ID of the user to create chat memory for.  Returns:     Response: The created chat memory entry.  Raises:     BadRequest: If the provided data is invalid.
+Returns:
+    Response: The created chat memory entry.
+
+Raises:
+    BadRequest: If the provided data is invalid.
 
 ### Example
 
@@ -155,7 +171,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiPromptApi(api_client)
 org = 'org_example' # str | 
@@ -191,7 +206,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -206,9 +221,18 @@ Name | Type | Description  | Notes
 # **ai_prompt_orgs_users_all_chats_memory_destroy**
 > ai_prompt_orgs_users_all_chats_memory_destroy(org, user_id)
 
+Delete all chat memory for a specific user.
 
+Args:
+    request: The HTTP request.
+    org: The organization/tenant identifier.
+    user_id: The ID of the user to delete chat memory for.
 
-Delete all chat memory for a specific user.  Args:     request: The HTTP request.     org: The organization/tenant identifier.     user_id: The ID of the user to delete chat memory for.  Returns:     Response: A success message if the memory was deleted.  Raises:     NotFound: If no chat memory exists for the user.
+Returns:
+    Response: A success message if the memory was deleted.
+
+Raises:
+    NotFound: If no chat memory exists for the user.
 
 ### Example
 
@@ -230,7 +254,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiPromptApi(api_client)
 org = 'org_example' # str | 
@@ -277,9 +300,19 @@ void (empty response body)
 # **ai_prompt_orgs_users_all_chats_memory_destroy2**
 > ai_prompt_orgs_users_all_chats_memory_destroy2(memory_id, org, user_id)
 
+Delete a specific chat memory entry.
 
+Args:
+    request: The HTTP request.
+    org: The organization/tenant identifier.
+    user_id: The ID of the user who owns the memory.
+    memory_id: The ID of the specific memory entry to delete.
 
-Delete a specific chat memory entry.  Args:     request: The HTTP request.     org: The organization/tenant identifier.     user_id: The ID of the user who owns the memory.     memory_id: The ID of the specific memory entry to delete.  Returns:     Response: A success message if the memory was deleted.  Raises:     NotFound: If the specified memory entry does not exist.
+Returns:
+    Response: A success message if the memory was deleted.
+
+Raises:
+    NotFound: If the specified memory entry does not exist.
 
 ### Example
 
@@ -301,7 +334,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiPromptApi(api_client)
 memory_id = 56 # int | 
@@ -350,9 +382,18 @@ void (empty response body)
 # **ai_prompt_orgs_users_all_chats_memory_retrieve**
 > UserAllChatMemoryView ai_prompt_orgs_users_all_chats_memory_retrieve(org, user_id)
 
+Retrieve chat memory for a specific user.
 
+Args:
+    request: The HTTP request.
+    org: The organization/tenant identifier.
+    user_id: The ID of the user to retrieve chat memory for.
 
-Retrieve chat memory for a specific user.  Args:     request: The HTTP request.     org: The organization/tenant identifier.     user_id: The ID of the user to retrieve chat memory for.  Returns:     Response: The user's chat memory entries.  Raises:     NotFound: If no chat memory exists for the user.
+Returns:
+    Response: The user's chat memory entries.
+
+Raises:
+    NotFound: If no chat memory exists for the user.
 
 ### Example
 
@@ -375,7 +416,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiPromptApi(api_client)
 org = 'org_example' # str | 
@@ -424,9 +464,19 @@ Name | Type | Description  | Notes
 # **ai_prompt_orgs_users_all_chats_memory_update**
 > UserChatMemoryUpdateView ai_prompt_orgs_users_all_chats_memory_update(org, user_id, user_all_chat_memory_view)
 
+Update chat memory for a specific user.
 
+Args:
+    request: The HTTP request containing the updated chat memory data.
+    org: The organization/tenant identifier.
+    user_id: The ID of the user to update chat memory for.
 
-Update chat memory for a specific user.  Args:     request: The HTTP request containing the updated chat memory data.     org: The organization/tenant identifier.     user_id: The ID of the user to update chat memory for.  Returns:     Response: A confirmation of the scheduled update task.  Raises:     BadRequest: If the provided data is invalid.     NotFound: If no chat memory exists for the user.
+Returns:
+    Response: A confirmation of the scheduled update task.
+
+Raises:
+    BadRequest: If the provided data is invalid.
+    NotFound: If no chat memory exists for the user.
 
 ### Example
 
@@ -450,7 +500,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiPromptApi(api_client)
 org = 'org_example' # str | 
@@ -486,7 +535,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -502,9 +551,20 @@ Name | Type | Description  | Notes
 # **ai_prompt_orgs_users_all_chats_memory_update2**
 > UserAllChatMemoryView ai_prompt_orgs_users_all_chats_memory_update2(memory_id, org, user_id, user_all_chat_memory_view)
 
+Update a specific chat memory entry.
 
+Args:
+    request: The HTTP request containing the updated chat memory data.
+    org: The organization/tenant identifier.
+    user_id: The ID of the user who owns the memory.
+    memory_id: The ID of the specific memory entry to update.
 
-Update a specific chat memory entry.  Args:     request: The HTTP request containing the updated chat memory data.     org: The organization/tenant identifier.     user_id: The ID of the user who owns the memory.     memory_id: The ID of the specific memory entry to update.  Returns:     Response: The updated chat memory entry.  Raises:     BadRequest: If the provided data is invalid.     NotFound: If the specified memory entry does not exist.
+Returns:
+    Response: The updated chat memory entry.
+
+Raises:
+    BadRequest: If the provided data is invalid.
+    NotFound: If the specified memory entry does not exist.
 
 ### Example
 
@@ -527,7 +587,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiPromptApi(api_client)
 memory_id = 56 # int | 
@@ -565,7 +624,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -581,9 +640,18 @@ Name | Type | Description  | Notes
 # **ai_prompt_orgs_users_chat_memory_status_retrieve**
 > UserChatMemoryStatusView ai_prompt_orgs_users_chat_memory_status_retrieve(org, user_id)
 
+Retrieve the chat memory status for a specific user.
 
+Args:
+    request: The HTTP request.
+    org: The organization/tenant identifier.
+    user_id: The ID of the user to retrieve memory status for.
 
-Retrieve the chat memory status for a specific user.  Args:     request: The HTTP request.     org: The organization/tenant identifier.     user_id: The ID of the user to retrieve memory status for.  Returns:     Response: The user's chat memory status.  Raises:     NotFound: If no memory status exists for the user.
+Returns:
+    Response: The user's chat memory status.
+
+Raises:
+    NotFound: If no memory status exists for the user.
 
 ### Example
 
@@ -606,7 +674,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiPromptApi(api_client)
 org = 'org_example' # str | 
@@ -655,9 +722,18 @@ Name | Type | Description  | Notes
 # **ai_prompt_orgs_users_chat_memory_status_update**
 > UserChatMemoryStatusView ai_prompt_orgs_users_chat_memory_status_update(org, user_id, user_chat_memory_status_request_view)
 
+Update the chat memory status for a specific user.
 
+Args:
+    request: The HTTP request containing the updated status.
+    org: The organization/tenant identifier.
+    user_id: The ID of the user to update memory status for.
 
-Update the chat memory status for a specific user.  Args:     request: The HTTP request containing the updated status.     org: The organization/tenant identifier.     user_id: The ID of the user to update memory status for.  Returns:     Response: The updated chat memory status.  Raises:     BadRequest: If the provided data is invalid.
+Returns:
+    Response: The updated chat memory status.
+
+Raises:
+    BadRequest: If the provided data is invalid.
 
 ### Example
 
@@ -681,7 +757,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiPromptApi(api_client)
 org = 'org_example' # str | 
@@ -717,7 +792,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -732,9 +807,18 @@ Name | Type | Description  | Notes
 # **ai_prompt_orgs_users_languages_create**
 > LanguagesView ai_prompt_orgs_users_languages_create(org, user_id, languages_view)
 
+Create a new prompt language.
 
+Args:
+    request: The HTTP request containing the language data.
+    org: The organization/tenant identifier.
+    user_id: The ID of the user creating the language.
 
-Create a new prompt language.  Args:     request: The HTTP request containing the language data.     org: The organization/tenant identifier.     user_id: The ID of the user creating the language.  Returns:     Response: The created prompt language.  Raises:     BadRequest: If the provided data is invalid.
+Returns:
+    Response: The created prompt language.
+
+Raises:
+    BadRequest: If the provided data is invalid.
 
 ### Example
 
@@ -757,7 +841,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiPromptApi(api_client)
 org = 'org_example' # str | 
@@ -793,7 +876,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -808,9 +891,19 @@ Name | Type | Description  | Notes
 # **ai_prompt_orgs_users_languages_destroy**
 > ai_prompt_orgs_users_languages_destroy(language_id, org, user_id)
 
+Delete a specific prompt language.
 
+Args:
+    request: The HTTP request.
+    org: The organization/tenant identifier.
+    user_id: The ID of the user making the request.
+    language_id: The ID of the language to delete.
 
-Delete a specific prompt language.  Args:     request: The HTTP request.     org: The organization/tenant identifier.     user_id: The ID of the user making the request.     language_id: The ID of the language to delete.  Returns:     Response: A success message if the language was deleted.  Raises:     NotFound: If the specified language does not exist.
+Returns:
+    Response: A success message if the language was deleted.
+
+Raises:
+    NotFound: If the specified language does not exist.
 
 ### Example
 
@@ -832,7 +925,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiPromptApi(api_client)
 language_id = 56 # int | 
@@ -881,9 +973,15 @@ void (empty response body)
 # **ai_prompt_orgs_users_languages_retrieve**
 > LanguagesView ai_prompt_orgs_users_languages_retrieve(org, user_id)
 
+Retrieve all available prompt languages.
 
+Args:
+    request: The HTTP request.
+    org: The organization/tenant identifier.
+    user_id: The ID of the user making the request.
 
-Retrieve all available prompt languages.  Args:     request: The HTTP request.     org: The organization/tenant identifier.     user_id: The ID of the user making the request.  Returns:     Response: A list of available prompt languages.
+Returns:
+    Response: A list of available prompt languages.
 
 ### Example
 
@@ -906,7 +1004,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiPromptApi(api_client)
 org = 'org_example' # str | 
@@ -954,9 +1051,20 @@ Name | Type | Description  | Notes
 # **ai_prompt_orgs_users_languages_update**
 > LanguagesView ai_prompt_orgs_users_languages_update(language_id, org, user_id, languages_view)
 
+Update a specific prompt language.
 
+Args:
+    request: The HTTP request containing the updated language data.
+    org: The organization/tenant identifier.
+    user_id: The ID of the user making the request.
+    language_id: The ID of the language to update.
 
-Update a specific prompt language.  Args:     request: The HTTP request containing the updated language data.     org: The organization/tenant identifier.     user_id: The ID of the user making the request.     language_id: The ID of the language to update.  Returns:     Response: The updated prompt language.  Raises:     BadRequest: If the provided data is invalid.     NotFound: If the specified language does not exist.
+Returns:
+    Response: The updated prompt language.
+
+Raises:
+    BadRequest: If the provided data is invalid.
+    NotFound: If the specified language does not exist.
 
 ### Example
 
@@ -979,7 +1087,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiPromptApi(api_client)
 language_id = 56 # int | 
@@ -1017,7 +1124,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -1032,8 +1139,6 @@ Name | Type | Description  | Notes
 
 # **ai_prompt_orgs_users_memory_context_retrieve**
 > UserMemoryContextResponse ai_prompt_orgs_users_memory_context_retrieve(org, user_id)
-
-
 
 Retrieve a user's memory context settings.
 
@@ -1058,7 +1163,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiPromptApi(api_client)
 org = 'org_example' # str | 
@@ -1106,9 +1210,11 @@ Name | Type | Description  | Notes
 # **ai_prompt_orgs_users_memory_context_update**
 > UserMemoryContextResponse ai_prompt_orgs_users_memory_context_update(org, user_id, user_memory_context_request=user_memory_context_request)
 
+Updates the user's memory context settings.
 
+Returns:
 
-Updates the user's memory context settings.  Returns:      200: list of user memory context data.
+    200: list of user memory context data.
 
 ### Example
 
@@ -1132,7 +1238,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiPromptApi(api_client)
 org = 'org_example' # str | 
@@ -1168,7 +1273,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -1182,9 +1287,18 @@ Name | Type | Description  | Notes
 # **ai_prompt_orgs_users_memory_create**
 > UserCatalogItemMemoryView ai_prompt_orgs_users_memory_create(org, user_id, user_catalog_item_memory_view)
 
+Create a new catalog item memory entry for a user.
 
+Args:
+    request: The HTTP request containing the catalog item memory data.
+    org: The organization/tenant identifier.
+    user_id: The ID of the user to create catalog item memory for.
 
-Create a new catalog item memory entry for a user.  Args:     request: The HTTP request containing the catalog item memory data.     org: The organization/tenant identifier.     user_id: The ID of the user to create catalog item memory for.  Returns:     Response: The created catalog item memory entry.  Raises:     BadRequest: If the provided data is invalid.
+Returns:
+    Response: The created catalog item memory entry.
+
+Raises:
+    BadRequest: If the provided data is invalid.
 
 ### Example
 
@@ -1207,7 +1321,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiPromptApi(api_client)
 org = 'org_example' # str | 
@@ -1243,7 +1356,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -1258,9 +1371,18 @@ Name | Type | Description  | Notes
 # **ai_prompt_orgs_users_memory_destroy**
 > ai_prompt_orgs_users_memory_destroy(org, user_id)
 
+Delete all catalog item memory for a specific user.
 
+Args:
+    request: The HTTP request.
+    org: The organization/tenant identifier.
+    user_id: The ID of the user to delete catalog item memory for.
 
-Delete all catalog item memory for a specific user.  Args:     request: The HTTP request.     org: The organization/tenant identifier.     user_id: The ID of the user to delete catalog item memory for.  Returns:     Response: A success message if the memory was deleted.  Raises:     NotFound: If no catalog item memory exists for the user.
+Returns:
+    Response: A success message if the memory was deleted.
+
+Raises:
+    NotFound: If no catalog item memory exists for the user.
 
 ### Example
 
@@ -1282,7 +1404,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiPromptApi(api_client)
 org = 'org_example' # str | 
@@ -1329,9 +1450,19 @@ void (empty response body)
 # **ai_prompt_orgs_users_memory_destroy2**
 > ai_prompt_orgs_users_memory_destroy2(memory_id, org, user_id)
 
+Delete a specific catalog item memory entry.
 
+Args:
+    request: The HTTP request.
+    org: The organization/tenant identifier.
+    user_id: The ID of the user who owns the memory.
+    memory_id: The ID of the specific memory entry to delete.
 
-Delete a specific catalog item memory entry.  Args:     request: The HTTP request.     org: The organization/tenant identifier.     user_id: The ID of the user who owns the memory.     memory_id: The ID of the specific memory entry to delete.  Returns:     Response: A success message if the memory was deleted.  Raises:     NotFound: If the specified memory entry does not exist.
+Returns:
+    Response: A success message if the memory was deleted.
+
+Raises:
+    NotFound: If the specified memory entry does not exist.
 
 ### Example
 
@@ -1353,7 +1484,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiPromptApi(api_client)
 memory_id = 56 # int | 
@@ -1402,9 +1532,18 @@ void (empty response body)
 # **ai_prompt_orgs_users_memory_retrieve**
 > UserCatalogItemMemoryView ai_prompt_orgs_users_memory_retrieve(org, user_id)
 
+Retrieve catalog item memory for a specific user.
 
+Args:
+    request: The HTTP request.
+    org: The organization/tenant identifier.
+    user_id: The ID of the user to retrieve catalog item memory for.
 
-Retrieve catalog item memory for a specific user.  Args:     request: The HTTP request.     org: The organization/tenant identifier.     user_id: The ID of the user to retrieve catalog item memory for.  Returns:     Response: The user's catalog item memory entries.  Raises:     NotFound: If no catalog item memory exists for the user.
+Returns:
+    Response: The user's catalog item memory entries.
+
+Raises:
+    NotFound: If no catalog item memory exists for the user.
 
 ### Example
 
@@ -1427,7 +1566,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiPromptApi(api_client)
 org = 'org_example' # str | 
@@ -1476,9 +1614,18 @@ Name | Type | Description  | Notes
 # **ai_prompt_orgs_users_memory_status_retrieve**
 > MemoryStatusView ai_prompt_orgs_users_memory_status_retrieve(org, user_id)
 
+Retrieve the memory status for a specific user.
 
+Args:
+    request: The HTTP request.
+    org: The organization/tenant identifier.
+    user_id: The ID of the user to retrieve memory status for.
 
-Retrieve the memory status for a specific user.  Args:     request: The HTTP request.     org: The organization/tenant identifier.     user_id: The ID of the user to retrieve memory status for.  Returns:     Response: The user's memory status.  Raises:     NotFound: If no memory status exists for the user.
+Returns:
+    Response: The user's memory status.
+
+Raises:
+    NotFound: If no memory status exists for the user.
 
 ### Example
 
@@ -1501,7 +1648,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiPromptApi(api_client)
 org = 'org_example' # str | 
@@ -1550,9 +1696,18 @@ Name | Type | Description  | Notes
 # **ai_prompt_orgs_users_memory_status_update**
 > MemoryStatusView ai_prompt_orgs_users_memory_status_update(org, user_id, memory_status_request_view)
 
+Update the memory status for a specific user.
 
+Args:
+    request: The HTTP request containing the updated status.
+    org: The organization/tenant identifier.
+    user_id: The ID of the user to update memory status for.
 
-Update the memory status for a specific user.  Args:     request: The HTTP request containing the updated status.     org: The organization/tenant identifier.     user_id: The ID of the user to update memory status for.  Returns:     Response: The updated memory status.  Raises:     BadRequest: If the provided data is invalid.
+Returns:
+    Response: The updated memory status.
+
+Raises:
+    BadRequest: If the provided data is invalid.
 
 ### Example
 
@@ -1576,7 +1731,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiPromptApi(api_client)
 org = 'org_example' # str | 
@@ -1612,7 +1766,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -1627,9 +1781,20 @@ Name | Type | Description  | Notes
 # **ai_prompt_orgs_users_memory_update**
 > UserCatalogItemMemoryView ai_prompt_orgs_users_memory_update(memory_id, org, user_id, user_catalog_item_memory_view)
 
+Update a specific catalog item memory entry.
 
+Args:
+    request: The HTTP request containing the updated catalog item memory data.
+    org: The organization/tenant identifier.
+    user_id: The ID of the user who owns the memory.
+    memory_id: The ID of the specific memory entry to update.
 
-Update a specific catalog item memory entry.  Args:     request: The HTTP request containing the updated catalog item memory data.     org: The organization/tenant identifier.     user_id: The ID of the user who owns the memory.     memory_id: The ID of the specific memory entry to update.  Returns:     Response: The updated catalog item memory entry.  Raises:     BadRequest: If the provided data is invalid.     NotFound: If the specified memory entry does not exist.
+Returns:
+    Response: The updated catalog item memory entry.
+
+Raises:
+    BadRequest: If the provided data is invalid.
+    NotFound: If the specified memory entry does not exist.
 
 ### Example
 
@@ -1652,7 +1817,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiPromptApi(api_client)
 memory_id = 56 # int | 
@@ -1690,7 +1854,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -1706,9 +1870,18 @@ Name | Type | Description  | Notes
 # **ai_prompt_orgs_users_metadata_retrieve**
 > Metadata ai_prompt_orgs_users_metadata_retrieve(org, user_id)
 
+Retrieve metadata for a prompt.
 
+Args:
+    request: The HTTP request.
+    org: The organization/tenant identifier.
+    user_id: The ID of the user making the request.
 
-Retrieve metadata for a prompt.  Args:     request: The HTTP request.     org: The organization/tenant identifier.     user_id: The ID of the user making the request.  Returns:     Response: The prompt metadata.  Raises:     NotFound: If no metadata exists for the specific prompt
+Returns:
+    Response: The prompt metadata.
+
+Raises:
+    NotFound: If no metadata exists for the specific prompt
 
 ### Example
 
@@ -1731,7 +1904,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiPromptApi(api_client)
 org = 'org_example' # str | 
@@ -1780,9 +1952,16 @@ Name | Type | Description  | Notes
 # **ai_prompt_orgs_users_prompt_create**
 > Prompt ai_prompt_orgs_users_prompt_create(org, user_id, prompt, category=category, created_by=created_by, filter_by=filter_by, mentor_unique_id=mentor_unique_id, tag=tag, visibility=visibility)
 
+Create a new prompt.
 
+Args:
+    request: HTTP request containing prompt data.
 
-Create a new prompt.  Args:     request: HTTP request containing prompt data.  Returns:     Response with created prompt details.  Raises:     ValidationError: If the input data is invalid.
+Returns:
+    Response with created prompt details.
+
+Raises:
+    ValidationError: If the input data is invalid.
 
 ### Example
 
@@ -1805,7 +1984,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiPromptApi(api_client)
 org = 'org_example' # str | 
@@ -1853,7 +2031,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -1867,9 +2045,13 @@ Name | Type | Description  | Notes
 # **ai_prompt_orgs_users_prompt_destroy**
 > ai_prompt_orgs_users_prompt_destroy(id, org, user_id, category=category, created_by=created_by, filter_by=filter_by, mentor_unique_id=mentor_unique_id, tag=tag, visibility=visibility)
 
+API viewset for managing prompts.
 
+This view allows tenant admins and students to create, retrieve, update,
+and filter prompts based on various parameters.
 
-API viewset for managing prompts.  This view allows tenant admins and students to create, retrieve, update, and filter prompts based on various parameters.  Permissions:     - Accessible to both tenant administrators and students
+Permissions:
+    - Accessible to both tenant administrators and students
 
 ### Example
 
@@ -1891,7 +2073,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiPromptApi(api_client)
 id = 56 # int | A unique integer value identifying this prompt.
@@ -1951,9 +2132,13 @@ void (empty response body)
 # **ai_prompt_orgs_users_prompt_list**
 > List[Prompt] ai_prompt_orgs_users_prompt_list(org, user_id, category=category, created_by=created_by, filter_by=filter_by, mentor_unique_id=mentor_unique_id, tag=tag, visibility=visibility)
 
+API viewset for managing prompts.
 
+This view allows tenant admins and students to create, retrieve, update,
+and filter prompts based on various parameters.
 
-API viewset for managing prompts.  This view allows tenant admins and students to create, retrieve, update, and filter prompts based on various parameters.  Permissions:     - Accessible to both tenant administrators and students
+Permissions:
+    - Accessible to both tenant administrators and students
 
 ### Example
 
@@ -1976,7 +2161,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiPromptApi(api_client)
 org = 'org_example' # str | 
@@ -2036,9 +2220,13 @@ Name | Type | Description  | Notes
 # **ai_prompt_orgs_users_prompt_partial_update**
 > Prompt ai_prompt_orgs_users_prompt_partial_update(id, org, user_id, category=category, created_by=created_by, filter_by=filter_by, mentor_unique_id=mentor_unique_id, tag=tag, visibility=visibility, patched_prompt=patched_prompt)
 
+API viewset for managing prompts.
 
+This view allows tenant admins and students to create, retrieve, update,
+and filter prompts based on various parameters.
 
-API viewset for managing prompts.  This view allows tenant admins and students to create, retrieve, update, and filter prompts based on various parameters.  Permissions:     - Accessible to both tenant administrators and students
+Permissions:
+    - Accessible to both tenant administrators and students
 
 ### Example
 
@@ -2062,7 +2250,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiPromptApi(api_client)
 id = 56 # int | A unique integer value identifying this prompt.
@@ -2112,7 +2299,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -2126,9 +2313,13 @@ Name | Type | Description  | Notes
 # **ai_prompt_orgs_users_prompt_retrieve**
 > Prompt ai_prompt_orgs_users_prompt_retrieve(id, org, user_id, category=category, created_by=created_by, filter_by=filter_by, mentor_unique_id=mentor_unique_id, tag=tag, visibility=visibility)
 
+API viewset for managing prompts.
 
+This view allows tenant admins and students to create, retrieve, update,
+and filter prompts based on various parameters.
 
-API viewset for managing prompts.  This view allows tenant admins and students to create, retrieve, update, and filter prompts based on various parameters.  Permissions:     - Accessible to both tenant administrators and students
+Permissions:
+    - Accessible to both tenant administrators and students
 
 ### Example
 
@@ -2151,7 +2342,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiPromptApi(api_client)
 id = 56 # int | A unique integer value identifying this prompt.
@@ -2213,9 +2403,17 @@ Name | Type | Description  | Notes
 # **ai_prompt_orgs_users_prompt_update**
 > Prompt ai_prompt_orgs_users_prompt_update(id, org, user_id, prompt, category=category, created_by=created_by, filter_by=filter_by, mentor_unique_id=mentor_unique_id, tag=tag, visibility=visibility)
 
+Update an existing prompt.
 
+Args:
+    request: HTTP request containing updated prompt data.
 
-Update an existing prompt.  Args:     request: HTTP request containing updated prompt data.  Returns:     Response with updated prompt details.  Raises:     ValidationError: If the input data is invalid.     PermissionDenied: If the prompt is system-generated and cannot be edited.
+Returns:
+    Response with updated prompt details.
+
+Raises:
+    ValidationError: If the input data is invalid.
+    PermissionDenied: If the prompt is system-generated and cannot be edited.
 
 ### Example
 
@@ -2238,7 +2436,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiPromptApi(api_client)
 id = 56 # int | A unique integer value identifying this prompt.
@@ -2288,7 +2485,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -2302,9 +2499,17 @@ Name | Type | Description  | Notes
 # **ai_prompt_orgs_users_prompts_category_create**
 > PromptCategory ai_prompt_orgs_users_prompts_category_create(org, user_id, prompt_category)
 
+Create a new prompt category.
 
+Args:
+    request: The HTTP request containing category information.
+    org: Organization key identifier.
+    user_id: User performing the request.
 
-Create a new prompt category.  Args:     request: The HTTP request containing category information.     org: Organization key identifier.     user_id: User performing the request.  Returns:     - 201: Created prompt category.     - 401: If the user is not a tenant admin.     - 400: If request data is invalid.
+Returns:
+    - 201: Created prompt category.
+    - 401: If the user is not a tenant admin.
+    - 400: If request data is invalid.
 
 ### Example
 
@@ -2327,7 +2532,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiPromptApi(api_client)
 org = 'org_example' # str | 
@@ -2363,7 +2567,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -2377,9 +2581,18 @@ Name | Type | Description  | Notes
 # **ai_prompt_orgs_users_prompts_category_destroy**
 > ai_prompt_orgs_users_prompts_category_destroy(org, user_id)
 
+Delete a prompt category.
 
+Args:
+    request: The HTTP request containing the category to delete.
+    org: Organization key identifier.
+    user_id: User performing the request.
 
-Delete a prompt category.  Args:     request: The HTTP request containing the category to delete.     org: Organization key identifier.     user_id: User performing the request.  Returns:     - 204: No Content (successful deletion).     - 401: If the user is not a tenant admin.     - 400: If request data is invalid.     - 404: If the category does not exist.
+Returns:
+    - 204: No Content (successful deletion).
+    - 401: If the user is not a tenant admin.
+    - 400: If request data is invalid.
+    - 404: If the category does not exist.
 
 ### Example
 
@@ -2401,7 +2614,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiPromptApi(api_client)
 org = 'org_example' # str | 
@@ -2449,9 +2661,18 @@ void (empty response body)
 # **ai_prompt_orgs_users_prompts_category_retrieve**
 > PromptCategory ai_prompt_orgs_users_prompts_category_retrieve(org, user_id, filter_by=filter_by)
 
+Retrieve a list of prompt categories.
 
+Query Parameters:
+    - filter_by (optional): Sorts categories by name if set to "name".
 
-Retrieve a list of prompt categories.  Query Parameters:     - filter_by (optional): Sorts categories by name if set to \"name\".  Args:     request: The HTTP request.     org: Organization key identifier.  Returns:     - 200: List of prompt categories.     - 400: If query parameters are invalid.
+Args:
+    request: The HTTP request.
+    org: Organization key identifier.
+
+Returns:
+    - 200: List of prompt categories.
+    - 400: If query parameters are invalid.
 
 ### Example
 
@@ -2474,7 +2695,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiPromptApi(api_client)
 org = 'org_example' # str | 
@@ -2524,9 +2744,13 @@ Name | Type | Description  | Notes
 # **ai_prompt_orgs_users_prompts_public_list**
 > List[Prompt] ai_prompt_orgs_users_prompts_public_list(org, user_id, category=category, created_by=created_by, filter_by=filter_by, mentor_unique_id=mentor_unique_id, tag=tag, visibility=visibility)
 
+API viewset for managing prompts.
 
+This view allows anyone to retrieve,
+and filter prompts based on various parameters.
 
-API viewset for managing prompts.  This view allows anyone to retrieve, and filter prompts based on various parameters.  Permissions:     - Accessible to anyone
+Permissions:
+    - Accessible to anyone
 
 ### Example
 
@@ -2536,7 +2760,6 @@ import iblai
 from iblai.models.prompt import Prompt
 from iblai.rest import ApiException
 from pprint import pprint
-
 
 # Create an instance of the API class
 api_instance = iblai.AiPromptApi(api_client)
@@ -2597,9 +2820,13 @@ No authorization required
 # **ai_prompt_orgs_users_prompts_public_retrieve**
 > Prompt ai_prompt_orgs_users_prompts_public_retrieve(id, org, user_id, category=category, created_by=created_by, filter_by=filter_by, mentor_unique_id=mentor_unique_id, tag=tag, visibility=visibility)
 
+API viewset for managing prompts.
 
+This view allows anyone to retrieve,
+and filter prompts based on various parameters.
 
-API viewset for managing prompts.  This view allows anyone to retrieve, and filter prompts based on various parameters.  Permissions:     - Accessible to anyone
+Permissions:
+    - Accessible to anyone
 
 ### Example
 
@@ -2609,7 +2836,6 @@ import iblai
 from iblai.models.prompt import Prompt
 from iblai.rest import ApiException
 from pprint import pprint
-
 
 # Create an instance of the API class
 api_instance = iblai.AiPromptApi(api_client)
@@ -2670,7 +2896,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **ai_prompt_orgs_users_sessions_guided_prompts_retrieve**
-> GuidedPromptsResponse ai_prompt_orgs_users_sessions_guided_prompts_retrieve(org, session_id, user_id)
+> GuidedPromptsResponse ai_prompt_orgs_users_sessions_guided_prompts_retrieve(org, session_id, user_id, count=count)
 
 Retrieve guided prompts for a chat session
 
@@ -2685,16 +2911,16 @@ from iblai.models.guided_prompts_response import GuidedPromptsResponse
 from iblai.rest import ApiException
 from pprint import pprint
 
-
 # Create an instance of the API class
 api_instance = iblai.AiPromptApi(api_client)
 org = 'org_example' # str | 
 session_id = 'session_id_example' # str | 
 user_id = 'user_id_example' # str | 
+count = 5 # int |  (optional) (default to 5)
 
 try:
     # Retrieve guided prompts for a chat session
-    api_response = api_instance.ai_prompt_orgs_users_sessions_guided_prompts_retrieve(org, session_id, user_id)
+    api_response = api_instance.ai_prompt_orgs_users_sessions_guided_prompts_retrieve(org, session_id, user_id, count=count)
     print("The response of AiPromptApi->ai_prompt_orgs_users_sessions_guided_prompts_retrieve:\n")
     pprint(api_response)
 except Exception as e:
@@ -2711,6 +2937,7 @@ Name | Type | Description  | Notes
  **org** | **str**|  | 
  **session_id** | **str**|  | 
  **user_id** | **str**|  | 
+ **count** | **int**|  | [optional] [default to 5]
 
 ### Return type
 
@@ -2739,9 +2966,15 @@ No authorization required
 # **ai_prompt_orgs_users_styles_create**
 > StylesView ai_prompt_orgs_users_styles_create(org, user_id, styles_view)
 
+Endpoint for Adding prompt style.
 
+Accessible to tenant admins only.
 
-Endpoint for Adding prompt style.  Accessible to tenant admins only.  Returns:      201: style Object.      400: When data is not valid.
+Returns:
+
+    201: style Object.
+
+    400: When data is not valid.
 
 ### Example
 
@@ -2764,7 +2997,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiPromptApi(api_client)
 org = 'org_example' # str | 
@@ -2800,7 +3032,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -2814,9 +3046,15 @@ Name | Type | Description  | Notes
 # **ai_prompt_orgs_users_styles_destroy**
 > ai_prompt_orgs_users_styles_destroy(org, style_id, user_id)
 
+Endpoint for deleting prompt style.
 
+Accessible to tenant admins and students.
 
-Endpoint for deleting prompt style.  Accessible to tenant admins and students.  Returns:      204: No response data.      400: When data is not valid.
+Returns:
+
+    204: No response data.
+
+    400: When data is not valid.
 
 ### Example
 
@@ -2838,7 +3076,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiPromptApi(api_client)
 org = 'org_example' # str | 
@@ -2886,9 +3123,13 @@ void (empty response body)
 # **ai_prompt_orgs_users_styles_retrieve**
 > StylesView ai_prompt_orgs_users_styles_retrieve(org, user_id)
 
+Endpoint for getting prompt styles.
 
+Accessible to tenant admins and students.
 
-Endpoint for getting prompt styles.  Accessible to tenant admins and students.  Returns:      200: List of styles.
+Returns:
+
+    200: List of styles.
 
 ### Example
 
@@ -2911,7 +3152,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiPromptApi(api_client)
 org = 'org_example' # str | 
@@ -2959,9 +3199,15 @@ Name | Type | Description  | Notes
 # **ai_prompt_orgs_users_styles_update**
 > StylesView ai_prompt_orgs_users_styles_update(org, style_id, user_id, styles_view)
 
+Endpoint for Adding prompt style.
 
+Accessible to tenant admins only.
 
-Endpoint for Adding prompt style.  Accessible to tenant admins only.  Returns:      200: style Object.      400: When data is not valid.
+Returns:
+
+    200: style Object.
+
+    400: When data is not valid.
 
 ### Example
 
@@ -2984,7 +3230,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiPromptApi(api_client)
 org = 'org_example' # str | 
@@ -3022,7 +3267,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -3036,9 +3281,32 @@ Name | Type | Description  | Notes
 # **ai_prompt_orgs_users_tags_create**
 > TagsView ai_prompt_orgs_users_tags_create(org, user_id, tags_view)
 
+Endpoint for Adding prompt tag.
+
+Accessible to tenant admins and students.
+
+Returns:
+
+    201: tag Object.
+
+    400: When data is not valid.
 
 
-Endpoint for Adding prompt tag.  Accessible to tenant admins and students.  Returns:      201: tag Object.      400: When data is not valid.    Example:      POST: /api/ai-prompt/orgs/main/users/johndoe/tags/      Request:        Response:       {                         \"name\": \"Programming\",                         \"description\": \"tags for programing prompts\"                     }      Response:       {                         \"id\": 1,                         \"name\": \"Programming\",                         \"description\": \"tags for programing prompts\"                     }
+
+Example:
+
+    POST: /api/ai-prompt/orgs/main/users/johndoe/tags/
+
+    Request:        Response:       {
+                        "name": "Programming",
+                        "description": "tags for programing prompts"
+                    }
+
+    Response:       {
+                        "id": 1,
+                        "name": "Programming",
+                        "description": "tags for programing prompts"
+                    }
 
 ### Example
 
@@ -3061,7 +3329,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiPromptApi(api_client)
 org = 'org_example' # str | 
@@ -3097,7 +3364,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -3111,9 +3378,15 @@ Name | Type | Description  | Notes
 # **ai_prompt_orgs_users_tags_destroy**
 > ai_prompt_orgs_users_tags_destroy(org, tag_id, user_id)
 
+Endpoint for deleting prompt tag.
 
+Accessible to tenant admins and students.
 
-Endpoint for deleting prompt tag.  Accessible to tenant admins and students.  Returns:      204: No response data.      400: When data is not valid.
+Returns:
+
+    204: No response data.
+
+    400: When data is not valid.
 
 ### Example
 
@@ -3135,7 +3408,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiPromptApi(api_client)
 org = 'org_example' # str | 
@@ -3183,9 +3455,13 @@ void (empty response body)
 # **ai_prompt_orgs_users_tags_retrieve**
 > TagsView ai_prompt_orgs_users_tags_retrieve(org, user_id)
 
+Endpoint for getting prompt tags.
 
+Accessible to tenant admins and students.
 
-Endpoint for getting prompt tags.  Accessible to tenant admins and students.  Returns:      200: List of tags.
+Returns:
+
+    200: List of tags.
 
 ### Example
 
@@ -3208,7 +3484,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiPromptApi(api_client)
 org = 'org_example' # str | 
@@ -3256,9 +3531,15 @@ Name | Type | Description  | Notes
 # **ai_prompt_orgs_users_tags_update**
 > TagsView ai_prompt_orgs_users_tags_update(org, tag_id, user_id, tags_view)
 
+Endpoint for updating prompt tag.
 
+Accessible to tenant admins and students.
 
-Endpoint for updating prompt tag.  Accessible to tenant admins and students.  Returns:      200: tag Object.      400: When data is not valid.
+Returns:
+
+    200: tag Object.
+
+    400: When data is not valid.
 
 ### Example
 
@@ -3281,7 +3562,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiPromptApi(api_client)
 org = 'org_example' # str | 
@@ -3319,7 +3599,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -3333,9 +3613,15 @@ Name | Type | Description  | Notes
 # **ai_prompt_orgs_users_tones_create**
 > TonesView ai_prompt_orgs_users_tones_create(org, user_id, tones_view=tones_view)
 
+Endpoint for Adding prompt tone.
 
+Accessible to tenant admins only.
 
-Endpoint for Adding prompt tone.  Accessible to tenant admins only.  Returns:      201: tone Object.      400: When data is not valid.
+Returns:
+
+    201: tone Object.
+
+    400: When data is not valid.
 
 ### Example
 
@@ -3358,7 +3644,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiPromptApi(api_client)
 org = 'org_example' # str | 
@@ -3394,7 +3679,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -3408,9 +3693,15 @@ Name | Type | Description  | Notes
 # **ai_prompt_orgs_users_tones_destroy**
 > ai_prompt_orgs_users_tones_destroy(org, tone_id, user_id)
 
+Endpoint for deleting prompt tone.
 
+Accessible to tenant admins and students.
 
-Endpoint for deleting prompt tone.  Accessible to tenant admins and students.  Returns:      204: No response data.      400: When data is not valid.
+Returns:
+
+    204: No response data.
+
+    400: When data is not valid.
 
 ### Example
 
@@ -3432,7 +3723,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiPromptApi(api_client)
 org = 'org_example' # str | 
@@ -3480,9 +3770,13 @@ void (empty response body)
 # **ai_prompt_orgs_users_tones_retrieve**
 > TonesView ai_prompt_orgs_users_tones_retrieve(org, user_id)
 
+Endpoint for getting prompt tones.
 
+Accessible to tenant admins and students.
 
-Endpoint for getting prompt tones.  Accessible to tenant admins and students.  Returns:      200: List of tones.
+Returns:
+
+    200: List of tones.
 
 ### Example
 
@@ -3505,7 +3799,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiPromptApi(api_client)
 org = 'org_example' # str | 
@@ -3553,9 +3846,15 @@ Name | Type | Description  | Notes
 # **ai_prompt_orgs_users_tones_update**
 > TonesView ai_prompt_orgs_users_tones_update(org, tone_id, user_id, tones_view=tones_view)
 
+Endpoint for updating prompt tone.
 
+Accessible to tenant admins only.
 
-Endpoint for updating prompt tone.  Accessible to tenant admins only.  Returns:      200: tone Object.      400: When data is not valid.
+Returns:
+
+    200: tone Object.
+
+    400: When data is not valid.
 
 ### Example
 
@@ -3578,7 +3877,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiPromptApi(api_client)
 org = 'org_example' # str | 
@@ -3616,7 +3914,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details

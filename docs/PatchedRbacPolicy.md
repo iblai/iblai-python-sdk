@@ -7,6 +7,7 @@ Serializer for policies.
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** |  | [optional] [readonly] 
+**name** | **str** | Policy name. If not supplied, defaults to a UUID4 | [optional] 
 **role** | [**RbacBaseRole**](RbacBaseRole.md) | Role information (read-only) | [optional] [readonly] 
 **platform** | [**RbacPlatform**](RbacPlatform.md) | Platform information (read-only) | [optional] [readonly] 
 **resources** | **List[str]** | List of resource paths this policy grants access to (e.g., [&#39;/platforms/1/mentors&#39;, &#39;/platforms/1/mentors/settings&#39;]) | [optional] 

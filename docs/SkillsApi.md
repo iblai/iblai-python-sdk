@@ -21,9 +21,20 @@ Method | HTTP request | Description
 # **skills_orgs_skills_list**
 > List[SkillInfo] skills_orgs_skills_list(org)
 
+List all available skills on the platform.
 
+This endpoint returns information about all skills that can be
+acquired on the platform.
 
-List all available skills on the platform.  This endpoint returns information about all skills that can be acquired on the platform.  Path Parameters:     org (str): The platform/organization identifier  Returns:     A list of all skills with basic information about each skill.  Access Control:     - Platform admins can access this information     - All authenticated users can access this information
+Path Parameters:
+    org (str): The platform/organization identifier
+
+Returns:
+    A list of all skills with basic information about each skill.
+
+Access Control:
+    - Platform admins can access this information
+    - All authenticated users can access this information
 
 ### Example
 
@@ -46,7 +57,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.SkillsApi(api_client)
 org = 'org_example' # str | 
@@ -92,8 +102,6 @@ Name | Type | Description  | Notes
 # **skills_orgs_skills_percentile_list**
 > List[PointsPercentile] skills_orgs_skills_percentile_list(org)
 
-
-
 Mixin that includes the StudentTokenAuthentication and IsAdminUserOrStudent
 
 ### Example
@@ -117,7 +125,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.SkillsApi(api_client)
 org = 'org_example' # str | 
@@ -163,9 +170,24 @@ Name | Type | Description  | Notes
 # **skills_orgs_skills_percentile_retrieve**
 > PointsPercentile skills_orgs_skills_percentile_retrieve(org, skill_id)
 
+Retrieve percentile distribution for a specific skill.
 
+This endpoint returns the percentile distribution of points earned
+by users for a specific skill.
 
-Retrieve percentile distribution for a specific skill.  This endpoint returns the percentile distribution of points earned by users for a specific skill.  Path Parameters:     skill_id (int): The ID of the skill to retrieve percentile information for     org (str, optional): The platform/organization identifier to filter results  Returns:     A list of percentile breakpoints for the specified skill.  Error Responses:     404 Not Found: If the specified skill doesn't exist  Access Control:     - Platform admins can access this information     - All authenticated users can access this information
+Path Parameters:
+    skill_id (int): The ID of the skill to retrieve percentile information for
+    org (str, optional): The platform/organization identifier to filter results
+
+Returns:
+    A list of percentile breakpoints for the specified skill.
+
+Error Responses:
+    404 Not Found: If the specified skill doesn't exist
+
+Access Control:
+    - Platform admins can access this information
+    - All authenticated users can access this information
 
 ### Example
 
@@ -188,7 +210,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.SkillsApi(api_client)
 org = 'org_example' # str | 
@@ -236,9 +257,24 @@ Name | Type | Description  | Notes
 # **skills_orgs_skills_retrieve**
 > SkillDetail skills_orgs_skills_retrieve(org, skill_name)
 
+Retrieve detailed information about a specific skill.
 
+This endpoint returns comprehensive information about a specific skill,
+including its description, categories, and related courses.
 
-Retrieve detailed information about a specific skill.  This endpoint returns comprehensive information about a specific skill, including its description, categories, and related courses.  Path Parameters:     org (str): The platform/organization identifier     skill_name (str): The name of the skill to retrieve details for  Returns:     Detailed information about the specified skill.  Error Responses:     404 Not Found: If the specified skill doesn't exist  Access Control:     - Platform admins can access this information     - All authenticated users can access this information
+Path Parameters:
+    org (str): The platform/organization identifier
+    skill_name (str): The name of the skill to retrieve details for
+
+Returns:
+    Detailed information about the specified skill.
+
+Error Responses:
+    404 Not Found: If the specified skill doesn't exist
+
+Access Control:
+    - Platform admins can access this information
+    - All authenticated users can access this information
 
 ### Example
 
@@ -261,7 +297,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.SkillsApi(api_client)
 org = 'org_example' # str | 
@@ -309,9 +344,45 @@ Name | Type | Description  | Notes
 # **skills_orgs_skills_thresholds_create**
 > SkillThreshold skills_orgs_skills_thresholds_create(org, skill_threshold)
 
+Manage skill thresholds for a platform.
 
+This endpoint allows platform administrators to view, create, update, and delete
+skill thresholds. Skill thresholds define the minimum points required to consider
+a skill as acquired or mastered.
 
-Manage skill thresholds for a platform.  This endpoint allows platform administrators to view, create, update, and delete skill thresholds. Skill thresholds define the minimum points required to consider a skill as acquired or mastered.  Path Parameters:     org (str): The platform/organization identifier  Methods:     GET: Retrieve all skill thresholds for the platform     POST: Create a new skill threshold     PATCH: Update an existing skill threshold     DELETE: Delete all skill thresholds for the platform  Request Body (POST):     name (str, required): The name of the threshold level (e.g., \"Beginner\", \"Intermediate\")     threshold (int, required): The minimum points required to reach this threshold  Request Body (PATCH):     name (str, required): The name of the existing threshold to update     threshold (int, required): The new minimum points value for this threshold  Returns:     GET: A list of all skill thresholds for the platform     POST/PATCH: The created or updated skill threshold with format:         {             \"name\": \"threshold_name\",             \"threshold\": threshold_value         }     DELETE: No content (204)  Error Responses:     400 Bad Request: If the request data is invalid or missing required fields     404 Not Found: If the specified platform doesn't exist or the threshold                   to update cannot be found  Access Control:     - Only platform administrators can access this endpoint
+Path Parameters:
+    org (str): The platform/organization identifier
+
+Methods:
+    GET: Retrieve all skill thresholds for the platform
+    POST: Create a new skill threshold
+    PATCH: Update an existing skill threshold
+    DELETE: Delete all skill thresholds for the platform
+
+Request Body (POST):
+    name (str, required): The name of the threshold level (e.g., "Beginner", "Intermediate")
+    threshold (int, required): The minimum points required to reach this threshold
+
+Request Body (PATCH):
+    name (str, required): The name of the existing threshold to update
+    threshold (int, required): The new minimum points value for this threshold
+
+Returns:
+    GET: A list of all skill thresholds for the platform
+    POST/PATCH: The created or updated skill threshold with format:
+        {
+            "name": "threshold_name",
+            "threshold": threshold_value
+        }
+    DELETE: No content (204)
+
+Error Responses:
+    400 Bad Request: If the request data is invalid or missing required fields
+    404 Not Found: If the specified platform doesn't exist or the threshold
+                  to update cannot be found
+
+Access Control:
+    - Only platform administrators can access this endpoint
 
 ### Example
 
@@ -334,7 +405,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.SkillsApi(api_client)
 org = 'org_example' # str | 
@@ -368,7 +438,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -382,9 +452,45 @@ Name | Type | Description  | Notes
 # **skills_orgs_skills_thresholds_destroy**
 > skills_orgs_skills_thresholds_destroy(org)
 
+Manage skill thresholds for a platform.
 
+This endpoint allows platform administrators to view, create, update, and delete
+skill thresholds. Skill thresholds define the minimum points required to consider
+a skill as acquired or mastered.
 
-Manage skill thresholds for a platform.  This endpoint allows platform administrators to view, create, update, and delete skill thresholds. Skill thresholds define the minimum points required to consider a skill as acquired or mastered.  Path Parameters:     org (str): The platform/organization identifier  Methods:     GET: Retrieve all skill thresholds for the platform     POST: Create a new skill threshold     PATCH: Update an existing skill threshold     DELETE: Delete all skill thresholds for the platform  Request Body (POST):     name (str, required): The name of the threshold level (e.g., \"Beginner\", \"Intermediate\")     threshold (int, required): The minimum points required to reach this threshold  Request Body (PATCH):     name (str, required): The name of the existing threshold to update     threshold (int, required): The new minimum points value for this threshold  Returns:     GET: A list of all skill thresholds for the platform     POST/PATCH: The created or updated skill threshold with format:         {             \"name\": \"threshold_name\",             \"threshold\": threshold_value         }     DELETE: No content (204)  Error Responses:     400 Bad Request: If the request data is invalid or missing required fields     404 Not Found: If the specified platform doesn't exist or the threshold                   to update cannot be found  Access Control:     - Only platform administrators can access this endpoint
+Path Parameters:
+    org (str): The platform/organization identifier
+
+Methods:
+    GET: Retrieve all skill thresholds for the platform
+    POST: Create a new skill threshold
+    PATCH: Update an existing skill threshold
+    DELETE: Delete all skill thresholds for the platform
+
+Request Body (POST):
+    name (str, required): The name of the threshold level (e.g., "Beginner", "Intermediate")
+    threshold (int, required): The minimum points required to reach this threshold
+
+Request Body (PATCH):
+    name (str, required): The name of the existing threshold to update
+    threshold (int, required): The new minimum points value for this threshold
+
+Returns:
+    GET: A list of all skill thresholds for the platform
+    POST/PATCH: The created or updated skill threshold with format:
+        {
+            "name": "threshold_name",
+            "threshold": threshold_value
+        }
+    DELETE: No content (204)
+
+Error Responses:
+    400 Bad Request: If the request data is invalid or missing required fields
+    404 Not Found: If the specified platform doesn't exist or the threshold
+                  to update cannot be found
+
+Access Control:
+    - Only platform administrators can access this endpoint
 
 ### Example
 
@@ -406,7 +512,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.SkillsApi(api_client)
 org = 'org_example' # str | 
@@ -450,9 +555,45 @@ void (empty response body)
 # **skills_orgs_skills_thresholds_partial_update**
 > SkillThreshold skills_orgs_skills_thresholds_partial_update(org, patched_skill_threshold=patched_skill_threshold)
 
+Manage skill thresholds for a platform.
 
+This endpoint allows platform administrators to view, create, update, and delete
+skill thresholds. Skill thresholds define the minimum points required to consider
+a skill as acquired or mastered.
 
-Manage skill thresholds for a platform.  This endpoint allows platform administrators to view, create, update, and delete skill thresholds. Skill thresholds define the minimum points required to consider a skill as acquired or mastered.  Path Parameters:     org (str): The platform/organization identifier  Methods:     GET: Retrieve all skill thresholds for the platform     POST: Create a new skill threshold     PATCH: Update an existing skill threshold     DELETE: Delete all skill thresholds for the platform  Request Body (POST):     name (str, required): The name of the threshold level (e.g., \"Beginner\", \"Intermediate\")     threshold (int, required): The minimum points required to reach this threshold  Request Body (PATCH):     name (str, required): The name of the existing threshold to update     threshold (int, required): The new minimum points value for this threshold  Returns:     GET: A list of all skill thresholds for the platform     POST/PATCH: The created or updated skill threshold with format:         {             \"name\": \"threshold_name\",             \"threshold\": threshold_value         }     DELETE: No content (204)  Error Responses:     400 Bad Request: If the request data is invalid or missing required fields     404 Not Found: If the specified platform doesn't exist or the threshold                   to update cannot be found  Access Control:     - Only platform administrators can access this endpoint
+Path Parameters:
+    org (str): The platform/organization identifier
+
+Methods:
+    GET: Retrieve all skill thresholds for the platform
+    POST: Create a new skill threshold
+    PATCH: Update an existing skill threshold
+    DELETE: Delete all skill thresholds for the platform
+
+Request Body (POST):
+    name (str, required): The name of the threshold level (e.g., "Beginner", "Intermediate")
+    threshold (int, required): The minimum points required to reach this threshold
+
+Request Body (PATCH):
+    name (str, required): The name of the existing threshold to update
+    threshold (int, required): The new minimum points value for this threshold
+
+Returns:
+    GET: A list of all skill thresholds for the platform
+    POST/PATCH: The created or updated skill threshold with format:
+        {
+            "name": "threshold_name",
+            "threshold": threshold_value
+        }
+    DELETE: No content (204)
+
+Error Responses:
+    400 Bad Request: If the request data is invalid or missing required fields
+    404 Not Found: If the specified platform doesn't exist or the threshold
+                  to update cannot be found
+
+Access Control:
+    - Only platform administrators can access this endpoint
 
 ### Example
 
@@ -476,7 +617,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.SkillsApi(api_client)
 org = 'org_example' # str | 
@@ -510,7 +650,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -524,9 +664,45 @@ Name | Type | Description  | Notes
 # **skills_orgs_skills_thresholds_retrieve**
 > SkillThreshold skills_orgs_skills_thresholds_retrieve(org)
 
+Manage skill thresholds for a platform.
 
+This endpoint allows platform administrators to view, create, update, and delete
+skill thresholds. Skill thresholds define the minimum points required to consider
+a skill as acquired or mastered.
 
-Manage skill thresholds for a platform.  This endpoint allows platform administrators to view, create, update, and delete skill thresholds. Skill thresholds define the minimum points required to consider a skill as acquired or mastered.  Path Parameters:     org (str): The platform/organization identifier  Methods:     GET: Retrieve all skill thresholds for the platform     POST: Create a new skill threshold     PATCH: Update an existing skill threshold     DELETE: Delete all skill thresholds for the platform  Request Body (POST):     name (str, required): The name of the threshold level (e.g., \"Beginner\", \"Intermediate\")     threshold (int, required): The minimum points required to reach this threshold  Request Body (PATCH):     name (str, required): The name of the existing threshold to update     threshold (int, required): The new minimum points value for this threshold  Returns:     GET: A list of all skill thresholds for the platform     POST/PATCH: The created or updated skill threshold with format:         {             \"name\": \"threshold_name\",             \"threshold\": threshold_value         }     DELETE: No content (204)  Error Responses:     400 Bad Request: If the request data is invalid or missing required fields     404 Not Found: If the specified platform doesn't exist or the threshold                   to update cannot be found  Access Control:     - Only platform administrators can access this endpoint
+Path Parameters:
+    org (str): The platform/organization identifier
+
+Methods:
+    GET: Retrieve all skill thresholds for the platform
+    POST: Create a new skill threshold
+    PATCH: Update an existing skill threshold
+    DELETE: Delete all skill thresholds for the platform
+
+Request Body (POST):
+    name (str, required): The name of the threshold level (e.g., "Beginner", "Intermediate")
+    threshold (int, required): The minimum points required to reach this threshold
+
+Request Body (PATCH):
+    name (str, required): The name of the existing threshold to update
+    threshold (int, required): The new minimum points value for this threshold
+
+Returns:
+    GET: A list of all skill thresholds for the platform
+    POST/PATCH: The created or updated skill threshold with format:
+        {
+            "name": "threshold_name",
+            "threshold": threshold_value
+        }
+    DELETE: No content (204)
+
+Error Responses:
+    400 Bad Request: If the request data is invalid or missing required fields
+    404 Not Found: If the specified platform doesn't exist or the threshold
+                  to update cannot be found
+
+Access Control:
+    - Only platform administrators can access this endpoint
 
 ### Example
 
@@ -549,7 +725,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.SkillsApi(api_client)
 org = 'org_example' # str | 
@@ -595,9 +770,25 @@ Name | Type | Description  | Notes
 # **skills_orgs_skills_users_desired_skills_retrieve**
 > DesiredSkill skills_orgs_skills_users_desired_skills_retrieve(org, user_id)
 
+Retrieve a user's desired skills.
 
+This endpoint returns the skills that a user has indicated they want
+to develop or acquire through the platform.
 
-Retrieve a user's desired skills.  This endpoint returns the skills that a user has indicated they want to develop or acquire through the platform.  Path Parameters:     org (str): The platform/organization identifier     user_id (str): The username of the user to retrieve skill information for  Returns:     The user's desired skills information.  Error Responses:     400 Bad Request: If the user doesn't exist in the platform or has no desired skills     404 Not Found: If the specified platform doesn't exist  Access Control:     - Platform admins can access any user's information     - Users can access their own information
+Path Parameters:
+    org (str): The platform/organization identifier
+    user_id (str): The username of the user to retrieve skill information for
+
+Returns:
+    The user's desired skills information.
+
+Error Responses:
+    400 Bad Request: If the user doesn't exist in the platform or has no desired skills
+    404 Not Found: If the specified platform doesn't exist
+
+Access Control:
+    - Platform admins can access any user's information
+    - Users can access their own information
 
 ### Example
 
@@ -620,7 +811,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.SkillsApi(api_client)
 org = 'org_example' # str | 
@@ -668,9 +858,24 @@ Name | Type | Description  | Notes
 # **skills_orgs_skills_users_point_percentile_retrieve**
 > UserSkillPointsPercentile skills_orgs_skills_users_point_percentile_retrieve(org, user_id)
 
+Retrieve a user's total skill points and percentile ranking.
 
+This endpoint returns the total skill points a user has earned across
+all skills and their percentile ranking compared to other users on the platform.
 
-Retrieve a user's total skill points and percentile ranking.  This endpoint returns the total skill points a user has earned across all skills and their percentile ranking compared to other users on the platform.  Path Parameters:     org (str): The platform/organization identifier     user_id (str): The username of the user to retrieve information for  Returns:     The user's total skill points and percentile ranking information:     - Username     - Total points earned across all skills     - Percentile ranking compared to other users  Access Control:     - Platform admins can access any user's information     - Users can access their own information
+Path Parameters:
+    org (str): The platform/organization identifier
+    user_id (str): The username of the user to retrieve information for
+
+Returns:
+    The user's total skill points and percentile ranking information:
+    - Username
+    - Total points earned across all skills
+    - Percentile ranking compared to other users
+
+Access Control:
+    - Platform admins can access any user's information
+    - Users can access their own information
 
 ### Example
 
@@ -693,7 +898,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.SkillsApi(api_client)
 org = 'org_example' # str | 
@@ -741,9 +945,25 @@ Name | Type | Description  | Notes
 # **skills_orgs_skills_users_reported_skills_retrieve**
 > ReportedSkill skills_orgs_skills_users_reported_skills_retrieve(org, user_id)
 
+Retrieve a user's self-reported skills.
 
+This endpoint returns the skills that a user has reported having
+prior to or outside of the platform learning experience.
 
-Retrieve a user's self-reported skills.  This endpoint returns the skills that a user has reported having prior to or outside of the platform learning experience.  Path Parameters:     org (str): The platform/organization identifier     user_id (str): The username of the user to retrieve skill information for  Returns:     The user's self-reported skills information.  Error Responses:     400 Bad Request: If the user doesn't exist in the platform or has no reported skills     404 Not Found: If the specified platform doesn't exist  Access Control:     - Platform admins can access any user's information     - Users can access their own information
+Path Parameters:
+    org (str): The platform/organization identifier
+    user_id (str): The username of the user to retrieve skill information for
+
+Returns:
+    The user's self-reported skills information.
+
+Error Responses:
+    400 Bad Request: If the user doesn't exist in the platform or has no reported skills
+    404 Not Found: If the specified platform doesn't exist
+
+Access Control:
+    - Platform admins can access any user's information
+    - Users can access their own information
 
 ### Example
 
@@ -766,7 +986,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.SkillsApi(api_client)
 org = 'org_example' # str | 
@@ -814,9 +1033,28 @@ Name | Type | Description  | Notes
 # **skills_orgs_skills_users_retrieve**
 > UserSkill skills_orgs_skills_users_retrieve(org, user_id)
 
+Retrieve a user's skill information.
 
+This endpoint returns information about skills that a user has acquired
+through the platform. It can return all skills or filter by a specific skill.
 
-Retrieve a user's skill information.  This endpoint returns information about skills that a user has acquired through the platform. It can return all skills or filter by a specific skill.  Path Parameters:     org (str): The platform/organization identifier     user_id (str): The username of the user to retrieve skill information for  Query Parameters:     skill_name (str, optional): Filter results to a specific skill  Returns:     When skill_name is provided:         Details about the specific skill including points earned and percentile ranking      When skill_name is not provided:         A list of all skills the user has acquired with their points  Access Control:     - Platform admins can access any user's skill information     - Users can access their own skill information
+Path Parameters:
+    org (str): The platform/organization identifier
+    user_id (str): The username of the user to retrieve skill information for
+
+Query Parameters:
+    skill_name (str, optional): Filter results to a specific skill
+
+Returns:
+    When skill_name is provided:
+        Details about the specific skill including points earned and percentile ranking
+
+    When skill_name is not provided:
+        A list of all skills the user has acquired with their points
+
+Access Control:
+    - Platform admins can access any user's skill information
+    - Users can access their own skill information
 
 ### Example
 
@@ -839,7 +1077,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.SkillsApi(api_client)
 org = 'org_example' # str | 

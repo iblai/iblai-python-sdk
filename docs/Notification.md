@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **username** | **str** |  | 
 **title** | **str** |  | [readonly] 
 **body** | **str** |  | [readonly] 
-**status** | [**MessageStatus**](MessageStatus.md) |  | [optional] 
+**status** | **str** |  | [optional] 
 **channel** | **str** |  | [readonly] 
 **context** | **object** |  | [optional] 
 **short_message** | **str** |  | [readonly] 

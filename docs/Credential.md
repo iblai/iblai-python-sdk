@@ -5,32 +5,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**entity_id** | **str** |  | 
+**credential_id** | **str** |  | 
+**credential_url** | **str** |  | 
 **name** | **str** |  | 
-**name_override** | **str** |  | [optional] 
-**description** | **str** |  | [optional] 
-**criteria_url** | **str** |  | 
-**criteria_narrative** | **str** |  | 
-**created_at** | **datetime** |  | 
-**icon_image** | **str** |  | [readonly] 
-**icon_image_id** | **int** |  | 
-**background_image** | **str** |  | [readonly] 
-**background_image_id** | **int** |  | 
-**thumbnail_image** | **str** |  | [readonly] 
-**thumbnail_image_id** | **int** |  | 
-**catalog_items** | **List[str]** |  | [readonly] 
-**courses** | **List[Dict[str, str]]** |  | [readonly] 
-**programs** | **str** |  | [readonly] 
-**issuer_details** | **Dict[str, str]** |  | [readonly] 
-**html_template** | **str** |  | [optional] 
-**css_template** | **str** |  | [optional] 
-**metadata** | **object** |  | [optional] 
-**credential_type** | **str** |  | 
-**expires** | **Dict[str, int]** |  | [readonly] 
-**tags** | **object** |  | [optional] 
-**signatories** | **List[Dict[str, str]]** |  | [readonly] 
-**signal** | **str** |  | 
-**pathways** | **List[Dict[str, str]]** |  | [readonly] 
+**credential_type** | **str** |  | [optional] 
+**issuer** | **str** |  | [optional] 
+**issued_on** | **datetime** |  | [optional] 
+**expires_at** | **datetime** |  | [optional] 
+**revoked** | **bool** |  | 
 
 ## Example
 

@@ -7,12 +7,13 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **str** |  | 
 **unique_id** | **str** |  | [optional] 
-**flow** | **object** | The langflow json for the mentor | 
+**flow** | **object** | The langflow json for the mentor | [optional] 
 **slug** | **str** |  | [optional] 
 **platform** | **str** |  | [optional] 
 **allow_anonymous** | **bool** |  | [optional] 
 **metadata** | **object** |  | [optional] 
 **enable_moderation** | **bool** |  | [optional] 
+**enable_multi_query_rag** | **bool** |  | [optional] 
 **enable_post_processing_system** | **bool** |  | [optional] 
 **enable_openai_assistant** | **bool** | (Deprecated) Set template mentor to openai-agent instead. | [optional] 
 **enable_total_grounding** | **bool** | Whether to force mentor to only use information within the provided documents. | [optional] 
@@ -22,7 +23,11 @@ Name | Type | Description | Notes
 **openai_voice** | **int** |  | [optional] 
 **guided_prompt_instructions** | **str** | Instructions to determine how prompt suggestions are generated. | [optional] 
 **categories** | **List[int]** |  | [optional] 
+**types** | **List[int]** |  | [optional] 
+**subjects** | **List[int]** |  | [optional] 
 **proactive_prompt** | **str** | Prompt template used to start a conversation with the user when greeting_type is proactive_prompt. This will be sent to the LLM so it can respond naturally | [optional] 
+**disclaimer** | **str** | Disclaimer to be shown to the user when the mentor is used. | [optional] 
+**placeholder_prompt** | **str** | Placeholder to be shown in the input text area when the mentor is used. | [optional] 
 **moderation_system_prompt** | **str** | The prompt for the moderation system. This prompt must clearly distinguish between &#39;Approapriate&#39; and &#39;Not Appropriate&#39; queries. | [optional] 
 **post_processing_prompt** | **str** | Prompt to be used to alter or modify final llm response into any desired form. | [optional] 
 **moderation_response** | **str** | Desired feedback to return to the user when their prompt is deemed inappropriate. | [optional] 

@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **session_id** | **str** | The ID of the session for the call | 
 **pathway** | **str** | The pathway identifier for the call context | 
+**enable_video** | **bool** | Whether to enable video during the call. Required for screensharing and video calls to work. | [optional] 
 
 ## Example
 

@@ -23,6 +23,7 @@ Name | Type | Description | Notes
 **llm_name** | **str** |  | [optional] 
 **llm_provider** | **str** |  | [optional] 
 **metadata** | **object** |  | [optional] 
+**is_conversation** | **bool** | True if the session has both user and AI messages | [optional] 
 **tools** | **List[int]** |  | [optional] 
 
 ## Example

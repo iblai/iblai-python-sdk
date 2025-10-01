@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **rating** | [**RatingEnum**](RatingEnum.md) |  | [optional] 
 **inserted_at** | **datetime** |  | [optional] 
 **mentor** | **int** |  | 
+**message** | **int** |  | [optional] 
 
 ## Example
 

@@ -15,9 +15,47 @@ Method | HTTP request | Description
 # **reports_orgs_new_create**
 > ReportCreate reports_orgs_new_create(org, report_request=report_request)
 
+Creates and manages report generation requests.
 
+This endpoint allows users to:
+1. Request a new report generation
+2. Check the status of a previously requested report
+3. Force regeneration of an existing report
 
-Creates and manages report generation requests.  This endpoint allows users to: 1. Request a new report generation 2. Check the status of a previously requested report 3. Force regeneration of an existing report  Reports expire after a configured time period (default is typically 24-48 hours).  Request Parameters:     report_name (str): The identifier of the report to generate     owner (str): The username of the report owner (usually the current user)     learner_id (str, optional): Filter by specific learner     course_id (str, optional): Filter by specific course     start_date (str, optional): Start date for report data (ISO format)     end_date (str, optional): End date for report data (ISO format)     filters (dict, optional): Additional filters specific to the report type     force (bool, optional): Force regeneration even if a valid report exists  Returns:     For new reports:         - report_id: The unique identifier for the report task         - state: The current state of the report (PENDING, RUNNING, etc.)      For completed reports:         - report_id: The unique identifier for the report task         - report_name: The name of the report         - url: Download URL for the report         - state: COMPLETED         - expires: Expiration timestamp for the report      For in-progress reports:         - report_id: The unique identifier for the report task         - state: Current state (PENDING, RUNNING)         - started_on: When the report generation started         - owner: Username of the report owner  Error Responses:     400 Bad Request: Invalid parameters or report configuration     404 Not Found: Report type not found     403 Forbidden: User doesn't have permission for the requested report
+Reports expire after a configured time period (default is typically 24-48 hours).
+
+Request Parameters:
+    report_name (str): The identifier of the report to generate
+    owner (str): The username of the report owner (usually the current user)
+    learner_id (str, optional): Filter by specific learner
+    course_id (str, optional): Filter by specific course
+    start_date (str, optional): Start date for report data (ISO format)
+    end_date (str, optional): End date for report data (ISO format)
+    filters (dict, optional): Additional filters specific to the report type
+    force (bool, optional): Force regeneration even if a valid report exists
+
+Returns:
+    For new reports:
+        - report_id: The unique identifier for the report task
+        - state: The current state of the report (PENDING, RUNNING, etc.)
+
+    For completed reports:
+        - report_id: The unique identifier for the report task
+        - report_name: The name of the report
+        - url: Download URL for the report
+        - state: COMPLETED
+        - expires: Expiration timestamp for the report
+
+    For in-progress reports:
+        - report_id: The unique identifier for the report task
+        - state: Current state (PENDING, RUNNING)
+        - started_on: When the report generation started
+        - owner: Username of the report owner
+
+Error Responses:
+    400 Bad Request: Invalid parameters or report configuration
+    404 Not Found: Report type not found
+    403 Forbidden: User doesn't have permission for the requested report
 
 ### Example
 
@@ -41,7 +79,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.ReportsApi(api_client)
 org = 'org_example' # str | 
@@ -75,7 +112,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -89,9 +126,19 @@ Name | Type | Description  | Notes
 # **reports_orgs_retrieve**
 > ReportList reports_orgs_retrieve(org)
 
+Lists all available reports in the system.
 
+This endpoint returns a list of all reports available to the user, including:
+- Report metadata (name, description, icon)
+- Available query parameters for each report
+- Result columns that will be returned
+- Current status of any previously requested reports
 
-Lists all available reports in the system.  This endpoint returns a list of all reports available to the user, including: - Report metadata (name, description, icon) - Available query parameters for each report - Result columns that will be returned - Current status of any previously requested reports  If a report has been previously requested by the user, its status will be included in the response. Expired reports are automatically cleaned up.  Returns:     A list of report objects with their metadata and status information.
+If a report has been previously requested by the user, its status will be included
+in the response. Expired reports are automatically cleaned up.
+
+Returns:
+    A list of report objects with their metadata and status information.
 
 ### Example
 
@@ -114,7 +161,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.ReportsApi(api_client)
 org = 'org_example' # str | 
@@ -160,9 +206,22 @@ Name | Type | Description  | Notes
 # **reports_orgs_retrieve2**
 > ReportDetail reports_orgs_retrieve2(org, report_name)
 
+Retrieves detailed information about a specific report type.
 
+This endpoint provides:
+- Metadata about the report (name, description, icon)
+- Available query parameters for the report
+- Result columns that will be returned
+- Current status of the most recent report of this type requested by the user
 
-Retrieves detailed information about a specific report type.  This endpoint provides: - Metadata about the report (name, description, icon) - Available query parameters for the report - Result columns that will be returned - Current status of the most recent report of this type requested by the user  Path Parameters:     report_name (str): The identifier of the report to retrieve details for  Returns:     Detailed information about the report type and its current status if previously requested.  Error Responses:     404 Not Found: If the specified report type doesn't exist
+Path Parameters:
+    report_name (str): The identifier of the report to retrieve details for
+
+Returns:
+    Detailed information about the report type and its current status if previously requested.
+
+Error Responses:
+    404 Not Found: If the specified report type doesn't exist
 
 ### Example
 
@@ -185,7 +244,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.ReportsApi(api_client)
 org = 'org_example' # str | 
@@ -233,9 +291,18 @@ Name | Type | Description  | Notes
 # **reports_platforms_new_create**
 > ReportCreate reports_platforms_new_create(key, report_request=report_request)
 
+Triggers a new report generation.
 
+If the report has been previously requested, it returns the status of the report.
+Reports expire after a configured duration.
 
-Triggers a new report generation.  If the report has been previously requested, it returns the status of the report. Reports expire after a configured duration.  The request body should include: - report_name: Name of the report to generate - learner_id: (optional) ID of the learner to filter by - course_id: (optional) ID of the course to filter by - force: (optional) Force generation of a new report even if one exists - filters: (optional) Additional filters for the report - departments: (optional) Department IDs to filter by
+The request body should include:
+- report_name: Name of the report to generate
+- learner_id: (optional) ID of the learner to filter by
+- course_id: (optional) ID of the course to filter by
+- force: (optional) Force generation of a new report even if one exists
+- filters: (optional) Additional filters for the report
+- departments: (optional) Department IDs to filter by
 
 ### Example
 
@@ -259,7 +326,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.ReportsApi(api_client)
 key = 'key_example' # str | 
@@ -293,7 +359,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -307,9 +373,18 @@ Name | Type | Description  | Notes
 # **reports_platforms_retrieve**
 > ReportList reports_platforms_retrieve(key)
 
+Returns a list of reports available in the system.
 
+For each report, it includes:
+- display_name: Human-readable name of the report
+- description: Description of what the report contains
+- icon: URL to an icon representing the report
+- report_name: Unique identifier for the report
+- extra_query_params: Additional parameters that can be passed when creating the report
+- result_columns: Columns that will be included in the report results
+- status: Current status of the report if it has been previously requested
 
-Returns a list of reports available in the system.  For each report, it includes: - display_name: Human-readable name of the report - description: Description of what the report contains - icon: URL to an icon representing the report - report_name: Unique identifier for the report - extra_query_params: Additional parameters that can be passed when creating the report - result_columns: Columns that will be included in the report results - status: Current status of the report if it has been previously requested  The status will include details like the report ID, state, and download URL if completed.
+The status will include details like the report ID, state, and download URL if completed.
 
 ### Example
 
@@ -332,7 +407,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.ReportsApi(api_client)
 key = 'key_example' # str | 
@@ -378,8 +452,6 @@ Name | Type | Description  | Notes
 # **reports_platforms_retrieve2**
 > ReportDetail reports_platforms_retrieve2(key, report_name)
 
-
-
 Returns details of a specific report type including its status if previously requested.
 
 ### Example
@@ -403,7 +475,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.ReportsApi(api_client)
 key = 'key_example' # str | 

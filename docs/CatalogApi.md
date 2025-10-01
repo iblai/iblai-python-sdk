@@ -174,8 +174,6 @@ Method | HTTP request | Description
 # **catalog_access_requests_course_manage_create**
 > CourseAccessRequestDetail catalog_access_requests_course_manage_create(course_access_request_update, page=page, page_size=page_size, platform_key=platform_key, platform_org=platform_org, reviewed=reviewed, sort=sort)
 
-
-
 Update an existing access request (approve/reject)
 
 ### Example
@@ -200,7 +198,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 course_access_request_update = iblai.CourseAccessRequestUpdate() # CourseAccessRequestUpdate | 
@@ -244,7 +241,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -262,8 +259,6 @@ Name | Type | Description  | Notes
 
 # **catalog_access_requests_course_manage_retrieve**
 > PaginatedCourseAccessRequest catalog_access_requests_course_manage_retrieve(page=page, page_size=page_size, platform_key=platform_key, platform_org=platform_org, reviewed=reviewed, sort=sort)
-
-
 
 Retrieve a paginated list of access requests
 
@@ -288,7 +283,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 page = 56 # int | Page number for pagination (optional)
@@ -349,8 +343,6 @@ Name | Type | Description  | Notes
 # **catalog_access_requests_course_request_create**
 > CourseAccessRequestDetail catalog_access_requests_course_request_create(course_id, course_access_request_create, platform_key=platform_key, platform_org=platform_org)
 
-
-
 Create a new access request for a course
 
 ### Example
@@ -375,7 +367,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 course_id = 'course_id_example' # str | The unique identifier for the course
@@ -413,7 +404,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -431,8 +422,6 @@ Name | Type | Description  | Notes
 
 # **catalog_access_requests_course_request_retrieve**
 > CourseAccessRequestStatusResponse catalog_access_requests_course_request_retrieve(course_id, platform_key=platform_key, platform_org=platform_org)
-
-
 
 Check if the user has an active access request for a course
 
@@ -457,7 +446,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 course_id = 'course_id_example' # str | The unique identifier for the course
@@ -511,9 +499,12 @@ Name | Type | Description  | Notes
 # **catalog_conditionals_course_eligibility_retrieve**
 > catalog_conditionals_course_eligibility_retrieve()
 
+GET
+Retrieve prerequisite eligibility info for user/course
 
-
-GET Retrieve prerequisite eligibility info for user/course  Params: user_id/username course_id
+Params:
+user_id/username
+course_id
 
 ### Example
 
@@ -535,7 +526,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 
@@ -575,9 +565,13 @@ void (empty response body)
 # **catalog_conditionals_course_prerequisites_manage_bulk_create**
 > catalog_conditionals_course_prerequisites_manage_bulk_create()
 
+Prerequisite bulk management view
 
+Params:
+course_id
 
-Prerequisite bulk management view  Params: course_id  rules key_only
+rules
+key_only
 
 ### Example
 
@@ -599,7 +593,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 
@@ -639,9 +632,13 @@ void (empty response body)
 # **catalog_conditionals_course_prerequisites_manage_retrieve**
 > catalog_conditionals_course_prerequisites_manage_retrieve()
 
+GET
+Retrieve prerequisite info for course
 
+Params:
+course_id
 
-GET Retrieve prerequisite info for course  Params: course_id  key_only
+key_only
 
 ### Example
 
@@ -663,7 +660,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 
@@ -703,8 +699,6 @@ void (empty response body)
 # **catalog_courses_create**
 > Course catalog_courses_create(course_create_update, course_id=course_id, org=org, slug=slug)
 
-
-
 Add or update a course in the database.
 
 ### Example
@@ -729,7 +723,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 course_create_update = iblai.CourseCreateUpdate() # CourseCreateUpdate | 
@@ -767,7 +760,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -782,8 +775,6 @@ Name | Type | Description  | Notes
 
 # **catalog_courses_destroy**
 > CourseDeleteResponse catalog_courses_destroy(course_id, org=org, slug=slug)
-
-
 
 Remove a course from the database.
 
@@ -808,7 +799,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 course_id = 'course_id_example' # str | The unique identifier for the course to be deleted
@@ -859,8 +849,6 @@ Name | Type | Description  | Notes
 # **catalog_courses_list**
 > List[Course] catalog_courses_list(course_id=course_id, org=org, slug=slug)
 
-
-
 Retrieve courses matching specified filters.
 
 ### Example
@@ -884,7 +872,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 course_id = 'course_id_example' # str | Filter courses by their unique identifier (optional)
@@ -935,8 +922,6 @@ Name | Type | Description  | Notes
 # **catalog_eligibility_courses_check_retrieve**
 > Dict[str, object] catalog_eligibility_courses_check_retrieve(course_id, local_only=local_only, org=org, user_id=user_id, username=username)
 
-
-
 Check whether a user is eligible to enroll in a specific course.
 
 ### Example
@@ -959,7 +944,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 course_id = 'course_id_example' # str | Course ID to check eligibility for
@@ -1015,8 +999,6 @@ Name | Type | Description  | Notes
 # **catalog_eligibility_courses_list**
 > List[Course] catalog_eligibility_courses_list(org=org, query=query, user_id=user_id, username=username)
 
-
-
 List courses that a user is eligible for.
 
 ### Example
@@ -1040,7 +1022,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 org = 'org_example' # str | Filter eligible courses by organization (optional)
@@ -1093,9 +1074,65 @@ Name | Type | Description  | Notes
 # **catalog_enrollment_courses_search_retrieve**
 > CourseEnrollmentSearchResponse catalog_enrollment_courses_search_retrieve(course_id=course_id, course_name=course_name, email=email, include_default_platform=include_default_platform, org=org, page=page, page_size=page_size, platform_key=platform_key, slug=slug, sort=sort, user_id=user_id, username=username)
 
+API View for searching course enrollments.
 
+This endpoint allows searching for course enrollments based on various filters such as user ID,
+username, email, course ID, slug, organization, and platform key. Results are paginated and
+include detailed enrollment information.
 
-API View for searching course enrollments.  This endpoint allows searching for course enrollments based on various filters such as user ID, username, email, course ID, slug, organization, and platform key. Results are paginated and include detailed enrollment information.  Query Parameters:     user_id (str, optional): Filter enrollments by user ID     username (str, optional): Filter enrollments by username     email (str, optional): Filter enrollments by user email     course_id (str, optional): Filter enrollments by course ID     slug (str, optional): Filter enrollments by course slug     org (str, optional): Filter enrollments by organization     platform_key (str, optional): Filter enrollments by platform key     course_name (str, optional): Filter enrollments by course name (partial match)     include_default_platform (bool, optional): Include enrollments from default platform     sort (str, optional): Field to sort results by (default: '-id')     page (int, optional): Page number for pagination     page_size (int, optional): Number of items per page  Methods:     GET: Search for course enrollments with filtering and pagination  Returns:     GET: A paginated JSON response containing course enrollments:         {             \"count\": 42,             \"next\": \"https://api.example.com/api/catalog/enrollment/courses/search/?page=2\",             \"previous\": null,             \"results\": [                 {                     \"user_id\": 123,                     \"username\": \"student1\",                     \"email\": \"student1@example.com\",                     \"course_id\": \"course-v1:org+course+run\",                     \"active\": true,                     \"created\": \"2023-01-15T10:30:00Z\",                     \"started\": \"2023-01-15T10:30:00Z\",                     \"ended\": null,                     \"expired\": null,                     \"metadata\": {},                     \"name\": \"John Doe\",                     \"course_name\": \"Introduction to Data Science\"                 },                 ...             ]         }  Error Responses:     400 Bad Request: If required parameters are missing or if enrollment search fails     401 Unauthorized: If the user is not authenticated     403 Forbidden: If the user does not have permission to access this resource     500 Internal Server Error: If an unexpected error occurs  Access Control:     - Requires IsDMAdmin, IsEdxUserReadOnly, or IsPlatformAdminOfUserReadOnly permission     - Users can view their own enrollments     - Platform admins can view enrollments for users in their platform     - DM admins can view all enrollments
+Query Parameters:
+    user_id (str, optional): Filter enrollments by user ID
+    username (str, optional): Filter enrollments by username
+    email (str, optional): Filter enrollments by user email
+    course_id (str, optional): Filter enrollments by course ID
+    slug (str, optional): Filter enrollments by course slug
+    org (str, optional): Filter enrollments by organization
+    platform_key (str, optional): Filter enrollments by platform key
+    course_name (str, optional): Filter enrollments by course name (partial match)
+    include_default_platform (bool, optional): Include enrollments from default platform
+    sort (str, optional): Field to sort results by (default: '-id')
+    page (int, optional): Page number for pagination
+    page_size (int, optional): Number of items per page
+
+Methods:
+    GET: Search for course enrollments with filtering and pagination
+
+Returns:
+    GET: A paginated JSON response containing course enrollments:
+        {
+            "count": 42,
+            "next": "https://api.example.com/api/catalog/enrollment/courses/search/?page=2",
+            "previous": null,
+            "results": [
+                {
+                    "user_id": 123,
+                    "username": "student1",
+                    "email": "student1@example.com",
+                    "course_id": "course-v1:org+course+run",
+                    "active": true,
+                    "created": "2023-01-15T10:30:00Z",
+                    "started": "2023-01-15T10:30:00Z",
+                    "ended": null,
+                    "expired": null,
+                    "metadata": {},
+                    "name": "John Doe",
+                    "course_name": "Introduction to Data Science"
+                },
+                ...
+            ]
+        }
+
+Error Responses:
+    400 Bad Request: If required parameters are missing or if enrollment search fails
+    401 Unauthorized: If the user is not authenticated
+    403 Forbidden: If the user does not have permission to access this resource
+    500 Internal Server Error: If an unexpected error occurs
+
+Access Control:
+    - Requires IsDMAdmin, IsEdxUserReadOnly, or IsPlatformAdminOfUserReadOnly permission
+    - Users can view their own enrollments
+    - Platform admins can view enrollments for users in their platform
+    - DM admins can view all enrollments
 
 ### Example
 
@@ -1118,7 +1155,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 course_id = 'course_id_example' # str | Filter enrollments by course ID (optional)
@@ -1186,8 +1222,6 @@ Name | Type | Description  | Notes
 # **catalog_enrollment_pathways_create**
 > PathwayEnrollment catalog_enrollment_pathways_create(active=active, include_default_platform=include_default_platform, include_metadata=include_metadata, org=org, pathway_id=pathway_id, pathway_key=pathway_key, pathway_uuid=pathway_uuid, platform_key=platform_key, slug=slug, user_id=user_id, username=username, pathway_enrollment_request=pathway_enrollment_request)
 
-
-
 Log user enrollment with a pathway.
 
 ### Example
@@ -1212,7 +1246,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 active = True # bool | Whether the enrollment should be active (optional) (default to True)
@@ -1266,7 +1299,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -1279,8 +1312,6 @@ Name | Type | Description  | Notes
 
 # **catalog_enrollment_pathways_destroy**
 > PathwayEnrollment catalog_enrollment_pathways_destroy(active=active, include_default_platform=include_default_platform, include_metadata=include_metadata, org=org, pathway_id=pathway_id, pathway_key=pathway_key, pathway_uuid=pathway_uuid, platform_key=platform_key, slug=slug, user_id=user_id, username=username)
-
-
 
 Unenroll from a pathway. Deactivates enrollment.
 
@@ -1305,7 +1336,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 active = True # bool | Whether the enrollment should be active (optional) (default to True)
@@ -1371,8 +1401,6 @@ Name | Type | Description  | Notes
 # **catalog_enrollment_pathways_retrieve**
 > PathwayEnrollmentPlus catalog_enrollment_pathways_retrieve(active=active, include_default_platform=include_default_platform, include_metadata=include_metadata, org=org, pathway_id=pathway_id, pathway_key=pathway_key, pathway_uuid=pathway_uuid, platform_key=platform_key, slug=slug, user_id=user_id, username=username)
 
-
-
 Search pathway enrollments. Requires user_id or username and pathway_id or slug.
 
 ### Example
@@ -1396,7 +1424,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 active = True # bool | Whether the enrollment should be active (optional) (default to True)
@@ -1462,8 +1489,6 @@ Name | Type | Description  | Notes
 # **catalog_enrollment_pathways_search_retrieve**
 > PathwayEnrollmentPlus catalog_enrollment_pathways_search_retrieve()
 
-
-
 Search pathway enrollments based on user or pathway identifiers. Returns paginated enrollment results.
 
 ### Example
@@ -1487,7 +1512,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 
@@ -1529,8 +1553,6 @@ This endpoint does not need any parameter.
 # **catalog_enrollment_pathways_self_create**
 > PathwayEnrollment catalog_enrollment_pathways_self_create(active=active, org=org, pathway_id=pathway_id, pathway_key=pathway_key, platform_key=platform_key, slug=slug, user_id=user_id, username=username, pathway_self_enrollment_request=pathway_self_enrollment_request)
 
-
-
 Log user enrollment with a pathway.
 
 ### Example
@@ -1555,7 +1577,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 active = True # bool | Whether the enrollment should be active (optional) (default to True)
@@ -1603,7 +1624,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -1616,8 +1637,6 @@ Name | Type | Description  | Notes
 
 # **catalog_enrollment_pathways_self_destroy**
 > PathwayEnrollment catalog_enrollment_pathways_self_destroy(active=active, org=org, pathway_id=pathway_id, pathway_key=pathway_key, platform_key=platform_key, slug=slug, user_id=user_id, username=username)
-
-
 
 Unenroll from a pathway. Deactivates enrollment.
 
@@ -1642,7 +1661,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 active = True # bool | Whether the enrollment should be active (optional) (default to True)
@@ -1702,8 +1720,6 @@ Name | Type | Description  | Notes
 # **catalog_enrollment_programs_create**
 > ProgramEnrollment catalog_enrollment_programs_create(active=active, expired=expired, ignore_expiration=ignore_expiration, include_default_platform=include_default_platform, include_metadata=include_metadata, org=org, platform_key=platform_key, program_id=program_id, program_key=program_key, program_type=program_type, slug=slug, started=started, user_id=user_id, username=username, program_enrollment_plus=program_enrollment_plus)
 
-
-
 Log user enrollment with a program.
 
 ### Example
@@ -1728,7 +1744,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 active = True # bool | Whether the enrollment should be active (optional) (default to True)
@@ -1788,7 +1803,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -1801,8 +1816,6 @@ Name | Type | Description  | Notes
 
 # **catalog_enrollment_programs_destroy**
 > ProgramEnrollment catalog_enrollment_programs_destroy(active=active, expired=expired, ignore_expiration=ignore_expiration, include_default_platform=include_default_platform, include_metadata=include_metadata, org=org, platform_key=platform_key, program_id=program_id, program_key=program_key, program_type=program_type, slug=slug, started=started, user_id=user_id, username=username)
-
-
 
 Unenroll from a program. Deactivates enrollment.
 
@@ -1827,7 +1840,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 active = True # bool | Whether the enrollment should be active (optional) (default to True)
@@ -1899,8 +1911,6 @@ Name | Type | Description  | Notes
 # **catalog_enrollment_programs_retrieve**
 > ProgramEnrollmentPlus catalog_enrollment_programs_retrieve(active=active, expired=expired, ignore_expiration=ignore_expiration, include_default_platform=include_default_platform, include_metadata=include_metadata, org=org, platform_key=platform_key, program_id=program_id, program_key=program_key, program_type=program_type, slug=slug, started=started, user_id=user_id, username=username)
 
-
-
 Search program enrollments. Requires user_id or username and program_id or slug.
 
 ### Example
@@ -1924,7 +1934,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 active = True # bool | Whether the enrollment should be active (optional) (default to True)
@@ -1996,8 +2005,6 @@ Name | Type | Description  | Notes
 # **catalog_enrollment_programs_search_retrieve**
 > ProgramEnrollmentSearchResponse catalog_enrollment_programs_search_retrieve(include_default_platform=include_default_platform, org=org, page=page, page_size=page_size, platform_key=platform_key, program_id=program_id, program_type=program_type, slug=slug, sort=sort, user_id=user_id, username=username)
 
-
-
 Search program enrollments based on user or program identifiers. Returns paginated enrollment results.
 
 ### Example
@@ -2021,7 +2028,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 include_default_platform = True # bool | Include enrollments from default platform (optional)
@@ -2087,8 +2093,6 @@ Name | Type | Description  | Notes
 # **catalog_enrollment_programs_self_create**
 > ProgramEnrollment catalog_enrollment_programs_self_create(active=active, expired=expired, ignore_expiration=ignore_expiration, org=org, platform_key=platform_key, program_id=program_id, program_key=program_key, slug=slug, started=started, user_id=user_id, username=username, program_enrollment=program_enrollment)
 
-
-
 Log user enrollment with a program.
 
 ### Example
@@ -2112,7 +2116,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 active = True # bool | Whether the enrollment should be active (optional) (default to True)
@@ -2166,7 +2169,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -2179,8 +2182,6 @@ Name | Type | Description  | Notes
 
 # **catalog_enrollment_programs_self_destroy**
 > catalog_enrollment_programs_self_destroy(active=active, expired=expired, ignore_expiration=ignore_expiration, org=org, platform_key=platform_key, program_id=program_id, program_key=program_key, slug=slug, started=started, user_id=user_id, username=username)
-
-
 
 Unenroll from a program. Deactivates enrollment.
 
@@ -2204,7 +2205,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 active = True # bool | Whether the enrollment should be active (optional) (default to True)
@@ -2268,8 +2268,6 @@ void (empty response body)
 # **catalog_increment_create**
 > int catalog_increment_create(catalog_auto_increment_update_request)
 
-
-
 Update auto increment information and retrieve a new ID for a specific platform.
 
 ### Example
@@ -2293,7 +2291,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 catalog_auto_increment_update_request = iblai.CatalogAutoIncrementUpdateRequest() # CatalogAutoIncrementUpdateRequest | 
@@ -2325,7 +2322,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -2340,8 +2337,6 @@ Name | Type | Description  | Notes
 
 # **catalog_increment_retrieve**
 > CatalogAutoIncrementResponse catalog_increment_retrieve(key=key, org=org)
-
-
 
 Retrieve auto increment information for a specific platform.
 
@@ -2366,7 +2361,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 key = 'key_example' # str | Platform key identifier (optional)
@@ -2415,8 +2409,6 @@ Name | Type | Description  | Notes
 # **catalog_invitations_course_blank_create**
 > BulkCourseInvitationResponse catalog_invitations_course_blank_create(blank_course_invitation_create)
 
-
-
 Create multiple blank course invitations
 
 ### Example
@@ -2441,7 +2433,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 blank_course_invitation_create = iblai.BlankCourseInvitationCreate() # BlankCourseInvitationCreate | 
@@ -2473,7 +2464,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -2491,8 +2482,6 @@ Name | Type | Description  | Notes
 
 # **catalog_invitations_course_bulk_create**
 > BulkCourseInvitationResponse catalog_invitations_course_bulk_create(bulk_course_invitation_create)
-
-
 
 Create multiple course invitations
 
@@ -2518,7 +2507,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 bulk_course_invitation_create = iblai.BulkCourseInvitationCreate() # BulkCourseInvitationCreate | 
@@ -2550,7 +2538,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -2567,8 +2555,6 @@ Name | Type | Description  | Notes
 
 # **catalog_invitations_course_create**
 > CourseInvitationDetail catalog_invitations_course_create(course_invitation_create, active=active, course_id=course_id, email=email, key=key, org=org, page=page, page_size=page_size, platform_key=platform_key, platform_org=platform_org, sort=sort, source=source, username=username, verbose=verbose)
-
-
 
 Create a new course invitation
 
@@ -2594,7 +2580,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 course_invitation_create = iblai.CourseInvitationCreate() # CourseInvitationCreate | 
@@ -2652,7 +2637,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -2670,8 +2655,6 @@ Name | Type | Description  | Notes
 
 # **catalog_invitations_course_destroy**
 > catalog_invitations_course_destroy(active=active, course_id=course_id, email=email, key=key, org=org, page=page, page_size=page_size, platform_key=platform_key, platform_org=platform_org, sort=sort, source=source, username=username, verbose=verbose)
-
-
 
 Remove a course invitation: TBD
 
@@ -2695,7 +2678,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 active = True # bool | Filter by active status (optional)
@@ -2768,8 +2750,6 @@ void (empty response body)
 # **catalog_invitations_course_redeem_create**
 > CourseInvitationDetail catalog_invitations_course_redeem_create(course_invitation_redemption)
 
-
-
 Redeem a blank course invitation
 
 ### Example
@@ -2794,7 +2774,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 course_invitation_redemption = iblai.CourseInvitationRedemption() # CourseInvitationRedemption | 
@@ -2826,7 +2805,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -2844,8 +2823,6 @@ Name | Type | Description  | Notes
 
 # **catalog_invitations_course_retrieve**
 > PaginatedCourseInvitation catalog_invitations_course_retrieve(active=active, course_id=course_id, email=email, key=key, org=org, page=page, page_size=page_size, platform_key=platform_key, platform_org=platform_org, sort=sort, source=source, username=username, verbose=verbose)
-
-
 
 Retrieve a paginated list of course invitations
 
@@ -2870,7 +2847,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 active = True # bool | Filter by active status (optional)
@@ -2944,8 +2920,6 @@ Name | Type | Description  | Notes
 # **catalog_invitations_platform_blank_create**
 > BulkPlatformInvitationResponse catalog_invitations_platform_blank_create(blank_platform_invitation_create)
 
-
-
 Create multiple blank platform invitations
 
 ### Example
@@ -2970,7 +2944,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 blank_platform_invitation_create = iblai.BlankPlatformInvitationCreate() # BlankPlatformInvitationCreate | 
@@ -3002,7 +2975,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -3021,9 +2994,37 @@ Name | Type | Description  | Notes
 # **catalog_invitations_platform_bulk_create**
 > BulkPlatformInvitationResponse catalog_invitations_platform_bulk_create(bulk_platform_invitation_create)
 
+API View for bulk creating platform invitations.
 
+This endpoint allows creating multiple platform invitations in a single request.
 
-API View for bulk creating platform invitations.  This endpoint allows creating multiple platform invitations in a single request.  Request Parameters:     invitation_data (list, required): List of invitation data objects, each containing:         platform_key (str, required): The platform to create an invitation for         email (str, required): The email address to invite         active (bool, optional): Whether the invitation is active         metadata fields: Any additional parameters will be added as metadata     platform_key (str, required for platform admins): The platform key for permission validation  Methods:     POST: Create multiple platform invitations  Returns:     POST: A JSON response containing the creation results:         {             \"successes\": 5,             \"error_codes\": []         }  Error Responses:     400 Bad Request: If required parameters are missing or invalid     401 Unauthorized: If the user is not authenticated     403 Forbidden: If the user does not have permission to access this resource     500 Internal Server Error: If an unexpected error occurs during creation  Access Control:     - Requires IsDMAdmin or IsPlatformAdmin permission     - Available to platform administrators and DM admins
+Request Parameters:
+    invitation_data (list, required): List of invitation data objects, each containing:
+        platform_key (str, required): The platform to create an invitation for
+        email (str, required): The email address to invite
+        active (bool, optional): Whether the invitation is active
+        metadata fields: Any additional parameters will be added as metadata
+    platform_key (str, required for platform admins): The platform key for permission validation
+
+Methods:
+    POST: Create multiple platform invitations
+
+Returns:
+    POST: A JSON response containing the creation results:
+        {
+            "successes": 5,
+            "error_codes": []
+        }
+
+Error Responses:
+    400 Bad Request: If required parameters are missing or invalid
+    401 Unauthorized: If the user is not authenticated
+    403 Forbidden: If the user does not have permission to access this resource
+    500 Internal Server Error: If an unexpected error occurs during creation
+
+Access Control:
+    - Requires IsDMAdmin or IsPlatformAdmin permission
+    - Available to platform administrators and DM admins
 
 ### Example
 
@@ -3047,7 +3048,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 bulk_platform_invitation_create = iblai.BulkPlatformInvitationCreate() # BulkPlatformInvitationCreate | 
@@ -3079,7 +3079,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -3097,8 +3097,6 @@ Name | Type | Description  | Notes
 # **catalog_invitations_platform_check_retrieve**
 > catalog_invitations_platform_check_retrieve(email)
 
-
-
 Check if a user has an active platform invitation
 
 ### Example
@@ -3108,7 +3106,6 @@ Check if a user has an active platform invitation
 import iblai
 from iblai.rest import ApiException
 from pprint import pprint
-
 
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
@@ -3155,8 +3152,6 @@ No authorization required
 # **catalog_invitations_platform_create**
 > PlatformInvitationDetail catalog_invitations_platform_create(platform_invitation_create, active=active, email=email, org=org, page=page, page_size=page_size, platform_key=platform_key, sort=sort, source=source, username=username, verbose=verbose)
 
-
-
 Create a new platform invitation
 
 ### Example
@@ -3181,7 +3176,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 platform_invitation_create = iblai.PlatformInvitationCreate() # PlatformInvitationCreate | 
@@ -3233,7 +3227,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -3251,8 +3245,6 @@ Name | Type | Description  | Notes
 
 # **catalog_invitations_platform_destroy**
 > catalog_invitations_platform_destroy(active=active, email=email, org=org, page=page, page_size=page_size, platform_key=platform_key, sort=sort, source=source, username=username, verbose=verbose)
-
-
 
 Remove a platform invitation: TBD
 
@@ -3276,7 +3268,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 active = True # bool | Filter by active status (optional)
@@ -3343,8 +3334,6 @@ void (empty response body)
 # **catalog_invitations_platform_redeem_create**
 > PlatformInvitationDetail catalog_invitations_platform_redeem_create(platform_invitation_redemption)
 
-
-
 Redeem a blank platform invitation
 
 ### Example
@@ -3369,7 +3358,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 platform_invitation_redemption = iblai.PlatformInvitationRedemption() # PlatformInvitationRedemption | 
@@ -3401,7 +3389,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -3420,9 +3408,88 @@ Name | Type | Description  | Notes
 # **catalog_invitations_platform_retrieve**
 > PaginatedPlatformInvitation catalog_invitations_platform_retrieve(active=active, email=email, org=org, page=page, page_size=page_size, platform_key=platform_key, sort=sort, source=source, username=username, verbose=verbose)
 
+API View for managing platform invitations.
 
+This endpoint allows querying, creating, and deleting platform invitations for users.
 
-API View for managing platform invitations.  This endpoint allows querying, creating, and deleting platform invitations for users.  Query/Request Parameters:     For GET:         platform_key (str, optional): Filter by platform key         org (str, optional): Filter by platform organization         email (str, optional): Filter by user email         source (str, optional): Filter by invitation source         active (bool, optional): Filter by active status         sort (str, optional): Field to sort results by (default: '-id')         metadata fields: Any additional parameters will be treated as metadata filters      For POST:         platform_key (str, required): The platform to create an invitation for         email (str, required): The email address to invite         active (bool, optional): Whether the invitation is active         metadata fields: Any additional parameters will be added as metadata      For DELETE:         id (int, required): The ID of the invitation to delete         org (str, required): The platform organization for verification  Methods:     GET: Retrieve a paginated list of platform invitations     POST: Create a new platform invitation     DELETE: Remove a platform invitation  Returns:     GET: A paginated JSON response containing platform invitations:         {             \"count\": 10,             \"next\": \"https://example.com/api/catalog/invitations/platform/?page=2\",             \"previous\": null,             \"results\": [                 {                     \"id\": 123,                     \"user_id\": 456,                     \"username\": \"username\",                     \"email\": \"user@example.com\",                     \"created\": \"2023-06-15T14:30:00Z\",                     \"started\": \"2023-06-15T14:30:00Z\",                     \"source\": \"source\",                     \"redirect_to\": \"https://example.com\",                     \"expired\": null,                     \"active\": true,                     \"metadata\": {},                     \"platform_key\": \"platform1\"                 },                 ...             ]         }      POST: A JSON response containing the created invitation:         {             \"id\": 123,             \"user_id\": 456,             \"username\": \"username\",             \"email\": \"user@example.com\",             \"created\": \"2023-06-15T14:30:00Z\",             \"started\": \"2023-06-15T14:30:00Z\",             \"source\": \"source\",             \"redirect_to\": \"https://example.com\",             \"expired\": null,             \"active\": true,             \"metadata\": {},             \"platform_key\": \"platform1\"         }      DELETE: A success response with status 200  Error Responses:     400 Bad Request: If required parameters are missing or invalid     401 Unauthorized: If the user is not authenticated     403 Forbidden: If the user does not have permission to access this resource     404 Not Found: If the platform or invitation doesn't exist     500 Internal Server Error: If an unexpected error occurs  Access Control:     - Requires IsDMAdmin or IsPlatformAdmin permission     - Available to platform administrators and DM admins
+Query/Request Parameters:
+    For GET:
+        platform_key (str, optional): Filter by platform key
+        org (str, optional): Filter by platform organization
+        email (str, optional): Filter by user email
+        source (str, optional): Filter by invitation source
+        active (bool, optional): Filter by active status
+        sort (str, optional): Field to sort results by (default: '-id')
+        metadata fields: Any additional parameters will be treated as metadata filters
+
+    For POST:
+        platform_key (str, required): The platform to create an invitation for
+        email (str, required): The email address to invite
+        active (bool, optional): Whether the invitation is active
+        metadata fields: Any additional parameters will be added as metadata
+
+    For DELETE:
+        id (int, required): The ID of the invitation to delete
+        org (str, required): The platform organization for verification
+
+Methods:
+    GET: Retrieve a paginated list of platform invitations
+    POST: Create a new platform invitation
+    DELETE: Remove a platform invitation
+
+Returns:
+    GET: A paginated JSON response containing platform invitations:
+        {
+            "count": 10,
+            "next": "https://example.com/api/catalog/invitations/platform/?page=2",
+            "previous": null,
+            "results": [
+                {
+                    "id": 123,
+                    "user_id": 456,
+                    "username": "username",
+                    "email": "user@example.com",
+                    "created": "2023-06-15T14:30:00Z",
+                    "started": "2023-06-15T14:30:00Z",
+                    "source": "source",
+                    "redirect_to": "https://example.com",
+                    "expired": null,
+                    "active": true,
+                    "metadata": {},
+                    "platform_key": "platform1"
+                },
+                ...
+            ]
+        }
+
+    POST: A JSON response containing the created invitation:
+        {
+            "id": 123,
+            "user_id": 456,
+            "username": "username",
+            "email": "user@example.com",
+            "created": "2023-06-15T14:30:00Z",
+            "started": "2023-06-15T14:30:00Z",
+            "source": "source",
+            "redirect_to": "https://example.com",
+            "expired": null,
+            "active": true,
+            "metadata": {},
+            "platform_key": "platform1"
+        }
+
+    DELETE: A success response with status 200
+
+Error Responses:
+    400 Bad Request: If required parameters are missing or invalid
+    401 Unauthorized: If the user is not authenticated
+    403 Forbidden: If the user does not have permission to access this resource
+    404 Not Found: If the platform or invitation doesn't exist
+    500 Internal Server Error: If an unexpected error occurs
+
+Access Control:
+    - Requires IsDMAdmin or IsPlatformAdmin permission
+    - Available to platform administrators and DM admins
 
 ### Example
 
@@ -3445,7 +3512,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 active = True # bool | Filter by active status (optional)
@@ -3513,9 +3579,36 @@ Name | Type | Description  | Notes
 # **catalog_invitations_program_blank_create**
 > BulkProgramInvitationResponse catalog_invitations_program_blank_create(blank_program_invitation_create)
 
+API View for creating blank program invitations.
 
+This endpoint allows creating multiple blank program invitations (without user association)
+that can be redeemed later.
 
-API View for creating blank program invitations.  This endpoint allows creating multiple blank program invitations (without user association) that can be redeemed later.  Request Parameters:     program_key (str, required): The program to create invitations for     source (str, required): The source identifier for the invitations     count (int, required): The number of blank invitations to create     metadata fields: Any additional parameters will be added as metadata  Methods:     POST: Create multiple blank program invitations  Returns:     POST: A JSON response containing the creation results:         {             \"successes\": 10,             \"error_codes\": []         }  Error Responses:     400 Bad Request: If required parameters are missing or invalid     401 Unauthorized: If the user is not authenticated     403 Forbidden: If the user does not have permission to access this resource     500 Internal Server Error: If an unexpected error occurs during creation  Access Control:     - Requires IsDMAdmin or IsPlatformAdminForProgram permission     - Available to DM admins and platform admins for the specific program
+Request Parameters:
+    program_key (str, required): The program to create invitations for
+    source (str, required): The source identifier for the invitations
+    count (int, required): The number of blank invitations to create
+    metadata fields: Any additional parameters will be added as metadata
+
+Methods:
+    POST: Create multiple blank program invitations
+
+Returns:
+    POST: A JSON response containing the creation results:
+        {
+            "successes": 10,
+            "error_codes": []
+        }
+
+Error Responses:
+    400 Bad Request: If required parameters are missing or invalid
+    401 Unauthorized: If the user is not authenticated
+    403 Forbidden: If the user does not have permission to access this resource
+    500 Internal Server Error: If an unexpected error occurs during creation
+
+Access Control:
+    - Requires IsDMAdmin or IsPlatformAdminForProgram permission
+    - Available to DM admins and platform admins for the specific program
 
 ### Example
 
@@ -3539,7 +3632,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 blank_program_invitation_create = iblai.BlankProgramInvitationCreate() # BlankProgramInvitationCreate | 
@@ -3571,7 +3663,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -3590,9 +3682,37 @@ Name | Type | Description  | Notes
 # **catalog_invitations_program_bulk_create**
 > BulkProgramInvitationResponse catalog_invitations_program_bulk_create(bulk_program_invitation_create)
 
+API View for bulk creation of program invitations.
 
+This endpoint allows creating multiple program invitations at once.
 
-API View for bulk creation of program invitations.  This endpoint allows creating multiple program invitations at once.  Request Parameters:     invitation_data (list, required): List of invitation data objects, each containing:         program_key (str, required): The program to create an invitation for         email (str, required): The email address to invite         active (bool, optional): Whether the invitation is active         metadata fields: Any additional parameters will be added as metadata     platform_key (str, required for platform admins): The platform key for permission validation  Methods:     POST: Create multiple program invitations  Returns:     POST: A JSON response containing the creation results:         {             \"successes\": 5,             \"error_codes\": []         }  Error Responses:     400 Bad Request: If required parameters are missing or invalid     401 Unauthorized: If the user is not authenticated     403 Forbidden: If the user does not have permission to access this resource     500 Internal Server Error: If an unexpected error occurs during creation  Access Control:     - Requires IsDMAdmin or IsPlatformAdmin permission     - Available to platform administrators and DM admins
+Request Parameters:
+    invitation_data (list, required): List of invitation data objects, each containing:
+        program_key (str, required): The program to create an invitation for
+        email (str, required): The email address to invite
+        active (bool, optional): Whether the invitation is active
+        metadata fields: Any additional parameters will be added as metadata
+    platform_key (str, required for platform admins): The platform key for permission validation
+
+Methods:
+    POST: Create multiple program invitations
+
+Returns:
+    POST: A JSON response containing the creation results:
+        {
+            "successes": 5,
+            "error_codes": []
+        }
+
+Error Responses:
+    400 Bad Request: If required parameters are missing or invalid
+    401 Unauthorized: If the user is not authenticated
+    403 Forbidden: If the user does not have permission to access this resource
+    500 Internal Server Error: If an unexpected error occurs during creation
+
+Access Control:
+    - Requires IsDMAdmin or IsPlatformAdmin permission
+    - Available to platform administrators and DM admins
 
 ### Example
 
@@ -3616,7 +3736,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 bulk_program_invitation_create = iblai.BulkProgramInvitationCreate() # BulkProgramInvitationCreate | 
@@ -3648,7 +3767,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -3666,9 +3785,88 @@ Name | Type | Description  | Notes
 # **catalog_invitations_program_create**
 > ProgramInvitationDetail catalog_invitations_program_create(program_invitation_create, active=active, email=email, org=org, page=page, page_size=page_size, program_key=program_key, sort=sort, source=source, username=username, verbose=verbose)
 
+API View for managing program invitations.
 
+This endpoint allows querying, creating, and deleting program invitations for users.
 
-API View for managing program invitations.  This endpoint allows querying, creating, and deleting program invitations for users.  Query/Request Parameters:     For GET:         program_key (str, optional): Filter by program key         org (str, optional): Filter by platform organization         email (str, optional): Filter by user email         source (str, optional): Filter by invitation source         active (bool, optional): Filter by active status         sort (str, optional): Field to sort results by (default: '-id')         metadata fields: Any additional parameters will be treated as metadata filters      For POST:         program_key (str, required): The program to create an invitation for         email (str, required): The email address to invite         active (bool, optional): Whether the invitation is active         metadata fields: Any additional parameters will be added as metadata      For DELETE:         id (int, required): The ID of the invitation to delete         org (str, required): The platform organization for verification  Methods:     GET: Retrieve a paginated list of program invitations     POST: Create a new program invitation     DELETE: Remove a program invitation  Returns:     GET: A paginated JSON response containing program invitations:         {             \"count\": 10,             \"next\": \"https://example.com/api/catalog/invitations/program/?page=2\",             \"previous\": null,             \"results\": [                 {                     \"id\": 123,                     \"user_id\": 456,                     \"username\": \"username\",                     \"email\": \"user@example.com\",                     \"created\": \"2023-06-15T14:30:00Z\",                     \"started\": \"2023-06-15T14:30:00Z\",                     \"source\": \"source\",                     \"redirect_to\": \"https://example.com\",                     \"expired\": null,                     \"active\": true,                     \"metadata\": {},                     \"program_key\": \"org+program1\"                 },                 ...             ]         }      POST: A JSON response containing the created invitation:         {             \"id\": 123,             \"user_id\": 456,             \"username\": \"username\",             \"email\": \"user@example.com\",             \"created\": \"2023-06-15T14:30:00Z\",             \"started\": \"2023-06-15T14:30:00Z\",             \"source\": \"source\",             \"redirect_to\": \"https://example.com\",             \"expired\": null,             \"active\": true,             \"metadata\": {},             \"program_key\": \"org+program1\"         }      DELETE: A success response with status 200  Error Responses:     400 Bad Request: If required parameters are missing or invalid     401 Unauthorized: If the user is not authenticated     403 Forbidden: If the user does not have permission to access this resource     404 Not Found: If the program or invitation doesn't exist     500 Internal Server Error: If an unexpected error occurs  Access Control:     - Requires IsDMAdmin, IsPlatformAdminReadOnly, or IsPlatformAdminForProgram permission     - Read-only access for platform admins, full access for DM admins and program-specific admins
+Query/Request Parameters:
+    For GET:
+        program_key (str, optional): Filter by program key
+        org (str, optional): Filter by platform organization
+        email (str, optional): Filter by user email
+        source (str, optional): Filter by invitation source
+        active (bool, optional): Filter by active status
+        sort (str, optional): Field to sort results by (default: '-id')
+        metadata fields: Any additional parameters will be treated as metadata filters
+
+    For POST:
+        program_key (str, required): The program to create an invitation for
+        email (str, required): The email address to invite
+        active (bool, optional): Whether the invitation is active
+        metadata fields: Any additional parameters will be added as metadata
+
+    For DELETE:
+        id (int, required): The ID of the invitation to delete
+        org (str, required): The platform organization for verification
+
+Methods:
+    GET: Retrieve a paginated list of program invitations
+    POST: Create a new program invitation
+    DELETE: Remove a program invitation
+
+Returns:
+    GET: A paginated JSON response containing program invitations:
+        {
+            "count": 10,
+            "next": "https://example.com/api/catalog/invitations/program/?page=2",
+            "previous": null,
+            "results": [
+                {
+                    "id": 123,
+                    "user_id": 456,
+                    "username": "username",
+                    "email": "user@example.com",
+                    "created": "2023-06-15T14:30:00Z",
+                    "started": "2023-06-15T14:30:00Z",
+                    "source": "source",
+                    "redirect_to": "https://example.com",
+                    "expired": null,
+                    "active": true,
+                    "metadata": {},
+                    "program_key": "org+program1"
+                },
+                ...
+            ]
+        }
+
+    POST: A JSON response containing the created invitation:
+        {
+            "id": 123,
+            "user_id": 456,
+            "username": "username",
+            "email": "user@example.com",
+            "created": "2023-06-15T14:30:00Z",
+            "started": "2023-06-15T14:30:00Z",
+            "source": "source",
+            "redirect_to": "https://example.com",
+            "expired": null,
+            "active": true,
+            "metadata": {},
+            "program_key": "org+program1"
+        }
+
+    DELETE: A success response with status 200
+
+Error Responses:
+    400 Bad Request: If required parameters are missing or invalid
+    401 Unauthorized: If the user is not authenticated
+    403 Forbidden: If the user does not have permission to access this resource
+    404 Not Found: If the program or invitation doesn't exist
+    500 Internal Server Error: If an unexpected error occurs
+
+Access Control:
+    - Requires IsDMAdmin, IsPlatformAdminReadOnly, or IsPlatformAdminForProgram permission
+    - Read-only access for platform admins, full access for DM admins and program-specific admins
 
 ### Example
 
@@ -3692,7 +3890,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 program_invitation_create = iblai.ProgramInvitationCreate() # ProgramInvitationCreate | 
@@ -3744,7 +3941,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -3762,8 +3959,6 @@ Name | Type | Description  | Notes
 
 # **catalog_invitations_program_destroy**
 > catalog_invitations_program_destroy(active=active, email=email, org=org, page=page, page_size=page_size, program_key=program_key, sort=sort, source=source, username=username, verbose=verbose)
-
-
 
 Remove a program invitation: TBD
 
@@ -3787,7 +3982,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 active = True # bool | Filter by active status (optional)
@@ -3854,9 +4048,47 @@ void (empty response body)
 # **catalog_invitations_program_redeem_create**
 > ProgramInvitationDetail catalog_invitations_program_redeem_create(program_invitation_redemption)
 
+API View for redeeming blank program invitations.
 
+This endpoint allows redeeming a blank program invitation by associating it with a user.
 
-API View for redeeming blank program invitations.  This endpoint allows redeeming a blank program invitation by associating it with a user.  Request Parameters:     program_key (str, required): The program key for the invitation     source (str, required): The source identifier for the invitation     email (str, optional): The email to associate with the invitation     username (str, optional): The username to associate with the invitation     metadata fields: Any additional parameters will be added as metadata  Methods:     POST: Redeem a blank program invitation  Returns:     POST: A JSON response containing the redeemed invitation:         {             \"id\": 123,             \"user_id\": 456,             \"username\": \"username\",             \"email\": \"user@example.com\",             \"created\": \"2023-06-15T14:30:00Z\",             \"started\": \"2023-06-15T14:30:00Z\",             \"source\": \"source\",             \"redirect_to\": \"https://example.com\",             \"expired\": null,             \"active\": true,             \"metadata\": {},             \"program_key\": \"org+program1\"         }  Error Responses:     400 Bad Request: If required parameters are missing or invalid     401 Unauthorized: If the user is not authenticated     403 Forbidden: If the user does not have permission to access this resource     404 Not Found: If no blank invitation is available     500 Internal Server Error: If an unexpected error occurs during redemption  Access Control:     - Requires IsDMAdmin or IsPlatformAdminForProgram permission     - Available to DM admins and platform admins for the specific program
+Request Parameters:
+    program_key (str, required): The program key for the invitation
+    source (str, required): The source identifier for the invitation
+    email (str, optional): The email to associate with the invitation
+    username (str, optional): The username to associate with the invitation
+    metadata fields: Any additional parameters will be added as metadata
+
+Methods:
+    POST: Redeem a blank program invitation
+
+Returns:
+    POST: A JSON response containing the redeemed invitation:
+        {
+            "id": 123,
+            "user_id": 456,
+            "username": "username",
+            "email": "user@example.com",
+            "created": "2023-06-15T14:30:00Z",
+            "started": "2023-06-15T14:30:00Z",
+            "source": "source",
+            "redirect_to": "https://example.com",
+            "expired": null,
+            "active": true,
+            "metadata": {},
+            "program_key": "org+program1"
+        }
+
+Error Responses:
+    400 Bad Request: If required parameters are missing or invalid
+    401 Unauthorized: If the user is not authenticated
+    403 Forbidden: If the user does not have permission to access this resource
+    404 Not Found: If no blank invitation is available
+    500 Internal Server Error: If an unexpected error occurs during redemption
+
+Access Control:
+    - Requires IsDMAdmin or IsPlatformAdminForProgram permission
+    - Available to DM admins and platform admins for the specific program
 
 ### Example
 
@@ -3880,7 +4112,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 program_invitation_redemption = iblai.ProgramInvitationRedemption() # ProgramInvitationRedemption | 
@@ -3912,7 +4143,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -3931,9 +4162,88 @@ Name | Type | Description  | Notes
 # **catalog_invitations_program_retrieve**
 > PaginatedProgramInvitation catalog_invitations_program_retrieve(active=active, email=email, org=org, page=page, page_size=page_size, program_key=program_key, sort=sort, source=source, username=username, verbose=verbose)
 
+API View for managing program invitations.
 
+This endpoint allows querying, creating, and deleting program invitations for users.
 
-API View for managing program invitations.  This endpoint allows querying, creating, and deleting program invitations for users.  Query/Request Parameters:     For GET:         program_key (str, optional): Filter by program key         org (str, optional): Filter by platform organization         email (str, optional): Filter by user email         source (str, optional): Filter by invitation source         active (bool, optional): Filter by active status         sort (str, optional): Field to sort results by (default: '-id')         metadata fields: Any additional parameters will be treated as metadata filters      For POST:         program_key (str, required): The program to create an invitation for         email (str, required): The email address to invite         active (bool, optional): Whether the invitation is active         metadata fields: Any additional parameters will be added as metadata      For DELETE:         id (int, required): The ID of the invitation to delete         org (str, required): The platform organization for verification  Methods:     GET: Retrieve a paginated list of program invitations     POST: Create a new program invitation     DELETE: Remove a program invitation  Returns:     GET: A paginated JSON response containing program invitations:         {             \"count\": 10,             \"next\": \"https://example.com/api/catalog/invitations/program/?page=2\",             \"previous\": null,             \"results\": [                 {                     \"id\": 123,                     \"user_id\": 456,                     \"username\": \"username\",                     \"email\": \"user@example.com\",                     \"created\": \"2023-06-15T14:30:00Z\",                     \"started\": \"2023-06-15T14:30:00Z\",                     \"source\": \"source\",                     \"redirect_to\": \"https://example.com\",                     \"expired\": null,                     \"active\": true,                     \"metadata\": {},                     \"program_key\": \"org+program1\"                 },                 ...             ]         }      POST: A JSON response containing the created invitation:         {             \"id\": 123,             \"user_id\": 456,             \"username\": \"username\",             \"email\": \"user@example.com\",             \"created\": \"2023-06-15T14:30:00Z\",             \"started\": \"2023-06-15T14:30:00Z\",             \"source\": \"source\",             \"redirect_to\": \"https://example.com\",             \"expired\": null,             \"active\": true,             \"metadata\": {},             \"program_key\": \"org+program1\"         }      DELETE: A success response with status 200  Error Responses:     400 Bad Request: If required parameters are missing or invalid     401 Unauthorized: If the user is not authenticated     403 Forbidden: If the user does not have permission to access this resource     404 Not Found: If the program or invitation doesn't exist     500 Internal Server Error: If an unexpected error occurs  Access Control:     - Requires IsDMAdmin, IsPlatformAdminReadOnly, or IsPlatformAdminForProgram permission     - Read-only access for platform admins, full access for DM admins and program-specific admins
+Query/Request Parameters:
+    For GET:
+        program_key (str, optional): Filter by program key
+        org (str, optional): Filter by platform organization
+        email (str, optional): Filter by user email
+        source (str, optional): Filter by invitation source
+        active (bool, optional): Filter by active status
+        sort (str, optional): Field to sort results by (default: '-id')
+        metadata fields: Any additional parameters will be treated as metadata filters
+
+    For POST:
+        program_key (str, required): The program to create an invitation for
+        email (str, required): The email address to invite
+        active (bool, optional): Whether the invitation is active
+        metadata fields: Any additional parameters will be added as metadata
+
+    For DELETE:
+        id (int, required): The ID of the invitation to delete
+        org (str, required): The platform organization for verification
+
+Methods:
+    GET: Retrieve a paginated list of program invitations
+    POST: Create a new program invitation
+    DELETE: Remove a program invitation
+
+Returns:
+    GET: A paginated JSON response containing program invitations:
+        {
+            "count": 10,
+            "next": "https://example.com/api/catalog/invitations/program/?page=2",
+            "previous": null,
+            "results": [
+                {
+                    "id": 123,
+                    "user_id": 456,
+                    "username": "username",
+                    "email": "user@example.com",
+                    "created": "2023-06-15T14:30:00Z",
+                    "started": "2023-06-15T14:30:00Z",
+                    "source": "source",
+                    "redirect_to": "https://example.com",
+                    "expired": null,
+                    "active": true,
+                    "metadata": {},
+                    "program_key": "org+program1"
+                },
+                ...
+            ]
+        }
+
+    POST: A JSON response containing the created invitation:
+        {
+            "id": 123,
+            "user_id": 456,
+            "username": "username",
+            "email": "user@example.com",
+            "created": "2023-06-15T14:30:00Z",
+            "started": "2023-06-15T14:30:00Z",
+            "source": "source",
+            "redirect_to": "https://example.com",
+            "expired": null,
+            "active": true,
+            "metadata": {},
+            "program_key": "org+program1"
+        }
+
+    DELETE: A success response with status 200
+
+Error Responses:
+    400 Bad Request: If required parameters are missing or invalid
+    401 Unauthorized: If the user is not authenticated
+    403 Forbidden: If the user does not have permission to access this resource
+    404 Not Found: If the program or invitation doesn't exist
+    500 Internal Server Error: If an unexpected error occurs
+
+Access Control:
+    - Requires IsDMAdmin, IsPlatformAdminReadOnly, or IsPlatformAdminForProgram permission
+    - Read-only access for platform admins, full access for DM admins and program-specific admins
 
 ### Example
 
@@ -3956,7 +4266,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 active = True # bool | Filter by active status (optional)
@@ -4024,8 +4333,6 @@ Name | Type | Description  | Notes
 # **catalog_licenses_course_assignment_create**
 > CourseLicenseAssignmentDetail catalog_licenses_course_assignment_create(license_id, course_license_assignment_create, page=page, page_size=page_size, platform_key=platform_key, platform_org=platform_org, sort=sort)
 
-
-
 Create or update a course license assignment
 
 ### Example
@@ -4050,7 +4357,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 license_id = 56 # int | The ID of the course license
@@ -4094,7 +4400,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -4112,8 +4418,6 @@ Name | Type | Description  | Notes
 
 # **catalog_licenses_course_assignment_destroy**
 > catalog_licenses_course_assignment_destroy(assignment_id, license_id, page=page, page_size=page_size, platform_key=platform_key, platform_org=platform_org, sort=sort)
-
-
 
 Remove a course license assignment
 
@@ -4137,7 +4441,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 assignment_id = 56 # int | The ID of the assignment to delete
@@ -4198,8 +4501,6 @@ void (empty response body)
 # **catalog_licenses_course_assignment_group_create**
 > CourseLicenseGroupAssignmentDetail catalog_licenses_course_assignment_group_create(license_id, course_license_group_assignment_create, page=page, page_size=page_size, platform_key=platform_key, platform_org=platform_org, sort=sort)
 
-
-
 Create or update a course license group assignment
 
 ### Example
@@ -4224,7 +4525,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 license_id = 56 # int | The ID of the course license
@@ -4268,7 +4568,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -4286,8 +4586,6 @@ Name | Type | Description  | Notes
 
 # **catalog_licenses_course_assignment_group_destroy**
 > catalog_licenses_course_assignment_group_destroy(assignment_id, license_id, page=page, page_size=page_size, platform_key=platform_key, platform_org=platform_org, sort=sort)
-
-
 
 Remove a course license group assignment
 
@@ -4311,7 +4609,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 assignment_id = 56 # int | The ID of the assignment to delete
@@ -4372,8 +4669,6 @@ void (empty response body)
 # **catalog_licenses_course_assignment_group_retrieve**
 > PaginatedCourseLicenseGroupAssignment catalog_licenses_course_assignment_group_retrieve(license_id, page=page, page_size=page_size, platform_key=platform_key, platform_org=platform_org, sort=sort)
 
-
-
 Retrieve a paginated list of course license group assignments
 
 ### Example
@@ -4397,7 +4692,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 license_id = 56 # int | The ID of the course license
@@ -4457,8 +4751,6 @@ Name | Type | Description  | Notes
 # **catalog_licenses_course_assignment_retrieve**
 > PaginatedCourseLicenseAssignment catalog_licenses_course_assignment_retrieve(license_id, page=page, page_size=page_size, platform_key=platform_key, platform_org=platform_org, sort=sort)
 
-
-
 Retrieve a paginated list of course license assignments
 
 ### Example
@@ -4482,7 +4774,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 license_id = 56 # int | The ID of the course license
@@ -4542,8 +4833,6 @@ Name | Type | Description  | Notes
 # **catalog_licenses_course_create_create**
 > CourseLicenseDetail catalog_licenses_course_create_create(course_license_create)
 
-
-
 Create a new course license
 
 ### Example
@@ -4568,7 +4857,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 course_license_create = iblai.CourseLicenseCreate() # CourseLicenseCreate | 
@@ -4600,7 +4888,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -4618,8 +4906,6 @@ Name | Type | Description  | Notes
 
 # **catalog_licenses_course_retrieve**
 > PaginatedCourseLicense catalog_licenses_course_retrieve(active=active, course_id=course_id, external_id=external_id, key=key, name=name, org=org, page=page, page_size=page_size, platform_key=platform_key, platform_org=platform_org, query=query, sort=sort, source=source, verbose=verbose)
-
-
 
 Retrieve a paginated list of course licenses
 
@@ -4644,7 +4930,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 active = True # bool | Filter by active status (optional)
@@ -4720,8 +5005,6 @@ Name | Type | Description  | Notes
 # **catalog_licenses_course_update_create**
 > CourseLicenseDetail catalog_licenses_course_update_create(course_license_update=course_license_update)
 
-
-
 Update an existing course license
 
 ### Example
@@ -4746,7 +5029,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 course_license_update = iblai.CourseLicenseUpdate() # CourseLicenseUpdate |  (optional)
@@ -4778,7 +5060,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -4796,8 +5078,6 @@ Name | Type | Description  | Notes
 
 # **catalog_licenses_platform_create_create**
 > PlatformLicenseDetail catalog_licenses_platform_create_create(platform_license_create)
-
-
 
 Create a new platform license
 
@@ -4823,7 +5103,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 platform_license_create = iblai.PlatformLicenseCreate() # PlatformLicenseCreate | 
@@ -4855,7 +5134,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -4872,8 +5151,6 @@ Name | Type | Description  | Notes
 
 # **catalog_licenses_platform_retrieve**
 > PaginatedPlatformLicense catalog_licenses_platform_retrieve(active=active, external_id=external_id, key=key, name=name, page=page, page_size=page_size, platform_key=platform_key, query=query, sort=sort, source=source, verbose=verbose)
-
-
 
 Retrieve a paginated list of platform licenses
 
@@ -4898,7 +5175,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 active = True # bool | Filter by active status (optional)
@@ -4968,8 +5244,6 @@ Name | Type | Description  | Notes
 # **catalog_licenses_platform_update_create**
 > PlatformLicenseDetail catalog_licenses_platform_update_create(platform_license_update=platform_license_update)
 
-
-
 Update an existing platform license
 
 ### Example
@@ -4994,7 +5268,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 platform_license_update = iblai.PlatformLicenseUpdate() # PlatformLicenseUpdate |  (optional)
@@ -5026,7 +5299,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -5044,8 +5317,6 @@ Name | Type | Description  | Notes
 
 # **catalog_licenses_program_assignment_create**
 > ProgramLicenseAssignmentDetail catalog_licenses_program_assignment_create(license_id, program_license_assignment_create, active=active, email=email, fulfilled=fulfilled, page=page, page_size=page_size, platform_key=platform_key, platform_org=platform_org, sort=sort, user_id=user_id)
-
-
 
 Create or update a program license assignment
 
@@ -5071,7 +5342,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 license_id = 56 # int | The ID of the program license
@@ -5123,7 +5393,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -5141,8 +5411,6 @@ Name | Type | Description  | Notes
 
 # **catalog_licenses_program_assignment_destroy**
 > catalog_licenses_program_assignment_destroy(assignment_id, license_id, active=active, email=email, fulfilled=fulfilled, page=page, page_size=page_size, platform_key=platform_key, platform_org=platform_org, sort=sort, user_id=user_id)
-
-
 
 Unassign single user from license
 
@@ -5166,7 +5434,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 assignment_id = 56 # int | The ID of the assignment to delete
@@ -5235,8 +5502,6 @@ void (empty response body)
 # **catalog_licenses_program_assignment_group_create**
 > ProgramLicenseGroupAssignmentDetail catalog_licenses_program_assignment_group_create(license_id, program_license_group_assignment_create, active=active, fulfilled=fulfilled, group_id=group_id, page=page, page_size=page_size, platform_key=platform_key, platform_org=platform_org, sort=sort)
 
-
-
 Create or update a program license group assignment
 
 ### Example
@@ -5261,7 +5526,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 license_id = 56 # int | The ID of the program license
@@ -5311,7 +5575,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -5329,8 +5593,6 @@ Name | Type | Description  | Notes
 
 # **catalog_licenses_program_assignment_group_destroy**
 > catalog_licenses_program_assignment_group_destroy(assignment_id, license_id, active=active, fulfilled=fulfilled, group_id=group_id, page=page, page_size=page_size, platform_key=platform_key, platform_org=platform_org, remove_user_assignments=remove_user_assignments, sort=sort)
-
-
 
 Remove a program license group assignment
 
@@ -5354,7 +5616,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 assignment_id = 56 # int | The ID of the assignment to delete
@@ -5423,8 +5684,6 @@ void (empty response body)
 # **catalog_licenses_program_assignment_group_retrieve**
 > PaginatedProgramLicenseGroupAssignment catalog_licenses_program_assignment_group_retrieve(license_id, active=active, fulfilled=fulfilled, group_id=group_id, page=page, page_size=page_size, platform_key=platform_key, platform_org=platform_org, sort=sort)
 
-
-
 Retrieve a paginated list of program license group assignments
 
 ### Example
@@ -5448,7 +5707,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 license_id = 56 # int | The ID of the program license
@@ -5514,8 +5772,6 @@ Name | Type | Description  | Notes
 # **catalog_licenses_program_assignment_retrieve**
 > PaginatedProgramLicenseAssignment catalog_licenses_program_assignment_retrieve(license_id, active=active, email=email, fulfilled=fulfilled, page=page, page_size=page_size, platform_key=platform_key, platform_org=platform_org, sort=sort, user_id=user_id)
 
-
-
 Retrieve a paginated list of program license assignments
 
 ### Example
@@ -5539,7 +5795,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 license_id = 56 # int | The ID of the program license
@@ -5607,9 +5862,53 @@ Name | Type | Description  | Notes
 # **catalog_licenses_program_create_create**
 > ProgramLicenseDetail catalog_licenses_program_create_create(program_license_create_detail)
 
+API View for creating program licenses.
 
+This endpoint allows administrators to create new program licenses with various configurations.
 
-API View for creating program licenses.  This endpoint allows administrators to create new program licenses with various configurations.  Methods:     POST: Create a new program license  Request Body:     A JSON object containing:     - platform_key (str, required): The platform to create a license for     - program_id (str, required): The program ID to create a license for     - name (str, optional): Display name for the license     - count (int, optional): Number of seats purchased (default: 0)     - started (datetime, optional): Date when license should begin     - expired (datetime, optional): Date when license should expire     - active (bool, optional): Whether the license is active (default: true)     - metadata (dict, optional): Additional license metadata     - enrollment_config (dict, optional): Additional enrollment configuration     - source (str, optional): Source identifier     - external_id (str, optional): External identifier (must be unique)  Returns:     POST: A JSON response containing the created license:         {             \"id\": 123,             \"created\": \"2023-06-15T14:30:00Z\",             \"started\": \"2023-06-15T14:30:00Z\",             \"expired\": null,             \"name\": \"Program License 2023\",             \"count\": 100,             \"active\": true,             \"metadata\": {},             \"source\": \"source\",             \"external_id\": \"ext-123\",             \"platform_key\": \"platform1\",             \"program_id\": \"program-v1:org+program+run\"         }  Error Responses:     400 Bad Request: If required parameters are missing or invalid     401 Unauthorized: If the user is not authenticated     403 Forbidden: If the user does not have permission to create licenses     500 Internal Server Error: If an unexpected error occurs during license creation  Access Control:     - Requires IsDMAdmin permission     - Available only to DM administrators
+Methods:
+    POST: Create a new program license
+
+Request Body:
+    A JSON object containing:
+    - platform_key (str, required): The platform to create a license for
+    - program_id (str, required): The program ID to create a license for
+    - name (str, optional): Display name for the license
+    - count (int, optional): Number of seats purchased (default: 0)
+    - started (datetime, optional): Date when license should begin
+    - expired (datetime, optional): Date when license should expire
+    - active (bool, optional): Whether the license is active (default: true)
+    - metadata (dict, optional): Additional license metadata
+    - enrollment_config (dict, optional): Additional enrollment configuration
+    - source (str, optional): Source identifier
+    - external_id (str, optional): External identifier (must be unique)
+
+Returns:
+    POST: A JSON response containing the created license:
+        {
+            "id": 123,
+            "created": "2023-06-15T14:30:00Z",
+            "started": "2023-06-15T14:30:00Z",
+            "expired": null,
+            "name": "Program License 2023",
+            "count": 100,
+            "active": true,
+            "metadata": {},
+            "source": "source",
+            "external_id": "ext-123",
+            "platform_key": "platform1",
+            "program_id": "program-v1:org+program+run"
+        }
+
+Error Responses:
+    400 Bad Request: If required parameters are missing or invalid
+    401 Unauthorized: If the user is not authenticated
+    403 Forbidden: If the user does not have permission to create licenses
+    500 Internal Server Error: If an unexpected error occurs during license creation
+
+Access Control:
+    - Requires IsDMAdmin permission
+    - Available only to DM administrators
 
 ### Example
 
@@ -5633,7 +5932,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 program_license_create_detail = iblai.ProgramLicenseCreateDetail() # ProgramLicenseCreateDetail | 
@@ -5665,7 +5963,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -5683,9 +5981,64 @@ Name | Type | Description  | Notes
 # **catalog_licenses_program_retrieve**
 > PaginatedProgramLicense catalog_licenses_program_retrieve(active=active, external_id=external_id, key=key, name=name, org=org, page=page, page_size=page_size, platform_key=platform_key, platform_org=platform_org, program_id=program_id, query=query, sort=sort, source=source, verbose=verbose)
 
+API View for managing program licenses.
 
+This endpoint allows retrieving program licenses with filtering and pagination support.
 
-API View for managing program licenses.  This endpoint allows retrieving program licenses with filtering and pagination support.  Query Parameters:     platform_key (str, optional): The unique identifier for the platform     name (str, optional): Filter by license name (exact match)     source (str, optional): Filter by license source     active (bool, optional): Filter by active status     program_id (str, optional): Filter by program ID     query (str, optional): Search licenses by name (contains)     page (int, optional): Page number for pagination     page_size (int, optional): Number of items per page     verbose (bool, optional): Include additional details in response     sort (str, optional): Field to sort results by (default: '-id')  Methods:     GET: Retrieve a paginated list of program licenses  Returns:     GET: A paginated JSON response containing program licenses:         {             \"count\": 10,             \"next\": \"https://example.com/api/catalog/licenses/program/?page=2\",             \"previous\": null,             \"results\": [                 {                     \"id\": 123,                     \"created\": \"2023-06-15T14:30:00Z\",                     \"started\": \"2023-06-15T14:30:00Z\",                     \"expired\": null,                     \"name\": \"Program License 2023\",                     \"count\": 100,                     \"active\": true,                     \"metadata\": {},                     \"source\": \"source\",                     \"external_id\": \"ext-123\",                     \"platform_key\": \"platform1\",                     \"program_id\": \"program-v1:org+program+run\",                     \"assignments\": {                         \"total\": 50,                         \"active\": 45,                         \"pending\": 5                     }                 },                 ...             ]         }  Error Responses:     400 Bad Request: If query parameters are invalid     401 Unauthorized: If the user is not authenticated     403 Forbidden: If the user does not have permission to access this resource     500 Internal Server Error: If an unexpected error occurs  Access Control:     - Requires IsDMAdmin or IsPlatformAdminReadOnly permission     - Available to platform administrators (read-only) and DM admins
+Query Parameters:
+    platform_key (str, optional): The unique identifier for the platform
+    name (str, optional): Filter by license name (exact match)
+    source (str, optional): Filter by license source
+    active (bool, optional): Filter by active status
+    program_id (str, optional): Filter by program ID
+    query (str, optional): Search licenses by name (contains)
+    page (int, optional): Page number for pagination
+    page_size (int, optional): Number of items per page
+    verbose (bool, optional): Include additional details in response
+    sort (str, optional): Field to sort results by (default: '-id')
+
+Methods:
+    GET: Retrieve a paginated list of program licenses
+
+Returns:
+    GET: A paginated JSON response containing program licenses:
+        {
+            "count": 10,
+            "next": "https://example.com/api/catalog/licenses/program/?page=2",
+            "previous": null,
+            "results": [
+                {
+                    "id": 123,
+                    "created": "2023-06-15T14:30:00Z",
+                    "started": "2023-06-15T14:30:00Z",
+                    "expired": null,
+                    "name": "Program License 2023",
+                    "count": 100,
+                    "active": true,
+                    "metadata": {},
+                    "source": "source",
+                    "external_id": "ext-123",
+                    "platform_key": "platform1",
+                    "program_id": "program-v1:org+program+run",
+                    "assignments": {
+                        "total": 50,
+                        "active": 45,
+                        "pending": 5
+                    }
+                },
+                ...
+            ]
+        }
+
+Error Responses:
+    400 Bad Request: If query parameters are invalid
+    401 Unauthorized: If the user is not authenticated
+    403 Forbidden: If the user does not have permission to access this resource
+    500 Internal Server Error: If an unexpected error occurs
+
+Access Control:
+    - Requires IsDMAdmin or IsPlatformAdminReadOnly permission
+    - Available to platform administrators (read-only) and DM admins
 
 ### Example
 
@@ -5708,7 +6061,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 active = True # bool | Filter by active status (optional)
@@ -5784,9 +6136,58 @@ Name | Type | Description  | Notes
 # **catalog_licenses_program_update_create**
 > ProgramLicenseDetail catalog_licenses_program_update_create(program_license_update_detail=program_license_update_detail)
 
+API View for updating existing program licenses.
 
+This endpoint allows administrators to update the properties of an existing program license.
 
-API View for updating existing program licenses.  This endpoint allows administrators to update the properties of an existing program license.  Methods:     POST: Update an existing program license  Request Body:     A JSON object containing:     - license_id (int, optional): The ID of the license to update (required if external_id not provided)     - external_id (str, optional): External identifier of the license to update (required if license_id not provided)     - name (str, optional): Updated display name for the license     - count (int, optional): Updated number of seats purchased     - started (datetime, optional): Updated date when license should begin     - expired (datetime, optional): Updated date when license should expire     - active (bool, optional): Updated active status     - metadata (dict, optional): Updated additional license metadata     - enrollment_config (dict, optional): Updated enrollment configuration     - source (str, optional): Updated source identifier     - change_type (str, optional): Type of change being made (default: \"update\")  Returns:     POST: A JSON response containing the updated license:         {             \"id\": 123,             \"created\": \"2023-06-15T14:30:00Z\",             \"started\": \"2023-06-15T14:30:00Z\",             \"expired\": \"2024-06-15T14:30:00Z\",             \"name\": \"Updated Program License 2023\",             \"count\": 150,             \"active\": true,             \"metadata\": {\"updated\": true},             \"source\": \"updated-source\",             \"external_id\": \"ext-123\",             \"platform_key\": \"platform1\",             \"program_id\": \"program-v1:org+program+run\"         }  Error Responses:     400 Bad Request: If required parameters are missing or invalid     401 Unauthorized: If the user is not authenticated     403 Forbidden: If the user does not have permission to update licenses     404 Not Found: If the specified license doesn't exist     500 Internal Server Error: If an unexpected error occurs during license update  Access Control:     - Requires IsDMAdmin permission     - Available only to DM administrators  Notes:     - Cannot update the platform or program associated with a license     - A license history record is automatically created for each update
+Methods:
+    POST: Update an existing program license
+
+Request Body:
+    A JSON object containing:
+    - license_id (int, optional): The ID of the license to update (required if external_id not provided)
+    - external_id (str, optional): External identifier of the license to update (required if license_id not provided)
+    - name (str, optional): Updated display name for the license
+    - count (int, optional): Updated number of seats purchased
+    - started (datetime, optional): Updated date when license should begin
+    - expired (datetime, optional): Updated date when license should expire
+    - active (bool, optional): Updated active status
+    - metadata (dict, optional): Updated additional license metadata
+    - enrollment_config (dict, optional): Updated enrollment configuration
+    - source (str, optional): Updated source identifier
+    - change_type (str, optional): Type of change being made (default: "update")
+
+Returns:
+    POST: A JSON response containing the updated license:
+        {
+            "id": 123,
+            "created": "2023-06-15T14:30:00Z",
+            "started": "2023-06-15T14:30:00Z",
+            "expired": "2024-06-15T14:30:00Z",
+            "name": "Updated Program License 2023",
+            "count": 150,
+            "active": true,
+            "metadata": {"updated": true},
+            "source": "updated-source",
+            "external_id": "ext-123",
+            "platform_key": "platform1",
+            "program_id": "program-v1:org+program+run"
+        }
+
+Error Responses:
+    400 Bad Request: If required parameters are missing or invalid
+    401 Unauthorized: If the user is not authenticated
+    403 Forbidden: If the user does not have permission to update licenses
+    404 Not Found: If the specified license doesn't exist
+    500 Internal Server Error: If an unexpected error occurs during license update
+
+Access Control:
+    - Requires IsDMAdmin permission
+    - Available only to DM administrators
+
+Notes:
+    - Cannot update the platform or program associated with a license
+    - A license history record is automatically created for each update
 
 ### Example
 
@@ -5810,7 +6211,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 program_license_update_detail = iblai.ProgramLicenseUpdateDetail() # ProgramLicenseUpdateDetail |  (optional)
@@ -5842,7 +6242,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -5861,8 +6261,6 @@ Name | Type | Description  | Notes
 # **catalog_licenses_user_assignment_check_retrieve**
 > catalog_licenses_user_assignment_check_retrieve(email)
 
-
-
 Check if a user has an active user license assignment
 
 ### Example
@@ -5872,7 +6270,6 @@ Check if a user has an active user license assignment
 import iblai
 from iblai.rest import ApiException
 from pprint import pprint
-
 
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
@@ -5919,8 +6316,6 @@ No authorization required
 # **catalog_licenses_user_assignment_create**
 > UserLicenseAssignmentDetail catalog_licenses_user_assignment_create(license_id, user_license_assignment_create, page=page, page_size=page_size, platform_key=platform_key, platform_org=platform_org, sort=sort)
 
-
-
 Create or update a user license assignment
 
 ### Example
@@ -5945,7 +6340,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 license_id = 56 # int | The ID of the user license
@@ -5989,7 +6383,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -6007,8 +6401,6 @@ Name | Type | Description  | Notes
 
 # **catalog_licenses_user_assignment_destroy**
 > catalog_licenses_user_assignment_destroy(assignment_id, license_id, page=page, page_size=page_size, platform_key=platform_key, platform_org=platform_org, sort=sort)
-
-
 
 Remove a user license assignment
 
@@ -6032,7 +6424,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 assignment_id = 56 # int | The ID of the assignment to delete
@@ -6093,8 +6484,6 @@ void (empty response body)
 # **catalog_licenses_user_assignment_group_create**
 > UserLicenseGroupAssignmentDetail catalog_licenses_user_assignment_group_create(license_id, user_license_group_assignment_create, page=page, page_size=page_size, platform_key=platform_key, platform_org=platform_org, sort=sort)
 
-
-
 Create or update a user license group assignment
 
 ### Example
@@ -6119,7 +6508,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 license_id = 56 # int | The ID of the user license
@@ -6163,7 +6551,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -6181,8 +6569,6 @@ Name | Type | Description  | Notes
 
 # **catalog_licenses_user_assignment_group_destroy**
 > catalog_licenses_user_assignment_group_destroy(assignment_id, license_id, page=page, page_size=page_size, platform_key=platform_key, platform_org=platform_org, sort=sort)
-
-
 
 Remove a user license group assignment
 
@@ -6206,7 +6592,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 assignment_id = 56 # int | The ID of the assignment to delete
@@ -6267,8 +6652,6 @@ void (empty response body)
 # **catalog_licenses_user_assignment_group_retrieve**
 > PaginatedUserLicenseGroupAssignment catalog_licenses_user_assignment_group_retrieve(license_id, page=page, page_size=page_size, platform_key=platform_key, platform_org=platform_org, sort=sort)
 
-
-
 Retrieve a paginated list of user license group assignments
 
 ### Example
@@ -6292,7 +6675,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 license_id = 56 # int | The ID of the user license
@@ -6352,8 +6734,6 @@ Name | Type | Description  | Notes
 # **catalog_licenses_user_assignment_retrieve**
 > PaginatedUserLicenseAssignment catalog_licenses_user_assignment_retrieve(license_id, page=page, page_size=page_size, platform_key=platform_key, platform_org=platform_org, sort=sort)
 
-
-
 Retrieve a paginated list of user license assignments
 
 ### Example
@@ -6377,7 +6757,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 license_id = 56 # int | The ID of the user license
@@ -6437,8 +6816,6 @@ Name | Type | Description  | Notes
 # **catalog_licenses_user_create_create**
 > UserLicenseDetail catalog_licenses_user_create_create(user_license_create)
 
-
-
 Create a new user license
 
 ### Example
@@ -6463,7 +6840,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 user_license_create = iblai.UserLicenseCreate() # UserLicenseCreate | 
@@ -6495,7 +6871,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -6512,8 +6888,6 @@ Name | Type | Description  | Notes
 
 # **catalog_licenses_user_retrieve**
 > PaginatedUserLicense catalog_licenses_user_retrieve(active=active, external_id=external_id, key=key, name=name, page=page, page_size=page_size, platform_key=platform_key, query=query, sort=sort, source=source, verbose=verbose)
-
-
 
 Retrieve a paginated list of user licenses
 
@@ -6538,7 +6912,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 active = True # bool | Filter by active status (optional)
@@ -6608,9 +6981,57 @@ Name | Type | Description  | Notes
 # **catalog_licenses_user_update_create**
 > UserLicenseDetail catalog_licenses_user_update_create(user_license_update=user_license_update)
 
+API View for updating existing user licenses.
 
+This endpoint allows administrators to update the properties of an existing user license.
 
-API View for updating existing user licenses.  This endpoint allows administrators to update the properties of an existing user license.  Methods:     POST: Update an existing user license  Request Body:     A JSON object containing:     - license_id (int, optional): The ID of the license to update (required if external_id not provided)     - external_id (str, optional): External identifier of the license to update (required if license_id not provided)     - name (str, optional): Updated display name for the license     - count (int, optional): Updated number of seats purchased     - started (datetime, optional): Updated date when license should begin     - expired (datetime, optional): Updated date when license should expire     - active (bool, optional): Updated active status     - metadata (dict, optional): Updated additional license metadata     - enrollment_config (dict, optional): Updated enrollment configuration     - source (str, optional): Updated source identifier     - change_type (str, optional): Type of change being made (default: \"update\")  Returns:     POST: A JSON response containing the updated license:         {             \"id\": 123,             \"created\": \"2023-06-15T14:30:00Z\",             \"started\": \"2023-06-15T14:30:00Z\",             \"expired\": \"2024-06-15T14:30:00Z\",             \"name\": \"Updated User License 2023\",             \"count\": 150,             \"active\": true,             \"metadata\": {\"updated\": true},             \"source\": \"updated-source\",             \"external_id\": \"ext-123\",             \"platform_key\": \"platform1\"         }  Error Responses:     400 Bad Request: If required parameters are missing or invalid     401 Unauthorized: If the user is not authenticated     403 Forbidden: If the user does not have permission to update licenses     404 Not Found: If the specified license doesn't exist     500 Internal Server Error: If an unexpected error occurs during license update  Access Control:     - Requires IsDMAdmin permission     - Available only to DM administrators  Notes:     - Cannot update the platform associated with a license     - A license history record is automatically created for each update
+Methods:
+    POST: Update an existing user license
+
+Request Body:
+    A JSON object containing:
+    - license_id (int, optional): The ID of the license to update (required if external_id not provided)
+    - external_id (str, optional): External identifier of the license to update (required if license_id not provided)
+    - name (str, optional): Updated display name for the license
+    - count (int, optional): Updated number of seats purchased
+    - started (datetime, optional): Updated date when license should begin
+    - expired (datetime, optional): Updated date when license should expire
+    - active (bool, optional): Updated active status
+    - metadata (dict, optional): Updated additional license metadata
+    - enrollment_config (dict, optional): Updated enrollment configuration
+    - source (str, optional): Updated source identifier
+    - change_type (str, optional): Type of change being made (default: "update")
+
+Returns:
+    POST: A JSON response containing the updated license:
+        {
+            "id": 123,
+            "created": "2023-06-15T14:30:00Z",
+            "started": "2023-06-15T14:30:00Z",
+            "expired": "2024-06-15T14:30:00Z",
+            "name": "Updated User License 2023",
+            "count": 150,
+            "active": true,
+            "metadata": {"updated": true},
+            "source": "updated-source",
+            "external_id": "ext-123",
+            "platform_key": "platform1"
+        }
+
+Error Responses:
+    400 Bad Request: If required parameters are missing or invalid
+    401 Unauthorized: If the user is not authenticated
+    403 Forbidden: If the user does not have permission to update licenses
+    404 Not Found: If the specified license doesn't exist
+    500 Internal Server Error: If an unexpected error occurs during license update
+
+Access Control:
+    - Requires IsDMAdmin permission
+    - Available only to DM administrators
+
+Notes:
+    - Cannot update the platform associated with a license
+    - A license history record is automatically created for each update
 
 ### Example
 
@@ -6634,7 +7055,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 user_license_update = iblai.UserLicenseUpdate() # UserLicenseUpdate |  (optional)
@@ -6666,7 +7086,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -6684,8 +7104,6 @@ Name | Type | Description  | Notes
 
 # **catalog_metadata_choices_retrieve**
 > catalog_metadata_choices_retrieve(field_key=field_key, org=org, scope=scope)
-
-
 
 Query metadata choices based on field_key, scope, and org parameters.
 
@@ -6709,7 +7127,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 field_key = 'field_key_example' # str | The key of the field for which choices are being queried (optional)
@@ -6757,8 +7174,6 @@ void (empty response body)
 # **catalog_metadata_course_create**
 > catalog_metadata_course_create(course_id, course_metadata_update_request)
 
-
-
 Update metadata for a course.
 
 ### Example
@@ -6782,7 +7197,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 course_id = 'course_id_example' # str | The course ID to get metadata for
@@ -6814,7 +7228,7 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: Not defined
 
 ### HTTP response details
@@ -6829,8 +7243,6 @@ void (empty response body)
 
 # **catalog_metadata_course_create2**
 > catalog_metadata_course_create2(course_id, var_field, course_metadata_update_request)
-
-
 
 Update metadata for a course.
 
@@ -6855,7 +7267,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 course_id = 'course_id_example' # str | The course ID to get metadata for
@@ -6889,7 +7300,7 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: Not defined
 
 ### HTTP response details
@@ -6904,8 +7315,6 @@ void (empty response body)
 
 # **catalog_metadata_course_public_retrieve**
 > catalog_metadata_course_public_retrieve(course_id)
-
-
 
 Retrieve public metadata for a course.
 
@@ -6929,7 +7338,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 course_id = 'course_id_example' # str | The course ID to get metadata for
@@ -6975,8 +7383,6 @@ void (empty response body)
 # **catalog_metadata_course_public_retrieve2**
 > catalog_metadata_course_public_retrieve2(course_id, var_field)
 
-
-
 Retrieve public metadata for a course.
 
 ### Example
@@ -6999,7 +7405,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 course_id = 'course_id_example' # str | The course ID to get metadata for
@@ -7047,8 +7452,6 @@ void (empty response body)
 # **catalog_metadata_course_retrieve**
 > catalog_metadata_course_retrieve(course_id)
 
-
-
 Retrieve metadata for a course.
 
 ### Example
@@ -7071,7 +7474,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 course_id = 'course_id_example' # str | The course ID to get metadata for
@@ -7117,8 +7519,6 @@ void (empty response body)
 # **catalog_metadata_course_retrieve2**
 > catalog_metadata_course_retrieve2(course_id, var_field)
 
-
-
 Retrieve metadata for a course.
 
 ### Example
@@ -7141,7 +7541,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 course_id = 'course_id_example' # str | The course ID to get metadata for
@@ -7189,8 +7588,6 @@ void (empty response body)
 # **catalog_metadata_course_search_create**
 > Dict[str, object] catalog_metadata_course_search_create(course_metadata_search_request=course_metadata_search_request)
 
-
-
 Search for courses matching specified metadata filters.
 
 ### Example
@@ -7214,7 +7611,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 course_metadata_search_request = iblai.CourseMetadataSearchRequest() # CourseMetadataSearchRequest |  (optional)
@@ -7246,7 +7642,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -7261,8 +7657,6 @@ Name | Type | Description  | Notes
 
 # **catalog_metadata_program_create**
 > ProgramMetadataResponse catalog_metadata_program_create(program_id, program_metadata_request, org=org, platform_key=platform_key, program_key=program_key)
-
-
 
 Update metadata for a specified program
 
@@ -7288,7 +7682,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 program_id = 'program_id_example' # str | The unique identifier for the program
@@ -7328,7 +7721,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -7345,8 +7738,6 @@ Name | Type | Description  | Notes
 
 # **catalog_metadata_program_create2**
 > ProgramMetadataResponse catalog_metadata_program_create2(var_field, program_id, program_metadata_request, org=org, platform_key=platform_key, program_key=program_key)
-
-
 
 Update metadata for a specified program
 
@@ -7372,7 +7763,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 var_field = 'var_field_example' # str | 
@@ -7414,7 +7804,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -7431,8 +7821,6 @@ Name | Type | Description  | Notes
 
 # **catalog_metadata_program_public_retrieve**
 > ProgramMetadataResponse catalog_metadata_program_public_retrieve(program_id, org=org, platform_key=platform_key, program_key=program_key)
-
-
 
 Retrieve public metadata for a specified program
 
@@ -7457,7 +7845,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 program_id = 'program_id_example' # str | The unique identifier for the program
@@ -7511,8 +7898,6 @@ Name | Type | Description  | Notes
 # **catalog_metadata_program_public_retrieve2**
 > ProgramMetadataResponse catalog_metadata_program_public_retrieve2(var_field, program_id, org=org, platform_key=platform_key, program_key=program_key)
 
-
-
 Retrieve public metadata for a specified program
 
 ### Example
@@ -7536,7 +7921,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 var_field = 'var_field_example' # str | 
@@ -7592,8 +7976,6 @@ Name | Type | Description  | Notes
 # **catalog_metadata_program_retrieve**
 > ProgramMetadataResponse catalog_metadata_program_retrieve(program_id, org=org, platform_key=platform_key, program_key=program_key)
 
-
-
 Retrieve metadata for a specified program
 
 ### Example
@@ -7617,7 +7999,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 program_id = 'program_id_example' # str | The unique identifier for the program
@@ -7673,8 +8054,6 @@ Name | Type | Description  | Notes
 # **catalog_metadata_program_retrieve2**
 > ProgramMetadataResponse catalog_metadata_program_retrieve2(var_field, program_id, org=org, platform_key=platform_key, program_key=program_key)
 
-
-
 Retrieve metadata for a specified program
 
 ### Example
@@ -7698,7 +8077,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 var_field = 'var_field_example' # str | 
@@ -7756,8 +8134,6 @@ Name | Type | Description  | Notes
 # **catalog_milestones_completions_course_catalog_retrieve**
 > Dict[str, object] catalog_milestones_completions_course_catalog_retrieve(user_id, field_key=field_key)
 
-
-
 Retrieve catalog-compatible completion info for user
 
 ### Example
@@ -7780,7 +8156,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 user_id = 56 # int | The user identifier
@@ -7832,8 +8207,6 @@ Name | Type | Description  | Notes
 # **catalog_milestones_completions_course_manage_create**
 > Dict[str, object] catalog_milestones_completions_course_manage_create(course_id, user_id, course_completion)
 
-
-
 Create or update completion information for a specific user and course
 
 ### Example
@@ -7857,7 +8230,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 course_id = 'course_id_example' # str | The course identifier (e.g., 'course-v1:org+code+run')
@@ -7893,7 +8265,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -7912,8 +8284,6 @@ Name | Type | Description  | Notes
 
 # **catalog_milestones_completions_course_manage_retrieve**
 > Dict[str, object] catalog_milestones_completions_course_manage_retrieve(course_id, user_id)
-
-
 
 Retrieve completion information for a specific user and course
 
@@ -7937,7 +8307,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 course_id = 'course_id_example' # str | The course identifier (e.g., 'course-v1:org+code+run')
@@ -7989,8 +8358,6 @@ Name | Type | Description  | Notes
 # **catalog_milestones_completions_pathway_query_retrieve**
 > PathwayCompletionResponse catalog_milestones_completions_pathway_query_retrieve(pathway_uuid, user_id=user_id, username=username)
 
-
-
 Retrieve pathway completion information
 
 ### Example
@@ -8014,7 +8381,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 pathway_uuid = 'pathway_uuid_example' # str | The unique identifier for the pathway
@@ -8068,8 +8434,6 @@ Name | Type | Description  | Notes
 # **catalog_milestones_completions_program_query_retrieve**
 > ProgramCompletionResponse catalog_milestones_completions_program_query_retrieve(program_key, user_id=user_id, username=username)
 
-
-
 Retrieve program completion information
 
 ### Example
@@ -8093,7 +8457,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 program_key = 'program_key_example' # str | The unique identifier for the program
@@ -8147,8 +8510,6 @@ Name | Type | Description  | Notes
 # **catalog_milestones_completions_resource_manage_create**
 > ResourceCompletion catalog_milestones_completions_resource_manage_create(resource_id, user_id, resource_completion_request)
 
-
-
 Create or update completion information for a specific resource and user
 
 ### Example
@@ -8173,7 +8534,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 resource_id = 56 # int | The unique identifier for the resource
@@ -8209,7 +8569,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -8228,8 +8588,6 @@ Name | Type | Description  | Notes
 
 # **catalog_milestones_completions_resource_manage_retrieve**
 > ResourceCompletion catalog_milestones_completions_resource_manage_retrieve(resource_id, user_id)
-
-
 
 Retrieve completion info for resource/user
 
@@ -8254,7 +8612,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 resource_id = 56 # int | The unique identifier for the resource
@@ -8306,8 +8663,6 @@ Name | Type | Description  | Notes
 # **catalog_milestones_skill_points_block_create**
 > catalog_milestones_skill_points_block_create(block_id, block_skill_point_info_request, get_obj=get_obj)
 
-
-
 Update skill point information for a specific block
 
 ### Example
@@ -8331,7 +8686,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 block_id = 'block_id_example' # str | ID of the block to retrieve skill point information for
@@ -8365,7 +8719,7 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: Not defined
 
 ### HTTP response details
@@ -8383,8 +8737,6 @@ void (empty response body)
 
 # **catalog_milestones_skill_points_block_retrieve**
 > Dict[str, object] catalog_milestones_skill_points_block_retrieve(block_id, get_obj=get_obj)
-
-
 
 Retrieve skill point information for a specific block
 
@@ -8408,7 +8760,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 block_id = 'block_id_example' # str | ID of the block to retrieve skill point information for
@@ -8459,8 +8810,6 @@ Name | Type | Description  | Notes
 # **catalog_milestones_skill_points_course_create**
 > catalog_milestones_skill_points_course_create(course_id, course_skill_point_info_request, get_obj=get_obj)
 
-
-
 Update skill point information for a specific course
 
 ### Example
@@ -8484,7 +8833,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 course_id = 'course_id_example' # str | ID of the course to retrieve skill point information for
@@ -8518,7 +8866,7 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: Not defined
 
 ### HTTP response details
@@ -8535,8 +8883,6 @@ void (empty response body)
 
 # **catalog_milestones_skill_points_course_retrieve**
 > Dict[str, object] catalog_milestones_skill_points_course_retrieve(course_id, get_obj=get_obj)
-
-
 
 Retrieve skill point information for a specific course
 
@@ -8560,7 +8906,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 course_id = 'course_id_example' # str | ID of the course to retrieve skill point information for
@@ -8612,8 +8957,6 @@ Name | Type | Description  | Notes
 # **catalog_milestones_skill_points_platform_bulk_create**
 > PlatformSkillPointBulkResponse catalog_milestones_skill_points_platform_bulk_create(platform_skill_point_bulk_request)
 
-
-
 Bulk create/update platform skill points
 
 ### Example
@@ -8638,7 +8981,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 platform_skill_point_bulk_request = iblai.PlatformSkillPointBulkRequest() # PlatformSkillPointBulkRequest | 
@@ -8670,7 +9012,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -8687,8 +9029,6 @@ Name | Type | Description  | Notes
 
 # **catalog_milestones_skill_points_platform_create**
 > catalog_milestones_skill_points_platform_create(platform_skill_point_request, department_mode=department_mode, platform_key=platform_key, platform_org=platform_org, query=query, sort=sort)
-
-
 
 Update platform skill points for a user
 
@@ -8713,7 +9053,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 platform_skill_point_request = iblai.PlatformSkillPointRequest() # PlatformSkillPointRequest | 
@@ -8753,7 +9092,7 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: Not defined
 
 ### HTTP response details
@@ -8769,8 +9108,6 @@ void (empty response body)
 
 # **catalog_milestones_skill_points_platform_destroy**
 > catalog_milestones_skill_points_platform_destroy(skill_point_id, department_mode=department_mode, platform_key=platform_key, platform_org=platform_org, query=query, sort=sort)
-
-
 
 Delete a platform skill point entry
 
@@ -8794,7 +9131,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 skill_point_id = 56 # int | ID of the skill point to delete
@@ -8851,8 +9187,6 @@ void (empty response body)
 # **catalog_milestones_skill_points_platform_group_create**
 > catalog_milestones_skill_points_platform_group_create(platform_skill_point_group_request)
 
-
-
 Update skill points for all users in a group
 
 ### Example
@@ -8876,7 +9210,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 platform_skill_point_group_request = iblai.PlatformSkillPointGroupRequest() # PlatformSkillPointGroupRequest | 
@@ -8906,7 +9239,7 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: Not defined
 
 ### HTTP response details
@@ -8922,8 +9255,6 @@ void (empty response body)
 
 # **catalog_milestones_skill_points_platform_retrieve**
 > PlatformSkillPointResponse catalog_milestones_skill_points_platform_retrieve(department_mode=department_mode, platform_key=platform_key, platform_org=platform_org, query=query, sort=sort)
-
-
 
 Retrieve paginated list of platform skill points
 
@@ -8948,7 +9279,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 department_mode = True # bool | If True, filters results by department user permissions (optional)
@@ -9005,8 +9335,6 @@ Name | Type | Description  | Notes
 # **catalog_milestones_skill_points_user_retrieve**
 > Dict[str, object] catalog_milestones_skill_points_user_retrieve(user_id=user_id, username=username)
 
-
-
 Retrieve skill point information for a specific user
 
 ### Example
@@ -9029,7 +9357,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 user_id = 56 # int | ID of the user to retrieve skill point information for (optional)
@@ -9080,8 +9407,6 @@ Name | Type | Description  | Notes
 # **catalog_pathways_create**
 > Pathway catalog_pathways_create(pathway_create_update_request, item_id=item_id, name=name, pathway_id=pathway_id, pathway_uuid=pathway_uuid, platform_key=platform_key, slug=slug, user_id=user_id, username=username, visible=visible)
 
-
-
 Add or update a pathway.
 
 ### Example
@@ -9106,7 +9431,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 pathway_create_update_request = iblai.PathwayCreateUpdateRequest() # PathwayCreateUpdateRequest | 
@@ -9156,7 +9480,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -9171,8 +9495,6 @@ Name | Type | Description  | Notes
 
 # **catalog_pathways_destroy**
 > PathwayDeleteResponse catalog_pathways_destroy(pathway_id, user_id, item_id=item_id, name=name, pathway_uuid=pathway_uuid, platform_key=platform_key, slug=slug, username=username, visible=visible)
-
-
 
 Remove a pathway from the database.
 
@@ -9197,7 +9519,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 pathway_id = 'pathway_id_example' # str | Pathway ID to delete
@@ -9260,8 +9581,6 @@ Name | Type | Description  | Notes
 # **catalog_pathways_list**
 > List[Pathway] catalog_pathways_list(item_id=item_id, name=name, pathway_id=pathway_id, pathway_uuid=pathway_uuid, platform_key=platform_key, slug=slug, user_id=user_id, username=username, visible=visible)
 
-
-
 Retrieve pathways matching query. Limited parameters.
 
 ### Example
@@ -9285,7 +9604,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 item_id = 'item_id_example' # str | Item ID associated with the pathway (optional)
@@ -9347,8 +9665,6 @@ Name | Type | Description  | Notes
 # **catalog_programs_create**
 > Program catalog_programs_create(program_create_update_request)
 
-
-
 Add or update a program. Accepts a list of courses and updates or creates a program.
 
 ### Example
@@ -9373,7 +9689,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 program_create_update_request = iblai.ProgramCreateUpdateRequest() # ProgramCreateUpdateRequest | 
@@ -9405,7 +9720,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -9420,8 +9735,6 @@ Name | Type | Description  | Notes
 
 # **catalog_programs_destroy**
 > ProgramDeleteResponse catalog_programs_destroy(org, program_id)
-
-
 
 Remove a program from the database. Requires program_id and org as parameters.
 
@@ -9446,7 +9759,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 org = 'org_example' # str | Organization of the program
@@ -9495,8 +9807,6 @@ Name | Type | Description  | Notes
 # **catalog_programs_list**
 > List[Program] catalog_programs_list(course_id=course_id, enabled=enabled, name=name, org=org, program_id=program_id, slug=slug)
 
-
-
 Retrieve programs matching query parameters. Limited parameters include program_id, name, slug, enabled, and org.
 
 ### Example
@@ -9520,7 +9830,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 course_id = 'course_id_example' # str | Course ID contained in the program (optional)
@@ -9576,9 +9885,25 @@ Name | Type | Description  | Notes
 # **catalog_recommendation_courses_retrieve**
 > Course catalog_recommendation_courses_retrieve(course_id, org=org, user_id=user_id)
 
+GET
+Get a 'next' course
 
+This method retrieves the next recommended course for a user based on the provided parameters.
+It expects the following parameters in the request query:
+- user_id: The ID of the user for whom the next course is being recommended.
+- course_id: The ID of the current course.
+- org: The organization associated with the course.
 
-GET Get a 'next' course  This method retrieves the next recommended course for a user based on the provided parameters. It expects the following parameters in the request query: - user_id: The ID of the user for whom the next course is being recommended. - course_id: The ID of the current course. - org: The organization associated with the course.  Returns: - A serialized representation of the next course if found, with a status code of 200. - A status code of 400 if the course_id is not provided. - A status code of 200 with a None response if no next course is found.  Error Conditions: - Returns a 400 status code if the course_id is missing from the request parameters.  Side Effects: - None
+Returns:
+- A serialized representation of the next course if found, with a status code of 200.
+- A status code of 400 if the course_id is not provided.
+- A status code of 200 with a None response if no next course is found.
+
+Error Conditions:
+- Returns a 400 status code if the course_id is missing from the request parameters.
+
+Side Effects:
+- None
 
 ### Example
 
@@ -9601,7 +9926,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 course_id = 'course_id_example' # str | Current course ID
@@ -9676,7 +10000,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 resource_type2 = 'resource_type_example' # str | Type of resource (e.g., video, document)
@@ -9762,8 +10085,6 @@ Name | Type | Description  | Notes
 # **catalog_resources_destroy**
 > ResourceDeleteResponse catalog_resources_destroy(id, item_id=item_id, key=key, name=name, org=org, platform_key=platform_key, platform_org=platform_org, resource_type=resource_type, user_id=user_id, username=username)
 
-
-
 Remove a resource from the database.
 
 ### Example
@@ -9787,7 +10108,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 id = 56 # int | Resource ID to delete
@@ -9851,8 +10171,6 @@ Name | Type | Description  | Notes
 # **catalog_resources_list**
 > List[Resource] catalog_resources_list(id=id, item_id=item_id, key=key, name=name, org=org, platform_key=platform_key, platform_org=platform_org, resource_type=resource_type, user_id=user_id, username=username)
 
-
-
 Retrieve resources matching query. Limited parameters.
 
 ### Example
@@ -9876,7 +10194,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 id = 56 # int | Resource ID (optional)
@@ -9940,8 +10257,6 @@ Name | Type | Description  | Notes
 # **catalog_reviews_course_info_retrieve**
 > CourseReviewInfoResponse catalog_reviews_course_info_retrieve(course_id)
 
-
-
 Retrieve aggregate review information for a course.
 
 ### Example
@@ -9965,7 +10280,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 course_id = 'course_id_example' # str | The course ID to get review information for
@@ -10013,8 +10327,6 @@ Name | Type | Description  | Notes
 # **catalog_reviews_course_retrieve**
 > CourseReviewPaginatedResponse catalog_reviews_course_retrieve(course_id=course_id, org=org, page=page, page_size=page_size, platform_key=platform_key, platform_org=platform_org, sort=sort, user_id=user_id)
 
-
-
 Retrieve a paginated list of course reviews with filtering options
 
 ### Example
@@ -10038,7 +10350,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 course_id = 'course_id_example' # str | Filter reviews by course ID (optional)
@@ -10102,8 +10413,6 @@ Name | Type | Description  | Notes
 # **catalog_reviews_course_update_create**
 > CourseReviewResponse catalog_reviews_course_update_create(course_review_request)
 
-
-
 Create or update a course review
 
 ### Example
@@ -10128,7 +10437,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 course_review_request = iblai.CourseReviewRequest() # CourseReviewRequest | 
@@ -10160,7 +10468,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -10178,8 +10486,6 @@ Name | Type | Description  | Notes
 
 # **catalog_reviews_course_update_destroy**
 > catalog_reviews_course_update_destroy(course_id, username, user_id=user_id)
-
-
 
 Delete a course review
 
@@ -10203,7 +10509,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 course_id = 'course_id_example' # str | The course ID of the review to delete
@@ -10255,8 +10560,6 @@ void (empty response body)
 # **catalog_reviews_program_info_retrieve**
 > ProgramReviewInfoResponse catalog_reviews_program_info_retrieve(program_key)
 
-
-
 Retrieve aggregate review information for a program.
 
 ### Example
@@ -10280,7 +10583,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 program_key = 'program_key_example' # str | The program key to get review information for
@@ -10328,8 +10630,6 @@ Name | Type | Description  | Notes
 # **catalog_reviews_program_retrieve**
 > ProgramReviewPaginatedResponse catalog_reviews_program_retrieve(org=org, page=page, page_size=page_size, platform_key=platform_key, platform_org=platform_org, program_id=program_id, sort=sort, user_id=user_id)
 
-
-
 Retrieve a paginated list of program reviews with filtering options
 
 ### Example
@@ -10353,7 +10653,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 org = 'org_example' # str | Alias for platform_org (optional)
@@ -10417,8 +10716,6 @@ Name | Type | Description  | Notes
 # **catalog_reviews_program_update_create**
 > ProgramReview catalog_reviews_program_update_create(program_review_request)
 
-
-
 Create or update a program review
 
 ### Example
@@ -10443,7 +10740,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 program_review_request = iblai.ProgramReviewRequest() # ProgramReviewRequest | 
@@ -10475,7 +10771,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -10493,8 +10789,6 @@ Name | Type | Description  | Notes
 
 # **catalog_reviews_program_update_destroy**
 > catalog_reviews_program_update_destroy(program_key, username, user_id=user_id)
-
-
 
 Delete a program review
 
@@ -10518,7 +10812,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 program_key = 'program_key_example' # str | The program key of the review to delete
@@ -10570,8 +10863,6 @@ void (empty response body)
 # **catalog_roles_create**
 > Role catalog_roles_create(role_create_update_request, id=id, name=name, name__iexact=name__iexact, page=page, page_size=page_size, platform_key=platform_key, slug=slug, sort=sort)
 
-
-
 Add a new role or update an existing role based on provided data.
 
 ### Example
@@ -10596,7 +10887,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 role_create_update_request = iblai.RoleCreateUpdateRequest() # RoleCreateUpdateRequest | 
@@ -10644,7 +10934,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -10657,8 +10947,6 @@ Name | Type | Description  | Notes
 
 # **catalog_roles_desired_create**
 > DesiredRole catalog_roles_desired_create(desired_role_create_update_request, user_id=user_id, username=username)
-
-
 
 Add or update desired roles for a user.
 
@@ -10684,7 +10972,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 desired_role_create_update_request = iblai.DesiredRoleCreateUpdateRequest() # DesiredRoleCreateUpdateRequest | 
@@ -10720,7 +11007,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -10735,8 +11022,6 @@ Name | Type | Description  | Notes
 
 # **catalog_roles_desired_retrieve**
 > DesiredRole catalog_roles_desired_retrieve(user_id=user_id, username=username)
-
-
 
 Retrieve desired roles for a user.
 
@@ -10761,7 +11046,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 user_id = 56 # int | User ID (optional)
@@ -10810,8 +11094,6 @@ Name | Type | Description  | Notes
 # **catalog_roles_public_create**
 > Role catalog_roles_public_create(role_create_update_request)
 
-
-
 Add or update a role through the public API (when enabled).
 
 ### Example
@@ -10836,7 +11118,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 role_create_update_request = iblai.RoleCreateUpdateRequest() # RoleCreateUpdateRequest | 
@@ -10868,7 +11149,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -10883,8 +11164,6 @@ Name | Type | Description  | Notes
 
 # **catalog_roles_reported_create**
 > ReportedRole catalog_roles_reported_create(reported_role_create_update_request, user_id=user_id, username=username)
-
-
 
 Add or update reported roles for a user.
 
@@ -10910,7 +11189,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 reported_role_create_update_request = iblai.ReportedRoleCreateUpdateRequest() # ReportedRoleCreateUpdateRequest | 
@@ -10946,7 +11224,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -10961,8 +11239,6 @@ Name | Type | Description  | Notes
 
 # **catalog_roles_reported_retrieve**
 > ReportedRole catalog_roles_reported_retrieve(user_id=user_id, username=username)
-
-
 
 Retrieve reported roles for a user.
 
@@ -10987,7 +11263,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 user_id = 56 # int | User ID (optional)
@@ -11036,8 +11311,6 @@ Name | Type | Description  | Notes
 # **catalog_roles_retrieve**
 > Role catalog_roles_retrieve(id=id, name=name, name__iexact=name__iexact, page=page, page_size=page_size, platform_key=platform_key, slug=slug, sort=sort)
 
-
-
 Retrieve roles matching query parameters. Supports filtering by name, id, and slug.
 
 ### Example
@@ -11061,7 +11334,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 id = 56 # int | Role ID (optional)
@@ -11121,9 +11393,25 @@ Name | Type | Description  | Notes
 # **catalog_search_programs_create**
 > ProgramSearch catalog_search_programs_create(program_search, org=org, query=query)
 
+POST
+Retrieve programs matching query.
 
+Params:
+query: The search term used to filter programs.
+org: The organization to which the programs belong.
 
-POST Retrieve programs matching query.  Params: query: The search term used to filter programs. org: The organization to which the programs belong.  Returns: A JSON response containing a list of programs that match the search criteria.  Error Conditions: - If the request data is malformed or missing required fields, a 400 Bad Request may be returned. - If there is an issue with the database query, a 500 Internal Server Error may be returned.  Side Effects: - None  Special Return Codes: - A 200 status code indicates successful retrieval of programs matching the query.
+Returns:
+A JSON response containing a list of programs that match the search criteria.
+
+Error Conditions:
+- If the request data is malformed or missing required fields, a 400 Bad Request may be returned.
+- If there is an issue with the database query, a 500 Internal Server Error may be returned.
+
+Side Effects:
+- None
+
+Special Return Codes:
+- A 200 status code indicates successful retrieval of programs matching the query.
 
 ### Example
 
@@ -11146,7 +11434,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 program_search = iblai.ProgramSearch() # ProgramSearch | 
@@ -11182,7 +11469,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -11195,8 +11482,6 @@ Name | Type | Description  | Notes
 
 # **catalog_skills_create**
 > PaginatedSkill catalog_skills_create(paginated_skill, id=id, name=name, name__iexact=name__iexact, page=page, page_size=page_size, platform_key=platform_key, slug=slug, sort=sort)
-
-
 
 Add or update a skill.
 
@@ -11221,7 +11506,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 paginated_skill = iblai.PaginatedSkill() # PaginatedSkill | 
@@ -11269,7 +11553,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -11282,8 +11566,6 @@ Name | Type | Description  | Notes
 
 # **catalog_skills_desired_create**
 > DesiredSkill catalog_skills_desired_create(desired_skill_create_update_request, user_id=user_id, username=username)
-
-
 
 Add or update desired skills for a user.
 
@@ -11309,7 +11591,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 desired_skill_create_update_request = iblai.DesiredSkillCreateUpdateRequest() # DesiredSkillCreateUpdateRequest | 
@@ -11345,7 +11626,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -11359,8 +11640,6 @@ Name | Type | Description  | Notes
 
 # **catalog_skills_desired_retrieve**
 > DesiredSkill catalog_skills_desired_retrieve(user_id=user_id, username=username)
-
-
 
 Retrieve desired skills for a user.
 
@@ -11385,7 +11664,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 user_id = 56 # int | User ID (optional)
@@ -11433,8 +11711,6 @@ Name | Type | Description  | Notes
 # **catalog_skills_public_create**
 > Skill catalog_skills_public_create(skill_create_update_request)
 
-
-
 Add or update a skill.
 
 ### Example
@@ -11459,7 +11735,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 skill_create_update_request = iblai.SkillCreateUpdateRequest() # SkillCreateUpdateRequest | 
@@ -11491,7 +11766,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -11504,11 +11779,9 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **catalog_skills_reported_create**
-> ReportedSkill catalog_skills_reported_create(reported_skill, user_id=user_id, username=username)
+> ReportedSkill catalog_skills_reported_create(reported_skill_create_update_request, user_id=user_id, username=username)
 
-
-
-POST Add or update a skill.  Params: user_id/username skills data  This method allows adding or updating a user's reported skills. It requires either a user_id or username to identify the user, along with a list of skills and additional data. If the user is identified and the skills are successfully saved, the serialized skill data is returned. A status code of 201 indicates that a new skill was created, while a status code of 200 indicates an update to an existing skill.  Error Conditions: - If the user cannot be identified, a 400 status code is returned. - If the skills cannot be saved, a 400 status code is returned.  Side Effects: - If a new skill is created, it will be persisted in the database. - If an existing skill is updated, the changes will be saved in the database.
+Add or update reported skills for a user.
 
 ### Example
 
@@ -11517,6 +11790,7 @@ POST Add or update a skill.  Params: user_id/username skills data  This method a
 ```python
 import iblai
 from iblai.models.reported_skill import ReportedSkill
+from iblai.models.reported_skill_create_update_request import ReportedSkillCreateUpdateRequest
 from iblai.rest import ApiException
 from pprint import pprint
 
@@ -11531,15 +11805,14 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
-reported_skill = iblai.ReportedSkill() # ReportedSkill | 
+reported_skill_create_update_request = iblai.ReportedSkillCreateUpdateRequest() # ReportedSkillCreateUpdateRequest | 
 user_id = 56 # int | User ID (optional)
 username = 'username_example' # str | Username (optional)
 
 try:
-    api_response = api_instance.catalog_skills_reported_create(reported_skill, user_id=user_id, username=username)
+    api_response = api_instance.catalog_skills_reported_create(reported_skill_create_update_request, user_id=user_id, username=username)
     print("The response of CatalogApi->catalog_skills_reported_create:\n")
     pprint(api_response)
 except Exception as e:
@@ -11553,7 +11826,7 @@ except Exception as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **reported_skill** | [**ReportedSkill**](ReportedSkill.md)|  | 
+ **reported_skill_create_update_request** | [**ReportedSkillCreateUpdateRequest**](ReportedSkillCreateUpdateRequest.md)|  | 
  **user_id** | **int**| User ID | [optional] 
  **username** | **str**| Username | [optional] 
 
@@ -11567,7 +11840,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -11575,15 +11848,14 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** |  |  -  |
+**201** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **catalog_skills_reported_retrieve**
 > ReportedSkill catalog_skills_reported_retrieve(user_id=user_id, username=username)
 
-
-
-GET Retrieve desired skills for user  Params: name id slug  This method retrieves the skills reported by a user. It requires either a user_id or username to identify the user. If the user is found and has reported skills, the first reported skill is serialized and returned with a status code of 200. If no skills are found, a status code of 400 is returned.  Error Conditions: - If the user cannot be identified, a 400 status code is returned. - If no reported skills exist for the user, a 400 status code is returned.
+Retrieve reported skills for a user.
 
 ### Example
 
@@ -11606,7 +11878,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 user_id = 56 # int | User ID (optional)
@@ -11654,8 +11925,6 @@ Name | Type | Description  | Notes
 # **catalog_skills_retrieve**
 > PaginatedSkill catalog_skills_retrieve(id=id, name=name, name__iexact=name__iexact, page=page, page_size=page_size, platform_key=platform_key, slug=slug, sort=sort)
 
-
-
 Retrieve skills matching query. Limited parameters.
 
 ### Example
@@ -11679,7 +11948,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 id = 56 # int | Skill ID (optional)
@@ -11739,9 +12007,41 @@ Name | Type | Description  | Notes
 # **catalog_suggestions_course_manage_bulk_create**
 > BulkSuggestionResponse catalog_suggestions_course_manage_bulk_create(course_suggestion_bulk_create)
 
+API View for bulk management of course suggestions.
 
+This endpoint allows administrators to create multiple course suggestions at once.
 
-API View for bulk management of course suggestions.  This endpoint allows administrators to create multiple course suggestions at once.  Methods:     POST: Create multiple course suggestions in bulk  Request Body:     A JSON object containing:     - platform_key (str, required): The platform for the suggestions     - suggestion_data (list, required): List of suggestion objects, each containing:       - course_id (str, required): The course ID to suggest       - user_id (str/int, required): The user to suggest the course to       - accepted (bool, optional): Whether the suggestion is accepted       - visible (bool, optional): Whether the suggestion is visible       - metadata (dict, optional): Additional suggestion metadata  Returns:     POST: A JSON response containing the operation results:         {             \"successes\": 15,             \"error_codes\": []         }  Error Responses:     400 Bad Request: If required parameters are missing or invalid     401 Unauthorized: If the user is not authenticated     403 Forbidden: If the user does not have permission to manage suggestions     500 Internal Server Error: If an unexpected error occurs during bulk creation  Access Control:     - Requires IsDMAdmin, IsPlatformAdmin, or IsDepartmentModeAdminInPlatform permission     - Platform admins can create suggestions for their platform     - Department admins can create suggestions for their departments     - DM admins can create suggestions for any platform
+Methods:
+    POST: Create multiple course suggestions in bulk
+
+Request Body:
+    A JSON object containing:
+    - platform_key (str, required): The platform for the suggestions
+    - suggestion_data (list, required): List of suggestion objects, each containing:
+      - course_id (str, required): The course ID to suggest
+      - user_id (str/int, required): The user to suggest the course to
+      - accepted (bool, optional): Whether the suggestion is accepted
+      - visible (bool, optional): Whether the suggestion is visible
+      - metadata (dict, optional): Additional suggestion metadata
+
+Returns:
+    POST: A JSON response containing the operation results:
+        {
+            "successes": 15,
+            "error_codes": []
+        }
+
+Error Responses:
+    400 Bad Request: If required parameters are missing or invalid
+    401 Unauthorized: If the user is not authenticated
+    403 Forbidden: If the user does not have permission to manage suggestions
+    500 Internal Server Error: If an unexpected error occurs during bulk creation
+
+Access Control:
+    - Requires IsDMAdmin, IsPlatformAdmin, or IsDepartmentModeAdminInPlatform permission
+    - Platform admins can create suggestions for their platform
+    - Department admins can create suggestions for their departments
+    - DM admins can create suggestions for any platform
 
 ### Example
 
@@ -11765,7 +12065,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 course_suggestion_bulk_create = iblai.CourseSuggestionBulkCreate() # CourseSuggestionBulkCreate | 
@@ -11797,7 +12096,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -11815,9 +12114,91 @@ Name | Type | Description  | Notes
 # **catalog_suggestions_course_manage_create**
 > CourseSuggestionDetail catalog_suggestions_course_manage_create(platform_key, course_suggestion_create, department_mode=department_mode, page=page, page_size=page_size, platform_org=platform_org, query=query, sort=sort)
 
+API View for managing course suggestions.
 
+This endpoint allows administrators to view, create, update, and delete course suggestions
+for users within a platform.
 
-API View for managing course suggestions.  This endpoint allows administrators to view, create, update, and delete course suggestions for users within a platform.  Query Parameters (GET):     platform_key (str, required): The platform to retrieve suggestions for     platform_org (str, optional): The organization identifier for the platform     query (str, optional): Search term to filter suggestions     sort (str, optional): Field to sort results by (default: '-id')     department_mode (bool, optional): Filter suggestions by department admin access     page (int, optional): Page number for pagination     page_size (int, optional): Number of items per page  Methods:     GET: Retrieve a paginated list of course suggestions for a platform     POST: Create or update a course suggestion     DELETE: Remove a course suggestion  Request Body (POST):     A JSON object containing:     - platform_key (str, required): The platform for the suggestion     - course_id (str, required): The course ID to suggest     - user_id (str/int, required): The user to suggest the course to     - accepted (bool, optional): Whether the suggestion is accepted     - visible (bool, optional): Whether the suggestion is visible     - metadata (dict, optional): Additional suggestion metadata  Query Parameters (DELETE):     suggestion_id (int, required): The ID of the suggestion to delete  Returns:     GET: A paginated JSON response containing course suggestions:         {             \"count\": 10,             \"next\": \"https://example.com/api/catalog/suggestions/course/manage/?page=2\",             \"previous\": null,             \"results\": [                 {                     \"id\": 123,                     \"user_id\": 456,                     \"username\": \"student1\",                     \"name\": \"Student Name\",                     \"platform_key\": \"platform1\",                     \"accepted\": false,                     \"visible\": true,                     \"created\": \"2023-06-15T14:30:00Z\",                     \"modified\": \"2023-06-15T14:30:00Z\",                     \"metadata\": {},                     \"course_id\": \"course-v1:org+course+run\",                     \"course_name\": \"Introduction to Programming\"                 },                 ...             ]         }      POST: A JSON response containing the created/updated suggestion:         {             \"id\": 123,             \"user_id\": 456,             \"username\": \"student1\",             \"name\": \"Student Name\",             \"platform_key\": \"platform1\",             \"accepted\": false,             \"visible\": true,             \"created\": \"2023-06-15T14:30:00Z\",             \"modified\": \"2023-06-15T14:30:00Z\",             \"metadata\": {},             \"course_id\": \"course-v1:org+course+run\",             \"course_name\": \"Introduction to Programming\"         }      DELETE: A success response with status 200  Error Responses:     400 Bad Request: If required parameters are missing or invalid, or if suggestion operations fail     401 Unauthorized: If the user is not authenticated     403 Forbidden: If the user does not have permission to manage suggestions     500 Internal Server Error: If an unexpected error occurs  Access Control:     - Requires IsDMAdmin, IsPlatformAdmin, or IsDepartmentModeAdminInPlatform permission     - Platform admins can manage suggestions for their platform     - Department admins can manage suggestions for their departments     - DM admins can manage all suggestions
+Query Parameters (GET):
+    platform_key (str, required): The platform to retrieve suggestions for
+    platform_org (str, optional): The organization identifier for the platform
+    query (str, optional): Search term to filter suggestions
+    sort (str, optional): Field to sort results by (default: '-id')
+    department_mode (bool, optional): Filter suggestions by department admin access
+    page (int, optional): Page number for pagination
+    page_size (int, optional): Number of items per page
+
+Methods:
+    GET: Retrieve a paginated list of course suggestions for a platform
+    POST: Create or update a course suggestion
+    DELETE: Remove a course suggestion
+
+Request Body (POST):
+    A JSON object containing:
+    - platform_key (str, required): The platform for the suggestion
+    - course_id (str, required): The course ID to suggest
+    - user_id (str/int, required): The user to suggest the course to
+    - accepted (bool, optional): Whether the suggestion is accepted
+    - visible (bool, optional): Whether the suggestion is visible
+    - metadata (dict, optional): Additional suggestion metadata
+
+Query Parameters (DELETE):
+    suggestion_id (int, required): The ID of the suggestion to delete
+
+Returns:
+    GET: A paginated JSON response containing course suggestions:
+        {
+            "count": 10,
+            "next": "https://example.com/api/catalog/suggestions/course/manage/?page=2",
+            "previous": null,
+            "results": [
+                {
+                    "id": 123,
+                    "user_id": 456,
+                    "username": "student1",
+                    "name": "Student Name",
+                    "platform_key": "platform1",
+                    "accepted": false,
+                    "visible": true,
+                    "created": "2023-06-15T14:30:00Z",
+                    "modified": "2023-06-15T14:30:00Z",
+                    "metadata": {},
+                    "course_id": "course-v1:org+course+run",
+                    "course_name": "Introduction to Programming"
+                },
+                ...
+            ]
+        }
+
+    POST: A JSON response containing the created/updated suggestion:
+        {
+            "id": 123,
+            "user_id": 456,
+            "username": "student1",
+            "name": "Student Name",
+            "platform_key": "platform1",
+            "accepted": false,
+            "visible": true,
+            "created": "2023-06-15T14:30:00Z",
+            "modified": "2023-06-15T14:30:00Z",
+            "metadata": {},
+            "course_id": "course-v1:org+course+run",
+            "course_name": "Introduction to Programming"
+        }
+
+    DELETE: A success response with status 200
+
+Error Responses:
+    400 Bad Request: If required parameters are missing or invalid, or if suggestion operations fail
+    401 Unauthorized: If the user is not authenticated
+    403 Forbidden: If the user does not have permission to manage suggestions
+    500 Internal Server Error: If an unexpected error occurs
+
+Access Control:
+    - Requires IsDMAdmin, IsPlatformAdmin, or IsDepartmentModeAdminInPlatform permission
+    - Platform admins can manage suggestions for their platform
+    - Department admins can manage suggestions for their departments
+    - DM admins can manage all suggestions
 
 ### Example
 
@@ -11841,7 +12222,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 platform_key = 'platform_key_example' # str | The platform to retrieve suggestions for
@@ -11887,7 +12267,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -11904,8 +12284,6 @@ Name | Type | Description  | Notes
 
 # **catalog_suggestions_course_manage_destroy**
 > catalog_suggestions_course_manage_destroy(platform_key, suggestion_id, department_mode=department_mode, page=page, page_size=page_size, platform_org=platform_org, query=query, sort=sort)
-
-
 
 Delete single suggestion
 
@@ -11929,7 +12307,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 platform_key = 'platform_key_example' # str | The platform to retrieve suggestions for
@@ -11992,9 +12369,91 @@ void (empty response body)
 # **catalog_suggestions_course_manage_group_create**
 > CourseGroupSuggestionDetail catalog_suggestions_course_manage_group_create(platform_key, course_group_suggestion_create, department_mode=department_mode, page=page, page_size=page_size, platform_org=platform_org, query=query, sort=sort)
 
+API View for managing course group suggestions.
 
+This endpoint allows administrators to view, create, and delete course suggestions
+for groups of users within a platform.
 
-API View for managing course group suggestions.  This endpoint allows administrators to view, create, and delete course suggestions for groups of users within a platform.  Query Parameters (GET):     platform_key (str, required): The platform to retrieve group suggestions for     platform_org (str, optional): The organization identifier for the platform     query (str, optional): Search term to filter group suggestions     sort (str, optional): Field to sort results by (default: 'id')     department_mode (bool, optional): Filter suggestions by department admin access     page (int, optional): Page number for pagination     page_size (int, optional): Number of items per page  Methods:     GET: Retrieve a paginated list of course group suggestions for a platform     POST: Create or update a course group suggestion     DELETE: Remove a course group suggestion  Request Body (POST):     A JSON object containing:     - platform_key (str, required): The platform for the group suggestion     - course_id (str, required): The course ID to suggest     - group_id (str/int, required): The group to suggest the course to     - accepted (bool, optional): Whether the suggestion is accepted     - visible (bool, optional): Whether the suggestion is visible     - metadata (dict, optional): Additional suggestion metadata  Query Parameters (DELETE):     suggestion_id (int, required): The ID of the group suggestion to delete  Returns:     GET: A paginated JSON response containing course group suggestions:         {             \"count\": 5,             \"next\": \"https://example.com/api/catalog/suggestions/course/group/?page=2\",             \"previous\": null,             \"results\": [                 {                     \"id\": 123,                     \"group_id\": 789,                     \"group_name\": \"Engineering Team\",                     \"platform_key\": \"platform1\",                     \"accepted\": false,                     \"visible\": true,                     \"created\": \"2023-06-15T14:30:00Z\",                     \"modified\": \"2023-06-15T14:30:00Z\",                     \"metadata\": {},                     \"course_id\": \"course-v1:org+course+run\",                     \"course_name\": \"Introduction to Programming\",                     \"user_count\": 25                 },                 ...             ]         }      POST: A JSON response containing the created/updated group suggestion:         {             \"id\": 123,             \"group_id\": 789,             \"group_name\": \"Engineering Team\",             \"platform_key\": \"platform1\",             \"accepted\": false,             \"visible\": true,             \"created\": \"2023-06-15T14:30:00Z\",             \"modified\": \"2023-06-15T14:30:00Z\",             \"metadata\": {},             \"course_id\": \"course-v1:org+course+run\",             \"course_name\": \"Introduction to Programming\",             \"user_count\": 25         }      DELETE: A success response with status 200  Error Responses:     400 Bad Request: If required parameters are missing or invalid, or if group suggestion operations fail     401 Unauthorized: If the user is not authenticated     403 Forbidden: If the user does not have permission to manage group suggestions     500 Internal Server Error: If an unexpected error occurs  Access Control:     - Requires IsDMAdmin, IsPlatformAdmin, or IsDepartmentModeAdminInPlatform permission     - Platform admins can manage group suggestions for their platform     - Department admins can manage group suggestions for their departments     - DM admins can manage all group suggestions
+Query Parameters (GET):
+    platform_key (str, required): The platform to retrieve group suggestions for
+    platform_org (str, optional): The organization identifier for the platform
+    query (str, optional): Search term to filter group suggestions
+    sort (str, optional): Field to sort results by (default: 'id')
+    department_mode (bool, optional): Filter suggestions by department admin access
+    page (int, optional): Page number for pagination
+    page_size (int, optional): Number of items per page
+
+Methods:
+    GET: Retrieve a paginated list of course group suggestions for a platform
+    POST: Create or update a course group suggestion
+    DELETE: Remove a course group suggestion
+
+Request Body (POST):
+    A JSON object containing:
+    - platform_key (str, required): The platform for the group suggestion
+    - course_id (str, required): The course ID to suggest
+    - group_id (str/int, required): The group to suggest the course to
+    - accepted (bool, optional): Whether the suggestion is accepted
+    - visible (bool, optional): Whether the suggestion is visible
+    - metadata (dict, optional): Additional suggestion metadata
+
+Query Parameters (DELETE):
+    suggestion_id (int, required): The ID of the group suggestion to delete
+
+Returns:
+    GET: A paginated JSON response containing course group suggestions:
+        {
+            "count": 5,
+            "next": "https://example.com/api/catalog/suggestions/course/group/?page=2",
+            "previous": null,
+            "results": [
+                {
+                    "id": 123,
+                    "group_id": 789,
+                    "group_name": "Engineering Team",
+                    "platform_key": "platform1",
+                    "accepted": false,
+                    "visible": true,
+                    "created": "2023-06-15T14:30:00Z",
+                    "modified": "2023-06-15T14:30:00Z",
+                    "metadata": {},
+                    "course_id": "course-v1:org+course+run",
+                    "course_name": "Introduction to Programming",
+                    "user_count": 25
+                },
+                ...
+            ]
+        }
+
+    POST: A JSON response containing the created/updated group suggestion:
+        {
+            "id": 123,
+            "group_id": 789,
+            "group_name": "Engineering Team",
+            "platform_key": "platform1",
+            "accepted": false,
+            "visible": true,
+            "created": "2023-06-15T14:30:00Z",
+            "modified": "2023-06-15T14:30:00Z",
+            "metadata": {},
+            "course_id": "course-v1:org+course+run",
+            "course_name": "Introduction to Programming",
+            "user_count": 25
+        }
+
+    DELETE: A success response with status 200
+
+Error Responses:
+    400 Bad Request: If required parameters are missing or invalid, or if group suggestion operations fail
+    401 Unauthorized: If the user is not authenticated
+    403 Forbidden: If the user does not have permission to manage group suggestions
+    500 Internal Server Error: If an unexpected error occurs
+
+Access Control:
+    - Requires IsDMAdmin, IsPlatformAdmin, or IsDepartmentModeAdminInPlatform permission
+    - Platform admins can manage group suggestions for their platform
+    - Department admins can manage group suggestions for their departments
+    - DM admins can manage all group suggestions
 
 ### Example
 
@@ -12018,7 +12477,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 platform_key = 'platform_key_example' # str | The platform to retrieve group suggestions for
@@ -12064,7 +12522,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -12082,9 +12540,91 @@ Name | Type | Description  | Notes
 # **catalog_suggestions_course_manage_group_destroy**
 > catalog_suggestions_course_manage_group_destroy(platform_key, suggestion_id, department_mode=department_mode, page=page, page_size=page_size, platform_org=platform_org, query=query, sort=sort)
 
+API View for managing course group suggestions.
 
+This endpoint allows administrators to view, create, and delete course suggestions
+for groups of users within a platform.
 
-API View for managing course group suggestions.  This endpoint allows administrators to view, create, and delete course suggestions for groups of users within a platform.  Query Parameters (GET):     platform_key (str, required): The platform to retrieve group suggestions for     platform_org (str, optional): The organization identifier for the platform     query (str, optional): Search term to filter group suggestions     sort (str, optional): Field to sort results by (default: 'id')     department_mode (bool, optional): Filter suggestions by department admin access     page (int, optional): Page number for pagination     page_size (int, optional): Number of items per page  Methods:     GET: Retrieve a paginated list of course group suggestions for a platform     POST: Create or update a course group suggestion     DELETE: Remove a course group suggestion  Request Body (POST):     A JSON object containing:     - platform_key (str, required): The platform for the group suggestion     - course_id (str, required): The course ID to suggest     - group_id (str/int, required): The group to suggest the course to     - accepted (bool, optional): Whether the suggestion is accepted     - visible (bool, optional): Whether the suggestion is visible     - metadata (dict, optional): Additional suggestion metadata  Query Parameters (DELETE):     suggestion_id (int, required): The ID of the group suggestion to delete  Returns:     GET: A paginated JSON response containing course group suggestions:         {             \"count\": 5,             \"next\": \"https://example.com/api/catalog/suggestions/course/group/?page=2\",             \"previous\": null,             \"results\": [                 {                     \"id\": 123,                     \"group_id\": 789,                     \"group_name\": \"Engineering Team\",                     \"platform_key\": \"platform1\",                     \"accepted\": false,                     \"visible\": true,                     \"created\": \"2023-06-15T14:30:00Z\",                     \"modified\": \"2023-06-15T14:30:00Z\",                     \"metadata\": {},                     \"course_id\": \"course-v1:org+course+run\",                     \"course_name\": \"Introduction to Programming\",                     \"user_count\": 25                 },                 ...             ]         }      POST: A JSON response containing the created/updated group suggestion:         {             \"id\": 123,             \"group_id\": 789,             \"group_name\": \"Engineering Team\",             \"platform_key\": \"platform1\",             \"accepted\": false,             \"visible\": true,             \"created\": \"2023-06-15T14:30:00Z\",             \"modified\": \"2023-06-15T14:30:00Z\",             \"metadata\": {},             \"course_id\": \"course-v1:org+course+run\",             \"course_name\": \"Introduction to Programming\",             \"user_count\": 25         }      DELETE: A success response with status 200  Error Responses:     400 Bad Request: If required parameters are missing or invalid, or if group suggestion operations fail     401 Unauthorized: If the user is not authenticated     403 Forbidden: If the user does not have permission to manage group suggestions     500 Internal Server Error: If an unexpected error occurs  Access Control:     - Requires IsDMAdmin, IsPlatformAdmin, or IsDepartmentModeAdminInPlatform permission     - Platform admins can manage group suggestions for their platform     - Department admins can manage group suggestions for their departments     - DM admins can manage all group suggestions
+Query Parameters (GET):
+    platform_key (str, required): The platform to retrieve group suggestions for
+    platform_org (str, optional): The organization identifier for the platform
+    query (str, optional): Search term to filter group suggestions
+    sort (str, optional): Field to sort results by (default: 'id')
+    department_mode (bool, optional): Filter suggestions by department admin access
+    page (int, optional): Page number for pagination
+    page_size (int, optional): Number of items per page
+
+Methods:
+    GET: Retrieve a paginated list of course group suggestions for a platform
+    POST: Create or update a course group suggestion
+    DELETE: Remove a course group suggestion
+
+Request Body (POST):
+    A JSON object containing:
+    - platform_key (str, required): The platform for the group suggestion
+    - course_id (str, required): The course ID to suggest
+    - group_id (str/int, required): The group to suggest the course to
+    - accepted (bool, optional): Whether the suggestion is accepted
+    - visible (bool, optional): Whether the suggestion is visible
+    - metadata (dict, optional): Additional suggestion metadata
+
+Query Parameters (DELETE):
+    suggestion_id (int, required): The ID of the group suggestion to delete
+
+Returns:
+    GET: A paginated JSON response containing course group suggestions:
+        {
+            "count": 5,
+            "next": "https://example.com/api/catalog/suggestions/course/group/?page=2",
+            "previous": null,
+            "results": [
+                {
+                    "id": 123,
+                    "group_id": 789,
+                    "group_name": "Engineering Team",
+                    "platform_key": "platform1",
+                    "accepted": false,
+                    "visible": true,
+                    "created": "2023-06-15T14:30:00Z",
+                    "modified": "2023-06-15T14:30:00Z",
+                    "metadata": {},
+                    "course_id": "course-v1:org+course+run",
+                    "course_name": "Introduction to Programming",
+                    "user_count": 25
+                },
+                ...
+            ]
+        }
+
+    POST: A JSON response containing the created/updated group suggestion:
+        {
+            "id": 123,
+            "group_id": 789,
+            "group_name": "Engineering Team",
+            "platform_key": "platform1",
+            "accepted": false,
+            "visible": true,
+            "created": "2023-06-15T14:30:00Z",
+            "modified": "2023-06-15T14:30:00Z",
+            "metadata": {},
+            "course_id": "course-v1:org+course+run",
+            "course_name": "Introduction to Programming",
+            "user_count": 25
+        }
+
+    DELETE: A success response with status 200
+
+Error Responses:
+    400 Bad Request: If required parameters are missing or invalid, or if group suggestion operations fail
+    401 Unauthorized: If the user is not authenticated
+    403 Forbidden: If the user does not have permission to manage group suggestions
+    500 Internal Server Error: If an unexpected error occurs
+
+Access Control:
+    - Requires IsDMAdmin, IsPlatformAdmin, or IsDepartmentModeAdminInPlatform permission
+    - Platform admins can manage group suggestions for their platform
+    - Department admins can manage group suggestions for their departments
+    - DM admins can manage all group suggestions
 
 ### Example
 
@@ -12106,7 +12646,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 platform_key = 'platform_key_example' # str | The platform to retrieve group suggestions for
@@ -12169,9 +12708,91 @@ void (empty response body)
 # **catalog_suggestions_course_manage_group_retrieve**
 > PaginatedCourseGroupSuggestion catalog_suggestions_course_manage_group_retrieve(platform_key, department_mode=department_mode, page=page, page_size=page_size, platform_org=platform_org, query=query, sort=sort)
 
+API View for managing course group suggestions.
 
+This endpoint allows administrators to view, create, and delete course suggestions
+for groups of users within a platform.
 
-API View for managing course group suggestions.  This endpoint allows administrators to view, create, and delete course suggestions for groups of users within a platform.  Query Parameters (GET):     platform_key (str, required): The platform to retrieve group suggestions for     platform_org (str, optional): The organization identifier for the platform     query (str, optional): Search term to filter group suggestions     sort (str, optional): Field to sort results by (default: 'id')     department_mode (bool, optional): Filter suggestions by department admin access     page (int, optional): Page number for pagination     page_size (int, optional): Number of items per page  Methods:     GET: Retrieve a paginated list of course group suggestions for a platform     POST: Create or update a course group suggestion     DELETE: Remove a course group suggestion  Request Body (POST):     A JSON object containing:     - platform_key (str, required): The platform for the group suggestion     - course_id (str, required): The course ID to suggest     - group_id (str/int, required): The group to suggest the course to     - accepted (bool, optional): Whether the suggestion is accepted     - visible (bool, optional): Whether the suggestion is visible     - metadata (dict, optional): Additional suggestion metadata  Query Parameters (DELETE):     suggestion_id (int, required): The ID of the group suggestion to delete  Returns:     GET: A paginated JSON response containing course group suggestions:         {             \"count\": 5,             \"next\": \"https://example.com/api/catalog/suggestions/course/group/?page=2\",             \"previous\": null,             \"results\": [                 {                     \"id\": 123,                     \"group_id\": 789,                     \"group_name\": \"Engineering Team\",                     \"platform_key\": \"platform1\",                     \"accepted\": false,                     \"visible\": true,                     \"created\": \"2023-06-15T14:30:00Z\",                     \"modified\": \"2023-06-15T14:30:00Z\",                     \"metadata\": {},                     \"course_id\": \"course-v1:org+course+run\",                     \"course_name\": \"Introduction to Programming\",                     \"user_count\": 25                 },                 ...             ]         }      POST: A JSON response containing the created/updated group suggestion:         {             \"id\": 123,             \"group_id\": 789,             \"group_name\": \"Engineering Team\",             \"platform_key\": \"platform1\",             \"accepted\": false,             \"visible\": true,             \"created\": \"2023-06-15T14:30:00Z\",             \"modified\": \"2023-06-15T14:30:00Z\",             \"metadata\": {},             \"course_id\": \"course-v1:org+course+run\",             \"course_name\": \"Introduction to Programming\",             \"user_count\": 25         }      DELETE: A success response with status 200  Error Responses:     400 Bad Request: If required parameters are missing or invalid, or if group suggestion operations fail     401 Unauthorized: If the user is not authenticated     403 Forbidden: If the user does not have permission to manage group suggestions     500 Internal Server Error: If an unexpected error occurs  Access Control:     - Requires IsDMAdmin, IsPlatformAdmin, or IsDepartmentModeAdminInPlatform permission     - Platform admins can manage group suggestions for their platform     - Department admins can manage group suggestions for their departments     - DM admins can manage all group suggestions
+Query Parameters (GET):
+    platform_key (str, required): The platform to retrieve group suggestions for
+    platform_org (str, optional): The organization identifier for the platform
+    query (str, optional): Search term to filter group suggestions
+    sort (str, optional): Field to sort results by (default: 'id')
+    department_mode (bool, optional): Filter suggestions by department admin access
+    page (int, optional): Page number for pagination
+    page_size (int, optional): Number of items per page
+
+Methods:
+    GET: Retrieve a paginated list of course group suggestions for a platform
+    POST: Create or update a course group suggestion
+    DELETE: Remove a course group suggestion
+
+Request Body (POST):
+    A JSON object containing:
+    - platform_key (str, required): The platform for the group suggestion
+    - course_id (str, required): The course ID to suggest
+    - group_id (str/int, required): The group to suggest the course to
+    - accepted (bool, optional): Whether the suggestion is accepted
+    - visible (bool, optional): Whether the suggestion is visible
+    - metadata (dict, optional): Additional suggestion metadata
+
+Query Parameters (DELETE):
+    suggestion_id (int, required): The ID of the group suggestion to delete
+
+Returns:
+    GET: A paginated JSON response containing course group suggestions:
+        {
+            "count": 5,
+            "next": "https://example.com/api/catalog/suggestions/course/group/?page=2",
+            "previous": null,
+            "results": [
+                {
+                    "id": 123,
+                    "group_id": 789,
+                    "group_name": "Engineering Team",
+                    "platform_key": "platform1",
+                    "accepted": false,
+                    "visible": true,
+                    "created": "2023-06-15T14:30:00Z",
+                    "modified": "2023-06-15T14:30:00Z",
+                    "metadata": {},
+                    "course_id": "course-v1:org+course+run",
+                    "course_name": "Introduction to Programming",
+                    "user_count": 25
+                },
+                ...
+            ]
+        }
+
+    POST: A JSON response containing the created/updated group suggestion:
+        {
+            "id": 123,
+            "group_id": 789,
+            "group_name": "Engineering Team",
+            "platform_key": "platform1",
+            "accepted": false,
+            "visible": true,
+            "created": "2023-06-15T14:30:00Z",
+            "modified": "2023-06-15T14:30:00Z",
+            "metadata": {},
+            "course_id": "course-v1:org+course+run",
+            "course_name": "Introduction to Programming",
+            "user_count": 25
+        }
+
+    DELETE: A success response with status 200
+
+Error Responses:
+    400 Bad Request: If required parameters are missing or invalid, or if group suggestion operations fail
+    401 Unauthorized: If the user is not authenticated
+    403 Forbidden: If the user does not have permission to manage group suggestions
+    500 Internal Server Error: If an unexpected error occurs
+
+Access Control:
+    - Requires IsDMAdmin, IsPlatformAdmin, or IsDepartmentModeAdminInPlatform permission
+    - Platform admins can manage group suggestions for their platform
+    - Department admins can manage group suggestions for their departments
+    - DM admins can manage all group suggestions
 
 ### Example
 
@@ -12194,7 +12815,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 platform_key = 'platform_key_example' # str | The platform to retrieve group suggestions for
@@ -12256,9 +12876,91 @@ Name | Type | Description  | Notes
 # **catalog_suggestions_course_manage_retrieve**
 > PaginatedCourseSuggestion catalog_suggestions_course_manage_retrieve(platform_key, department_mode=department_mode, page=page, page_size=page_size, platform_org=platform_org, query=query, sort=sort)
 
+API View for managing course suggestions.
 
+This endpoint allows administrators to view, create, update, and delete course suggestions
+for users within a platform.
 
-API View for managing course suggestions.  This endpoint allows administrators to view, create, update, and delete course suggestions for users within a platform.  Query Parameters (GET):     platform_key (str, required): The platform to retrieve suggestions for     platform_org (str, optional): The organization identifier for the platform     query (str, optional): Search term to filter suggestions     sort (str, optional): Field to sort results by (default: '-id')     department_mode (bool, optional): Filter suggestions by department admin access     page (int, optional): Page number for pagination     page_size (int, optional): Number of items per page  Methods:     GET: Retrieve a paginated list of course suggestions for a platform     POST: Create or update a course suggestion     DELETE: Remove a course suggestion  Request Body (POST):     A JSON object containing:     - platform_key (str, required): The platform for the suggestion     - course_id (str, required): The course ID to suggest     - user_id (str/int, required): The user to suggest the course to     - accepted (bool, optional): Whether the suggestion is accepted     - visible (bool, optional): Whether the suggestion is visible     - metadata (dict, optional): Additional suggestion metadata  Query Parameters (DELETE):     suggestion_id (int, required): The ID of the suggestion to delete  Returns:     GET: A paginated JSON response containing course suggestions:         {             \"count\": 10,             \"next\": \"https://example.com/api/catalog/suggestions/course/manage/?page=2\",             \"previous\": null,             \"results\": [                 {                     \"id\": 123,                     \"user_id\": 456,                     \"username\": \"student1\",                     \"name\": \"Student Name\",                     \"platform_key\": \"platform1\",                     \"accepted\": false,                     \"visible\": true,                     \"created\": \"2023-06-15T14:30:00Z\",                     \"modified\": \"2023-06-15T14:30:00Z\",                     \"metadata\": {},                     \"course_id\": \"course-v1:org+course+run\",                     \"course_name\": \"Introduction to Programming\"                 },                 ...             ]         }      POST: A JSON response containing the created/updated suggestion:         {             \"id\": 123,             \"user_id\": 456,             \"username\": \"student1\",             \"name\": \"Student Name\",             \"platform_key\": \"platform1\",             \"accepted\": false,             \"visible\": true,             \"created\": \"2023-06-15T14:30:00Z\",             \"modified\": \"2023-06-15T14:30:00Z\",             \"metadata\": {},             \"course_id\": \"course-v1:org+course+run\",             \"course_name\": \"Introduction to Programming\"         }      DELETE: A success response with status 200  Error Responses:     400 Bad Request: If required parameters are missing or invalid, or if suggestion operations fail     401 Unauthorized: If the user is not authenticated     403 Forbidden: If the user does not have permission to manage suggestions     500 Internal Server Error: If an unexpected error occurs  Access Control:     - Requires IsDMAdmin, IsPlatformAdmin, or IsDepartmentModeAdminInPlatform permission     - Platform admins can manage suggestions for their platform     - Department admins can manage suggestions for their departments     - DM admins can manage all suggestions
+Query Parameters (GET):
+    platform_key (str, required): The platform to retrieve suggestions for
+    platform_org (str, optional): The organization identifier for the platform
+    query (str, optional): Search term to filter suggestions
+    sort (str, optional): Field to sort results by (default: '-id')
+    department_mode (bool, optional): Filter suggestions by department admin access
+    page (int, optional): Page number for pagination
+    page_size (int, optional): Number of items per page
+
+Methods:
+    GET: Retrieve a paginated list of course suggestions for a platform
+    POST: Create or update a course suggestion
+    DELETE: Remove a course suggestion
+
+Request Body (POST):
+    A JSON object containing:
+    - platform_key (str, required): The platform for the suggestion
+    - course_id (str, required): The course ID to suggest
+    - user_id (str/int, required): The user to suggest the course to
+    - accepted (bool, optional): Whether the suggestion is accepted
+    - visible (bool, optional): Whether the suggestion is visible
+    - metadata (dict, optional): Additional suggestion metadata
+
+Query Parameters (DELETE):
+    suggestion_id (int, required): The ID of the suggestion to delete
+
+Returns:
+    GET: A paginated JSON response containing course suggestions:
+        {
+            "count": 10,
+            "next": "https://example.com/api/catalog/suggestions/course/manage/?page=2",
+            "previous": null,
+            "results": [
+                {
+                    "id": 123,
+                    "user_id": 456,
+                    "username": "student1",
+                    "name": "Student Name",
+                    "platform_key": "platform1",
+                    "accepted": false,
+                    "visible": true,
+                    "created": "2023-06-15T14:30:00Z",
+                    "modified": "2023-06-15T14:30:00Z",
+                    "metadata": {},
+                    "course_id": "course-v1:org+course+run",
+                    "course_name": "Introduction to Programming"
+                },
+                ...
+            ]
+        }
+
+    POST: A JSON response containing the created/updated suggestion:
+        {
+            "id": 123,
+            "user_id": 456,
+            "username": "student1",
+            "name": "Student Name",
+            "platform_key": "platform1",
+            "accepted": false,
+            "visible": true,
+            "created": "2023-06-15T14:30:00Z",
+            "modified": "2023-06-15T14:30:00Z",
+            "metadata": {},
+            "course_id": "course-v1:org+course+run",
+            "course_name": "Introduction to Programming"
+        }
+
+    DELETE: A success response with status 200
+
+Error Responses:
+    400 Bad Request: If required parameters are missing or invalid, or if suggestion operations fail
+    401 Unauthorized: If the user is not authenticated
+    403 Forbidden: If the user does not have permission to manage suggestions
+    500 Internal Server Error: If an unexpected error occurs
+
+Access Control:
+    - Requires IsDMAdmin, IsPlatformAdmin, or IsDepartmentModeAdminInPlatform permission
+    - Platform admins can manage suggestions for their platform
+    - Department admins can manage suggestions for their departments
+    - DM admins can manage all suggestions
 
 ### Example
 
@@ -12281,7 +12983,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 platform_key = 'platform_key_example' # str | The platform to retrieve suggestions for
@@ -12343,9 +13044,58 @@ Name | Type | Description  | Notes
 # **catalog_suggestions_course_user_retrieve**
 > PaginatedCourseSuggestion catalog_suggestions_course_user_retrieve(user, email=email, page=page, page_size=page_size, platform_key=platform_key, platform_org=platform_org, sort=sort, user_id=user_id)
 
+API View for retrieving course suggestions for a specific user.
 
+This endpoint allows users to view course suggestions that have been made for them,
+with support for filtering by platform and pagination.
 
-API View for retrieving course suggestions for a specific user.  This endpoint allows users to view course suggestions that have been made for them, with support for filtering by platform and pagination.  Query Parameters:     user (str, required): Username or user ID to retrieve suggestions for     platform_key (str, optional): Filter suggestions by platform key     platform_org (str, optional): Filter suggestions by platform organization     sort (str, optional): Field to sort results by (default: '-id')     page (int, optional): Page number for pagination     page_size (int, optional): Number of items per page  Methods:     GET: Retrieve a paginated list of course suggestions for a user  Returns:     GET: A paginated JSON response containing course suggestions:         {             \"count\": 10,             \"next\": \"https://example.com/api/catalog/suggestions/course/user/?page=2\",             \"previous\": null,             \"results\": [                 {                     \"id\": 123,                     \"user_id\": 456,                     \"username\": \"student1\",                     \"name\": \"Student Name\",                     \"platform_key\": \"platform1\",                     \"accepted\": false,                     \"visible\": true,                     \"created\": \"2023-06-15T14:30:00Z\",                     \"modified\": \"2023-06-15T14:30:00Z\",                     \"metadata\": {},                     \"course_id\": \"course-v1:org+course+run\",                     \"course_name\": \"Introduction to Programming\"                 },                 ...             ]         }  Error Responses:     400 Bad Request: If required parameters are missing or invalid, or if suggestion retrieval fails     401 Unauthorized: If the user is not authenticated     403 Forbidden: If the user does not have permission to access this resource     500 Internal Server Error: If an unexpected error occurs  Access Control:     - Requires IsDMAdmin, IsPlatformAdminReadOnly, or IsEdxUserReadOnly permission     - Users can view their own suggestions     - Platform admins can view suggestions for users in their platform (read-only)     - DM admins can view all suggestions
+Query Parameters:
+    user (str, required): Username or user ID to retrieve suggestions for
+    platform_key (str, optional): Filter suggestions by platform key
+    platform_org (str, optional): Filter suggestions by platform organization
+    sort (str, optional): Field to sort results by (default: '-id')
+    page (int, optional): Page number for pagination
+    page_size (int, optional): Number of items per page
+
+Methods:
+    GET: Retrieve a paginated list of course suggestions for a user
+
+Returns:
+    GET: A paginated JSON response containing course suggestions:
+        {
+            "count": 10,
+            "next": "https://example.com/api/catalog/suggestions/course/user/?page=2",
+            "previous": null,
+            "results": [
+                {
+                    "id": 123,
+                    "user_id": 456,
+                    "username": "student1",
+                    "name": "Student Name",
+                    "platform_key": "platform1",
+                    "accepted": false,
+                    "visible": true,
+                    "created": "2023-06-15T14:30:00Z",
+                    "modified": "2023-06-15T14:30:00Z",
+                    "metadata": {},
+                    "course_id": "course-v1:org+course+run",
+                    "course_name": "Introduction to Programming"
+                },
+                ...
+            ]
+        }
+
+Error Responses:
+    400 Bad Request: If required parameters are missing or invalid, or if suggestion retrieval fails
+    401 Unauthorized: If the user is not authenticated
+    403 Forbidden: If the user does not have permission to access this resource
+    500 Internal Server Error: If an unexpected error occurs
+
+Access Control:
+    - Requires IsDMAdmin, IsPlatformAdminReadOnly, or IsEdxUserReadOnly permission
+    - Users can view their own suggestions
+    - Platform admins can view suggestions for users in their platform (read-only)
+    - DM admins can view all suggestions
 
 ### Example
 
@@ -12368,7 +13118,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 user = 'user_example' # str | Username or user ID to retrieve suggestions for
@@ -12432,9 +13181,41 @@ Name | Type | Description  | Notes
 # **catalog_suggestions_pathway_manage_bulk_create**
 > BulkSuggestionResponse catalog_suggestions_pathway_manage_bulk_create(pathway_suggestion_bulk_create)
 
+API View for bulk creation of pathway suggestions.
 
+This endpoint allows administrators to create multiple pathway suggestions at once.
 
-API View for bulk creation of pathway suggestions.  This endpoint allows administrators to create multiple pathway suggestions at once.  Methods:     POST: Create multiple pathway suggestions in a single request  Request Body:     A JSON object containing:     - platform_key (str, required): The platform for the suggestions     - suggestion_data (list, required): List of suggestion objects, each containing:       - pathway_id (str, required): The pathway ID to suggest       - user_id (str/int, required): The user to suggest the pathway to       - accepted (bool, optional): Whether the suggestion is accepted       - visible (bool, optional): Whether the suggestion is visible       - metadata (dict, optional): Additional suggestion metadata  Returns:     POST: A JSON response containing the operation results:         {             \"successes\": 15,             \"error_codes\": []         }  Error Responses:     400 Bad Request: If required parameters are missing or invalid     401 Unauthorized: If the user is not authenticated     403 Forbidden: If the user does not have permission to manage suggestions     500 Internal Server Error: If an unexpected error occurs during bulk creation  Access Control:     - Requires IsDMAdmin, IsPlatformAdmin, or IsDepartmentModeAdminInPlatform permission     - Platform admins can create suggestions for their platform     - Department admins can create suggestions for their departments     - DM admins can create suggestions for any platform
+Methods:
+    POST: Create multiple pathway suggestions in a single request
+
+Request Body:
+    A JSON object containing:
+    - platform_key (str, required): The platform for the suggestions
+    - suggestion_data (list, required): List of suggestion objects, each containing:
+      - pathway_id (str, required): The pathway ID to suggest
+      - user_id (str/int, required): The user to suggest the pathway to
+      - accepted (bool, optional): Whether the suggestion is accepted
+      - visible (bool, optional): Whether the suggestion is visible
+      - metadata (dict, optional): Additional suggestion metadata
+
+Returns:
+    POST: A JSON response containing the operation results:
+        {
+            "successes": 15,
+            "error_codes": []
+        }
+
+Error Responses:
+    400 Bad Request: If required parameters are missing or invalid
+    401 Unauthorized: If the user is not authenticated
+    403 Forbidden: If the user does not have permission to manage suggestions
+    500 Internal Server Error: If an unexpected error occurs during bulk creation
+
+Access Control:
+    - Requires IsDMAdmin, IsPlatformAdmin, or IsDepartmentModeAdminInPlatform permission
+    - Platform admins can create suggestions for their platform
+    - Department admins can create suggestions for their departments
+    - DM admins can create suggestions for any platform
 
 ### Example
 
@@ -12458,7 +13239,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 pathway_suggestion_bulk_create = iblai.PathwaySuggestionBulkCreate() # PathwaySuggestionBulkCreate | 
@@ -12490,7 +13270,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -12508,9 +13288,95 @@ Name | Type | Description  | Notes
 # **catalog_suggestions_pathway_manage_create**
 > PathwaySuggestionDetail catalog_suggestions_pathway_manage_create(platform_key, pathway_suggestion_create, department_mode=department_mode, page=page, page_size=page_size, platform_org=platform_org, query=query, sort=sort)
 
+API View for managing pathway suggestions.
 
+This endpoint allows administrators to view, create, update, and delete pathway suggestions
+for users within a platform.
 
-API View for managing pathway suggestions.  This endpoint allows administrators to view, create, update, and delete pathway suggestions for users within a platform.  Query Parameters (GET):     platform_key (str, required): The platform to retrieve suggestions for     platform_org (str, optional): The organization identifier for the platform     query (str, optional): Search term to filter suggestions     sort (str, optional): Field to sort results by (default: '-id')     department_mode (bool, optional): Filter suggestions by department admin access     page (int, optional): Page number for pagination     page_size (int, optional): Number of items per page  Methods:     GET: Retrieve a paginated list of pathway suggestions for a platform     POST: Create or update a pathway suggestion     DELETE: Remove a pathway suggestion  Request Body (POST):     A JSON object containing:     - platform_key (str, required): The platform for the suggestion     - pathway_id (str, required): The pathway ID to suggest     - user_id (str/int, required): The user to suggest the pathway to     - accepted (bool, optional): Whether the suggestion is accepted     - visible (bool, optional): Whether the suggestion is visible     - metadata (dict, optional): Additional suggestion metadata  Query Parameters (DELETE):     suggestion_id (int, required): The ID of the suggestion to delete  Returns:     GET: A paginated JSON response containing pathway suggestions:         {             \"count\": 10,             \"next\": \"https://example.com/api/catalog/suggestions/pathway/manage/?page=2\",             \"previous\": null,             \"results\": [                 {                     \"id\": 123,                     \"user_id\": 456,                     \"username\": \"student1\",                     \"name\": \"Student Name\",                     \"platform_key\": \"platform1\",                     \"accepted\": false,                     \"visible\": true,                     \"created\": \"2023-06-15T14:30:00Z\",                     \"modified\": \"2023-06-15T14:30:00Z\",                     \"metadata\": {},                     \"pathway_id\": \"pathway-v1:org+pathway+run\",                     \"pathway_uuid\": \"12345678-1234-5678-1234-567812345678\",                     \"pathway_name\": \"Data Science Pathway\",                     \"pathway_platform_key\": \"platform1\"                 },                 ...             ]         }      POST: A JSON response containing the created/updated suggestion:         {             \"id\": 123,             \"user_id\": 456,             \"username\": \"student1\",             \"name\": \"Student Name\",             \"platform_key\": \"platform1\",             \"accepted\": false,             \"visible\": true,             \"created\": \"2023-06-15T14:30:00Z\",             \"modified\": \"2023-06-15T14:30:00Z\",             \"metadata\": {},             \"pathway_id\": \"pathway-v1:org+pathway+run\",             \"pathway_uuid\": \"12345678-1234-5678-1234-567812345678\",             \"pathway_name\": \"Data Science Pathway\",             \"pathway_platform_key\": \"platform1\"         }      DELETE: A success response with status 200  Error Responses:     400 Bad Request: If required parameters are missing or invalid, or if suggestion operations fail     401 Unauthorized: If the user is not authenticated     403 Forbidden: If the user does not have permission to manage suggestions     500 Internal Server Error: If an unexpected error occurs  Access Control:     - Requires IsDMAdmin, IsPlatformAdmin, or IsDepartmentModeAdminInPlatform permission     - Platform admins can manage suggestions for their platform     - Department admins can manage suggestions for their departments     - DM admins can manage all suggestions
+Query Parameters (GET):
+    platform_key (str, required): The platform to retrieve suggestions for
+    platform_org (str, optional): The organization identifier for the platform
+    query (str, optional): Search term to filter suggestions
+    sort (str, optional): Field to sort results by (default: '-id')
+    department_mode (bool, optional): Filter suggestions by department admin access
+    page (int, optional): Page number for pagination
+    page_size (int, optional): Number of items per page
+
+Methods:
+    GET: Retrieve a paginated list of pathway suggestions for a platform
+    POST: Create or update a pathway suggestion
+    DELETE: Remove a pathway suggestion
+
+Request Body (POST):
+    A JSON object containing:
+    - platform_key (str, required): The platform for the suggestion
+    - pathway_id (str, required): The pathway ID to suggest
+    - user_id (str/int, required): The user to suggest the pathway to
+    - accepted (bool, optional): Whether the suggestion is accepted
+    - visible (bool, optional): Whether the suggestion is visible
+    - metadata (dict, optional): Additional suggestion metadata
+
+Query Parameters (DELETE):
+    suggestion_id (int, required): The ID of the suggestion to delete
+
+Returns:
+    GET: A paginated JSON response containing pathway suggestions:
+        {
+            "count": 10,
+            "next": "https://example.com/api/catalog/suggestions/pathway/manage/?page=2",
+            "previous": null,
+            "results": [
+                {
+                    "id": 123,
+                    "user_id": 456,
+                    "username": "student1",
+                    "name": "Student Name",
+                    "platform_key": "platform1",
+                    "accepted": false,
+                    "visible": true,
+                    "created": "2023-06-15T14:30:00Z",
+                    "modified": "2023-06-15T14:30:00Z",
+                    "metadata": {},
+                    "pathway_id": "pathway-v1:org+pathway+run",
+                    "pathway_uuid": "12345678-1234-5678-1234-567812345678",
+                    "pathway_name": "Data Science Pathway",
+                    "pathway_platform_key": "platform1"
+                },
+                ...
+            ]
+        }
+
+    POST: A JSON response containing the created/updated suggestion:
+        {
+            "id": 123,
+            "user_id": 456,
+            "username": "student1",
+            "name": "Student Name",
+            "platform_key": "platform1",
+            "accepted": false,
+            "visible": true,
+            "created": "2023-06-15T14:30:00Z",
+            "modified": "2023-06-15T14:30:00Z",
+            "metadata": {},
+            "pathway_id": "pathway-v1:org+pathway+run",
+            "pathway_uuid": "12345678-1234-5678-1234-567812345678",
+            "pathway_name": "Data Science Pathway",
+            "pathway_platform_key": "platform1"
+        }
+
+    DELETE: A success response with status 200
+
+Error Responses:
+    400 Bad Request: If required parameters are missing or invalid, or if suggestion operations fail
+    401 Unauthorized: If the user is not authenticated
+    403 Forbidden: If the user does not have permission to manage suggestions
+    500 Internal Server Error: If an unexpected error occurs
+
+Access Control:
+    - Requires IsDMAdmin, IsPlatformAdmin, or IsDepartmentModeAdminInPlatform permission
+    - Platform admins can manage suggestions for their platform
+    - Department admins can manage suggestions for their departments
+    - DM admins can manage all suggestions
 
 ### Example
 
@@ -12534,7 +13400,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 platform_key = 'platform_key_example' # str | The platform to retrieve suggestions for
@@ -12580,7 +13445,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -12597,8 +13462,6 @@ Name | Type | Description  | Notes
 
 # **catalog_suggestions_pathway_manage_destroy**
 > catalog_suggestions_pathway_manage_destroy(platform_key, suggestion_id, department_mode=department_mode, page=page, page_size=page_size, platform_org=platform_org, query=query, sort=sort)
-
-
 
 Delete single suggestion
 
@@ -12622,7 +13485,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 platform_key = 'platform_key_example' # str | The platform to retrieve suggestions for
@@ -12685,9 +13547,95 @@ void (empty response body)
 # **catalog_suggestions_pathway_manage_group_create**
 > PathwayGroupSuggestionDetail catalog_suggestions_pathway_manage_group_create(platform_key, pathway_group_suggestion_create, department_mode=department_mode, page=page, page_size=page_size, platform_org=platform_org, query=query, sort=sort)
 
+API View for managing pathway group suggestions.
 
+This endpoint allows administrators to view, create, and delete pathway suggestions
+for groups of users within a platform.
 
-API View for managing pathway group suggestions.  This endpoint allows administrators to view, create, and delete pathway suggestions for groups of users within a platform.  Query Parameters (GET):     platform_key (str, required): The platform to retrieve group suggestions for     platform_org (str, optional): The organization identifier for the platform     query (str, optional): Search term to filter group suggestions     sort (str, optional): Field to sort results by (default: 'id')     department_mode (bool, optional): Filter suggestions by department admin access     page (int, optional): Page number for pagination     page_size (int, optional): Number of items per page  Methods:     GET: Retrieve a paginated list of pathway group suggestions for a platform     POST: Create or update a pathway group suggestion     DELETE: Remove a pathway group suggestion  Request Body (POST):     A JSON object containing:     - platform_key (str, required): The platform for the group suggestion     - pathway_id (str, required): The pathway ID to suggest     - group_id (str/int, required): The group to suggest the pathway to     - accepted (bool, optional): Whether the suggestion is accepted     - visible (bool, optional): Whether the suggestion is visible     - metadata (dict, optional): Additional suggestion metadata  Query Parameters (DELETE):     suggestion_id (int, required): The ID of the group suggestion to delete  Returns:     GET: A paginated JSON response containing pathway group suggestions:         {             \"count\": 5,             \"next\": \"https://example.com/api/catalog/suggestions/pathway/group/?page=2\",             \"previous\": null,             \"results\": [                 {                     \"id\": 123,                     \"group_id\": 789,                     \"group_name\": \"Engineering Team\",                     \"platform_key\": \"platform1\",                     \"accepted\": false,                     \"visible\": true,                     \"created\": \"2023-06-15T14:30:00Z\",                     \"modified\": \"2023-06-15T14:30:00Z\",                     \"metadata\": {},                     \"pathway_id\": \"pathway-v1:org+pathway+run\",                     \"pathway_uuid\": \"12345678-1234-5678-1234-567812345678\",                     \"pathway_name\": \"Data Science Pathway\",                     \"pathway_platform_key\": \"platform1\",                     \"user_count\": 25                 },                 ...             ]         }      POST: A JSON response containing the created/updated group suggestion:         {             \"id\": 123,             \"group_id\": 789,             \"group_name\": \"Engineering Team\",             \"platform_key\": \"platform1\",             \"accepted\": false,             \"visible\": true,             \"created\": \"2023-06-15T14:30:00Z\",             \"modified\": \"2023-06-15T14:30:00Z\",             \"metadata\": {},             \"pathway_id\": \"pathway-v1:org+pathway+run\",             \"pathway_uuid\": \"12345678-1234-5678-1234-567812345678\",             \"pathway_name\": \"Data Science Pathway\",             \"pathway_platform_key\": \"platform1\",             \"user_count\": 25         }      DELETE: A success response with status 200  Error Responses:     400 Bad Request: If required parameters are missing or invalid, or if group suggestion operations fail     401 Unauthorized: If the user is not authenticated     403 Forbidden: If the user does not have permission to manage group suggestions     500 Internal Server Error: If an unexpected error occurs  Access Control:     - Requires IsDMAdmin, IsPlatformAdmin, or IsDepartmentModeAdminInPlatform permission     - Platform admins can manage group suggestions for their platform     - Department admins can manage group suggestions for their departments     - DM admins can manage all group suggestions
+Query Parameters (GET):
+    platform_key (str, required): The platform to retrieve group suggestions for
+    platform_org (str, optional): The organization identifier for the platform
+    query (str, optional): Search term to filter group suggestions
+    sort (str, optional): Field to sort results by (default: 'id')
+    department_mode (bool, optional): Filter suggestions by department admin access
+    page (int, optional): Page number for pagination
+    page_size (int, optional): Number of items per page
+
+Methods:
+    GET: Retrieve a paginated list of pathway group suggestions for a platform
+    POST: Create or update a pathway group suggestion
+    DELETE: Remove a pathway group suggestion
+
+Request Body (POST):
+    A JSON object containing:
+    - platform_key (str, required): The platform for the group suggestion
+    - pathway_id (str, required): The pathway ID to suggest
+    - group_id (str/int, required): The group to suggest the pathway to
+    - accepted (bool, optional): Whether the suggestion is accepted
+    - visible (bool, optional): Whether the suggestion is visible
+    - metadata (dict, optional): Additional suggestion metadata
+
+Query Parameters (DELETE):
+    suggestion_id (int, required): The ID of the group suggestion to delete
+
+Returns:
+    GET: A paginated JSON response containing pathway group suggestions:
+        {
+            "count": 5,
+            "next": "https://example.com/api/catalog/suggestions/pathway/group/?page=2",
+            "previous": null,
+            "results": [
+                {
+                    "id": 123,
+                    "group_id": 789,
+                    "group_name": "Engineering Team",
+                    "platform_key": "platform1",
+                    "accepted": false,
+                    "visible": true,
+                    "created": "2023-06-15T14:30:00Z",
+                    "modified": "2023-06-15T14:30:00Z",
+                    "metadata": {},
+                    "pathway_id": "pathway-v1:org+pathway+run",
+                    "pathway_uuid": "12345678-1234-5678-1234-567812345678",
+                    "pathway_name": "Data Science Pathway",
+                    "pathway_platform_key": "platform1",
+                    "user_count": 25
+                },
+                ...
+            ]
+        }
+
+    POST: A JSON response containing the created/updated group suggestion:
+        {
+            "id": 123,
+            "group_id": 789,
+            "group_name": "Engineering Team",
+            "platform_key": "platform1",
+            "accepted": false,
+            "visible": true,
+            "created": "2023-06-15T14:30:00Z",
+            "modified": "2023-06-15T14:30:00Z",
+            "metadata": {},
+            "pathway_id": "pathway-v1:org+pathway+run",
+            "pathway_uuid": "12345678-1234-5678-1234-567812345678",
+            "pathway_name": "Data Science Pathway",
+            "pathway_platform_key": "platform1",
+            "user_count": 25
+        }
+
+    DELETE: A success response with status 200
+
+Error Responses:
+    400 Bad Request: If required parameters are missing or invalid, or if group suggestion operations fail
+    401 Unauthorized: If the user is not authenticated
+    403 Forbidden: If the user does not have permission to manage group suggestions
+    500 Internal Server Error: If an unexpected error occurs
+
+Access Control:
+    - Requires IsDMAdmin, IsPlatformAdmin, or IsDepartmentModeAdminInPlatform permission
+    - Platform admins can manage group suggestions for their platform
+    - Department admins can manage group suggestions for their departments
+    - DM admins can manage all group suggestions
 
 ### Example
 
@@ -12711,7 +13659,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 platform_key = 'platform_key_example' # str | The platform to retrieve group suggestions for
@@ -12757,7 +13704,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -12775,9 +13722,95 @@ Name | Type | Description  | Notes
 # **catalog_suggestions_pathway_manage_group_destroy**
 > catalog_suggestions_pathway_manage_group_destroy(platform_key, suggestion_id, department_mode=department_mode, page=page, page_size=page_size, platform_org=platform_org, query=query, sort=sort)
 
+API View for managing pathway group suggestions.
 
+This endpoint allows administrators to view, create, and delete pathway suggestions
+for groups of users within a platform.
 
-API View for managing pathway group suggestions.  This endpoint allows administrators to view, create, and delete pathway suggestions for groups of users within a platform.  Query Parameters (GET):     platform_key (str, required): The platform to retrieve group suggestions for     platform_org (str, optional): The organization identifier for the platform     query (str, optional): Search term to filter group suggestions     sort (str, optional): Field to sort results by (default: 'id')     department_mode (bool, optional): Filter suggestions by department admin access     page (int, optional): Page number for pagination     page_size (int, optional): Number of items per page  Methods:     GET: Retrieve a paginated list of pathway group suggestions for a platform     POST: Create or update a pathway group suggestion     DELETE: Remove a pathway group suggestion  Request Body (POST):     A JSON object containing:     - platform_key (str, required): The platform for the group suggestion     - pathway_id (str, required): The pathway ID to suggest     - group_id (str/int, required): The group to suggest the pathway to     - accepted (bool, optional): Whether the suggestion is accepted     - visible (bool, optional): Whether the suggestion is visible     - metadata (dict, optional): Additional suggestion metadata  Query Parameters (DELETE):     suggestion_id (int, required): The ID of the group suggestion to delete  Returns:     GET: A paginated JSON response containing pathway group suggestions:         {             \"count\": 5,             \"next\": \"https://example.com/api/catalog/suggestions/pathway/group/?page=2\",             \"previous\": null,             \"results\": [                 {                     \"id\": 123,                     \"group_id\": 789,                     \"group_name\": \"Engineering Team\",                     \"platform_key\": \"platform1\",                     \"accepted\": false,                     \"visible\": true,                     \"created\": \"2023-06-15T14:30:00Z\",                     \"modified\": \"2023-06-15T14:30:00Z\",                     \"metadata\": {},                     \"pathway_id\": \"pathway-v1:org+pathway+run\",                     \"pathway_uuid\": \"12345678-1234-5678-1234-567812345678\",                     \"pathway_name\": \"Data Science Pathway\",                     \"pathway_platform_key\": \"platform1\",                     \"user_count\": 25                 },                 ...             ]         }      POST: A JSON response containing the created/updated group suggestion:         {             \"id\": 123,             \"group_id\": 789,             \"group_name\": \"Engineering Team\",             \"platform_key\": \"platform1\",             \"accepted\": false,             \"visible\": true,             \"created\": \"2023-06-15T14:30:00Z\",             \"modified\": \"2023-06-15T14:30:00Z\",             \"metadata\": {},             \"pathway_id\": \"pathway-v1:org+pathway+run\",             \"pathway_uuid\": \"12345678-1234-5678-1234-567812345678\",             \"pathway_name\": \"Data Science Pathway\",             \"pathway_platform_key\": \"platform1\",             \"user_count\": 25         }      DELETE: A success response with status 200  Error Responses:     400 Bad Request: If required parameters are missing or invalid, or if group suggestion operations fail     401 Unauthorized: If the user is not authenticated     403 Forbidden: If the user does not have permission to manage group suggestions     500 Internal Server Error: If an unexpected error occurs  Access Control:     - Requires IsDMAdmin, IsPlatformAdmin, or IsDepartmentModeAdminInPlatform permission     - Platform admins can manage group suggestions for their platform     - Department admins can manage group suggestions for their departments     - DM admins can manage all group suggestions
+Query Parameters (GET):
+    platform_key (str, required): The platform to retrieve group suggestions for
+    platform_org (str, optional): The organization identifier for the platform
+    query (str, optional): Search term to filter group suggestions
+    sort (str, optional): Field to sort results by (default: 'id')
+    department_mode (bool, optional): Filter suggestions by department admin access
+    page (int, optional): Page number for pagination
+    page_size (int, optional): Number of items per page
+
+Methods:
+    GET: Retrieve a paginated list of pathway group suggestions for a platform
+    POST: Create or update a pathway group suggestion
+    DELETE: Remove a pathway group suggestion
+
+Request Body (POST):
+    A JSON object containing:
+    - platform_key (str, required): The platform for the group suggestion
+    - pathway_id (str, required): The pathway ID to suggest
+    - group_id (str/int, required): The group to suggest the pathway to
+    - accepted (bool, optional): Whether the suggestion is accepted
+    - visible (bool, optional): Whether the suggestion is visible
+    - metadata (dict, optional): Additional suggestion metadata
+
+Query Parameters (DELETE):
+    suggestion_id (int, required): The ID of the group suggestion to delete
+
+Returns:
+    GET: A paginated JSON response containing pathway group suggestions:
+        {
+            "count": 5,
+            "next": "https://example.com/api/catalog/suggestions/pathway/group/?page=2",
+            "previous": null,
+            "results": [
+                {
+                    "id": 123,
+                    "group_id": 789,
+                    "group_name": "Engineering Team",
+                    "platform_key": "platform1",
+                    "accepted": false,
+                    "visible": true,
+                    "created": "2023-06-15T14:30:00Z",
+                    "modified": "2023-06-15T14:30:00Z",
+                    "metadata": {},
+                    "pathway_id": "pathway-v1:org+pathway+run",
+                    "pathway_uuid": "12345678-1234-5678-1234-567812345678",
+                    "pathway_name": "Data Science Pathway",
+                    "pathway_platform_key": "platform1",
+                    "user_count": 25
+                },
+                ...
+            ]
+        }
+
+    POST: A JSON response containing the created/updated group suggestion:
+        {
+            "id": 123,
+            "group_id": 789,
+            "group_name": "Engineering Team",
+            "platform_key": "platform1",
+            "accepted": false,
+            "visible": true,
+            "created": "2023-06-15T14:30:00Z",
+            "modified": "2023-06-15T14:30:00Z",
+            "metadata": {},
+            "pathway_id": "pathway-v1:org+pathway+run",
+            "pathway_uuid": "12345678-1234-5678-1234-567812345678",
+            "pathway_name": "Data Science Pathway",
+            "pathway_platform_key": "platform1",
+            "user_count": 25
+        }
+
+    DELETE: A success response with status 200
+
+Error Responses:
+    400 Bad Request: If required parameters are missing or invalid, or if group suggestion operations fail
+    401 Unauthorized: If the user is not authenticated
+    403 Forbidden: If the user does not have permission to manage group suggestions
+    500 Internal Server Error: If an unexpected error occurs
+
+Access Control:
+    - Requires IsDMAdmin, IsPlatformAdmin, or IsDepartmentModeAdminInPlatform permission
+    - Platform admins can manage group suggestions for their platform
+    - Department admins can manage group suggestions for their departments
+    - DM admins can manage all group suggestions
 
 ### Example
 
@@ -12799,7 +13832,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 platform_key = 'platform_key_example' # str | The platform to retrieve group suggestions for
@@ -12862,9 +13894,95 @@ void (empty response body)
 # **catalog_suggestions_pathway_manage_group_retrieve**
 > PaginatedPathwayGroupSuggestion catalog_suggestions_pathway_manage_group_retrieve(platform_key, department_mode=department_mode, page=page, page_size=page_size, platform_org=platform_org, query=query, sort=sort)
 
+API View for managing pathway group suggestions.
 
+This endpoint allows administrators to view, create, and delete pathway suggestions
+for groups of users within a platform.
 
-API View for managing pathway group suggestions.  This endpoint allows administrators to view, create, and delete pathway suggestions for groups of users within a platform.  Query Parameters (GET):     platform_key (str, required): The platform to retrieve group suggestions for     platform_org (str, optional): The organization identifier for the platform     query (str, optional): Search term to filter group suggestions     sort (str, optional): Field to sort results by (default: 'id')     department_mode (bool, optional): Filter suggestions by department admin access     page (int, optional): Page number for pagination     page_size (int, optional): Number of items per page  Methods:     GET: Retrieve a paginated list of pathway group suggestions for a platform     POST: Create or update a pathway group suggestion     DELETE: Remove a pathway group suggestion  Request Body (POST):     A JSON object containing:     - platform_key (str, required): The platform for the group suggestion     - pathway_id (str, required): The pathway ID to suggest     - group_id (str/int, required): The group to suggest the pathway to     - accepted (bool, optional): Whether the suggestion is accepted     - visible (bool, optional): Whether the suggestion is visible     - metadata (dict, optional): Additional suggestion metadata  Query Parameters (DELETE):     suggestion_id (int, required): The ID of the group suggestion to delete  Returns:     GET: A paginated JSON response containing pathway group suggestions:         {             \"count\": 5,             \"next\": \"https://example.com/api/catalog/suggestions/pathway/group/?page=2\",             \"previous\": null,             \"results\": [                 {                     \"id\": 123,                     \"group_id\": 789,                     \"group_name\": \"Engineering Team\",                     \"platform_key\": \"platform1\",                     \"accepted\": false,                     \"visible\": true,                     \"created\": \"2023-06-15T14:30:00Z\",                     \"modified\": \"2023-06-15T14:30:00Z\",                     \"metadata\": {},                     \"pathway_id\": \"pathway-v1:org+pathway+run\",                     \"pathway_uuid\": \"12345678-1234-5678-1234-567812345678\",                     \"pathway_name\": \"Data Science Pathway\",                     \"pathway_platform_key\": \"platform1\",                     \"user_count\": 25                 },                 ...             ]         }      POST: A JSON response containing the created/updated group suggestion:         {             \"id\": 123,             \"group_id\": 789,             \"group_name\": \"Engineering Team\",             \"platform_key\": \"platform1\",             \"accepted\": false,             \"visible\": true,             \"created\": \"2023-06-15T14:30:00Z\",             \"modified\": \"2023-06-15T14:30:00Z\",             \"metadata\": {},             \"pathway_id\": \"pathway-v1:org+pathway+run\",             \"pathway_uuid\": \"12345678-1234-5678-1234-567812345678\",             \"pathway_name\": \"Data Science Pathway\",             \"pathway_platform_key\": \"platform1\",             \"user_count\": 25         }      DELETE: A success response with status 200  Error Responses:     400 Bad Request: If required parameters are missing or invalid, or if group suggestion operations fail     401 Unauthorized: If the user is not authenticated     403 Forbidden: If the user does not have permission to manage group suggestions     500 Internal Server Error: If an unexpected error occurs  Access Control:     - Requires IsDMAdmin, IsPlatformAdmin, or IsDepartmentModeAdminInPlatform permission     - Platform admins can manage group suggestions for their platform     - Department admins can manage group suggestions for their departments     - DM admins can manage all group suggestions
+Query Parameters (GET):
+    platform_key (str, required): The platform to retrieve group suggestions for
+    platform_org (str, optional): The organization identifier for the platform
+    query (str, optional): Search term to filter group suggestions
+    sort (str, optional): Field to sort results by (default: 'id')
+    department_mode (bool, optional): Filter suggestions by department admin access
+    page (int, optional): Page number for pagination
+    page_size (int, optional): Number of items per page
+
+Methods:
+    GET: Retrieve a paginated list of pathway group suggestions for a platform
+    POST: Create or update a pathway group suggestion
+    DELETE: Remove a pathway group suggestion
+
+Request Body (POST):
+    A JSON object containing:
+    - platform_key (str, required): The platform for the group suggestion
+    - pathway_id (str, required): The pathway ID to suggest
+    - group_id (str/int, required): The group to suggest the pathway to
+    - accepted (bool, optional): Whether the suggestion is accepted
+    - visible (bool, optional): Whether the suggestion is visible
+    - metadata (dict, optional): Additional suggestion metadata
+
+Query Parameters (DELETE):
+    suggestion_id (int, required): The ID of the group suggestion to delete
+
+Returns:
+    GET: A paginated JSON response containing pathway group suggestions:
+        {
+            "count": 5,
+            "next": "https://example.com/api/catalog/suggestions/pathway/group/?page=2",
+            "previous": null,
+            "results": [
+                {
+                    "id": 123,
+                    "group_id": 789,
+                    "group_name": "Engineering Team",
+                    "platform_key": "platform1",
+                    "accepted": false,
+                    "visible": true,
+                    "created": "2023-06-15T14:30:00Z",
+                    "modified": "2023-06-15T14:30:00Z",
+                    "metadata": {},
+                    "pathway_id": "pathway-v1:org+pathway+run",
+                    "pathway_uuid": "12345678-1234-5678-1234-567812345678",
+                    "pathway_name": "Data Science Pathway",
+                    "pathway_platform_key": "platform1",
+                    "user_count": 25
+                },
+                ...
+            ]
+        }
+
+    POST: A JSON response containing the created/updated group suggestion:
+        {
+            "id": 123,
+            "group_id": 789,
+            "group_name": "Engineering Team",
+            "platform_key": "platform1",
+            "accepted": false,
+            "visible": true,
+            "created": "2023-06-15T14:30:00Z",
+            "modified": "2023-06-15T14:30:00Z",
+            "metadata": {},
+            "pathway_id": "pathway-v1:org+pathway+run",
+            "pathway_uuid": "12345678-1234-5678-1234-567812345678",
+            "pathway_name": "Data Science Pathway",
+            "pathway_platform_key": "platform1",
+            "user_count": 25
+        }
+
+    DELETE: A success response with status 200
+
+Error Responses:
+    400 Bad Request: If required parameters are missing or invalid, or if group suggestion operations fail
+    401 Unauthorized: If the user is not authenticated
+    403 Forbidden: If the user does not have permission to manage group suggestions
+    500 Internal Server Error: If an unexpected error occurs
+
+Access Control:
+    - Requires IsDMAdmin, IsPlatformAdmin, or IsDepartmentModeAdminInPlatform permission
+    - Platform admins can manage group suggestions for their platform
+    - Department admins can manage group suggestions for their departments
+    - DM admins can manage all group suggestions
 
 ### Example
 
@@ -12887,7 +14005,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 platform_key = 'platform_key_example' # str | The platform to retrieve group suggestions for
@@ -12949,9 +14066,95 @@ Name | Type | Description  | Notes
 # **catalog_suggestions_pathway_manage_retrieve**
 > PaginatedPathwaySuggestion catalog_suggestions_pathway_manage_retrieve(platform_key, department_mode=department_mode, page=page, page_size=page_size, platform_org=platform_org, query=query, sort=sort)
 
+API View for managing pathway suggestions.
 
+This endpoint allows administrators to view, create, update, and delete pathway suggestions
+for users within a platform.
 
-API View for managing pathway suggestions.  This endpoint allows administrators to view, create, update, and delete pathway suggestions for users within a platform.  Query Parameters (GET):     platform_key (str, required): The platform to retrieve suggestions for     platform_org (str, optional): The organization identifier for the platform     query (str, optional): Search term to filter suggestions     sort (str, optional): Field to sort results by (default: '-id')     department_mode (bool, optional): Filter suggestions by department admin access     page (int, optional): Page number for pagination     page_size (int, optional): Number of items per page  Methods:     GET: Retrieve a paginated list of pathway suggestions for a platform     POST: Create or update a pathway suggestion     DELETE: Remove a pathway suggestion  Request Body (POST):     A JSON object containing:     - platform_key (str, required): The platform for the suggestion     - pathway_id (str, required): The pathway ID to suggest     - user_id (str/int, required): The user to suggest the pathway to     - accepted (bool, optional): Whether the suggestion is accepted     - visible (bool, optional): Whether the suggestion is visible     - metadata (dict, optional): Additional suggestion metadata  Query Parameters (DELETE):     suggestion_id (int, required): The ID of the suggestion to delete  Returns:     GET: A paginated JSON response containing pathway suggestions:         {             \"count\": 10,             \"next\": \"https://example.com/api/catalog/suggestions/pathway/manage/?page=2\",             \"previous\": null,             \"results\": [                 {                     \"id\": 123,                     \"user_id\": 456,                     \"username\": \"student1\",                     \"name\": \"Student Name\",                     \"platform_key\": \"platform1\",                     \"accepted\": false,                     \"visible\": true,                     \"created\": \"2023-06-15T14:30:00Z\",                     \"modified\": \"2023-06-15T14:30:00Z\",                     \"metadata\": {},                     \"pathway_id\": \"pathway-v1:org+pathway+run\",                     \"pathway_uuid\": \"12345678-1234-5678-1234-567812345678\",                     \"pathway_name\": \"Data Science Pathway\",                     \"pathway_platform_key\": \"platform1\"                 },                 ...             ]         }      POST: A JSON response containing the created/updated suggestion:         {             \"id\": 123,             \"user_id\": 456,             \"username\": \"student1\",             \"name\": \"Student Name\",             \"platform_key\": \"platform1\",             \"accepted\": false,             \"visible\": true,             \"created\": \"2023-06-15T14:30:00Z\",             \"modified\": \"2023-06-15T14:30:00Z\",             \"metadata\": {},             \"pathway_id\": \"pathway-v1:org+pathway+run\",             \"pathway_uuid\": \"12345678-1234-5678-1234-567812345678\",             \"pathway_name\": \"Data Science Pathway\",             \"pathway_platform_key\": \"platform1\"         }      DELETE: A success response with status 200  Error Responses:     400 Bad Request: If required parameters are missing or invalid, or if suggestion operations fail     401 Unauthorized: If the user is not authenticated     403 Forbidden: If the user does not have permission to manage suggestions     500 Internal Server Error: If an unexpected error occurs  Access Control:     - Requires IsDMAdmin, IsPlatformAdmin, or IsDepartmentModeAdminInPlatform permission     - Platform admins can manage suggestions for their platform     - Department admins can manage suggestions for their departments     - DM admins can manage all suggestions
+Query Parameters (GET):
+    platform_key (str, required): The platform to retrieve suggestions for
+    platform_org (str, optional): The organization identifier for the platform
+    query (str, optional): Search term to filter suggestions
+    sort (str, optional): Field to sort results by (default: '-id')
+    department_mode (bool, optional): Filter suggestions by department admin access
+    page (int, optional): Page number for pagination
+    page_size (int, optional): Number of items per page
+
+Methods:
+    GET: Retrieve a paginated list of pathway suggestions for a platform
+    POST: Create or update a pathway suggestion
+    DELETE: Remove a pathway suggestion
+
+Request Body (POST):
+    A JSON object containing:
+    - platform_key (str, required): The platform for the suggestion
+    - pathway_id (str, required): The pathway ID to suggest
+    - user_id (str/int, required): The user to suggest the pathway to
+    - accepted (bool, optional): Whether the suggestion is accepted
+    - visible (bool, optional): Whether the suggestion is visible
+    - metadata (dict, optional): Additional suggestion metadata
+
+Query Parameters (DELETE):
+    suggestion_id (int, required): The ID of the suggestion to delete
+
+Returns:
+    GET: A paginated JSON response containing pathway suggestions:
+        {
+            "count": 10,
+            "next": "https://example.com/api/catalog/suggestions/pathway/manage/?page=2",
+            "previous": null,
+            "results": [
+                {
+                    "id": 123,
+                    "user_id": 456,
+                    "username": "student1",
+                    "name": "Student Name",
+                    "platform_key": "platform1",
+                    "accepted": false,
+                    "visible": true,
+                    "created": "2023-06-15T14:30:00Z",
+                    "modified": "2023-06-15T14:30:00Z",
+                    "metadata": {},
+                    "pathway_id": "pathway-v1:org+pathway+run",
+                    "pathway_uuid": "12345678-1234-5678-1234-567812345678",
+                    "pathway_name": "Data Science Pathway",
+                    "pathway_platform_key": "platform1"
+                },
+                ...
+            ]
+        }
+
+    POST: A JSON response containing the created/updated suggestion:
+        {
+            "id": 123,
+            "user_id": 456,
+            "username": "student1",
+            "name": "Student Name",
+            "platform_key": "platform1",
+            "accepted": false,
+            "visible": true,
+            "created": "2023-06-15T14:30:00Z",
+            "modified": "2023-06-15T14:30:00Z",
+            "metadata": {},
+            "pathway_id": "pathway-v1:org+pathway+run",
+            "pathway_uuid": "12345678-1234-5678-1234-567812345678",
+            "pathway_name": "Data Science Pathway",
+            "pathway_platform_key": "platform1"
+        }
+
+    DELETE: A success response with status 200
+
+Error Responses:
+    400 Bad Request: If required parameters are missing or invalid, or if suggestion operations fail
+    401 Unauthorized: If the user is not authenticated
+    403 Forbidden: If the user does not have permission to manage suggestions
+    500 Internal Server Error: If an unexpected error occurs
+
+Access Control:
+    - Requires IsDMAdmin, IsPlatformAdmin, or IsDepartmentModeAdminInPlatform permission
+    - Platform admins can manage suggestions for their platform
+    - Department admins can manage suggestions for their departments
+    - DM admins can manage all suggestions
 
 ### Example
 
@@ -12974,7 +14177,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 platform_key = 'platform_key_example' # str | The platform to retrieve suggestions for
@@ -13036,9 +14238,60 @@ Name | Type | Description  | Notes
 # **catalog_suggestions_pathway_user_retrieve**
 > PaginatedPathwaySuggestion catalog_suggestions_pathway_user_retrieve(username, email=email, page=page, page_size=page_size, platform_key=platform_key, platform_org=platform_org, sort=sort, user_id=user_id)
 
+API View for retrieving pathway suggestions for a specific user.
 
+This endpoint allows users to view pathway suggestions that have been made for them,
+with support for filtering by platform and pagination.
 
-API View for retrieving pathway suggestions for a specific user.  This endpoint allows users to view pathway suggestions that have been made for them, with support for filtering by platform and pagination.  Query Parameters:     user (str, required): Username or user ID to retrieve suggestions for     platform_key (str, optional): Filter suggestions by platform key     platform_org (str, optional): Filter suggestions by platform organization     sort (str, optional): Field to sort results by (default: '-id')     page (int, optional): Page number for pagination     page_size (int, optional): Number of items per page  Methods:     GET: Retrieve a paginated list of pathway suggestions for a user  Returns:     GET: A paginated JSON response containing pathway suggestions:         {             \"count\": 10,             \"next\": \"https://example.com/api/catalog/suggestions/pathway/user/?page=2\",             \"previous\": null,             \"results\": [                 {                     \"id\": 123,                     \"user_id\": 456,                     \"username\": \"student1\",                     \"name\": \"Student Name\",                     \"platform_key\": \"platform1\",                     \"accepted\": false,                     \"visible\": true,                     \"created\": \"2023-06-15T14:30:00Z\",                     \"modified\": \"2023-06-15T14:30:00Z\",                     \"metadata\": {},                     \"pathway_id\": \"pathway-v1:org+pathway+run\",                     \"pathway_uuid\": \"12345678-1234-5678-1234-567812345678\",                     \"pathway_name\": \"Data Science Pathway\",                     \"pathway_platform_key\": \"platform1\"                 },                 ...             ]         }  Error Responses:     400 Bad Request: If required parameters are missing or invalid, or if suggestion retrieval fails     401 Unauthorized: If the user is not authenticated     403 Forbidden: If the user does not have permission to access this resource     500 Internal Server Error: If an unexpected error occurs  Access Control:     - Requires IsDMAdmin, IsPlatformAdminReadOnly, or IsEdxUserReadOnly permission     - Users can view their own suggestions     - Platform admins can view suggestions for users in their platform (read-only)     - DM admins can view all suggestions
+Query Parameters:
+    user (str, required): Username or user ID to retrieve suggestions for
+    platform_key (str, optional): Filter suggestions by platform key
+    platform_org (str, optional): Filter suggestions by platform organization
+    sort (str, optional): Field to sort results by (default: '-id')
+    page (int, optional): Page number for pagination
+    page_size (int, optional): Number of items per page
+
+Methods:
+    GET: Retrieve a paginated list of pathway suggestions for a user
+
+Returns:
+    GET: A paginated JSON response containing pathway suggestions:
+        {
+            "count": 10,
+            "next": "https://example.com/api/catalog/suggestions/pathway/user/?page=2",
+            "previous": null,
+            "results": [
+                {
+                    "id": 123,
+                    "user_id": 456,
+                    "username": "student1",
+                    "name": "Student Name",
+                    "platform_key": "platform1",
+                    "accepted": false,
+                    "visible": true,
+                    "created": "2023-06-15T14:30:00Z",
+                    "modified": "2023-06-15T14:30:00Z",
+                    "metadata": {},
+                    "pathway_id": "pathway-v1:org+pathway+run",
+                    "pathway_uuid": "12345678-1234-5678-1234-567812345678",
+                    "pathway_name": "Data Science Pathway",
+                    "pathway_platform_key": "platform1"
+                },
+                ...
+            ]
+        }
+
+Error Responses:
+    400 Bad Request: If required parameters are missing or invalid, or if suggestion retrieval fails
+    401 Unauthorized: If the user is not authenticated
+    403 Forbidden: If the user does not have permission to access this resource
+    500 Internal Server Error: If an unexpected error occurs
+
+Access Control:
+    - Requires IsDMAdmin, IsPlatformAdminReadOnly, or IsEdxUserReadOnly permission
+    - Users can view their own suggestions
+    - Platform admins can view suggestions for users in their platform (read-only)
+    - DM admins can view all suggestions
 
 ### Example
 
@@ -13061,7 +14314,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 username = 'username_example' # str | Username or user ID to retrieve suggestions for
@@ -13125,9 +14377,41 @@ Name | Type | Description  | Notes
 # **catalog_suggestions_program_manage_bulk_create**
 > BulkSuggestionResponse catalog_suggestions_program_manage_bulk_create(program_suggestion_bulk_create)
 
+API View for bulk creation of program suggestions.
 
+This endpoint allows administrators to create multiple program suggestions at once.
 
-API View for bulk creation of program suggestions.  This endpoint allows administrators to create multiple program suggestions at once.  Methods:     POST: Create multiple program suggestions in bulk  Request Body:     A JSON object containing:     - platform_key (str, required): The platform for the suggestions     - suggestion_data (array, required): Array of suggestion objects with:       - program_key (str, required): The program key to suggest       - user_id (str/int, required): The user to suggest the program to       - accepted (bool, optional): Whether the suggestion is accepted       - visible (bool, optional): Whether the suggestion is visible       - metadata (dict, optional): Additional suggestion metadata  Returns:     POST: A JSON response containing the results of the bulk operation:         {             \"successes\": 15,             \"error_codes\": []         }  Error Responses:     400 Bad Request: If required parameters are missing or invalid     401 Unauthorized: If the user is not authenticated     403 Forbidden: If the user does not have permission to create suggestions     500 Internal Server Error: If an unexpected error occurs during bulk creation  Access Control:     - Requires IsDMAdmin, IsPlatformAdmin, or IsDepartmentModeAdminInPlatform permission     - Platform admins can create suggestions for their platform     - Department admins can create suggestions for their departments     - DM admins can create suggestions for all platforms
+Methods:
+    POST: Create multiple program suggestions in bulk
+
+Request Body:
+    A JSON object containing:
+    - platform_key (str, required): The platform for the suggestions
+    - suggestion_data (array, required): Array of suggestion objects with:
+      - program_key (str, required): The program key to suggest
+      - user_id (str/int, required): The user to suggest the program to
+      - accepted (bool, optional): Whether the suggestion is accepted
+      - visible (bool, optional): Whether the suggestion is visible
+      - metadata (dict, optional): Additional suggestion metadata
+
+Returns:
+    POST: A JSON response containing the results of the bulk operation:
+        {
+            "successes": 15,
+            "error_codes": []
+        }
+
+Error Responses:
+    400 Bad Request: If required parameters are missing or invalid
+    401 Unauthorized: If the user is not authenticated
+    403 Forbidden: If the user does not have permission to create suggestions
+    500 Internal Server Error: If an unexpected error occurs during bulk creation
+
+Access Control:
+    - Requires IsDMAdmin, IsPlatformAdmin, or IsDepartmentModeAdminInPlatform permission
+    - Platform admins can create suggestions for their platform
+    - Department admins can create suggestions for their departments
+    - DM admins can create suggestions for all platforms
 
 ### Example
 
@@ -13151,7 +14435,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 program_suggestion_bulk_create = iblai.ProgramSuggestionBulkCreate() # ProgramSuggestionBulkCreate | 
@@ -13183,7 +14466,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -13201,9 +14484,91 @@ Name | Type | Description  | Notes
 # **catalog_suggestions_program_manage_create**
 > ProgramSuggestionDetail catalog_suggestions_program_manage_create(platform_key, program_suggestion_create, department_mode=department_mode, page=page, page_size=page_size, platform_org=platform_org, query=query, sort=sort)
 
+API View for managing program suggestions.
 
+This endpoint allows administrators to view, create, update, and delete program suggestions
+for users within a platform.
 
-API View for managing program suggestions.  This endpoint allows administrators to view, create, update, and delete program suggestions for users within a platform.  Query Parameters (GET):     platform_key (str, required): The platform to retrieve suggestions for     platform_org (str, optional): The organization identifier for the platform     query (str, optional): Search term to filter suggestions     sort (str, optional): Field to sort results by (default: '-id')     department_mode (bool, optional): Filter suggestions by department admin access     page (int, optional): Page number for pagination     page_size (int, optional): Number of items per page  Methods:     GET: Retrieve a paginated list of program suggestions for a platform     POST: Create or update a program suggestion     DELETE: Remove a program suggestion  Request Body (POST):     A JSON object containing:     - platform_key (str, required): The platform for the suggestion     - program_key (str, required): The program key to suggest     - user_id (str/int, required): The user to suggest the program to     - accepted (bool, optional): Whether the suggestion is accepted     - visible (bool, optional): Whether the suggestion is visible     - metadata (dict, optional): Additional suggestion metadata  Query Parameters (DELETE):     suggestion_id (int, required): The ID of the suggestion to delete  Returns:     GET: A paginated JSON response containing program suggestions:         {             \"count\": 10,             \"next\": \"https://example.com/api/catalog/suggestions/program/manage/?page=2\",             \"previous\": null,             \"results\": [                 {                     \"id\": 123,                     \"user_id\": 456,                     \"username\": \"student1\",                     \"name\": \"Student Name\",                     \"platform_key\": \"platform1\",                     \"accepted\": false,                     \"visible\": true,                     \"created\": \"2023-06-15T14:30:00Z\",                     \"modified\": \"2023-06-15T14:30:00Z\",                     \"metadata\": {},                     \"program_key\": \"program-v1:org+program+run\",                     \"program_name\": \"Data Science Program\"                 },                 ...             ]         }      POST: A JSON response containing the created/updated suggestion:         {             \"id\": 123,             \"user_id\": 456,             \"username\": \"student1\",             \"name\": \"Student Name\",             \"platform_key\": \"platform1\",             \"accepted\": false,             \"visible\": true,             \"created\": \"2023-06-15T14:30:00Z\",             \"modified\": \"2023-06-15T14:30:00Z\",             \"metadata\": {},             \"program_key\": \"program-v1:org+program+run\",             \"program_name\": \"Data Science Program\"         }      DELETE: A success response with status 200  Error Responses:     400 Bad Request: If required parameters are missing or invalid, or if suggestion operations fail     401 Unauthorized: If the user is not authenticated     403 Forbidden: If the user does not have permission to manage suggestions     500 Internal Server Error: If an unexpected error occurs  Access Control:     - Requires IsDMAdmin, IsPlatformAdmin, or IsDepartmentModeAdminInPlatform permission     - Platform admins can manage suggestions for their platform     - Department admins can manage suggestions for their departments     - DM admins can manage all suggestions
+Query Parameters (GET):
+    platform_key (str, required): The platform to retrieve suggestions for
+    platform_org (str, optional): The organization identifier for the platform
+    query (str, optional): Search term to filter suggestions
+    sort (str, optional): Field to sort results by (default: '-id')
+    department_mode (bool, optional): Filter suggestions by department admin access
+    page (int, optional): Page number for pagination
+    page_size (int, optional): Number of items per page
+
+Methods:
+    GET: Retrieve a paginated list of program suggestions for a platform
+    POST: Create or update a program suggestion
+    DELETE: Remove a program suggestion
+
+Request Body (POST):
+    A JSON object containing:
+    - platform_key (str, required): The platform for the suggestion
+    - program_key (str, required): The program key to suggest
+    - user_id (str/int, required): The user to suggest the program to
+    - accepted (bool, optional): Whether the suggestion is accepted
+    - visible (bool, optional): Whether the suggestion is visible
+    - metadata (dict, optional): Additional suggestion metadata
+
+Query Parameters (DELETE):
+    suggestion_id (int, required): The ID of the suggestion to delete
+
+Returns:
+    GET: A paginated JSON response containing program suggestions:
+        {
+            "count": 10,
+            "next": "https://example.com/api/catalog/suggestions/program/manage/?page=2",
+            "previous": null,
+            "results": [
+                {
+                    "id": 123,
+                    "user_id": 456,
+                    "username": "student1",
+                    "name": "Student Name",
+                    "platform_key": "platform1",
+                    "accepted": false,
+                    "visible": true,
+                    "created": "2023-06-15T14:30:00Z",
+                    "modified": "2023-06-15T14:30:00Z",
+                    "metadata": {},
+                    "program_key": "program-v1:org+program+run",
+                    "program_name": "Data Science Program"
+                },
+                ...
+            ]
+        }
+
+    POST: A JSON response containing the created/updated suggestion:
+        {
+            "id": 123,
+            "user_id": 456,
+            "username": "student1",
+            "name": "Student Name",
+            "platform_key": "platform1",
+            "accepted": false,
+            "visible": true,
+            "created": "2023-06-15T14:30:00Z",
+            "modified": "2023-06-15T14:30:00Z",
+            "metadata": {},
+            "program_key": "program-v1:org+program+run",
+            "program_name": "Data Science Program"
+        }
+
+    DELETE: A success response with status 200
+
+Error Responses:
+    400 Bad Request: If required parameters are missing or invalid, or if suggestion operations fail
+    401 Unauthorized: If the user is not authenticated
+    403 Forbidden: If the user does not have permission to manage suggestions
+    500 Internal Server Error: If an unexpected error occurs
+
+Access Control:
+    - Requires IsDMAdmin, IsPlatformAdmin, or IsDepartmentModeAdminInPlatform permission
+    - Platform admins can manage suggestions for their platform
+    - Department admins can manage suggestions for their departments
+    - DM admins can manage all suggestions
 
 ### Example
 
@@ -13227,7 +14592,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 platform_key = 'platform_key_example' # str | The platform to retrieve suggestions for
@@ -13273,7 +14637,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -13291,9 +14655,91 @@ Name | Type | Description  | Notes
 # **catalog_suggestions_program_manage_destroy**
 > catalog_suggestions_program_manage_destroy(suggestion_id, department_mode=department_mode, page=page, page_size=page_size, platform_key=platform_key, platform_org=platform_org, query=query, sort=sort)
 
+API View for managing program suggestions.
 
+This endpoint allows administrators to view, create, update, and delete program suggestions
+for users within a platform.
 
-API View for managing program suggestions.  This endpoint allows administrators to view, create, update, and delete program suggestions for users within a platform.  Query Parameters (GET):     platform_key (str, required): The platform to retrieve suggestions for     platform_org (str, optional): The organization identifier for the platform     query (str, optional): Search term to filter suggestions     sort (str, optional): Field to sort results by (default: '-id')     department_mode (bool, optional): Filter suggestions by department admin access     page (int, optional): Page number for pagination     page_size (int, optional): Number of items per page  Methods:     GET: Retrieve a paginated list of program suggestions for a platform     POST: Create or update a program suggestion     DELETE: Remove a program suggestion  Request Body (POST):     A JSON object containing:     - platform_key (str, required): The platform for the suggestion     - program_key (str, required): The program key to suggest     - user_id (str/int, required): The user to suggest the program to     - accepted (bool, optional): Whether the suggestion is accepted     - visible (bool, optional): Whether the suggestion is visible     - metadata (dict, optional): Additional suggestion metadata  Query Parameters (DELETE):     suggestion_id (int, required): The ID of the suggestion to delete  Returns:     GET: A paginated JSON response containing program suggestions:         {             \"count\": 10,             \"next\": \"https://example.com/api/catalog/suggestions/program/manage/?page=2\",             \"previous\": null,             \"results\": [                 {                     \"id\": 123,                     \"user_id\": 456,                     \"username\": \"student1\",                     \"name\": \"Student Name\",                     \"platform_key\": \"platform1\",                     \"accepted\": false,                     \"visible\": true,                     \"created\": \"2023-06-15T14:30:00Z\",                     \"modified\": \"2023-06-15T14:30:00Z\",                     \"metadata\": {},                     \"program_key\": \"program-v1:org+program+run\",                     \"program_name\": \"Data Science Program\"                 },                 ...             ]         }      POST: A JSON response containing the created/updated suggestion:         {             \"id\": 123,             \"user_id\": 456,             \"username\": \"student1\",             \"name\": \"Student Name\",             \"platform_key\": \"platform1\",             \"accepted\": false,             \"visible\": true,             \"created\": \"2023-06-15T14:30:00Z\",             \"modified\": \"2023-06-15T14:30:00Z\",             \"metadata\": {},             \"program_key\": \"program-v1:org+program+run\",             \"program_name\": \"Data Science Program\"         }      DELETE: A success response with status 200  Error Responses:     400 Bad Request: If required parameters are missing or invalid, or if suggestion operations fail     401 Unauthorized: If the user is not authenticated     403 Forbidden: If the user does not have permission to manage suggestions     500 Internal Server Error: If an unexpected error occurs  Access Control:     - Requires IsDMAdmin, IsPlatformAdmin, or IsDepartmentModeAdminInPlatform permission     - Platform admins can manage suggestions for their platform     - Department admins can manage suggestions for their departments     - DM admins can manage all suggestions
+Query Parameters (GET):
+    platform_key (str, required): The platform to retrieve suggestions for
+    platform_org (str, optional): The organization identifier for the platform
+    query (str, optional): Search term to filter suggestions
+    sort (str, optional): Field to sort results by (default: '-id')
+    department_mode (bool, optional): Filter suggestions by department admin access
+    page (int, optional): Page number for pagination
+    page_size (int, optional): Number of items per page
+
+Methods:
+    GET: Retrieve a paginated list of program suggestions for a platform
+    POST: Create or update a program suggestion
+    DELETE: Remove a program suggestion
+
+Request Body (POST):
+    A JSON object containing:
+    - platform_key (str, required): The platform for the suggestion
+    - program_key (str, required): The program key to suggest
+    - user_id (str/int, required): The user to suggest the program to
+    - accepted (bool, optional): Whether the suggestion is accepted
+    - visible (bool, optional): Whether the suggestion is visible
+    - metadata (dict, optional): Additional suggestion metadata
+
+Query Parameters (DELETE):
+    suggestion_id (int, required): The ID of the suggestion to delete
+
+Returns:
+    GET: A paginated JSON response containing program suggestions:
+        {
+            "count": 10,
+            "next": "https://example.com/api/catalog/suggestions/program/manage/?page=2",
+            "previous": null,
+            "results": [
+                {
+                    "id": 123,
+                    "user_id": 456,
+                    "username": "student1",
+                    "name": "Student Name",
+                    "platform_key": "platform1",
+                    "accepted": false,
+                    "visible": true,
+                    "created": "2023-06-15T14:30:00Z",
+                    "modified": "2023-06-15T14:30:00Z",
+                    "metadata": {},
+                    "program_key": "program-v1:org+program+run",
+                    "program_name": "Data Science Program"
+                },
+                ...
+            ]
+        }
+
+    POST: A JSON response containing the created/updated suggestion:
+        {
+            "id": 123,
+            "user_id": 456,
+            "username": "student1",
+            "name": "Student Name",
+            "platform_key": "platform1",
+            "accepted": false,
+            "visible": true,
+            "created": "2023-06-15T14:30:00Z",
+            "modified": "2023-06-15T14:30:00Z",
+            "metadata": {},
+            "program_key": "program-v1:org+program+run",
+            "program_name": "Data Science Program"
+        }
+
+    DELETE: A success response with status 200
+
+Error Responses:
+    400 Bad Request: If required parameters are missing or invalid, or if suggestion operations fail
+    401 Unauthorized: If the user is not authenticated
+    403 Forbidden: If the user does not have permission to manage suggestions
+    500 Internal Server Error: If an unexpected error occurs
+
+Access Control:
+    - Requires IsDMAdmin, IsPlatformAdmin, or IsDepartmentModeAdminInPlatform permission
+    - Platform admins can manage suggestions for their platform
+    - Department admins can manage suggestions for their departments
+    - DM admins can manage all suggestions
 
 ### Example
 
@@ -13315,7 +14761,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 suggestion_id = 56 # int | The ID of the suggestion to delete
@@ -13378,9 +14823,91 @@ void (empty response body)
 # **catalog_suggestions_program_manage_group_create**
 > ProgramGroupSuggestionDetail catalog_suggestions_program_manage_group_create(platform_key, program_group_suggestion_create, department_mode=department_mode, page=page, page_size=page_size, platform_org=platform_org, query=query, sort=sort)
 
+API View for managing program group suggestions.
 
+This endpoint allows administrators to view, create, and delete program suggestions
+for groups of users within a platform.
 
-API View for managing program group suggestions.  This endpoint allows administrators to view, create, and delete program suggestions for groups of users within a platform.  Query Parameters (GET):     platform_key (str, required): The platform to retrieve group suggestions for     platform_org (str, optional): The organization identifier for the platform     query (str, optional): Search term to filter group suggestions     sort (str, optional): Field to sort results by (default: 'id')     department_mode (bool, optional): Filter suggestions by department admin access     page (int, optional): Page number for pagination     page_size (int, optional): Number of items per page  Methods:     GET: Retrieve a paginated list of program group suggestions for a platform     POST: Create or update a program group suggestion     DELETE: Remove a program group suggestion  Request Body (POST):     A JSON object containing:     - platform_key (str, required): The platform for the group suggestion     - program_key (str, required): The program key to suggest     - group_id (str/int, required): The group to suggest the program to     - accepted (bool, optional): Whether the suggestion is accepted     - visible (bool, optional): Whether the suggestion is visible     - metadata (dict, optional): Additional suggestion metadata  Query Parameters (DELETE):     suggestion_id (int, required): The ID of the group suggestion to delete  Returns:     GET: A paginated JSON response containing program group suggestions:         {             \"count\": 5,             \"next\": \"https://example.com/api/catalog/suggestions/program/group/?page=2\",             \"previous\": null,             \"results\": [                 {                     \"id\": 123,                     \"group_id\": 789,                     \"group_name\": \"Engineering Team\",                     \"platform_key\": \"platform1\",                     \"accepted\": false,                     \"visible\": true,                     \"created\": \"2023-06-15T14:30:00Z\",                     \"modified\": \"2023-06-15T14:30:00Z\",                     \"metadata\": {},                     \"program_key\": \"program-v1:org+program+run\",                     \"program_name\": \"Data Science Program\",                     \"user_count\": 25                 },                 ...             ]         }      POST: A JSON response containing the created/updated group suggestion:         {             \"id\": 123,             \"group_id\": 789,             \"group_name\": \"Engineering Team\",             \"platform_key\": \"platform1\",             \"accepted\": false,             \"visible\": true,             \"created\": \"2023-06-15T14:30:00Z\",             \"modified\": \"2023-06-15T14:30:00Z\",             \"metadata\": {},             \"program_key\": \"program-v1:org+program+run\",             \"program_name\": \"Data Science Program\",             \"user_count\": 25         }      DELETE: A success response with status 200  Error Responses:     400 Bad Request: If required parameters are missing or invalid, or if group suggestion operations fail     401 Unauthorized: If the user is not authenticated     403 Forbidden: If the user does not have permission to manage group suggestions     500 Internal Server Error: If an unexpected error occurs  Access Control:     - Requires IsDMAdmin, IsPlatformAdmin, or IsDepartmentModeAdminInPlatform permission     - Platform admins can manage group suggestions for their platform     - Department admins can manage group suggestions for their departments     - DM admins can manage all group suggestions
+Query Parameters (GET):
+    platform_key (str, required): The platform to retrieve group suggestions for
+    platform_org (str, optional): The organization identifier for the platform
+    query (str, optional): Search term to filter group suggestions
+    sort (str, optional): Field to sort results by (default: 'id')
+    department_mode (bool, optional): Filter suggestions by department admin access
+    page (int, optional): Page number for pagination
+    page_size (int, optional): Number of items per page
+
+Methods:
+    GET: Retrieve a paginated list of program group suggestions for a platform
+    POST: Create or update a program group suggestion
+    DELETE: Remove a program group suggestion
+
+Request Body (POST):
+    A JSON object containing:
+    - platform_key (str, required): The platform for the group suggestion
+    - program_key (str, required): The program key to suggest
+    - group_id (str/int, required): The group to suggest the program to
+    - accepted (bool, optional): Whether the suggestion is accepted
+    - visible (bool, optional): Whether the suggestion is visible
+    - metadata (dict, optional): Additional suggestion metadata
+
+Query Parameters (DELETE):
+    suggestion_id (int, required): The ID of the group suggestion to delete
+
+Returns:
+    GET: A paginated JSON response containing program group suggestions:
+        {
+            "count": 5,
+            "next": "https://example.com/api/catalog/suggestions/program/group/?page=2",
+            "previous": null,
+            "results": [
+                {
+                    "id": 123,
+                    "group_id": 789,
+                    "group_name": "Engineering Team",
+                    "platform_key": "platform1",
+                    "accepted": false,
+                    "visible": true,
+                    "created": "2023-06-15T14:30:00Z",
+                    "modified": "2023-06-15T14:30:00Z",
+                    "metadata": {},
+                    "program_key": "program-v1:org+program+run",
+                    "program_name": "Data Science Program",
+                    "user_count": 25
+                },
+                ...
+            ]
+        }
+
+    POST: A JSON response containing the created/updated group suggestion:
+        {
+            "id": 123,
+            "group_id": 789,
+            "group_name": "Engineering Team",
+            "platform_key": "platform1",
+            "accepted": false,
+            "visible": true,
+            "created": "2023-06-15T14:30:00Z",
+            "modified": "2023-06-15T14:30:00Z",
+            "metadata": {},
+            "program_key": "program-v1:org+program+run",
+            "program_name": "Data Science Program",
+            "user_count": 25
+        }
+
+    DELETE: A success response with status 200
+
+Error Responses:
+    400 Bad Request: If required parameters are missing or invalid, or if group suggestion operations fail
+    401 Unauthorized: If the user is not authenticated
+    403 Forbidden: If the user does not have permission to manage group suggestions
+    500 Internal Server Error: If an unexpected error occurs
+
+Access Control:
+    - Requires IsDMAdmin, IsPlatformAdmin, or IsDepartmentModeAdminInPlatform permission
+    - Platform admins can manage group suggestions for their platform
+    - Department admins can manage group suggestions for their departments
+    - DM admins can manage all group suggestions
 
 ### Example
 
@@ -13404,7 +14931,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 platform_key = 'platform_key_example' # str | The platform to retrieve group suggestions for
@@ -13450,7 +14976,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -13468,9 +14994,91 @@ Name | Type | Description  | Notes
 # **catalog_suggestions_program_manage_group_destroy**
 > catalog_suggestions_program_manage_group_destroy(platform_key, suggestion_id, department_mode=department_mode, page=page, page_size=page_size, platform_org=platform_org, query=query, sort=sort)
 
+API View for managing program group suggestions.
 
+This endpoint allows administrators to view, create, and delete program suggestions
+for groups of users within a platform.
 
-API View for managing program group suggestions.  This endpoint allows administrators to view, create, and delete program suggestions for groups of users within a platform.  Query Parameters (GET):     platform_key (str, required): The platform to retrieve group suggestions for     platform_org (str, optional): The organization identifier for the platform     query (str, optional): Search term to filter group suggestions     sort (str, optional): Field to sort results by (default: 'id')     department_mode (bool, optional): Filter suggestions by department admin access     page (int, optional): Page number for pagination     page_size (int, optional): Number of items per page  Methods:     GET: Retrieve a paginated list of program group suggestions for a platform     POST: Create or update a program group suggestion     DELETE: Remove a program group suggestion  Request Body (POST):     A JSON object containing:     - platform_key (str, required): The platform for the group suggestion     - program_key (str, required): The program key to suggest     - group_id (str/int, required): The group to suggest the program to     - accepted (bool, optional): Whether the suggestion is accepted     - visible (bool, optional): Whether the suggestion is visible     - metadata (dict, optional): Additional suggestion metadata  Query Parameters (DELETE):     suggestion_id (int, required): The ID of the group suggestion to delete  Returns:     GET: A paginated JSON response containing program group suggestions:         {             \"count\": 5,             \"next\": \"https://example.com/api/catalog/suggestions/program/group/?page=2\",             \"previous\": null,             \"results\": [                 {                     \"id\": 123,                     \"group_id\": 789,                     \"group_name\": \"Engineering Team\",                     \"platform_key\": \"platform1\",                     \"accepted\": false,                     \"visible\": true,                     \"created\": \"2023-06-15T14:30:00Z\",                     \"modified\": \"2023-06-15T14:30:00Z\",                     \"metadata\": {},                     \"program_key\": \"program-v1:org+program+run\",                     \"program_name\": \"Data Science Program\",                     \"user_count\": 25                 },                 ...             ]         }      POST: A JSON response containing the created/updated group suggestion:         {             \"id\": 123,             \"group_id\": 789,             \"group_name\": \"Engineering Team\",             \"platform_key\": \"platform1\",             \"accepted\": false,             \"visible\": true,             \"created\": \"2023-06-15T14:30:00Z\",             \"modified\": \"2023-06-15T14:30:00Z\",             \"metadata\": {},             \"program_key\": \"program-v1:org+program+run\",             \"program_name\": \"Data Science Program\",             \"user_count\": 25         }      DELETE: A success response with status 200  Error Responses:     400 Bad Request: If required parameters are missing or invalid, or if group suggestion operations fail     401 Unauthorized: If the user is not authenticated     403 Forbidden: If the user does not have permission to manage group suggestions     500 Internal Server Error: If an unexpected error occurs  Access Control:     - Requires IsDMAdmin, IsPlatformAdmin, or IsDepartmentModeAdminInPlatform permission     - Platform admins can manage group suggestions for their platform     - Department admins can manage group suggestions for their departments     - DM admins can manage all group suggestions
+Query Parameters (GET):
+    platform_key (str, required): The platform to retrieve group suggestions for
+    platform_org (str, optional): The organization identifier for the platform
+    query (str, optional): Search term to filter group suggestions
+    sort (str, optional): Field to sort results by (default: 'id')
+    department_mode (bool, optional): Filter suggestions by department admin access
+    page (int, optional): Page number for pagination
+    page_size (int, optional): Number of items per page
+
+Methods:
+    GET: Retrieve a paginated list of program group suggestions for a platform
+    POST: Create or update a program group suggestion
+    DELETE: Remove a program group suggestion
+
+Request Body (POST):
+    A JSON object containing:
+    - platform_key (str, required): The platform for the group suggestion
+    - program_key (str, required): The program key to suggest
+    - group_id (str/int, required): The group to suggest the program to
+    - accepted (bool, optional): Whether the suggestion is accepted
+    - visible (bool, optional): Whether the suggestion is visible
+    - metadata (dict, optional): Additional suggestion metadata
+
+Query Parameters (DELETE):
+    suggestion_id (int, required): The ID of the group suggestion to delete
+
+Returns:
+    GET: A paginated JSON response containing program group suggestions:
+        {
+            "count": 5,
+            "next": "https://example.com/api/catalog/suggestions/program/group/?page=2",
+            "previous": null,
+            "results": [
+                {
+                    "id": 123,
+                    "group_id": 789,
+                    "group_name": "Engineering Team",
+                    "platform_key": "platform1",
+                    "accepted": false,
+                    "visible": true,
+                    "created": "2023-06-15T14:30:00Z",
+                    "modified": "2023-06-15T14:30:00Z",
+                    "metadata": {},
+                    "program_key": "program-v1:org+program+run",
+                    "program_name": "Data Science Program",
+                    "user_count": 25
+                },
+                ...
+            ]
+        }
+
+    POST: A JSON response containing the created/updated group suggestion:
+        {
+            "id": 123,
+            "group_id": 789,
+            "group_name": "Engineering Team",
+            "platform_key": "platform1",
+            "accepted": false,
+            "visible": true,
+            "created": "2023-06-15T14:30:00Z",
+            "modified": "2023-06-15T14:30:00Z",
+            "metadata": {},
+            "program_key": "program-v1:org+program+run",
+            "program_name": "Data Science Program",
+            "user_count": 25
+        }
+
+    DELETE: A success response with status 200
+
+Error Responses:
+    400 Bad Request: If required parameters are missing or invalid, or if group suggestion operations fail
+    401 Unauthorized: If the user is not authenticated
+    403 Forbidden: If the user does not have permission to manage group suggestions
+    500 Internal Server Error: If an unexpected error occurs
+
+Access Control:
+    - Requires IsDMAdmin, IsPlatformAdmin, or IsDepartmentModeAdminInPlatform permission
+    - Platform admins can manage group suggestions for their platform
+    - Department admins can manage group suggestions for their departments
+    - DM admins can manage all group suggestions
 
 ### Example
 
@@ -13492,7 +15100,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 platform_key = 'platform_key_example' # str | The platform to retrieve group suggestions for
@@ -13555,9 +15162,91 @@ void (empty response body)
 # **catalog_suggestions_program_manage_group_retrieve**
 > PaginatedProgramGroupSuggestion catalog_suggestions_program_manage_group_retrieve(platform_key, department_mode=department_mode, page=page, page_size=page_size, platform_org=platform_org, query=query, sort=sort)
 
+API View for managing program group suggestions.
 
+This endpoint allows administrators to view, create, and delete program suggestions
+for groups of users within a platform.
 
-API View for managing program group suggestions.  This endpoint allows administrators to view, create, and delete program suggestions for groups of users within a platform.  Query Parameters (GET):     platform_key (str, required): The platform to retrieve group suggestions for     platform_org (str, optional): The organization identifier for the platform     query (str, optional): Search term to filter group suggestions     sort (str, optional): Field to sort results by (default: 'id')     department_mode (bool, optional): Filter suggestions by department admin access     page (int, optional): Page number for pagination     page_size (int, optional): Number of items per page  Methods:     GET: Retrieve a paginated list of program group suggestions for a platform     POST: Create or update a program group suggestion     DELETE: Remove a program group suggestion  Request Body (POST):     A JSON object containing:     - platform_key (str, required): The platform for the group suggestion     - program_key (str, required): The program key to suggest     - group_id (str/int, required): The group to suggest the program to     - accepted (bool, optional): Whether the suggestion is accepted     - visible (bool, optional): Whether the suggestion is visible     - metadata (dict, optional): Additional suggestion metadata  Query Parameters (DELETE):     suggestion_id (int, required): The ID of the group suggestion to delete  Returns:     GET: A paginated JSON response containing program group suggestions:         {             \"count\": 5,             \"next\": \"https://example.com/api/catalog/suggestions/program/group/?page=2\",             \"previous\": null,             \"results\": [                 {                     \"id\": 123,                     \"group_id\": 789,                     \"group_name\": \"Engineering Team\",                     \"platform_key\": \"platform1\",                     \"accepted\": false,                     \"visible\": true,                     \"created\": \"2023-06-15T14:30:00Z\",                     \"modified\": \"2023-06-15T14:30:00Z\",                     \"metadata\": {},                     \"program_key\": \"program-v1:org+program+run\",                     \"program_name\": \"Data Science Program\",                     \"user_count\": 25                 },                 ...             ]         }      POST: A JSON response containing the created/updated group suggestion:         {             \"id\": 123,             \"group_id\": 789,             \"group_name\": \"Engineering Team\",             \"platform_key\": \"platform1\",             \"accepted\": false,             \"visible\": true,             \"created\": \"2023-06-15T14:30:00Z\",             \"modified\": \"2023-06-15T14:30:00Z\",             \"metadata\": {},             \"program_key\": \"program-v1:org+program+run\",             \"program_name\": \"Data Science Program\",             \"user_count\": 25         }      DELETE: A success response with status 200  Error Responses:     400 Bad Request: If required parameters are missing or invalid, or if group suggestion operations fail     401 Unauthorized: If the user is not authenticated     403 Forbidden: If the user does not have permission to manage group suggestions     500 Internal Server Error: If an unexpected error occurs  Access Control:     - Requires IsDMAdmin, IsPlatformAdmin, or IsDepartmentModeAdminInPlatform permission     - Platform admins can manage group suggestions for their platform     - Department admins can manage group suggestions for their departments     - DM admins can manage all group suggestions
+Query Parameters (GET):
+    platform_key (str, required): The platform to retrieve group suggestions for
+    platform_org (str, optional): The organization identifier for the platform
+    query (str, optional): Search term to filter group suggestions
+    sort (str, optional): Field to sort results by (default: 'id')
+    department_mode (bool, optional): Filter suggestions by department admin access
+    page (int, optional): Page number for pagination
+    page_size (int, optional): Number of items per page
+
+Methods:
+    GET: Retrieve a paginated list of program group suggestions for a platform
+    POST: Create or update a program group suggestion
+    DELETE: Remove a program group suggestion
+
+Request Body (POST):
+    A JSON object containing:
+    - platform_key (str, required): The platform for the group suggestion
+    - program_key (str, required): The program key to suggest
+    - group_id (str/int, required): The group to suggest the program to
+    - accepted (bool, optional): Whether the suggestion is accepted
+    - visible (bool, optional): Whether the suggestion is visible
+    - metadata (dict, optional): Additional suggestion metadata
+
+Query Parameters (DELETE):
+    suggestion_id (int, required): The ID of the group suggestion to delete
+
+Returns:
+    GET: A paginated JSON response containing program group suggestions:
+        {
+            "count": 5,
+            "next": "https://example.com/api/catalog/suggestions/program/group/?page=2",
+            "previous": null,
+            "results": [
+                {
+                    "id": 123,
+                    "group_id": 789,
+                    "group_name": "Engineering Team",
+                    "platform_key": "platform1",
+                    "accepted": false,
+                    "visible": true,
+                    "created": "2023-06-15T14:30:00Z",
+                    "modified": "2023-06-15T14:30:00Z",
+                    "metadata": {},
+                    "program_key": "program-v1:org+program+run",
+                    "program_name": "Data Science Program",
+                    "user_count": 25
+                },
+                ...
+            ]
+        }
+
+    POST: A JSON response containing the created/updated group suggestion:
+        {
+            "id": 123,
+            "group_id": 789,
+            "group_name": "Engineering Team",
+            "platform_key": "platform1",
+            "accepted": false,
+            "visible": true,
+            "created": "2023-06-15T14:30:00Z",
+            "modified": "2023-06-15T14:30:00Z",
+            "metadata": {},
+            "program_key": "program-v1:org+program+run",
+            "program_name": "Data Science Program",
+            "user_count": 25
+        }
+
+    DELETE: A success response with status 200
+
+Error Responses:
+    400 Bad Request: If required parameters are missing or invalid, or if group suggestion operations fail
+    401 Unauthorized: If the user is not authenticated
+    403 Forbidden: If the user does not have permission to manage group suggestions
+    500 Internal Server Error: If an unexpected error occurs
+
+Access Control:
+    - Requires IsDMAdmin, IsPlatformAdmin, or IsDepartmentModeAdminInPlatform permission
+    - Platform admins can manage group suggestions for their platform
+    - Department admins can manage group suggestions for their departments
+    - DM admins can manage all group suggestions
 
 ### Example
 
@@ -13580,7 +15269,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 platform_key = 'platform_key_example' # str | The platform to retrieve group suggestions for
@@ -13642,9 +15330,91 @@ Name | Type | Description  | Notes
 # **catalog_suggestions_program_manage_retrieve**
 > PaginatedProgramSuggestion catalog_suggestions_program_manage_retrieve(platform_key, department_mode=department_mode, page=page, page_size=page_size, platform_org=platform_org, query=query, sort=sort)
 
+API View for managing program suggestions.
 
+This endpoint allows administrators to view, create, update, and delete program suggestions
+for users within a platform.
 
-API View for managing program suggestions.  This endpoint allows administrators to view, create, update, and delete program suggestions for users within a platform.  Query Parameters (GET):     platform_key (str, required): The platform to retrieve suggestions for     platform_org (str, optional): The organization identifier for the platform     query (str, optional): Search term to filter suggestions     sort (str, optional): Field to sort results by (default: '-id')     department_mode (bool, optional): Filter suggestions by department admin access     page (int, optional): Page number for pagination     page_size (int, optional): Number of items per page  Methods:     GET: Retrieve a paginated list of program suggestions for a platform     POST: Create or update a program suggestion     DELETE: Remove a program suggestion  Request Body (POST):     A JSON object containing:     - platform_key (str, required): The platform for the suggestion     - program_key (str, required): The program key to suggest     - user_id (str/int, required): The user to suggest the program to     - accepted (bool, optional): Whether the suggestion is accepted     - visible (bool, optional): Whether the suggestion is visible     - metadata (dict, optional): Additional suggestion metadata  Query Parameters (DELETE):     suggestion_id (int, required): The ID of the suggestion to delete  Returns:     GET: A paginated JSON response containing program suggestions:         {             \"count\": 10,             \"next\": \"https://example.com/api/catalog/suggestions/program/manage/?page=2\",             \"previous\": null,             \"results\": [                 {                     \"id\": 123,                     \"user_id\": 456,                     \"username\": \"student1\",                     \"name\": \"Student Name\",                     \"platform_key\": \"platform1\",                     \"accepted\": false,                     \"visible\": true,                     \"created\": \"2023-06-15T14:30:00Z\",                     \"modified\": \"2023-06-15T14:30:00Z\",                     \"metadata\": {},                     \"program_key\": \"program-v1:org+program+run\",                     \"program_name\": \"Data Science Program\"                 },                 ...             ]         }      POST: A JSON response containing the created/updated suggestion:         {             \"id\": 123,             \"user_id\": 456,             \"username\": \"student1\",             \"name\": \"Student Name\",             \"platform_key\": \"platform1\",             \"accepted\": false,             \"visible\": true,             \"created\": \"2023-06-15T14:30:00Z\",             \"modified\": \"2023-06-15T14:30:00Z\",             \"metadata\": {},             \"program_key\": \"program-v1:org+program+run\",             \"program_name\": \"Data Science Program\"         }      DELETE: A success response with status 200  Error Responses:     400 Bad Request: If required parameters are missing or invalid, or if suggestion operations fail     401 Unauthorized: If the user is not authenticated     403 Forbidden: If the user does not have permission to manage suggestions     500 Internal Server Error: If an unexpected error occurs  Access Control:     - Requires IsDMAdmin, IsPlatformAdmin, or IsDepartmentModeAdminInPlatform permission     - Platform admins can manage suggestions for their platform     - Department admins can manage suggestions for their departments     - DM admins can manage all suggestions
+Query Parameters (GET):
+    platform_key (str, required): The platform to retrieve suggestions for
+    platform_org (str, optional): The organization identifier for the platform
+    query (str, optional): Search term to filter suggestions
+    sort (str, optional): Field to sort results by (default: '-id')
+    department_mode (bool, optional): Filter suggestions by department admin access
+    page (int, optional): Page number for pagination
+    page_size (int, optional): Number of items per page
+
+Methods:
+    GET: Retrieve a paginated list of program suggestions for a platform
+    POST: Create or update a program suggestion
+    DELETE: Remove a program suggestion
+
+Request Body (POST):
+    A JSON object containing:
+    - platform_key (str, required): The platform for the suggestion
+    - program_key (str, required): The program key to suggest
+    - user_id (str/int, required): The user to suggest the program to
+    - accepted (bool, optional): Whether the suggestion is accepted
+    - visible (bool, optional): Whether the suggestion is visible
+    - metadata (dict, optional): Additional suggestion metadata
+
+Query Parameters (DELETE):
+    suggestion_id (int, required): The ID of the suggestion to delete
+
+Returns:
+    GET: A paginated JSON response containing program suggestions:
+        {
+            "count": 10,
+            "next": "https://example.com/api/catalog/suggestions/program/manage/?page=2",
+            "previous": null,
+            "results": [
+                {
+                    "id": 123,
+                    "user_id": 456,
+                    "username": "student1",
+                    "name": "Student Name",
+                    "platform_key": "platform1",
+                    "accepted": false,
+                    "visible": true,
+                    "created": "2023-06-15T14:30:00Z",
+                    "modified": "2023-06-15T14:30:00Z",
+                    "metadata": {},
+                    "program_key": "program-v1:org+program+run",
+                    "program_name": "Data Science Program"
+                },
+                ...
+            ]
+        }
+
+    POST: A JSON response containing the created/updated suggestion:
+        {
+            "id": 123,
+            "user_id": 456,
+            "username": "student1",
+            "name": "Student Name",
+            "platform_key": "platform1",
+            "accepted": false,
+            "visible": true,
+            "created": "2023-06-15T14:30:00Z",
+            "modified": "2023-06-15T14:30:00Z",
+            "metadata": {},
+            "program_key": "program-v1:org+program+run",
+            "program_name": "Data Science Program"
+        }
+
+    DELETE: A success response with status 200
+
+Error Responses:
+    400 Bad Request: If required parameters are missing or invalid, or if suggestion operations fail
+    401 Unauthorized: If the user is not authenticated
+    403 Forbidden: If the user does not have permission to manage suggestions
+    500 Internal Server Error: If an unexpected error occurs
+
+Access Control:
+    - Requires IsDMAdmin, IsPlatformAdmin, or IsDepartmentModeAdminInPlatform permission
+    - Platform admins can manage suggestions for their platform
+    - Department admins can manage suggestions for their departments
+    - DM admins can manage all suggestions
 
 ### Example
 
@@ -13667,7 +15437,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 platform_key = 'platform_key_example' # str | The platform to retrieve suggestions for
@@ -13729,9 +15498,58 @@ Name | Type | Description  | Notes
 # **catalog_suggestions_program_user_retrieve**
 > PaginatedProgramSuggestion catalog_suggestions_program_user_retrieve(username, email=email, page=page, page_size=page_size, platform_key=platform_key, platform_org=platform_org, sort=sort, user_id=user_id)
 
+API View for retrieving program suggestions for a specific user.
 
+This endpoint allows users to view program suggestions that have been made for them,
+with support for filtering by platform and pagination.
 
-API View for retrieving program suggestions for a specific user.  This endpoint allows users to view program suggestions that have been made for them, with support for filtering by platform and pagination.  Query Parameters:     user (str, required): Username or user ID to retrieve suggestions for     platform_key (str, optional): Filter suggestions by platform key     platform_org (str, optional): Filter suggestions by platform organization     sort (str, optional): Field to sort results by (default: '-id')     page (int, optional): Page number for pagination     page_size (int, optional): Number of items per page  Methods:     GET: Retrieve a paginated list of program suggestions for a user  Returns:     GET: A paginated JSON response containing program suggestions:         {             \"count\": 10,             \"next\": \"https://example.com/api/catalog/suggestions/program/user/?page=2\",             \"previous\": null,             \"results\": [                 {                     \"id\": 123,                     \"user_id\": 456,                     \"username\": \"student1\",                     \"name\": \"Student Name\",                     \"platform_key\": \"platform1\",                     \"accepted\": false,                     \"visible\": true,                     \"created\": \"2023-06-15T14:30:00Z\",                     \"modified\": \"2023-06-15T14:30:00Z\",                     \"metadata\": {},                     \"program_key\": \"program-v1:org+program+run\",                     \"program_name\": \"Data Science Program\"                 },                 ...             ]         }  Error Responses:     400 Bad Request: If required parameters are missing or invalid, or if suggestion retrieval fails     401 Unauthorized: If the user is not authenticated     403 Forbidden: If the user does not have permission to access this resource     500 Internal Server Error: If an unexpected error occurs  Access Control:     - Requires IsDMAdmin, IsPlatformAdminReadOnly, or IsEdxUserReadOnly permission     - Users can view their own suggestions     - Platform admins can view suggestions for users in their platform (read-only)     - DM admins can view all suggestions
+Query Parameters:
+    user (str, required): Username or user ID to retrieve suggestions for
+    platform_key (str, optional): Filter suggestions by platform key
+    platform_org (str, optional): Filter suggestions by platform organization
+    sort (str, optional): Field to sort results by (default: '-id')
+    page (int, optional): Page number for pagination
+    page_size (int, optional): Number of items per page
+
+Methods:
+    GET: Retrieve a paginated list of program suggestions for a user
+
+Returns:
+    GET: A paginated JSON response containing program suggestions:
+        {
+            "count": 10,
+            "next": "https://example.com/api/catalog/suggestions/program/user/?page=2",
+            "previous": null,
+            "results": [
+                {
+                    "id": 123,
+                    "user_id": 456,
+                    "username": "student1",
+                    "name": "Student Name",
+                    "platform_key": "platform1",
+                    "accepted": false,
+                    "visible": true,
+                    "created": "2023-06-15T14:30:00Z",
+                    "modified": "2023-06-15T14:30:00Z",
+                    "metadata": {},
+                    "program_key": "program-v1:org+program+run",
+                    "program_name": "Data Science Program"
+                },
+                ...
+            ]
+        }
+
+Error Responses:
+    400 Bad Request: If required parameters are missing or invalid, or if suggestion retrieval fails
+    401 Unauthorized: If the user is not authenticated
+    403 Forbidden: If the user does not have permission to access this resource
+    500 Internal Server Error: If an unexpected error occurs
+
+Access Control:
+    - Requires IsDMAdmin, IsPlatformAdminReadOnly, or IsEdxUserReadOnly permission
+    - Users can view their own suggestions
+    - Platform admins can view suggestions for users in their platform (read-only)
+    - DM admins can view all suggestions
 
 ### Example
 
@@ -13754,7 +15572,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CatalogApi(api_client)
 username = 'username_example' # str | Username or user ID to retrieve suggestions for

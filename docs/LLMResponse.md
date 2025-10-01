@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **documentation** | **str** |  | [optional] 
 **sdk_samples** | **str** |  | [optional] 
 **chat_models** | **object** |  | [optional] 
+**disabled_models** | **object** | List of disabled models. If empty, all models are enabled. | [optional] 
 **logo** | **str** |  | [optional] 
 
 ## Example

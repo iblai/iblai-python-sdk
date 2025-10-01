@@ -4,6 +4,7 @@ All URIs are relative to *https://base.manager.iblai.app*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**ai_mentor_langfuse_health_retrieve**](AiMentorApi.md#ai_mentor_langfuse_health_retrieve) | **GET** /api/ai-mentor/langfuse/health/ | 
 [**ai_mentor_orgs_all_triggers_retrieve**](AiMentorApi.md#ai_mentor_orgs_all_triggers_retrieve) | **GET** /api/ai-mentor/orgs/{org}/all-triggers/ | 
 [**ai_mentor_orgs_mentors_email_inbox_list**](AiMentorApi.md#ai_mentor_orgs_mentors_email_inbox_list) | **GET** /api/ai-mentor/orgs/{org}/mentors/{mentor}/email-inbox/ | 
 [**ai_mentor_orgs_mentors_email_inbox_retrieve**](AiMentorApi.md#ai_mentor_orgs_mentors_email_inbox_retrieve) | **GET** /api/ai-mentor/orgs/{org}/mentors/{mentor}/email-inbox/{email_prompt_id}/ | 
@@ -11,6 +12,12 @@ Method | HTTP request | Description
 [**ai_mentor_orgs_mentors_link_course_create**](AiMentorApi.md#ai_mentor_orgs_mentors_link_course_create) | **POST** /api/ai-mentor/orgs/{org}/mentors/{mentor}/link-course/ | 
 [**ai_mentor_orgs_mentors_link_course_retrieve**](AiMentorApi.md#ai_mentor_orgs_mentors_link_course_retrieve) | **GET** /api/ai-mentor/orgs/{org}/mentors/{mentor}/link-course/ | 
 [**ai_mentor_orgs_metadata_create**](AiMentorApi.md#ai_mentor_orgs_metadata_create) | **POST** /api/ai-mentor/orgs/{org}/metadata/ | 
+[**ai_mentor_orgs_projects_create**](AiMentorApi.md#ai_mentor_orgs_projects_create) | **POST** /api/ai-mentor/orgs/{org}/projects/ | Create a new project
+[**ai_mentor_orgs_projects_destroy**](AiMentorApi.md#ai_mentor_orgs_projects_destroy) | **DELETE** /api/ai-mentor/orgs/{org}/projects/{id}/ | Delete a project
+[**ai_mentor_orgs_projects_list**](AiMentorApi.md#ai_mentor_orgs_projects_list) | **GET** /api/ai-mentor/orgs/{org}/projects/ | List projects
+[**ai_mentor_orgs_projects_partial_update**](AiMentorApi.md#ai_mentor_orgs_projects_partial_update) | **PATCH** /api/ai-mentor/orgs/{org}/projects/{id}/ | 
+[**ai_mentor_orgs_projects_retrieve**](AiMentorApi.md#ai_mentor_orgs_projects_retrieve) | **GET** /api/ai-mentor/orgs/{org}/projects/{id}/ | Retrieve a project
+[**ai_mentor_orgs_projects_update**](AiMentorApi.md#ai_mentor_orgs_projects_update) | **PUT** /api/ai-mentor/orgs/{org}/projects/{id}/ | Update a project
 [**ai_mentor_orgs_quiz_customizer_create**](AiMentorApi.md#ai_mentor_orgs_quiz_customizer_create) | **POST** /api/ai-mentor/orgs/{org}/quiz-customizer/ | 
 [**ai_mentor_orgs_quiz_customizer_retrieve**](AiMentorApi.md#ai_mentor_orgs_quiz_customizer_retrieve) | **GET** /api/ai-mentor/orgs/{org}/quiz-customizer/ | 
 [**ai_mentor_orgs_sessions_create**](AiMentorApi.md#ai_mentor_orgs_sessions_create) | **POST** /api/ai-mentor/orgs/{org}/sessions/ | 
@@ -111,6 +118,17 @@ Method | HTTP request | Description
 [**ai_mentor_orgs_users_custom_instruction_retrieve**](AiMentorApi.md#ai_mentor_orgs_users_custom_instruction_retrieve) | **GET** /api/ai-mentor/orgs/{org}/users/{user_id}/custom-instruction/ | 
 [**ai_mentor_orgs_users_custom_instruction_update**](AiMentorApi.md#ai_mentor_orgs_users_custom_instruction_update) | **PUT** /api/ai-mentor/orgs/{org}/users/{user_id}/custom-instruction/ | 
 [**ai_mentor_orgs_users_destroy**](AiMentorApi.md#ai_mentor_orgs_users_destroy) | **DELETE** /api/ai-mentor/orgs/{org}/users/{user_id}/{name}/ | 
+[**ai_mentor_orgs_users_disclaimer_agreements_create**](AiMentorApi.md#ai_mentor_orgs_users_disclaimer_agreements_create) | **POST** /api/ai-mentor/orgs/{org}/users/{user_id}/disclaimer-agreements/ | 
+[**ai_mentor_orgs_users_disclaimer_agreements_destroy**](AiMentorApi.md#ai_mentor_orgs_users_disclaimer_agreements_destroy) | **DELETE** /api/ai-mentor/orgs/{org}/users/{user_id}/disclaimer-agreements/{id}/ | 
+[**ai_mentor_orgs_users_disclaimer_agreements_list**](AiMentorApi.md#ai_mentor_orgs_users_disclaimer_agreements_list) | **GET** /api/ai-mentor/orgs/{org}/users/{user_id}/disclaimer-agreements/ | 
+[**ai_mentor_orgs_users_disclaimer_agreements_retrieve**](AiMentorApi.md#ai_mentor_orgs_users_disclaimer_agreements_retrieve) | **GET** /api/ai-mentor/orgs/{org}/users/{user_id}/disclaimer-agreements/{id}/ | 
+[**ai_mentor_orgs_users_disclaimers_add_mentor_create**](AiMentorApi.md#ai_mentor_orgs_users_disclaimers_add_mentor_create) | **POST** /api/ai-mentor/orgs/{org}/users/{user_id}/disclaimers/{id}/add-mentor/ | Add mentor to disclaimer
+[**ai_mentor_orgs_users_disclaimers_create**](AiMentorApi.md#ai_mentor_orgs_users_disclaimers_create) | **POST** /api/ai-mentor/orgs/{org}/users/{user_id}/disclaimers/ | 
+[**ai_mentor_orgs_users_disclaimers_list**](AiMentorApi.md#ai_mentor_orgs_users_disclaimers_list) | **GET** /api/ai-mentor/orgs/{org}/users/{user_id}/disclaimers/ | 
+[**ai_mentor_orgs_users_disclaimers_partial_update**](AiMentorApi.md#ai_mentor_orgs_users_disclaimers_partial_update) | **PATCH** /api/ai-mentor/orgs/{org}/users/{user_id}/disclaimers/{id}/ | 
+[**ai_mentor_orgs_users_disclaimers_remove_mentor_create**](AiMentorApi.md#ai_mentor_orgs_users_disclaimers_remove_mentor_create) | **POST** /api/ai-mentor/orgs/{org}/users/{user_id}/disclaimers/{id}/remove-mentor/ | Remove mentor from disclaimer
+[**ai_mentor_orgs_users_disclaimers_retrieve**](AiMentorApi.md#ai_mentor_orgs_users_disclaimers_retrieve) | **GET** /api/ai-mentor/orgs/{org}/users/{user_id}/disclaimers/{id}/ | 
+[**ai_mentor_orgs_users_disclaimers_update**](AiMentorApi.md#ai_mentor_orgs_users_disclaimers_update) | **PUT** /api/ai-mentor/orgs/{org}/users/{user_id}/disclaimers/{id}/ | 
 [**ai_mentor_orgs_users_downloads_tasks_retrieve**](AiMentorApi.md#ai_mentor_orgs_users_downloads_tasks_retrieve) | **GET** /api/ai-mentor/orgs/{org}/users/{user_id}/downloads/tasks/{task_id}/ | 
 [**ai_mentor_orgs_users_edx_memory_destroy**](AiMentorApi.md#ai_mentor_orgs_users_edx_memory_destroy) | **DELETE** /api/ai-mentor/orgs/{org}/users/{user_id}/edx-memory/{id}/ | 
 [**ai_mentor_orgs_users_edx_memory_list**](AiMentorApi.md#ai_mentor_orgs_users_edx_memory_list) | **GET** /api/ai-mentor/orgs/{org}/users/{user_id}/edx-memory/ | 
@@ -119,6 +137,7 @@ Method | HTTP request | Description
 [**ai_mentor_orgs_users_elevenlabs_voice_destroy**](AiMentorApi.md#ai_mentor_orgs_users_elevenlabs_voice_destroy) | **DELETE** /api/ai-mentor/orgs/{org}/users/{user_id}/elevenlabs-voice/{voice_name}/ | 
 [**ai_mentor_orgs_users_elevenlabs_voice_list**](AiMentorApi.md#ai_mentor_orgs_users_elevenlabs_voice_list) | **GET** /api/ai-mentor/orgs/{org}/users/{user_id}/elevenlabs-voice/ | 
 [**ai_mentor_orgs_users_export_chathistory_create**](AiMentorApi.md#ai_mentor_orgs_users_export_chathistory_create) | **POST** /api/ai-mentor/orgs/{org}/users/{user_id}/export-chathistory/ | 
+[**ai_mentor_orgs_users_extracted_memories_retrieve**](AiMentorApi.md#ai_mentor_orgs_users_extracted_memories_retrieve) | **GET** /api/ai-mentor/orgs/{org}/users/{user_id}/extracted-memories/ | 
 [**ai_mentor_orgs_users_free_usage_count_retrieve**](AiMentorApi.md#ai_mentor_orgs_users_free_usage_count_retrieve) | **GET** /api/ai-mentor/orgs/{org}/users/{user_id}/free-usage-count | 
 [**ai_mentor_orgs_users_list**](AiMentorApi.md#ai_mentor_orgs_users_list) | **GET** /api/ai-mentor/orgs/{org}/users/{user_id}/ | 
 [**ai_mentor_orgs_users_mcp_servers_create**](AiMentorApi.md#ai_mentor_orgs_users_mcp_servers_create) | **POST** /api/ai-mentor/orgs/{org}/users/{user_id}/mcp-servers/ | 
@@ -127,6 +146,14 @@ Method | HTTP request | Description
 [**ai_mentor_orgs_users_mcp_servers_partial_update**](AiMentorApi.md#ai_mentor_orgs_users_mcp_servers_partial_update) | **PATCH** /api/ai-mentor/orgs/{org}/users/{user_id}/mcp-servers/{id}/ | 
 [**ai_mentor_orgs_users_mcp_servers_retrieve**](AiMentorApi.md#ai_mentor_orgs_users_mcp_servers_retrieve) | **GET** /api/ai-mentor/orgs/{org}/users/{user_id}/mcp-servers/{id}/ | 
 [**ai_mentor_orgs_users_mcp_servers_update**](AiMentorApi.md#ai_mentor_orgs_users_mcp_servers_update) | **PUT** /api/ai-mentor/orgs/{org}/users/{user_id}/mcp-servers/{id}/ | 
+[**ai_mentor_orgs_users_memories_create**](AiMentorApi.md#ai_mentor_orgs_users_memories_create) | **POST** /api/ai-mentor/orgs/{org}/users/{user_id}/memories/ | Create memory
+[**ai_mentor_orgs_users_memories_list**](AiMentorApi.md#ai_mentor_orgs_users_memories_list) | **GET** /api/ai-mentor/orgs/{org}/users/{user_id}/memories/ | 
+[**ai_mentor_orgs_users_memory_categories_retrieve**](AiMentorApi.md#ai_mentor_orgs_users_memory_categories_retrieve) | **GET** /api/ai-mentor/orgs/{org}/users/{user_id}/memory-categories/ | 
+[**ai_mentor_orgs_users_memory_destroy**](AiMentorApi.md#ai_mentor_orgs_users_memory_destroy) | **DELETE** /api/ai-mentor/orgs/{org}/users/{user_id}/memory/{memory_unique_id_or_name}/ | 
+[**ai_mentor_orgs_users_memory_entries_create**](AiMentorApi.md#ai_mentor_orgs_users_memory_entries_create) | **POST** /api/ai-mentor/orgs/{org}/users/{user_id}/memory-entries/{entry_unique_id}/ | 
+[**ai_mentor_orgs_users_memory_entries_destroy**](AiMentorApi.md#ai_mentor_orgs_users_memory_entries_destroy) | **DELETE** /api/ai-mentor/orgs/{org}/users/{user_id}/memory-entries/{entry_unique_id}/ | 
+[**ai_mentor_orgs_users_memory_entries_retrieve**](AiMentorApi.md#ai_mentor_orgs_users_memory_entries_retrieve) | **GET** /api/ai-mentor/orgs/{org}/users/{user_id}/memory-entries/{entry_unique_id}/ | 
+[**ai_mentor_orgs_users_memory_retrieve**](AiMentorApi.md#ai_mentor_orgs_users_memory_retrieve) | **GET** /api/ai-mentor/orgs/{org}/users/{user_id}/memory/{memory_unique_id_or_name}/ | 
 [**ai_mentor_orgs_users_mentor_audience_create**](AiMentorApi.md#ai_mentor_orgs_users_mentor_audience_create) | **POST** /api/ai-mentor/orgs/{org}/users/{user_id}/mentor/audience/ | 
 [**ai_mentor_orgs_users_mentor_audience_destroy**](AiMentorApi.md#ai_mentor_orgs_users_mentor_audience_destroy) | **DELETE** /api/ai-mentor/orgs/{org}/users/{user_id}/mentor/audience/ | 
 [**ai_mentor_orgs_users_mentor_audience_list**](AiMentorApi.md#ai_mentor_orgs_users_mentor_audience_list) | **GET** /api/ai-mentor/orgs/{org}/users/{user_id}/mentor/audience/ | 
@@ -136,11 +163,13 @@ Method | HTTP request | Description
 [**ai_mentor_orgs_users_mentor_feedback_create_create**](AiMentorApi.md#ai_mentor_orgs_users_mentor_feedback_create_create) | **POST** /api/ai-mentor/orgs/{org}/users/{user_id}/mentor-feedback/create/ | 
 [**ai_mentor_orgs_users_mentor_feedback_retrieve**](AiMentorApi.md#ai_mentor_orgs_users_mentor_feedback_retrieve) | **GET** /api/ai-mentor/orgs/{org}/users/{user_id}/mentor-feedback/{feedback_id}/ | 
 [**ai_mentor_orgs_users_mentor_feedback_update**](AiMentorApi.md#ai_mentor_orgs_users_mentor_feedback_update) | **PUT** /api/ai-mentor/orgs/{org}/users/{user_id}/mentor-feedback/{feedback_id}/ | 
-[**ai_mentor_orgs_users_mentor_from_template_create**](AiMentorApi.md#ai_mentor_orgs_users_mentor_from_template_create) | **POST** /api/ai-mentor/orgs/{org}/users/{user_id}/mentor-from-template/ | 
 [**ai_mentor_orgs_users_mentor_llms_list**](AiMentorApi.md#ai_mentor_orgs_users_mentor_llms_list) | **GET** /api/ai-mentor/orgs/{org}/users/{user_id}/mentor-llms/ | 
 [**ai_mentor_orgs_users_mentor_seed_retrieve**](AiMentorApi.md#ai_mentor_orgs_users_mentor_seed_retrieve) | **GET** /api/ai-mentor/orgs/{org}/users/{user_id}/mentor/seed/ | 
 [**ai_mentor_orgs_users_mentor_tools_list**](AiMentorApi.md#ai_mentor_orgs_users_mentor_tools_list) | **GET** /api/ai-mentor/orgs/{org}/users/{user_id}/mentor-tools/ | 
+[**ai_mentor_orgs_users_mentor_types_list**](AiMentorApi.md#ai_mentor_orgs_users_mentor_types_list) | **GET** /api/ai-mentor/orgs/{org}/users/{user_id}/mentor-types/ | 
 [**ai_mentor_orgs_users_mentor_with_settings_create**](AiMentorApi.md#ai_mentor_orgs_users_mentor_with_settings_create) | **POST** /api/ai-mentor/orgs/{org}/users/{user_id}/mentor-with-settings/ | 
+[**ai_mentor_orgs_users_mentors_auto_memory_prompt_create**](AiMentorApi.md#ai_mentor_orgs_users_mentors_auto_memory_prompt_create) | **POST** /api/ai-mentor/orgs/{org}/users/{user_id}/mentors/{mentor}/auto-memory-prompt/ | Set or reset auto memory prompt
+[**ai_mentor_orgs_users_mentors_auto_memory_prompt_retrieve**](AiMentorApi.md#ai_mentor_orgs_users_mentors_auto_memory_prompt_retrieve) | **GET** /api/ai-mentor/orgs/{org}/users/{user_id}/mentors/{mentor}/auto-memory-prompt/ | 
 [**ai_mentor_orgs_users_mentors_available_tools_list**](AiMentorApi.md#ai_mentor_orgs_users_mentors_available_tools_list) | **GET** /api/ai-mentor/orgs/{org}/users/{user_id}/mentors/{mentor}/available-tools/ | 
 [**ai_mentor_orgs_users_mentors_create_call_credentials_create**](AiMentorApi.md#ai_mentor_orgs_users_mentors_create_call_credentials_create) | **POST** /api/ai-mentor/orgs/{org}/users/{user_id}/mentors/{mentor}/create-call-credentials/ | 
 [**ai_mentor_orgs_users_mentors_current_memory_retrieve**](AiMentorApi.md#ai_mentor_orgs_users_mentors_current_memory_retrieve) | **GET** /api/ai-mentor/orgs/{org}/users/{user_id}/mentors/{mentor}/current-memory/ | 
@@ -157,17 +186,25 @@ Method | HTTP request | Description
 [**ai_mentor_orgs_users_mentors_mentor_eval_create**](AiMentorApi.md#ai_mentor_orgs_users_mentors_mentor_eval_create) | **POST** /api/ai-mentor/orgs/{org}/users/{user_id}/mentors/{mentor}/mentor-eval/ | 
 [**ai_mentor_orgs_users_mentors_mentor_eval_execution_create**](AiMentorApi.md#ai_mentor_orgs_users_mentors_mentor_eval_execution_create) | **POST** /api/ai-mentor/orgs/{org}/users/{user_id}/mentors/{mentor}/mentor-eval-execution/ | 
 [**ai_mentor_orgs_users_mentors_mentor_eval_retrieve**](AiMentorApi.md#ai_mentor_orgs_users_mentors_mentor_eval_retrieve) | **GET** /api/ai-mentor/orgs/{org}/users/{user_id}/mentors/{mentor}/mentor-eval/ | 
+[**ai_mentor_orgs_users_mentors_mentor_user_settings_create**](AiMentorApi.md#ai_mentor_orgs_users_mentors_mentor_user_settings_create) | **POST** /api/ai-mentor/orgs/{org}/users/{user_id}/mentors/{mentor}/mentor-user-settings/ | 
+[**ai_mentor_orgs_users_mentors_mentor_user_settings_retrieve**](AiMentorApi.md#ai_mentor_orgs_users_mentors_mentor_user_settings_retrieve) | **GET** /api/ai-mentor/orgs/{org}/users/{user_id}/mentors/{mentor}/mentor-user-settings/ | 
 [**ai_mentor_orgs_users_mentors_public_settings_retrieve**](AiMentorApi.md#ai_mentor_orgs_users_mentors_public_settings_retrieve) | **GET** /api/ai-mentor/orgs/{org}/users/{user_id}/mentors/{mentor}/public-settings/ | 
+[**ai_mentor_orgs_users_mentors_public_sharable_link_retrieve**](AiMentorApi.md#ai_mentor_orgs_users_mentors_public_sharable_link_retrieve) | **GET** /api/ai-mentor/orgs/{org}/users/{user_id}/mentors/{mentor}/public-sharable-link/ | 
 [**ai_mentor_orgs_users_mentors_reports_mentor_eval_report_retrieve**](AiMentorApi.md#ai_mentor_orgs_users_mentors_reports_mentor_eval_report_retrieve) | **GET** /api/ai-mentor/orgs/{org}/users/{user_id}/mentors/{mentor}/reports/{report_id}/mentor-eval-report/ | 
 [**ai_mentor_orgs_users_mentors_retrieve**](AiMentorApi.md#ai_mentor_orgs_users_mentors_retrieve) | **GET** /api/ai-mentor/orgs/{org}/users/{user_id}/mentors/{mentor}/ | 
 [**ai_mentor_orgs_users_mentors_scenarios_retrieve**](AiMentorApi.md#ai_mentor_orgs_users_mentors_scenarios_retrieve) | **GET** /api/ai-mentor/orgs/{org}/users/{user_id}/mentors/{mentor}/scenarios/ | 
 [**ai_mentor_orgs_users_mentors_settings_retrieve**](AiMentorApi.md#ai_mentor_orgs_users_mentors_settings_retrieve) | **GET** /api/ai-mentor/orgs/{org}/users/{user_id}/mentors/{mentor}/settings/ | Retrieve Mentor Settings
 [**ai_mentor_orgs_users_mentors_settings_update**](AiMentorApi.md#ai_mentor_orgs_users_mentors_settings_update) | **PUT** /api/ai-mentor/orgs/{org}/users/{user_id}/mentors/{mentor}/settings/ | Update Mentor Settings
+[**ai_mentor_orgs_users_mentors_sharable_link_create**](AiMentorApi.md#ai_mentor_orgs_users_mentors_sharable_link_create) | **POST** /api/ai-mentor/orgs/{org}/users/{user_id}/mentors/{mentor}/sharable-link | 
+[**ai_mentor_orgs_users_mentors_sharable_link_destroy**](AiMentorApi.md#ai_mentor_orgs_users_mentors_sharable_link_destroy) | **DELETE** /api/ai-mentor/orgs/{org}/users/{user_id}/mentors/{mentor}/sharable-link | 
+[**ai_mentor_orgs_users_mentors_sharable_link_retrieve**](AiMentorApi.md#ai_mentor_orgs_users_mentors_sharable_link_retrieve) | **GET** /api/ai-mentor/orgs/{org}/users/{user_id}/mentors/{mentor}/sharable-link | 
+[**ai_mentor_orgs_users_mentors_sharable_link_update**](AiMentorApi.md#ai_mentor_orgs_users_mentors_sharable_link_update) | **PUT** /api/ai-mentor/orgs/{org}/users/{user_id}/mentors/{mentor}/sharable-link | 
 [**ai_mentor_orgs_users_mentors_spaced_repetition_question_stats_retrieve**](AiMentorApi.md#ai_mentor_orgs_users_mentors_spaced_repetition_question_stats_retrieve) | **GET** /api/ai-mentor/orgs/{org}/users/{user_id}/mentors/{mentor}/spaced-repetition-question-stats/ | 
 [**ai_mentor_orgs_users_mentors_spaced_repetition_recommended_paths_list**](AiMentorApi.md#ai_mentor_orgs_users_mentors_spaced_repetition_recommended_paths_list) | **GET** /api/ai-mentor/orgs/{org}/users/{user_id}/mentors/{mentor}/spaced-repetition-recommended-paths/ | 
 [**ai_mentor_orgs_users_mentors_spaced_repetition_recommended_paths_update**](AiMentorApi.md#ai_mentor_orgs_users_mentors_spaced_repetition_recommended_paths_update) | **PUT** /api/ai-mentor/orgs/{org}/users/{user_id}/mentors/{mentor}/spaced-repetition-recommended-paths/ | 
 [**ai_mentor_orgs_users_mentors_star_create**](AiMentorApi.md#ai_mentor_orgs_users_mentors_star_create) | **POST** /api/ai-mentor/orgs/{org}/users/{user_id}/mentors/{mentor}/star/ | 
 [**ai_mentor_orgs_users_mentors_star_retrieve**](AiMentorApi.md#ai_mentor_orgs_users_mentors_star_retrieve) | **GET** /api/ai-mentor/orgs/{org}/users/{user_id}/mentors/{mentor}/star/ | 
+[**ai_mentor_orgs_users_mentors_summaries_retrieve**](AiMentorApi.md#ai_mentor_orgs_users_mentors_summaries_retrieve) | **GET** /api/ai-mentor/orgs/{org}/users/{user_id}/mentors/{mentor}/summaries/{summary_type}/ | 
 [**ai_mentor_orgs_users_mentors_unstar_create**](AiMentorApi.md#ai_mentor_orgs_users_mentors_unstar_create) | **POST** /api/ai-mentor/orgs/{org}/users/{user_id}/mentors/{mentor}/unstar/ | 
 [**ai_mentor_orgs_users_metadata_retrieve**](AiMentorApi.md#ai_mentor_orgs_users_metadata_retrieve) | **GET** /api/ai-mentor/orgs/{org}/users/{user_id}/metadata | 
 [**ai_mentor_orgs_users_moderation_logs_destroy**](AiMentorApi.md#ai_mentor_orgs_users_moderation_logs_destroy) | **DELETE** /api/ai-mentor/orgs/{org}/users/{user_id}/moderation-logs/{id}/ | 
@@ -194,6 +231,12 @@ Method | HTTP request | Description
 [**ai_mentor_orgs_users_playwright_scripts_retrieve**](AiMentorApi.md#ai_mentor_orgs_users_playwright_scripts_retrieve) | **GET** /api/ai-mentor/orgs/{org}/users/{user_id}/playwright-scripts/{id}/ | 
 [**ai_mentor_orgs_users_playwright_scripts_update**](AiMentorApi.md#ai_mentor_orgs_users_playwright_scripts_update) | **PUT** /api/ai-mentor/orgs/{org}/users/{user_id}/playwright-scripts/{id}/ | 
 [**ai_mentor_orgs_users_predictive_analytics_create**](AiMentorApi.md#ai_mentor_orgs_users_predictive_analytics_create) | **POST** /api/ai-mentor/orgs/{org}/users/{user_id}/predictive-analytics/ | 
+[**ai_mentor_orgs_users_projects_create**](AiMentorApi.md#ai_mentor_orgs_users_projects_create) | **POST** /api/ai-mentor/orgs/{org}/users/{user_id}/projects/ | Create a new project
+[**ai_mentor_orgs_users_projects_destroy**](AiMentorApi.md#ai_mentor_orgs_users_projects_destroy) | **DELETE** /api/ai-mentor/orgs/{org}/users/{user_id}/projects/{id}/ | Delete a project
+[**ai_mentor_orgs_users_projects_list**](AiMentorApi.md#ai_mentor_orgs_users_projects_list) | **GET** /api/ai-mentor/orgs/{org}/users/{user_id}/projects/ | List projects
+[**ai_mentor_orgs_users_projects_partial_update**](AiMentorApi.md#ai_mentor_orgs_users_projects_partial_update) | **PATCH** /api/ai-mentor/orgs/{org}/users/{user_id}/projects/{id}/ | 
+[**ai_mentor_orgs_users_projects_retrieve**](AiMentorApi.md#ai_mentor_orgs_users_projects_retrieve) | **GET** /api/ai-mentor/orgs/{org}/users/{user_id}/projects/{id}/ | Retrieve a project
+[**ai_mentor_orgs_users_projects_update**](AiMentorApi.md#ai_mentor_orgs_users_projects_update) | **PUT** /api/ai-mentor/orgs/{org}/users/{user_id}/projects/{id}/ | Update a project
 [**ai_mentor_orgs_users_recent_messages_retrieve**](AiMentorApi.md#ai_mentor_orgs_users_recent_messages_retrieve) | **GET** /api/ai-mentor/orgs/{org}/users/{user_id}/recent-messages/ | 
 [**ai_mentor_orgs_users_recently_accessed_mentors_list**](AiMentorApi.md#ai_mentor_orgs_users_recently_accessed_mentors_list) | **GET** /api/ai-mentor/orgs/{org}/users/{user_id}/recently-accessed-mentors/ | 
 [**ai_mentor_orgs_users_recommend_courses_block_retrieve**](AiMentorApi.md#ai_mentor_orgs_users_recommend_courses_block_retrieve) | **GET** /api/ai-mentor/orgs/{org}/users/{user_id}/recommend-courses-block/ | 
@@ -209,6 +252,8 @@ Method | HTTP request | Description
 [**ai_mentor_orgs_users_sessions_create**](AiMentorApi.md#ai_mentor_orgs_users_sessions_create) | **POST** /api/ai-mentor/orgs/{org}/users/{user_id}/sessions/ | 
 [**ai_mentor_orgs_users_sessions_destroy**](AiMentorApi.md#ai_mentor_orgs_users_sessions_destroy) | **DELETE** /api/ai-mentor/orgs/{org}/users/{user_id}/sessions/{session_id}/ | 
 [**ai_mentor_orgs_users_sessions_download_session_retrieve**](AiMentorApi.md#ai_mentor_orgs_users_sessions_download_session_retrieve) | **GET** /api/ai-mentor/orgs/{org}/users/{user_id}/sessions/{session_id}/download-session | 
+[**ai_mentor_orgs_users_sessions_memories_set_attached_create**](AiMentorApi.md#ai_mentor_orgs_users_sessions_memories_set_attached_create) | **POST** /api/ai-mentor/orgs/{org}/users/{user_id}/sessions/{session_id}/memories/{memory_unique_id}/set-attached/ | Create session memory attachment
+[**ai_mentor_orgs_users_sessions_memories_set_attached_retrieve**](AiMentorApi.md#ai_mentor_orgs_users_sessions_memories_set_attached_retrieve) | **GET** /api/ai-mentor/orgs/{org}/users/{user_id}/sessions/{session_id}/memories/{memory_unique_id}/set-attached/ | 
 [**ai_mentor_orgs_users_sessions_memory_retrieve**](AiMentorApi.md#ai_mentor_orgs_users_sessions_memory_retrieve) | **GET** /api/ai-mentor/orgs/{org}/users/{user_id}/sessions/{session_id}/memory/ | 
 [**ai_mentor_orgs_users_sessions_retrieve**](AiMentorApi.md#ai_mentor_orgs_users_sessions_retrieve) | **GET** /api/ai-mentor/orgs/{org}/users/{user_id}/sessions/{session_id}/ | Retrieve Chat Messages
 [**ai_mentor_orgs_users_sessions_shell_logs_retrieve**](AiMentorApi.md#ai_mentor_orgs_users_sessions_shell_logs_retrieve) | **GET** /api/ai-mentor/orgs/{org}/users/{user_id}/sessions/{session_id}/shell-logs/ | 
@@ -218,22 +263,94 @@ Method | HTTP request | Description
 [**ai_mentor_orgs_users_settings_tenant_llm_create**](AiMentorApi.md#ai_mentor_orgs_users_settings_tenant_llm_create) | **POST** /api/ai-mentor/orgs/{org}/users/{user_id}/settings/tenant-llm/ | 
 [**ai_mentor_orgs_users_settings_tenant_llm_list**](AiMentorApi.md#ai_mentor_orgs_users_settings_tenant_llm_list) | **GET** /api/ai-mentor/orgs/{org}/users/{user_id}/settings/tenant-llm/ | 
 [**ai_mentor_orgs_users_starred_mentors_list**](AiMentorApi.md#ai_mentor_orgs_users_starred_mentors_list) | **GET** /api/ai-mentor/orgs/{org}/users/{user_id}/starred-mentors/ | 
+[**ai_mentor_orgs_users_subjects_list**](AiMentorApi.md#ai_mentor_orgs_users_subjects_list) | **GET** /api/ai-mentor/orgs/{org}/users/{user_id}/subjects/ | 
+[**ai_mentor_orgs_users_support_ticket_messages_create**](AiMentorApi.md#ai_mentor_orgs_users_support_ticket_messages_create) | **POST** /api/ai-mentor/orgs/{org}/users/{user_id}/support-ticket-messages/ | 
+[**ai_mentor_orgs_users_support_ticket_messages_destroy**](AiMentorApi.md#ai_mentor_orgs_users_support_ticket_messages_destroy) | **DELETE** /api/ai-mentor/orgs/{org}/users/{user_id}/support-ticket-messages/{id}/ | 
+[**ai_mentor_orgs_users_support_ticket_messages_list**](AiMentorApi.md#ai_mentor_orgs_users_support_ticket_messages_list) | **GET** /api/ai-mentor/orgs/{org}/users/{user_id}/support-ticket-messages/ | 
+[**ai_mentor_orgs_users_support_ticket_messages_partial_update**](AiMentorApi.md#ai_mentor_orgs_users_support_ticket_messages_partial_update) | **PATCH** /api/ai-mentor/orgs/{org}/users/{user_id}/support-ticket-messages/{id}/ | 
+[**ai_mentor_orgs_users_support_ticket_messages_retrieve**](AiMentorApi.md#ai_mentor_orgs_users_support_ticket_messages_retrieve) | **GET** /api/ai-mentor/orgs/{org}/users/{user_id}/support-ticket-messages/{id}/ | 
+[**ai_mentor_orgs_users_support_ticket_messages_update**](AiMentorApi.md#ai_mentor_orgs_users_support_ticket_messages_update) | **PUT** /api/ai-mentor/orgs/{org}/users/{user_id}/support-ticket-messages/{id}/ | 
+[**ai_mentor_orgs_users_support_tickets_close_create**](AiMentorApi.md#ai_mentor_orgs_users_support_tickets_close_create) | **POST** /api/ai-mentor/orgs/{org}/users/{user_id}/support-tickets/{id}/close/ | 
+[**ai_mentor_orgs_users_support_tickets_destroy**](AiMentorApi.md#ai_mentor_orgs_users_support_tickets_destroy) | **DELETE** /api/ai-mentor/orgs/{org}/users/{user_id}/support-tickets/{id}/ | 
+[**ai_mentor_orgs_users_support_tickets_list**](AiMentorApi.md#ai_mentor_orgs_users_support_tickets_list) | **GET** /api/ai-mentor/orgs/{org}/users/{user_id}/support-tickets/ | 
+[**ai_mentor_orgs_users_support_tickets_partial_update**](AiMentorApi.md#ai_mentor_orgs_users_support_tickets_partial_update) | **PATCH** /api/ai-mentor/orgs/{org}/users/{user_id}/support-tickets/{id}/ | 
+[**ai_mentor_orgs_users_support_tickets_retrieve**](AiMentorApi.md#ai_mentor_orgs_users_support_tickets_retrieve) | **GET** /api/ai-mentor/orgs/{org}/users/{user_id}/support-tickets/{id}/ | 
+[**ai_mentor_orgs_users_support_tickets_update**](AiMentorApi.md#ai_mentor_orgs_users_support_tickets_update) | **PUT** /api/ai-mentor/orgs/{org}/users/{user_id}/support-tickets/{id}/ | 
 [**ai_mentor_orgs_users_tasks_retrieve**](AiMentorApi.md#ai_mentor_orgs_users_tasks_retrieve) | **GET** /api/ai-mentor/orgs/{org}/users/{user_id}/tasks/{task_id} | 
 [**ai_mentor_orgs_users_tasks_sessions_create**](AiMentorApi.md#ai_mentor_orgs_users_tasks_sessions_create) | **POST** /api/ai-mentor/orgs/{org}/users/{user_id}/tasks/sessions/{session_id}/ | 
+[**ai_mentor_orgs_users_tool_categories_list**](AiMentorApi.md#ai_mentor_orgs_users_tool_categories_list) | **GET** /api/ai-mentor/orgs/{org}/users/{user_id}/tool-categories/ | 
 [**ai_mentor_orgs_users_update**](AiMentorApi.md#ai_mentor_orgs_users_update) | **PUT** /api/ai-mentor/orgs/{org}/users/{user_id}/{name}/ | 
 [**ai_mentor_orgs_users_voices_list**](AiMentorApi.md#ai_mentor_orgs_users_voices_list) | **GET** /api/ai-mentor/orgs/{org}/users/{user_id}/voices/ | 
 [**ai_mentor_orgs_users_voices_retrieve**](AiMentorApi.md#ai_mentor_orgs_users_voices_retrieve) | **GET** /api/ai-mentor/orgs/{org}/users/{user_id}/voices/{id}/ | 
 [**ai_mentor_orgs_webhooks_azure_trigger_create**](AiMentorApi.md#ai_mentor_orgs_webhooks_azure_trigger_create) | **POST** /api/ai-mentor/orgs/{org}/webhooks/azure/trigger/{slug}/ | 
 [**ai_mentor_orgs_webhooks_github_pullrequest_create**](AiMentorApi.md#ai_mentor_orgs_webhooks_github_pullrequest_create) | **POST** /api/ai-mentor/orgs/{org}/webhooks/github/pullrequest/ | 
 [**ai_mentor_webhooks_azure_emailchat_create**](AiMentorApi.md#ai_mentor_webhooks_azure_emailchat_create) | **POST** /api/ai-mentor/webhooks/azure/emailchat/ | 
+[**ai_mentor_webhooks_n8n_progress_create**](AiMentorApi.md#ai_mentor_webhooks_n8n_progress_create) | **POST** /api/ai-mentor/webhooks/n8n-progress/ | 
 
+
+# **ai_mentor_langfuse_health_retrieve**
+> ai_mentor_langfuse_health_retrieve()
+
+Proxy endpoint to check for langfuse health status
+
+### Example
+
+
+```python
+import iblai
+from iblai.rest import ApiException
+from pprint import pprint
+
+# Create an instance of the API class
+api_instance = iblai.AiMentorApi(api_client)
+
+try:
+    api_instance.ai_mentor_langfuse_health_retrieve()
+except Exception as e:
+    print("Exception when calling AiMentorApi->ai_mentor_langfuse_health_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | No response body |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **ai_mentor_orgs_all_triggers_retrieve**
 > ai_mentor_orgs_all_triggers_retrieve(org)
 
+List all triggers for an organization.
 
+Args:
+    request: The HTTP request.
+    org: The organization/tenant identifier.
 
-List all triggers for an organization.  Args:     request: The HTTP request.     org: The organization/tenant identifier.  Returns:     Response: A list of trigger slugs for the organization.  Raises:     BadRequest: If the request is invalid.
+Returns:
+    Response: A list of trigger slugs for the organization.
+
+Raises:
+    BadRequest: If the request is invalid.
 
 ### Example
 
@@ -255,7 +372,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 org = 'org_example' # str | 
@@ -300,9 +416,19 @@ void (empty response body)
 # **ai_mentor_orgs_mentors_email_inbox_list**
 > PaginatedEmailPromptListList ai_mentor_orgs_mentors_email_inbox_list(mentor, org, page=page, page_size=page_size, search=search)
 
+Retrieve a list of emails in a mentor's inbox.
 
+The list can be filtered using the 'search' query parameter to search
+for specific terms in the email content or subject.
 
-Retrieve a list of emails in a mentor's inbox.  The list can be filtered using the 'search' query parameter to search for specific terms in the email content or subject.  Args:     mentor: The unique identifier of the mentor.  Returns:     Response: A paginated list of emails in the mentor's inbox.  Raises:     NotFound: If the specified mentor does not exist.
+Args:
+    mentor: The unique identifier of the mentor.
+
+Returns:
+    Response: A paginated list of emails in the mentor's inbox.
+
+Raises:
+    NotFound: If the specified mentor does not exist.
 
 ### Example
 
@@ -325,7 +451,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 mentor = 'mentor_example' # str | 
@@ -380,9 +505,17 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_mentors_email_inbox_retrieve**
 > EmailPromptDetail ai_mentor_orgs_mentors_email_inbox_retrieve(email_prompt_id, mentor, org)
 
+Retrieve details of a specific email in a mentor's inbox.
 
+Args:
+    request: The HTTP request.
+    email_prompt_id: The ID of the email to retrieve.
 
-Retrieve details of a specific email in a mentor's inbox.  Args:     request: The HTTP request.     email_prompt_id: The ID of the email to retrieve.  Returns:     Response: The detailed information about the email.  Raises:     NotFound: If the specified email does not exist.
+Returns:
+    Response: The detailed information about the email.
+
+Raises:
+    NotFound: If the specified email does not exist.
 
 ### Example
 
@@ -405,7 +538,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 email_prompt_id = 56 # int | 
@@ -456,9 +588,17 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_mentors_email_inbox_summary_retrieve**
 > EmailPromptSummary ai_mentor_orgs_mentors_email_inbox_summary_retrieve(mentor, org)
 
+Retrieve a summary of a mentor's email inbox.
 
+Args:
+    request: The HTTP request.
+    mentor: The unique identifier of the mentor.
 
-Retrieve a summary of a mentor's email inbox.  Args:     request: The HTTP request.     mentor: The unique identifier of the mentor.  Returns:     Response: A summary of the mentor's email inbox statistics.  Raises:     NotFound: If the specified mentor does not exist.
+Returns:
+    Response: A summary of the mentor's email inbox statistics.
+
+Raises:
+    NotFound: If the specified mentor does not exist.
 
 ### Example
 
@@ -481,7 +621,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 mentor = 'mentor_example' # str | 
@@ -530,9 +669,10 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_mentors_link_course_create**
 > LinkCourseResponse ai_mentor_orgs_mentors_link_course_create(mentor, org, link_course_request)
 
+API endpoint to link mentor with a course and enable guided mode.
 
-
-API endpoint to link mentor with a course and enable guided mode.  Permissions:     - Accessible to tenant admins.
+Permissions:
+    - Accessible to tenant admins.
 
 ### Example
 
@@ -556,7 +696,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 mentor = 'mentor_example' # str | 
@@ -592,7 +731,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -606,9 +745,10 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_mentors_link_course_retrieve**
 > LinkCourseResponse ai_mentor_orgs_mentors_link_course_retrieve(mentor, org)
 
+API endpoint to link mentor with a course and enable guided mode.
 
-
-API endpoint to link mentor with a course and enable guided mode.  Permissions:     - Accessible to tenant admins.
+Permissions:
+    - Accessible to tenant admins.
 
 ### Example
 
@@ -631,7 +771,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 mentor = 'mentor_example' # str | 
@@ -679,9 +818,17 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_metadata_create**
 > MentorMetadata ai_mentor_orgs_metadata_create(org, mentor_metadata)
 
+Create or update metadata for a mentor.
 
+Args:
+    request: The HTTP request containing the metadata.
+    org: The organization/tenant identifier.
 
-Create or update metadata for a mentor.  Args:     request: The HTTP request containing the metadata.     org: The organization/tenant identifier.  Returns:     Response: The created or updated mentor metadata.  Raises:     BadRequest: If the provided data is invalid.
+Returns:
+    Response: The created or updated mentor metadata.
+
+Raises:
+    BadRequest: If the provided data is invalid.
 
 ### Example
 
@@ -704,7 +851,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 org = 'org_example' # str | 
@@ -738,7 +884,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -750,12 +896,497 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **ai_mentor_orgs_projects_create**
+> Project ai_mentor_orgs_projects_create(org, project)
+
+Create a new project
+
+Create a new project with optional mentors.
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.project import Project
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+# Create an instance of the API class
+api_instance = iblai.AiMentorApi(api_client)
+org = 'org_example' # str | 
+project = {"name":"Machine Learning Basics","description":"A project for learning machine learning fundamentals","shared":true,"mentors_to_add":["550e8400-e29b-41d4-a716-446655440000","550e8400-e29b-41d4-a716-446655440001"]} # Project | 
+
+try:
+    # Create a new project
+    api_response = api_instance.ai_mentor_orgs_projects_create(org, project)
+    print("The response of AiMentorApi->ai_mentor_orgs_projects_create:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiMentorApi->ai_mentor_orgs_projects_create: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **org** | **str**|  | 
+ **project** | [**Project**](Project.md)|  | 
+
+### Return type
+
+[**Project**](Project.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** |  |  -  |
+**400** | Invalid data provided |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ai_mentor_orgs_projects_destroy**
+> ai_mentor_orgs_projects_destroy(id, org)
+
+Delete a project
+
+Delete a project permanently.
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+# Create an instance of the API class
+api_instance = iblai.AiMentorApi(api_client)
+id = 56 # int | 
+org = 'org_example' # str | 
+
+try:
+    # Delete a project
+    api_instance.ai_mentor_orgs_projects_destroy(id, org)
+except Exception as e:
+    print("Exception when calling AiMentorApi->ai_mentor_orgs_projects_destroy: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**|  | 
+ **org** | **str**|  | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**204** | Project deleted successfully |  -  |
+**403** | Permission denied |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ai_mentor_orgs_projects_list**
+> PaginatedProjectList ai_mentor_orgs_projects_list(org, limit=limit, offset=offset, ordering=ordering, search=search, shared=shared, sort=sort, username=username)
+
+List projects
+
+Retrieve a list of projects with optional filtering and search.
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.paginated_project_list import PaginatedProjectList
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+# Create an instance of the API class
+api_instance = iblai.AiMentorApi(api_client)
+org = 'org_example' # str | 
+limit = 56 # int | Number of results to return per page. (optional)
+offset = 56 # int | The initial index from which to return the results. (optional)
+ordering = 'ordering_example' # str | Which field to use when ordering the results. (optional)
+search = 'search_example' # str | Search in project name and description (optional)
+shared = True # bool | Filter by shared status (true/false) (optional)
+sort = 'name' # str | Order by field (prefix with - for descending). Example: name or -created_at (optional)
+username = 'username_example' # str | Filter projects by owner's username (optional)
+
+try:
+    # List projects
+    api_response = api_instance.ai_mentor_orgs_projects_list(org, limit=limit, offset=offset, ordering=ordering, search=search, shared=shared, sort=sort, username=username)
+    print("The response of AiMentorApi->ai_mentor_orgs_projects_list:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiMentorApi->ai_mentor_orgs_projects_list: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **org** | **str**|  | 
+ **limit** | **int**| Number of results to return per page. | [optional] 
+ **offset** | **int**| The initial index from which to return the results. | [optional] 
+ **ordering** | **str**| Which field to use when ordering the results. | [optional] 
+ **search** | **str**| Search in project name and description | [optional] 
+ **shared** | **bool**| Filter by shared status (true/false) | [optional] 
+ **sort** | **str**| Order by field (prefix with - for descending). Example: name or -created_at | [optional] 
+ **username** | **str**| Filter projects by owner&#39;s username | [optional] 
+
+### Return type
+
+[**PaginatedProjectList**](PaginatedProjectList.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ai_mentor_orgs_projects_partial_update**
+> Project ai_mentor_orgs_projects_partial_update(id, org, patched_project=patched_project)
+
+API ViewSet for managing projects.
+
+Projects are groups of mentors that can be created by anyone (students and tenant admins).
+They serve as a way to organize and group related mentors together.
+
+Projects can be:
+- Personal (shared=False): Only visible to their owners
+- Shared (shared=True): Visible to platform admins and potentially other users
+
+Projects are accessed through integrated URLs within the mentor router:
+    /orgs/<org>/projects/ - All accessible projects in a platform (admin access)
+    /orgs/<org>/projects/<id>/ - Specific project (admin access)
+    /orgs/<org>/users/<user_id>/projects/ - User's projects (user access)
+    /orgs/<org>/users/<user_id>/projects/<id>/ - User's specific project
+
+Query Parameters:
+    - username: Filter projects by owner's username (admin routes only)
+    - shared: Filter by shared status (true/false)
+    - search: Search in name and description
+    - sort: Order by field (prefix with - for descending). Example: sort=name or sort=-created_at
+
+Permissions:
+    - GET: Accessible to project owners and platform admins (for shared projects)
+    - POST: Any authenticated user can create projects
+    - PUT, PATCH, DELETE: Accessible to project owners only
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.patched_project import PatchedProject
+from iblai.models.project import Project
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+# Create an instance of the API class
+api_instance = iblai.AiMentorApi(api_client)
+id = 56 # int | 
+org = 'org_example' # str | 
+patched_project = iblai.PatchedProject() # PatchedProject |  (optional)
+
+try:
+    api_response = api_instance.ai_mentor_orgs_projects_partial_update(id, org, patched_project=patched_project)
+    print("The response of AiMentorApi->ai_mentor_orgs_projects_partial_update:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiMentorApi->ai_mentor_orgs_projects_partial_update: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**|  | 
+ **org** | **str**|  | 
+ **patched_project** | [**PatchedProject**](PatchedProject.md)|  | [optional] 
+
+### Return type
+
+[**Project**](Project.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ai_mentor_orgs_projects_retrieve**
+> Project ai_mentor_orgs_projects_retrieve(id, org)
+
+Retrieve a project
+
+Get detailed information about a specific project including its mentors.
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.project import Project
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+# Create an instance of the API class
+api_instance = iblai.AiMentorApi(api_client)
+id = 56 # int | 
+org = 'org_example' # str | 
+
+try:
+    # Retrieve a project
+    api_response = api_instance.ai_mentor_orgs_projects_retrieve(id, org)
+    print("The response of AiMentorApi->ai_mentor_orgs_projects_retrieve:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiMentorApi->ai_mentor_orgs_projects_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**|  | 
+ **org** | **str**|  | 
+
+### Return type
+
+[**Project**](Project.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**404** | Project not found |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ai_mentor_orgs_projects_update**
+> Project ai_mentor_orgs_projects_update(id, org, project)
+
+Update a project
+
+Update project information and optionally modify its mentors.
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.project import Project
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+# Create an instance of the API class
+api_instance = iblai.AiMentorApi(api_client)
+id = 56 # int | 
+org = 'org_example' # str | 
+project = iblai.Project() # Project | 
+
+try:
+    # Update a project
+    api_response = api_instance.ai_mentor_orgs_projects_update(id, org, project)
+    print("The response of AiMentorApi->ai_mentor_orgs_projects_update:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiMentorApi->ai_mentor_orgs_projects_update: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**|  | 
+ **org** | **str**|  | 
+ **project** | [**Project**](Project.md)|  | 
+
+### Return type
+
+[**Project**](Project.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**400** | Invalid data provided |  -  |
+**403** | Permission denied |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **ai_mentor_orgs_quiz_customizer_create**
 > QuestionResponse ai_mentor_orgs_quiz_customizer_create(org, question_request)
 
+Generate follow-up questions based on initial questions.
 
+Args:
+    request: The HTTP request containing the initial questions.
 
-Generate follow-up questions based on initial questions.  Args:     request: The HTTP request containing the initial questions.  Returns:     Response: The generated follow-up questions.  Raises:     BadRequest: If the provided data is invalid.
+Returns:
+    Response: The generated follow-up questions.
+
+Raises:
+    BadRequest: If the provided data is invalid.
 
 ### Example
 
@@ -779,7 +1410,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 org = 'org_example' # str | 
@@ -813,7 +1443,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -828,9 +1458,13 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_quiz_customizer_retrieve**
 > ai_mentor_orgs_quiz_customizer_retrieve(org)
 
+Retrieve existing questions.
 
+Args:
+    request: The HTTP request.
 
-Retrieve existing questions.  Args:     request: The HTTP request.  Returns:     Response: The existing questions.
+Returns:
+    Response: The existing questions.
 
 ### Example
 
@@ -852,7 +1486,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 org = 'org_example' # str | 
@@ -896,9 +1529,23 @@ void (empty response body)
 # **ai_mentor_orgs_sessions_create**
 > ChatSessionResponse ai_mentor_orgs_sessions_create(org, chat_session_request)
 
+Retrieve or create a chat session with a mentor.
 
+Passing `null` as `tools` results in using all tools assigned to the mentor.
+To specify that no tools be used, pass an empty list.
 
-Retrieve or create a chat session with a mentor.  Passing `null` as `tools` results in using all tools assigned to the mentor. To specify that no tools be used, pass an empty list.  Args:     request: HTTP request containing mentor details.     org: Organization key identifier.     user_id (optional): Username for authentication (if required by the mentor).  Returns:     Response: JSON object containing the session ID.  Raises:     Http404: If the mentor is not found.     ValidationError: If the username is invalid.     ValidationError: If one or more tool slugs are invalid.
+Args:
+    request: HTTP request containing mentor details.
+    org: Organization key identifier.
+    user_id (optional): Username for authentication (if required by the mentor).
+
+Returns:
+    Response: JSON object containing the session ID.
+
+Raises:
+    Http404: If the mentor is not found.
+    ValidationError: If the username is invalid.
+    ValidationError: If one or more tool slugs are invalid.
 
 ### Example
 
@@ -909,7 +1556,6 @@ from iblai.models.chat_session_request import ChatSessionRequest
 from iblai.models.chat_session_response import ChatSessionResponse
 from iblai.rest import ApiException
 from pprint import pprint
-
 
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
@@ -944,7 +1590,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -960,9 +1606,17 @@ No authorization required
 # **ai_mentor_orgs_trigger_create**
 > TriggerResponse ai_mentor_orgs_trigger_create(org, trigger_request)
 
+Create or modify a trigger.
 
+Args:
+    request: The HTTP request containing the trigger data.
+    org: The organization/tenant identifier.
 
-Create or modify a trigger.  Args:     request: The HTTP request containing the trigger data.     org: The organization/tenant identifier.  Returns:     Response: The created or updated trigger details.  Raises:     BadRequest: If the provided data is invalid or missing required parameters.
+Returns:
+    Response: The created or updated trigger details.
+
+Raises:
+    BadRequest: If the provided data is invalid or missing required parameters.
 
 ### Example
 
@@ -986,7 +1640,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 org = 'org_example' # str | 
@@ -1020,7 +1673,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -1035,9 +1688,18 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_trigger_deletion_create**
 > ai_mentor_orgs_trigger_deletion_create(org, slug)
 
+Delete a specific trigger.
 
+Args:
+    request: The HTTP request.
+    org: The organization/tenant identifier.
+    slug: The unique slug identifier of the trigger to delete.
 
-Delete a specific trigger.  Args:     request: The HTTP request.     org: The organization/tenant identifier.     slug: The unique slug identifier of the trigger to delete.  Returns:     Response: A confirmation of the deletion status.  Raises:     BadRequest: If the specified trigger does not exist.
+Returns:
+    Response: A confirmation of the deletion status.
+
+Raises:
+    BadRequest: If the specified trigger does not exist.
 
 ### Example
 
@@ -1059,7 +1721,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 org = 'org_example' # str | 
@@ -1106,9 +1767,18 @@ void (empty response body)
 # **ai_mentor_orgs_trigger_retrieve**
 > TriggerResponse ai_mentor_orgs_trigger_retrieve(org, slug)
 
+Retrieve details of a specific trigger.
 
+Args:
+    request: The HTTP request.
+    org: The organization/tenant identifier.
+    slug: The unique slug identifier of the trigger.
 
-Retrieve details of a specific trigger.  Args:     request: The HTTP request.     org: The organization/tenant identifier.     slug: The unique slug identifier of the trigger.  Returns:     Response: The details of the specified trigger.  Raises:     Http404: If the specified trigger does not exist.
+Returns:
+    Response: The details of the specified trigger.
+
+Raises:
+    Http404: If the specified trigger does not exist.
 
 ### Example
 
@@ -1131,7 +1801,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 org = 'org_example' # str | 
@@ -1180,9 +1849,17 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_trigger_templates_retrieve**
 > ai_mentor_orgs_trigger_templates_retrieve(org)
 
+Retrieve available trigger templates.
 
+Args:
+    request: The HTTP request.
+    org: The organization/tenant identifier.
 
-Retrieve available trigger templates.  Args:     request: The HTTP request.     org: The organization/tenant identifier.  Returns:     Response: A dictionary of available trigger templates and their required parameters.  Raises:     BadRequest: If the request is invalid.
+Returns:
+    Response: A dictionary of available trigger templates and their required parameters.
+
+Raises:
+    BadRequest: If the request is invalid.
 
 ### Example
 
@@ -1204,7 +1881,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 org = 'org_example' # str | 
@@ -1249,9 +1925,16 @@ void (empty response body)
 # **ai_mentor_orgs_users_ai_generated_images_destroy**
 > ai_mentor_orgs_users_ai_generated_images_destroy(id, org, user_id)
 
+Endpoint to view and delete AI generated images for a user.
 
+AI Generated images are images generated during chat with AI. They are cached to allow retrieval and deletion.
 
-Endpoint to view and delete AI generated images for a user.  AI Generated images are images generated during chat with AI. They are cached to allow retrieval and deletion.  optional filtering parameters allowed are - username: The username of the user for which this image was stored. - provider: The provider used to generate the image. eg. openai, nvidia (nim), replicate. - model: the text to image model on the provider used to generate the image.  This endpoint is accessible to both students and platform admins.
+optional filtering parameters allowed are
+- username: The username of the user for which this image was stored.
+- provider: The provider used to generate the image. eg. openai, nvidia (nim), replicate.
+- model: the text to image model on the provider used to generate the image.
+
+This endpoint is accessible to both students and platform admins.
 
 ### Example
 
@@ -1273,7 +1956,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 id = 56 # int | A unique integer value identifying this ai generated image.
@@ -1321,9 +2003,16 @@ void (empty response body)
 # **ai_mentor_orgs_users_ai_generated_images_list**
 > PaginatedAIGeneratedImageList ai_mentor_orgs_users_ai_generated_images_list(org, user_id, model=model, ordering=ordering, page=page, page_size=page_size, provider=provider, search=search, username=username)
 
+Endpoint to view and delete AI generated images for a user.
 
+AI Generated images are images generated during chat with AI. They are cached to allow retrieval and deletion.
 
-Endpoint to view and delete AI generated images for a user.  AI Generated images are images generated during chat with AI. They are cached to allow retrieval and deletion.  optional filtering parameters allowed are - username: The username of the user for which this image was stored. - provider: The provider used to generate the image. eg. openai, nvidia (nim), replicate. - model: the text to image model on the provider used to generate the image.  This endpoint is accessible to both students and platform admins.
+optional filtering parameters allowed are
+- username: The username of the user for which this image was stored.
+- provider: The provider used to generate the image. eg. openai, nvidia (nim), replicate.
+- model: the text to image model on the provider used to generate the image.
+
+This endpoint is accessible to both students and platform admins.
 
 ### Example
 
@@ -1346,7 +2035,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 org = 'org_example' # str | 
@@ -1408,9 +2096,16 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_users_ai_generated_images_retrieve**
 > AIGeneratedImage ai_mentor_orgs_users_ai_generated_images_retrieve(id, org, user_id)
 
+Endpoint to view and delete AI generated images for a user.
 
+AI Generated images are images generated during chat with AI. They are cached to allow retrieval and deletion.
 
-Endpoint to view and delete AI generated images for a user.  AI Generated images are images generated during chat with AI. They are cached to allow retrieval and deletion.  optional filtering parameters allowed are - username: The username of the user for which this image was stored. - provider: The provider used to generate the image. eg. openai, nvidia (nim), replicate. - model: the text to image model on the provider used to generate the image.  This endpoint is accessible to both students and platform admins.
+optional filtering parameters allowed are
+- username: The username of the user for which this image was stored.
+- provider: The provider used to generate the image. eg. openai, nvidia (nim), replicate.
+- model: the text to image model on the provider used to generate the image.
+
+This endpoint is accessible to both students and platform admins.
 
 ### Example
 
@@ -1433,7 +2128,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 id = 56 # int | A unique integer value identifying this ai generated image.
@@ -1483,9 +2177,16 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_users_ai_user_profile_memory_create**
 > AIUserProfileMemoryRelation ai_mentor_orgs_users_ai_user_profile_memory_create(org, user_id, ai_user_profile_request)
 
+Endpoint to create an AI user profile memory entry.
 
-
-Endpoint to create an AI user profile memory entry.  Sample request: ``` {\"favorite-animal\": \"my favorite animal is cat\"} ``` Sample Response (the same as request data): ``` {\"favorite-animal\": \"my favorite animal is cat\"} ```
+Sample request:
+```
+{"favorite-animal": "my favorite animal is cat"}
+```
+Sample Response (the same as request data):
+```
+{"favorite-animal": "my favorite animal is cat"}
+```
 
 ### Example
 
@@ -1509,7 +2210,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 org = 'org_example' # str | 
@@ -1545,7 +2245,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -1559,9 +2259,11 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_users_ai_user_profile_memory_destroy**
 > ai_mentor_orgs_users_ai_user_profile_memory_destroy(org, tag, user_id)
 
+The endpoint to delete an AI user profile memory entry.
 
+No query parameters or JSON parameters are required.
 
-The endpoint to delete an AI user profile memory entry.  No query parameters or JSON parameters are required.  The response is always empty. Successful request will be responded with status 204, and failed request will be responded with status 404.
+The response is always empty. Successful request will be responded with status 204, and failed request will be responded with status 404.
 
 ### Example
 
@@ -1583,7 +2285,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 org = 'org_example' # str | 
@@ -1631,8 +2332,6 @@ void (empty response body)
 # **ai_mentor_orgs_users_ai_user_profile_memory_list**
 > List[AIUserProfileMemoryRelation] ai_mentor_orgs_users_ai_user_profile_memory_list(org, user_id)
 
-
-
 Endpoint to get a list of AI user profile memory entries or to add an entry.
 
 ### Example
@@ -1656,7 +2355,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 org = 'org_example' # str | 
@@ -1704,9 +2402,18 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_users_assumed_knowledge_create**
 > AssumedKnowledge ai_mentor_orgs_users_assumed_knowledge_create(org, user_id, assumed_knowledge)
 
+Update assumed knowledge levels.
 
+Args:
+    request: The HTTP request containing the updated knowledge levels.
+    org: The organization/tenant identifier.
+    user_id: The ID of the user to update assumed knowledge for.
 
-Update assumed knowledge levels.  Args:     request: The HTTP request containing the updated knowledge levels.     org: The organization/tenant identifier.     user_id: The ID of the user to update assumed knowledge for.  Returns:     Response: The updated assumed knowledge levels.  Raises:     BadRequest: If the provided data is invalid.
+Returns:
+    Response: The updated assumed knowledge levels.
+
+Raises:
+    BadRequest: If the provided data is invalid.
 
 ### Example
 
@@ -1729,7 +2436,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 org = 'org_example' # str | 
@@ -1765,7 +2471,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -1780,9 +2486,18 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_users_assumed_knowledge_retrieve**
 > AssumedKnowledge ai_mentor_orgs_users_assumed_knowledge_retrieve(org, user_id)
 
+Retrieve assumed knowledge levels.
 
+Args:
+    request: The HTTP request.
+    org: The organization/tenant identifier.
+    user_id: The ID of the user to retrieve assumed knowledge for.
 
-Retrieve assumed knowledge levels.  Args:     request: The HTTP request.     org: The organization/tenant identifier.     user_id: The ID of the user to retrieve assumed knowledge for.  Returns:     Response: The assumed knowledge levels for different categories.  Raises:     NotFound: If no assumed knowledge exists for the user.
+Returns:
+    Response: The assumed knowledge levels for different categories.
+
+Raises:
+    NotFound: If no assumed knowledge exists for the user.
 
 ### Example
 
@@ -1805,7 +2520,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 org = 'org_example' # str | 
@@ -1854,9 +2568,19 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_users_audio_to_text_create**
 > AudioToTextResponse ai_mentor_orgs_users_audio_to_text_create(org, user_id, file)
 
+Convert an uploaded audio file to text.
 
+Args:
+    request: The HTTP request containing the audio file.
+    org: The organization/tenant identifier.
+    user_id: The ID of the user uploading the audio.
 
-Convert an uploaded audio file to text.  Args:     request: The HTTP request containing the audio file.     org: The organization/tenant identifier.     user_id: The ID of the user uploading the audio.  Returns:     Response: The transcribed text from the audio file.  Raises:     BadRequest: If the audio file is invalid or cannot be processed.     NotFound: If the API key for the tenant is not found.
+Returns:
+    Response: The transcribed text from the audio file.
+
+Raises:
+    BadRequest: If the audio file is invalid or cannot be processed.
+    NotFound: If the API key for the tenant is not found.
 
 ### Example
 
@@ -1879,7 +2603,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 org = 'org_example' # str | 
@@ -1931,9 +2654,11 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_users_available_template_mentors_retrieve**
 > TemplateMentor ai_mentor_orgs_users_available_template_mentors_retrieve(org, user_id)
 
+This endpoint list available template mentors for a tenant
 
+Returns:
 
-This endpoint list available template mentors for a tenant  Returns:      200 : List of Tool objects
+    200 : List of Template Mentors
 
 ### Example
 
@@ -1956,7 +2681,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 org = 'org_example' # str | 
@@ -2004,9 +2728,32 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_users_call_configurations_create**
 > CallConfiguration ai_mentor_orgs_users_call_configurations_create(org, user_id, call_configuration)
 
+API ViewSet for managing call configurations.
 
+This ViewSet provides endpoints to retrieve, create, and update call configurations
+for mentors. Call configurations define how voice calls are handled for a mentor.
 
-API ViewSet for managing call configurations.  This ViewSet provides endpoints to retrieve, create, and update call configurations for mentors. Call configurations define how voice calls are handled for a mentor.  Permissions:     - Accessible only to platform admins.  Endpoints:     GET /api/org/{org}/mentors/{mentor_pk}/call-configurations/         - List all call configurations for a specific mentor         - Returns paginated list of call configurations      POST /api/org/{org}/mentors/{mentor_pk}/call-configurations/         - Create a new call configuration for a mentor         - Requires call configuration data in request body      PUT /api/org/{org}/mentors/{mentor_pk}/call-configurations/{id}/         - Update an existing call configuration         - Requires call configuration data in request body  Query Parameters:     - mentor: Filter configurations by mentor ID  Returns:     - CallConfigurationSerializer data
+Permissions:
+    - Accessible only to platform admins.
+
+Endpoints:
+    GET /api/org/{org}/mentors/{mentor_pk}/call-configurations/
+        - List all call configurations for a specific mentor
+        - Returns paginated list of call configurations
+
+    POST /api/org/{org}/mentors/{mentor_pk}/call-configurations/
+        - Create a new call configuration for a mentor
+        - Requires call configuration data in request body
+
+    PUT /api/org/{org}/mentors/{mentor_pk}/call-configurations/{id}/
+        - Update an existing call configuration
+        - Requires call configuration data in request body
+
+Query Parameters:
+    - mentor: Filter configurations by mentor ID
+
+Returns:
+    - CallConfigurationSerializer data
 
 ### Example
 
@@ -2029,7 +2776,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 org = 'org_example' # str | 
@@ -2065,7 +2811,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -2079,9 +2825,32 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_users_call_configurations_list**
 > List[CallConfiguration] ai_mentor_orgs_users_call_configurations_list(org, user_id, mentor=mentor, mode=mode, ordering=ordering, search=search)
 
+API ViewSet for managing call configurations.
 
+This ViewSet provides endpoints to retrieve, create, and update call configurations
+for mentors. Call configurations define how voice calls are handled for a mentor.
 
-API ViewSet for managing call configurations.  This ViewSet provides endpoints to retrieve, create, and update call configurations for mentors. Call configurations define how voice calls are handled for a mentor.  Permissions:     - Accessible only to platform admins.  Endpoints:     GET /api/org/{org}/mentors/{mentor_pk}/call-configurations/         - List all call configurations for a specific mentor         - Returns paginated list of call configurations      POST /api/org/{org}/mentors/{mentor_pk}/call-configurations/         - Create a new call configuration for a mentor         - Requires call configuration data in request body      PUT /api/org/{org}/mentors/{mentor_pk}/call-configurations/{id}/         - Update an existing call configuration         - Requires call configuration data in request body  Query Parameters:     - mentor: Filter configurations by mentor ID  Returns:     - CallConfigurationSerializer data
+Permissions:
+    - Accessible only to platform admins.
+
+Endpoints:
+    GET /api/org/{org}/mentors/{mentor_pk}/call-configurations/
+        - List all call configurations for a specific mentor
+        - Returns paginated list of call configurations
+
+    POST /api/org/{org}/mentors/{mentor_pk}/call-configurations/
+        - Create a new call configuration for a mentor
+        - Requires call configuration data in request body
+
+    PUT /api/org/{org}/mentors/{mentor_pk}/call-configurations/{id}/
+        - Update an existing call configuration
+        - Requires call configuration data in request body
+
+Query Parameters:
+    - mentor: Filter configurations by mentor ID
+
+Returns:
+    - CallConfigurationSerializer data
 
 ### Example
 
@@ -2104,7 +2873,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 org = 'org_example' # str | 
@@ -2160,9 +2928,32 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_users_call_configurations_partial_update**
 > CallConfiguration ai_mentor_orgs_users_call_configurations_partial_update(id, org, user_id, patched_call_configuration=patched_call_configuration)
 
+API ViewSet for managing call configurations.
 
+This ViewSet provides endpoints to retrieve, create, and update call configurations
+for mentors. Call configurations define how voice calls are handled for a mentor.
 
-API ViewSet for managing call configurations.  This ViewSet provides endpoints to retrieve, create, and update call configurations for mentors. Call configurations define how voice calls are handled for a mentor.  Permissions:     - Accessible only to platform admins.  Endpoints:     GET /api/org/{org}/mentors/{mentor_pk}/call-configurations/         - List all call configurations for a specific mentor         - Returns paginated list of call configurations      POST /api/org/{org}/mentors/{mentor_pk}/call-configurations/         - Create a new call configuration for a mentor         - Requires call configuration data in request body      PUT /api/org/{org}/mentors/{mentor_pk}/call-configurations/{id}/         - Update an existing call configuration         - Requires call configuration data in request body  Query Parameters:     - mentor: Filter configurations by mentor ID  Returns:     - CallConfigurationSerializer data
+Permissions:
+    - Accessible only to platform admins.
+
+Endpoints:
+    GET /api/org/{org}/mentors/{mentor_pk}/call-configurations/
+        - List all call configurations for a specific mentor
+        - Returns paginated list of call configurations
+
+    POST /api/org/{org}/mentors/{mentor_pk}/call-configurations/
+        - Create a new call configuration for a mentor
+        - Requires call configuration data in request body
+
+    PUT /api/org/{org}/mentors/{mentor_pk}/call-configurations/{id}/
+        - Update an existing call configuration
+        - Requires call configuration data in request body
+
+Query Parameters:
+    - mentor: Filter configurations by mentor ID
+
+Returns:
+    - CallConfigurationSerializer data
 
 ### Example
 
@@ -2186,7 +2977,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 id = 56 # int | A unique integer value identifying this call configuration.
@@ -2224,7 +3014,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -2238,9 +3028,32 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_users_call_configurations_retrieve**
 > CallConfiguration ai_mentor_orgs_users_call_configurations_retrieve(id, org, user_id)
 
+API ViewSet for managing call configurations.
 
+This ViewSet provides endpoints to retrieve, create, and update call configurations
+for mentors. Call configurations define how voice calls are handled for a mentor.
 
-API ViewSet for managing call configurations.  This ViewSet provides endpoints to retrieve, create, and update call configurations for mentors. Call configurations define how voice calls are handled for a mentor.  Permissions:     - Accessible only to platform admins.  Endpoints:     GET /api/org/{org}/mentors/{mentor_pk}/call-configurations/         - List all call configurations for a specific mentor         - Returns paginated list of call configurations      POST /api/org/{org}/mentors/{mentor_pk}/call-configurations/         - Create a new call configuration for a mentor         - Requires call configuration data in request body      PUT /api/org/{org}/mentors/{mentor_pk}/call-configurations/{id}/         - Update an existing call configuration         - Requires call configuration data in request body  Query Parameters:     - mentor: Filter configurations by mentor ID  Returns:     - CallConfigurationSerializer data
+Permissions:
+    - Accessible only to platform admins.
+
+Endpoints:
+    GET /api/org/{org}/mentors/{mentor_pk}/call-configurations/
+        - List all call configurations for a specific mentor
+        - Returns paginated list of call configurations
+
+    POST /api/org/{org}/mentors/{mentor_pk}/call-configurations/
+        - Create a new call configuration for a mentor
+        - Requires call configuration data in request body
+
+    PUT /api/org/{org}/mentors/{mentor_pk}/call-configurations/{id}/
+        - Update an existing call configuration
+        - Requires call configuration data in request body
+
+Query Parameters:
+    - mentor: Filter configurations by mentor ID
+
+Returns:
+    - CallConfigurationSerializer data
 
 ### Example
 
@@ -2263,7 +3076,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 id = 56 # int | A unique integer value identifying this call configuration.
@@ -2313,9 +3125,32 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_users_call_configurations_update**
 > CallConfiguration ai_mentor_orgs_users_call_configurations_update(id, org, user_id, call_configuration)
 
+API ViewSet for managing call configurations.
 
+This ViewSet provides endpoints to retrieve, create, and update call configurations
+for mentors. Call configurations define how voice calls are handled for a mentor.
 
-API ViewSet for managing call configurations.  This ViewSet provides endpoints to retrieve, create, and update call configurations for mentors. Call configurations define how voice calls are handled for a mentor.  Permissions:     - Accessible only to platform admins.  Endpoints:     GET /api/org/{org}/mentors/{mentor_pk}/call-configurations/         - List all call configurations for a specific mentor         - Returns paginated list of call configurations      POST /api/org/{org}/mentors/{mentor_pk}/call-configurations/         - Create a new call configuration for a mentor         - Requires call configuration data in request body      PUT /api/org/{org}/mentors/{mentor_pk}/call-configurations/{id}/         - Update an existing call configuration         - Requires call configuration data in request body  Query Parameters:     - mentor: Filter configurations by mentor ID  Returns:     - CallConfigurationSerializer data
+Permissions:
+    - Accessible only to platform admins.
+
+Endpoints:
+    GET /api/org/{org}/mentors/{mentor_pk}/call-configurations/
+        - List all call configurations for a specific mentor
+        - Returns paginated list of call configurations
+
+    POST /api/org/{org}/mentors/{mentor_pk}/call-configurations/
+        - Create a new call configuration for a mentor
+        - Requires call configuration data in request body
+
+    PUT /api/org/{org}/mentors/{mentor_pk}/call-configurations/{id}/
+        - Update an existing call configuration
+        - Requires call configuration data in request body
+
+Query Parameters:
+    - mentor: Filter configurations by mentor ID
+
+Returns:
+    - CallConfigurationSerializer data
 
 ### Example
 
@@ -2338,7 +3173,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 id = 56 # int | A unique integer value identifying this call configuration.
@@ -2376,7 +3210,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -2389,8 +3223,6 @@ Name | Type | Description  | Notes
 
 # **ai_mentor_orgs_users_category_groups_create**
 > MentorCategoryGroup ai_mentor_orgs_users_category_groups_create(org, user_id, mentor_category_group_create)
-
-
 
 Create a new Mentor Category Group. Only accessible to Platform Admins.
 
@@ -2416,7 +3248,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 org = 'org_example' # str | 
@@ -2452,7 +3283,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -2466,9 +3297,13 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_users_category_groups_destroy**
 > ai_mentor_orgs_users_category_groups_destroy(id, org, user_id)
 
+Mentor Category Groups offer parent grouping for mentor category objects.
 
+The parameter `audience` is deprecated and is currently left behind for backward compatibility.
 
-Mentor Category Groups offer parent grouping for mentor category objects.  The parameter `audience` is deprecated and is currently left behind for backward compatibility.  Permissions:     GET: Accessible to both Platform Admins and Students     POST, DELETE, PATCH, PUT: Accessible to only Platform Admins
+Permissions:
+    GET: Accessible to both Platform Admins and Students
+    POST, DELETE, PATCH, PUT: Accessible to only Platform Admins
 
 ### Example
 
@@ -2490,7 +3325,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 id = 56 # int | A unique integer value identifying this mentor category group.
@@ -2538,8 +3372,6 @@ void (empty response body)
 # **ai_mentor_orgs_users_category_groups_list**
 > List[MentorCategoryGroup] ai_mentor_orgs_users_category_groups_list(org, user_id, audience=audience, audience__name=audience__name, ordering=ordering, search=search)
 
-
-
 Retrieve a list of Mentor Category Groups.
 
 ### Example
@@ -2563,7 +3395,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 org = 'org_example' # str | 
@@ -2619,9 +3450,13 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_users_category_groups_partial_update**
 > MentorCategoryGroupCreate ai_mentor_orgs_users_category_groups_partial_update(id, org, user_id, patched_mentor_category_group_create=patched_mentor_category_group_create)
 
+Mentor Category Groups offer parent grouping for mentor category objects.
 
+The parameter `audience` is deprecated and is currently left behind for backward compatibility.
 
-Mentor Category Groups offer parent grouping for mentor category objects.  The parameter `audience` is deprecated and is currently left behind for backward compatibility.  Permissions:     GET: Accessible to both Platform Admins and Students     POST, DELETE, PATCH, PUT: Accessible to only Platform Admins
+Permissions:
+    GET: Accessible to both Platform Admins and Students
+    POST, DELETE, PATCH, PUT: Accessible to only Platform Admins
 
 ### Example
 
@@ -2645,7 +3480,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 id = 56 # int | A unique integer value identifying this mentor category group.
@@ -2683,7 +3517,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -2697,9 +3531,13 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_users_category_groups_retrieve**
 > MentorCategoryGroup ai_mentor_orgs_users_category_groups_retrieve(id, org, user_id)
 
+Mentor Category Groups offer parent grouping for mentor category objects.
 
+The parameter `audience` is deprecated and is currently left behind for backward compatibility.
 
-Mentor Category Groups offer parent grouping for mentor category objects.  The parameter `audience` is deprecated and is currently left behind for backward compatibility.  Permissions:     GET: Accessible to both Platform Admins and Students     POST, DELETE, PATCH, PUT: Accessible to only Platform Admins
+Permissions:
+    GET: Accessible to both Platform Admins and Students
+    POST, DELETE, PATCH, PUT: Accessible to only Platform Admins
 
 ### Example
 
@@ -2722,7 +3560,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 id = 56 # int | A unique integer value identifying this mentor category group.
@@ -2772,9 +3609,13 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_users_category_groups_update**
 > MentorCategoryGroupCreate ai_mentor_orgs_users_category_groups_update(id, org, user_id, mentor_category_group_create)
 
+Mentor Category Groups offer parent grouping for mentor category objects.
 
+The parameter `audience` is deprecated and is currently left behind for backward compatibility.
 
-Mentor Category Groups offer parent grouping for mentor category objects.  The parameter `audience` is deprecated and is currently left behind for backward compatibility.  Permissions:     GET: Accessible to both Platform Admins and Students     POST, DELETE, PATCH, PUT: Accessible to only Platform Admins
+Permissions:
+    GET: Accessible to both Platform Admins and Students
+    POST, DELETE, PATCH, PUT: Accessible to only Platform Admins
 
 ### Example
 
@@ -2797,7 +3638,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 id = 56 # int | A unique integer value identifying this mentor category group.
@@ -2835,7 +3675,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -2849,9 +3689,21 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_users_clean_vector_results_create**
 > List[VectorResult] ai_mentor_orgs_users_clean_vector_results_create(org, session_id, user_id, vector_result)
 
+Clean up provided vector results.
 
+This endpoint allows users to submit specific vector results for cleaning,
+which is useful when there are particular documents that need to be processed.
 
-Clean up provided vector results.  This endpoint allows users to submit specific vector results for cleaning, which is useful when there are particular documents that need to be processed.  Args:     request: The HTTP request containing the vector results to clean.     org: The organization/tenant identifier.     user_id: The ID of the user making the request.  Returns:     Response: The cleaned vector results.  Raises:     BadRequest: If the API key for the cleaning provider is not found or the provided data is invalid.
+Args:
+    request: The HTTP request containing the vector results to clean.
+    org: The organization/tenant identifier.
+    user_id: The ID of the user making the request.
+
+Returns:
+    Response: The cleaned vector results.
+
+Raises:
+    BadRequest: If the API key for the cleaning provider is not found or the provided data is invalid.
 
 ### Example
 
@@ -2874,7 +3726,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 org = 'org_example' # str | 
@@ -2912,7 +3763,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -2927,9 +3778,24 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_users_clean_vector_results_list**
 > List[VectorResult] ai_mentor_orgs_users_clean_vector_results_list(org, session_id, user_id)
 
+Retrieve and clean up vector results from a specific session.
 
+This endpoint retrieves the documents last used by the mentor to answer
+the most recent query from the user in the specified session, and cleans
+them to remove any inappropriate content.
 
-Retrieve and clean up vector results from a specific session.  This endpoint retrieves the documents last used by the mentor to answer the most recent query from the user in the specified session, and cleans them to remove any inappropriate content.  Args:     request: The HTTP request.     org: The organization/tenant identifier.     user_id: The ID of the user making the request.     session_id: The ID of the session to retrieve vector results from.  Returns:     Response: The cleaned vector results.  Raises:     BadRequest: If the API key for the cleaning provider is not found.     NotFound: If no vector results are found for the session.
+Args:
+    request: The HTTP request.
+    org: The organization/tenant identifier.
+    user_id: The ID of the user making the request.
+    session_id: The ID of the session to retrieve vector results from.
+
+Returns:
+    Response: The cleaned vector results.
+
+Raises:
+    BadRequest: If the API key for the cleaning provider is not found.
+    NotFound: If no vector results are found for the session.
 
 ### Example
 
@@ -2952,7 +3818,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 org = 'org_example' # str | 
@@ -3028,7 +3893,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 org = 'org_example' # str | 
@@ -3075,9 +3939,13 @@ void (empty response body)
 # **ai_mentor_orgs_users_course_creation_component_create**
 > Unit ai_mentor_orgs_users_course_creation_component_create(org, user_id, unit)
 
+API viewset for managing course units.
 
+This viewset allows platform administrators to retrieve and manage
+units within course subsections, and generate content for them.
 
-API viewset for managing course units.  This viewset allows platform administrators to retrieve and manage units within course subsections, and generate content for them.  Permissions:     - Restricted to platform administrators only
+Permissions:
+    - Restricted to platform administrators only
 
 ### Example
 
@@ -3100,7 +3968,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 org = 'org_example' # str | 
@@ -3136,7 +4003,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -3150,9 +4017,13 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_users_course_creation_component_destroy**
 > ai_mentor_orgs_users_course_creation_component_destroy(id, org, user_id)
 
+API viewset for managing course units.
 
+This viewset allows platform administrators to retrieve and manage
+units within course subsections, and generate content for them.
 
-API viewset for managing course units.  This viewset allows platform administrators to retrieve and manage units within course subsections, and generate content for them.  Permissions:     - Restricted to platform administrators only
+Permissions:
+    - Restricted to platform administrators only
 
 ### Example
 
@@ -3174,7 +4045,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 id = 56 # int | A unique integer value identifying this unit.
@@ -3222,9 +4092,20 @@ void (empty response body)
 # **ai_mentor_orgs_users_course_creation_component_draft_content_create**
 > ai_mentor_orgs_users_course_creation_component_draft_content_create(id, org, user_id, unit)
 
+Generate draft content for a specific unit.
 
+This action starts a background task to create draft content
+for the specified unit using AI.
 
-Generate draft content for a specific unit.  This action starts a background task to create draft content for the specified unit using AI.  Args:     request: The HTTP request.     pk: The primary key of the unit to generate content for.  Returns:     Response: A confirmation that the content generation task has been started.  Raises:     NotFound: If the specified unit does not exist.
+Args:
+    request: The HTTP request.
+    pk: The primary key of the unit to generate content for.
+
+Returns:
+    Response: A confirmation that the content generation task has been started.
+
+Raises:
+    NotFound: If the specified unit does not exist.
 
 ### Example
 
@@ -3247,7 +4128,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 id = 56 # int | A unique integer value identifying this unit.
@@ -3283,7 +4163,7 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: Not defined
 
 ### HTTP response details
@@ -3298,9 +4178,20 @@ void (empty response body)
 # **ai_mentor_orgs_users_course_creation_component_draft_content_retrieve**
 > ai_mentor_orgs_users_course_creation_component_draft_content_retrieve(id, org, user_id)
 
+Generate draft content for a specific unit.
 
+This action starts a background task to create draft content
+for the specified unit using AI.
 
-Generate draft content for a specific unit.  This action starts a background task to create draft content for the specified unit using AI.  Args:     request: The HTTP request.     pk: The primary key of the unit to generate content for.  Returns:     Response: A confirmation that the content generation task has been started.  Raises:     NotFound: If the specified unit does not exist.
+Args:
+    request: The HTTP request.
+    pk: The primary key of the unit to generate content for.
+
+Returns:
+    Response: A confirmation that the content generation task has been started.
+
+Raises:
+    NotFound: If the specified unit does not exist.
 
 ### Example
 
@@ -3322,7 +4213,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 id = 56 # int | A unique integer value identifying this unit.
@@ -3371,9 +4261,13 @@ void (empty response body)
 # **ai_mentor_orgs_users_course_creation_component_list**
 > PaginatedUnitList ai_mentor_orgs_users_course_creation_component_list(org, user_id, course=course, ordering=ordering, page=page, page_size=page_size, search=search, section=section, subsection=subsection, task=task)
 
+API viewset for managing course units.
 
+This viewset allows platform administrators to retrieve and manage
+units within course subsections, and generate content for them.
 
-API viewset for managing course units.  This viewset allows platform administrators to retrieve and manage units within course subsections, and generate content for them.  Permissions:     - Restricted to platform administrators only
+Permissions:
+    - Restricted to platform administrators only
 
 ### Example
 
@@ -3396,7 +4290,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 org = 'org_example' # str | 
@@ -3460,9 +4353,13 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_users_course_creation_component_partial_update**
 > Unit ai_mentor_orgs_users_course_creation_component_partial_update(id, org, user_id, patched_unit=patched_unit)
 
+API viewset for managing course units.
 
+This viewset allows platform administrators to retrieve and manage
+units within course subsections, and generate content for them.
 
-API viewset for managing course units.  This viewset allows platform administrators to retrieve and manage units within course subsections, and generate content for them.  Permissions:     - Restricted to platform administrators only
+Permissions:
+    - Restricted to platform administrators only
 
 ### Example
 
@@ -3486,7 +4383,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 id = 56 # int | A unique integer value identifying this unit.
@@ -3524,7 +4420,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -3538,9 +4434,13 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_users_course_creation_component_retrieve**
 > Unit ai_mentor_orgs_users_course_creation_component_retrieve(id, org, user_id)
 
+API viewset for managing course units.
 
+This viewset allows platform administrators to retrieve and manage
+units within course subsections, and generate content for them.
 
-API viewset for managing course units.  This viewset allows platform administrators to retrieve and manage units within course subsections, and generate content for them.  Permissions:     - Restricted to platform administrators only
+Permissions:
+    - Restricted to platform administrators only
 
 ### Example
 
@@ -3563,7 +4463,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 id = 56 # int | A unique integer value identifying this unit.
@@ -3613,9 +4512,13 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_users_course_creation_component_update**
 > Unit ai_mentor_orgs_users_course_creation_component_update(id, org, user_id, unit)
 
+API viewset for managing course units.
 
+This viewset allows platform administrators to retrieve and manage
+units within course subsections, and generate content for them.
 
-API viewset for managing course units.  This viewset allows platform administrators to retrieve and manage units within course subsections, and generate content for them.  Permissions:     - Restricted to platform administrators only
+Permissions:
+    - Restricted to platform administrators only
 
 ### Example
 
@@ -3638,7 +4541,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 id = 56 # int | A unique integer value identifying this unit.
@@ -3676,7 +4578,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -3690,9 +4592,14 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_users_course_creation_course_destroy**
 > ai_mentor_orgs_users_course_creation_course_destroy(id, org, user_id)
 
+API viewset for managing EdX courses.
 
+This viewset allows platform administrators to retrieve, delete, and
+perform various operations on EdX courses that were created through
+course creation tasks.
 
-API viewset for managing EdX courses.  This viewset allows platform administrators to retrieve, delete, and perform various operations on EdX courses that were created through course creation tasks.  Permissions:     - Restricted to platform administrators only
+Permissions:
+    - Restricted to platform administrators only
 
 ### Example
 
@@ -3714,7 +4621,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 id = 56 # int | A unique integer value identifying this edx course.
@@ -3762,9 +4668,20 @@ void (empty response body)
 # **ai_mentor_orgs_users_course_creation_course_draft_content_for_all_units_retrieve**
 > ai_mentor_orgs_users_course_creation_course_draft_content_for_all_units_retrieve(id, org, user_id)
 
+Generate draft content for all units in a course.
 
+This action starts a background task to create draft content
+for all units in the course using AI.
 
-Generate draft content for all units in a course.  This action starts a background task to create draft content for all units in the course using AI.  Args:     request: The HTTP request.     pk: The primary key of the course to generate content for.  Returns:     Response: A confirmation that the content generation task has been started.  Raises:     NotFound: If the specified course does not exist.
+Args:
+    request: The HTTP request.
+    pk: The primary key of the course to generate content for.
+
+Returns:
+    Response: A confirmation that the content generation task has been started.
+
+Raises:
+    NotFound: If the specified course does not exist.
 
 ### Example
 
@@ -3786,7 +4703,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 id = 56 # int | A unique integer value identifying this edx course.
@@ -3835,9 +4751,20 @@ void (empty response body)
 # **ai_mentor_orgs_users_course_creation_course_full_structure_retrieve**
 > FullCourse ai_mentor_orgs_users_course_creation_course_full_structure_retrieve(id, org, user_id)
 
+Retrieve the full structure of a course.
 
+This action returns the complete hierarchical structure of the course,
+including all sections, subsections, units, and components.
 
-Retrieve the full structure of a course.  This action returns the complete hierarchical structure of the course, including all sections, subsections, units, and components.  Args:     request: The HTTP request.     pk: The primary key of the course to retrieve.  Returns:     Response: The full structure of the course.  Raises:     NotFound: If the specified course does not exist.
+Args:
+    request: The HTTP request.
+    pk: The primary key of the course to retrieve.
+
+Returns:
+    Response: The full structure of the course.
+
+Raises:
+    NotFound: If the specified course does not exist.
 
 ### Example
 
@@ -3860,7 +4787,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 id = 56 # int | A unique integer value identifying this edx course.
@@ -3911,9 +4837,14 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_users_course_creation_course_list**
 > PaginatedEdxCourseList ai_mentor_orgs_users_course_creation_course_list(org, user_id, ordering=ordering, page=page, page_size=page_size, search=search, task=task)
 
+API viewset for managing EdX courses.
 
+This viewset allows platform administrators to retrieve, delete, and
+perform various operations on EdX courses that were created through
+course creation tasks.
 
-API viewset for managing EdX courses.  This viewset allows platform administrators to retrieve, delete, and perform various operations on EdX courses that were created through course creation tasks.  Permissions:     - Restricted to platform administrators only
+Permissions:
+    - Restricted to platform administrators only
 
 ### Example
 
@@ -3936,7 +4867,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 org = 'org_example' # str | 
@@ -3994,9 +4924,20 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_users_course_creation_course_load_from_edx_retrieve**
 > ai_mentor_orgs_users_course_creation_course_load_from_edx_retrieve(id, org, user_id)
 
+Load existing course structure from OpenEdX.
 
+This action starts a background task to pull the course structure
+from the EdX platform into the database.
 
-Load existing course structure from OpenEdX.  This action starts a background task to pull the course structure from the EdX platform into the database.  Args:     request: The HTTP request.     pk: The primary key of the course to load.  Returns:     Response: A confirmation that the load task has been started.  Raises:     NotFound: If the specified course does not exist.
+Args:
+    request: The HTTP request.
+    pk: The primary key of the course to load.
+
+Returns:
+    Response: A confirmation that the load task has been started.
+
+Raises:
+    NotFound: If the specified course does not exist.
 
 ### Example
 
@@ -4018,7 +4959,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 id = 56 # int | A unique integer value identifying this edx course.
@@ -4067,9 +5007,14 @@ void (empty response body)
 # **ai_mentor_orgs_users_course_creation_course_retrieve**
 > EdxCourse ai_mentor_orgs_users_course_creation_course_retrieve(id, org, user_id)
 
+API viewset for managing EdX courses.
 
+This viewset allows platform administrators to retrieve, delete, and
+perform various operations on EdX courses that were created through
+course creation tasks.
 
-API viewset for managing EdX courses.  This viewset allows platform administrators to retrieve, delete, and perform various operations on EdX courses that were created through course creation tasks.  Permissions:     - Restricted to platform administrators only
+Permissions:
+    - Restricted to platform administrators only
 
 ### Example
 
@@ -4092,7 +5037,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 id = 56 # int | A unique integer value identifying this edx course.
@@ -4142,9 +5086,20 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_users_course_creation_course_sync_to_edx_retrieve**
 > ai_mentor_orgs_users_course_creation_course_sync_to_edx_retrieve(id, org, user_id)
 
+Synchronize the course structure to EdX.
 
+This action starts a background task to push the course structure
+from the database to the EdX platform.
 
-Synchronize the course structure to EdX.  This action starts a background task to push the course structure from the database to the EdX platform.  Args:     request: The HTTP request.     pk: The primary key of the course to synchronize.  Returns:     Response: A confirmation that the sync task has been started.  Raises:     NotFound: If the specified course does not exist.
+Args:
+    request: The HTTP request.
+    pk: The primary key of the course to synchronize.
+
+Returns:
+    Response: A confirmation that the sync task has been started.
+
+Raises:
+    NotFound: If the specified course does not exist.
 
 ### Example
 
@@ -4166,7 +5121,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 id = 56 # int | A unique integer value identifying this edx course.
@@ -4215,8 +5169,6 @@ void (empty response body)
 # **ai_mentor_orgs_users_course_creation_files_create**
 > CourseCreationTaskFile ai_mentor_orgs_users_course_creation_files_create(org, user_id, id, course_creation_task, file, date_created, last_modified)
 
-
-
 Endpoint to fetch update and delete files associated with course creation tasks.
 
 ### Example
@@ -4240,7 +5192,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 org = 'org_example' # str | 
@@ -4298,8 +5249,6 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_users_course_creation_files_destroy**
 > ai_mentor_orgs_users_course_creation_files_destroy(id, org, user_id)
 
-
-
 Endpoint to fetch update and delete files associated with course creation tasks.
 
 ### Example
@@ -4322,7 +5271,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 id = 56 # int | A unique integer value identifying this course creation task file.
@@ -4370,8 +5318,6 @@ void (empty response body)
 # **ai_mentor_orgs_users_course_creation_files_list**
 > PaginatedCourseCreationTaskFileList ai_mentor_orgs_users_course_creation_files_list(org, user_id, page=page, page_size=page_size)
 
-
-
 Endpoint to fetch update and delete files associated with course creation tasks.
 
 ### Example
@@ -4395,7 +5341,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 org = 'org_example' # str | 
@@ -4447,8 +5392,6 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_users_course_creation_files_partial_update**
 > CourseCreationTaskFile ai_mentor_orgs_users_course_creation_files_partial_update(id, org, user_id, id2=id2, course_creation_task=course_creation_task, file=file, date_created=date_created, last_modified=last_modified)
 
-
-
 Endpoint to fetch update and delete files associated with course creation tasks.
 
 ### Example
@@ -4472,7 +5415,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 id = 56 # int | A unique integer value identifying this course creation task file.
@@ -4532,8 +5474,6 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_users_course_creation_files_retrieve**
 > CourseCreationTaskFile ai_mentor_orgs_users_course_creation_files_retrieve(id, org, user_id)
 
-
-
 Endpoint to fetch update and delete files associated with course creation tasks.
 
 ### Example
@@ -4557,7 +5497,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 id = 56 # int | A unique integer value identifying this course creation task file.
@@ -4607,8 +5546,6 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_users_course_creation_files_update**
 > CourseCreationTaskFile ai_mentor_orgs_users_course_creation_files_update(id, org, user_id, id2, course_creation_task, file, date_created, last_modified)
 
-
-
 Endpoint to fetch update and delete files associated with course creation tasks.
 
 ### Example
@@ -4632,7 +5569,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 id = 56 # int | A unique integer value identifying this course creation task file.
@@ -4692,9 +5628,13 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_users_course_creation_section_create**
 > Section ai_mentor_orgs_users_course_creation_section_create(org, user_id, section)
 
+API viewset for managing course sections.
 
+This viewset allows platform administrators to retrieve and manage
+sections within EdX courses.
 
-API viewset for managing course sections.  This viewset allows platform administrators to retrieve and manage sections within EdX courses.  Permissions:     - Restricted to platform administrators only
+Permissions:
+    - Restricted to platform administrators only
 
 ### Example
 
@@ -4717,7 +5657,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 org = 'org_example' # str | 
@@ -4753,7 +5692,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -4767,9 +5706,13 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_users_course_creation_section_destroy**
 > ai_mentor_orgs_users_course_creation_section_destroy(id, org, user_id)
 
+API viewset for managing course sections.
 
+This viewset allows platform administrators to retrieve and manage
+sections within EdX courses.
 
-API viewset for managing course sections.  This viewset allows platform administrators to retrieve and manage sections within EdX courses.  Permissions:     - Restricted to platform administrators only
+Permissions:
+    - Restricted to platform administrators only
 
 ### Example
 
@@ -4791,7 +5734,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 id = 56 # int | A unique integer value identifying this section.
@@ -4839,9 +5781,13 @@ void (empty response body)
 # **ai_mentor_orgs_users_course_creation_section_list**
 > PaginatedSectionList ai_mentor_orgs_users_course_creation_section_list(org, user_id, course=course, ordering=ordering, page=page, page_size=page_size, search=search, task=task)
 
+API viewset for managing course sections.
 
+This viewset allows platform administrators to retrieve and manage
+sections within EdX courses.
 
-API viewset for managing course sections.  This viewset allows platform administrators to retrieve and manage sections within EdX courses.  Permissions:     - Restricted to platform administrators only
+Permissions:
+    - Restricted to platform administrators only
 
 ### Example
 
@@ -4864,7 +5810,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 org = 'org_example' # str | 
@@ -4924,9 +5869,13 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_users_course_creation_section_partial_update**
 > Section ai_mentor_orgs_users_course_creation_section_partial_update(id, org, user_id, patched_section=patched_section)
 
+API viewset for managing course sections.
 
+This viewset allows platform administrators to retrieve and manage
+sections within EdX courses.
 
-API viewset for managing course sections.  This viewset allows platform administrators to retrieve and manage sections within EdX courses.  Permissions:     - Restricted to platform administrators only
+Permissions:
+    - Restricted to platform administrators only
 
 ### Example
 
@@ -4950,7 +5899,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 id = 56 # int | A unique integer value identifying this section.
@@ -4988,7 +5936,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -5002,9 +5950,13 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_users_course_creation_section_retrieve**
 > Section ai_mentor_orgs_users_course_creation_section_retrieve(id, org, user_id)
 
+API viewset for managing course sections.
 
+This viewset allows platform administrators to retrieve and manage
+sections within EdX courses.
 
-API viewset for managing course sections.  This viewset allows platform administrators to retrieve and manage sections within EdX courses.  Permissions:     - Restricted to platform administrators only
+Permissions:
+    - Restricted to platform administrators only
 
 ### Example
 
@@ -5027,7 +5979,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 id = 56 # int | A unique integer value identifying this section.
@@ -5077,9 +6028,13 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_users_course_creation_section_update**
 > Section ai_mentor_orgs_users_course_creation_section_update(id, org, user_id, section)
 
+API viewset for managing course sections.
 
+This viewset allows platform administrators to retrieve and manage
+sections within EdX courses.
 
-API viewset for managing course sections.  This viewset allows platform administrators to retrieve and manage sections within EdX courses.  Permissions:     - Restricted to platform administrators only
+Permissions:
+    - Restricted to platform administrators only
 
 ### Example
 
@@ -5102,7 +6057,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 id = 56 # int | A unique integer value identifying this section.
@@ -5140,7 +6094,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -5154,9 +6108,13 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_users_course_creation_subsection_create**
 > SubSection ai_mentor_orgs_users_course_creation_subsection_create(org, user_id, sub_section)
 
+API viewset for managing course subsections.
 
+This viewset allows platform administrators to retrieve and manage
+subsections within course sections.
 
-API viewset for managing course subsections.  This viewset allows platform administrators to retrieve and manage subsections within course sections.  Permissions:     - Restricted to platform administrators only
+Permissions:
+    - Restricted to platform administrators only
 
 ### Example
 
@@ -5179,7 +6137,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 org = 'org_example' # str | 
@@ -5215,7 +6172,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -5229,9 +6186,13 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_users_course_creation_subsection_destroy**
 > ai_mentor_orgs_users_course_creation_subsection_destroy(id, org, user_id)
 
+API viewset for managing course subsections.
 
+This viewset allows platform administrators to retrieve and manage
+subsections within course sections.
 
-API viewset for managing course subsections.  This viewset allows platform administrators to retrieve and manage subsections within course sections.  Permissions:     - Restricted to platform administrators only
+Permissions:
+    - Restricted to platform administrators only
 
 ### Example
 
@@ -5253,7 +6214,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 id = 56 # int | A unique integer value identifying this sub section.
@@ -5301,9 +6261,13 @@ void (empty response body)
 # **ai_mentor_orgs_users_course_creation_subsection_list**
 > PaginatedSubSectionList ai_mentor_orgs_users_course_creation_subsection_list(org, user_id, course=course, ordering=ordering, page=page, page_size=page_size, search=search, section=section, task=task)
 
+API viewset for managing course subsections.
 
+This viewset allows platform administrators to retrieve and manage
+subsections within course sections.
 
-API viewset for managing course subsections.  This viewset allows platform administrators to retrieve and manage subsections within course sections.  Permissions:     - Restricted to platform administrators only
+Permissions:
+    - Restricted to platform administrators only
 
 ### Example
 
@@ -5326,7 +6290,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 org = 'org_example' # str | 
@@ -5388,9 +6351,13 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_users_course_creation_subsection_partial_update**
 > SubSection ai_mentor_orgs_users_course_creation_subsection_partial_update(id, org, user_id, patched_sub_section=patched_sub_section)
 
+API viewset for managing course subsections.
 
+This viewset allows platform administrators to retrieve and manage
+subsections within course sections.
 
-API viewset for managing course subsections.  This viewset allows platform administrators to retrieve and manage subsections within course sections.  Permissions:     - Restricted to platform administrators only
+Permissions:
+    - Restricted to platform administrators only
 
 ### Example
 
@@ -5414,7 +6381,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 id = 56 # int | A unique integer value identifying this sub section.
@@ -5452,7 +6418,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -5466,9 +6432,13 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_users_course_creation_subsection_retrieve**
 > SubSection ai_mentor_orgs_users_course_creation_subsection_retrieve(id, org, user_id)
 
+API viewset for managing course subsections.
 
+This viewset allows platform administrators to retrieve and manage
+subsections within course sections.
 
-API viewset for managing course subsections.  This viewset allows platform administrators to retrieve and manage subsections within course sections.  Permissions:     - Restricted to platform administrators only
+Permissions:
+    - Restricted to platform administrators only
 
 ### Example
 
@@ -5491,7 +6461,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 id = 56 # int | A unique integer value identifying this sub section.
@@ -5541,9 +6510,13 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_users_course_creation_subsection_update**
 > SubSection ai_mentor_orgs_users_course_creation_subsection_update(id, org, user_id, sub_section)
 
+API viewset for managing course subsections.
 
+This viewset allows platform administrators to retrieve and manage
+subsections within course sections.
 
-API viewset for managing course subsections.  This viewset allows platform administrators to retrieve and manage subsections within course sections.  Permissions:     - Restricted to platform administrators only
+Permissions:
+    - Restricted to platform administrators only
 
 ### Example
 
@@ -5566,7 +6539,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 id = 56 # int | A unique integer value identifying this sub section.
@@ -5604,7 +6576,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -5617,8 +6589,6 @@ Name | Type | Description  | Notes
 
 # **ai_mentor_orgs_users_course_creation_task_files_create**
 > CourseCreationTaskFile ai_mentor_orgs_users_course_creation_task_files_create(org, user_id, id, course_creation_task, file, date_created, last_modified)
-
-
 
 Endpoint to fetch update and delete files associated with course creation tasks.
 
@@ -5643,7 +6613,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 org = 'org_example' # str | 
@@ -5701,8 +6670,6 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_users_course_creation_task_files_destroy**
 > ai_mentor_orgs_users_course_creation_task_files_destroy(id, org, user_id)
 
-
-
 Endpoint to fetch update and delete files associated with course creation tasks.
 
 ### Example
@@ -5725,7 +6692,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 id = 56 # int | A unique integer value identifying this course creation task file.
@@ -5773,8 +6739,6 @@ void (empty response body)
 # **ai_mentor_orgs_users_course_creation_task_files_list**
 > PaginatedCourseCreationTaskFileList ai_mentor_orgs_users_course_creation_task_files_list(org, user_id, page=page, page_size=page_size)
 
-
-
 Endpoint to fetch update and delete files associated with course creation tasks.
 
 ### Example
@@ -5798,7 +6762,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 org = 'org_example' # str | 
@@ -5850,8 +6813,6 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_users_course_creation_task_files_partial_update**
 > CourseCreationTaskFile ai_mentor_orgs_users_course_creation_task_files_partial_update(id, org, user_id, id2=id2, course_creation_task=course_creation_task, file=file, date_created=date_created, last_modified=last_modified)
 
-
-
 Endpoint to fetch update and delete files associated with course creation tasks.
 
 ### Example
@@ -5875,7 +6836,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 id = 56 # int | A unique integer value identifying this course creation task file.
@@ -5935,8 +6895,6 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_users_course_creation_task_files_retrieve**
 > CourseCreationTaskFile ai_mentor_orgs_users_course_creation_task_files_retrieve(id, org, user_id)
 
-
-
 Endpoint to fetch update and delete files associated with course creation tasks.
 
 ### Example
@@ -5960,7 +6918,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 id = 56 # int | A unique integer value identifying this course creation task file.
@@ -6010,8 +6967,6 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_users_course_creation_task_files_update**
 > CourseCreationTaskFile ai_mentor_orgs_users_course_creation_task_files_update(id, org, user_id, id2, course_creation_task, file, date_created, last_modified)
 
-
-
 Endpoint to fetch update and delete files associated with course creation tasks.
 
 ### Example
@@ -6035,7 +6990,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 id = 56 # int | A unique integer value identifying this course creation task file.
@@ -6095,9 +7049,12 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_users_course_creation_tasks_cancel_retrieve**
 > CourseCreationTask ai_mentor_orgs_users_course_creation_tasks_cancel_retrieve(id, org, user_id)
 
-
-
-Cancel a course creation task run. ** Conditions Required **: The task must be running or pending. ** Response **: - 200: The course creation task is successfully cancelled. - 400: The course creation task is not in a running or pending state.
+Cancel a course creation task run.
+** Conditions Required **:
+The task must be running or pending.
+** Response **:
+- 200: The course creation task is successfully cancelled.
+- 400: The course creation task is not in a running or pending state.
 
 ### Example
 
@@ -6120,7 +7077,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 id = 56 # int | A unique integer value identifying this course creation task.
@@ -6170,9 +7126,12 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_users_course_creation_tasks_cancel_retrieve2**
 > CourseCreationTask ai_mentor_orgs_users_course_creation_tasks_cancel_retrieve2(id, org, user_id)
 
-
-
-Cancel a course creation task run. ** Conditions Required **: The task must be running or pending. ** Response **: - 200: The course creation task is successfully cancelled. - 400: The course creation task is not in a running or pending state.
+Cancel a course creation task run.
+** Conditions Required **:
+The task must be running or pending.
+** Response **:
+- 200: The course creation task is successfully cancelled.
+- 400: The course creation task is not in a running or pending state.
 
 ### Example
 
@@ -6195,7 +7154,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 id = 56 # int | A unique integer value identifying this course creation task.
@@ -6245,9 +7203,16 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_users_course_creation_tasks_create**
 > CourseCreationTask ai_mentor_orgs_users_course_creation_tasks_create(org, user_id, id, user_id2, student, name, description, target_audience, platform, platform_key, status, course_data, logs, files, date_created, last_modified, publish_course=publish_course, provider=provider, model=model, desired_number_of_sections=desired_number_of_sections)
 
+Create, retrieve and delete course creation tasks
 
+Course creation tasks allow you to schedule the creation of a course on OpenEdx deployment connected to this data manager.
 
-Create, retrieve and delete course creation tasks  Course creation tasks allow you to schedule the creation of a course on OpenEdx deployment connected to this data manager.  The course is created entirely by an ai model (as specified in your inputs).  The llm decides on the content of the course based on the name, description, target audience and other parameters. Bigger and newer models tend to outperform smaller once.  Clear and unambiguous parameters are more likely to produce better results.
+The course is created entirely by an ai model (as specified in your inputs).
+
+The llm decides on the content of the course based on the name, description, target audience and other parameters.
+Bigger and newer models tend to outperform smaller once.
+
+Clear and unambiguous parameters are more likely to produce better results.
 
 ### Example
 
@@ -6271,7 +7236,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 org = 'org_example' # str | 
@@ -6355,9 +7319,16 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_users_course_creation_tasks_create2**
 > CourseCreationTask ai_mentor_orgs_users_course_creation_tasks_create2(org, user_id, id, user_id2, student, name, description, target_audience, platform, platform_key, status, course_data, logs, files, date_created, last_modified, publish_course=publish_course, provider=provider, model=model, desired_number_of_sections=desired_number_of_sections)
 
+Create, retrieve and delete course creation tasks
 
+Course creation tasks allow you to schedule the creation of a course on OpenEdx deployment connected to this data manager.
 
-Create, retrieve and delete course creation tasks  Course creation tasks allow you to schedule the creation of a course on OpenEdx deployment connected to this data manager.  The course is created entirely by an ai model (as specified in your inputs).  The llm decides on the content of the course based on the name, description, target audience and other parameters. Bigger and newer models tend to outperform smaller once.  Clear and unambiguous parameters are more likely to produce better results.
+The course is created entirely by an ai model (as specified in your inputs).
+
+The llm decides on the content of the course based on the name, description, target audience and other parameters.
+Bigger and newer models tend to outperform smaller once.
+
+Clear and unambiguous parameters are more likely to produce better results.
 
 ### Example
 
@@ -6381,7 +7352,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 org = 'org_example' # str | 
@@ -6465,9 +7435,9 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_users_course_creation_tasks_create_course_outline_create**
 > FullCourse ai_mentor_orgs_users_course_creation_tasks_create_course_outline_create(id, org, user_id, id2, user_id2, student, name, description, target_audience, platform, platform_key, status, course_data, logs, files, date_created, last_modified, publish_course=publish_course, provider=provider, model=model, desired_number_of_sections=desired_number_of_sections)
 
+This is intended for stepwise approach of course creation.
 
-
-This is intended for stepwise approach of course creation.  Use this to intiate generating an outline of the course.
+Use this to intiate generating an outline of the course.
 
 ### Example
 
@@ -6491,7 +7461,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 id = 56 # int | A unique integer value identifying this course creation task.
@@ -6577,9 +7546,9 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_users_course_creation_tasks_create_course_outline_create2**
 > FullCourse ai_mentor_orgs_users_course_creation_tasks_create_course_outline_create2(id, org, user_id, id2, user_id2, student, name, description, target_audience, platform, platform_key, status, course_data, logs, files, date_created, last_modified, publish_course=publish_course, provider=provider, model=model, desired_number_of_sections=desired_number_of_sections)
 
+This is intended for stepwise approach of course creation.
 
-
-This is intended for stepwise approach of course creation.  Use this to intiate generating an outline of the course.
+Use this to intiate generating an outline of the course.
 
 ### Example
 
@@ -6603,7 +7572,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 id = 56 # int | A unique integer value identifying this course creation task.
@@ -6689,9 +7657,9 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_users_course_creation_tasks_create_course_outline_retrieve**
 > FullCourse ai_mentor_orgs_users_course_creation_tasks_create_course_outline_retrieve(id, org, user_id)
 
+This is intended for stepwise approach of course creation.
 
-
-This is intended for stepwise approach of course creation.  Use this to intiate generating an outline of the course.
+Use this to intiate generating an outline of the course.
 
 ### Example
 
@@ -6714,7 +7682,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 id = 56 # int | A unique integer value identifying this course creation task.
@@ -6764,9 +7731,9 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_users_course_creation_tasks_create_course_outline_retrieve2**
 > FullCourse ai_mentor_orgs_users_course_creation_tasks_create_course_outline_retrieve2(id, org, user_id)
 
+This is intended for stepwise approach of course creation.
 
-
-This is intended for stepwise approach of course creation.  Use this to intiate generating an outline of the course.
+Use this to intiate generating an outline of the course.
 
 ### Example
 
@@ -6789,7 +7756,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 id = 56 # int | A unique integer value identifying this course creation task.
@@ -6839,9 +7805,16 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_users_course_creation_tasks_destroy**
 > ai_mentor_orgs_users_course_creation_tasks_destroy(id, org, user_id)
 
+Create, retrieve and delete course creation tasks
 
+Course creation tasks allow you to schedule the creation of a course on OpenEdx deployment connected to this data manager.
 
-Create, retrieve and delete course creation tasks  Course creation tasks allow you to schedule the creation of a course on OpenEdx deployment connected to this data manager.  The course is created entirely by an ai model (as specified in your inputs).  The llm decides on the content of the course based on the name, description, target audience and other parameters. Bigger and newer models tend to outperform smaller once.  Clear and unambiguous parameters are more likely to produce better results.
+The course is created entirely by an ai model (as specified in your inputs).
+
+The llm decides on the content of the course based on the name, description, target audience and other parameters.
+Bigger and newer models tend to outperform smaller once.
+
+Clear and unambiguous parameters are more likely to produce better results.
 
 ### Example
 
@@ -6863,7 +7836,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 id = 56 # int | A unique integer value identifying this course creation task.
@@ -6911,9 +7883,16 @@ void (empty response body)
 # **ai_mentor_orgs_users_course_creation_tasks_destroy2**
 > ai_mentor_orgs_users_course_creation_tasks_destroy2(id, org, user_id)
 
+Create, retrieve and delete course creation tasks
 
+Course creation tasks allow you to schedule the creation of a course on OpenEdx deployment connected to this data manager.
 
-Create, retrieve and delete course creation tasks  Course creation tasks allow you to schedule the creation of a course on OpenEdx deployment connected to this data manager.  The course is created entirely by an ai model (as specified in your inputs).  The llm decides on the content of the course based on the name, description, target audience and other parameters. Bigger and newer models tend to outperform smaller once.  Clear and unambiguous parameters are more likely to produce better results.
+The course is created entirely by an ai model (as specified in your inputs).
+
+The llm decides on the content of the course based on the name, description, target audience and other parameters.
+Bigger and newer models tend to outperform smaller once.
+
+Clear and unambiguous parameters are more likely to produce better results.
 
 ### Example
 
@@ -6935,7 +7914,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 id = 56 # int | A unique integer value identifying this course creation task.
@@ -6983,9 +7961,16 @@ void (empty response body)
 # **ai_mentor_orgs_users_course_creation_tasks_list**
 > PaginatedCourseCreationTaskList ai_mentor_orgs_users_course_creation_tasks_list(org, user_id, page=page, page_size=page_size)
 
+Create, retrieve and delete course creation tasks
 
+Course creation tasks allow you to schedule the creation of a course on OpenEdx deployment connected to this data manager.
 
-Create, retrieve and delete course creation tasks  Course creation tasks allow you to schedule the creation of a course on OpenEdx deployment connected to this data manager.  The course is created entirely by an ai model (as specified in your inputs).  The llm decides on the content of the course based on the name, description, target audience and other parameters. Bigger and newer models tend to outperform smaller once.  Clear and unambiguous parameters are more likely to produce better results.
+The course is created entirely by an ai model (as specified in your inputs).
+
+The llm decides on the content of the course based on the name, description, target audience and other parameters.
+Bigger and newer models tend to outperform smaller once.
+
+Clear and unambiguous parameters are more likely to produce better results.
 
 ### Example
 
@@ -7008,7 +7993,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 org = 'org_example' # str | 
@@ -7060,9 +8044,16 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_users_course_creation_tasks_list2**
 > PaginatedCourseCreationTaskList ai_mentor_orgs_users_course_creation_tasks_list2(org, user_id, page=page, page_size=page_size)
 
+Create, retrieve and delete course creation tasks
 
+Course creation tasks allow you to schedule the creation of a course on OpenEdx deployment connected to this data manager.
 
-Create, retrieve and delete course creation tasks  Course creation tasks allow you to schedule the creation of a course on OpenEdx deployment connected to this data manager.  The course is created entirely by an ai model (as specified in your inputs).  The llm decides on the content of the course based on the name, description, target audience and other parameters. Bigger and newer models tend to outperform smaller once.  Clear and unambiguous parameters are more likely to produce better results.
+The course is created entirely by an ai model (as specified in your inputs).
+
+The llm decides on the content of the course based on the name, description, target audience and other parameters.
+Bigger and newer models tend to outperform smaller once.
+
+Clear and unambiguous parameters are more likely to produce better results.
 
 ### Example
 
@@ -7085,7 +8076,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 org = 'org_example' # str | 
@@ -7137,9 +8127,16 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_users_course_creation_tasks_retrieve**
 > CourseCreationTask ai_mentor_orgs_users_course_creation_tasks_retrieve(id, org, user_id)
 
+Create, retrieve and delete course creation tasks
 
+Course creation tasks allow you to schedule the creation of a course on OpenEdx deployment connected to this data manager.
 
-Create, retrieve and delete course creation tasks  Course creation tasks allow you to schedule the creation of a course on OpenEdx deployment connected to this data manager.  The course is created entirely by an ai model (as specified in your inputs).  The llm decides on the content of the course based on the name, description, target audience and other parameters. Bigger and newer models tend to outperform smaller once.  Clear and unambiguous parameters are more likely to produce better results.
+The course is created entirely by an ai model (as specified in your inputs).
+
+The llm decides on the content of the course based on the name, description, target audience and other parameters.
+Bigger and newer models tend to outperform smaller once.
+
+Clear and unambiguous parameters are more likely to produce better results.
 
 ### Example
 
@@ -7162,7 +8159,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 id = 56 # int | A unique integer value identifying this course creation task.
@@ -7212,9 +8208,16 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_users_course_creation_tasks_retrieve2**
 > CourseCreationTask ai_mentor_orgs_users_course_creation_tasks_retrieve2(id, org, user_id)
 
+Create, retrieve and delete course creation tasks
 
+Course creation tasks allow you to schedule the creation of a course on OpenEdx deployment connected to this data manager.
 
-Create, retrieve and delete course creation tasks  Course creation tasks allow you to schedule the creation of a course on OpenEdx deployment connected to this data manager.  The course is created entirely by an ai model (as specified in your inputs).  The llm decides on the content of the course based on the name, description, target audience and other parameters. Bigger and newer models tend to outperform smaller once.  Clear and unambiguous parameters are more likely to produce better results.
+The course is created entirely by an ai model (as specified in your inputs).
+
+The llm decides on the content of the course based on the name, description, target audience and other parameters.
+Bigger and newer models tend to outperform smaller once.
+
+Clear and unambiguous parameters are more likely to produce better results.
 
 ### Example
 
@@ -7237,7 +8240,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 id = 56 # int | A unique integer value identifying this course creation task.
@@ -7287,9 +8289,16 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_users_course_creation_tasks_start_retrieve**
 > CourseCreationTask ai_mentor_orgs_users_course_creation_tasks_start_retrieve(id, org, user_id)
 
+Kick start the course creation task.
+This endpoint should be called once the files for a course creation task has
+been successfully uploaded.
 
+** Conditions Required **:
+- The course creation task must be in a pending state or failed state.
 
-Kick start the course creation task. This endpoint should be called once the files for a course creation task has been successfully uploaded.  ** Conditions Required **: - The course creation task must be in a pending state or failed state.  ** Response **: - 200: The course creation task is successfully started. - 400: The course creation task is not in a pending state.
+** Response **:
+- 200: The course creation task is successfully started.
+- 400: The course creation task is not in a pending state.
 
 ### Example
 
@@ -7312,7 +8321,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 id = 56 # int | A unique integer value identifying this course creation task.
@@ -7362,9 +8370,16 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_users_course_creation_tasks_start_retrieve2**
 > CourseCreationTask ai_mentor_orgs_users_course_creation_tasks_start_retrieve2(id, org, user_id)
 
+Kick start the course creation task.
+This endpoint should be called once the files for a course creation task has
+been successfully uploaded.
 
+** Conditions Required **:
+- The course creation task must be in a pending state or failed state.
 
-Kick start the course creation task. This endpoint should be called once the files for a course creation task has been successfully uploaded.  ** Conditions Required **: - The course creation task must be in a pending state or failed state.  ** Response **: - 200: The course creation task is successfully started. - 400: The course creation task is not in a pending state.
+** Response **:
+- 200: The course creation task is successfully started.
+- 400: The course creation task is not in a pending state.
 
 ### Example
 
@@ -7387,7 +8402,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 id = 56 # int | A unique integer value identifying this course creation task.
@@ -7437,9 +8451,13 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_users_course_creation_unit_create**
 > Unit ai_mentor_orgs_users_course_creation_unit_create(org, user_id, unit)
 
+API viewset for managing course units.
 
+This viewset allows platform administrators to retrieve and manage
+units within course subsections, and generate content for them.
 
-API viewset for managing course units.  This viewset allows platform administrators to retrieve and manage units within course subsections, and generate content for them.  Permissions:     - Restricted to platform administrators only
+Permissions:
+    - Restricted to platform administrators only
 
 ### Example
 
@@ -7462,7 +8480,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 org = 'org_example' # str | 
@@ -7498,7 +8515,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -7512,9 +8529,13 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_users_course_creation_unit_destroy**
 > ai_mentor_orgs_users_course_creation_unit_destroy(id, org, user_id)
 
+API viewset for managing course units.
 
+This viewset allows platform administrators to retrieve and manage
+units within course subsections, and generate content for them.
 
-API viewset for managing course units.  This viewset allows platform administrators to retrieve and manage units within course subsections, and generate content for them.  Permissions:     - Restricted to platform administrators only
+Permissions:
+    - Restricted to platform administrators only
 
 ### Example
 
@@ -7536,7 +8557,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 id = 56 # int | A unique integer value identifying this unit.
@@ -7584,9 +8604,20 @@ void (empty response body)
 # **ai_mentor_orgs_users_course_creation_unit_draft_content_create**
 > ai_mentor_orgs_users_course_creation_unit_draft_content_create(id, org, user_id, unit)
 
+Generate draft content for a specific unit.
 
+This action starts a background task to create draft content
+for the specified unit using AI.
 
-Generate draft content for a specific unit.  This action starts a background task to create draft content for the specified unit using AI.  Args:     request: The HTTP request.     pk: The primary key of the unit to generate content for.  Returns:     Response: A confirmation that the content generation task has been started.  Raises:     NotFound: If the specified unit does not exist.
+Args:
+    request: The HTTP request.
+    pk: The primary key of the unit to generate content for.
+
+Returns:
+    Response: A confirmation that the content generation task has been started.
+
+Raises:
+    NotFound: If the specified unit does not exist.
 
 ### Example
 
@@ -7609,7 +8640,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 id = 56 # int | A unique integer value identifying this unit.
@@ -7645,7 +8675,7 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: Not defined
 
 ### HTTP response details
@@ -7660,9 +8690,20 @@ void (empty response body)
 # **ai_mentor_orgs_users_course_creation_unit_draft_content_retrieve**
 > ai_mentor_orgs_users_course_creation_unit_draft_content_retrieve(id, org, user_id)
 
+Generate draft content for a specific unit.
 
+This action starts a background task to create draft content
+for the specified unit using AI.
 
-Generate draft content for a specific unit.  This action starts a background task to create draft content for the specified unit using AI.  Args:     request: The HTTP request.     pk: The primary key of the unit to generate content for.  Returns:     Response: A confirmation that the content generation task has been started.  Raises:     NotFound: If the specified unit does not exist.
+Args:
+    request: The HTTP request.
+    pk: The primary key of the unit to generate content for.
+
+Returns:
+    Response: A confirmation that the content generation task has been started.
+
+Raises:
+    NotFound: If the specified unit does not exist.
 
 ### Example
 
@@ -7684,7 +8725,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 id = 56 # int | A unique integer value identifying this unit.
@@ -7733,9 +8773,13 @@ void (empty response body)
 # **ai_mentor_orgs_users_course_creation_unit_list**
 > PaginatedUnitList ai_mentor_orgs_users_course_creation_unit_list(org, user_id, course=course, ordering=ordering, page=page, page_size=page_size, search=search, section=section, subsection=subsection, task=task)
 
+API viewset for managing course units.
 
+This viewset allows platform administrators to retrieve and manage
+units within course subsections, and generate content for them.
 
-API viewset for managing course units.  This viewset allows platform administrators to retrieve and manage units within course subsections, and generate content for them.  Permissions:     - Restricted to platform administrators only
+Permissions:
+    - Restricted to platform administrators only
 
 ### Example
 
@@ -7758,7 +8802,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 org = 'org_example' # str | 
@@ -7822,9 +8865,13 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_users_course_creation_unit_partial_update**
 > Unit ai_mentor_orgs_users_course_creation_unit_partial_update(id, org, user_id, patched_unit=patched_unit)
 
+API viewset for managing course units.
 
+This viewset allows platform administrators to retrieve and manage
+units within course subsections, and generate content for them.
 
-API viewset for managing course units.  This viewset allows platform administrators to retrieve and manage units within course subsections, and generate content for them.  Permissions:     - Restricted to platform administrators only
+Permissions:
+    - Restricted to platform administrators only
 
 ### Example
 
@@ -7848,7 +8895,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 id = 56 # int | A unique integer value identifying this unit.
@@ -7886,7 +8932,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -7900,9 +8946,13 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_users_course_creation_unit_retrieve**
 > Unit ai_mentor_orgs_users_course_creation_unit_retrieve(id, org, user_id)
 
+API viewset for managing course units.
 
+This viewset allows platform administrators to retrieve and manage
+units within course subsections, and generate content for them.
 
-API viewset for managing course units.  This viewset allows platform administrators to retrieve and manage units within course subsections, and generate content for them.  Permissions:     - Restricted to platform administrators only
+Permissions:
+    - Restricted to platform administrators only
 
 ### Example
 
@@ -7925,7 +8975,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 id = 56 # int | A unique integer value identifying this unit.
@@ -7975,9 +9024,13 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_users_course_creation_unit_update**
 > Unit ai_mentor_orgs_users_course_creation_unit_update(id, org, user_id, unit)
 
+API viewset for managing course units.
 
+This viewset allows platform administrators to retrieve and manage
+units within course subsections, and generate content for them.
 
-API viewset for managing course units.  This viewset allows platform administrators to retrieve and manage units within course subsections, and generate content for them.  Permissions:     - Restricted to platform administrators only
+Permissions:
+    - Restricted to platform administrators only
 
 ### Example
 
@@ -8000,7 +9053,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 id = 56 # int | A unique integer value identifying this unit.
@@ -8038,7 +9090,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -8052,9 +9104,12 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_users_create**
 > Mentor ai_mentor_orgs_users_create(org, user_id, mentor_create, department_id=department_id, filter_by=filter_by, metadata_key=metadata_key, metadata_value=metadata_value, return_session_information=return_session_information, visibility=visibility)
 
-
-
-Create a new mentor.  Body Parameters:     - name: Mentor name.     - unique_id: Unique identifier.     - platform_key: Associated platform.     - metadata: Additional mentor attributes.
+Create a new mentor.
+Body Parameters:
+    - name: Mentor name.
+    - unique_id: Unique identifier.
+    - platform_key: Associated platform.
+    - metadata: Additional mentor attributes.
 
 ### Example
 
@@ -8078,7 +9133,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 org = 'org_example' # str | 
@@ -8126,7 +9180,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -8140,9 +9194,18 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_users_create_mentor_wizard_create**
 > Mentor ai_mentor_orgs_users_create_mentor_wizard_create(org, user_id, mentor_wizard)
 
+Create a new mentor using the wizard interface.
 
+Args:
+    request: The HTTP request containing the mentor data.
+    org: The organization/tenant identifier.
+    user_id: The ID of the user creating the mentor.
 
-Create a new mentor using the wizard interface.  Args:     request: The HTTP request containing the mentor data.     org: The organization/tenant identifier.     user_id: The ID of the user creating the mentor.  Returns:     Response: The created mentor.  Raises:     BadRequest: If the provided data is invalid.
+Returns:
+    Response: The created mentor.
+
+Raises:
+    BadRequest: If the provided data is invalid.
 
 ### Example
 
@@ -8166,7 +9229,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 org = 'org_example' # str | 
@@ -8202,7 +9264,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -8217,9 +9279,18 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_users_custom_instruction_create**
 > CustomInstructionResponse ai_mentor_orgs_users_custom_instruction_create(org, user_id, custom_instruction_response=custom_instruction_response)
 
+Create a new custom instruction for a user.
 
+Args:
+    request: The HTTP request containing the custom instruction data.
+    org: The organization/tenant identifier.
+    user_id: The ID of the user to create custom instructions for.
 
-Create a new custom instruction for a user.  Args:     request: The HTTP request containing the custom instruction data.     org: The organization/tenant identifier.     user_id: The ID of the user to create custom instructions for.  Returns:     Response: The created custom instruction.  Raises:     BadRequest: If the provided data is invalid.
+Returns:
+    Response: The created custom instruction.
+
+Raises:
+    BadRequest: If the provided data is invalid.
 
 ### Example
 
@@ -8242,7 +9313,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 org = 'org_example' # str | 
@@ -8278,7 +9348,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -8293,9 +9363,18 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_users_custom_instruction_retrieve**
 > CustomInstructionResponse ai_mentor_orgs_users_custom_instruction_retrieve(org, user_id)
 
+Retrieve custom instructions for a specific user.
 
+Args:
+    request: The HTTP request.
+    org: The organization/tenant identifier.
+    user_id: The ID of the user to retrieve custom instructions for.
 
-Retrieve custom instructions for a specific user.  Args:     request: The HTTP request.     org: The organization/tenant identifier.     user_id: The ID of the user to retrieve custom instructions for.  Returns:     Response: The custom instructions for the user.  Raises:     NotFound: If no custom instructions exist for the user.
+Returns:
+    Response: The custom instructions for the user.
+
+Raises:
+    NotFound: If no custom instructions exist for the user.
 
 ### Example
 
@@ -8318,7 +9397,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 org = 'org_example' # str | 
@@ -8367,9 +9445,19 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_users_custom_instruction_update**
 > CustomInstructionResponse ai_mentor_orgs_users_custom_instruction_update(org, user_id, custom_instruction_response=custom_instruction_response)
 
+Update an existing custom instruction for a user.
 
+Args:
+    request: The HTTP request containing the updated custom instruction data.
+    org: The organization/tenant identifier.
+    user_id: The ID of the user to update custom instructions for.
 
-Update an existing custom instruction for a user.  Args:     request: The HTTP request containing the updated custom instruction data.     org: The organization/tenant identifier.     user_id: The ID of the user to update custom instructions for.  Returns:     Response: The updated custom instruction.  Raises:     BadRequest: If the provided data is invalid.     NotFound: If no custom instruction exists for the user.
+Returns:
+    Response: The updated custom instruction.
+
+Raises:
+    BadRequest: If the provided data is invalid.
+    NotFound: If no custom instruction exists for the user.
 
 ### Example
 
@@ -8392,7 +9480,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 org = 'org_example' # str | 
@@ -8428,7 +9515,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -8443,8 +9530,6 @@ Name | Type | Description  | Notes
 
 # **ai_mentor_orgs_users_destroy**
 > ai_mentor_orgs_users_destroy(name, org, user_id, department_id=department_id, filter_by=filter_by, metadata_key=metadata_key, metadata_value=metadata_value, return_session_information=return_session_information, visibility=visibility)
-
-
 
 Soft delete a mentor.
 
@@ -8468,7 +9553,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 name = 'name_example' # str | 
@@ -8525,12 +9609,1215 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **ai_mentor_orgs_users_disclaimer_agreements_create**
+> DisclaimerAgreement ai_mentor_orgs_users_disclaimer_agreements_create(org, user_id, disclaimer_agreement)
+
+API view for managing disclaimer agreements.
+
+This viewset provides Create Read and Delete operations for disclaimer agreements with different access levels:
+
+Platform Admins:
+- Can view all disclaimer agreements for their platform
+- Have full access to create (for themselves) and delete agreements for themselves and other users.
+- Results are paginated and can be filtered
+
+Students:
+- Can only view their own disclaimer agreements
+- Limited to agreements where they are the user
+- Results are paginated and can be filtered
+
+List endpoint returns paginated results with disclaimer agreement objects:
+
+```
+{
+    "count": int,
+    "next": str,
+    "previous": str,
+    "results": [
+        {
+            "id": int,
+            "user": str,
+            "disclaimer": int,
+            "agreed_at": datetime,
+
+        },
+        ...
+    ]
+}
+```
+
+Detail endpoints return a single disclaimer agreement object with the same structure
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.disclaimer_agreement import DisclaimerAgreement
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+# Create an instance of the API class
+api_instance = iblai.AiMentorApi(api_client)
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+disclaimer_agreement = iblai.DisclaimerAgreement() # DisclaimerAgreement | 
+
+try:
+    api_response = api_instance.ai_mentor_orgs_users_disclaimer_agreements_create(org, user_id, disclaimer_agreement)
+    print("The response of AiMentorApi->ai_mentor_orgs_users_disclaimer_agreements_create:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiMentorApi->ai_mentor_orgs_users_disclaimer_agreements_create: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+ **disclaimer_agreement** | [**DisclaimerAgreement**](DisclaimerAgreement.md)|  | 
+
+### Return type
+
+[**DisclaimerAgreement**](DisclaimerAgreement.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ai_mentor_orgs_users_disclaimer_agreements_destroy**
+> ai_mentor_orgs_users_disclaimer_agreements_destroy(id, org, user_id)
+
+API view for managing disclaimer agreements.
+
+This viewset provides Create Read and Delete operations for disclaimer agreements with different access levels:
+
+Platform Admins:
+- Can view all disclaimer agreements for their platform
+- Have full access to create (for themselves) and delete agreements for themselves and other users.
+- Results are paginated and can be filtered
+
+Students:
+- Can only view their own disclaimer agreements
+- Limited to agreements where they are the user
+- Results are paginated and can be filtered
+
+List endpoint returns paginated results with disclaimer agreement objects:
+
+```
+{
+    "count": int,
+    "next": str,
+    "previous": str,
+    "results": [
+        {
+            "id": int,
+            "user": str,
+            "disclaimer": int,
+            "agreed_at": datetime,
+
+        },
+        ...
+    ]
+}
+```
+
+Detail endpoints return a single disclaimer agreement object with the same structure
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+# Create an instance of the API class
+api_instance = iblai.AiMentorApi(api_client)
+id = 56 # int | A unique integer value identifying this disclaimer agreement.
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+
+try:
+    api_instance.ai_mentor_orgs_users_disclaimer_agreements_destroy(id, org, user_id)
+except Exception as e:
+    print("Exception when calling AiMentorApi->ai_mentor_orgs_users_disclaimer_agreements_destroy: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| A unique integer value identifying this disclaimer agreement. | 
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**204** | No response body |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ai_mentor_orgs_users_disclaimer_agreements_list**
+> PaginatedDisclaimerAgreementList ai_mentor_orgs_users_disclaimer_agreements_list(org, user_id, disclaimer=disclaimer, mentor_id=mentor_id, page=page, page_size=page_size, username=username)
+
+API view for managing disclaimer agreements.
+
+This viewset provides Create Read and Delete operations for disclaimer agreements with different access levels:
+
+Platform Admins:
+- Can view all disclaimer agreements for their platform
+- Have full access to create (for themselves) and delete agreements for themselves and other users.
+- Results are paginated and can be filtered
+
+Students:
+- Can only view their own disclaimer agreements
+- Limited to agreements where they are the user
+- Results are paginated and can be filtered
+
+List endpoint returns paginated results with disclaimer agreement objects:
+
+```
+{
+    "count": int,
+    "next": str,
+    "previous": str,
+    "results": [
+        {
+            "id": int,
+            "user": str,
+            "disclaimer": int,
+            "agreed_at": datetime,
+
+        },
+        ...
+    ]
+}
+```
+
+Detail endpoints return a single disclaimer agreement object with the same structure
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.paginated_disclaimer_agreement_list import PaginatedDisclaimerAgreementList
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+# Create an instance of the API class
+api_instance = iblai.AiMentorApi(api_client)
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+disclaimer = 56 # int |  (optional)
+mentor_id = 'mentor_id_example' # str |  (optional)
+page = 56 # int | A page number within the paginated result set. (optional)
+page_size = 56 # int | Number of results to return per page. (optional)
+username = 'username_example' # str |  (optional)
+
+try:
+    api_response = api_instance.ai_mentor_orgs_users_disclaimer_agreements_list(org, user_id, disclaimer=disclaimer, mentor_id=mentor_id, page=page, page_size=page_size, username=username)
+    print("The response of AiMentorApi->ai_mentor_orgs_users_disclaimer_agreements_list:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiMentorApi->ai_mentor_orgs_users_disclaimer_agreements_list: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+ **disclaimer** | **int**|  | [optional] 
+ **mentor_id** | **str**|  | [optional] 
+ **page** | **int**| A page number within the paginated result set. | [optional] 
+ **page_size** | **int**| Number of results to return per page. | [optional] 
+ **username** | **str**|  | [optional] 
+
+### Return type
+
+[**PaginatedDisclaimerAgreementList**](PaginatedDisclaimerAgreementList.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ai_mentor_orgs_users_disclaimer_agreements_retrieve**
+> DisclaimerAgreement ai_mentor_orgs_users_disclaimer_agreements_retrieve(id, org, user_id)
+
+API view for managing disclaimer agreements.
+
+This viewset provides Create Read and Delete operations for disclaimer agreements with different access levels:
+
+Platform Admins:
+- Can view all disclaimer agreements for their platform
+- Have full access to create (for themselves) and delete agreements for themselves and other users.
+- Results are paginated and can be filtered
+
+Students:
+- Can only view their own disclaimer agreements
+- Limited to agreements where they are the user
+- Results are paginated and can be filtered
+
+List endpoint returns paginated results with disclaimer agreement objects:
+
+```
+{
+    "count": int,
+    "next": str,
+    "previous": str,
+    "results": [
+        {
+            "id": int,
+            "user": str,
+            "disclaimer": int,
+            "agreed_at": datetime,
+
+        },
+        ...
+    ]
+}
+```
+
+Detail endpoints return a single disclaimer agreement object with the same structure
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.disclaimer_agreement import DisclaimerAgreement
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+# Create an instance of the API class
+api_instance = iblai.AiMentorApi(api_client)
+id = 56 # int | A unique integer value identifying this disclaimer agreement.
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+
+try:
+    api_response = api_instance.ai_mentor_orgs_users_disclaimer_agreements_retrieve(id, org, user_id)
+    print("The response of AiMentorApi->ai_mentor_orgs_users_disclaimer_agreements_retrieve:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiMentorApi->ai_mentor_orgs_users_disclaimer_agreements_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| A unique integer value identifying this disclaimer agreement. | 
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+
+### Return type
+
+[**DisclaimerAgreement**](DisclaimerAgreement.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ai_mentor_orgs_users_disclaimers_add_mentor_create**
+> Disclaimer ai_mentor_orgs_users_disclaimers_add_mentor_create(id, org, user_id, add_mentor_to_disclaimer)
+
+Add mentor to disclaimer
+
+Add a mentor to a disclaimer with `mentor` scope. Only platform admins can perform this action.
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.add_mentor_to_disclaimer import AddMentorToDisclaimer
+from iblai.models.disclaimer import Disclaimer
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+# Create an instance of the API class
+api_instance = iblai.AiMentorApi(api_client)
+id = 56 # int | A unique integer value identifying this disclaimer.
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+add_mentor_to_disclaimer = iblai.AddMentorToDisclaimer() # AddMentorToDisclaimer | 
+
+try:
+    # Add mentor to disclaimer
+    api_response = api_instance.ai_mentor_orgs_users_disclaimers_add_mentor_create(id, org, user_id, add_mentor_to_disclaimer)
+    print("The response of AiMentorApi->ai_mentor_orgs_users_disclaimers_add_mentor_create:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiMentorApi->ai_mentor_orgs_users_disclaimers_add_mentor_create: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| A unique integer value identifying this disclaimer. | 
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+ **add_mentor_to_disclaimer** | [**AddMentorToDisclaimer**](AddMentorToDisclaimer.md)|  | 
+
+### Return type
+
+[**Disclaimer**](Disclaimer.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**400** | Bad Request |  -  |
+**403** | Permission Denied |  -  |
+**404** | Not Found |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ai_mentor_orgs_users_disclaimers_create**
+> Disclaimer ai_mentor_orgs_users_disclaimers_create(org, user_id, disclaimer)
+
+ViewSet for managing mentor disclaimers.
+
+This viewset provides endpoints for creating and managing mentor disclaimers, which are
+statements or information that mentors need to share with students.
+
+Permissions:
+    - Platform administrators have full CRUD access
+    - Students have read-only access
+    - Unauthenticated users have no access
+
+Endpoints:
+    - GET /api/orgs/{org}/users/{user_id}/disclaimers/ - List all disclaimers
+    - POST /api/orgs/{org}/users/{user_id}/disclaimers/ - Create a new disclaimer
+    - GET /api/orgs/{org}/users/{user_id}/disclaimers/{id}/ - Retrieve a specific disclaimer
+    - PUT/PATCH /api/orgs/{org}/users/{user_id}/disclaimers/{id}/ - Update a disclaimer
+    - POST /api/orgs/{org}/users/{user_id}/disclaimers/{id}/add_mentor/ - Add mentor to disclaimer
+    - POST /api/orgs/{org}/users/{user_id}/disclaimers/{id}/remove_mentor/ - Remove mentor from disclaimer
+
+Query Parameters:
+    - Supports filtering via DjangoFilterBackend
+    - See DisclaimerFilterSet for available filters
+
+Returns:
+    List endpoint returns paginated results with disclaimer objects:
+
+    ```
+    {
+        "count": int,
+        "next": str,
+        "previous": str,
+        "results": [
+            {
+                "id": int,
+                "title": str,
+                "content": str,
+                "mentor": str,
+                "platform": str,
+                "created_at": datetime,
+                "updated_at": datetime
+            },
+            ...
+        ]
+    }
+    ```
+
+    Detail endpoints return a single disclaimer object with the same structure
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.disclaimer import Disclaimer
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+# Create an instance of the API class
+api_instance = iblai.AiMentorApi(api_client)
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+disclaimer = iblai.Disclaimer() # Disclaimer | 
+
+try:
+    api_response = api_instance.ai_mentor_orgs_users_disclaimers_create(org, user_id, disclaimer)
+    print("The response of AiMentorApi->ai_mentor_orgs_users_disclaimers_create:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiMentorApi->ai_mentor_orgs_users_disclaimers_create: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+ **disclaimer** | [**Disclaimer**](Disclaimer.md)|  | 
+
+### Return type
+
+[**Disclaimer**](Disclaimer.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ai_mentor_orgs_users_disclaimers_list**
+> PaginatedDisclaimerList ai_mentor_orgs_users_disclaimers_list(org, user_id, active=active, mentor_id=mentor_id, ordering=ordering, page=page, page_size=page_size, scope=scope, search=search)
+
+ViewSet for managing mentor disclaimers.
+
+This viewset provides endpoints for creating and managing mentor disclaimers, which are
+statements or information that mentors need to share with students.
+
+Permissions:
+    - Platform administrators have full CRUD access
+    - Students have read-only access
+    - Unauthenticated users have no access
+
+Endpoints:
+    - GET /api/orgs/{org}/users/{user_id}/disclaimers/ - List all disclaimers
+    - POST /api/orgs/{org}/users/{user_id}/disclaimers/ - Create a new disclaimer
+    - GET /api/orgs/{org}/users/{user_id}/disclaimers/{id}/ - Retrieve a specific disclaimer
+    - PUT/PATCH /api/orgs/{org}/users/{user_id}/disclaimers/{id}/ - Update a disclaimer
+    - POST /api/orgs/{org}/users/{user_id}/disclaimers/{id}/add_mentor/ - Add mentor to disclaimer
+    - POST /api/orgs/{org}/users/{user_id}/disclaimers/{id}/remove_mentor/ - Remove mentor from disclaimer
+
+Query Parameters:
+    - Supports filtering via DjangoFilterBackend
+    - See DisclaimerFilterSet for available filters
+
+Returns:
+    List endpoint returns paginated results with disclaimer objects:
+
+    ```
+    {
+        "count": int,
+        "next": str,
+        "previous": str,
+        "results": [
+            {
+                "id": int,
+                "title": str,
+                "content": str,
+                "mentor": str,
+                "platform": str,
+                "created_at": datetime,
+                "updated_at": datetime
+            },
+            ...
+        ]
+    }
+    ```
+
+    Detail endpoints return a single disclaimer object with the same structure
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.paginated_disclaimer_list import PaginatedDisclaimerList
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+# Create an instance of the API class
+api_instance = iblai.AiMentorApi(api_client)
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+active = True # bool |  (optional)
+mentor_id = 'mentor_id_example' # str |  (optional)
+ordering = 'ordering_example' # str | Which field to use when ordering the results. (optional)
+page = 56 # int | A page number within the paginated result set. (optional)
+page_size = 56 # int | Number of results to return per page. (optional)
+scope = 'scope_example' # str | * `platform` - Platform * `mentor` - Mentor (optional)
+search = 'search_example' # str | A search term. (optional)
+
+try:
+    api_response = api_instance.ai_mentor_orgs_users_disclaimers_list(org, user_id, active=active, mentor_id=mentor_id, ordering=ordering, page=page, page_size=page_size, scope=scope, search=search)
+    print("The response of AiMentorApi->ai_mentor_orgs_users_disclaimers_list:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiMentorApi->ai_mentor_orgs_users_disclaimers_list: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+ **active** | **bool**|  | [optional] 
+ **mentor_id** | **str**|  | [optional] 
+ **ordering** | **str**| Which field to use when ordering the results. | [optional] 
+ **page** | **int**| A page number within the paginated result set. | [optional] 
+ **page_size** | **int**| Number of results to return per page. | [optional] 
+ **scope** | **str**| * &#x60;platform&#x60; - Platform * &#x60;mentor&#x60; - Mentor | [optional] 
+ **search** | **str**| A search term. | [optional] 
+
+### Return type
+
+[**PaginatedDisclaimerList**](PaginatedDisclaimerList.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ai_mentor_orgs_users_disclaimers_partial_update**
+> Disclaimer ai_mentor_orgs_users_disclaimers_partial_update(id, org, user_id, patched_disclaimer=patched_disclaimer)
+
+ViewSet for managing mentor disclaimers.
+
+This viewset provides endpoints for creating and managing mentor disclaimers, which are
+statements or information that mentors need to share with students.
+
+Permissions:
+    - Platform administrators have full CRUD access
+    - Students have read-only access
+    - Unauthenticated users have no access
+
+Endpoints:
+    - GET /api/orgs/{org}/users/{user_id}/disclaimers/ - List all disclaimers
+    - POST /api/orgs/{org}/users/{user_id}/disclaimers/ - Create a new disclaimer
+    - GET /api/orgs/{org}/users/{user_id}/disclaimers/{id}/ - Retrieve a specific disclaimer
+    - PUT/PATCH /api/orgs/{org}/users/{user_id}/disclaimers/{id}/ - Update a disclaimer
+    - POST /api/orgs/{org}/users/{user_id}/disclaimers/{id}/add_mentor/ - Add mentor to disclaimer
+    - POST /api/orgs/{org}/users/{user_id}/disclaimers/{id}/remove_mentor/ - Remove mentor from disclaimer
+
+Query Parameters:
+    - Supports filtering via DjangoFilterBackend
+    - See DisclaimerFilterSet for available filters
+
+Returns:
+    List endpoint returns paginated results with disclaimer objects:
+
+    ```
+    {
+        "count": int,
+        "next": str,
+        "previous": str,
+        "results": [
+            {
+                "id": int,
+                "title": str,
+                "content": str,
+                "mentor": str,
+                "platform": str,
+                "created_at": datetime,
+                "updated_at": datetime
+            },
+            ...
+        ]
+    }
+    ```
+
+    Detail endpoints return a single disclaimer object with the same structure
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.disclaimer import Disclaimer
+from iblai.models.patched_disclaimer import PatchedDisclaimer
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+# Create an instance of the API class
+api_instance = iblai.AiMentorApi(api_client)
+id = 56 # int | A unique integer value identifying this disclaimer.
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+patched_disclaimer = iblai.PatchedDisclaimer() # PatchedDisclaimer |  (optional)
+
+try:
+    api_response = api_instance.ai_mentor_orgs_users_disclaimers_partial_update(id, org, user_id, patched_disclaimer=patched_disclaimer)
+    print("The response of AiMentorApi->ai_mentor_orgs_users_disclaimers_partial_update:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiMentorApi->ai_mentor_orgs_users_disclaimers_partial_update: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| A unique integer value identifying this disclaimer. | 
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+ **patched_disclaimer** | [**PatchedDisclaimer**](PatchedDisclaimer.md)|  | [optional] 
+
+### Return type
+
+[**Disclaimer**](Disclaimer.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ai_mentor_orgs_users_disclaimers_remove_mentor_create**
+> Disclaimer ai_mentor_orgs_users_disclaimers_remove_mentor_create(id, org, user_id, remove_mentor_from_disclaimer)
+
+Remove mentor from disclaimer
+
+Remove a mentor from a disclaimer with `mentor` scope. Only platform admins can perform this action. Validates that at least one mentor remains after removal.
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.disclaimer import Disclaimer
+from iblai.models.remove_mentor_from_disclaimer import RemoveMentorFromDisclaimer
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+# Create an instance of the API class
+api_instance = iblai.AiMentorApi(api_client)
+id = 56 # int | A unique integer value identifying this disclaimer.
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+remove_mentor_from_disclaimer = iblai.RemoveMentorFromDisclaimer() # RemoveMentorFromDisclaimer | 
+
+try:
+    # Remove mentor from disclaimer
+    api_response = api_instance.ai_mentor_orgs_users_disclaimers_remove_mentor_create(id, org, user_id, remove_mentor_from_disclaimer)
+    print("The response of AiMentorApi->ai_mentor_orgs_users_disclaimers_remove_mentor_create:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiMentorApi->ai_mentor_orgs_users_disclaimers_remove_mentor_create: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| A unique integer value identifying this disclaimer. | 
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+ **remove_mentor_from_disclaimer** | [**RemoveMentorFromDisclaimer**](RemoveMentorFromDisclaimer.md)|  | 
+
+### Return type
+
+[**Disclaimer**](Disclaimer.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**400** | Bad Request |  -  |
+**403** | Permission Denied |  -  |
+**404** | Not Found |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ai_mentor_orgs_users_disclaimers_retrieve**
+> Disclaimer ai_mentor_orgs_users_disclaimers_retrieve(id, org, user_id)
+
+ViewSet for managing mentor disclaimers.
+
+This viewset provides endpoints for creating and managing mentor disclaimers, which are
+statements or information that mentors need to share with students.
+
+Permissions:
+    - Platform administrators have full CRUD access
+    - Students have read-only access
+    - Unauthenticated users have no access
+
+Endpoints:
+    - GET /api/orgs/{org}/users/{user_id}/disclaimers/ - List all disclaimers
+    - POST /api/orgs/{org}/users/{user_id}/disclaimers/ - Create a new disclaimer
+    - GET /api/orgs/{org}/users/{user_id}/disclaimers/{id}/ - Retrieve a specific disclaimer
+    - PUT/PATCH /api/orgs/{org}/users/{user_id}/disclaimers/{id}/ - Update a disclaimer
+    - POST /api/orgs/{org}/users/{user_id}/disclaimers/{id}/add_mentor/ - Add mentor to disclaimer
+    - POST /api/orgs/{org}/users/{user_id}/disclaimers/{id}/remove_mentor/ - Remove mentor from disclaimer
+
+Query Parameters:
+    - Supports filtering via DjangoFilterBackend
+    - See DisclaimerFilterSet for available filters
+
+Returns:
+    List endpoint returns paginated results with disclaimer objects:
+
+    ```
+    {
+        "count": int,
+        "next": str,
+        "previous": str,
+        "results": [
+            {
+                "id": int,
+                "title": str,
+                "content": str,
+                "mentor": str,
+                "platform": str,
+                "created_at": datetime,
+                "updated_at": datetime
+            },
+            ...
+        ]
+    }
+    ```
+
+    Detail endpoints return a single disclaimer object with the same structure
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.disclaimer import Disclaimer
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+# Create an instance of the API class
+api_instance = iblai.AiMentorApi(api_client)
+id = 56 # int | A unique integer value identifying this disclaimer.
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+
+try:
+    api_response = api_instance.ai_mentor_orgs_users_disclaimers_retrieve(id, org, user_id)
+    print("The response of AiMentorApi->ai_mentor_orgs_users_disclaimers_retrieve:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiMentorApi->ai_mentor_orgs_users_disclaimers_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| A unique integer value identifying this disclaimer. | 
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+
+### Return type
+
+[**Disclaimer**](Disclaimer.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ai_mentor_orgs_users_disclaimers_update**
+> Disclaimer ai_mentor_orgs_users_disclaimers_update(id, org, user_id, disclaimer)
+
+ViewSet for managing mentor disclaimers.
+
+This viewset provides endpoints for creating and managing mentor disclaimers, which are
+statements or information that mentors need to share with students.
+
+Permissions:
+    - Platform administrators have full CRUD access
+    - Students have read-only access
+    - Unauthenticated users have no access
+
+Endpoints:
+    - GET /api/orgs/{org}/users/{user_id}/disclaimers/ - List all disclaimers
+    - POST /api/orgs/{org}/users/{user_id}/disclaimers/ - Create a new disclaimer
+    - GET /api/orgs/{org}/users/{user_id}/disclaimers/{id}/ - Retrieve a specific disclaimer
+    - PUT/PATCH /api/orgs/{org}/users/{user_id}/disclaimers/{id}/ - Update a disclaimer
+    - POST /api/orgs/{org}/users/{user_id}/disclaimers/{id}/add_mentor/ - Add mentor to disclaimer
+    - POST /api/orgs/{org}/users/{user_id}/disclaimers/{id}/remove_mentor/ - Remove mentor from disclaimer
+
+Query Parameters:
+    - Supports filtering via DjangoFilterBackend
+    - See DisclaimerFilterSet for available filters
+
+Returns:
+    List endpoint returns paginated results with disclaimer objects:
+
+    ```
+    {
+        "count": int,
+        "next": str,
+        "previous": str,
+        "results": [
+            {
+                "id": int,
+                "title": str,
+                "content": str,
+                "mentor": str,
+                "platform": str,
+                "created_at": datetime,
+                "updated_at": datetime
+            },
+            ...
+        ]
+    }
+    ```
+
+    Detail endpoints return a single disclaimer object with the same structure
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.disclaimer import Disclaimer
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+# Create an instance of the API class
+api_instance = iblai.AiMentorApi(api_client)
+id = 56 # int | A unique integer value identifying this disclaimer.
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+disclaimer = iblai.Disclaimer() # Disclaimer | 
+
+try:
+    api_response = api_instance.ai_mentor_orgs_users_disclaimers_update(id, org, user_id, disclaimer)
+    print("The response of AiMentorApi->ai_mentor_orgs_users_disclaimers_update:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiMentorApi->ai_mentor_orgs_users_disclaimers_update: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| A unique integer value identifying this disclaimer. | 
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+ **disclaimer** | [**Disclaimer**](Disclaimer.md)|  | 
+
+### Return type
+
+[**Disclaimer**](Disclaimer.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **ai_mentor_orgs_users_downloads_tasks_retrieve**
 > ChatHistoryItem ai_mentor_orgs_users_downloads_tasks_retrieve(org, task_id, user_id, to_csv=to_csv)
 
+Retrieves the chat history for a user if the export task is ready.
 
+This Endpoint to download user chathistory.
 
-Retrieves the chat history for a user if the export task is ready.  This Endpoint to download user chathistory.  Accessible to tenant admins and students.  Returns:      200: When task is not ready.      200: chat history object      400: When data is not valid.
+Accessible to tenant admins and students.
+
+Returns:
+
+    200: When task is not ready.
+
+    200: chat history object
+
+    400: When data is not valid.
 
 ### Example
 
@@ -8553,7 +10840,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 org = 'org_example' # str | 
@@ -8605,9 +10891,49 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_users_edx_memory_destroy**
 > ai_mentor_orgs_users_edx_memory_destroy(id, org, user_id)
 
+Endpoints to fetch and delete Edx stored Memory information stored for a user and a corresponding edx course they have interracted with.
+This information is passed to the corresponding mentor so the mentor has context information
+about the course and unit that the user last interracted with.
 
+There can be only one UserEdxMemory instance per student and course_id.
 
-Endpoints to fetch and delete Edx stored Memory information stored for a user and a corresponding edx course they have interracted with. This information is passed to the corresponding mentor so the mentor has context information about the course and unit that the user last interracted with.  There can be only one UserEdxMemory instance per student and course_id.  Url Args:     org (str): The organization's platform key.     user_id (str): The username  identifier of the individual.  Returns:      200: A paginated list of UserEdxMemory objects  Examples:      - List all memories         GET: /api/ai-mentor/orgs/main/users/johndoe/edx-memory/          Request:        None         Response:       {                             \"count\": 0,                             \"next\": null,                             \"previous\": null,                             \"results\": [{                                 \"student\": 1,                                 \"course_id\": \"course-v1:main+CARBON+2024_Fall\",                                 \"data\": {},                                 \"date_created\": \"2024-06-25T15:30:26.257140\",                                 \"last_modified\": \"2024-06-25T15:30:26.257140\"                             }]                         }     - Get a single UserEdxMemory object         GET: /api/ai-mentor/orgs/main/users/johndoe/edx-memory/1/          Request:        None         Response:       {                             \"student\": 1,                             \"course_id\": \"course-v1:main+CARBON+2024_Fall\",                             \"data\": {},                             \"date_created\": \"2024-06-25T15:30:26.257140\",                             \"last_modified\": \"2024-06-25T15:30:26.257140\"                         }
+Url Args:
+    org (str): The organization's platform key.
+    user_id (str): The username  identifier of the individual.
+
+Returns:
+
+    200: A paginated list of UserEdxMemory objects
+
+Examples:
+
+    - List all memories
+        GET: /api/ai-mentor/orgs/main/users/johndoe/edx-memory/
+
+        Request:        None
+        Response:       {
+                            "count": 0,
+                            "next": null,
+                            "previous": null,
+                            "results": [{
+                                "student": 1,
+                                "course_id": "course-v1:main+CARBON+2024_Fall",
+                                "data": {},
+                                "date_created": "2024-06-25T15:30:26.257140",
+                                "last_modified": "2024-06-25T15:30:26.257140"
+                            }]
+                        }
+    - Get a single UserEdxMemory object
+        GET: /api/ai-mentor/orgs/main/users/johndoe/edx-memory/1/
+
+        Request:        None
+        Response:       {
+                            "student": 1,
+                            "course_id": "course-v1:main+CARBON+2024_Fall",
+                            "data": {},
+                            "date_created": "2024-06-25T15:30:26.257140",
+                            "last_modified": "2024-06-25T15:30:26.257140"
+                        }
 
 ### Example
 
@@ -8629,7 +10955,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 id = 56 # int | A unique integer value identifying this user edx memory.
@@ -8677,9 +11002,49 @@ void (empty response body)
 # **ai_mentor_orgs_users_edx_memory_list**
 > PaginatedUserEdxMemoryList ai_mentor_orgs_users_edx_memory_list(org, user_id, course_id=course_id, ordering=ordering, page=page, page_size=page_size, student=student, username=username)
 
+Endpoints to fetch and delete Edx stored Memory information stored for a user and a corresponding edx course they have interracted with.
+This information is passed to the corresponding mentor so the mentor has context information
+about the course and unit that the user last interracted with.
 
+There can be only one UserEdxMemory instance per student and course_id.
 
-Endpoints to fetch and delete Edx stored Memory information stored for a user and a corresponding edx course they have interracted with. This information is passed to the corresponding mentor so the mentor has context information about the course and unit that the user last interracted with.  There can be only one UserEdxMemory instance per student and course_id.  Url Args:     org (str): The organization's platform key.     user_id (str): The username  identifier of the individual.  Returns:      200: A paginated list of UserEdxMemory objects  Examples:      - List all memories         GET: /api/ai-mentor/orgs/main/users/johndoe/edx-memory/          Request:        None         Response:       {                             \"count\": 0,                             \"next\": null,                             \"previous\": null,                             \"results\": [{                                 \"student\": 1,                                 \"course_id\": \"course-v1:main+CARBON+2024_Fall\",                                 \"data\": {},                                 \"date_created\": \"2024-06-25T15:30:26.257140\",                                 \"last_modified\": \"2024-06-25T15:30:26.257140\"                             }]                         }     - Get a single UserEdxMemory object         GET: /api/ai-mentor/orgs/main/users/johndoe/edx-memory/1/          Request:        None         Response:       {                             \"student\": 1,                             \"course_id\": \"course-v1:main+CARBON+2024_Fall\",                             \"data\": {},                             \"date_created\": \"2024-06-25T15:30:26.257140\",                             \"last_modified\": \"2024-06-25T15:30:26.257140\"                         }
+Url Args:
+    org (str): The organization's platform key.
+    user_id (str): The username  identifier of the individual.
+
+Returns:
+
+    200: A paginated list of UserEdxMemory objects
+
+Examples:
+
+    - List all memories
+        GET: /api/ai-mentor/orgs/main/users/johndoe/edx-memory/
+
+        Request:        None
+        Response:       {
+                            "count": 0,
+                            "next": null,
+                            "previous": null,
+                            "results": [{
+                                "student": 1,
+                                "course_id": "course-v1:main+CARBON+2024_Fall",
+                                "data": {},
+                                "date_created": "2024-06-25T15:30:26.257140",
+                                "last_modified": "2024-06-25T15:30:26.257140"
+                            }]
+                        }
+    - Get a single UserEdxMemory object
+        GET: /api/ai-mentor/orgs/main/users/johndoe/edx-memory/1/
+
+        Request:        None
+        Response:       {
+                            "student": 1,
+                            "course_id": "course-v1:main+CARBON+2024_Fall",
+                            "data": {},
+                            "date_created": "2024-06-25T15:30:26.257140",
+                            "last_modified": "2024-06-25T15:30:26.257140"
+                        }
 
 ### Example
 
@@ -8702,7 +11067,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 org = 'org_example' # str | 
@@ -8762,9 +11126,49 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_users_edx_memory_retrieve**
 > UserEdxMemory ai_mentor_orgs_users_edx_memory_retrieve(id, org, user_id)
 
+Endpoints to fetch and delete Edx stored Memory information stored for a user and a corresponding edx course they have interracted with.
+This information is passed to the corresponding mentor so the mentor has context information
+about the course and unit that the user last interracted with.
 
+There can be only one UserEdxMemory instance per student and course_id.
 
-Endpoints to fetch and delete Edx stored Memory information stored for a user and a corresponding edx course they have interracted with. This information is passed to the corresponding mentor so the mentor has context information about the course and unit that the user last interracted with.  There can be only one UserEdxMemory instance per student and course_id.  Url Args:     org (str): The organization's platform key.     user_id (str): The username  identifier of the individual.  Returns:      200: A paginated list of UserEdxMemory objects  Examples:      - List all memories         GET: /api/ai-mentor/orgs/main/users/johndoe/edx-memory/          Request:        None         Response:       {                             \"count\": 0,                             \"next\": null,                             \"previous\": null,                             \"results\": [{                                 \"student\": 1,                                 \"course_id\": \"course-v1:main+CARBON+2024_Fall\",                                 \"data\": {},                                 \"date_created\": \"2024-06-25T15:30:26.257140\",                                 \"last_modified\": \"2024-06-25T15:30:26.257140\"                             }]                         }     - Get a single UserEdxMemory object         GET: /api/ai-mentor/orgs/main/users/johndoe/edx-memory/1/          Request:        None         Response:       {                             \"student\": 1,                             \"course_id\": \"course-v1:main+CARBON+2024_Fall\",                             \"data\": {},                             \"date_created\": \"2024-06-25T15:30:26.257140\",                             \"last_modified\": \"2024-06-25T15:30:26.257140\"                         }
+Url Args:
+    org (str): The organization's platform key.
+    user_id (str): The username  identifier of the individual.
+
+Returns:
+
+    200: A paginated list of UserEdxMemory objects
+
+Examples:
+
+    - List all memories
+        GET: /api/ai-mentor/orgs/main/users/johndoe/edx-memory/
+
+        Request:        None
+        Response:       {
+                            "count": 0,
+                            "next": null,
+                            "previous": null,
+                            "results": [{
+                                "student": 1,
+                                "course_id": "course-v1:main+CARBON+2024_Fall",
+                                "data": {},
+                                "date_created": "2024-06-25T15:30:26.257140",
+                                "last_modified": "2024-06-25T15:30:26.257140"
+                            }]
+                        }
+    - Get a single UserEdxMemory object
+        GET: /api/ai-mentor/orgs/main/users/johndoe/edx-memory/1/
+
+        Request:        None
+        Response:       {
+                            "student": 1,
+                            "course_id": "course-v1:main+CARBON+2024_Fall",
+                            "data": {},
+                            "date_created": "2024-06-25T15:30:26.257140",
+                            "last_modified": "2024-06-25T15:30:26.257140"
+                        }
 
 ### Example
 
@@ -8787,7 +11191,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 id = 56 # int | A unique integer value identifying this user edx memory.
@@ -8837,9 +11240,24 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_users_elevenlabs_voice_create**
 > ElevenlabsCustomVoiceResponse ai_mentor_orgs_users_elevenlabs_voice_create(org, user_id, name, files)
 
+Create a new custom Elevenlabs voice.
 
+This endpoint allows users to upload audio files to create a custom voice
+that can be used with the Elevenlabs text-to-speech service.
 
-Create a new custom Elevenlabs voice.  This endpoint allows users to upload audio files to create a custom voice that can be used with the Elevenlabs text-to-speech service.  Note: The audio files' total length should be longer than 1 minute and the total size should be smaller than 11 MiB.  Args:     request: The HTTP request containing the voice name and audio files.     org: The organization/tenant identifier.     user_id: The ID of the user creating the voice.  Returns:     Response: The created voice configuration.  Raises:     BadRequest: If the provided data is invalid, credentials are not found, or there's an API error.
+Note: The audio files' total length should be longer than 1 minute and
+the total size should be smaller than 11 MiB.
+
+Args:
+    request: The HTTP request containing the voice name and audio files.
+    org: The organization/tenant identifier.
+    user_id: The ID of the user creating the voice.
+
+Returns:
+    Response: The created voice configuration.
+
+Raises:
+    BadRequest: If the provided data is invalid, credentials are not found, or there's an API error.
 
 ### Example
 
@@ -8862,7 +11280,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 org = 'org_example' # str | 
@@ -8915,9 +11332,22 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_users_elevenlabs_voice_destroy**
 > ai_mentor_orgs_users_elevenlabs_voice_destroy(org, user_id, voice_name)
 
+Delete an existing Elevenlabs voice configuration.
 
+This endpoint removes a custom voice configuration both from the local database
+and from the Elevenlabs remote API if applicable.
 
-Delete an existing Elevenlabs voice configuration.  This endpoint removes a custom voice configuration both from the local database and from the Elevenlabs remote API if applicable.  Args:     request: The HTTP request.     org: The organization/tenant identifier.     user_id: The ID of the user who owns the voice.     voice_name: The name of the voice to delete.  Returns:     Response: A confirmation of the deletion.  Raises:     BadRequest: If the Elevenlabs credentials are not found or there's an API error.
+Args:
+    request: The HTTP request.
+    org: The organization/tenant identifier.
+    user_id: The ID of the user who owns the voice.
+    voice_name: The name of the voice to delete.
+
+Returns:
+    Response: A confirmation of the deletion.
+
+Raises:
+    BadRequest: If the Elevenlabs credentials are not found or there's an API error.
 
 ### Example
 
@@ -8939,7 +11369,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 org = 'org_example' # str | 
@@ -8988,9 +11417,21 @@ void (empty response body)
 # **ai_mentor_orgs_users_elevenlabs_voice_list**
 > List[ElevenlabsCustomVoiceResponse] ai_mentor_orgs_users_elevenlabs_voice_list(org, user_id)
 
+Retrieve a list of Elevenlabs voices available to a user.
 
+This endpoint returns both custom voices created by the user
+and premade voices available to all users.
 
-Retrieve a list of Elevenlabs voices available to a user.  This endpoint returns both custom voices created by the user and premade voices available to all users.  Args:     request: The HTTP request.     org: The organization/tenant identifier.     user_id: The ID of the user to retrieve voices for.  Returns:     Response: A list of available Elevenlabs voices.  Raises:     NotFound: If the specified user does not exist.
+Args:
+    request: The HTTP request.
+    org: The organization/tenant identifier.
+    user_id: The ID of the user to retrieve voices for.
+
+Returns:
+    Response: A list of available Elevenlabs voices.
+
+Raises:
+    NotFound: If the specified user does not exist.
 
 ### Example
 
@@ -9013,7 +11454,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 org = 'org_example' # str | 
@@ -9062,9 +11502,11 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_users_export_chathistory_create**
 > TaskView ai_mentor_orgs_users_export_chathistory_create(org, user_id)
 
+Initiates a background task to export the user's chat history.
 
+Returns:
 
-Initiates a background task to export the user's chat history.  Returns:      200: task id.
+    200: task id.
 
 ### Example
 
@@ -9087,7 +11529,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 org = 'org_example' # str | 
@@ -9132,12 +11573,91 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **ai_mentor_orgs_users_extracted_memories_retrieve**
+> UserMemory ai_mentor_orgs_users_extracted_memories_retrieve(org, user_id)
+
+Returns extracted memory for a user. This is the memory that the user tells the mentor to remember or is inferred from conversations.
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.user_memory import UserMemory
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+# Create an instance of the API class
+api_instance = iblai.AiMentorApi(api_client)
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+
+try:
+    api_response = api_instance.ai_mentor_orgs_users_extracted_memories_retrieve(org, user_id)
+    print("The response of AiMentorApi->ai_mentor_orgs_users_extracted_memories_retrieve:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiMentorApi->ai_mentor_orgs_users_extracted_memories_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+
+### Return type
+
+[**UserMemory**](UserMemory.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **ai_mentor_orgs_users_free_usage_count_retrieve**
 > FreeUsageCount ai_mentor_orgs_users_free_usage_count_retrieve(org, user_id)
 
+Retrieve the count of free usage credits available to a user.
 
+Args:
+    request: The HTTP request.
+    org: The organization/tenant identifier.
+    user_id: The ID of the user to check free usage for.
 
-Retrieve the count of free usage credits available to a user.  Args:     request: The HTTP request.     org: The organization/tenant identifier.     user_id: The ID of the user to check free usage for.  Returns:     Response: The count of free usage credits available.  Raises:     NotFound: If the specified user does not exist.
+Returns:
+    Response: The count of free usage credits available.
+
+Raises:
+    NotFound: If the specified user does not exist.
 
 ### Example
 
@@ -9160,7 +11680,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 org = 'org_example' # str | 
@@ -9209,9 +11728,10 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_users_list**
 > PaginatedMentorList ai_mentor_orgs_users_list(org, user_id, department_id=department_id, filter_by=filter_by, metadata_key=metadata_key, metadata_value=metadata_value, page=page, page_size=page_size, return_session_information=return_session_information, visibility=visibility)
 
+Retrieve a list of mentors.
 
-
-Retrieve a list of mentors.  Returns:     - List of mentors matching the filters.
+Returns:
+    - List of mentors matching the filters.
 
 ### Example
 
@@ -9234,7 +11754,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 org = 'org_example' # str | 
@@ -9298,9 +11817,12 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_users_mcp_servers_create**
 > MCPServer ai_mentor_orgs_users_mcp_servers_create(org, user_id, mcp_server)
 
+ViewSet for MCP Servers.
 
+Allows platform admins to list, create, retrieve, update, and delete MCP servers.
 
-ViewSet for MCP Servers.  Allows platform admins to list, create, retrieve, update, and delete MCP servers.  Permissions:     - Accessible to tenant admins.
+Permissions:
+    - Accessible to tenant admins.
 
 ### Example
 
@@ -9323,7 +11845,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 org = 'org_example' # str | 
@@ -9359,7 +11880,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -9373,9 +11894,12 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_users_mcp_servers_destroy**
 > ai_mentor_orgs_users_mcp_servers_destroy(id, org, user_id)
 
+ViewSet for MCP Servers.
 
+Allows platform admins to list, create, retrieve, update, and delete MCP servers.
 
-ViewSet for MCP Servers.  Allows platform admins to list, create, retrieve, update, and delete MCP servers.  Permissions:     - Accessible to tenant admins.
+Permissions:
+    - Accessible to tenant admins.
 
 ### Example
 
@@ -9397,7 +11921,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 id = 56 # int | A unique integer value identifying this mcp server.
@@ -9445,9 +11968,10 @@ void (empty response body)
 # **ai_mentor_orgs_users_mcp_servers_list**
 > PaginatedMCPServerList ai_mentor_orgs_users_mcp_servers_list(org, user_id, page=page, page_size=page_size, platform=platform, search=search)
 
+List all MCP servers.
 
-
-List all MCP servers.  Returns a paginated list of MCP servers that can be filtered by platform and searched by name or URL.
+Returns a paginated list of MCP servers that can be filtered by platform
+and searched by name or URL.
 
 ### Example
 
@@ -9470,7 +11994,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 org = 'org_example' # str | 
@@ -9526,9 +12049,12 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_users_mcp_servers_partial_update**
 > MCPServer ai_mentor_orgs_users_mcp_servers_partial_update(id, org, user_id, patched_mcp_server=patched_mcp_server)
 
+ViewSet for MCP Servers.
 
+Allows platform admins to list, create, retrieve, update, and delete MCP servers.
 
-ViewSet for MCP Servers.  Allows platform admins to list, create, retrieve, update, and delete MCP servers.  Permissions:     - Accessible to tenant admins.
+Permissions:
+    - Accessible to tenant admins.
 
 ### Example
 
@@ -9552,7 +12078,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 id = 56 # int | A unique integer value identifying this mcp server.
@@ -9590,7 +12115,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -9604,9 +12129,12 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_users_mcp_servers_retrieve**
 > MCPServer ai_mentor_orgs_users_mcp_servers_retrieve(id, org, user_id)
 
+ViewSet for MCP Servers.
 
+Allows platform admins to list, create, retrieve, update, and delete MCP servers.
 
-ViewSet for MCP Servers.  Allows platform admins to list, create, retrieve, update, and delete MCP servers.  Permissions:     - Accessible to tenant admins.
+Permissions:
+    - Accessible to tenant admins.
 
 ### Example
 
@@ -9629,7 +12157,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 id = 56 # int | A unique integer value identifying this mcp server.
@@ -9679,9 +12206,12 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_users_mcp_servers_update**
 > MCPServer ai_mentor_orgs_users_mcp_servers_update(id, org, user_id, mcp_server)
 
+ViewSet for MCP Servers.
 
+Allows platform admins to list, create, retrieve, update, and delete MCP servers.
 
-ViewSet for MCP Servers.  Allows platform admins to list, create, retrieve, update, and delete MCP servers.  Permissions:     - Accessible to tenant admins.
+Permissions:
+    - Accessible to tenant admins.
 
 ### Example
 
@@ -9704,7 +12234,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 id = 56 # int | A unique integer value identifying this mcp server.
@@ -9742,7 +12271,657 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ai_mentor_orgs_users_memories_create**
+> PaginatedUserMemoryList ai_mentor_orgs_users_memories_create(org, user_id, user_memory_request, page=page, page_size=page_size)
+
+Create memory
+
+Create memory using the request data
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.paginated_user_memory_list import PaginatedUserMemoryList
+from iblai.models.user_memory_request import UserMemoryRequest
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+# Create an instance of the API class
+api_instance = iblai.AiMentorApi(api_client)
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+user_memory_request = iblai.UserMemoryRequest() # UserMemoryRequest | 
+page = 56 # int | A page number within the paginated result set. (optional)
+page_size = 56 # int | Number of results to return per page. (optional)
+
+try:
+    # Create memory
+    api_response = api_instance.ai_mentor_orgs_users_memories_create(org, user_id, user_memory_request, page=page, page_size=page_size)
+    print("The response of AiMentorApi->ai_mentor_orgs_users_memories_create:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiMentorApi->ai_mentor_orgs_users_memories_create: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+ **user_memory_request** | [**UserMemoryRequest**](UserMemoryRequest.md)|  | 
+ **page** | **int**| A page number within the paginated result set. | [optional] 
+ **page_size** | **int**| Number of results to return per page. | [optional] 
+
+### Return type
+
+[**PaginatedUserMemoryList**](PaginatedUserMemoryList.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ai_mentor_orgs_users_memories_list**
+> PaginatedUserMemoryList ai_mentor_orgs_users_memories_list(org, user_id, category=category, end_date=end_date, mentor=mentor, mode=mode, page=page, page_size=page_size, platform=platform, session=session, start_date=start_date)
+
+Retrieve a list of memories based on filter conditions.
+
+Returns:
+    Response: A paginated list of memories.
+    Put your queries using the parameters in the query parameters. For example, to search a mentor's regular mode memory, use the following url:
+    ```
+    https://base.manager.iblai.app/api/ai-mentor/orgs/your-org/users/your-user/memories/?mentor=f81fc856-fd8f-4e6b-9d3b-72aa68279c40&mode=regular
+    ```
+
+Raises:
+    NotFound: If the query is invalid.
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.paginated_user_memory_list import PaginatedUserMemoryList
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+# Create an instance of the API class
+api_instance = iblai.AiMentorApi(api_client)
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+category = 'category_example' # str | a string of category to filter memories (optional)
+end_date = 'end_date_example' # str | ISO date for end date (optional) (optional)
+mentor = 'mentor_example' # str | the mentor unique id which the memory is linked to (optional)
+mode = 'mode_example' # str | mode which the memory applies to. can be `guided`, `regular` or `all` (optional)
+page = 56 # int | A page number within the paginated result set. (optional)
+page_size = 56 # int | Number of results to return per page. (optional)
+platform = 'platform_example' # str | the platform which the memory is linked to (optional)
+session = 'session_example' # str | the session id which the memory is linked to (optional)
+start_date = 'start_date_example' # str | ISO date for start date (optional) (optional)
+
+try:
+    api_response = api_instance.ai_mentor_orgs_users_memories_list(org, user_id, category=category, end_date=end_date, mentor=mentor, mode=mode, page=page, page_size=page_size, platform=platform, session=session, start_date=start_date)
+    print("The response of AiMentorApi->ai_mentor_orgs_users_memories_list:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiMentorApi->ai_mentor_orgs_users_memories_list: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+ **category** | **str**| a string of category to filter memories | [optional] 
+ **end_date** | **str**| ISO date for end date (optional) | [optional] 
+ **mentor** | **str**| the mentor unique id which the memory is linked to | [optional] 
+ **mode** | **str**| mode which the memory applies to. can be &#x60;guided&#x60;, &#x60;regular&#x60; or &#x60;all&#x60; | [optional] 
+ **page** | **int**| A page number within the paginated result set. | [optional] 
+ **page_size** | **int**| Number of results to return per page. | [optional] 
+ **platform** | **str**| the platform which the memory is linked to | [optional] 
+ **session** | **str**| the session id which the memory is linked to | [optional] 
+ **start_date** | **str**| ISO date for start date (optional) | [optional] 
+
+### Return type
+
+[**PaginatedUserMemoryList**](PaginatedUserMemoryList.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ai_mentor_orgs_users_memory_categories_retrieve**
+> ai_mentor_orgs_users_memory_categories_retrieve(org, user_id)
+
+Use the this endpoint to get all memory categories:
+```
+GET /api/ai-mentor/orgs/main/users/your-user/memory-categories/
+```
+Sample response
+```
+{"categories": ["lessons_learned", "knowledge_gaps", "help_requests", "personal_information"]}
+```
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+# Create an instance of the API class
+api_instance = iblai.AiMentorApi(api_client)
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+
+try:
+    api_instance.ai_mentor_orgs_users_memory_categories_retrieve(org, user_id)
+except Exception as e:
+    print("Exception when calling AiMentorApi->ai_mentor_orgs_users_memory_categories_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | No response body |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ai_mentor_orgs_users_memory_destroy**
+> ai_mentor_orgs_users_memory_destroy(memory_unique_id_or_name, org, user_id)
+
+Mixin that includes the StudentTokenAuthentication and IsAdminUserOrStudent
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+# Create an instance of the API class
+api_instance = iblai.AiMentorApi(api_client)
+memory_unique_id_or_name = 'memory_unique_id_or_name_example' # str | 
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+
+try:
+    api_instance.ai_mentor_orgs_users_memory_destroy(memory_unique_id_or_name, org, user_id)
+except Exception as e:
+    print("Exception when calling AiMentorApi->ai_mentor_orgs_users_memory_destroy: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **memory_unique_id_or_name** | **str**|  | 
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Memory deleted successfully. |  -  |
+**404** | Memory not found. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ai_mentor_orgs_users_memory_entries_create**
+> UserMemoryEntry ai_mentor_orgs_users_memory_entries_create(entry_unique_id, org, user_id, user_memory_entry)
+
+```
+POST /api/ai-mentor/orgs/main/users/your-user/memory-entries/f03642ce-b7ec-42a2-8604-7aa0c6e7b6d3/
+```
+Sample request:
+```
+{"value": "this is new memory value!", "key": "new key!",}
+```
+Sample response:
+```
+{
+  "unique_id": "f03642ce-b7ec-42a2-8604-7aa0c6e7b6d3",
+  "key": "new key",
+  "value": "this is new memory value!",
+  "inserted_at": "2025-09-01T14:43:36.232705+00:00",
+  "updated_at": "2025-09-01T14:43:36.232712+00:00",
+  "expires_at": null,
+  "category": "lessons_learned"
+}
+```
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.user_memory_entry import UserMemoryEntry
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+# Create an instance of the API class
+api_instance = iblai.AiMentorApi(api_client)
+entry_unique_id = 'entry_unique_id_example' # str | 
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+user_memory_entry = iblai.UserMemoryEntry() # UserMemoryEntry | 
+
+try:
+    api_response = api_instance.ai_mentor_orgs_users_memory_entries_create(entry_unique_id, org, user_id, user_memory_entry)
+    print("The response of AiMentorApi->ai_mentor_orgs_users_memory_entries_create:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiMentorApi->ai_mentor_orgs_users_memory_entries_create: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **entry_unique_id** | **str**|  | 
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+ **user_memory_entry** | [**UserMemoryEntry**](UserMemoryEntry.md)|  | 
+
+### Return type
+
+[**UserMemoryEntry**](UserMemoryEntry.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ai_mentor_orgs_users_memory_entries_destroy**
+> ai_mentor_orgs_users_memory_entries_destroy(entry_unique_id, org, user_id)
+
+Delete a memory entry or a category of memories.
+
+Sample request (memory entry unique id)
+```
+DELETE /api/ai-mentor/orgs/main/users/your-user/memory-entries/d66e4962-2406-48b1-9b73-14ff30138872/
+```
+Sample request (category name)
+```
+DELETE /api/ai-mentor/orgs/main/users/your-user/memory-entries/lessons_learned/
+```
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+# Create an instance of the API class
+api_instance = iblai.AiMentorApi(api_client)
+entry_unique_id = 'entry_unique_id_example' # str | 
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+
+try:
+    api_instance.ai_mentor_orgs_users_memory_entries_destroy(entry_unique_id, org, user_id)
+except Exception as e:
+    print("Exception when calling AiMentorApi->ai_mentor_orgs_users_memory_entries_destroy: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **entry_unique_id** | **str**|  | 
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Memory deleted successfully. |  -  |
+**404** | Memory not found. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ai_mentor_orgs_users_memory_entries_retrieve**
+> UserMemoryEntry ai_mentor_orgs_users_memory_entries_retrieve(entry_unique_id, org, user_id)
+
+Get a memory entry's detail by its unique id.
+
+Sample response
+```
+{
+  "unique_id": "f03642ce-b7ec-42a2-8604-7aa0c6e7b6d3",
+  "key": "new key",
+  "value": "this is new memory value!",
+  "inserted_at": "2025-09-01T14:43:36.232705+00:00",
+  "updated_at": "2025-09-01T14:43:36.232712+00:00",
+  "expires_at": null,
+  "category": "lessons_learned"
+}
+```
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.user_memory_entry import UserMemoryEntry
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+# Create an instance of the API class
+api_instance = iblai.AiMentorApi(api_client)
+entry_unique_id = 'entry_unique_id_example' # str | 
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+
+try:
+    api_response = api_instance.ai_mentor_orgs_users_memory_entries_retrieve(entry_unique_id, org, user_id)
+    print("The response of AiMentorApi->ai_mentor_orgs_users_memory_entries_retrieve:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiMentorApi->ai_mentor_orgs_users_memory_entries_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **entry_unique_id** | **str**|  | 
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+
+### Return type
+
+[**UserMemoryEntry**](UserMemoryEntry.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ai_mentor_orgs_users_memory_retrieve**
+> UserMemory ai_mentor_orgs_users_memory_retrieve(memory_unique_id_or_name, org, user_id)
+
+Mixin that includes the StudentTokenAuthentication and IsAdminUserOrStudent
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.user_memory import UserMemory
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+# Create an instance of the API class
+api_instance = iblai.AiMentorApi(api_client)
+memory_unique_id_or_name = 'memory_unique_id_or_name_example' # str | 
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+
+try:
+    api_response = api_instance.ai_mentor_orgs_users_memory_retrieve(memory_unique_id_or_name, org, user_id)
+    print("The response of AiMentorApi->ai_mentor_orgs_users_memory_retrieve:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiMentorApi->ai_mentor_orgs_users_memory_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **memory_unique_id_or_name** | **str**|  | 
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+
+### Return type
+
+[**UserMemory**](UserMemory.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 ### HTTP response details
@@ -9756,9 +12935,13 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_users_mentor_audience_create**
 > MentorAudience ai_mentor_orgs_users_mentor_audience_create(org, user_id, mentor_audience)
 
+Create a new mentor audience.
 
+Accessible to tenant admins only.
 
-Create a new mentor audience.  Accessible to tenant admins only.  Returns:     - 201: Created mentor audience.     - 401: Unauthorized.
+Returns:
+    - 201: Created mentor audience.
+    - 401: Unauthorized.
 
 ### Example
 
@@ -9781,7 +12964,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 org = 'org_example' # str | 
@@ -9817,7 +12999,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -9832,9 +13014,15 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_users_mentor_audience_destroy**
 > ai_mentor_orgs_users_mentor_audience_destroy(org, user_id)
 
+Delete a mentor audience.
 
+Accessible to tenant admins only.
 
-Delete a mentor audience.  Accessible to tenant admins only.  Returns:     - 204: No content.     - 400: Bad request if audience name is missing.     - 404: Not found if audience does not exist.     - 401: Unauthorized.
+Returns:
+    - 204: No content.
+    - 400: Bad request if audience name is missing.
+    - 404: Not found if audience does not exist.
+    - 401: Unauthorized.
 
 ### Example
 
@@ -9856,7 +13044,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 org = 'org_example' # str | 
@@ -9905,9 +13092,10 @@ void (empty response body)
 # **ai_mentor_orgs_users_mentor_audience_list**
 > List[MentorAudience] ai_mentor_orgs_users_mentor_audience_list(org, user_id)
 
+Retrieve the list of mentor audiences.
 
-
-Retrieve the list of mentor audiences.  Returns:     - 200: List of mentor audiences.
+Returns:
+    - 200: List of mentor audiences.
 
 ### Example
 
@@ -9930,7 +13118,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 org = 'org_example' # str | 
@@ -9978,9 +13165,12 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_users_mentor_categories_create**
 > MentorCategory ai_mentor_orgs_users_mentor_categories_create(org, user_id, mentor_category_create)
 
+Create a new mentor category.
 
+Accessible only to tenant admins.
 
-Create a new mentor category.  Accessible only to tenant admins.  Returns:     200: Details of the created mentor category.
+Returns:
+    200: Details of the created mentor category.
 
 ### Example
 
@@ -10004,7 +13194,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 org = 'org_example' # str | 
@@ -10040,7 +13229,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -10054,9 +13243,13 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_users_mentor_categories_destroy**
 > ai_mentor_orgs_users_mentor_categories_destroy(org, user_id)
 
+Delete a mentor category.
 
+Accessible only to tenant admins.
 
-Delete a mentor category.  Accessible only to tenant admins.  Returns:     204: \"No content\" when Delete succeeded.     400: Bad request data received
+Returns:
+    204: "No content" when Delete succeeded.
+    400: Bad request data received
 
 ### Example
 
@@ -10078,7 +13271,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 org = 'org_example' # str | 
@@ -10124,9 +13316,10 @@ void (empty response body)
 # **ai_mentor_orgs_users_mentor_categories_list**
 > List[MentorCategory] ai_mentor_orgs_users_mentor_categories_list(org, user_id)
 
+Retrieve a list of mentor categories.
 
-
-Retrieve a list of mentor categories.  Returns:     200: A list of mentor categories.
+Returns:
+    200: A list of mentor categories.
 
 ### Example
 
@@ -10149,7 +13342,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 org = 'org_example' # str | 
@@ -10197,9 +13389,17 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_users_mentor_feedback_create_create**
 > UserChatFeedback ai_mentor_orgs_users_mentor_feedback_create_create(org, user_id, user_chat_feedback)
 
+Create a new user chat feedback entry.
 
+Args:
+    request: The HTTP request containing the feedback data.
+    org: The organization/tenant identifier.
 
-Create a new user chat feedback entry.  Args:     request: The HTTP request containing the feedback data.     org: The organization/tenant identifier.  Returns:     Response: The created feedback entry.  Raises:     BadRequest: If the provided data is invalid or the mentor does not exist.
+Returns:
+    Response: The created feedback entry.
+
+Raises:
+    BadRequest: If the provided data is invalid or the mentor does not exist.
 
 ### Example
 
@@ -10210,12 +13410,11 @@ from iblai.models.user_chat_feedback import UserChatFeedback
 from iblai.rest import ApiException
 from pprint import pprint
 
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 org = 'org_example' # str | 
 user_id = 'user_id_example' # str | 
-user_chat_feedback = {"username":"johndoe","session":"937d3d46-3048-4f9d-aa5c-ce7c51d85332","user_text":"Who is Marc H. Supcoff","ai_response":"Marc H. Supcoff is an Adjunct Professor of Law","reason":"Good reason","additional_feedback":"Good response","rating":1,"mentor":"ai-mentor"} # UserChatFeedback | 
+user_chat_feedback = {"username":"johndoe","session":"937d3d46-3048-4f9d-aa5c-ce7c51d85332","user_text":"Who is Marc H. Supcoff","ai_response":"Marc H. Supcoff is an Adjunct Professor of Law","reason":"Good reason","additional_feedback":"Good response","rating":1,"mentor":"ai-mentor","message":3} # UserChatFeedback | 
 
 try:
     api_response = api_instance.ai_mentor_orgs_users_mentor_feedback_create_create(org, user_id, user_chat_feedback)
@@ -10246,7 +13445,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -10261,9 +13460,18 @@ No authorization required
 # **ai_mentor_orgs_users_mentor_feedback_retrieve**
 > UserChatFeedback ai_mentor_orgs_users_mentor_feedback_retrieve(feedback_id, org, user_id)
 
+Retrieve details of a specific user chat feedback entry.
 
+Args:
+    request: The HTTP request.
+    org: The organization/tenant identifier.
+    feedback_id: The ID of the feedback entry to retrieve.
 
-Retrieve details of a specific user chat feedback entry.  Args:     request: The HTTP request.     org: The organization/tenant identifier.     feedback_id: The ID of the feedback entry to retrieve.  Returns:     Response: The feedback entry details.  Raises:     NotFound: If the specified feedback entry does not exist.
+Returns:
+    Response: The feedback entry details.
+
+Raises:
+    NotFound: If the specified feedback entry does not exist.
 
 ### Example
 
@@ -10273,7 +13481,6 @@ import iblai
 from iblai.models.user_chat_feedback import UserChatFeedback
 from iblai.rest import ApiException
 from pprint import pprint
-
 
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
@@ -10325,9 +13532,19 @@ No authorization required
 # **ai_mentor_orgs_users_mentor_feedback_update**
 > UserChatFeedback ai_mentor_orgs_users_mentor_feedback_update(feedback_id, org, user_id, user_chat_feedback)
 
+Update an existing user chat feedback entry.
 
+Args:
+    request: The HTTP request containing the updated feedback data.
+    org: The organization/tenant identifier.
+    feedback_id: The ID of the feedback entry to update.
 
-Update an existing user chat feedback entry.  Args:     request: The HTTP request containing the updated feedback data.     org: The organization/tenant identifier.     feedback_id: The ID of the feedback entry to update.  Returns:     Response: The updated feedback entry.  Raises:     NotFound: If the specified feedback entry does not exist.     BadRequest: If the provided data is invalid or the mentor does not exist.
+Returns:
+    Response: The updated feedback entry.
+
+Raises:
+    NotFound: If the specified feedback entry does not exist.
+    BadRequest: If the provided data is invalid or the mentor does not exist.
 
 ### Example
 
@@ -10338,13 +13555,12 @@ from iblai.models.user_chat_feedback import UserChatFeedback
 from iblai.rest import ApiException
 from pprint import pprint
 
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 feedback_id = 56 # int | 
 org = 'org_example' # str | 
 user_id = 'user_id_example' # str | 
-user_chat_feedback = {"username":"johndoe","session":"937d3d46-3048-4f9d-aa5c-ce7c51d85332","user_text":"Who is Marc H. Supcoff","ai_response":"Marc H. Supcoff is an Adjunct Professor of Law","reason":"Good reason","additional_feedback":"Good response","rating":1,"mentor":"ai-mentor"} # UserChatFeedback | 
+user_chat_feedback = {"username":"johndoe","session":"937d3d46-3048-4f9d-aa5c-ce7c51d85332","user_text":"Who is Marc H. Supcoff","ai_response":"Marc H. Supcoff is an Adjunct Professor of Law","reason":"Good reason","additional_feedback":"Good response","rating":1,"mentor":"ai-mentor","message":3} # UserChatFeedback | 
 
 try:
     api_response = api_instance.ai_mentor_orgs_users_mentor_feedback_update(feedback_id, org, user_id, user_chat_feedback)
@@ -10376,7 +13592,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -10389,86 +13605,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **ai_mentor_orgs_users_mentor_from_template_create**
-> Mentor ai_mentor_orgs_users_mentor_from_template_create(org, user_id, mentor_from_template_request)
-
-
-
-View to create a mentor from a template  Accessible to only tenant admins.
-
-### Example
-
-* Api Key Authentication (PlatformApiKeyAuthentication):
-
-```python
-import iblai
-from iblai.models.mentor import Mentor
-from iblai.models.mentor_from_template_request import MentorFromTemplateRequest
-from iblai.rest import ApiException
-from pprint import pprint
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
-# You can generate an authenticated client using the following helper method
-client = get_platform_api_client(
-    host="https://base.manager.iblai.app", 
-    key=os.environ["API_KEY"]
-)
-
-# Create an instance of the API class
-api_instance = iblai.AiMentorApi(api_client)
-org = 'org_example' # str | 
-user_id = 'user_id_example' # str | 
-mentor_from_template_request = iblai.MentorFromTemplateRequest() # MentorFromTemplateRequest | 
-
-try:
-    api_response = api_instance.ai_mentor_orgs_users_mentor_from_template_create(org, user_id, mentor_from_template_request)
-    print("The response of AiMentorApi->ai_mentor_orgs_users_mentor_from_template_create:\n")
-    pprint(api_response)
-except Exception as e:
-    print("Exception when calling AiMentorApi->ai_mentor_orgs_users_mentor_from_template_create: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **org** | **str**|  | 
- **user_id** | **str**|  | 
- **mentor_from_template_request** | [**MentorFromTemplateRequest**](MentorFromTemplateRequest.md)|  | 
-
-### Return type
-
-[**Mentor**](Mentor.md)
-
-### Authorization
-
-[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** |  |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 # **ai_mentor_orgs_users_mentor_llms_list**
 > List[LLMResponse] ai_mentor_orgs_users_mentor_llms_list(org, user_id, mentor_id=mentor_id)
-
-
 
 Retrieve available LLMs for a user.
 
@@ -10493,7 +13631,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 org = 'org_example' # str | 
@@ -10543,9 +13680,18 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_users_mentor_seed_retrieve**
 > SeedMentorsView ai_mentor_orgs_users_mentor_seed_retrieve(org, user_id)
 
+Seed initial mentors in a tenant.
 
+Args:
+    request: The HTTP request.
+    org: The organization/tenant identifier.
+    user_id: The ID of the user initiating the seeding.
 
-Seed initial mentors in a tenant.  Args:     request: The HTTP request.     org: The organization/tenant identifier.     user_id: The ID of the user initiating the seeding.  Returns:     Response: A success message with details about the seeded mentors.  Raises:     BadRequest: If the seeding process fails.
+Returns:
+    Response: A success message with details about the seeded mentors.
+
+Raises:
+    BadRequest: If the seeding process fails.
 
 ### Example
 
@@ -10568,7 +13714,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 org = 'org_example' # str | 
@@ -10617,8 +13762,6 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_users_mentor_tools_list**
 > List[ToolResponse] ai_mentor_orgs_users_mentor_tools_list(org, user_id)
 
-
-
 Retrieve the list of available mentor tools.
 
 ### Example
@@ -10642,7 +13785,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 org = 'org_example' # str | 
@@ -10687,12 +13829,82 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **ai_mentor_orgs_users_mentor_types_list**
+> List[MentorType] ai_mentor_orgs_users_mentor_types_list(org, user_id)
+
+Retrieve Mentor Types
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.mentor_type import MentorType
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+# Create an instance of the API class
+api_instance = iblai.AiMentorApi(api_client)
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+
+try:
+    api_response = api_instance.ai_mentor_orgs_users_mentor_types_list(org, user_id)
+    print("The response of AiMentorApi->ai_mentor_orgs_users_mentor_types_list:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiMentorApi->ai_mentor_orgs_users_mentor_types_list: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+
+### Return type
+
+[**List[MentorType]**](MentorType.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **ai_mentor_orgs_users_mentor_with_settings_create**
-> Mentor ai_mentor_orgs_users_mentor_with_settings_create(org, user_id, template_name, new_mentor_name, display_name=display_name, description=description, profile_image=profile_image, initial_message=initial_message, suggested_message=suggested_message, theme=theme, user_message_color=user_message_color, mentor_bubble_color=mentor_bubble_color, align_mentor_bubble=align_mentor_bubble, system_prompt=system_prompt, llm_provider=llm_provider, llm_name=llm_name, mentor_visibility=mentor_visibility, enable_image_generation=enable_image_generation, enable_web_browsing=enable_web_browsing, enable_code_interpreter=enable_code_interpreter, metadata=metadata, custom_css=custom_css, uploaded_profile_image=uploaded_profile_image, proactive_response=proactive_response, greeting_method=greeting_method, forkable=forkable, forkable_with_training_data=forkable_with_training_data, categories=categories, tool_slugs=tool_slugs, llm_temperature=llm_temperature, seo_tags=seo_tags, marketing_conversations=marketing_conversations, proactive_prompt=proactive_prompt, moderation_system_prompt=moderation_system_prompt, post_processing_prompt=post_processing_prompt, moderation_response=moderation_response, enable_moderation=enable_moderation, enable_post_processing_system=enable_post_processing_system, enable_openai_assistant=enable_openai_assistant, enable_total_grounding=enable_total_grounding, google_voice=google_voice, openai_voice=openai_voice, enable_suggested_prompts=enable_suggested_prompts, enable_guided_prompts=enable_guided_prompts, mcp_servers=mcp_servers, guided_prompt_instructions=guided_prompt_instructions)
+> Mentor ai_mentor_orgs_users_mentor_with_settings_create(org, user_id, template_name, new_mentor_name, display_name=display_name, description=description, profile_image=profile_image, initial_message=initial_message, suggested_message=suggested_message, theme=theme, user_message_color=user_message_color, mentor_bubble_color=mentor_bubble_color, align_mentor_bubble=align_mentor_bubble, system_prompt=system_prompt, llm_provider=llm_provider, llm_name=llm_name, mentor_visibility=mentor_visibility, enable_image_generation=enable_image_generation, enable_web_browsing=enable_web_browsing, enable_code_interpreter=enable_code_interpreter, metadata=metadata, custom_css=custom_css, uploaded_profile_image=uploaded_profile_image, proactive_response=proactive_response, greeting_method=greeting_method, forkable=forkable, forkable_with_training_data=forkable_with_training_data, categories=categories, types=types, subjects=subjects, tool_slugs=tool_slugs, llm_temperature=llm_temperature, seo_tags=seo_tags, marketing_conversations=marketing_conversations, proactive_prompt=proactive_prompt, disclaimer=disclaimer, placeholder_prompt=placeholder_prompt, moderation_system_prompt=moderation_system_prompt, post_processing_prompt=post_processing_prompt, moderation_response=moderation_response, enable_moderation=enable_moderation, enable_multi_query_rag=enable_multi_query_rag, enable_post_processing_system=enable_post_processing_system, enable_openai_assistant=enable_openai_assistant, enable_total_grounding=enable_total_grounding, google_voice=google_voice, openai_voice=openai_voice, enable_suggested_prompts=enable_suggested_prompts, enable_guided_prompts=enable_guided_prompts, mcp_servers=mcp_servers, guided_prompt_instructions=guided_prompt_instructions)
 
+View to create a mentor from a template with settings.
 
-
-View to create a mentor from a template with settings.  Accessible to tenant admins only.
+Accessible to tenant admins only.
 
 ### Example
 
@@ -10716,7 +13928,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 org = 'org_example' # str | 
@@ -10747,15 +13958,20 @@ greeting_method = iblai.GreetingMethodEnum() # GreetingMethodEnum |  (optional)
 forkable = True # bool |  (optional)
 forkable_with_training_data = True # bool |  (optional)
 categories = [56] # List[int] |  (optional)
+types = [56] # List[int] |  (optional)
+subjects = [56] # List[int] |  (optional)
 tool_slugs = ['tool_slugs_example'] # List[str] |  (optional)
 llm_temperature = 3.4 # float |  (optional)
 seo_tags = None # object |  (optional)
 marketing_conversations = None # object |  (optional)
 proactive_prompt = 'proactive_prompt_example' # str |  (optional)
+disclaimer = 'disclaimer_example' # str |  (optional)
+placeholder_prompt = 'placeholder_prompt_example' # str |  (optional)
 moderation_system_prompt = 'moderation_system_prompt_example' # str |  (optional)
 post_processing_prompt = 'post_processing_prompt_example' # str |  (optional)
 moderation_response = 'moderation_response_example' # str |  (optional)
 enable_moderation = False # bool |  (optional) (default to False)
+enable_multi_query_rag = False # bool |  (optional) (default to False)
 enable_post_processing_system = False # bool |  (optional) (default to False)
 enable_openai_assistant = True # bool |  (optional)
 enable_total_grounding = False # bool |  (optional) (default to False)
@@ -10767,7 +13983,7 @@ mcp_servers = [56] # List[int] |  (optional)
 guided_prompt_instructions = 'guided_prompt_instructions_example' # str |  (optional)
 
 try:
-    api_response = api_instance.ai_mentor_orgs_users_mentor_with_settings_create(org, user_id, template_name, new_mentor_name, display_name=display_name, description=description, profile_image=profile_image, initial_message=initial_message, suggested_message=suggested_message, theme=theme, user_message_color=user_message_color, mentor_bubble_color=mentor_bubble_color, align_mentor_bubble=align_mentor_bubble, system_prompt=system_prompt, llm_provider=llm_provider, llm_name=llm_name, mentor_visibility=mentor_visibility, enable_image_generation=enable_image_generation, enable_web_browsing=enable_web_browsing, enable_code_interpreter=enable_code_interpreter, metadata=metadata, custom_css=custom_css, uploaded_profile_image=uploaded_profile_image, proactive_response=proactive_response, greeting_method=greeting_method, forkable=forkable, forkable_with_training_data=forkable_with_training_data, categories=categories, tool_slugs=tool_slugs, llm_temperature=llm_temperature, seo_tags=seo_tags, marketing_conversations=marketing_conversations, proactive_prompt=proactive_prompt, moderation_system_prompt=moderation_system_prompt, post_processing_prompt=post_processing_prompt, moderation_response=moderation_response, enable_moderation=enable_moderation, enable_post_processing_system=enable_post_processing_system, enable_openai_assistant=enable_openai_assistant, enable_total_grounding=enable_total_grounding, google_voice=google_voice, openai_voice=openai_voice, enable_suggested_prompts=enable_suggested_prompts, enable_guided_prompts=enable_guided_prompts, mcp_servers=mcp_servers, guided_prompt_instructions=guided_prompt_instructions)
+    api_response = api_instance.ai_mentor_orgs_users_mentor_with_settings_create(org, user_id, template_name, new_mentor_name, display_name=display_name, description=description, profile_image=profile_image, initial_message=initial_message, suggested_message=suggested_message, theme=theme, user_message_color=user_message_color, mentor_bubble_color=mentor_bubble_color, align_mentor_bubble=align_mentor_bubble, system_prompt=system_prompt, llm_provider=llm_provider, llm_name=llm_name, mentor_visibility=mentor_visibility, enable_image_generation=enable_image_generation, enable_web_browsing=enable_web_browsing, enable_code_interpreter=enable_code_interpreter, metadata=metadata, custom_css=custom_css, uploaded_profile_image=uploaded_profile_image, proactive_response=proactive_response, greeting_method=greeting_method, forkable=forkable, forkable_with_training_data=forkable_with_training_data, categories=categories, types=types, subjects=subjects, tool_slugs=tool_slugs, llm_temperature=llm_temperature, seo_tags=seo_tags, marketing_conversations=marketing_conversations, proactive_prompt=proactive_prompt, disclaimer=disclaimer, placeholder_prompt=placeholder_prompt, moderation_system_prompt=moderation_system_prompt, post_processing_prompt=post_processing_prompt, moderation_response=moderation_response, enable_moderation=enable_moderation, enable_multi_query_rag=enable_multi_query_rag, enable_post_processing_system=enable_post_processing_system, enable_openai_assistant=enable_openai_assistant, enable_total_grounding=enable_total_grounding, google_voice=google_voice, openai_voice=openai_voice, enable_suggested_prompts=enable_suggested_prompts, enable_guided_prompts=enable_guided_prompts, mcp_servers=mcp_servers, guided_prompt_instructions=guided_prompt_instructions)
     print("The response of AiMentorApi->ai_mentor_orgs_users_mentor_with_settings_create:\n")
     pprint(api_response)
 except Exception as e:
@@ -10809,15 +14025,20 @@ Name | Type | Description  | Notes
  **forkable** | **bool**|  | [optional] 
  **forkable_with_training_data** | **bool**|  | [optional] 
  **categories** | [**List[int]**](int.md)|  | [optional] 
+ **types** | [**List[int]**](int.md)|  | [optional] 
+ **subjects** | [**List[int]**](int.md)|  | [optional] 
  **tool_slugs** | [**List[str]**](str.md)|  | [optional] 
  **llm_temperature** | **float**|  | [optional] 
  **seo_tags** | [**object**](object.md)|  | [optional] 
  **marketing_conversations** | [**object**](object.md)|  | [optional] 
  **proactive_prompt** | **str**|  | [optional] 
+ **disclaimer** | **str**|  | [optional] 
+ **placeholder_prompt** | **str**|  | [optional] 
  **moderation_system_prompt** | **str**|  | [optional] 
  **post_processing_prompt** | **str**|  | [optional] 
  **moderation_response** | **str**|  | [optional] 
  **enable_moderation** | **bool**|  | [optional] [default to False]
+ **enable_multi_query_rag** | **bool**|  | [optional] [default to False]
  **enable_post_processing_system** | **bool**|  | [optional] [default to False]
  **enable_openai_assistant** | **bool**|  | [optional] 
  **enable_total_grounding** | **bool**|  | [optional] [default to False]
@@ -10849,10 +14070,157 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **ai_mentor_orgs_users_mentors_auto_memory_prompt_create**
+> AutoMemoryPrompt ai_mentor_orgs_users_mentors_auto_memory_prompt_create(mentor, org, user_id, auto_memory_prompt=auto_memory_prompt)
+
+Set or reset auto memory prompt
+
+Set or reset auto memory prompt
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.auto_memory_prompt import AutoMemoryPrompt
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+# Create an instance of the API class
+api_instance = iblai.AiMentorApi(api_client)
+mentor = 'mentor_example' # str | 
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+auto_memory_prompt = iblai.AutoMemoryPrompt() # AutoMemoryPrompt |  (optional)
+
+try:
+    # Set or reset auto memory prompt
+    api_response = api_instance.ai_mentor_orgs_users_mentors_auto_memory_prompt_create(mentor, org, user_id, auto_memory_prompt=auto_memory_prompt)
+    print("The response of AiMentorApi->ai_mentor_orgs_users_mentors_auto_memory_prompt_create:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiMentorApi->ai_mentor_orgs_users_mentors_auto_memory_prompt_create: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **mentor** | **str**|  | 
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+ **auto_memory_prompt** | [**AutoMemoryPrompt**](AutoMemoryPrompt.md)|  | [optional] 
+
+### Return type
+
+[**AutoMemoryPrompt**](AutoMemoryPrompt.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ai_mentor_orgs_users_mentors_auto_memory_prompt_retrieve**
+> AutoMemoryPrompt ai_mentor_orgs_users_mentors_auto_memory_prompt_retrieve(mentor, org, user_id)
+
+Mixin that includes the StudentTokenAuthentication and IsPlatformAdmin
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.auto_memory_prompt import AutoMemoryPrompt
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+# Create an instance of the API class
+api_instance = iblai.AiMentorApi(api_client)
+mentor = 'mentor_example' # str | 
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+
+try:
+    api_response = api_instance.ai_mentor_orgs_users_mentors_auto_memory_prompt_retrieve(mentor, org, user_id)
+    print("The response of AiMentorApi->ai_mentor_orgs_users_mentors_auto_memory_prompt_retrieve:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiMentorApi->ai_mentor_orgs_users_mentors_auto_memory_prompt_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **mentor** | **str**|  | 
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+
+### Return type
+
+[**AutoMemoryPrompt**](AutoMemoryPrompt.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **ai_mentor_orgs_users_mentors_available_tools_list**
-> List[ToolResponse] ai_mentor_orgs_users_mentors_available_tools_list(mentor, org, user_id)
-
-
+> List[ToolResponse] ai_mentor_orgs_users_mentors_available_tools_list(mentor, org, user_id, ordering=ordering, search=search)
 
 Retrieve tools available for a particular mentor.
 
@@ -10877,15 +14245,16 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 mentor = 'mentor_example' # str | 
 org = 'org_example' # str | 
 user_id = 'user_id_example' # str | 
+ordering = 'ordering_example' # str | Which field to use when ordering the results. (optional)
+search = 'search_example' # str | A search term. (optional)
 
 try:
-    api_response = api_instance.ai_mentor_orgs_users_mentors_available_tools_list(mentor, org, user_id)
+    api_response = api_instance.ai_mentor_orgs_users_mentors_available_tools_list(mentor, org, user_id, ordering=ordering, search=search)
     print("The response of AiMentorApi->ai_mentor_orgs_users_mentors_available_tools_list:\n")
     pprint(api_response)
 except Exception as e:
@@ -10902,6 +14271,8 @@ Name | Type | Description  | Notes
  **mentor** | **str**|  | 
  **org** | **str**|  | 
  **user_id** | **str**|  | 
+ **ordering** | **str**| Which field to use when ordering the results. | [optional] 
+ **search** | **str**| A search term. | [optional] 
 
 ### Return type
 
@@ -10927,9 +14298,23 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_users_mentors_create_call_credentials_create**
 > CallAuthenticationResponse ai_mentor_orgs_users_mentors_create_call_credentials_create(mentor, org, user_id, call_authentication_request)
 
+Generate IBL Call Pro authentication parameters for audio calls.
 
+This endpoint creates the necessary authentication tokens and parameters
+for connecting to a IBL Call Pro room for audio communication with a mentor.
 
-Generate IBL Call Pro authentication parameters for audio calls.  This endpoint creates the necessary authentication tokens and parameters for connecting to a IBL Call Pro room for audio communication with a mentor.  Args:     request: The HTTP request object containing the required parameters.     org: The organization/tenant identifier.     user_id: The ID of the user requesting authentication.  Returns:     Response: IBL Call Pro authentication parameters including URL, room name,              participant name, and authentication token.  Raises:     ValidationError: If the request parameters are invalid.     BadRequest: If the IBL Call Pro credentials are not properly configured.
+Args:
+    request: The HTTP request object containing the required parameters.
+    org: The organization/tenant identifier.
+    user_id: The ID of the user requesting authentication.
+
+Returns:
+    Response: IBL Call Pro authentication parameters including URL, room name,
+             participant name, and authentication token.
+
+Raises:
+    ValidationError: If the request parameters are invalid.
+    BadRequest: If the IBL Call Pro credentials are not properly configured.
 
 ### Example
 
@@ -10953,7 +14338,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 mentor = 'mentor_example' # str | 
@@ -10991,7 +14375,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -11008,9 +14392,19 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_users_mentors_current_memory_retrieve**
 > MemoryComponentResponse ai_mentor_orgs_users_mentors_current_memory_retrieve(mentor, org, user_id)
 
+Retrieve memory components for a specific mentor.
 
+Args:
+    request: The HTTP request.
+    org: The organization/tenant identifier.
+    user_id: The ID of the user making the request.
+    mentor: The identifier of the mentor to retrieve memory for.
 
-Retrieve memory components for a specific mentor.  Args:     request: The HTTP request.     org: The organization/tenant identifier.     user_id: The ID of the user making the request.     mentor: The identifier of the mentor to retrieve memory for.  Returns:     Response: The memory components for the mentor.  Raises:     NotFound: If the specified mentor or memory does not exist.
+Returns:
+    Response: The memory components for the mentor.
+
+Raises:
+    NotFound: If the specified mentor or memory does not exist.
 
 ### Example
 
@@ -11033,7 +14427,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 mentor = 'mentor_example' # str | 
@@ -11084,9 +14477,20 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_users_mentors_current_memory_update**
 > QuestionResponse ai_mentor_orgs_users_mentors_current_memory_update(mentor, org, user_id, question_request)
 
+Update memory components for a specific mentor.
 
+Args:
+    request: The HTTP request containing the updated memory data.
+    org: The organization/tenant identifier.
+    user_id: The ID of the user making the request.
+    mentor: The identifier of the mentor to update memory for.
 
-Update memory components for a specific mentor.  Args:     request: The HTTP request containing the updated memory data.     org: The organization/tenant identifier.     user_id: The ID of the user making the request.     mentor: The identifier of the mentor to update memory for.  Returns:     Response: The updated memory components for the mentor.  Raises:     BadRequest: If the provided data is invalid.     NotFound: If the specified mentor does not exist.
+Returns:
+    Response: The updated memory components for the mentor.
+
+Raises:
+    BadRequest: If the provided data is invalid.
+    NotFound: If the specified mentor does not exist.
 
 ### Example
 
@@ -11110,7 +14514,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 mentor = 'mentor_example' # str | 
@@ -11148,7 +14551,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -11164,9 +14567,23 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_users_mentors_custom_voice_create**
 > MentorCustomVoiceResponse ai_mentor_orgs_users_mentors_custom_voice_create(mentor, org, user_id, mentor_custom_voice)
 
+Set a custom voice for a mentor.
 
+This endpoint allows setting a custom voice for a specific mentor,
+either using the default voice provider or Elevenlabs.
 
-Set a custom voice for a mentor.  This endpoint allows setting a custom voice for a specific mentor, either using the default voice provider or Elevenlabs.  Args:     request: The HTTP request containing the voice provider and name.     org: The organization/tenant identifier.     user_id: The ID of the user who owns the mentor link.     mentor: The unique identifier of the mentor.  Returns:     Response: The updated custom voice settings.  Raises:     BadRequest: If the provided data is invalid or the voice does not exist.     NotFound: If the mentor or student does not exist.
+Args:
+    request: The HTTP request containing the voice provider and name.
+    org: The organization/tenant identifier.
+    user_id: The ID of the user who owns the mentor link.
+    mentor: The unique identifier of the mentor.
+
+Returns:
+    Response: The updated custom voice settings.
+
+Raises:
+    BadRequest: If the provided data is invalid or the voice does not exist.
+    NotFound: If the mentor or student does not exist.
 
 ### Example
 
@@ -11190,7 +14607,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 mentor = 'mentor_example' # str | 
@@ -11228,7 +14644,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -11244,9 +14660,19 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_users_mentors_custom_voice_retrieve**
 > MentorCustomVoiceResponse ai_mentor_orgs_users_mentors_custom_voice_retrieve(mentor, org, user_id)
 
+Retrieve the current custom voice settings for a mentor.
 
+Args:
+    request: The HTTP request.
+    org: The organization/tenant identifier.
+    user_id: The ID of the user who owns the mentor link.
+    mentor: The unique identifier of the mentor.
 
-Retrieve the current custom voice settings for a mentor.  Args:     request: The HTTP request.     org: The organization/tenant identifier.     user_id: The ID of the user who owns the mentor link.     mentor: The unique identifier of the mentor.  Returns:     Response: The current custom voice settings.  Raises:     NotFound: If the specified mentor or student does not exist.
+Returns:
+    Response: The current custom voice settings.
+
+Raises:
+    NotFound: If the specified mentor or student does not exist.
 
 ### Example
 
@@ -11269,7 +14695,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 mentor = 'mentor_example' # str | 
@@ -11320,9 +14745,23 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_users_mentors_custom_voice_tts_create**
 > ai_mentor_orgs_users_mentors_custom_voice_tts_create(mentor, org, user_id)
 
+Generate audio from text using a mentor's custom voice.
 
+This endpoint converts the provided text to speech using the
+custom voice configured for the specified mentor.
 
-Generate audio from text using a mentor's custom voice.  This endpoint converts the provided text to speech using the custom voice configured for the specified mentor.  Args:     request: The HTTP request containing the text to convert.     org: The organization/tenant identifier.     user_id: The ID of the user who owns the mentor link.     mentor: The unique identifier of the mentor.  Returns:     Response: An MP3 audio file of the synthesized speech.  Raises:     BadRequest: If the text is empty, credentials are not found, or custom voice is not set.     NotFound: If the mentor or student does not exist.
+Args:
+    request: The HTTP request containing the text to convert.
+    org: The organization/tenant identifier.
+    user_id: The ID of the user who owns the mentor link.
+    mentor: The unique identifier of the mentor.
+
+Returns:
+    Response: An MP3 audio file of the synthesized speech.
+
+Raises:
+    BadRequest: If the text is empty, credentials are not found, or custom voice is not set.
+    NotFound: If the mentor or student does not exist.
 
 ### Example
 
@@ -11344,7 +14783,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 mentor = 'mentor_example' # str | 
@@ -11394,9 +14832,20 @@ void (empty response body)
 # **ai_mentor_orgs_users_mentors_edit_scenarios_update**
 > MentorScenario ai_mentor_orgs_users_mentors_edit_scenarios_update(mentor, org, user_id, mentor_scenario)
 
+Update scenarios for a specific mentor.
 
+Args:
+    request: The HTTP request containing the updated scenarios.
+    org: The organization/tenant identifier.
+    user_id: The ID of the user making the request.
+    mentor: The identifier of the mentor to update scenarios for.
 
-Update scenarios for a specific mentor.  Args:     request: The HTTP request containing the updated scenarios.     org: The organization/tenant identifier.     user_id: The ID of the user making the request.     mentor: The identifier of the mentor to update scenarios for.  Returns:     Response: The updated scenarios for the mentor.  Raises:     BadRequest: If the provided data is invalid.     NotFound: If the specified mentor does not exist.
+Returns:
+    Response: The updated scenarios for the mentor.
+
+Raises:
+    BadRequest: If the provided data is invalid.
+    NotFound: If the specified mentor does not exist.
 
 ### Example
 
@@ -11419,7 +14868,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 mentor = 'mentor_example' # str | 
@@ -11457,7 +14905,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -11473,9 +14921,20 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_users_mentors_fork_create**
 > Mentor ai_mentor_orgs_users_mentors_fork_create(mentor, org, user_id, mentor_fork)
 
+Fork (clone) an existing mentor.
 
+Args:
+    request: The HTTP request containing the fork parameters.
+    org: The organization/tenant identifier.
+    mentor: The identifier of the mentor to fork.
+    user_id: The ID of the user initiating the fork.
 
-Fork (clone) an existing mentor.  Args:     request: The HTTP request containing the fork parameters.     org: The organization/tenant identifier.     mentor: The identifier of the mentor to fork.     user_id: The ID of the user initiating the fork.  Returns:     Response: The newly created forked mentor.  Raises:     BadRequest: If the provided data is invalid or the fork operation fails.     NotFound: If the specified mentor does not exist.
+Returns:
+    Response: The newly created forked mentor.
+
+Raises:
+    BadRequest: If the provided data is invalid or the fork operation fails.
+    NotFound: If the specified mentor does not exist.
 
 ### Example
 
@@ -11499,7 +14958,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 mentor = 'mentor_example' # str | 
@@ -11537,7 +14995,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -11553,9 +15011,19 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_users_mentors_historical_memory_retrieve**
 > MemoryComponentMemoryDetail ai_mentor_orgs_users_mentors_historical_memory_retrieve(mentor, org, user_id)
 
+Retrieve memory history entries for a specific mentor and user.
 
+Args:
+    request: The HTTP request.
+    org: The organization/tenant identifier.
+    user_id: The ID of the user to retrieve memory history for.
+    mentor: The identifier of the mentor to retrieve memory history for.
 
-Retrieve memory history entries for a specific mentor and user.  Args:     request: The HTTP request.     org: The organization/tenant identifier.     user_id: The ID of the user to retrieve memory history for.     mentor: The identifier of the mentor to retrieve memory history for.  Returns:     Response: The memory history entries for the mentor and user.  Raises:     NotFound: If the specified mentor or memory history does not exist.
+Returns:
+    Response: The memory history entries for the mentor and user.
+
+Raises:
+    NotFound: If the specified mentor or memory history does not exist.
 
 ### Example
 
@@ -11578,7 +15046,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 mentor = 'mentor_example' # str | 
@@ -11629,8 +15096,6 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_users_mentors_memory_progress_retrieve**
 > MemoryProgress ai_mentor_orgs_users_mentors_memory_progress_retrieve(mentor, org, user_id)
 
-
-
 Mixin that includes the StudentTokenAuthentication and IsAdminUserOrStudent
 
 ### Example
@@ -11654,7 +15119,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 mentor = 'mentor_example' # str | 
@@ -11704,9 +15168,15 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_users_mentors_memory_settings_create**
 > MentorMemorySettingsResponse ai_mentor_orgs_users_mentors_memory_settings_create(mentor, org, user_id, mentor_memory_settings_request=mentor_memory_settings_request)
 
+Endpoint for mentor memory item settings.
 
+Accessible to platform admins and superusers.
 
-Endpoint for mentor memory item settings.  Accessible to platform admins and superusers.  Returns:      200: Change mentor memory component item.      400: When request is not valid.
+Returns:
+
+    200: Change mentor memory component item.
+
+    400: When request is not valid.
 
 ### Example
 
@@ -11730,7 +15200,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 mentor = 'mentor_example' # str | 
@@ -11768,7 +15237,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -11784,9 +15253,19 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_users_mentors_memory_settings_retrieve**
 > MentorMemorySettingsResponse ai_mentor_orgs_users_mentors_memory_settings_retrieve(mentor, org, user_id)
 
+Retrieve memory settings for a specific mentor.
 
+Args:
+    request: The HTTP request.
+    org: The organization/tenant identifier.
+    user_id: The ID of the user making the request.
+    mentor: The identifier of the mentor to retrieve settings for.
 
-Retrieve memory settings for a specific mentor.  Args:     request: The HTTP request.     org: The organization/tenant identifier.     user_id: The ID of the user making the request.     mentor: The identifier of the mentor to retrieve settings for.  Returns:     Response: The memory settings for the mentor.  Raises:     NotFound: If the specified mentor or settings do not exist.
+Returns:
+    Response: The memory settings for the mentor.
+
+Raises:
+    NotFound: If the specified mentor or settings do not exist.
 
 ### Example
 
@@ -11809,7 +15288,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 mentor = 'mentor_example' # str | 
@@ -11860,9 +15338,19 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_users_mentors_mentor_eval_create**
 > MentorEval ai_mentor_orgs_users_mentors_mentor_eval_create(mentor, org, user_id, mentor_eval_request=mentor_eval_request)
 
+Create or update evaluation criteria for a specific mentor.
 
+Args:
+    request: The HTTP request containing the evaluation data.
+    org: The organization/tenant identifier.
+    user_id: The ID of the user making the request.
+    mentor: The identifier of the mentor to create/update evaluations for.
 
-Create or update evaluation criteria for a specific mentor.  Args:     request: The HTTP request containing the evaluation data.     org: The organization/tenant identifier.     user_id: The ID of the user making the request.     mentor: The identifier of the mentor to create/update evaluations for.  Returns:     Response: The created or updated evaluation criteria.  Raises:     BadRequest: If the provided data is invalid or the mentor does not exist.
+Returns:
+    Response: The created or updated evaluation criteria.
+
+Raises:
+    BadRequest: If the provided data is invalid or the mentor does not exist.
 
 ### Example
 
@@ -11886,7 +15374,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 mentor = 'mentor_example' # str | 
@@ -11924,7 +15411,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -11939,9 +15426,19 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_users_mentors_mentor_eval_execution_create**
 > ai_mentor_orgs_users_mentors_mentor_eval_execution_create(mentor, org, user_id, run_mentor_eval)
 
+Run an evaluation for a specific mentor.
 
+Args:
+    request: The HTTP request containing the evaluation ID.
+    org: The organization/tenant identifier.
+    user_id: The ID of the user making the request.
+    mentor: The identifier of the mentor to evaluate.
 
-Run an evaluation for a specific mentor.  Args:     request: The HTTP request containing the evaluation ID.     org: The organization/tenant identifier.     user_id: The ID of the user making the request.     mentor: The identifier of the mentor to evaluate.  Returns:     Response: The ID of the generated evaluation report.  Raises:     BadRequest: If the evaluation ID is invalid or the mentor does not match.
+Returns:
+    Response: The ID of the generated evaluation report.
+
+Raises:
+    BadRequest: If the evaluation ID is invalid or the mentor does not match.
 
 ### Example
 
@@ -11964,7 +15461,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 mentor = 'mentor_example' # str | 
@@ -12000,7 +15496,7 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: Not defined
 
 ### HTTP response details
@@ -12015,9 +15511,19 @@ void (empty response body)
 # **ai_mentor_orgs_users_mentors_mentor_eval_retrieve**
 > MentorEval ai_mentor_orgs_users_mentors_mentor_eval_retrieve(mentor, org, user_id)
 
+Retrieve evaluation criteria for a specific mentor.
 
+Args:
+    request: The HTTP request.
+    org: The organization/tenant identifier.
+    user_id: The ID of the user making the request.
+    mentor: The identifier of the mentor to retrieve evaluations for.
 
-Retrieve evaluation criteria for a specific mentor.  Args:     request: The HTTP request.     org: The organization/tenant identifier.     user_id: The ID of the user making the request.     mentor: The identifier of the mentor to retrieve evaluations for.  Returns:     Response: The evaluation criteria for the mentor.  Raises:     NotFound: If the specified mentor or evaluations do not exist.
+Returns:
+    Response: The evaluation criteria for the mentor.
+
+Raises:
+    NotFound: If the specified mentor or evaluations do not exist.
 
 ### Example
 
@@ -12040,7 +15546,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 mentor = 'mentor_example' # str | 
@@ -12088,12 +15593,186 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **ai_mentor_orgs_users_mentors_mentor_user_settings_create**
+> MentorUserSetting ai_mentor_orgs_users_mentors_mentor_user_settings_create(mentor, org, user_id, mentor_user_setting=mentor_user_setting)
+
+Endpoint to set user settings for a mentor.
+
+
+POST https://base.manager.iblai.app/api/ai-mentor/orgs/your-org/users/your-user/mentors/unique-id/mentor-user-settings/
+
+Sample request
+```
+{"reference_saved_memories": true}
+```
+
+Sample response
+```
+{"reference_saved_memories": true}
+```
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.mentor_user_setting import MentorUserSetting
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+# Create an instance of the API class
+api_instance = iblai.AiMentorApi(api_client)
+mentor = 'mentor_example' # str | 
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+mentor_user_setting = iblai.MentorUserSetting() # MentorUserSetting |  (optional)
+
+try:
+    api_response = api_instance.ai_mentor_orgs_users_mentors_mentor_user_settings_create(mentor, org, user_id, mentor_user_setting=mentor_user_setting)
+    print("The response of AiMentorApi->ai_mentor_orgs_users_mentors_mentor_user_settings_create:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiMentorApi->ai_mentor_orgs_users_mentors_mentor_user_settings_create: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **mentor** | **str**|  | 
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+ **mentor_user_setting** | [**MentorUserSetting**](MentorUserSetting.md)|  | [optional] 
+
+### Return type
+
+[**MentorUserSetting**](MentorUserSetting.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ai_mentor_orgs_users_mentors_mentor_user_settings_retrieve**
+> MentorUserSetting ai_mentor_orgs_users_mentors_mentor_user_settings_retrieve(mentor, org, user_id)
+
+Endpoint to get user settings for a mentor.
+
+
+GET https://base.manager.iblai.app/api/ai-mentor/orgs/your-org/users/your-user/mentors/unique-id/mentor-user-settings/
+
+Sample response
+```
+{"reference_saved_memories": true}
+```
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.mentor_user_setting import MentorUserSetting
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+# Create an instance of the API class
+api_instance = iblai.AiMentorApi(api_client)
+mentor = 'mentor_example' # str | 
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+
+try:
+    api_response = api_instance.ai_mentor_orgs_users_mentors_mentor_user_settings_retrieve(mentor, org, user_id)
+    print("The response of AiMentorApi->ai_mentor_orgs_users_mentors_mentor_user_settings_retrieve:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiMentorApi->ai_mentor_orgs_users_mentors_mentor_user_settings_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **mentor** | **str**|  | 
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+
+### Return type
+
+[**MentorUserSetting**](MentorUserSetting.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **ai_mentor_orgs_users_mentors_public_settings_retrieve**
 > MentorSettingsPublic ai_mentor_orgs_users_mentors_public_settings_retrieve(mentor, org, user_id)
 
+Retrieve public mentor settings.
 
+Args:
+    request: HTTP request instance.
+    user_id: The ID of the user requesting settings.
+    mentor: The mentor identifier (name, slug, or unique_id).
+    org: The organization key.
 
-Retrieve public mentor settings.  Args:     request: HTTP request instance.     user_id: The ID of the user requesting settings.     mentor: The mentor identifier (name, slug, or unique_id).     org: The organization key.  Returns:     Response containing the mentor settings or an error message.
+Returns:
+    Response containing the mentor settings or an error message.
 
 ### Example
 
@@ -12103,7 +15782,6 @@ import iblai
 from iblai.models.mentor_settings_public import MentorSettingsPublic
 from iblai.rest import ApiException
 from pprint import pprint
-
 
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
@@ -12152,12 +15830,81 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **ai_mentor_orgs_users_mentors_public_sharable_link_retrieve**
+> ShareableMentorLink ai_mentor_orgs_users_mentors_public_sharable_link_retrieve(mentor, org, user_id)
+
+### Example
+
+
+```python
+import iblai
+from iblai.models.shareable_mentor_link import ShareableMentorLink
+from iblai.rest import ApiException
+from pprint import pprint
+
+# Create an instance of the API class
+api_instance = iblai.AiMentorApi(api_client)
+mentor = 'mentor_example' # str | 
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+
+try:
+    api_response = api_instance.ai_mentor_orgs_users_mentors_public_sharable_link_retrieve(mentor, org, user_id)
+    print("The response of AiMentorApi->ai_mentor_orgs_users_mentors_public_sharable_link_retrieve:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiMentorApi->ai_mentor_orgs_users_mentors_public_sharable_link_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **mentor** | **str**|  | 
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+
+### Return type
+
+[**ShareableMentorLink**](ShareableMentorLink.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **ai_mentor_orgs_users_mentors_reports_mentor_eval_report_retrieve**
 > MentorEvalReport ai_mentor_orgs_users_mentors_reports_mentor_eval_report_retrieve(mentor, org, report_id, user_id)
 
+Retrieve a specific evaluation report.
 
+Args:
+    request: The HTTP request.
+    org: The organization/tenant identifier.
+    user_id: The ID of the user making the request.
+    mentor: The identifier of the mentor that was evaluated.
+    report_id: The ID of the evaluation report to retrieve.
 
-Retrieve a specific evaluation report.  Args:     request: The HTTP request.     org: The organization/tenant identifier.     user_id: The ID of the user making the request.     mentor: The identifier of the mentor that was evaluated.     report_id: The ID of the evaluation report to retrieve.  Returns:     Response: The detailed evaluation report.  Raises:     BadRequest: If the report does not exist, does not match the mentor, or is still being generated.
+Returns:
+    Response: The detailed evaluation report.
+
+Raises:
+    BadRequest: If the report does not exist, does not match the mentor, or is still being generated.
 
 ### Example
 
@@ -12180,7 +15927,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 mentor = 'mentor_example' # str | 
@@ -12233,8 +15979,6 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_users_mentors_retrieve**
 > Mentor ai_mentor_orgs_users_mentors_retrieve(mentor, org, user_id)
 
-
-
 Retrieve details of a specific mentor by slug or name.
 
 ### Example
@@ -12258,7 +16002,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 mentor = 'mentor_example' # str | 
@@ -12308,9 +16051,19 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_users_mentors_scenarios_retrieve**
 > MentorScenario ai_mentor_orgs_users_mentors_scenarios_retrieve(mentor, org, user_id)
 
+Retrieve available scenarios for a specific mentor.
 
+Args:
+    request: The HTTP request.
+    org: The organization/tenant identifier.
+    user_id: The ID of the user making the request.
+    mentor: The identifier of the mentor to retrieve scenarios for.
 
-Retrieve available scenarios for a specific mentor.  Args:     request: The HTTP request.     org: The organization/tenant identifier.     user_id: The ID of the user making the request.     mentor: The identifier of the mentor to retrieve scenarios for.  Returns:     Response: The available scenarios for the mentor.  Raises:     NotFound: If the specified mentor or scenarios do not exist.
+Returns:
+    Response: The available scenarios for the mentor.
+
+Raises:
+    NotFound: If the specified mentor or scenarios do not exist.
 
 ### Example
 
@@ -12320,7 +16073,6 @@ import iblai
 from iblai.models.mentor_scenario import MentorScenario
 from iblai.rest import ApiException
 from pprint import pprint
-
 
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
@@ -12397,7 +16149,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 mentor = 'mentor_example' # str | 
@@ -12449,7 +16200,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **ai_mentor_orgs_users_mentors_settings_update**
-> MentorSettings ai_mentor_orgs_users_mentors_settings_update(mentor, org, user_id, department_id=department_id, mentor_name=mentor_name, template_name=template_name, display_name=display_name, profile_image=profile_image, initial_message=initial_message, suggested_message=suggested_message, theme=theme, user_message_color=user_message_color, mentor_bubble_color=mentor_bubble_color, align_mentor_bubble=align_mentor_bubble, system_prompt=system_prompt, llm_provider=llm_provider, llm_name=llm_name, featured=featured, disable_chathistory=disable_chathistory, metadata=metadata, custom_css=custom_css, department_id2=department_id2, mentor_visibility=mentor_visibility, enable_image_generation=enable_image_generation, enable_web_browsing=enable_web_browsing, enable_code_interpreter=enable_code_interpreter, allow_anonymous=allow_anonymous, forkable=forkable, forkable_with_training_data=forkable_with_training_data, mentor_description=mentor_description, uploaded_profile_image=uploaded_profile_image, proactive_response=proactive_response, greeting_method=greeting_method, can_use_tools=can_use_tools, tool_slugs=tool_slugs, llm_temperature=llm_temperature, proactive_prompt=proactive_prompt, moderation_system_prompt=moderation_system_prompt, post_processing_prompt=post_processing_prompt, moderation_response=moderation_response, enable_moderation=enable_moderation, enable_post_processing_system=enable_post_processing_system, enable_openai_assistant=enable_openai_assistant, enable_total_grounding=enable_total_grounding, enable_suggested_prompts=enable_suggested_prompts, enable_guided_prompts=enable_guided_prompts, mcp_servers=mcp_servers, google_voice=google_voice, openai_voice=openai_voice, guided_prompt_instructions=guided_prompt_instructions, safety_system_prompt=safety_system_prompt, safety_response=safety_response, enable_safety_system=enable_safety_system, enable_memory_component=enable_memory_component, enable_spaced_repetition=enable_spaced_repetition, enable_instruction_mode=enable_instruction_mode, enable_socratic_mode=enable_socratic_mode, is_guided_mentor=is_guided_mentor, enable_email_chat=enable_email_chat, categories=categories)
+> MentorSettings ai_mentor_orgs_users_mentors_settings_update(mentor, org, user_id, department_id=department_id, mentor_name=mentor_name, template_name=template_name, display_name=display_name, profile_image=profile_image, initial_message=initial_message, suggested_message=suggested_message, theme=theme, user_message_color=user_message_color, mentor_bubble_color=mentor_bubble_color, align_mentor_bubble=align_mentor_bubble, system_prompt=system_prompt, llm_provider=llm_provider, llm_name=llm_name, featured=featured, disable_chathistory=disable_chathistory, metadata=metadata, custom_css=custom_css, department_id2=department_id2, mentor_visibility=mentor_visibility, enable_image_generation=enable_image_generation, enable_web_browsing=enable_web_browsing, enable_code_interpreter=enable_code_interpreter, allow_anonymous=allow_anonymous, forkable=forkable, forkable_with_training_data=forkable_with_training_data, mentor_description=mentor_description, uploaded_profile_image=uploaded_profile_image, proactive_response=proactive_response, greeting_method=greeting_method, can_use_tools=can_use_tools, tool_slugs=tool_slugs, llm_temperature=llm_temperature, proactive_prompt=proactive_prompt, disclaimer=disclaimer, placeholder_prompt=placeholder_prompt, moderation_system_prompt=moderation_system_prompt, post_processing_prompt=post_processing_prompt, moderation_response=moderation_response, enable_moderation=enable_moderation, enable_multi_query_rag=enable_multi_query_rag, enable_post_processing_system=enable_post_processing_system, enable_openai_assistant=enable_openai_assistant, enable_total_grounding=enable_total_grounding, enable_suggested_prompts=enable_suggested_prompts, enable_guided_prompts=enable_guided_prompts, mcp_servers=mcp_servers, google_voice=google_voice, openai_voice=openai_voice, guided_prompt_instructions=guided_prompt_instructions, safety_system_prompt=safety_system_prompt, safety_response=safety_response, enable_safety_system=enable_safety_system, enable_spaced_repetition=enable_spaced_repetition, enable_instruction_mode=enable_instruction_mode, enable_socratic_mode=enable_socratic_mode, is_guided_mentor=is_guided_mentor, enable_email_chat=enable_email_chat, categories=categories, types=types, subjects=subjects)
 
 Update Mentor Settings
 
@@ -12477,7 +16228,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 mentor = 'mentor_example' # str | 
@@ -12517,10 +16267,13 @@ can_use_tools = True # bool |  (optional)
 tool_slugs = ['tool_slugs_example'] # List[str] |  (optional)
 llm_temperature = 3.4 # float |  (optional)
 proactive_prompt = 'proactive_prompt_example' # str |  (optional)
+disclaimer = 'disclaimer_example' # str |  (optional)
+placeholder_prompt = 'placeholder_prompt_example' # str |  (optional)
 moderation_system_prompt = 'moderation_system_prompt_example' # str |  (optional)
 post_processing_prompt = 'post_processing_prompt_example' # str |  (optional)
 moderation_response = 'moderation_response_example' # str |  (optional)
 enable_moderation = True # bool |  (optional)
+enable_multi_query_rag = True # bool |  (optional)
 enable_post_processing_system = True # bool |  (optional)
 enable_openai_assistant = True # bool |  (optional)
 enable_total_grounding = True # bool |  (optional)
@@ -12533,17 +16286,18 @@ guided_prompt_instructions = 'guided_prompt_instructions_example' # str |  (opti
 safety_system_prompt = 'safety_system_prompt_example' # str |  (optional)
 safety_response = 'safety_response_example' # str |  (optional)
 enable_safety_system = True # bool |  (optional)
-enable_memory_component = False # bool |  (optional) (default to False)
 enable_spaced_repetition = False # bool |  (optional) (default to False)
 enable_instruction_mode = False # bool |  (optional) (default to False)
 enable_socratic_mode = False # bool |  (optional) (default to False)
 is_guided_mentor = False # bool |  (optional) (default to False)
 enable_email_chat = False # bool |  (optional) (default to False)
 categories = [56] # List[int] |  (optional)
+types = [56] # List[int] |  (optional)
+subjects = [56] # List[int] |  (optional)
 
 try:
     # Update Mentor Settings
-    api_response = api_instance.ai_mentor_orgs_users_mentors_settings_update(mentor, org, user_id, department_id=department_id, mentor_name=mentor_name, template_name=template_name, display_name=display_name, profile_image=profile_image, initial_message=initial_message, suggested_message=suggested_message, theme=theme, user_message_color=user_message_color, mentor_bubble_color=mentor_bubble_color, align_mentor_bubble=align_mentor_bubble, system_prompt=system_prompt, llm_provider=llm_provider, llm_name=llm_name, featured=featured, disable_chathistory=disable_chathistory, metadata=metadata, custom_css=custom_css, department_id2=department_id2, mentor_visibility=mentor_visibility, enable_image_generation=enable_image_generation, enable_web_browsing=enable_web_browsing, enable_code_interpreter=enable_code_interpreter, allow_anonymous=allow_anonymous, forkable=forkable, forkable_with_training_data=forkable_with_training_data, mentor_description=mentor_description, uploaded_profile_image=uploaded_profile_image, proactive_response=proactive_response, greeting_method=greeting_method, can_use_tools=can_use_tools, tool_slugs=tool_slugs, llm_temperature=llm_temperature, proactive_prompt=proactive_prompt, moderation_system_prompt=moderation_system_prompt, post_processing_prompt=post_processing_prompt, moderation_response=moderation_response, enable_moderation=enable_moderation, enable_post_processing_system=enable_post_processing_system, enable_openai_assistant=enable_openai_assistant, enable_total_grounding=enable_total_grounding, enable_suggested_prompts=enable_suggested_prompts, enable_guided_prompts=enable_guided_prompts, mcp_servers=mcp_servers, google_voice=google_voice, openai_voice=openai_voice, guided_prompt_instructions=guided_prompt_instructions, safety_system_prompt=safety_system_prompt, safety_response=safety_response, enable_safety_system=enable_safety_system, enable_memory_component=enable_memory_component, enable_spaced_repetition=enable_spaced_repetition, enable_instruction_mode=enable_instruction_mode, enable_socratic_mode=enable_socratic_mode, is_guided_mentor=is_guided_mentor, enable_email_chat=enable_email_chat, categories=categories)
+    api_response = api_instance.ai_mentor_orgs_users_mentors_settings_update(mentor, org, user_id, department_id=department_id, mentor_name=mentor_name, template_name=template_name, display_name=display_name, profile_image=profile_image, initial_message=initial_message, suggested_message=suggested_message, theme=theme, user_message_color=user_message_color, mentor_bubble_color=mentor_bubble_color, align_mentor_bubble=align_mentor_bubble, system_prompt=system_prompt, llm_provider=llm_provider, llm_name=llm_name, featured=featured, disable_chathistory=disable_chathistory, metadata=metadata, custom_css=custom_css, department_id2=department_id2, mentor_visibility=mentor_visibility, enable_image_generation=enable_image_generation, enable_web_browsing=enable_web_browsing, enable_code_interpreter=enable_code_interpreter, allow_anonymous=allow_anonymous, forkable=forkable, forkable_with_training_data=forkable_with_training_data, mentor_description=mentor_description, uploaded_profile_image=uploaded_profile_image, proactive_response=proactive_response, greeting_method=greeting_method, can_use_tools=can_use_tools, tool_slugs=tool_slugs, llm_temperature=llm_temperature, proactive_prompt=proactive_prompt, disclaimer=disclaimer, placeholder_prompt=placeholder_prompt, moderation_system_prompt=moderation_system_prompt, post_processing_prompt=post_processing_prompt, moderation_response=moderation_response, enable_moderation=enable_moderation, enable_multi_query_rag=enable_multi_query_rag, enable_post_processing_system=enable_post_processing_system, enable_openai_assistant=enable_openai_assistant, enable_total_grounding=enable_total_grounding, enable_suggested_prompts=enable_suggested_prompts, enable_guided_prompts=enable_guided_prompts, mcp_servers=mcp_servers, google_voice=google_voice, openai_voice=openai_voice, guided_prompt_instructions=guided_prompt_instructions, safety_system_prompt=safety_system_prompt, safety_response=safety_response, enable_safety_system=enable_safety_system, enable_spaced_repetition=enable_spaced_repetition, enable_instruction_mode=enable_instruction_mode, enable_socratic_mode=enable_socratic_mode, is_guided_mentor=is_guided_mentor, enable_email_chat=enable_email_chat, categories=categories, types=types, subjects=subjects)
     print("The response of AiMentorApi->ai_mentor_orgs_users_mentors_settings_update:\n")
     pprint(api_response)
 except Exception as e:
@@ -12594,10 +16348,13 @@ Name | Type | Description  | Notes
  **tool_slugs** | [**List[str]**](str.md)|  | [optional] 
  **llm_temperature** | **float**|  | [optional] 
  **proactive_prompt** | **str**|  | [optional] 
+ **disclaimer** | **str**|  | [optional] 
+ **placeholder_prompt** | **str**|  | [optional] 
  **moderation_system_prompt** | **str**|  | [optional] 
  **post_processing_prompt** | **str**|  | [optional] 
  **moderation_response** | **str**|  | [optional] 
  **enable_moderation** | **bool**|  | [optional] 
+ **enable_multi_query_rag** | **bool**|  | [optional] 
  **enable_post_processing_system** | **bool**|  | [optional] 
  **enable_openai_assistant** | **bool**|  | [optional] 
  **enable_total_grounding** | **bool**|  | [optional] 
@@ -12610,13 +16367,14 @@ Name | Type | Description  | Notes
  **safety_system_prompt** | **str**|  | [optional] 
  **safety_response** | **str**|  | [optional] 
  **enable_safety_system** | **bool**|  | [optional] 
- **enable_memory_component** | **bool**|  | [optional] [default to False]
  **enable_spaced_repetition** | **bool**|  | [optional] [default to False]
  **enable_instruction_mode** | **bool**|  | [optional] [default to False]
  **enable_socratic_mode** | **bool**|  | [optional] [default to False]
  **is_guided_mentor** | **bool**|  | [optional] [default to False]
  **enable_email_chat** | **bool**|  | [optional] [default to False]
  **categories** | [**List[int]**](int.md)|  | [optional] 
+ **types** | [**List[int]**](int.md)|  | [optional] 
+ **subjects** | [**List[int]**](int.md)|  | [optional] 
 
 ### Return type
 
@@ -12641,12 +16399,311 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **ai_mentor_orgs_users_mentors_sharable_link_create**
+> ShareableMentorLink ai_mentor_orgs_users_mentors_sharable_link_create(mentor, org, user_id, shareable_mentor_link=shareable_mentor_link)
+
+Enpoints to manage mentor shareable links
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.shareable_mentor_link import ShareableMentorLink
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+# Create an instance of the API class
+api_instance = iblai.AiMentorApi(api_client)
+mentor = 'mentor_example' # str | 
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+shareable_mentor_link = iblai.ShareableMentorLink() # ShareableMentorLink |  (optional)
+
+try:
+    api_response = api_instance.ai_mentor_orgs_users_mentors_sharable_link_create(mentor, org, user_id, shareable_mentor_link=shareable_mentor_link)
+    print("The response of AiMentorApi->ai_mentor_orgs_users_mentors_sharable_link_create:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiMentorApi->ai_mentor_orgs_users_mentors_sharable_link_create: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **mentor** | **str**|  | 
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+ **shareable_mentor_link** | [**ShareableMentorLink**](ShareableMentorLink.md)|  | [optional] 
+
+### Return type
+
+[**ShareableMentorLink**](ShareableMentorLink.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ai_mentor_orgs_users_mentors_sharable_link_destroy**
+> ai_mentor_orgs_users_mentors_sharable_link_destroy(mentor, org, user_id)
+
+Enpoints to manage mentor shareable links
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+# Create an instance of the API class
+api_instance = iblai.AiMentorApi(api_client)
+mentor = 'mentor_example' # str | 
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+
+try:
+    api_instance.ai_mentor_orgs_users_mentors_sharable_link_destroy(mentor, org, user_id)
+except Exception as e:
+    print("Exception when calling AiMentorApi->ai_mentor_orgs_users_mentors_sharable_link_destroy: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **mentor** | **str**|  | 
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**204** | No response body |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ai_mentor_orgs_users_mentors_sharable_link_retrieve**
+> ShareableMentorLink ai_mentor_orgs_users_mentors_sharable_link_retrieve(mentor, org, user_id)
+
+Enpoints to manage mentor shareable links
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.shareable_mentor_link import ShareableMentorLink
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+# Create an instance of the API class
+api_instance = iblai.AiMentorApi(api_client)
+mentor = 'mentor_example' # str | 
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+
+try:
+    api_response = api_instance.ai_mentor_orgs_users_mentors_sharable_link_retrieve(mentor, org, user_id)
+    print("The response of AiMentorApi->ai_mentor_orgs_users_mentors_sharable_link_retrieve:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiMentorApi->ai_mentor_orgs_users_mentors_sharable_link_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **mentor** | **str**|  | 
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+
+### Return type
+
+[**ShareableMentorLink**](ShareableMentorLink.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ai_mentor_orgs_users_mentors_sharable_link_update**
+> ShareableMentorLink ai_mentor_orgs_users_mentors_sharable_link_update(mentor, org, user_id, shareable_mentor_link=shareable_mentor_link)
+
+Enpoints to manage mentor shareable links
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.shareable_mentor_link import ShareableMentorLink
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+# Create an instance of the API class
+api_instance = iblai.AiMentorApi(api_client)
+mentor = 'mentor_example' # str | 
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+shareable_mentor_link = iblai.ShareableMentorLink() # ShareableMentorLink |  (optional)
+
+try:
+    api_response = api_instance.ai_mentor_orgs_users_mentors_sharable_link_update(mentor, org, user_id, shareable_mentor_link=shareable_mentor_link)
+    print("The response of AiMentorApi->ai_mentor_orgs_users_mentors_sharable_link_update:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiMentorApi->ai_mentor_orgs_users_mentors_sharable_link_update: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **mentor** | **str**|  | 
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+ **shareable_mentor_link** | [**ShareableMentorLink**](ShareableMentorLink.md)|  | [optional] 
+
+### Return type
+
+[**ShareableMentorLink**](ShareableMentorLink.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **ai_mentor_orgs_users_mentors_spaced_repetition_question_stats_retrieve**
 > SpacedRepetitionQuestionStats ai_mentor_orgs_users_mentors_spaced_repetition_question_stats_retrieve(mentor, org, user_id)
 
+Retrieve spaced repetition question statistics.
 
+Args:
+    request: The HTTP request.
+    org: The organization/tenant identifier.
+    user_id: The ID of the user to retrieve statistics for.
+    mentor: The unique identifier of the mentor.
 
-Retrieve spaced repetition question statistics.  Args:     request: The HTTP request.     org: The organization/tenant identifier.     user_id: The ID of the user to retrieve statistics for.     mentor: The unique identifier of the mentor.  Returns:     Response: Statistics about the user's performance on spaced repetition questions.  Raises:     NotFound: If the mentor or student does not exist.
+Returns:
+    Response: Statistics about the user's performance on spaced repetition questions.
+
+Raises:
+    NotFound: If the mentor or student does not exist.
 
 ### Example
 
@@ -12669,7 +16726,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 mentor = 'mentor_example' # str | 
@@ -12720,9 +16776,29 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_users_mentors_spaced_repetition_recommended_paths_list**
 > List[QuestionCardTag] ai_mentor_orgs_users_mentors_spaced_repetition_recommended_paths_list(mentor, org, user_id)
 
+Retrieve a list of learning paths associated with a specific mentor and student.
 
+This endpoint uses the memory component to establish the learning context for a student
+under the guidance of a mentor. It verifies that the provided organization identifier matches
+the mentor's platform key, and then retrieves learning path tags associated with the student's
+question cards. Each tag is annotated with the total number of question cards and the count of
+cards with successful repetitions (i.e., correct answers). The learning paths are ordered by the
+number of correct answers and limited to the top five entries.
 
-Retrieve a list of learning paths associated with a specific mentor and student.  This endpoint uses the memory component to establish the learning context for a student under the guidance of a mentor. It verifies that the provided organization identifier matches the mentor's platform key, and then retrieves learning path tags associated with the student's question cards. Each tag is annotated with the total number of question cards and the count of cards with successful repetitions (i.e., correct answers). The learning paths are ordered by the number of correct answers and limited to the top five entries.  Args:     request: The HTTP request containing the necessary context.     org (str): The organization identifier/platform key.     user_id (str): The username of the student.     mentor (str): The unique identifier of the mentor.     *args: Additional positional arguments.     **kwargs: Additional keyword arguments.  Returns:     Resp200onse: memory component detail infomrmation  Raises:     NotFound: If the memory component for the specified mentor and student cannot be found,               or if the organization identifier does not match the mentor's platform key.
+Args:
+    request: The HTTP request containing the necessary context.
+    org (str): The organization identifier/platform key.
+    user_id (str): The username of the student.
+    mentor (str): The unique identifier of the mentor.
+    *args: Additional positional arguments.
+    **kwargs: Additional keyword arguments.
+
+Returns:
+    Resp200onse: memory component detail infomrmation
+
+Raises:
+    NotFound: If the memory component for the specified mentor and student cannot be found,
+              or if the organization identifier does not match the mentor's platform key.
 
 ### Example
 
@@ -12745,7 +16821,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 mentor = 'mentor_example' # str | 
@@ -12796,9 +16871,20 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_users_mentors_spaced_repetition_recommended_paths_update**
 > SpacedRepetitionLearningPath ai_mentor_orgs_users_mentors_spaced_repetition_recommended_paths_update(mentor, org, user_id, spaced_repetition_learning_path)
 
+Set a specific learning path for spaced repetition.
 
+Args:
+    request: The HTTP request containing the learning path.
+    org: The organization/tenant identifier.
+    user_id: The ID of the user to set the learning path for.
+    mentor: The unique identifier of the mentor.
 
-Set a specific learning path for spaced repetition.  Args:     request: The HTTP request containing the learning path.     org: The organization/tenant identifier.     user_id: The ID of the user to set the learning path for.     mentor: The unique identifier of the mentor.  Returns:     Response: The set learning path.  Raises:     BadRequest: If the provided data is invalid.     NotFound: If the learning path, mentor, or student does not exist.
+Returns:
+    Response: The set learning path.
+
+Raises:
+    BadRequest: If the provided data is invalid.
+    NotFound: If the learning path, mentor, or student does not exist.
 
 ### Example
 
@@ -12821,7 +16907,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 mentor = 'mentor_example' # str | 
@@ -12859,7 +16944,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -12875,9 +16960,16 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_users_mentors_star_create**
 > StarMentor ai_mentor_orgs_users_mentors_star_create(mentor, org, user_id)
 
+Endpoint for starring a mentor.
+
+Accessible to students and admins.
 
 
-Endpoint for starring a mentor.  Accessible to students and admins.   Returns:      200: Star status.      400: When request is not valid.
+Returns:
+
+    200: Star status.
+
+    400: When request is not valid.
 
 ### Example
 
@@ -12900,7 +16992,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 mentor = 'mentor_example' # str | 
@@ -12950,9 +17041,16 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_users_mentors_star_retrieve**
 > StarMentor ai_mentor_orgs_users_mentors_star_retrieve(mentor, org, user_id)
 
+Endpoint for getting the star status of a mentor.
+
+Accessible to students and admins.
 
 
-Endpoint for getting the star status of a mentor.  Accessible to students and admins.   Returns:      200: Star status.      400: When request is not valid.
+Returns:
+
+    200: Star status.
+
+    400: When request is not valid.
 
 ### Example
 
@@ -12975,7 +17073,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 mentor = 'mentor_example' # str | 
@@ -13022,12 +17119,104 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **ai_mentor_orgs_users_mentors_summaries_retrieve**
+> MentorSummary ai_mentor_orgs_users_mentors_summaries_retrieve(mentor, org, summary_type, user_id)
+
+GET `/api/orgs/<platform_key>/users/<username>/mentors/<mentor_unique_id>/summaries/<summary_type>/`
+
+Endpoint to get mentor summary. The summary type can be `user` or `general`.
+
+Sample response:
+```
+{"rating": 3.9, "summary": "The mentor had a good chat."}
+```
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.mentor_summary import MentorSummary
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+# Create an instance of the API class
+api_instance = iblai.AiMentorApi(api_client)
+mentor = 'mentor_example' # str | 
+org = 'org_example' # str | 
+summary_type = 'summary_type_example' # str | 
+user_id = 'user_id_example' # str | 
+
+try:
+    api_response = api_instance.ai_mentor_orgs_users_mentors_summaries_retrieve(mentor, org, summary_type, user_id)
+    print("The response of AiMentorApi->ai_mentor_orgs_users_mentors_summaries_retrieve:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiMentorApi->ai_mentor_orgs_users_mentors_summaries_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **mentor** | **str**|  | 
+ **org** | **str**|  | 
+ **summary_type** | **str**|  | 
+ **user_id** | **str**|  | 
+
+### Return type
+
+[**MentorSummary**](MentorSummary.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **ai_mentor_orgs_users_mentors_unstar_create**
 > StarMentor ai_mentor_orgs_users_mentors_unstar_create(mentor, org, user_id)
 
+Remove a mentor from a user's starred list.
 
+Args:
+    request: The HTTP request.
+    org: The organization/tenant identifier.
+    user_id: The ID of the user unstarring the mentor.
+    mentor: The identifier of the mentor to unstar.
 
-Remove a mentor from a user's starred list.  Args:     request: The HTTP request.     org: The organization/tenant identifier.     user_id: The ID of the user unstarring the mentor.     mentor: The identifier of the mentor to unstar.  Returns:     Response: The updated star status of the mentor.  Raises:     NotFound: If the specified mentor or student does not exist.     BadRequest: If the request is invalid.
+Returns:
+    Response: The updated star status of the mentor.
+
+Raises:
+    NotFound: If the specified mentor or student does not exist.
+    BadRequest: If the request is invalid.
 
 ### Example
 
@@ -13050,7 +17239,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 mentor = 'mentor_example' # str | 
@@ -13102,9 +17290,18 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_users_metadata_retrieve**
 > MentorMetadata ai_mentor_orgs_users_metadata_retrieve(org, user_id)
 
+Retrieve metadata for a mentor.
 
+Args:
+    request: The HTTP request.
+    org: The organization/tenant identifier.
+    user_id: The ID of the user making the request.
 
-Retrieve metadata for a mentor.  Args:     request: The HTTP request.     org: The organization/tenant identifier.     user_id: The ID of the user making the request.  Returns:     Response: The mentor metadata.  Raises:     NotFound: If no metadata exists for the specified mentor.
+Returns:
+    Response: The mentor metadata.
+
+Raises:
+    NotFound: If no metadata exists for the specified mentor.
 
 ### Example
 
@@ -13127,7 +17324,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 org = 'org_example' # str | 
@@ -13176,9 +17372,12 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_users_moderation_logs_destroy**
 > ai_mentor_orgs_users_moderation_logs_destroy(id, org, user_id)
 
+Endpoint to view and delete Moderation Logs for a tenant.
+
+These can be filtered by username, platform_key and  mentor id
 
 
-Endpoint to view and delete Moderation Logs for a tenant.  These can be filtered by username, platform_key and  mentor id   A search query can be conducted to search through the prompts and reason for the moderation catch event.
+A search query can be conducted to search through the prompts and reason for the moderation catch event.
 
 ### Example
 
@@ -13200,7 +17399,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 id = 56 # int | A unique integer value identifying this moderation log.
@@ -13248,9 +17446,12 @@ void (empty response body)
 # **ai_mentor_orgs_users_moderation_logs_list**
 > PaginatedModerationLogList ai_mentor_orgs_users_moderation_logs_list(org, user_id, mentor=mentor, ordering=ordering, page=page, page_size=page_size, platform_key=platform_key, search=search, target_system=target_system, username=username)
 
+Endpoint to view and delete Moderation Logs for a tenant.
+
+These can be filtered by username, platform_key and  mentor id
 
 
-Endpoint to view and delete Moderation Logs for a tenant.  These can be filtered by username, platform_key and  mentor id   A search query can be conducted to search through the prompts and reason for the moderation catch event.
+A search query can be conducted to search through the prompts and reason for the moderation catch event.
 
 ### Example
 
@@ -13273,7 +17474,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 org = 'org_example' # str | 
@@ -13337,9 +17537,12 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_users_moderation_logs_retrieve**
 > ModerationLog ai_mentor_orgs_users_moderation_logs_retrieve(id, org, user_id)
 
+Endpoint to view and delete Moderation Logs for a tenant.
+
+These can be filtered by username, platform_key and  mentor id
 
 
-Endpoint to view and delete Moderation Logs for a tenant.  These can be filtered by username, platform_key and  mentor id   A search query can be conducted to search through the prompts and reason for the moderation catch event.
+A search query can be conducted to search through the prompts and reason for the moderation catch event.
 
 ### Example
 
@@ -13362,7 +17565,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 id = 56 # int | A unique integer value identifying this moderation log.
@@ -13412,9 +17614,12 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_users_partial_update**
 > MentorCreate ai_mentor_orgs_users_partial_update(name, org, user_id, department_id=department_id, filter_by=filter_by, metadata_key=metadata_key, metadata_value=metadata_value, return_session_information=return_session_information, visibility=visibility, patched_mentor_create=patched_mentor_create)
 
+API ViewSet for managing mentors.
 
+Provides endpoints to retrieve, create, update, and delete mentor data.
 
-API ViewSet for managing mentors.  Provides endpoints to retrieve, create, update, and delete mentor data.  Permissions:     - Accessible to both tenant admins and students.
+Permissions:
+    - Accessible to both tenant admins and students.
 
 ### Example
 
@@ -13438,7 +17643,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 name = 'name_example' # str | 
@@ -13488,7 +17692,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -13502,9 +17706,12 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_users_periodic_agent_logs_list**
 > PaginatedPeriodicAgentLogList ai_mentor_orgs_users_periodic_agent_logs_list(org, user_id, ordering=ordering, page=page, page_size=page_size, parent_mentor_id=parent_mentor_id, parent_session_id=parent_session_id, periodic_agent=periodic_agent, search=search, status=status, username=username)
 
+Endpoint to view logs for periodic agent runs.
 
+These logs contain the full mentor output for each run for debugging.
+Logs are ordered from newest to oldest. However this can be changed.
 
-Endpoint to view logs for periodic agent runs.  These logs contain the full mentor output for each run for debugging. Logs are ordered from newest to oldest. However this can be changed.  You can also filter logs for a PeriodicAgent by passing the `periodic_agent` query parameter in the URL.
+You can also filter logs for a PeriodicAgent by passing the `periodic_agent` query parameter in the URL.
 
 ### Example
 
@@ -13527,7 +17734,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 org = 'org_example' # str | 
@@ -13593,9 +17799,12 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_users_periodic_agent_logs_retrieve**
 > PeriodicAgentLog ai_mentor_orgs_users_periodic_agent_logs_retrieve(id, org, user_id)
 
+Endpoint to view logs for periodic agent runs.
 
+These logs contain the full mentor output for each run for debugging.
+Logs are ordered from newest to oldest. However this can be changed.
 
-Endpoint to view logs for periodic agent runs.  These logs contain the full mentor output for each run for debugging. Logs are ordered from newest to oldest. However this can be changed.  You can also filter logs for a PeriodicAgent by passing the `periodic_agent` query parameter in the URL.
+You can also filter logs for a PeriodicAgent by passing the `periodic_agent` query parameter in the URL.
 
 ### Example
 
@@ -13618,7 +17827,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 id = 56 # int | A unique integer value identifying this periodic agent log.
@@ -13668,9 +17876,69 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_users_periodic_agents_create**
 > PeriodicAgentCreate ai_mentor_orgs_users_periodic_agents_create(org, user_id, periodic_agent_create)
 
+Endpoint to create and view, update and delete periodic agents.
 
+Periodic agents are schedulers issued for mentors. These are configured with input prompt (if any)
+as well as a cron schedule to trigger the periodic agent.
 
-Endpoint to create and view, update and delete periodic agents.  Periodic agents are schedulers issued for mentors. These are configured with input prompt (if any) as well as a cron schedule to trigger the periodic agent.  Access to these are restricted to platform admins and tenant administrators  Session information for running the periodic agent will be generated with the credentials of the user (platform administrator) who created the agent.  A Periodic Agent is allowed to have a `callback_url` and `callback_secret`. When a `callback_url` is set for a Periodic Agent, a post request with data entries containing the log and timestamp of the run will be made to the callback_url provided. Here is the payload structure:         ```         {             \"timestamp\": \"timestamp when the run completed\",             \"status\": \"status of the periodic agent\",             \"prompt\": \"input prompt to agent,             \"agent_output\": \"...final response of agent\",             \"log\": \"... full agent run log\",             \"log_id\": periodic agent log id.,         }         ``` The payload is encrypted using the `callback_secret` provided.  You can validate the payload using the X-Hub-Signature-256 signature header for request data. This is a Sha256 encoded HMAC hex digest of the payload body.  ```python import hmac import haslib  def validate_payload(request: HttpRequest, callback_secret: str):     # Get the X-Hub-Signature-256 header from the request     received_signature = request.META.get(\"HTTP_X_HUB_SIGNATURE_256\", \"\")      if not received_signature.startswith(\"sha256=\"):         # Invalid signature format         return False      received_signature = received_signature[len(\"sha256=\") :]      try:         # Get the raw request body         payload = request.body          # Compute the expected signature using the app_secret         expected_signature = hmac.new(             callback_secret.encode(), payload, hashlib.sha256         ).hexdigest()          if hmac.compare_digest(received_signature, expected_signature):             # Signatures match, the payload is genuine             return True         else:             # Signatures don't match             return False     except Exception as e:         # Handle any errors that may occur during validation         return False  ```
+Access to these are restricted to platform admins and tenant administrators
+
+Session information for running the periodic agent will be generated with the credentials of the
+user (platform administrator) who created the agent.
+
+A Periodic Agent is allowed to have a `callback_url` and `callback_secret`.
+When a `callback_url` is set for a Periodic Agent, a post request with data entries containing the log and timestamp
+of the run will be made to the callback_url provided.
+Here is the payload structure:
+        ```
+        {
+            "timestamp": "timestamp when the run completed",
+            "status": "status of the periodic agent",
+            "prompt": "input prompt to agent,
+            "agent_output": "...final response of agent",
+            "log": "... full agent run log",
+            "log_id": periodic agent log id.,
+        }
+        ```
+The payload is encrypted using the `callback_secret` provided.
+
+You can validate the payload using the X-Hub-Signature-256 signature header for request data.
+This is a Sha256 encoded HMAC hex digest of the payload body.
+
+```python
+import hmac
+import haslib
+
+def validate_payload(request: HttpRequest, callback_secret: str):
+    # Get the X-Hub-Signature-256 header from the request
+    received_signature = request.META.get("HTTP_X_HUB_SIGNATURE_256", "")
+
+    if not received_signature.startswith("sha256="):
+        # Invalid signature format
+        return False
+
+    received_signature = received_signature[len("sha256=") :]
+
+    try:
+        # Get the raw request body
+        payload = request.body
+
+        # Compute the expected signature using the app_secret
+        expected_signature = hmac.new(
+            callback_secret.encode(), payload, hashlib.sha256
+        ).hexdigest()
+
+        if hmac.compare_digest(received_signature, expected_signature):
+            # Signatures match, the payload is genuine
+            return True
+        else:
+            # Signatures don't match
+            return False
+    except Exception as e:
+        # Handle any errors that may occur during validation
+        return False
+
+```
 
 ### Example
 
@@ -13693,7 +17961,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 org = 'org_example' # str | 
@@ -13729,7 +17996,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -13743,9 +18010,69 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_users_periodic_agents_destroy**
 > ai_mentor_orgs_users_periodic_agents_destroy(id, org, user_id)
 
+Endpoint to create and view, update and delete periodic agents.
 
+Periodic agents are schedulers issued for mentors. These are configured with input prompt (if any)
+as well as a cron schedule to trigger the periodic agent.
 
-Endpoint to create and view, update and delete periodic agents.  Periodic agents are schedulers issued for mentors. These are configured with input prompt (if any) as well as a cron schedule to trigger the periodic agent.  Access to these are restricted to platform admins and tenant administrators  Session information for running the periodic agent will be generated with the credentials of the user (platform administrator) who created the agent.  A Periodic Agent is allowed to have a `callback_url` and `callback_secret`. When a `callback_url` is set for a Periodic Agent, a post request with data entries containing the log and timestamp of the run will be made to the callback_url provided. Here is the payload structure:         ```         {             \"timestamp\": \"timestamp when the run completed\",             \"status\": \"status of the periodic agent\",             \"prompt\": \"input prompt to agent,             \"agent_output\": \"...final response of agent\",             \"log\": \"... full agent run log\",             \"log_id\": periodic agent log id.,         }         ``` The payload is encrypted using the `callback_secret` provided.  You can validate the payload using the X-Hub-Signature-256 signature header for request data. This is a Sha256 encoded HMAC hex digest of the payload body.  ```python import hmac import haslib  def validate_payload(request: HttpRequest, callback_secret: str):     # Get the X-Hub-Signature-256 header from the request     received_signature = request.META.get(\"HTTP_X_HUB_SIGNATURE_256\", \"\")      if not received_signature.startswith(\"sha256=\"):         # Invalid signature format         return False      received_signature = received_signature[len(\"sha256=\") :]      try:         # Get the raw request body         payload = request.body          # Compute the expected signature using the app_secret         expected_signature = hmac.new(             callback_secret.encode(), payload, hashlib.sha256         ).hexdigest()          if hmac.compare_digest(received_signature, expected_signature):             # Signatures match, the payload is genuine             return True         else:             # Signatures don't match             return False     except Exception as e:         # Handle any errors that may occur during validation         return False  ```
+Access to these are restricted to platform admins and tenant administrators
+
+Session information for running the periodic agent will be generated with the credentials of the
+user (platform administrator) who created the agent.
+
+A Periodic Agent is allowed to have a `callback_url` and `callback_secret`.
+When a `callback_url` is set for a Periodic Agent, a post request with data entries containing the log and timestamp
+of the run will be made to the callback_url provided.
+Here is the payload structure:
+        ```
+        {
+            "timestamp": "timestamp when the run completed",
+            "status": "status of the periodic agent",
+            "prompt": "input prompt to agent,
+            "agent_output": "...final response of agent",
+            "log": "... full agent run log",
+            "log_id": periodic agent log id.,
+        }
+        ```
+The payload is encrypted using the `callback_secret` provided.
+
+You can validate the payload using the X-Hub-Signature-256 signature header for request data.
+This is a Sha256 encoded HMAC hex digest of the payload body.
+
+```python
+import hmac
+import haslib
+
+def validate_payload(request: HttpRequest, callback_secret: str):
+    # Get the X-Hub-Signature-256 header from the request
+    received_signature = request.META.get("HTTP_X_HUB_SIGNATURE_256", "")
+
+    if not received_signature.startswith("sha256="):
+        # Invalid signature format
+        return False
+
+    received_signature = received_signature[len("sha256=") :]
+
+    try:
+        # Get the raw request body
+        payload = request.body
+
+        # Compute the expected signature using the app_secret
+        expected_signature = hmac.new(
+            callback_secret.encode(), payload, hashlib.sha256
+        ).hexdigest()
+
+        if hmac.compare_digest(received_signature, expected_signature):
+            # Signatures match, the payload is genuine
+            return True
+        else:
+            # Signatures don't match
+            return False
+    except Exception as e:
+        # Handle any errors that may occur during validation
+        return False
+
+```
 
 ### Example
 
@@ -13767,7 +18094,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 id = 56 # int | A unique integer value identifying this periodic agent.
@@ -13815,9 +18141,69 @@ void (empty response body)
 # **ai_mentor_orgs_users_periodic_agents_list**
 > PaginatedPeriodicAgentList ai_mentor_orgs_users_periodic_agents_list(org, user_id, enabled=enabled, ordering=ordering, page=page, page_size=page_size, parent_mentor_id=parent_mentor_id, parent_session_id=parent_session_id, previous_agent=previous_agent, previous_agent_status=previous_agent_status, search=search, status=status, title=title, username=username)
 
+Endpoint to create and view, update and delete periodic agents.
 
+Periodic agents are schedulers issued for mentors. These are configured with input prompt (if any)
+as well as a cron schedule to trigger the periodic agent.
 
-Endpoint to create and view, update and delete periodic agents.  Periodic agents are schedulers issued for mentors. These are configured with input prompt (if any) as well as a cron schedule to trigger the periodic agent.  Access to these are restricted to platform admins and tenant administrators  Session information for running the periodic agent will be generated with the credentials of the user (platform administrator) who created the agent.  A Periodic Agent is allowed to have a `callback_url` and `callback_secret`. When a `callback_url` is set for a Periodic Agent, a post request with data entries containing the log and timestamp of the run will be made to the callback_url provided. Here is the payload structure:         ```         {             \"timestamp\": \"timestamp when the run completed\",             \"status\": \"status of the periodic agent\",             \"prompt\": \"input prompt to agent,             \"agent_output\": \"...final response of agent\",             \"log\": \"... full agent run log\",             \"log_id\": periodic agent log id.,         }         ``` The payload is encrypted using the `callback_secret` provided.  You can validate the payload using the X-Hub-Signature-256 signature header for request data. This is a Sha256 encoded HMAC hex digest of the payload body.  ```python import hmac import haslib  def validate_payload(request: HttpRequest, callback_secret: str):     # Get the X-Hub-Signature-256 header from the request     received_signature = request.META.get(\"HTTP_X_HUB_SIGNATURE_256\", \"\")      if not received_signature.startswith(\"sha256=\"):         # Invalid signature format         return False      received_signature = received_signature[len(\"sha256=\") :]      try:         # Get the raw request body         payload = request.body          # Compute the expected signature using the app_secret         expected_signature = hmac.new(             callback_secret.encode(), payload, hashlib.sha256         ).hexdigest()          if hmac.compare_digest(received_signature, expected_signature):             # Signatures match, the payload is genuine             return True         else:             # Signatures don't match             return False     except Exception as e:         # Handle any errors that may occur during validation         return False  ```
+Access to these are restricted to platform admins and tenant administrators
+
+Session information for running the periodic agent will be generated with the credentials of the
+user (platform administrator) who created the agent.
+
+A Periodic Agent is allowed to have a `callback_url` and `callback_secret`.
+When a `callback_url` is set for a Periodic Agent, a post request with data entries containing the log and timestamp
+of the run will be made to the callback_url provided.
+Here is the payload structure:
+        ```
+        {
+            "timestamp": "timestamp when the run completed",
+            "status": "status of the periodic agent",
+            "prompt": "input prompt to agent,
+            "agent_output": "...final response of agent",
+            "log": "... full agent run log",
+            "log_id": periodic agent log id.,
+        }
+        ```
+The payload is encrypted using the `callback_secret` provided.
+
+You can validate the payload using the X-Hub-Signature-256 signature header for request data.
+This is a Sha256 encoded HMAC hex digest of the payload body.
+
+```python
+import hmac
+import haslib
+
+def validate_payload(request: HttpRequest, callback_secret: str):
+    # Get the X-Hub-Signature-256 header from the request
+    received_signature = request.META.get("HTTP_X_HUB_SIGNATURE_256", "")
+
+    if not received_signature.startswith("sha256="):
+        # Invalid signature format
+        return False
+
+    received_signature = received_signature[len("sha256=") :]
+
+    try:
+        # Get the raw request body
+        payload = request.body
+
+        # Compute the expected signature using the app_secret
+        expected_signature = hmac.new(
+            callback_secret.encode(), payload, hashlib.sha256
+        ).hexdigest()
+
+        if hmac.compare_digest(received_signature, expected_signature):
+            # Signatures match, the payload is genuine
+            return True
+        else:
+            # Signatures don't match
+            return False
+    except Exception as e:
+        # Handle any errors that may occur during validation
+        return False
+
+```
 
 ### Example
 
@@ -13840,7 +18226,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 org = 'org_example' # str | 
@@ -13912,9 +18297,69 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_users_periodic_agents_partial_update**
 > PeriodicAgentCreate ai_mentor_orgs_users_periodic_agents_partial_update(id, org, user_id, patched_periodic_agent_create=patched_periodic_agent_create)
 
+Endpoint to create and view, update and delete periodic agents.
 
+Periodic agents are schedulers issued for mentors. These are configured with input prompt (if any)
+as well as a cron schedule to trigger the periodic agent.
 
-Endpoint to create and view, update and delete periodic agents.  Periodic agents are schedulers issued for mentors. These are configured with input prompt (if any) as well as a cron schedule to trigger the periodic agent.  Access to these are restricted to platform admins and tenant administrators  Session information for running the periodic agent will be generated with the credentials of the user (platform administrator) who created the agent.  A Periodic Agent is allowed to have a `callback_url` and `callback_secret`. When a `callback_url` is set for a Periodic Agent, a post request with data entries containing the log and timestamp of the run will be made to the callback_url provided. Here is the payload structure:         ```         {             \"timestamp\": \"timestamp when the run completed\",             \"status\": \"status of the periodic agent\",             \"prompt\": \"input prompt to agent,             \"agent_output\": \"...final response of agent\",             \"log\": \"... full agent run log\",             \"log_id\": periodic agent log id.,         }         ``` The payload is encrypted using the `callback_secret` provided.  You can validate the payload using the X-Hub-Signature-256 signature header for request data. This is a Sha256 encoded HMAC hex digest of the payload body.  ```python import hmac import haslib  def validate_payload(request: HttpRequest, callback_secret: str):     # Get the X-Hub-Signature-256 header from the request     received_signature = request.META.get(\"HTTP_X_HUB_SIGNATURE_256\", \"\")      if not received_signature.startswith(\"sha256=\"):         # Invalid signature format         return False      received_signature = received_signature[len(\"sha256=\") :]      try:         # Get the raw request body         payload = request.body          # Compute the expected signature using the app_secret         expected_signature = hmac.new(             callback_secret.encode(), payload, hashlib.sha256         ).hexdigest()          if hmac.compare_digest(received_signature, expected_signature):             # Signatures match, the payload is genuine             return True         else:             # Signatures don't match             return False     except Exception as e:         # Handle any errors that may occur during validation         return False  ```
+Access to these are restricted to platform admins and tenant administrators
+
+Session information for running the periodic agent will be generated with the credentials of the
+user (platform administrator) who created the agent.
+
+A Periodic Agent is allowed to have a `callback_url` and `callback_secret`.
+When a `callback_url` is set for a Periodic Agent, a post request with data entries containing the log and timestamp
+of the run will be made to the callback_url provided.
+Here is the payload structure:
+        ```
+        {
+            "timestamp": "timestamp when the run completed",
+            "status": "status of the periodic agent",
+            "prompt": "input prompt to agent,
+            "agent_output": "...final response of agent",
+            "log": "... full agent run log",
+            "log_id": periodic agent log id.,
+        }
+        ```
+The payload is encrypted using the `callback_secret` provided.
+
+You can validate the payload using the X-Hub-Signature-256 signature header for request data.
+This is a Sha256 encoded HMAC hex digest of the payload body.
+
+```python
+import hmac
+import haslib
+
+def validate_payload(request: HttpRequest, callback_secret: str):
+    # Get the X-Hub-Signature-256 header from the request
+    received_signature = request.META.get("HTTP_X_HUB_SIGNATURE_256", "")
+
+    if not received_signature.startswith("sha256="):
+        # Invalid signature format
+        return False
+
+    received_signature = received_signature[len("sha256=") :]
+
+    try:
+        # Get the raw request body
+        payload = request.body
+
+        # Compute the expected signature using the app_secret
+        expected_signature = hmac.new(
+            callback_secret.encode(), payload, hashlib.sha256
+        ).hexdigest()
+
+        if hmac.compare_digest(received_signature, expected_signature):
+            # Signatures match, the payload is genuine
+            return True
+        else:
+            # Signatures don't match
+            return False
+    except Exception as e:
+        # Handle any errors that may occur during validation
+        return False
+
+```
 
 ### Example
 
@@ -13938,7 +18383,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 id = 56 # int | A unique integer value identifying this periodic agent.
@@ -13976,7 +18420,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -13990,9 +18434,69 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_users_periodic_agents_retrieve**
 > PeriodicAgent ai_mentor_orgs_users_periodic_agents_retrieve(id, org, user_id)
 
+Endpoint to create and view, update and delete periodic agents.
 
+Periodic agents are schedulers issued for mentors. These are configured with input prompt (if any)
+as well as a cron schedule to trigger the periodic agent.
 
-Endpoint to create and view, update and delete periodic agents.  Periodic agents are schedulers issued for mentors. These are configured with input prompt (if any) as well as a cron schedule to trigger the periodic agent.  Access to these are restricted to platform admins and tenant administrators  Session information for running the periodic agent will be generated with the credentials of the user (platform administrator) who created the agent.  A Periodic Agent is allowed to have a `callback_url` and `callback_secret`. When a `callback_url` is set for a Periodic Agent, a post request with data entries containing the log and timestamp of the run will be made to the callback_url provided. Here is the payload structure:         ```         {             \"timestamp\": \"timestamp when the run completed\",             \"status\": \"status of the periodic agent\",             \"prompt\": \"input prompt to agent,             \"agent_output\": \"...final response of agent\",             \"log\": \"... full agent run log\",             \"log_id\": periodic agent log id.,         }         ``` The payload is encrypted using the `callback_secret` provided.  You can validate the payload using the X-Hub-Signature-256 signature header for request data. This is a Sha256 encoded HMAC hex digest of the payload body.  ```python import hmac import haslib  def validate_payload(request: HttpRequest, callback_secret: str):     # Get the X-Hub-Signature-256 header from the request     received_signature = request.META.get(\"HTTP_X_HUB_SIGNATURE_256\", \"\")      if not received_signature.startswith(\"sha256=\"):         # Invalid signature format         return False      received_signature = received_signature[len(\"sha256=\") :]      try:         # Get the raw request body         payload = request.body          # Compute the expected signature using the app_secret         expected_signature = hmac.new(             callback_secret.encode(), payload, hashlib.sha256         ).hexdigest()          if hmac.compare_digest(received_signature, expected_signature):             # Signatures match, the payload is genuine             return True         else:             # Signatures don't match             return False     except Exception as e:         # Handle any errors that may occur during validation         return False  ```
+Access to these are restricted to platform admins and tenant administrators
+
+Session information for running the periodic agent will be generated with the credentials of the
+user (platform administrator) who created the agent.
+
+A Periodic Agent is allowed to have a `callback_url` and `callback_secret`.
+When a `callback_url` is set for a Periodic Agent, a post request with data entries containing the log and timestamp
+of the run will be made to the callback_url provided.
+Here is the payload structure:
+        ```
+        {
+            "timestamp": "timestamp when the run completed",
+            "status": "status of the periodic agent",
+            "prompt": "input prompt to agent,
+            "agent_output": "...final response of agent",
+            "log": "... full agent run log",
+            "log_id": periodic agent log id.,
+        }
+        ```
+The payload is encrypted using the `callback_secret` provided.
+
+You can validate the payload using the X-Hub-Signature-256 signature header for request data.
+This is a Sha256 encoded HMAC hex digest of the payload body.
+
+```python
+import hmac
+import haslib
+
+def validate_payload(request: HttpRequest, callback_secret: str):
+    # Get the X-Hub-Signature-256 header from the request
+    received_signature = request.META.get("HTTP_X_HUB_SIGNATURE_256", "")
+
+    if not received_signature.startswith("sha256="):
+        # Invalid signature format
+        return False
+
+    received_signature = received_signature[len("sha256=") :]
+
+    try:
+        # Get the raw request body
+        payload = request.body
+
+        # Compute the expected signature using the app_secret
+        expected_signature = hmac.new(
+            callback_secret.encode(), payload, hashlib.sha256
+        ).hexdigest()
+
+        if hmac.compare_digest(received_signature, expected_signature):
+            # Signatures match, the payload is genuine
+            return True
+        else:
+            # Signatures don't match
+            return False
+    except Exception as e:
+        # Handle any errors that may occur during validation
+        return False
+
+```
 
 ### Example
 
@@ -14015,7 +18519,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 id = 56 # int | A unique integer value identifying this periodic agent.
@@ -14065,9 +18568,69 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_users_periodic_agents_update**
 > PeriodicAgentCreate ai_mentor_orgs_users_periodic_agents_update(id, org, user_id, periodic_agent_create)
 
+Endpoint to create and view, update and delete periodic agents.
 
+Periodic agents are schedulers issued for mentors. These are configured with input prompt (if any)
+as well as a cron schedule to trigger the periodic agent.
 
-Endpoint to create and view, update and delete periodic agents.  Periodic agents are schedulers issued for mentors. These are configured with input prompt (if any) as well as a cron schedule to trigger the periodic agent.  Access to these are restricted to platform admins and tenant administrators  Session information for running the periodic agent will be generated with the credentials of the user (platform administrator) who created the agent.  A Periodic Agent is allowed to have a `callback_url` and `callback_secret`. When a `callback_url` is set for a Periodic Agent, a post request with data entries containing the log and timestamp of the run will be made to the callback_url provided. Here is the payload structure:         ```         {             \"timestamp\": \"timestamp when the run completed\",             \"status\": \"status of the periodic agent\",             \"prompt\": \"input prompt to agent,             \"agent_output\": \"...final response of agent\",             \"log\": \"... full agent run log\",             \"log_id\": periodic agent log id.,         }         ``` The payload is encrypted using the `callback_secret` provided.  You can validate the payload using the X-Hub-Signature-256 signature header for request data. This is a Sha256 encoded HMAC hex digest of the payload body.  ```python import hmac import haslib  def validate_payload(request: HttpRequest, callback_secret: str):     # Get the X-Hub-Signature-256 header from the request     received_signature = request.META.get(\"HTTP_X_HUB_SIGNATURE_256\", \"\")      if not received_signature.startswith(\"sha256=\"):         # Invalid signature format         return False      received_signature = received_signature[len(\"sha256=\") :]      try:         # Get the raw request body         payload = request.body          # Compute the expected signature using the app_secret         expected_signature = hmac.new(             callback_secret.encode(), payload, hashlib.sha256         ).hexdigest()          if hmac.compare_digest(received_signature, expected_signature):             # Signatures match, the payload is genuine             return True         else:             # Signatures don't match             return False     except Exception as e:         # Handle any errors that may occur during validation         return False  ```
+Access to these are restricted to platform admins and tenant administrators
+
+Session information for running the periodic agent will be generated with the credentials of the
+user (platform administrator) who created the agent.
+
+A Periodic Agent is allowed to have a `callback_url` and `callback_secret`.
+When a `callback_url` is set for a Periodic Agent, a post request with data entries containing the log and timestamp
+of the run will be made to the callback_url provided.
+Here is the payload structure:
+        ```
+        {
+            "timestamp": "timestamp when the run completed",
+            "status": "status of the periodic agent",
+            "prompt": "input prompt to agent,
+            "agent_output": "...final response of agent",
+            "log": "... full agent run log",
+            "log_id": periodic agent log id.,
+        }
+        ```
+The payload is encrypted using the `callback_secret` provided.
+
+You can validate the payload using the X-Hub-Signature-256 signature header for request data.
+This is a Sha256 encoded HMAC hex digest of the payload body.
+
+```python
+import hmac
+import haslib
+
+def validate_payload(request: HttpRequest, callback_secret: str):
+    # Get the X-Hub-Signature-256 header from the request
+    received_signature = request.META.get("HTTP_X_HUB_SIGNATURE_256", "")
+
+    if not received_signature.startswith("sha256="):
+        # Invalid signature format
+        return False
+
+    received_signature = received_signature[len("sha256=") :]
+
+    try:
+        # Get the raw request body
+        payload = request.body
+
+        # Compute the expected signature using the app_secret
+        expected_signature = hmac.new(
+            callback_secret.encode(), payload, hashlib.sha256
+        ).hexdigest()
+
+        if hmac.compare_digest(received_signature, expected_signature):
+            # Signatures match, the payload is genuine
+            return True
+        else:
+            # Signatures don't match
+            return False
+    except Exception as e:
+        # Handle any errors that may occur during validation
+        return False
+
+```
 
 ### Example
 
@@ -14090,7 +18653,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 id = 56 # int | A unique integer value identifying this periodic agent.
@@ -14128,7 +18690,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -14142,9 +18704,19 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_users_pin_message_create**
 > PinnedMessageCreate ai_mentor_orgs_users_pin_message_create(org, user_id, pinned_message_request)
 
+Create a pinned message for a user session.
 
+Args:
+    request: The HTTP request containing session details.
+    org: Organization key identifier.
+    user_id: The username of the student.
 
-Create a pinned message for a user session.  Args:     request: The HTTP request containing session details.     org: Organization key identifier.     user_id: The username of the student.  Returns:     Response: Status 201 on success.  Raises:     NotFound: If the student does not exist.     ValidationError: If request data is invalid.
+Returns:
+    Response: Status 201 on success.
+
+Raises:
+    NotFound: If the student does not exist.
+    ValidationError: If request data is invalid.
 
 ### Example
 
@@ -14168,7 +18740,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 org = 'org_example' # str | 
@@ -14204,7 +18775,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -14218,9 +18789,19 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_users_pin_message_destroy**
 > Dict[str, object] ai_mentor_orgs_users_pin_message_destroy(org, user_id)
 
+Delete a pinned message for a user.
 
+Args:
+    request: The HTTP request containing session details.
+    org: Organization key identifier.
+    user_id: The username of the student.
 
-Delete a pinned message for a user.  Args:     request: The HTTP request containing session details.     org: Organization key identifier.     user_id: The username of the student.  Returns:     Response: Status 204 on success.  Raises:     NotFound: If the student or pinned message does not exist.     ValidationError: If request data is invalid.
+Returns:
+    Response: Status 204 on success.
+
+Raises:
+    NotFound: If the student or pinned message does not exist.
+    ValidationError: If request data is invalid.
 
 ### Example
 
@@ -14242,7 +18823,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 org = 'org_example' # str | 
@@ -14290,9 +18870,18 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_users_pin_message_list**
 > List[PinnedMessageGet] ai_mentor_orgs_users_pin_message_list(org, session_id, user_id)
 
+Retrieve pinned messages for a user.
 
+Args:
+    request: The HTTP request.
+    org: Organization key identifier.
+    user_id: The username of the student.
 
-Retrieve pinned messages for a user.  Args:     request: The HTTP request.     org: Organization key identifier.     user_id: The username of the student.  Returns:     Response: Paginated list of pinned messages.  Raises:     NotFound: If the student or session does not exist.
+Returns:
+    Response: Paginated list of pinned messages.
+
+Raises:
+    NotFound: If the student or session does not exist.
 
 ### Example
 
@@ -14315,7 +18904,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 org = 'org_example' # str | 
@@ -14365,9 +18953,11 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_users_planned_jobs_list**
 > PaginatedJobRunList ai_mentor_orgs_users_planned_jobs_list(org, user_id, active=active, ordering=ordering, page=page, page_size=page_size, search=search, session=session)
 
-
-
-Endpoints for viewing jobs and their status A job run refers to a task with steps that an agent is going to undertake. You can filter job runs by their status. Note that for a single user and a specified session, at most only one JobRun instance is active at any point in time.
+Endpoints for viewing jobs and their status
+A job run refers to a task with steps that an agent is going to undertake.
+You can filter job runs by their status.
+Note that for a single user and a specified session, at most only one JobRun instance
+is active at any point in time.
 
 ### Example
 
@@ -14390,7 +18980,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 org = 'org_example' # str | 
@@ -14450,9 +19039,11 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_users_planned_jobs_retrieve**
 > JobRun ai_mentor_orgs_users_planned_jobs_retrieve(id, org, user_id)
 
-
-
-Endpoints for viewing jobs and their status A job run refers to a task with steps that an agent is going to undertake. You can filter job runs by their status. Note that for a single user and a specified session, at most only one JobRun instance is active at any point in time.
+Endpoints for viewing jobs and their status
+A job run refers to a task with steps that an agent is going to undertake.
+You can filter job runs by their status.
+Note that for a single user and a specified session, at most only one JobRun instance
+is active at any point in time.
 
 ### Example
 
@@ -14475,7 +19066,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 id = 56 # int | A unique integer value identifying this job run.
@@ -14525,8 +19115,6 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_users_playwright_scripts_create**
 > PlayWrightScript ai_mentor_orgs_users_playwright_scripts_create(org, user_id, play_wright_script)
 
-
-
 Endpoints for viewing playwright scripts and updating playwright scripts for a tenant and user.
 
 ### Example
@@ -14550,7 +19138,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 org = 'org_example' # str | 
@@ -14586,7 +19173,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -14599,8 +19186,6 @@ Name | Type | Description  | Notes
 
 # **ai_mentor_orgs_users_playwright_scripts_destroy**
 > ai_mentor_orgs_users_playwright_scripts_destroy(id, org, user_id)
-
-
 
 Endpoints for viewing playwright scripts and updating playwright scripts for a tenant and user.
 
@@ -14624,7 +19209,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 id = 56 # int | A unique integer value identifying this play wright script.
@@ -14672,8 +19256,6 @@ void (empty response body)
 # **ai_mentor_orgs_users_playwright_scripts_list**
 > PaginatedPlayWrightScriptList ai_mentor_orgs_users_playwright_scripts_list(org, user_id, is_public=is_public, ordering=ordering, page=page, page_size=page_size, search=search, student=student)
 
-
-
 Endpoints for viewing playwright scripts and updating playwright scripts for a tenant and user.
 
 ### Example
@@ -14697,7 +19279,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 org = 'org_example' # str | 
@@ -14757,8 +19338,6 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_users_playwright_scripts_partial_update**
 > PlayWrightScript ai_mentor_orgs_users_playwright_scripts_partial_update(id, org, user_id, patched_play_wright_script=patched_play_wright_script)
 
-
-
 Endpoints for viewing playwright scripts and updating playwright scripts for a tenant and user.
 
 ### Example
@@ -14783,7 +19362,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 id = 56 # int | A unique integer value identifying this play wright script.
@@ -14821,7 +19399,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -14834,8 +19412,6 @@ Name | Type | Description  | Notes
 
 # **ai_mentor_orgs_users_playwright_scripts_retrieve**
 > PlayWrightScript ai_mentor_orgs_users_playwright_scripts_retrieve(id, org, user_id)
-
-
 
 Endpoints for viewing playwright scripts and updating playwright scripts for a tenant and user.
 
@@ -14860,7 +19436,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 id = 56 # int | A unique integer value identifying this play wright script.
@@ -14910,8 +19485,6 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_users_playwright_scripts_update**
 > PlayWrightScript ai_mentor_orgs_users_playwright_scripts_update(id, org, user_id, play_wright_script)
 
-
-
 Endpoints for viewing playwright scripts and updating playwright scripts for a tenant and user.
 
 ### Example
@@ -14935,7 +19508,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 id = 56 # int | A unique integer value identifying this play wright script.
@@ -14973,7 +19545,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -14987,9 +19559,20 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_users_predictive_analytics_create**
 > PredictiveAnalyticsResponse ai_mentor_orgs_users_predictive_analytics_create(org, user_id, predictive_analytics_request)
 
+Retrieve predictive analytics based on historical data variables.
 
+Args:
+    request: HTTP request containing predictive analytics input.
+    org: Organization key identifier.
 
-Retrieve predictive analytics based on historical data variables.  Args:     request: HTTP request containing predictive analytics input.     org: Organization key identifier.  Returns:     - 200: Object containing predicted data.     - 400: When AI response cannot be loaded into JSON.     - 404: When OpenAI key for the tenant is not set.     - 429: When OpenAI request exceeds the rate limit.  Example:     **POST** `/api/ai-prompt/orgs/main/users/johndoe/predictive-analytics/`
+Returns:
+    - 200: Object containing predicted data.
+    - 400: When AI response cannot be loaded into JSON.
+    - 404: When OpenAI key for the tenant is not set.
+    - 429: When OpenAI request exceeds the rate limit.
+
+Example:
+    **POST** `/api/ai-prompt/orgs/main/users/johndoe/predictive-analytics/`
 
 ### Example
 
@@ -15013,7 +19596,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 org = 'org_example' # str | 
@@ -15049,7 +19631,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -15060,12 +19642,88 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **ai_mentor_orgs_users_recent_messages_retrieve**
-> ai_mentor_orgs_users_recent_messages_retrieve(org, user_id)
+# **ai_mentor_orgs_users_projects_create**
+> Project ai_mentor_orgs_users_projects_create(org, user_id, project)
+
+Create a new project
+
+Create a new project with optional mentors.
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.project import Project
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+# Create an instance of the API class
+api_instance = iblai.AiMentorApi(api_client)
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+project = {"name":"Machine Learning Basics","description":"A project for learning machine learning fundamentals","shared":true,"mentors_to_add":["550e8400-e29b-41d4-a716-446655440000","550e8400-e29b-41d4-a716-446655440001"]} # Project | 
+
+try:
+    # Create a new project
+    api_response = api_instance.ai_mentor_orgs_users_projects_create(org, user_id, project)
+    print("The response of AiMentorApi->ai_mentor_orgs_users_projects_create:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiMentorApi->ai_mentor_orgs_users_projects_create: %s\n" % e)
+```
 
 
 
-Retrieves recent chat messages based on provided query parameters.  Returns:     200: Paginated List of chat messages.     400: Invalid query parameters.
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+ **project** | [**Project**](Project.md)|  | 
+
+### Return type
+
+[**Project**](Project.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** |  |  -  |
+**400** | Invalid data provided |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ai_mentor_orgs_users_projects_destroy**
+> ai_mentor_orgs_users_projects_destroy(id, org, user_id)
+
+Delete a project
+
+Delete a project permanently.
 
 ### Example
 
@@ -15087,7 +19745,422 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
+# Create an instance of the API class
+api_instance = iblai.AiMentorApi(api_client)
+id = 56 # int | A unique integer value identifying this Project.
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
 
+try:
+    # Delete a project
+    api_instance.ai_mentor_orgs_users_projects_destroy(id, org, user_id)
+except Exception as e:
+    print("Exception when calling AiMentorApi->ai_mentor_orgs_users_projects_destroy: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| A unique integer value identifying this Project. | 
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**204** | Project deleted successfully |  -  |
+**403** | Permission denied |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ai_mentor_orgs_users_projects_list**
+> PaginatedProjectList ai_mentor_orgs_users_projects_list(org, user_id, limit=limit, offset=offset, ordering=ordering, search=search, shared=shared, sort=sort, username=username)
+
+List projects
+
+Retrieve a list of projects with optional filtering and search.
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.paginated_project_list import PaginatedProjectList
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+# Create an instance of the API class
+api_instance = iblai.AiMentorApi(api_client)
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+limit = 56 # int | Number of results to return per page. (optional)
+offset = 56 # int | The initial index from which to return the results. (optional)
+ordering = 'ordering_example' # str | Which field to use when ordering the results. (optional)
+search = 'search_example' # str | Search in project name and description (optional)
+shared = True # bool | Filter by shared status (true/false) (optional)
+sort = 'name' # str | Order by field (prefix with - for descending). Example: name or -created_at (optional)
+username = 'username_example' # str | Filter projects by owner's username (optional)
+
+try:
+    # List projects
+    api_response = api_instance.ai_mentor_orgs_users_projects_list(org, user_id, limit=limit, offset=offset, ordering=ordering, search=search, shared=shared, sort=sort, username=username)
+    print("The response of AiMentorApi->ai_mentor_orgs_users_projects_list:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiMentorApi->ai_mentor_orgs_users_projects_list: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+ **limit** | **int**| Number of results to return per page. | [optional] 
+ **offset** | **int**| The initial index from which to return the results. | [optional] 
+ **ordering** | **str**| Which field to use when ordering the results. | [optional] 
+ **search** | **str**| Search in project name and description | [optional] 
+ **shared** | **bool**| Filter by shared status (true/false) | [optional] 
+ **sort** | **str**| Order by field (prefix with - for descending). Example: name or -created_at | [optional] 
+ **username** | **str**| Filter projects by owner&#39;s username | [optional] 
+
+### Return type
+
+[**PaginatedProjectList**](PaginatedProjectList.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ai_mentor_orgs_users_projects_partial_update**
+> Project ai_mentor_orgs_users_projects_partial_update(id, org, user_id, patched_project=patched_project)
+
+API ViewSet for managing projects.
+
+Projects are groups of mentors that can be created by anyone (students and tenant admins).
+They serve as a way to organize and group related mentors together.
+
+Projects can be:
+- Personal (shared=False): Only visible to their owners
+- Shared (shared=True): Visible to platform admins and potentially other users
+
+Projects are accessed through integrated URLs within the mentor router:
+    /orgs/<org>/projects/ - All accessible projects in a platform (admin access)
+    /orgs/<org>/projects/<id>/ - Specific project (admin access)
+    /orgs/<org>/users/<user_id>/projects/ - User's projects (user access)
+    /orgs/<org>/users/<user_id>/projects/<id>/ - User's specific project
+
+Query Parameters:
+    - username: Filter projects by owner's username (admin routes only)
+    - shared: Filter by shared status (true/false)
+    - search: Search in name and description
+    - sort: Order by field (prefix with - for descending). Example: sort=name or sort=-created_at
+
+Permissions:
+    - GET: Accessible to project owners and platform admins (for shared projects)
+    - POST: Any authenticated user can create projects
+    - PUT, PATCH, DELETE: Accessible to project owners only
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.patched_project import PatchedProject
+from iblai.models.project import Project
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+# Create an instance of the API class
+api_instance = iblai.AiMentorApi(api_client)
+id = 56 # int | A unique integer value identifying this Project.
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+patched_project = iblai.PatchedProject() # PatchedProject |  (optional)
+
+try:
+    api_response = api_instance.ai_mentor_orgs_users_projects_partial_update(id, org, user_id, patched_project=patched_project)
+    print("The response of AiMentorApi->ai_mentor_orgs_users_projects_partial_update:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiMentorApi->ai_mentor_orgs_users_projects_partial_update: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| A unique integer value identifying this Project. | 
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+ **patched_project** | [**PatchedProject**](PatchedProject.md)|  | [optional] 
+
+### Return type
+
+[**Project**](Project.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ai_mentor_orgs_users_projects_retrieve**
+> Project ai_mentor_orgs_users_projects_retrieve(id, org, user_id)
+
+Retrieve a project
+
+Get detailed information about a specific project including its mentors.
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.project import Project
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+# Create an instance of the API class
+api_instance = iblai.AiMentorApi(api_client)
+id = 56 # int | A unique integer value identifying this Project.
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+
+try:
+    # Retrieve a project
+    api_response = api_instance.ai_mentor_orgs_users_projects_retrieve(id, org, user_id)
+    print("The response of AiMentorApi->ai_mentor_orgs_users_projects_retrieve:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiMentorApi->ai_mentor_orgs_users_projects_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| A unique integer value identifying this Project. | 
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+
+### Return type
+
+[**Project**](Project.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**404** | Project not found |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ai_mentor_orgs_users_projects_update**
+> Project ai_mentor_orgs_users_projects_update(id, org, user_id, project)
+
+Update a project
+
+Update project information and optionally modify its mentors.
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.project import Project
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+# Create an instance of the API class
+api_instance = iblai.AiMentorApi(api_client)
+id = 56 # int | A unique integer value identifying this Project.
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+project = iblai.Project() # Project | 
+
+try:
+    # Update a project
+    api_response = api_instance.ai_mentor_orgs_users_projects_update(id, org, user_id, project)
+    print("The response of AiMentorApi->ai_mentor_orgs_users_projects_update:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiMentorApi->ai_mentor_orgs_users_projects_update: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| A unique integer value identifying this Project. | 
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+ **project** | [**Project**](Project.md)|  | 
+
+### Return type
+
+[**Project**](Project.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**400** | Invalid data provided |  -  |
+**403** | Permission denied |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ai_mentor_orgs_users_recent_messages_retrieve**
+> ai_mentor_orgs_users_recent_messages_retrieve(org, user_id)
+
+Retrieves recent chat messages based on provided query parameters.
+
+Returns:
+    200: Paginated List of chat messages.
+    400: Invalid query parameters.
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 org = 'org_example' # str | 
@@ -15133,9 +20206,16 @@ void (empty response body)
 # **ai_mentor_orgs_users_recently_accessed_mentors_list**
 > List[RecentlyAccessedMentor] ai_mentor_orgs_users_recently_accessed_mentors_list(org, user_id)
 
+Endpoint for listing most recently accessed mentors.
+
+Accessible to students and admins.
 
 
-Endpoint for listing most recently accessed mentors.  Accessible to students and admins.   Returns:      200: List of most recently accessed mentors.      400: When request is not valid.
+Returns:
+
+    200: List of most recently accessed mentors.
+
+    400: When request is not valid.
 
 ### Example
 
@@ -15158,7 +20238,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 org = 'org_example' # str | 
@@ -15206,9 +20285,18 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_users_recommend_courses_block_retrieve**
 > RecommendCourseBlock ai_mentor_orgs_users_recommend_courses_block_retrieve(org, user_id, include_learner_skills=include_learner_skills, include_main_courses=include_main_courses, rank_by_difficulty=rank_by_difficulty, return_course_data=return_course_data, return_number=return_number, search_terms=search_terms)
 
+Retrieve recommended course blocks for a specific user.
 
+Args:
+    request: The HTTP request containing query parameters.
+    org: The organization/tenant identifier.
+    user_id: The ID of the user to get recommendations for.
 
-Retrieve recommended course blocks for a specific user.  Args:     request: The HTTP request containing query parameters.     org: The organization/tenant identifier.     user_id: The ID of the user to get recommendations for.  Returns:     Response: A list of recommended course blocks.  Raises:     BadRequest: If the query parameters are invalid.
+Returns:
+    Response: A list of recommended course blocks.
+
+Raises:
+    BadRequest: If the query parameters are invalid.
 
 ### Example
 
@@ -15231,7 +20319,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 org = 'org_example' # str | 
@@ -15292,9 +20379,21 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_users_recommend_courses_retrieve**
 > RecommendCourseResponse ai_mentor_orgs_users_recommend_courses_retrieve(org, user_id, include_learner_skills=include_learner_skills, include_main_courses=include_main_courses, rank_by_difficulty=rank_by_difficulty, return_course_data=return_course_data, return_number=return_number, search_terms=search_terms)
 
+Retrieve recommended courses for a specific user.
 
+Args:
+    request: The HTTP request containing query parameters.
+    org: The organization/tenant identifier.
+    user_id: The ID of the user to get recommendations for.
 
-Retrieve recommended courses for a specific user.  Args:     request: The HTTP request containing query parameters.     org: The organization/tenant identifier.     user_id: The ID of the user to get recommendations for.  Returns:     Response: A list of recommended courses.  Raises:     BadRequest: If the query parameters are invalid.     NotFound: If the OpenAI API key for the tenant is not found.     TooManyRequests: If rate limits are exceeded.     ServerError: If there's an error processing the AI response.
+Returns:
+    Response: A list of recommended courses.
+
+Raises:
+    BadRequest: If the query parameters are invalid.
+    NotFound: If the OpenAI API key for the tenant is not found.
+    TooManyRequests: If rate limits are exceeded.
+    ServerError: If there's an error processing the AI response.
 
 ### Example
 
@@ -15317,7 +20416,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 org = 'org_example' # str | 
@@ -15381,9 +20479,18 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_users_resources_web_create**
 > List[WebResource] ai_mentor_orgs_users_resources_web_create(org, user_id, web_resources_query)
 
+Search for web resources based on a query.
 
+Args:
+    request: The HTTP request containing the search query.
+    org: The organization/tenant identifier.
+    user_id: The ID of the user making the request.
 
-Search for web resources based on a query.  Args:     request: The HTTP request containing the search query.     org: The organization/tenant identifier.     user_id: The ID of the user making the request.  Returns:     Response: A list of web resources matching the query.  Raises:     ValidationError: If the search fails or returns no results.
+Returns:
+    Response: A list of web resources matching the query.
+
+Raises:
+    ValidationError: If the search fails or returns no results.
 
 ### Example
 
@@ -15407,7 +20514,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 org = 'org_example' # str | 
@@ -15443,7 +20549,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -15458,9 +20564,12 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_users_retrieve**
 > Mentor ai_mentor_orgs_users_retrieve(name, org, user_id, department_id=department_id, filter_by=filter_by, metadata_key=metadata_key, metadata_value=metadata_value, return_session_information=return_session_information, visibility=visibility)
 
+API ViewSet for managing mentors.
 
+Provides endpoints to retrieve, create, update, and delete mentor data.
 
-API ViewSet for managing mentors.  Provides endpoints to retrieve, create, update, and delete mentor data.  Permissions:     - Accessible to both tenant admins and students.
+Permissions:
+    - Accessible to both tenant admins and students.
 
 ### Example
 
@@ -15483,7 +20592,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 name = 'name_example' # str | 
@@ -15545,9 +20653,12 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_users_safety_logs_destroy**
 > ai_mentor_orgs_users_safety_logs_destroy(id, org, user_id)
 
+Endpoint to view and delete Safety System Logs for a tenant.
+
+These can be filtered by username, platform_key and  mentor id
 
 
-Endpoint to view and delete Safety System Logs for a tenant.  These can be filtered by username, platform_key and  mentor id   A search query can be conducted to search through the prompts and reason for the moderation catch event.
+A search query can be conducted to search through the prompts and reason for the moderation catch event.
 
 ### Example
 
@@ -15569,7 +20680,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 id = 56 # int | A unique integer value identifying this moderation log.
@@ -15617,9 +20727,12 @@ void (empty response body)
 # **ai_mentor_orgs_users_safety_logs_list**
 > PaginatedModerationLogList ai_mentor_orgs_users_safety_logs_list(org, user_id, mentor=mentor, ordering=ordering, page=page, page_size=page_size, platform_key=platform_key, search=search, target_system=target_system, username=username)
 
+Endpoint to view and delete Safety System Logs for a tenant.
+
+These can be filtered by username, platform_key and  mentor id
 
 
-Endpoint to view and delete Safety System Logs for a tenant.  These can be filtered by username, platform_key and  mentor id   A search query can be conducted to search through the prompts and reason for the moderation catch event.
+A search query can be conducted to search through the prompts and reason for the moderation catch event.
 
 ### Example
 
@@ -15642,7 +20755,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 org = 'org_example' # str | 
@@ -15706,9 +20818,12 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_users_safety_logs_retrieve**
 > ModerationLog ai_mentor_orgs_users_safety_logs_retrieve(id, org, user_id)
 
+Endpoint to view and delete Safety System Logs for a tenant.
+
+These can be filtered by username, platform_key and  mentor id
 
 
-Endpoint to view and delete Safety System Logs for a tenant.  These can be filtered by username, platform_key and  mentor id   A search query can be conducted to search through the prompts and reason for the moderation catch event.
+A search query can be conducted to search through the prompts and reason for the moderation catch event.
 
 ### Example
 
@@ -15731,7 +20846,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 id = 56 # int | A unique integer value identifying this moderation log.
@@ -15781,9 +20895,14 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_users_session_detail_mentors_list**
 > List[SessionDetail] ai_mentor_orgs_users_session_detail_mentors_list(mentor, org, user_id, page=page)
 
+Retrieve session details including message counts and timestamps.
 
+Query Parameters:
+    page (optional, int): Page number for pagination.
 
-Retrieve session details including message counts and timestamps.  Query Parameters:     page (optional, int): Page number for pagination.  Returns:     - 200: Paginated list of session details.     - 404: Session not found.
+Returns:
+    - 200: Paginated list of session details.
+    - 404: Session not found.
 
 ### Example
 
@@ -15806,7 +20925,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 mentor = 'mentor_example' # str | 
@@ -15859,9 +20977,15 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_users_sessionid_list**
 > List[ChatHistorySessionId] ai_mentor_orgs_users_sessionid_list(org, user_id, end_date=end_date, start_date=start_date)
 
+Retrieve user sessions filtered by start date and end date.
 
+Query Parameters:
+    start_date (optional, ISO format): Start date for filtering sessions.
+    end_date (optional, ISO format): End date for filtering sessions.
 
-Retrieve user sessions filtered by start date and end date.  Query Parameters:     start_date (optional, ISO format): Start date for filtering sessions.     end_date (optional, ISO format): End date for filtering sessions.  Returns:     - 200: List of session IDs with insertion timestamps.     - 400: Invalid request parameters.
+Returns:
+    - 200: List of session IDs with insertion timestamps.
+    - 400: Invalid request parameters.
 
 ### Example
 
@@ -15884,7 +21008,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 org = 'org_example' # str | 
@@ -15937,9 +21060,21 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_users_sessions_browser_screenshot_retrieve**
 > SessionBrowserScreenshot ai_mentor_orgs_users_sessions_browser_screenshot_retrieve(org, session_id, user_id)
 
+Endpoint to fetch the logs of a session.
+Logs are cached for up to 1 hour of their creation: accessing the logs after an hour will result in an empty data.
 
+This is intentional and made to avoid cases where logs bloat our in-memory db.
 
-Endpoint to fetch the logs of a session. Logs are cached for up to 1 hour of their creation: accessing the logs after an hour will result in an empty data.  This is intentional and made to avoid cases where logs bloat our in-memory db.  Accessible to tenant admins and students.  Url Args:     org (str): The organization's platform key.     user_id (str): The username  identifier of the individual.     session_id (str): The session id.  Returns:      200: a SessionBrowserScreenshot object
+Accessible to tenant admins and students.
+
+Url Args:
+    org (str): The organization's platform key.
+    user_id (str): The username  identifier of the individual.
+    session_id (str): The session id.
+
+Returns:
+
+    200: a SessionBrowserScreenshot object
 
 ### Example
 
@@ -15962,7 +21097,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 org = 'org_example' # str | 
@@ -16013,9 +21147,23 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_users_sessions_create**
 > ChatSessionResponse ai_mentor_orgs_users_sessions_create(org, user_id, chat_session_request)
 
+Retrieve or create a chat session with a mentor.
 
+Passing `null` as `tools` results in using all tools assigned to the mentor.
+To specify that no tools be used, pass an empty list.
 
-Retrieve or create a chat session with a mentor.  Passing `null` as `tools` results in using all tools assigned to the mentor. To specify that no tools be used, pass an empty list.  Args:     request: HTTP request containing mentor details.     org: Organization key identifier.     user_id (optional): Username for authentication (if required by the mentor).  Returns:     Response: JSON object containing the session ID.  Raises:     Http404: If the mentor is not found.     ValidationError: If the username is invalid.     ValidationError: If one or more tool slugs are invalid.
+Args:
+    request: HTTP request containing mentor details.
+    org: Organization key identifier.
+    user_id (optional): Username for authentication (if required by the mentor).
+
+Returns:
+    Response: JSON object containing the session ID.
+
+Raises:
+    Http404: If the mentor is not found.
+    ValidationError: If the username is invalid.
+    ValidationError: If one or more tool slugs are invalid.
 
 ### Example
 
@@ -16026,7 +21174,6 @@ from iblai.models.chat_session_request import ChatSessionRequest
 from iblai.models.chat_session_response import ChatSessionResponse
 from iblai.rest import ApiException
 from pprint import pprint
-
 
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
@@ -16063,7 +21210,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -16079,8 +21226,6 @@ No authorization required
 # **ai_mentor_orgs_users_sessions_destroy**
 > Dict[str, object] ai_mentor_orgs_users_sessions_destroy(org, session_id, user_id)
 
-
-
 Deletes all messages in a chat session.
 
 ### Example
@@ -16090,7 +21235,6 @@ Deletes all messages in a chat session.
 import iblai
 from iblai.rest import ApiException
 from pprint import pprint
-
 
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
@@ -16141,9 +21285,10 @@ No authorization required
 # **ai_mentor_orgs_users_sessions_download_session_retrieve**
 > ai_mentor_orgs_users_sessions_download_session_retrieve(org, session_id, user_id)
 
+Retrieves the chat history for a session as a plain text file.
 
-
-Retrieves the chat history for a session as a plain text file.  Returns:     200: txt file containing coversation
+Returns:
+    200: txt file containing coversation
 
 ### Example
 
@@ -16165,7 +21310,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 org = 'org_example' # str | 
@@ -16210,12 +21354,177 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **ai_mentor_orgs_users_sessions_memories_set_attached_create**
+> SessionMemoryAttachment ai_mentor_orgs_users_sessions_memories_set_attached_create(memory_unique_id, org, session_id, user_id, session_memory_attachment)
+
+Create session memory attachment
+
+Create session memory attachment
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.session_memory_attachment import SessionMemoryAttachment
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+# Create an instance of the API class
+api_instance = iblai.AiMentorApi(api_client)
+memory_unique_id = 'memory_unique_id_example' # str | 
+org = 'org_example' # str | 
+session_id = 'session_id_example' # str | 
+user_id = 'user_id_example' # str | 
+session_memory_attachment = iblai.SessionMemoryAttachment() # SessionMemoryAttachment | 
+
+try:
+    # Create session memory attachment
+    api_response = api_instance.ai_mentor_orgs_users_sessions_memories_set_attached_create(memory_unique_id, org, session_id, user_id, session_memory_attachment)
+    print("The response of AiMentorApi->ai_mentor_orgs_users_sessions_memories_set_attached_create:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiMentorApi->ai_mentor_orgs_users_sessions_memories_set_attached_create: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **memory_unique_id** | **str**|  | 
+ **org** | **str**|  | 
+ **session_id** | **str**|  | 
+ **user_id** | **str**|  | 
+ **session_memory_attachment** | [**SessionMemoryAttachment**](SessionMemoryAttachment.md)|  | 
+
+### Return type
+
+[**SessionMemoryAttachment**](SessionMemoryAttachment.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ai_mentor_orgs_users_sessions_memories_set_attached_retrieve**
+> SessionMemoryAttachment ai_mentor_orgs_users_sessions_memories_set_attached_retrieve(memory_unique_id, org, session_id, user_id)
+
+Mixin that includes the StudentTokenAuthentication and IsAdminUserOrStudent
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.session_memory_attachment import SessionMemoryAttachment
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+# Create an instance of the API class
+api_instance = iblai.AiMentorApi(api_client)
+memory_unique_id = 'memory_unique_id_example' # str | 
+org = 'org_example' # str | 
+session_id = 'session_id_example' # str | 
+user_id = 'user_id_example' # str | 
+
+try:
+    api_response = api_instance.ai_mentor_orgs_users_sessions_memories_set_attached_retrieve(memory_unique_id, org, session_id, user_id)
+    print("The response of AiMentorApi->ai_mentor_orgs_users_sessions_memories_set_attached_retrieve:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiMentorApi->ai_mentor_orgs_users_sessions_memories_set_attached_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **memory_unique_id** | **str**|  | 
+ **org** | **str**|  | 
+ **session_id** | **str**|  | 
+ **user_id** | **str**|  | 
+
+### Return type
+
+[**SessionMemoryAttachment**](SessionMemoryAttachment.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **ai_mentor_orgs_users_sessions_memory_retrieve**
 > SessionMemoryStorage ai_mentor_orgs_users_sessions_memory_retrieve(org, session_id, user_id)
 
+Retrieve memory data for a specific session.
 
+This endpoint returns the memory components (knowledge gaps, lessons learned,
+help requests) that were generated during the specified chat session.
 
-Retrieve memory data for a specific session.  This endpoint returns the memory components (knowledge gaps, lessons learned, help requests) that were generated during the specified chat session.  Args:     org: The organization/tenant identifier.     user_id: The ID of the user who owns the session.     session_id: The ID of the session to retrieve memory for.  Returns:     Response: The memory data associated with the session.  Raises:     NotFound: If the session does not exist or does not belong to the user.
+Args:
+    org: The organization/tenant identifier.
+    user_id: The ID of the user who owns the session.
+    session_id: The ID of the session to retrieve memory for.
+
+Returns:
+    Response: The memory data associated with the session.
+
+Raises:
+    NotFound: If the session does not exist or does not belong to the user.
 
 ### Example
 
@@ -16238,7 +21547,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 org = 'org_example' # str | 
@@ -16302,7 +21610,6 @@ from iblai.models.message_view import MessageView
 from iblai.rest import ApiException
 from pprint import pprint
 
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 org = 'org_example' # str | 
@@ -16355,9 +21662,19 @@ No authorization required
 # **ai_mentor_orgs_users_sessions_shell_logs_retrieve**
 > ShellLogs ai_mentor_orgs_users_sessions_shell_logs_retrieve(org, session_id, user_id)
 
+Retrieve shell logs for a specific session.
 
+Args:
+    request: The HTTP request.
+    org: The organization/tenant identifier.
+    user_id: The ID of the user who owns the session.
+    session_id: The ID of the session to retrieve logs for.
 
-Retrieve shell logs for a specific session.  Args:     request: The HTTP request.     org: The organization/tenant identifier.     user_id: The ID of the user who owns the session.     session_id: The ID of the session to retrieve logs for.  Returns:     Response: The shell logs for the specified session.  Raises:     NotFound: If the specified session does not exist.
+Returns:
+    Response: The shell logs for the specified session.
+
+Raises:
+    NotFound: If the specified session does not exist.
 
 ### Example
 
@@ -16380,7 +21697,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 org = 'org_example' # str | 
@@ -16431,8 +21747,6 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_users_sessions_suggestion_list**
 > List[RelatedText] ai_mentor_orgs_users_sessions_suggestion_list(org, session_id, user_id, num_questions=num_questions)
 
-
-
 Retrieve a list of related questions based on a chat session.
 
 ### Example
@@ -16456,7 +21770,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 org = 'org_example' # str | 
@@ -16509,9 +21822,15 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_users_sessions_tasks_retrieve**
 > ChatHistoryItem ai_mentor_orgs_users_sessions_tasks_retrieve(org, session_id, task_id, user_id, to_csv=to_csv)
 
+Retrieves the chat history for a given session if the export task is ready.
 
+Returns:
 
-Retrieves the chat history for a given session if the export task is ready.  Returns:      200: When task is not ready.      200: chat history object      400: When data is not valid.
+    200: When task is not ready.
+
+    200: chat history object
+
+    400: When data is not valid.
 
 ### Example
 
@@ -16534,7 +21853,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 org = 'org_example' # str | 
@@ -16588,8 +21906,6 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_users_sessions_update**
 > MessageViewUpdatResponse ai_mentor_orgs_users_sessions_update(org, session_id, user_id, message_view_request=message_view_request)
 
-
-
 Update the title of a chat session and its tools
 
 ### Example
@@ -16601,7 +21917,6 @@ from iblai.models.message_view_request import MessageViewRequest
 from iblai.models.message_view_updat_response import MessageViewUpdatResponse
 from iblai.rest import ApiException
 from pprint import pprint
-
 
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
@@ -16640,7 +21955,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -16654,9 +21969,20 @@ No authorization required
 # **ai_mentor_orgs_users_settings_tenant_llm_create**
 > LLMModelForTenant ai_mentor_orgs_users_settings_tenant_llm_create(org, user_id, llm_model_for_tenant)
 
+Create or update an LLM model for a tenant.
 
+Accessible only to tenant administrators.
 
-Create or update an LLM model for a tenant.  Accessible only to tenant administrators.  Args:     request: The HTTP request containing LLM model details.     org: The unique identifier of the tenant.  Returns:     Response: Details of the newly created or updated LLM model.  Raises:     ValidationError: If request data is invalid.     NotFound: If the tenant does not exist.
+Args:
+    request: The HTTP request containing LLM model details.
+    org: The unique identifier of the tenant.
+
+Returns:
+    Response: Details of the newly created or updated LLM model.
+
+Raises:
+    ValidationError: If request data is invalid.
+    NotFound: If the tenant does not exist.
 
 ### Example
 
@@ -16679,7 +22005,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 org = 'org_example' # str | 
@@ -16715,7 +22040,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -16729,9 +22054,18 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_users_settings_tenant_llm_list**
 > List[LLMModelForTenant] ai_mentor_orgs_users_settings_tenant_llm_list(org, user_id)
 
+Retrieve all LLM models assigned to a specific tenant.
 
+Args:
+    request: The HTTP request.
+    org: The unique identifier of the tenant.
 
-Retrieve all LLM models assigned to a specific tenant.  Args:     request: The HTTP request.     org: The unique identifier of the tenant.  Returns:     Response: A list of LLM models assigned to the tenant.  Raises:     NotFound: If the specified tenant does not have any associated models.     ValidationError: If an unexpected error occurs.
+Returns:
+    Response: A list of LLM models assigned to the tenant.
+
+Raises:
+    NotFound: If the specified tenant does not have any associated models.
+    ValidationError: If an unexpected error occurs.
 
 ### Example
 
@@ -16754,7 +22088,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 org = 'org_example' # str | 
@@ -16802,9 +22135,19 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_users_starred_mentors_list**
 > List[StarMentor] ai_mentor_orgs_users_starred_mentors_list(org, user_id)
 
+Retrieve a list of mentors starred by a specific user.
 
+Args:
+    request: The HTTP request.
+    org: The organization/tenant identifier.
+    user_id: The ID of the user to retrieve starred mentors for.
 
-Retrieve a list of mentors starred by a specific user.  Args:     request: The HTTP request.     org: The organization/tenant identifier.     user_id: The ID of the user to retrieve starred mentors for.  Returns:     Response: A list of the user's starred mentors, sorted by most recently accessed.  Raises:     NotFound: If the specified student does not exist.     BadRequest: If the request is invalid.
+Returns:
+    Response: A list of the user's starred mentors, sorted by most recently accessed.
+
+Raises:
+    NotFound: If the specified student does not exist.
+    BadRequest: If the request is invalid.
 
 ### Example
 
@@ -16827,7 +22170,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 org = 'org_example' # str | 
@@ -16874,12 +22216,1098 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **ai_mentor_orgs_users_subjects_list**
+> List[Subject] ai_mentor_orgs_users_subjects_list(org, user_id)
+
+Retrieve Subjects
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.subject import Subject
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+# Create an instance of the API class
+api_instance = iblai.AiMentorApi(api_client)
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+
+try:
+    api_response = api_instance.ai_mentor_orgs_users_subjects_list(org, user_id)
+    print("The response of AiMentorApi->ai_mentor_orgs_users_subjects_list:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiMentorApi->ai_mentor_orgs_users_subjects_list: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+
+### Return type
+
+[**List[Subject]**](Subject.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ai_mentor_orgs_users_support_ticket_messages_create**
+> TicketMessage ai_mentor_orgs_users_support_ticket_messages_create(org, user_id, ticket_message)
+
+ViewSet for managing ticket messages.
+
+This ViewSet provides endpoints to retrieve, create, and update ticket messages.
+
+Permissions:
+    - Platform Admins:
+        - Platform admins are able to view all ticket messages for the tenant.
+    - Students:
+        - Students are able to view all ticket messages for only the ticket they are associated with.
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.ticket_message import TicketMessage
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+# Create an instance of the API class
+api_instance = iblai.AiMentorApi(api_client)
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+ticket_message = iblai.TicketMessage() # TicketMessage | 
+
+try:
+    api_response = api_instance.ai_mentor_orgs_users_support_ticket_messages_create(org, user_id, ticket_message)
+    print("The response of AiMentorApi->ai_mentor_orgs_users_support_ticket_messages_create:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiMentorApi->ai_mentor_orgs_users_support_ticket_messages_create: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+ **ticket_message** | [**TicketMessage**](TicketMessage.md)|  | 
+
+### Return type
+
+[**TicketMessage**](TicketMessage.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ai_mentor_orgs_users_support_ticket_messages_destroy**
+> ai_mentor_orgs_users_support_ticket_messages_destroy(id, org, user_id)
+
+ViewSet for managing ticket messages.
+
+This ViewSet provides endpoints to retrieve, create, and update ticket messages.
+
+Permissions:
+    - Platform Admins:
+        - Platform admins are able to view all ticket messages for the tenant.
+    - Students:
+        - Students are able to view all ticket messages for only the ticket they are associated with.
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+# Create an instance of the API class
+api_instance = iblai.AiMentorApi(api_client)
+id = 56 # int | A unique integer value identifying this ticket message.
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+
+try:
+    api_instance.ai_mentor_orgs_users_support_ticket_messages_destroy(id, org, user_id)
+except Exception as e:
+    print("Exception when calling AiMentorApi->ai_mentor_orgs_users_support_ticket_messages_destroy: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| A unique integer value identifying this ticket message. | 
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**204** | No response body |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ai_mentor_orgs_users_support_ticket_messages_list**
+> PaginatedTicketMessageList ai_mentor_orgs_users_support_ticket_messages_list(org, user_id, page=page, page_size=page_size, sender=sender, ticket=ticket)
+
+ViewSet for managing ticket messages.
+
+This ViewSet provides endpoints to retrieve, create, and update ticket messages.
+
+Permissions:
+    - Platform Admins:
+        - Platform admins are able to view all ticket messages for the tenant.
+    - Students:
+        - Students are able to view all ticket messages for only the ticket they are associated with.
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.paginated_ticket_message_list import PaginatedTicketMessageList
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+# Create an instance of the API class
+api_instance = iblai.AiMentorApi(api_client)
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+page = 56 # int | A page number within the paginated result set. (optional)
+page_size = 56 # int | Number of results to return per page. (optional)
+sender = 'sender_example' # str |  (optional)
+ticket = 3.4 # float |  (optional)
+
+try:
+    api_response = api_instance.ai_mentor_orgs_users_support_ticket_messages_list(org, user_id, page=page, page_size=page_size, sender=sender, ticket=ticket)
+    print("The response of AiMentorApi->ai_mentor_orgs_users_support_ticket_messages_list:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiMentorApi->ai_mentor_orgs_users_support_ticket_messages_list: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+ **page** | **int**| A page number within the paginated result set. | [optional] 
+ **page_size** | **int**| Number of results to return per page. | [optional] 
+ **sender** | **str**|  | [optional] 
+ **ticket** | **float**|  | [optional] 
+
+### Return type
+
+[**PaginatedTicketMessageList**](PaginatedTicketMessageList.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ai_mentor_orgs_users_support_ticket_messages_partial_update**
+> TicketMessage ai_mentor_orgs_users_support_ticket_messages_partial_update(id, org, user_id, patched_ticket_message=patched_ticket_message)
+
+ViewSet for managing ticket messages.
+
+This ViewSet provides endpoints to retrieve, create, and update ticket messages.
+
+Permissions:
+    - Platform Admins:
+        - Platform admins are able to view all ticket messages for the tenant.
+    - Students:
+        - Students are able to view all ticket messages for only the ticket they are associated with.
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.patched_ticket_message import PatchedTicketMessage
+from iblai.models.ticket_message import TicketMessage
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+# Create an instance of the API class
+api_instance = iblai.AiMentorApi(api_client)
+id = 56 # int | A unique integer value identifying this ticket message.
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+patched_ticket_message = iblai.PatchedTicketMessage() # PatchedTicketMessage |  (optional)
+
+try:
+    api_response = api_instance.ai_mentor_orgs_users_support_ticket_messages_partial_update(id, org, user_id, patched_ticket_message=patched_ticket_message)
+    print("The response of AiMentorApi->ai_mentor_orgs_users_support_ticket_messages_partial_update:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiMentorApi->ai_mentor_orgs_users_support_ticket_messages_partial_update: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| A unique integer value identifying this ticket message. | 
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+ **patched_ticket_message** | [**PatchedTicketMessage**](PatchedTicketMessage.md)|  | [optional] 
+
+### Return type
+
+[**TicketMessage**](TicketMessage.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ai_mentor_orgs_users_support_ticket_messages_retrieve**
+> TicketMessage ai_mentor_orgs_users_support_ticket_messages_retrieve(id, org, user_id)
+
+ViewSet for managing ticket messages.
+
+This ViewSet provides endpoints to retrieve, create, and update ticket messages.
+
+Permissions:
+    - Platform Admins:
+        - Platform admins are able to view all ticket messages for the tenant.
+    - Students:
+        - Students are able to view all ticket messages for only the ticket they are associated with.
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.ticket_message import TicketMessage
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+# Create an instance of the API class
+api_instance = iblai.AiMentorApi(api_client)
+id = 56 # int | A unique integer value identifying this ticket message.
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+
+try:
+    api_response = api_instance.ai_mentor_orgs_users_support_ticket_messages_retrieve(id, org, user_id)
+    print("The response of AiMentorApi->ai_mentor_orgs_users_support_ticket_messages_retrieve:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiMentorApi->ai_mentor_orgs_users_support_ticket_messages_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| A unique integer value identifying this ticket message. | 
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+
+### Return type
+
+[**TicketMessage**](TicketMessage.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ai_mentor_orgs_users_support_ticket_messages_update**
+> TicketMessage ai_mentor_orgs_users_support_ticket_messages_update(id, org, user_id, ticket_message)
+
+ViewSet for managing ticket messages.
+
+This ViewSet provides endpoints to retrieve, create, and update ticket messages.
+
+Permissions:
+    - Platform Admins:
+        - Platform admins are able to view all ticket messages for the tenant.
+    - Students:
+        - Students are able to view all ticket messages for only the ticket they are associated with.
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.ticket_message import TicketMessage
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+# Create an instance of the API class
+api_instance = iblai.AiMentorApi(api_client)
+id = 56 # int | A unique integer value identifying this ticket message.
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+ticket_message = iblai.TicketMessage() # TicketMessage | 
+
+try:
+    api_response = api_instance.ai_mentor_orgs_users_support_ticket_messages_update(id, org, user_id, ticket_message)
+    print("The response of AiMentorApi->ai_mentor_orgs_users_support_ticket_messages_update:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiMentorApi->ai_mentor_orgs_users_support_ticket_messages_update: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| A unique integer value identifying this ticket message. | 
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+ **ticket_message** | [**TicketMessage**](TicketMessage.md)|  | 
+
+### Return type
+
+[**TicketMessage**](TicketMessage.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ai_mentor_orgs_users_support_tickets_close_create**
+> ai_mentor_orgs_users_support_tickets_close_create(id, org, user_id)
+
+Endpoint to close a Human support ticket.
+
+This endpoint is used to close a Human support ticket.
+
+Permissions:
+    - available to both platform admins and the student who created the ticket.
+
+Returns:
+    Response: A response object containing the closed ticket data.
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+# Create an instance of the API class
+api_instance = iblai.AiMentorApi(api_client)
+id = 56 # int | A unique integer value identifying this human support ticket.
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+
+try:
+    api_instance.ai_mentor_orgs_users_support_tickets_close_create(id, org, user_id)
+except Exception as e:
+    print("Exception when calling AiMentorApi->ai_mentor_orgs_users_support_tickets_close_create: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| A unique integer value identifying this human support ticket. | 
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | No response body |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ai_mentor_orgs_users_support_tickets_destroy**
+> ai_mentor_orgs_users_support_tickets_destroy(id, org, user_id)
+
+ViewSet for managing Human Support Tickets.
+
+This ViewSet provides endpoints to retrieve, create, and update Human Support Tickets.
+
+Permissions:
+    Platform Admins:
+        - Platform admins are able to update the ticket status, and view all tickets for the tenant.
+        - Platform admins can only update the `subject`, `description` and `status` fields.
+    Students:
+        - Students are only able to view their own created tickets.
+        - students can modify only the `subject` and `description` entries
+
+    Field Updates:
+        - subject: Modifiable by both student and platform admin
+        - description: Modifiable by only student.
+        - status: Modifiable by only platform admin.
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+# Create an instance of the API class
+api_instance = iblai.AiMentorApi(api_client)
+id = 56 # int | A unique integer value identifying this human support ticket.
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+
+try:
+    api_instance.ai_mentor_orgs_users_support_tickets_destroy(id, org, user_id)
+except Exception as e:
+    print("Exception when calling AiMentorApi->ai_mentor_orgs_users_support_tickets_destroy: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| A unique integer value identifying this human support ticket. | 
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**204** | No response body |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ai_mentor_orgs_users_support_tickets_list**
+> PaginatedHumanSupportTicketList ai_mentor_orgs_users_support_tickets_list(org, user_id, mentor_id=mentor_id, page=page, page_size=page_size, session=session, status=status, username=username)
+
+ViewSet for managing Human Support Tickets.
+
+This ViewSet provides endpoints to retrieve, create, and update Human Support Tickets.
+
+Permissions:
+    Platform Admins:
+        - Platform admins are able to update the ticket status, and view all tickets for the tenant.
+        - Platform admins can only update the `subject`, `description` and `status` fields.
+    Students:
+        - Students are only able to view their own created tickets.
+        - students can modify only the `subject` and `description` entries
+
+    Field Updates:
+        - subject: Modifiable by both student and platform admin
+        - description: Modifiable by only student.
+        - status: Modifiable by only platform admin.
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.paginated_human_support_ticket_list import PaginatedHumanSupportTicketList
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+# Create an instance of the API class
+api_instance = iblai.AiMentorApi(api_client)
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+mentor_id = 3.4 # float |  (optional)
+page = 56 # int | A page number within the paginated result set. (optional)
+page_size = 56 # int | Number of results to return per page. (optional)
+session = 'session_example' # str |  (optional)
+status = 'status_example' # str | * `open` - Open * `in_progress` - In Progress * `closed` - Closed (optional)
+username = 'username_example' # str |  (optional)
+
+try:
+    api_response = api_instance.ai_mentor_orgs_users_support_tickets_list(org, user_id, mentor_id=mentor_id, page=page, page_size=page_size, session=session, status=status, username=username)
+    print("The response of AiMentorApi->ai_mentor_orgs_users_support_tickets_list:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiMentorApi->ai_mentor_orgs_users_support_tickets_list: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+ **mentor_id** | **float**|  | [optional] 
+ **page** | **int**| A page number within the paginated result set. | [optional] 
+ **page_size** | **int**| Number of results to return per page. | [optional] 
+ **session** | **str**|  | [optional] 
+ **status** | **str**| * &#x60;open&#x60; - Open * &#x60;in_progress&#x60; - In Progress * &#x60;closed&#x60; - Closed | [optional] 
+ **username** | **str**|  | [optional] 
+
+### Return type
+
+[**PaginatedHumanSupportTicketList**](PaginatedHumanSupportTicketList.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ai_mentor_orgs_users_support_tickets_partial_update**
+> HumanSupportTicket ai_mentor_orgs_users_support_tickets_partial_update(id, org, user_id, patched_human_support_ticket=patched_human_support_ticket)
+
+ViewSet for managing Human Support Tickets.
+
+This ViewSet provides endpoints to retrieve, create, and update Human Support Tickets.
+
+Permissions:
+    Platform Admins:
+        - Platform admins are able to update the ticket status, and view all tickets for the tenant.
+        - Platform admins can only update the `subject`, `description` and `status` fields.
+    Students:
+        - Students are only able to view their own created tickets.
+        - students can modify only the `subject` and `description` entries
+
+    Field Updates:
+        - subject: Modifiable by both student and platform admin
+        - description: Modifiable by only student.
+        - status: Modifiable by only platform admin.
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.human_support_ticket import HumanSupportTicket
+from iblai.models.patched_human_support_ticket import PatchedHumanSupportTicket
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+# Create an instance of the API class
+api_instance = iblai.AiMentorApi(api_client)
+id = 56 # int | A unique integer value identifying this human support ticket.
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+patched_human_support_ticket = iblai.PatchedHumanSupportTicket() # PatchedHumanSupportTicket |  (optional)
+
+try:
+    api_response = api_instance.ai_mentor_orgs_users_support_tickets_partial_update(id, org, user_id, patched_human_support_ticket=patched_human_support_ticket)
+    print("The response of AiMentorApi->ai_mentor_orgs_users_support_tickets_partial_update:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiMentorApi->ai_mentor_orgs_users_support_tickets_partial_update: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| A unique integer value identifying this human support ticket. | 
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+ **patched_human_support_ticket** | [**PatchedHumanSupportTicket**](PatchedHumanSupportTicket.md)|  | [optional] 
+
+### Return type
+
+[**HumanSupportTicket**](HumanSupportTicket.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ai_mentor_orgs_users_support_tickets_retrieve**
+> HumanSupportTicket ai_mentor_orgs_users_support_tickets_retrieve(id, org, user_id)
+
+ViewSet for managing Human Support Tickets.
+
+This ViewSet provides endpoints to retrieve, create, and update Human Support Tickets.
+
+Permissions:
+    Platform Admins:
+        - Platform admins are able to update the ticket status, and view all tickets for the tenant.
+        - Platform admins can only update the `subject`, `description` and `status` fields.
+    Students:
+        - Students are only able to view their own created tickets.
+        - students can modify only the `subject` and `description` entries
+
+    Field Updates:
+        - subject: Modifiable by both student and platform admin
+        - description: Modifiable by only student.
+        - status: Modifiable by only platform admin.
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.human_support_ticket import HumanSupportTicket
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+# Create an instance of the API class
+api_instance = iblai.AiMentorApi(api_client)
+id = 56 # int | A unique integer value identifying this human support ticket.
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+
+try:
+    api_response = api_instance.ai_mentor_orgs_users_support_tickets_retrieve(id, org, user_id)
+    print("The response of AiMentorApi->ai_mentor_orgs_users_support_tickets_retrieve:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiMentorApi->ai_mentor_orgs_users_support_tickets_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| A unique integer value identifying this human support ticket. | 
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+
+### Return type
+
+[**HumanSupportTicket**](HumanSupportTicket.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ai_mentor_orgs_users_support_tickets_update**
+> HumanSupportTicket ai_mentor_orgs_users_support_tickets_update(id, org, user_id, human_support_ticket)
+
+ViewSet for managing Human Support Tickets.
+
+This ViewSet provides endpoints to retrieve, create, and update Human Support Tickets.
+
+Permissions:
+    Platform Admins:
+        - Platform admins are able to update the ticket status, and view all tickets for the tenant.
+        - Platform admins can only update the `subject`, `description` and `status` fields.
+    Students:
+        - Students are only able to view their own created tickets.
+        - students can modify only the `subject` and `description` entries
+
+    Field Updates:
+        - subject: Modifiable by both student and platform admin
+        - description: Modifiable by only student.
+        - status: Modifiable by only platform admin.
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.human_support_ticket import HumanSupportTicket
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+# Create an instance of the API class
+api_instance = iblai.AiMentorApi(api_client)
+id = 56 # int | A unique integer value identifying this human support ticket.
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+human_support_ticket = iblai.HumanSupportTicket() # HumanSupportTicket | 
+
+try:
+    api_response = api_instance.ai_mentor_orgs_users_support_tickets_update(id, org, user_id, human_support_ticket)
+    print("The response of AiMentorApi->ai_mentor_orgs_users_support_tickets_update:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiMentorApi->ai_mentor_orgs_users_support_tickets_update: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| A unique integer value identifying this human support ticket. | 
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+ **human_support_ticket** | [**HumanSupportTicket**](HumanSupportTicket.md)|  | 
+
+### Return type
+
+[**HumanSupportTicket**](HumanSupportTicket.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **ai_mentor_orgs_users_tasks_retrieve**
 > RetrieveTask ai_mentor_orgs_users_tasks_retrieve(org, task_id, user_id)
 
+Retrieves the status of a task using its task ID.
 
+Accessible to both tenant admins and students.
 
-Retrieves the status of a task using its task ID.  Accessible to both tenant admins and students.  Returns:      200: task id
+Returns:
+
+    200: task id
 
 ### Example
 
@@ -16902,7 +23330,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 org = 'org_example' # str | 
@@ -16952,9 +23379,10 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_users_tasks_sessions_create**
 > TaskView ai_mentor_orgs_users_tasks_sessions_create(org, session_id, user_id, task_view)
 
+Export chat history for a session.
 
-
-Export chat history for a session.  Returns:     200: Task ID for the export operation.
+Returns:
+    200: Task ID for the export operation.
 
 ### Example
 
@@ -16977,7 +23405,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 org = 'org_example' # str | 
@@ -17015,7 +23442,77 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ai_mentor_orgs_users_tool_categories_list**
+> List[ToolCategory] ai_mentor_orgs_users_tool_categories_list(org, user_id)
+
+Retrieve Tool Categories
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.tool_category import ToolCategory
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+# Create an instance of the API class
+api_instance = iblai.AiMentorApi(api_client)
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+
+try:
+    api_response = api_instance.ai_mentor_orgs_users_tool_categories_list(org, user_id)
+    print("The response of AiMentorApi->ai_mentor_orgs_users_tool_categories_list:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiMentorApi->ai_mentor_orgs_users_tool_categories_list: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+
+### Return type
+
+[**List[ToolCategory]**](ToolCategory.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 ### HTTP response details
@@ -17028,8 +23525,6 @@ Name | Type | Description  | Notes
 
 # **ai_mentor_orgs_users_update**
 > Mentor ai_mentor_orgs_users_update(name, org, user_id, mentor_create, department_id=department_id, filter_by=filter_by, metadata_key=metadata_key, metadata_value=metadata_value, return_session_information=return_session_information, visibility=visibility)
-
-
 
 Update a mentor's details with RBAC enforcement and custom serializer handling.
 
@@ -17055,7 +23550,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 name = 'name_example' # str | 
@@ -17105,7 +23599,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -17119,9 +23613,16 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_users_voices_list**
 > PaginatedVoiceList ai_mentor_orgs_users_voices_list(org, user_id, ordering=ordering, page=page, page_size=page_size, provider=provider, search=search)
 
+Retrieve a list of available voice options.
 
+Args:
+    request: The HTTP request.
 
-Retrieve a list of available voice options.  Args:     request: The HTTP request.  Returns:     Response: A list of available voice options.  Raises:     NotFound: If no voice options are available.
+Returns:
+    Response: A list of available voice options.
+
+Raises:
+    NotFound: If no voice options are available.
 
 ### Example
 
@@ -17144,7 +23645,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 org = 'org_example' # str | 
@@ -17203,9 +23703,17 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_users_voices_retrieve**
 > Voice ai_mentor_orgs_users_voices_retrieve(id, org, user_id)
 
+Retrieve details of a specific voice option.
 
+Args:
+    request: The HTTP request.
+    pk: The primary key of the voice option to retrieve.
 
-Retrieve details of a specific voice option.  Args:     request: The HTTP request.     pk: The primary key of the voice option to retrieve.  Returns:     Response: The details of the specified voice option.  Raises:     NotFound: If the specified voice option does not exist.
+Returns:
+    Response: The details of the specified voice option.
+
+Raises:
+    NotFound: If the specified voice option does not exist.
 
 ### Example
 
@@ -17228,7 +23736,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 id = 56 # int | A unique integer value identifying this voice.
@@ -17279,8 +23786,6 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_webhooks_azure_trigger_create**
 > ai_mentor_orgs_webhooks_azure_trigger_create(org, slug)
 
-
-
 ### Example
 
 
@@ -17288,7 +23793,6 @@ Name | Type | Description  | Notes
 import iblai
 from iblai.rest import ApiException
 from pprint import pprint
-
 
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
@@ -17335,9 +23839,14 @@ No authorization required
 # **ai_mentor_orgs_webhooks_github_pullrequest_create**
 > ai_mentor_orgs_webhooks_github_pullrequest_create(org)
 
+Handle incoming POST requests from GitHub webhook for pull requests.
 
+Args:
+    request: The HTTP request object containing the webhook payload.
+    org: the organizaion name.
 
-Handle incoming POST requests from GitHub webhook for pull requests.  Args:     request: The HTTP request object containing the webhook payload.     org: the organizaion name.  Returns:     Response: A response indicating the result of processing the webhook event.
+Returns:
+    Response: A response indicating the result of processing the webhook event.
 
 ### Example
 
@@ -17346,7 +23855,6 @@ Handle incoming POST requests from GitHub webhook for pull requests.  Args:     
 import iblai
 from iblai.rest import ApiException
 from pprint import pprint
-
 
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
@@ -17391,7 +23899,59 @@ No authorization required
 # **ai_mentor_webhooks_azure_emailchat_create**
 > ai_mentor_webhooks_azure_emailchat_create()
 
+### Example
 
+
+```python
+import iblai
+from iblai.rest import ApiException
+from pprint import pprint
+
+# Create an instance of the API class
+api_instance = iblai.AiMentorApi(api_client)
+
+try:
+    api_instance.ai_mentor_webhooks_azure_emailchat_create()
+except Exception as e:
+    print("Exception when calling AiMentorApi->ai_mentor_webhooks_azure_emailchat_create: %s\n" % e)
+```
+
+
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | No response body |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ai_mentor_webhooks_n8n_progress_create**
+> ai_mentor_webhooks_n8n_progress_create()
+
+This is the endpoint called by N8N workflows from N8N, to report progress to the mentor SPA(DM)
+
+Example request:
+```
+{"unique_id": "the-unique-id", "progress": "the email was successfully sent.", "finished": false}
+```
 
 ### Example
 
@@ -17401,14 +23961,13 @@ import iblai
 from iblai.rest import ApiException
 from pprint import pprint
 
-
 # Create an instance of the API class
 api_instance = iblai.AiMentorApi(api_client)
 
 try:
-    api_instance.ai_mentor_webhooks_azure_emailchat_create()
+    api_instance.ai_mentor_webhooks_n8n_progress_create()
 except Exception as e:
-    print("Exception when calling AiMentorApi->ai_mentor_webhooks_azure_emailchat_create: %s\n" % e)
+    print("Exception when calling AiMentorApi->ai_mentor_webhooks_n8n_progress_create: %s\n" % e)
 ```
 
 

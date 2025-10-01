@@ -15,8 +15,6 @@ Method | HTTP request | Description
 # **features_apps_list**
 > PaginatedUserAppList features_apps_list(page=page, page_size=page_size)
 
-
-
 Returns a list of the apps that the user has access to.
 
 ### Example
@@ -40,7 +38,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.FeaturesApi(api_client)
 page = 56 # int | A page number within the paginated result set. (optional)
@@ -88,8 +85,6 @@ Name | Type | Description  | Notes
 # **features_apps_update_create**
 > OnboardingStatusUpdate features_apps_update_create(onboarding_status_update)
 
-
-
 Updates the user onboarding completed status
 
 ### Example
@@ -113,7 +108,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.FeaturesApi(api_client)
 onboarding_status_update = iblai.OnboardingStatusUpdate() # OnboardingStatusUpdate | 
@@ -145,7 +139,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -159,9 +153,11 @@ Name | Type | Description  | Notes
 # **features_apps_update_trial_status_create**
 > ActivateUserFreeTrial features_apps_update_trial_status_create(activate_user_free_trial)
 
+Activates free trial for the user
 
+Set free_trial_started to True| false for the user app
 
-Activates free trial for the user  Set free_trial_started to True| false for the user app  App URL or ID is required as well as the platform key
+App URL or ID is required as well as the platform key
 
 ### Example
 
@@ -184,7 +180,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.FeaturesApi(api_client)
 activate_user_free_trial = iblai.ActivateUserFreeTrial() # ActivateUserFreeTrial | 
@@ -216,7 +211,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -230,9 +225,18 @@ Name | Type | Description  | Notes
 # **features_bulk_config_create**
 > features_bulk_config_create()
 
+POST
+Bulk update user feature config
 
+NOTE: Will not create user feature configs
 
-POST Bulk update user feature config  NOTE: Will not create user feature configs  Params: platform_key  config (OR) feature values
+Params:
+platform_key
+
+config
+(OR)
+feature
+values
 
 ### Example
 
@@ -254,7 +258,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.FeaturesApi(api_client)
 
@@ -294,9 +297,17 @@ void (empty response body)
 # **features_config_create**
 > features_config_create()
 
+POST
+Update user feature config
 
+Params:
+user_id/username/email
+platform_key
 
-POST Update user feature config  Params: user_id/username/email platform_key  config (OR) feature values
+config
+(OR)
+feature
+values
 
 ### Example
 
@@ -318,7 +329,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.FeaturesApi(api_client)
 
@@ -358,9 +368,11 @@ void (empty response body)
 # **features_config_retrieve**
 > features_config_retrieve()
 
+Query user feature config
 
-
-Query user feature config  Params: user_id/username/email platform_key
+Params:
+user_id/username/email
+platform_key
 
 ### Example
 
@@ -382,7 +394,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.FeaturesApi(api_client)
 

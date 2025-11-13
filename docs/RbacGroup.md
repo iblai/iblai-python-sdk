@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **users** | [**List[RbacUser]**](RbacUser.md) |  | [readonly] 
 **users_to_add** | **List[int]** | List of user IDs to add to this group | [optional] 
 **users_to_remove** | **List[int]** | List of user IDs to remove from this group | [optional] 
+**is_internal** | **bool** | When True, this group is internal to the system and cannot be viewed or modified by tenants via API endpoints. | [readonly] 
 
 ## Example
 

@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**custom_domains_by_name_status_update**](CustomDomainsApi.md#custom_domains_by_name_status_update) | **PUT** /api/custom-domains/by-name/{domain_name}/status/ | 
 [**custom_domains_create_create**](CustomDomainsApi.md#custom_domains_create_create) | **POST** /api/custom-domains/create/ | 
 [**custom_domains_delete_destroy**](CustomDomainsApi.md#custom_domains_delete_destroy) | **DELETE** /api/custom-domains/{domain_id}/delete/ | 
+[**custom_domains_deleted_status_create**](CustomDomainsApi.md#custom_domains_deleted_status_create) | **POST** /api/custom-domains/{domain_id}/deleted-status/ | 
 [**custom_domains_retrieve**](CustomDomainsApi.md#custom_domains_retrieve) | **GET** /api/custom-domains/ | 
 [**custom_domains_status_update**](CustomDomainsApi.md#custom_domains_status_update) | **PUT** /api/custom-domains/{domain_id}/status/ | 
 
@@ -140,7 +141,7 @@ void (empty response body)
 # **custom_domains_delete_destroy**
 > custom_domains_delete_destroy(domain_id)
 
-API endpoint to delete a custom domain
+API endpoint to hard delete a custom domain
 
 ### Example
 
@@ -202,10 +203,10 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **custom_domains_retrieve**
-> custom_domains_retrieve()
+# **custom_domains_deleted_status_create**
+> custom_domains_deleted_status_create(domain_id)
 
-API endpoint to get custom domains
+API endpoint to update the is_deleted status of a custom domain
 
 ### Example
 
@@ -229,6 +230,59 @@ client = get_platform_api_client(
 )
 # Create an instance of the API class
 api_instance = iblai.CustomDomainsApi(api_client)
+domain_id = 56 # int | 
+
+try:
+    api_instance.custom_domains_deleted_status_create(domain_id)
+except Exception as e:
+    print("Exception when calling CustomDomainsApi->custom_domains_deleted_status_create: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **domain_id** | **int**|  | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | No response body |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **custom_domains_retrieve**
+> custom_domains_retrieve()
+
+API endpoint to get custom domains (public, no authentication or permission checks)
+
+### Example
+
+
+```python
+import iblai
+from iblai.rest import ApiException
+from pprint import pprint
+
+# Create an instance of the API class
+api_instance = iblai.CustomDomainsApi(api_client)
 
 try:
     api_instance.custom_domains_retrieve()
@@ -248,7 +302,7 @@ void (empty response body)
 
 ### Authorization
 
-[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+No authorization required
 
 ### HTTP request headers
 

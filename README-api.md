@@ -5,7 +5,10 @@ All URIs are relative to *https://base.manager.iblai.app*
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *AiAccountApi* | [**ai_account_connected_services_callback_retrieve**](docs/AiAccountApi.md#ai_account_connected_services_callback_retrieve) | **GET** /api/ai-account/connected-services/callback/ | 
-*AiAccountApi* | [**ai_account_connected_services_orgs_users_retrieve**](docs/AiAccountApi.md#ai_account_connected_services_orgs_users_retrieve) | **GET** /api/ai-account/connected-services/orgs/{org}/users/{user_id}/{provider}/{service}/ | 
+*AiAccountApi* | [**ai_account_connected_services_orgs_users_destroy**](docs/AiAccountApi.md#ai_account_connected_services_orgs_users_destroy) | **DELETE** /api/ai-account/connected-services/orgs/{org}/users/{user_id}/{id}/ | 
+*AiAccountApi* | [**ai_account_connected_services_orgs_users_list**](docs/AiAccountApi.md#ai_account_connected_services_orgs_users_list) | **GET** /api/ai-account/connected-services/orgs/{org}/users/{user_id}/ | 
+*AiAccountApi* | [**ai_account_connected_services_orgs_users_retrieve**](docs/AiAccountApi.md#ai_account_connected_services_orgs_users_retrieve) | **GET** /api/ai-account/connected-services/orgs/{org}/users/{user_id}/{id}/ | 
+*AiAccountApi* | [**ai_account_connected_services_orgs_users_retrieve2**](docs/AiAccountApi.md#ai_account_connected_services_orgs_users_retrieve2) | **GET** /api/ai-account/connected-services/orgs/{org}/users/{user_id}/{provider}/{service}/ | 
 *AiAccountApi* | [**ai_account_orgs_credential_create**](docs/AiAccountApi.md#ai_account_orgs_credential_create) | **POST** /api/ai-account/orgs/{org}/credential/ | 
 *AiAccountApi* | [**ai_account_orgs_credential_destroy**](docs/AiAccountApi.md#ai_account_orgs_credential_destroy) | **DELETE** /api/ai-account/orgs/{org}/credential/ | 
 *AiAccountApi* | [**ai_account_orgs_credential_partial_update**](docs/AiAccountApi.md#ai_account_orgs_credential_partial_update) | **PATCH** /api/ai-account/orgs/{org}/credential/ | 
@@ -305,6 +308,7 @@ Class | Method | HTTP request | Description
 *AiFinetuningApi* | [**ai_finetuning_v1_org_user_trainings_retrieve**](docs/AiFinetuningApi.md#ai_finetuning_v1_org_user_trainings_retrieve) | **GET** /api/ai-finetuning/v1/org/{org}/user/{username}/trainings/{id}/ | 
 *AiFinetuningApi* | [**ai_finetuning_v1_org_user_trainings_update**](docs/AiFinetuningApi.md#ai_finetuning_v1_org_user_trainings_update) | **PUT** /api/ai-finetuning/v1/org/{org}/user/{username}/trainings/{id}/ | 
 *AiIndexApi* | [**ai_index_orgs_users_documents_destroy**](docs/AiIndexApi.md#ai_index_orgs_users_documents_destroy) | **DELETE** /api/ai-index/orgs/{org}/users/{user_id}/documents/{document_id}/ | 
+*AiIndexApi* | [**ai_index_orgs_users_documents_document_from_pool_create**](docs/AiIndexApi.md#ai_index_orgs_users_documents_document_from_pool_create) | **POST** /api/ai-index/orgs/{org}/users/{user_id}/documents/document-from-pool/ | 
 *AiIndexApi* | [**ai_index_orgs_users_documents_pathways_list**](docs/AiIndexApi.md#ai_index_orgs_users_documents_pathways_list) | **GET** /api/ai-index/orgs/{org}/users/{user_id}/documents/pathways/{pathway}/ | 
 *AiIndexApi* | [**ai_index_orgs_users_documents_retrieve**](docs/AiIndexApi.md#ai_index_orgs_users_documents_retrieve) | **GET** /api/ai-index/orgs/{org}/users/{user_id}/documents/{document_id}/ | 
 *AiIndexApi* | [**ai_index_orgs_users_documents_search_create**](docs/AiIndexApi.md#ai_index_orgs_users_documents_search_create) | **POST** /api/ai-index/orgs/{org}/users/{user_id}/documents/search/ | 
@@ -332,11 +336,17 @@ Class | Method | HTTP request | Description
 *AiMediaApi* | [**ai_media_orgs_users_heygen_videos_destroy**](docs/AiMediaApi.md#ai_media_orgs_users_heygen_videos_destroy) | **DELETE** /api/ai-media/orgs/{org}/users/{user_id}/heygen/videos/{heygen_marketing_video_id}/ | 
 *AiMediaApi* | [**ai_media_orgs_users_heygen_videos_list**](docs/AiMediaApi.md#ai_media_orgs_users_heygen_videos_list) | **GET** /api/ai-media/orgs/{org}/users/{user_id}/heygen/videos/ | 
 *AiMediaApi* | [**ai_media_orgs_users_heygen_videos_retrieve**](docs/AiMediaApi.md#ai_media_orgs_users_heygen_videos_retrieve) | **GET** /api/ai-media/orgs/{org}/users/{user_id}/heygen/videos/{heygen_marketing_video_id}/ | 
+*AiMediaApi* | [**ai_media_orgs_users_veo_video_download_retrieve**](docs/AiMediaApi.md#ai_media_orgs_users_veo_video_download_retrieve) | **GET** /api/ai-media/orgs/{org}/users/{user_id}/veo/video-download/{veo_video_id}/ | 
+*AiMediaApi* | [**ai_media_orgs_users_veo_videos_create**](docs/AiMediaApi.md#ai_media_orgs_users_veo_videos_create) | **POST** /api/ai-media/orgs/{org}/users/{user_id}/veo/videos/ | 
+*AiMediaApi* | [**ai_media_orgs_users_veo_videos_destroy**](docs/AiMediaApi.md#ai_media_orgs_users_veo_videos_destroy) | **DELETE** /api/ai-media/orgs/{org}/users/{user_id}/veo/videos/{veo_video_id}/ | 
+*AiMediaApi* | [**ai_media_orgs_users_veo_videos_list**](docs/AiMediaApi.md#ai_media_orgs_users_veo_videos_list) | **GET** /api/ai-media/orgs/{org}/users/{user_id}/veo/videos/ | 
+*AiMediaApi* | [**ai_media_orgs_users_veo_videos_retrieve**](docs/AiMediaApi.md#ai_media_orgs_users_veo_videos_retrieve) | **GET** /api/ai-media/orgs/{org}/users/{user_id}/veo/videos/{veo_video_id}/ | 
 *AiMediaApi* | [**ai_media_orgs_users_video_script_generation_audio_create**](docs/AiMediaApi.md#ai_media_orgs_users_video_script_generation_audio_create) | **POST** /api/ai-media/orgs/{org}/users/{user_id}/video-script-generation/audio/ | 
 *AiMediaApi* | [**ai_media_orgs_users_video_script_generation_document_create**](docs/AiMediaApi.md#ai_media_orgs_users_video_script_generation_document_create) | **POST** /api/ai-media/orgs/{org}/users/{user_id}/video-script-generation/document/ | 
 *AiMediaApi* | [**ai_media_orgs_users_video_script_generation_text_create**](docs/AiMediaApi.md#ai_media_orgs_users_video_script_generation_text_create) | **POST** /api/ai-media/orgs/{org}/users/{user_id}/video-script-generation/text/ | 
 *AiMentorApi* | [**ai_mentor_langfuse_health_retrieve**](docs/AiMentorApi.md#ai_mentor_langfuse_health_retrieve) | **GET** /api/ai-mentor/langfuse/health/ | 
 *AiMentorApi* | [**ai_mentor_orgs_all_triggers_retrieve**](docs/AiMentorApi.md#ai_mentor_orgs_all_triggers_retrieve) | **GET** /api/ai-mentor/orgs/{org}/all-triggers/ | 
+*AiMentorApi* | [**ai_mentor_orgs_mentors_by_email_create**](docs/AiMentorApi.md#ai_mentor_orgs_mentors_by_email_create) | **POST** /api/ai-mentor/orgs/{org}/mentors/by-email/ | Get accessible mentors by email
 *AiMentorApi* | [**ai_mentor_orgs_mentors_email_inbox_list**](docs/AiMentorApi.md#ai_mentor_orgs_mentors_email_inbox_list) | **GET** /api/ai-mentor/orgs/{org}/mentors/{mentor}/email-inbox/ | 
 *AiMentorApi* | [**ai_mentor_orgs_mentors_email_inbox_retrieve**](docs/AiMentorApi.md#ai_mentor_orgs_mentors_email_inbox_retrieve) | **GET** /api/ai-mentor/orgs/{org}/mentors/{mentor}/email-inbox/{email_prompt_id}/ | 
 *AiMentorApi* | [**ai_mentor_orgs_mentors_email_inbox_summary_retrieve**](docs/AiMentorApi.md#ai_mentor_orgs_mentors_email_inbox_summary_retrieve) | **GET** /api/ai-mentor/orgs/{org}/mentors/{mentor}/email-inbox-summary/ | 
@@ -362,6 +372,11 @@ Class | Method | HTTP request | Description
 *AiMentorApi* | [**ai_mentor_orgs_users_ai_user_profile_memory_create**](docs/AiMentorApi.md#ai_mentor_orgs_users_ai_user_profile_memory_create) | **POST** /api/ai-mentor/orgs/{org}/users/{user_id}/ai-user-profile-memory/ | 
 *AiMentorApi* | [**ai_mentor_orgs_users_ai_user_profile_memory_destroy**](docs/AiMentorApi.md#ai_mentor_orgs_users_ai_user_profile_memory_destroy) | **DELETE** /api/ai-mentor/orgs/{org}/users/{user_id}/ai-user-profile-memory/{tag}/ | 
 *AiMentorApi* | [**ai_mentor_orgs_users_ai_user_profile_memory_list**](docs/AiMentorApi.md#ai_mentor_orgs_users_ai_user_profile_memory_list) | **GET** /api/ai-mentor/orgs/{org}/users/{user_id}/ai-user-profile-memory/ | 
+*AiMentorApi* | [**ai_mentor_orgs_users_artifacts_destroy**](docs/AiMentorApi.md#ai_mentor_orgs_users_artifacts_destroy) | **DELETE** /api/ai-mentor/orgs/{org}/users/{user_id}/artifacts/{id}/ | Delete an artifact
+*AiMentorApi* | [**ai_mentor_orgs_users_artifacts_list**](docs/AiMentorApi.md#ai_mentor_orgs_users_artifacts_list) | **GET** /api/ai-mentor/orgs/{org}/users/{user_id}/artifacts/ | List artifacts
+*AiMentorApi* | [**ai_mentor_orgs_users_artifacts_partial_update**](docs/AiMentorApi.md#ai_mentor_orgs_users_artifacts_partial_update) | **PATCH** /api/ai-mentor/orgs/{org}/users/{user_id}/artifacts/{id}/ | Partially update an artifact
+*AiMentorApi* | [**ai_mentor_orgs_users_artifacts_retrieve**](docs/AiMentorApi.md#ai_mentor_orgs_users_artifacts_retrieve) | **GET** /api/ai-mentor/orgs/{org}/users/{user_id}/artifacts/{id}/ | Retrieve an artifact
+*AiMentorApi* | [**ai_mentor_orgs_users_artifacts_update**](docs/AiMentorApi.md#ai_mentor_orgs_users_artifacts_update) | **PUT** /api/ai-mentor/orgs/{org}/users/{user_id}/artifacts/{id}/ | Update an artifact
 *AiMentorApi* | [**ai_mentor_orgs_users_assumed_knowledge_create**](docs/AiMentorApi.md#ai_mentor_orgs_users_assumed_knowledge_create) | **POST** /api/ai-mentor/orgs/{org}/users/{user_id}/assumed-knowledge/ | 
 *AiMentorApi* | [**ai_mentor_orgs_users_assumed_knowledge_retrieve**](docs/AiMentorApi.md#ai_mentor_orgs_users_assumed_knowledge_retrieve) | **GET** /api/ai-mentor/orgs/{org}/users/{user_id}/assumed-knowledge/ | 
 *AiMentorApi* | [**ai_mentor_orgs_users_audio_to_text_create**](docs/AiMentorApi.md#ai_mentor_orgs_users_audio_to_text_create) | **POST** /api/ai-mentor/orgs/{org}/users/{user_id}/audio-to-text/ | 
@@ -377,6 +392,7 @@ Class | Method | HTTP request | Description
 *AiMentorApi* | [**ai_mentor_orgs_users_category_groups_partial_update**](docs/AiMentorApi.md#ai_mentor_orgs_users_category_groups_partial_update) | **PATCH** /api/ai-mentor/orgs/{org}/users/{user_id}/category-groups/{id}/ | 
 *AiMentorApi* | [**ai_mentor_orgs_users_category_groups_retrieve**](docs/AiMentorApi.md#ai_mentor_orgs_users_category_groups_retrieve) | **GET** /api/ai-mentor/orgs/{org}/users/{user_id}/category-groups/{id}/ | 
 *AiMentorApi* | [**ai_mentor_orgs_users_category_groups_update**](docs/AiMentorApi.md#ai_mentor_orgs_users_category_groups_update) | **PUT** /api/ai-mentor/orgs/{org}/users/{user_id}/category-groups/{id}/ | 
+*AiMentorApi* | [**ai_mentor_orgs_users_chat_files_upload_url_create**](docs/AiMentorApi.md#ai_mentor_orgs_users_chat_files_upload_url_create) | **POST** /api/ai-mentor/orgs/{org}/users/{user_id}/chat/files/upload-url/ | 
 *AiMentorApi* | [**ai_mentor_orgs_users_clean_vector_results_create**](docs/AiMentorApi.md#ai_mentor_orgs_users_clean_vector_results_create) | **POST** /api/ai-mentor/orgs/{org}/users/{user_id}/clean-vector-results/{session_id}/ | 
 *AiMentorApi* | [**ai_mentor_orgs_users_clean_vector_results_list**](docs/AiMentorApi.md#ai_mentor_orgs_users_clean_vector_results_list) | **GET** /api/ai-mentor/orgs/{org}/users/{user_id}/clean-vector-results/{session_id}/ | 
 *AiMentorApi* | [**ai_mentor_orgs_users_clear_chathistory_destroy**](docs/AiMentorApi.md#ai_mentor_orgs_users_clear_chathistory_destroy) | **DELETE** /api/ai-mentor/orgs/{org}/users/{user_id}/clear-chathistory | Delete User Chat History
@@ -469,6 +485,7 @@ Class | Method | HTTP request | Description
 *AiMentorApi* | [**ai_mentor_orgs_users_elevenlabs_voice_list**](docs/AiMentorApi.md#ai_mentor_orgs_users_elevenlabs_voice_list) | **GET** /api/ai-mentor/orgs/{org}/users/{user_id}/elevenlabs-voice/ | 
 *AiMentorApi* | [**ai_mentor_orgs_users_export_chathistory_create**](docs/AiMentorApi.md#ai_mentor_orgs_users_export_chathistory_create) | **POST** /api/ai-mentor/orgs/{org}/users/{user_id}/export-chathistory/ | 
 *AiMentorApi* | [**ai_mentor_orgs_users_extracted_memories_retrieve**](docs/AiMentorApi.md#ai_mentor_orgs_users_extracted_memories_retrieve) | **GET** /api/ai-mentor/orgs/{org}/users/{user_id}/extracted-memories/ | 
+*AiMentorApi* | [**ai_mentor_orgs_users_filtered_memories_list**](docs/AiMentorApi.md#ai_mentor_orgs_users_filtered_memories_list) | **GET** /api/ai-mentor/orgs/{org}/users/{user_id}/filtered-memories/ | 
 *AiMentorApi* | [**ai_mentor_orgs_users_free_usage_count_retrieve**](docs/AiMentorApi.md#ai_mentor_orgs_users_free_usage_count_retrieve) | **GET** /api/ai-mentor/orgs/{org}/users/{user_id}/free-usage-count | 
 *AiMentorApi* | [**ai_mentor_orgs_users_list**](docs/AiMentorApi.md#ai_mentor_orgs_users_list) | **GET** /api/ai-mentor/orgs/{org}/users/{user_id}/ | 
 *AiMentorApi* | [**ai_mentor_orgs_users_mcp_servers_create**](docs/AiMentorApi.md#ai_mentor_orgs_users_mcp_servers_create) | **POST** /api/ai-mentor/orgs/{org}/users/{user_id}/mcp-servers/ | 
@@ -484,6 +501,7 @@ Class | Method | HTTP request | Description
 *AiMentorApi* | [**ai_mentor_orgs_users_memory_entries_create**](docs/AiMentorApi.md#ai_mentor_orgs_users_memory_entries_create) | **POST** /api/ai-mentor/orgs/{org}/users/{user_id}/memory-entries/{entry_unique_id}/ | 
 *AiMentorApi* | [**ai_mentor_orgs_users_memory_entries_destroy**](docs/AiMentorApi.md#ai_mentor_orgs_users_memory_entries_destroy) | **DELETE** /api/ai-mentor/orgs/{org}/users/{user_id}/memory-entries/{entry_unique_id}/ | 
 *AiMentorApi* | [**ai_mentor_orgs_users_memory_entries_retrieve**](docs/AiMentorApi.md#ai_mentor_orgs_users_memory_entries_retrieve) | **GET** /api/ai-mentor/orgs/{org}/users/{user_id}/memory-entries/{entry_unique_id}/ | 
+*AiMentorApi* | [**ai_mentor_orgs_users_memory_filter_retrieve**](docs/AiMentorApi.md#ai_mentor_orgs_users_memory_filter_retrieve) | **GET** /api/ai-mentor/orgs/{org}/users/{user_id}/memory-filter/ | 
 *AiMentorApi* | [**ai_mentor_orgs_users_memory_retrieve**](docs/AiMentorApi.md#ai_mentor_orgs_users_memory_retrieve) | **GET** /api/ai-mentor/orgs/{org}/users/{user_id}/memory/{memory_unique_id_or_name}/ | 
 *AiMentorApi* | [**ai_mentor_orgs_users_mentor_audience_create**](docs/AiMentorApi.md#ai_mentor_orgs_users_mentor_audience_create) | **POST** /api/ai-mentor/orgs/{org}/users/{user_id}/mentor/audience/ | 
 *AiMentorApi* | [**ai_mentor_orgs_users_mentor_audience_destroy**](docs/AiMentorApi.md#ai_mentor_orgs_users_mentor_audience_destroy) | **DELETE** /api/ai-mentor/orgs/{org}/users/{user_id}/mentor/audience/ | 
@@ -549,6 +567,7 @@ Class | Method | HTTP request | Description
 *AiMentorApi* | [**ai_mentor_orgs_users_periodic_agents_list**](docs/AiMentorApi.md#ai_mentor_orgs_users_periodic_agents_list) | **GET** /api/ai-mentor/orgs/{org}/users/{user_id}/periodic-agents/ | 
 *AiMentorApi* | [**ai_mentor_orgs_users_periodic_agents_partial_update**](docs/AiMentorApi.md#ai_mentor_orgs_users_periodic_agents_partial_update) | **PATCH** /api/ai-mentor/orgs/{org}/users/{user_id}/periodic-agents/{id}/ | 
 *AiMentorApi* | [**ai_mentor_orgs_users_periodic_agents_retrieve**](docs/AiMentorApi.md#ai_mentor_orgs_users_periodic_agents_retrieve) | **GET** /api/ai-mentor/orgs/{org}/users/{user_id}/periodic-agents/{id}/ | 
+*AiMentorApi* | [**ai_mentor_orgs_users_periodic_agents_statistics_retrieve**](docs/AiMentorApi.md#ai_mentor_orgs_users_periodic_agents_statistics_retrieve) | **GET** /api/ai-mentor/orgs/{org}/users/{user_id}/periodic-agents/statistics/ | 
 *AiMentorApi* | [**ai_mentor_orgs_users_periodic_agents_update**](docs/AiMentorApi.md#ai_mentor_orgs_users_periodic_agents_update) | **PUT** /api/ai-mentor/orgs/{org}/users/{user_id}/periodic-agents/{id}/ | 
 *AiMentorApi* | [**ai_mentor_orgs_users_pin_message_create**](docs/AiMentorApi.md#ai_mentor_orgs_users_pin_message_create) | **POST** /api/ai-mentor/orgs/{org}/users/{user_id}/pin-message/ | 
 *AiMentorApi* | [**ai_mentor_orgs_users_pin_message_destroy**](docs/AiMentorApi.md#ai_mentor_orgs_users_pin_message_destroy) | **DELETE** /api/ai-mentor/orgs/{org}/users/{user_id}/pin-message/ | 
@@ -664,6 +683,18 @@ Class | Method | HTTP request | Description
 *AiPromptApi* | [**ai_prompt_orgs_users_tones_destroy**](docs/AiPromptApi.md#ai_prompt_orgs_users_tones_destroy) | **DELETE** /api/ai-prompt/orgs/{org}/users/{user_id}/tones/{tone_id}/ | 
 *AiPromptApi* | [**ai_prompt_orgs_users_tones_retrieve**](docs/AiPromptApi.md#ai_prompt_orgs_users_tones_retrieve) | **GET** /api/ai-prompt/orgs/{org}/users/{user_id}/tones/ | 
 *AiPromptApi* | [**ai_prompt_orgs_users_tones_update**](docs/AiPromptApi.md#ai_prompt_orgs_users_tones_update) | **PUT** /api/ai-prompt/orgs/{org}/users/{user_id}/tones/{tone_id}/ | 
+*AiSearchApi* | [**ai_search_orgs_users_my_mentors_retrieve**](docs/AiSearchApi.md#ai_search_orgs_users_my_mentors_retrieve) | **GET** /api/ai-search/orgs/{org}/users/{username}/my-mentors/ | 
+*AiSearchApi* | [**create_platform_prompt**](docs/AiSearchApi.md#create_platform_prompt) | **POST** /api/ai-search/prompts/ | Create a new recommendation prompt
+*AiSearchApi* | [**create_platform_prompt2**](docs/AiSearchApi.md#create_platform_prompt2) | **POST** /api/ai-search/recommendation/prompts/ | Create a new recommendation prompt
+*AiSearchApi* | [**delete_platform_prompt**](docs/AiSearchApi.md#delete_platform_prompt) | **DELETE** /api/ai-search/prompts/ | Delete a recommendation prompt
+*AiSearchApi* | [**delete_platform_prompt2**](docs/AiSearchApi.md#delete_platform_prompt2) | **DELETE** /api/ai-search/recommendation/prompts/ | Delete a recommendation prompt
+*AiSearchApi* | [**list_platform_prompts**](docs/AiSearchApi.md#list_platform_prompts) | **GET** /api/ai-search/prompts/ | List recommendation prompts for a platform
+*AiSearchApi* | [**list_platform_prompts2**](docs/AiSearchApi.md#list_platform_prompts2) | **GET** /api/ai-search/recommendation/prompts/ | List recommendation prompts for a platform
+*AiSearchApi* | [**update_platform_prompt**](docs/AiSearchApi.md#update_platform_prompt) | **PUT** /api/ai-search/prompts/ | Update an existing recommendation prompt
+*AiSearchApi* | [**update_platform_prompt2**](docs/AiSearchApi.md#update_platform_prompt2) | **PUT** /api/ai-search/recommendation/prompts/ | Update an existing recommendation prompt
+*AiSearchApi* | [**v2_course_recommendations**](docs/AiSearchApi.md#v2_course_recommendations) | **GET** /api/ai-search/recommendations/ | Generate AI-driven course recommendations
+*AiSearchApi* | [**v2_global_mentor_search**](docs/AiSearchApi.md#v2_global_mentor_search) | **GET** /api/ai-search/mentors/ | Search and filter AI mentors across the platform
+*AiSearchApi* | [**v2_personalized_mentors**](docs/AiSearchApi.md#v2_personalized_mentors) | **GET** /api/ai-search/personalized-mentors/ | Get mentors created by a specific user
 *AnalyticsApi* | [**analytics_financial_details_retrieve**](docs/AnalyticsApi.md#analytics_financial_details_retrieve) | **GET** /api/analytics/financial/details/ | 
 *AnalyticsApi* | [**analytics_financial_invoice_retrieve**](docs/AnalyticsApi.md#analytics_financial_invoice_retrieve) | **GET** /api/analytics/financial/invoice/ | 
 *AnalyticsApi* | [**analytics_financial_retrieve**](docs/AnalyticsApi.md#analytics_financial_retrieve) | **GET** /api/analytics/financial/ | 
@@ -963,12 +994,22 @@ Class | Method | HTTP request | Description
 *CoreApi* | [**core_platform_api_tokens_list**](docs/CoreApi.md#core_platform_api_tokens_list) | **GET** /api/core/platform/api-tokens/ | 
 *CoreApi* | [**core_platform_config_site_create**](docs/CoreApi.md#core_platform_config_site_create) | **POST** /api/core/platform/config/site/ | 
 *CoreApi* | [**core_platform_config_site_retrieve**](docs/CoreApi.md#core_platform_config_site_retrieve) | **GET** /api/core/platform/config/site/ | 
+*CoreApi* | [**core_platform_configurations_available_settings_retrieve**](docs/CoreApi.md#core_platform_configurations_available_settings_retrieve) | **GET** /api/core/platform/configurations/available-settings/ | 
 *CoreApi* | [**core_platform_configurations_create**](docs/CoreApi.md#core_platform_configurations_create) | **POST** /api/core/platform/configurations/ | Set Platform Configurations
 *CoreApi* | [**core_platform_configurations_delete_config_destroy**](docs/CoreApi.md#core_platform_configurations_delete_config_destroy) | **DELETE** /api/core/platform/configurations/delete-config/ | 
 *CoreApi* | [**core_platform_configurations_list**](docs/CoreApi.md#core_platform_configurations_list) | **GET** /api/core/platform/configurations/ | List Platform Configurations
+*CoreApi* | [**core_platform_configurations_public_retrieve**](docs/CoreApi.md#core_platform_configurations_public_retrieve) | **GET** /api/core/platform/configurations/public/ | 
 *CoreApi* | [**core_platform_create**](docs/CoreApi.md#core_platform_create) | **POST** /api/core/platform/ | 
 *CoreApi* | [**core_platform_retrieve**](docs/CoreApi.md#core_platform_retrieve) | **GET** /api/core/platform/ | 
+*CoreApi* | [**core_platform_users_policies_update**](docs/CoreApi.md#core_platform_users_policies_update) | **PUT** /api/core/platform/users/policies/ | 
 *CoreApi* | [**core_platform_users_retrieve**](docs/CoreApi.md#core_platform_users_retrieve) | **GET** /api/core/platform/users/ | 
+*CoreApi* | [**core_platforms_public_image_assets_create**](docs/CoreApi.md#core_platforms_public_image_assets_create) | **POST** /api/core/platforms/{platform_key}/public-image-assets/ | 
+*CoreApi* | [**core_platforms_public_image_assets_destroy**](docs/CoreApi.md#core_platforms_public_image_assets_destroy) | **DELETE** /api/core/platforms/{platform_key}/public-image-assets/{asset_id}/ | 
+*CoreApi* | [**core_platforms_public_image_assets_file_retrieve**](docs/CoreApi.md#core_platforms_public_image_assets_file_retrieve) | **GET** /api/core/platforms/{platform_key}/public-image-assets/{asset_id}/file/ | 
+*CoreApi* | [**core_platforms_public_image_assets_list**](docs/CoreApi.md#core_platforms_public_image_assets_list) | **GET** /api/core/platforms/{platform_key}/public-image-assets/ | 
+*CoreApi* | [**core_platforms_public_image_assets_partial_update**](docs/CoreApi.md#core_platforms_public_image_assets_partial_update) | **PATCH** /api/core/platforms/{platform_key}/public-image-assets/{asset_id}/ | 
+*CoreApi* | [**core_platforms_public_image_assets_retrieve**](docs/CoreApi.md#core_platforms_public_image_assets_retrieve) | **GET** /api/core/platforms/{platform_key}/public-image-assets/{asset_id}/ | 
+*CoreApi* | [**core_platforms_public_image_assets_update**](docs/CoreApi.md#core_platforms_public_image_assets_update) | **PUT** /api/core/platforms/{platform_key}/public-image-assets/{asset_id}/ | 
 *CoreApi* | [**core_rbac_groups_create**](docs/CoreApi.md#core_rbac_groups_create) | **POST** /api/core/rbac/groups/ | Create RBAC group
 *CoreApi* | [**core_rbac_groups_destroy**](docs/CoreApi.md#core_rbac_groups_destroy) | **DELETE** /api/core/rbac/groups/{id}/ | Delete RBAC group
 *CoreApi* | [**core_rbac_groups_list**](docs/CoreApi.md#core_rbac_groups_list) | **GET** /api/core/rbac/groups/ | List RBAC groups
@@ -1022,6 +1063,8 @@ Class | Method | HTTP request | Description
 *CoreApi* | [**roles_platform_orgs_roles_users_desired_roles_retrieve**](docs/CoreApi.md#roles_platform_orgs_roles_users_desired_roles_retrieve) | **GET** /api/roles/platform/orgs/{org}/roles/users/{username}/desired-roles/ | 
 *CoreApi* | [**roles_platform_orgs_roles_users_reported_roles_retrieve**](docs/CoreApi.md#roles_platform_orgs_roles_users_reported_roles_retrieve) | **GET** /api/roles/platform/orgs/{org}/roles/users/{username}/reported-roles/ | 
 *CoreApi* | [**user_groups_orgs_retrieve**](docs/CoreApi.md#user_groups_orgs_retrieve) | **GET** /api/user-groups/orgs/{key}/ | 
+*CredentialsApi* | [**credentials_exim_credentials_course_export_retrieve**](docs/CredentialsApi.md#credentials_exim_credentials_course_export_retrieve) | **GET** /api/credentials/exim/credentials/course/{course_id}/export/ | 
+*CredentialsApi* | [**credentials_exim_credentials_course_import_create**](docs/CredentialsApi.md#credentials_exim_credentials_course_import_create) | **POST** /api/credentials/exim/credentials/course/{course_id}/import/ | 
 *CredentialsApi* | [**credentials_orgs_users_assertions_bulk_create**](docs/CredentialsApi.md#credentials_orgs_users_assertions_bulk_create) | **POST** /api/credentials/orgs/{org}/users/{user_id}/{entity_id}/assertions/bulk/ | 
 *CredentialsApi* | [**credentials_orgs_users_assertions_create**](docs/CredentialsApi.md#credentials_orgs_users_assertions_create) | **POST** /api/credentials/orgs/{org}/users/{user_id}/{entity_id}/assertions/ | 
 *CredentialsApi* | [**credentials_orgs_users_assertions_over_time_retrieve**](docs/CredentialsApi.md#credentials_orgs_users_assertions_over_time_retrieve) | **GET** /api/credentials/orgs/{org}/users/{user_id}/assertions-over-time/ | 
@@ -1054,6 +1097,7 @@ Class | Method | HTTP request | Description
 *CustomDomainsApi* | [**custom_domains_by_name_status_update**](docs/CustomDomainsApi.md#custom_domains_by_name_status_update) | **PUT** /api/custom-domains/by-name/{domain_name}/status/ | 
 *CustomDomainsApi* | [**custom_domains_create_create**](docs/CustomDomainsApi.md#custom_domains_create_create) | **POST** /api/custom-domains/create/ | 
 *CustomDomainsApi* | [**custom_domains_delete_destroy**](docs/CustomDomainsApi.md#custom_domains_delete_destroy) | **DELETE** /api/custom-domains/{domain_id}/delete/ | 
+*CustomDomainsApi* | [**custom_domains_deleted_status_create**](docs/CustomDomainsApi.md#custom_domains_deleted_status_create) | **POST** /api/custom-domains/{domain_id}/deleted-status/ | 
 *CustomDomainsApi* | [**custom_domains_retrieve**](docs/CustomDomainsApi.md#custom_domains_retrieve) | **GET** /api/custom-domains/ | 
 *CustomDomainsApi* | [**custom_domains_status_update**](docs/CustomDomainsApi.md#custom_domains_status_update) | **PUT** /api/custom-domains/{domain_id}/status/ | 
 *FeaturesApi* | [**features_apps_list**](docs/FeaturesApi.md#features_apps_list) | **GET** /api/features/apps/ | 
@@ -1088,6 +1132,12 @@ Class | Method | HTTP request | Description
 *NotificationsApi* | [**notification_v1_orgs_users_notifications_retrieve**](docs/NotificationsApi.md#notification_v1_orgs_users_notifications_retrieve) | **GET** /api/notification/v1/orgs/{org}/users/{user_id}/notifications/ | 
 *NotificationsApi* | [**notification_v1_orgs_users_notifications_update**](docs/NotificationsApi.md#notification_v1_orgs_users_notifications_update) | **PUT** /api/notification/v1/orgs/{org}/users/{user_id}/notifications/ | 
 *NotificationsApi* | [**notification_v1_platforms_config_test_smtp_create**](docs/NotificationsApi.md#notification_v1_platforms_config_test_smtp_create) | **POST** /api/notification/v1/platforms/{platform_key}/config/test-smtp/ | Test SMTP credentials for a platform
+*NotificationsApi* | [**notification_v1_platforms_templates_list**](docs/NotificationsApi.md#notification_v1_platforms_templates_list) | **GET** /api/notification/v1/platforms/{platform_key}/templates/ | List notification templates
+*NotificationsApi* | [**notification_v1_platforms_templates_partial_update**](docs/NotificationsApi.md#notification_v1_platforms_templates_partial_update) | **PATCH** /api/notification/v1/platforms/{platform_key}/templates/{notification_type}/ | Update notification template
+*NotificationsApi* | [**notification_v1_platforms_templates_reset_create**](docs/NotificationsApi.md#notification_v1_platforms_templates_reset_create) | **POST** /api/notification/v1/platforms/{platform_key}/templates/{notification_type}/reset/ | Reset template to default
+*NotificationsApi* | [**notification_v1_platforms_templates_retrieve**](docs/NotificationsApi.md#notification_v1_platforms_templates_retrieve) | **GET** /api/notification/v1/platforms/{platform_key}/templates/{notification_type}/ | Get notification template details
+*NotificationsApi* | [**notification_v1_platforms_templates_test_create**](docs/NotificationsApi.md#notification_v1_platforms_templates_test_create) | **POST** /api/notification/v1/platforms/{platform_key}/templates/{notification_type}/test/ | Send test notification
+*NotificationsApi* | [**notification_v1_platforms_templates_toggle_partial_update**](docs/NotificationsApi.md#notification_v1_platforms_templates_toggle_partial_update) | **PATCH** /api/notification/v1/platforms/{platform_key}/templates/{notification_type}/toggle/ | Toggle notification preference
 *RecommendationsApi* | [**recommendations_orgs_users_retrieve**](docs/RecommendationsApi.md#recommendations_orgs_users_retrieve) | **GET** /api/recommendations/orgs/{org}/users/{user_id}/ | 
 *ReportsApi* | [**reports_orgs_new_create**](docs/ReportsApi.md#reports_orgs_new_create) | **POST** /api/reports/orgs/{org}/new | 
 *ReportsApi* | [**reports_orgs_retrieve**](docs/ReportsApi.md#reports_orgs_retrieve) | **GET** /api/reports/orgs/{org}/ | 
@@ -1139,5 +1189,4 @@ Class | Method | HTTP request | Description
 *SkillsApi* | [**skills_orgs_skills_users_point_percentile_retrieve**](docs/SkillsApi.md#skills_orgs_skills_users_point_percentile_retrieve) | **GET** /api/skills/orgs/{org}/skills/users/{user_id}/point-percentile/ | 
 *SkillsApi* | [**skills_orgs_skills_users_reported_skills_retrieve**](docs/SkillsApi.md#skills_orgs_skills_users_reported_skills_retrieve) | **GET** /api/skills/orgs/{org}/skills/users/{user_id}/reported-skills/ | 
 *SkillsApi* | [**skills_orgs_skills_users_retrieve**](docs/SkillsApi.md#skills_orgs_skills_users_retrieve) | **GET** /api/skills/orgs/{org}/skills/users/{user_id}/ | 
-*V2Api* | [**v2_search_orgs_users_my_mentors_retrieve**](docs/V2Api.md#v2_search_orgs_users_my_mentors_retrieve) | **GET** /api/v2/search/orgs/{org}/users/{username}/my-mentors/ | 
 

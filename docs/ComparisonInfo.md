@@ -7,11 +7,11 @@ Comparison period information.
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **previous_period_count** | **int** | Number of days in comparison period | [optional] 
-**previous_period_value** | **float** | Cost value for comparison period | [optional] 
+**previous_period_value** | **decimal.Decimal** | Cost value for comparison period | [optional] 
 **comparison_start** | **str** | Start date of comparison period | [optional] 
 **comparison_end** | **str** | End date of comparison period | [optional] 
 **comparison_days** | **int** | Number of comparison days | [optional] 
-**recent_period_value** | **float** | Cost value for current period | [optional] 
+**recent_period_value** | **decimal.Decimal** | Cost value for current period | [optional] 
 
 ## Example
 

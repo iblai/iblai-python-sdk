@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **title** | **str** |  | [optional] 
 **feedback** | **object** |  | [readonly] 
 **document_sources** | **object** |  | [optional] 
+**files** | **object** |  | [readonly] 
 
 ## Example
 

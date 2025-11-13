@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **mode** | **str** |  | [readonly] 
 **name** | **str** |  | [optional] 
+**email** | **str** |  | [readonly] 
 **unique_id** | **str** |  | [optional] 
 **username** | **str** |  | [readonly] 
 **platform** | **str** |  | [readonly] 

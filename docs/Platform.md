@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **lms_url** | **str** | The LMS URL for the platform | [optional] 
 **cms_url** | **str** | The CMS URL for the platform | [optional] 
 **portal_url** | **str** | The portal URL for the platform | [optional] 
+**is_advertising** | **bool** | Advertising mode allows a platform to set custom usd balance to allocate for its members | [optional] 
 
 ## Example
 

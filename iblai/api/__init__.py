@@ -10,6 +10,7 @@ from iblai.api.ai_marketing_api import AiMarketingApi
 from iblai.api.ai_media_api import AiMediaApi
 from iblai.api.ai_mentor_api import AiMentorApi
 from iblai.api.ai_prompt_api import AiPromptApi
+from iblai.api.ai_search_api import AiSearchApi
 from iblai.api.analytics_api import AnalyticsApi
 from iblai.api.career_api import CareerApi
 from iblai.api.catalog_api import CatalogApi
@@ -25,5 +26,4 @@ from iblai.api.reports_api import ReportsApi
 from iblai.api.scim_api import ScimApi
 from iblai.api.search_api import SearchApi
 from iblai.api.skills_api import SkillsApi
-from iblai.api.v2_api import V2Api
 

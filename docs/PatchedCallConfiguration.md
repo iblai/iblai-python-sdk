@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** |  | [optional] [readonly] 
-**mentor** | **int** |  | [optional] 
+**mentor** | **str** |  | [optional] 
 **mode** | [**CallConfigurationModeEnum**](CallConfigurationModeEnum.md) |  | [optional] 
 **tts_provider** | [**TtsProviderEnum**](TtsProviderEnum.md) |  | [optional] 
 **stt_provider** | [**SttProviderEnum**](SttProviderEnum.md) |  | [optional] 

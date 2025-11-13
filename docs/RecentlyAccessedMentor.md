@@ -5,6 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**id** | **int** |  | [readonly] 
+**unique_id** | **str** |  | [readonly] 
 **slug** | **str** |  | [readonly] 
 **name** | **str** |  | [readonly] 
 **description** | **str** |  | [readonly] 

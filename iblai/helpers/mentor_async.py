@@ -3,13 +3,13 @@ import httpx
 import json
 import logging
 import mimetypes
-import sys
 import typing as t
+from collections.abc import AsyncIterator
 from pathlib import Path
 from websockets.client import connect
 
 
-from iblai.helpers.constants import DEFAULT_BASE_URL, DEFAULT_WEBSOCKET_URL
+from iblai.helpers.constants import DEFAULT_BASE_URL, DEFAULT_WEBSOCKET_URL, DEFAULT_WEBSOCKET_RECEIVE_TIMEOUT, DEFAULT_TIMEOUT
 
 
 log = logging.getLogger(__name__)
@@ -17,7 +17,20 @@ log = logging.getLogger(__name__)
 
 async def create_mentor_with_settings(
         tenant: str, username: str, settings: dict[str, str], api_token: str, base_url: t.Optional[str] = None
-) -> dict[str, t.Any] | None:
+) -> httpx.Response:
+    """
+    Create a mentor with settings via the API (internal helper function).
+    
+    Args:
+        tenant: Tenant identifier
+        username: Username
+        settings: Dictionary containing mentor settings
+        api_token: API token for authentication
+        base_url: Optional base URL override
+        
+    Returns:
+        httpx.Response: The HTTP response object
+    """
     request_base = base_url
     if not base_url:
         request_base = DEFAULT_BASE_URL
@@ -30,6 +43,7 @@ async def create_mentor_with_settings(
             f"{request_base}/api/ai-mentor/orgs/{tenant}/users/{username}/mentor-with-settings/",
             headers=headers,
             json=settings,
+            timeout=DEFAULT_TIMEOUT
         )
         return response
 
@@ -37,21 +51,37 @@ async def create_mentor_with_settings(
 async def create_mentor(
         tenant: str, username: str, settings: dict[str, str], api_token: str, base_url: t.Optional[str] = None
 ) -> dict[str, t.Any] | None:
-
+    """
+    Create a new mentor with the provided settings.
+    
+    Args:
+        tenant: Tenant identifier
+        username: Username
+        settings: Dictionary containing mentor settings
+        api_token: API token for authentication
+        base_url: Optional base URL override
+        
+    Returns:
+        dict containing mentor data if successful, None otherwise
+    """
     mentor_creation_response = await create_mentor_with_settings(
         tenant, username, settings, api_token, base_url=base_url
     )
     if mentor_creation_response.is_success:
-        mentor_response_data = mentor_creation_response.json()
-        log.info("Successfully created mentor with data: %s", mentor_response_data)
-        return mentor_response_data
+        try:
+            mentor_response_data = mentor_creation_response.json()
+            log.info("Successfully created mentor with data: %s", mentor_response_data)
+            return mentor_response_data
+        except (ValueError, TypeError) as e:
+            log.error("Failed to parse response as JSON: %s", str(e))
+            return None
     else:
         log.error(
             "Failed to create mentor (status=%s): %s",
             mentor_creation_response.status_code,
             mentor_creation_response.text,
         )
-    return None
+        return None
 
 
 async def upload_document_to_mentor(
@@ -60,41 +90,43 @@ async def upload_document_to_mentor(
     path = Path(file_path)
     payload = {"type": "file", "pathway": mentor_name}
     
-    mime_type, encoding = mimetypes.guess_type(path)
-    files = [
-        (
-            "file",
-            (
-                file_path.name,
-                open(path, "rb"),
-                mime_type,
-            ),
-        )
-    ]
+    mime_type, _ = mimetypes.guess_type(path)
     headers = {"Authorization": f"Api-Token {api_token}"}
     
     request_base = base_url
     if not base_url:
         request_base = DEFAULT_BASE_URL
     
-    async with httpx.AsyncClient() as client:
-        resp = await client.post(
-            f"{request_base}/api/ai-index/orgs/{tenant}/users/{username}/documents/train/",
-            data=payload,
-            files=files,
-            headers=headers
-        )
-        resp_data = resp.json()
-        if resp.is_success:
-            log.info("Successfully uploaded document for training")
-            log.info("Document upload response: %s", resp_data)
-            return resp_data
-        else:
-            log.error(
-                "Failed to upload document (status=%s): %s",
-                resp.status_code,
-                resp.text,
+    # Use context manager to ensure file is properly closed
+    with open(path, "rb") as file_obj:
+        files = {
+            "file": (path.name, file_obj, mime_type)
+        }
+        
+        async with httpx.AsyncClient() as client:
+            resp = await client.post(
+                f"{request_base}/api/ai-index/orgs/{tenant}/users/{username}/documents/train/",
+                data=payload,
+                files=files,
+                headers=headers,
+                timeout=DEFAULT_TIMEOUT
             )
+            if resp.is_success:
+                try:
+                    resp_data = resp.json()
+                    log.info("Successfully uploaded document for training")
+                    log.info("Document upload response: %s", resp_data)
+                    return resp_data
+                except (ValueError, TypeError) as e:
+                    log.error("Failed to parse response as JSON: %s", str(e))
+                    return None
+            else:
+                log.error(
+                    "Failed to upload document (status=%s): %s",
+                    resp.status_code,
+                    resp.text,
+                )
+                return None
 
 
 async def wait_for_document_training_to_complete(
@@ -135,13 +167,21 @@ async def wait_for_document_training_to_complete(
                 resp = await client.get(
                     f"{request_base}/api/ai-index/orgs/{tenant}/users/{username}/documents/pathways/{mentor_name}/",
                     headers=headers,
+                    timeout=DEFAULT_TIMEOUT
                 )
 
                 if resp.is_success:
-                    data: list = resp.json()["results"]
-                    if all([i["is_trained"] for i in data]):
-                        log.info("All documents trained successfully")
-                        return True
+                    try:
+                        resp_data = resp.json()
+                        if "results" not in resp_data:
+                            log.warning("Response missing 'results' key: %s", resp_data)
+                        else:
+                            data: list = resp_data["results"]
+                            if all([i.get("is_trained", False) for i in data]):
+                                log.info("All documents trained successfully")
+                                return True
+                    except (KeyError, TypeError, ValueError) as e:
+                        log.warning("Failed to parse response: %s", str(e))
                 else:
                     log.warning(
                         "Failed to check training status (status=%s): %s",
@@ -167,7 +207,7 @@ async def wait_for_document_training_to_complete(
     return False
 
 
-async def create_chat_session(mentor_name: str, tenant: str, username: str, base_url: t.Optional[str] = None) -> str:
+async def create_chat_session(mentor_name: str, tenant: str, username: str, base_url: t.Optional[str] = None) -> str | None:
     request_base = base_url
     if not base_url:
         request_base = DEFAULT_BASE_URL
@@ -177,14 +217,32 @@ async def create_chat_session(mentor_name: str, tenant: str, username: str, base
         resp = await client.post(
             f"{request_base}/api/ai-mentor/orgs/{tenant}/users/{username}/sessions/",
             json={"mentor": mentor_name},
+            timeout=DEFAULT_TIMEOUT
         )
         
-        session_id = resp.json().get("session_id")
-        log.info("Session id: %s", session_id)
-        return session_id
+        if resp.is_success:
+            try:
+                resp_data = resp.json()
+                session_id = resp_data.get("session_id")
+                if session_id:
+                    log.info("Session id: %s", session_id)
+                    return session_id
+                else:
+                    log.error("Response did not contain session_id: %s", resp_data)
+                    return None
+            except (ValueError, TypeError) as e:
+                log.error("Failed to parse response as JSON: %s", str(e))
+                return None
+        else:
+            log.error(
+                "Failed to create chat session (status=%s): %s",
+                resp.status_code,
+                resp.text,
+            )
+            return None
 
 
-async def chat_with_mentor_async(prompt: str, session_id: str, mentor: str, tenant: str, username: str, api_token: str, base_url: t.Optional[str] = None):
+async def chat_with_mentor_async(prompt: str, session_id: str, mentor: str, tenant: str, username: str, api_token: str, base_url: t.Optional[str] = None) -> AsyncIterator[str]:
     data = {
         "flow": {
             # `name` is either the unique_id, name or slug  of the mentor in respective order of priority.
@@ -211,40 +269,52 @@ async def chat_with_mentor_async(prompt: str, session_id: str, mentor: str, tena
     if not base_url:
         request_base = DEFAULT_WEBSOCKET_URL
 
-    ws = await connect(f"{request_base}/ws/langflow/")
-    data_without_prompt = {**data}
-    data_without_prompt.pop("prompt", "")
-    log.info("data without prompt: %s", data_without_prompt)
-    await ws.send(json.dumps(data))
-    received_data = await ws.recv()
-    log.info("%s", received_data)
+    ws = None
+    try:
+        ws = await connect(f"{request_base}/ws/langflow/")
+        data_without_prompt = {**data}
+        data_without_prompt.pop("prompt", "")
+        log.info("data without prompt: %s", data_without_prompt)
+        await ws.send(json.dumps(data))
+        received_data = await ws.recv()
+        log.info("%s", received_data)
 
-    # the first message after sending the payload is the status detail.
-    # getting a value of `connected` means authentication was successful and
-    # the user has permissions to access the said mentor
-    log.info("websocket status: %s", json.loads(received_data)["detail"])
-    # logger.info("Question: %s", data.get("prompt"))
-    await ws.send(json.dumps(data))
-    while True:
+        # the first message after sending the payload is the status detail.
+        # getting a value of `connected` means authentication was successful and
+        # the user has permissions to access the said mentor
         try:
-            data_rec = await asyncio.wait_for(ws.recv(), timeout=10)
-            log.info("received data: %s", data_rec)
-            data_json: dict[str, str] = json.loads(data_rec)
+            status_data = json.loads(received_data)
+            log.info("websocket status: %s", status_data.get("detail", "unknown"))
+        except (ValueError, TypeError, KeyError) as e:
+            log.warning("Failed to parse websocket status message: %s", str(e))
+        # logger.info("Question: %s", data.get("prompt"))
+        await ws.send(json.dumps(data))
+        while True:
+            try:
+                data_rec = await asyncio.wait_for(ws.recv(), timeout=DEFAULT_WEBSOCKET_RECEIVE_TIMEOUT)
+                log.info("received data: %s", data_rec)
+                try:
+                    data_json: dict[str, str] = json.loads(data_rec)
+                except (ValueError, TypeError) as e:
+                    log.warning("Failed to parse received data as JSON: %s", str(e))
+                    break
 
-            # if `data` is present in the response,
-            # then this is a token that needs to be shown to the user.
-            data_to_write = data_json.get("data")
-            if data_to_write:
-                # print the token to the console.
-                yield data_to_write
-            # if an `eos` value of `True` is received, break the loop.
-            # this means the mentor has finished generating the response.
-            if data_json.get("eos"):
-                log.warning("eos received. breaking out of loop")
+                # if `data` is present in the response,
+                # then this is a token that needs to be shown to the user.
+                data_to_write = data_json.get("data")
+                if data_to_write:
+                    # print the token to the console.
+                    yield data_to_write
+                # if an `eos` value of `True` is received, break the loop.
+                # this means the mentor has finished generating the response.
+                if data_json.get("eos"):
+                    log.warning("eos received. breaking out of loop")
+                    break
+
+            except asyncio.TimeoutError:
+                log.warning("timeout error. breaking out of loop")
                 break
-
-        except asyncio.TimeoutError:
-            log.warning("timeout error. breaking out of loop")
-            break
-    await ws.close()
+    finally:
+        if ws is not None:
+            await ws.close()
 

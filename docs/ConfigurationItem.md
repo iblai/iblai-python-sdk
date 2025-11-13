@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **key** | **str** | Configuration key | 
 **value** | **object** | Configuration value stored as JSON | 
 **description** | **str** | Optional description for the configuration | [optional] [default to '']
+**is_public** | **bool** | If True, this configuration will be visible to platform members | [optional] [default to False]
 
 ## Example
 

@@ -10,8 +10,8 @@ Name | Type | Description | Notes
 **limit** | **int** |  | 
 **total_pages** | **int** |  | 
 **total_records** | **int** |  | 
-**rows** | **List[Dict[str, object]]** |  | 
-**total_cost** | **float** |  | [optional] 
+**rows** | **object** |  | [optional] 
+**total_cost** | **decimal.Decimal** |  | [optional] 
 **metrics** | [**List[MetricInfo]**](MetricInfo.md) |  | [optional] 
 
 ## Example

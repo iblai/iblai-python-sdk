@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** |  | [readonly] 
-**mentor** | **int** |  | 
+**mentor** | **str** |  | 
 **mode** | [**CallConfigurationModeEnum**](CallConfigurationModeEnum.md) |  | [optional] 
 **tts_provider** | [**TtsProviderEnum**](TtsProviderEnum.md) |  | [optional] 
 **stt_provider** | [**SttProviderEnum**](SttProviderEnum.md) |  | [optional] 
@@ -14,8 +14,8 @@ Name | Type | Description | Notes
 **use_function_calling_for_rag** | **bool** | Whether to use function calls in the agent or force RAG calls before LLM generation | [optional] 
 **google_voice** | [**Voice**](Voice.md) |  | [optional] 
 **openai_voice** | [**Voice**](Voice.md) |  | [optional] 
-**openai_voice_id** | **int** |  | 
-**google_voice_id** | **int** |  | 
+**openai_voice_id** | **int** |  | [optional] 
+**google_voice_id** | **int** |  | [optional] 
 **enable_video** | **bool** | Whether to enable video for the call. (applicable only for realtime mode) | [optional] 
 **platform_key** | **str** |  | [readonly] 
 

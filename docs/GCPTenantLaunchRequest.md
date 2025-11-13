@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **name** | **str** | Organization name | 
 **key** | **str** | Unique key for the organization | 
 **ignore_user_exists** | **bool** |  | [optional] [default to False]
+**is_advertising** | **bool** | Advertising mode allows a platform to set custom usd balance to allocate for its members | [optional] [default to False]
 **x_gcp_marketplace_token** | **str** | GCP Marketplace token | 
 **product_id** | **str** | GCP product to subscribe to | [optional] [default to '']
 

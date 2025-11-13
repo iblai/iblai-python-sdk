@@ -9977,9 +9977,9 @@ Response structure
   "total_pages": 1,
   "total_records": 3,
   "rows": [
-    {"provider": "openai", "total_cost": 2.5},
-    {"provider": "anthropic", "total_cost": 1.0},
-    {"provider": "azure",    "total_cost": 0.5}
+    {"provider": "openai", "total_cost": "2.50000"},
+    {"provider": "anthropic", "total_cost": "1.00000"},
+    {"provider": "azure",    "total_cost": "0.50000"}
   ],
   "metrics": [
     {
@@ -9988,7 +9988,7 @@ Response structure
       "description": "Cost for this entity in period"
     }
   ],
-  "total_cost": 4.0   // optional grand-total when available
+  "total_cost": "4.00000"   // optional grand-total when available
 }
 ``
 
@@ -10241,23 +10241,23 @@ This endpoint provides period-based cost analysis (not cumulative) with support 
 
 **Basic Weekly Costs:**
 ```
-GET /api/v2/analytics/financial/?metric=weekly_costs&comparison_days=10
+GET /api/analytics/financial/?metric=weekly_costs&comparison_days=10
 ```
 
 **Platform & Mentor Filtered:**
 ```
 # Get total costs for a specific platform and mentor
-GET /api/v2/analytics/financial/?metric=total_costs&platform_key=web-app&mentor_unique_id=mentor-123&comparison_days=14
+GET /api/analytics/financial/?metric=total_costs&platform_key=web-app&mentor_unique_id=mentor-123&comparison_days=14
 ```
 
 **Monthly Costs by Provider:**
 ```
-GET /api/v2/analytics/financial/?metric=monthly_costs&provider=openai&granularity=month&comparison_days=30
+GET /api/analytics/financial/?metric=monthly_costs&provider=openai&granularity=month&comparison_days=30
 ```
 
 **Daily Costs for Specific User:**
 ```
-GET /api/v2/analytics/financial/?metric=total_costs&username=user-456&granularity=day&start_date=2025-01-15&end_date=2025-01-21&comparison_days=7
+GET /api/analytics/financial/?metric=total_costs&username=user-456&granularity=day&start_date=2025-01-15&end_date=2025-01-21&comparison_days=7
 ```
 
 

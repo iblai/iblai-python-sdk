@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**pathway** | **str** | Pathway for document to be trained in | 
+**pathway** | **str** | Pathway for document to be trained in | [optional] 
 **url** | **str** | Url of the document to be trained | [optional] 
 **text** | **str** | Search text for wikipedia | [optional] 
 **type** | **str** | Type of document e.g file | 
@@ -22,6 +22,8 @@ Name | Type | Description | Notes
 **crawler_pattern_type** | [**CrawlerPatternTypeEnum**](CrawlerPatternTypeEnum.md) | Pattern type for the crawler  * &#x60;glob&#x60; - Glob * &#x60;regex&#x60; - Regex | [optional] 
 **custom_metadata** | **object** | Custom metadata to attach to the trained document. Must be a flat JSON object with string keys and string, number, or boolean values. | [optional] 
 **add_to_document_pool** | **bool** | Adds document to the pool or not. | [optional] [default to False]
+**document_pool_only** | **bool** | Only adds document to document pool. Requires pathway to be empty. | [optional] [default to False]
+**user_image_description** | **str** | Description of an image submitted by the user for RAG. | [optional] 
 
 ## Example
 

@@ -22,6 +22,12 @@ Method | HTTP request | Description
 [**notification_v1_orgs_users_notifications_retrieve**](NotificationsApi.md#notification_v1_orgs_users_notifications_retrieve) | **GET** /api/notification/v1/orgs/{org}/users/{user_id}/notifications/ | 
 [**notification_v1_orgs_users_notifications_update**](NotificationsApi.md#notification_v1_orgs_users_notifications_update) | **PUT** /api/notification/v1/orgs/{org}/users/{user_id}/notifications/ | 
 [**notification_v1_platforms_config_test_smtp_create**](NotificationsApi.md#notification_v1_platforms_config_test_smtp_create) | **POST** /api/notification/v1/platforms/{platform_key}/config/test-smtp/ | Test SMTP credentials for a platform
+[**notification_v1_platforms_templates_list**](NotificationsApi.md#notification_v1_platforms_templates_list) | **GET** /api/notification/v1/platforms/{platform_key}/templates/ | List notification templates
+[**notification_v1_platforms_templates_partial_update**](NotificationsApi.md#notification_v1_platforms_templates_partial_update) | **PATCH** /api/notification/v1/platforms/{platform_key}/templates/{notification_type}/ | Update notification template
+[**notification_v1_platforms_templates_reset_create**](NotificationsApi.md#notification_v1_platforms_templates_reset_create) | **POST** /api/notification/v1/platforms/{platform_key}/templates/{notification_type}/reset/ | Reset template to default
+[**notification_v1_platforms_templates_retrieve**](NotificationsApi.md#notification_v1_platforms_templates_retrieve) | **GET** /api/notification/v1/platforms/{platform_key}/templates/{notification_type}/ | Get notification template details
+[**notification_v1_platforms_templates_test_create**](NotificationsApi.md#notification_v1_platforms_templates_test_create) | **POST** /api/notification/v1/platforms/{platform_key}/templates/{notification_type}/test/ | Send test notification
+[**notification_v1_platforms_templates_toggle_partial_update**](NotificationsApi.md#notification_v1_platforms_templates_toggle_partial_update) | **PATCH** /api/notification/v1/platforms/{platform_key}/templates/{notification_type}/toggle/ | Toggle notification preference
 
 
 # **notification_v1_campaigns_unsubscribe_retrieve**
@@ -1320,6 +1326,451 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**TestSMTPResponse**](TestSMTPResponse.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **notification_v1_platforms_templates_list**
+> List[NotificationTemplateList] notification_v1_platforms_templates_list(platform_key)
+
+List notification templates
+
+Get all notification templates for the platform. Includes both platform-specific and inherited templates from main.
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.notification_template_list import NotificationTemplateList
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+# Create an instance of the API class
+api_instance = iblai.NotificationsApi(api_client)
+platform_key = 'platform_key_example' # str | 
+
+try:
+    # List notification templates
+    api_response = api_instance.notification_v1_platforms_templates_list(platform_key)
+    print("The response of NotificationsApi->notification_v1_platforms_templates_list:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling NotificationsApi->notification_v1_platforms_templates_list: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **platform_key** | **str**|  | 
+
+### Return type
+
+[**List[NotificationTemplateList]**](NotificationTemplateList.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **notification_v1_platforms_templates_partial_update**
+> NotificationTemplateDetail notification_v1_platforms_templates_partial_update(notification_type, platform_key, patched_notification_template_detail=patched_notification_template_detail)
+
+Update notification template
+
+Update notification template. Creates platform-specific copy on first edit.
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.notification_template_detail import NotificationTemplateDetail
+from iblai.models.patched_notification_template_detail import PatchedNotificationTemplateDetail
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+# Create an instance of the API class
+api_instance = iblai.NotificationsApi(api_client)
+notification_type = 'notification_type_example' # str | 
+platform_key = 'platform_key_example' # str | 
+patched_notification_template_detail = iblai.PatchedNotificationTemplateDetail() # PatchedNotificationTemplateDetail |  (optional)
+
+try:
+    # Update notification template
+    api_response = api_instance.notification_v1_platforms_templates_partial_update(notification_type, platform_key, patched_notification_template_detail=patched_notification_template_detail)
+    print("The response of NotificationsApi->notification_v1_platforms_templates_partial_update:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling NotificationsApi->notification_v1_platforms_templates_partial_update: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **notification_type** | **str**|  | 
+ **platform_key** | **str**|  | 
+ **patched_notification_template_detail** | [**PatchedNotificationTemplateDetail**](PatchedNotificationTemplateDetail.md)|  | [optional] 
+
+### Return type
+
+[**NotificationTemplateDetail**](NotificationTemplateDetail.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **notification_v1_platforms_templates_reset_create**
+> NotificationV1PlatformsTemplatesResetCreate200Response notification_v1_platforms_templates_reset_create(notification_type, platform_key)
+
+Reset template to default
+
+Delete platform-specific template override and revert to main template. Notification preference (on/off) is preserved.
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.notification_v1_platforms_templates_reset_create200_response import NotificationV1PlatformsTemplatesResetCreate200Response
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+# Create an instance of the API class
+api_instance = iblai.NotificationsApi(api_client)
+notification_type = 'notification_type_example' # str | 
+platform_key = 'platform_key_example' # str | 
+
+try:
+    # Reset template to default
+    api_response = api_instance.notification_v1_platforms_templates_reset_create(notification_type, platform_key)
+    print("The response of NotificationsApi->notification_v1_platforms_templates_reset_create:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling NotificationsApi->notification_v1_platforms_templates_reset_create: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **notification_type** | **str**|  | 
+ **platform_key** | **str**|  | 
+
+### Return type
+
+[**NotificationV1PlatformsTemplatesResetCreate200Response**](NotificationV1PlatformsTemplatesResetCreate200Response.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **notification_v1_platforms_templates_retrieve**
+> NotificationTemplateDetail notification_v1_platforms_templates_retrieve(notification_type, platform_key)
+
+Get notification template details
+
+Get detailed view of a notification template by type. Returns platform-specific template if exists, otherwise main template.
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.notification_template_detail import NotificationTemplateDetail
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+# Create an instance of the API class
+api_instance = iblai.NotificationsApi(api_client)
+notification_type = 'notification_type_example' # str | 
+platform_key = 'platform_key_example' # str | 
+
+try:
+    # Get notification template details
+    api_response = api_instance.notification_v1_platforms_templates_retrieve(notification_type, platform_key)
+    print("The response of NotificationsApi->notification_v1_platforms_templates_retrieve:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling NotificationsApi->notification_v1_platforms_templates_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **notification_type** | **str**|  | 
+ **platform_key** | **str**|  | 
+
+### Return type
+
+[**NotificationTemplateDetail**](NotificationTemplateDetail.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **notification_v1_platforms_templates_test_create**
+> NotificationTemplateTestResponse notification_v1_platforms_templates_test_create(notification_type, platform_key, notification_template_test=notification_template_test)
+
+Send test notification
+
+Send a test notification to verify template rendering and delivery. Sends to the requesting admin's email or a specified test email.
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.notification_template_test import NotificationTemplateTest
+from iblai.models.notification_template_test_response import NotificationTemplateTestResponse
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+# Create an instance of the API class
+api_instance = iblai.NotificationsApi(api_client)
+notification_type = 'notification_type_example' # str | 
+platform_key = 'platform_key_example' # str | 
+notification_template_test = iblai.NotificationTemplateTest() # NotificationTemplateTest |  (optional)
+
+try:
+    # Send test notification
+    api_response = api_instance.notification_v1_platforms_templates_test_create(notification_type, platform_key, notification_template_test=notification_template_test)
+    print("The response of NotificationsApi->notification_v1_platforms_templates_test_create:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling NotificationsApi->notification_v1_platforms_templates_test_create: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **notification_type** | **str**|  | 
+ **platform_key** | **str**|  | 
+ **notification_template_test** | [**NotificationTemplateTest**](NotificationTemplateTest.md)|  | [optional] 
+
+### Return type
+
+[**NotificationTemplateTestResponse**](NotificationTemplateTestResponse.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **notification_v1_platforms_templates_toggle_partial_update**
+> NotificationToggle notification_v1_platforms_templates_toggle_partial_update(notification_type, platform_key, patched_notification_toggle=patched_notification_toggle)
+
+Toggle notification preference
+
+Enable or disable a notification type for the platform. This sets the NotificationPreference, not the template.
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.notification_toggle import NotificationToggle
+from iblai.models.patched_notification_toggle import PatchedNotificationToggle
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+# Create an instance of the API class
+api_instance = iblai.NotificationsApi(api_client)
+notification_type = 'notification_type_example' # str | 
+platform_key = 'platform_key_example' # str | 
+patched_notification_toggle = iblai.PatchedNotificationToggle() # PatchedNotificationToggle |  (optional)
+
+try:
+    # Toggle notification preference
+    api_response = api_instance.notification_v1_platforms_templates_toggle_partial_update(notification_type, platform_key, patched_notification_toggle=patched_notification_toggle)
+    print("The response of NotificationsApi->notification_v1_platforms_templates_toggle_partial_update:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling NotificationsApi->notification_v1_platforms_templates_toggle_partial_update: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **notification_type** | **str**|  | 
+ **platform_key** | **str**|  | 
+ **patched_notification_toggle** | [**PatchedNotificationToggle**](PatchedNotificationToggle.md)|  | [optional] 
+
+### Return type
+
+[**NotificationToggle**](NotificationToggle.md)
 
 ### Authorization
 

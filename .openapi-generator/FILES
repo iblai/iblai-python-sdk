@@ -13,6 +13,8 @@ docs/AWSTenantLaunchRequest.md
 docs/AcceptanceEnum.md
 docs/AccessEnum.md
 docs/AccessTimesHeatmap.md
+docs/AccessibleMentorsByEmailRequest.md
+docs/AccessibleMentorsByEmailResponse.md
 docs/ActionBreakdown.md
 docs/ActivateUserFreeTrial.md
 docs/ActiveUsersData.md
@@ -34,6 +36,7 @@ docs/AiMarketingApi.md
 docs/AiMediaApi.md
 docs/AiMentorApi.md
 docs/AiPromptApi.md
+docs/AiSearchApi.md
 docs/AlignMentorBubbleEnum.md
 docs/AnalyticsApi.md
 docs/AnalyticsOverview.md
@@ -42,6 +45,8 @@ docs/App.md
 docs/AppleSubscriptionStatusRequest.md
 docs/AppleSubscriptionStatusView.md
 docs/AppleVerifyTransactionId.md
+docs/Artifact.md
+docs/ArtifactList.md
 docs/Assertion.md
 docs/AssociateAccountResponse.md
 docs/AssociateAppleAccount.md
@@ -50,6 +55,7 @@ docs/AssumedKnowledgeLevel.md
 docs/AudioToTextRequest.md
 docs/AudioToTextResponse.md
 docs/AuthToken.md
+docs/AuthTypeEnum.md
 docs/AutoMemoryPrompt.md
 docs/Average.md
 docs/AverageData.md
@@ -107,6 +113,7 @@ docs/ComponentBlockTypeEnum.md
 docs/ConfigurationItem.md
 docs/ConnectedService.md
 docs/ConnectedServiceProviderEnum.md
+docs/ConsumerChannel.md
 docs/ContentAnalytics.md
 docs/ContentAverages.md
 docs/ContentDetailsContentInfo.md
@@ -175,6 +182,7 @@ docs/CourseLicenseUpdate.md
 docs/CourseMetadataSearchRequest.md
 docs/CourseMetadataUpdateRequest.md
 docs/CoursePoint.md
+docs/CourseRecommendation.md
 docs/CourseReviewInfoResponse.md
 docs/CourseReviewPaginatedResponse.md
 docs/CourseReviewRequest.md
@@ -211,6 +219,7 @@ docs/DiscordUserConfig.md
 docs/DiscordWebhook.md
 docs/Document.md
 docs/DocumentFacet.md
+docs/DocumentFromPoolRequest.md
 docs/DocumentSearchResponse.md
 docs/DocumentSettingsResponse.md
 docs/Education.md
@@ -234,6 +243,8 @@ docs/ErrorResponse.md
 docs/Experience.md
 docs/ExternalServiceInfo.md
 docs/FeaturesApi.md
+docs/FileUploadURLRequest.md
+docs/FileUploadURLResponse.md
 docs/FinanceDetailsResponse.md
 docs/FinanceFilters.md
 docs/FreeUsageCount.md
@@ -373,7 +384,13 @@ docs/NotificationSource.md
 docs/NotificationSourceTypeEnum.md
 docs/NotificationStatusEnum.md
 docs/NotificationTemplateData.md
+docs/NotificationTemplateDetail.md
+docs/NotificationTemplateList.md
+docs/NotificationTemplateTest.md
+docs/NotificationTemplateTestResponse.md
+docs/NotificationToggle.md
 docs/NotificationV1CampaignsUnsubscribeRetrieve200Response.md
+docs/NotificationV1PlatformsTemplatesResetCreate200Response.md
 docs/NotificationsApi.md
 docs/NullEnum.md
 docs/OAuthStartResponse.md
@@ -387,6 +404,7 @@ docs/OvertimeMeta.md
 docs/OvertimeWithChangeInfo.md
 docs/PageContent.md
 docs/PaginatedAIGeneratedImageList.md
+docs/PaginatedArtifactListList.md
 docs/PaginatedAssertionsResponse.md
 docs/PaginatedConversationsList.md
 docs/PaginatedCourseAccessRequest.md
@@ -443,8 +461,10 @@ docs/PaginatedUserLicense.md
 docs/PaginatedUserLicenseAssignment.md
 docs/PaginatedUserLicenseGroupAssignment.md
 docs/PaginatedUserMemoryList.md
+docs/PaginatedVeoVideoListList.md
 docs/PaginatedVoiceList.md
 docs/Pagination.md
+docs/PatchedArtifact.md
 docs/PatchedBotCommand.md
 docs/PatchedBotCreate.md
 docs/PatchedCallConfiguration.md
@@ -462,7 +482,10 @@ docs/PatchedMediaResource.md
 docs/PatchedMentorCategoryGroupCreate.md
 docs/PatchedMentorCreate.md
 docs/PatchedNotification.md
+docs/PatchedNotificationTemplateDetail.md
+docs/PatchedNotificationToggle.md
 docs/PatchedPeriodicAgentCreate.md
+docs/PatchedPlatformPublicImageAsset.md
 docs/PatchedPlatformPublicMetadata.md
 docs/PatchedPlayWrightScript.md
 docs/PatchedProject.md
@@ -513,6 +536,9 @@ docs/PeriodicAgent.md
 docs/PeriodicAgentCreate.md
 docs/PeriodicAgentLog.md
 docs/PeriodicAgentLogStatusEnum.md
+docs/PeriodicAgentStatistics.md
+docs/PeriodicFrequencyEnum.md
+docs/PeriodicLearnerScopeEnum.md
 docs/PeriodicTask.md
 docs/PerlearnerCourseProgress.md
 docs/PerlearnerCourseProgressData.md
@@ -549,6 +575,9 @@ docs/PlatformListStatusEnum.md
 docs/PlatformMembershipConfig.md
 docs/PlatformMembershipConfigPostRequest.md
 docs/PlatformMetrics.md
+docs/PlatformPrompt.md
+docs/PlatformPromptResponse.md
+docs/PlatformPublicImageAsset.md
 docs/PlatformPublicMetadata.md
 docs/PlatformSkillPointBulkRequest.md
 docs/PlatformSkillPointBulkResponse.md
@@ -628,6 +657,7 @@ docs/Recipient.md
 docs/RecommendCourseBlock.md
 docs/RecommendCourseResponse.md
 docs/RecommendationSearchAPI.md
+docs/RecommendationTypeEnum.md
 docs/RecommendationsApi.md
 docs/RecommendedCoursesResponse.md
 docs/RedirectTokenRequest.md
@@ -711,6 +741,7 @@ docs/SkillsMetric.md
 docs/SlackConfig.md
 docs/SlackUserConfig.md
 docs/SlackWebhook.md
+docs/Spa.md
 docs/SpacedRepetitionLearningPath.md
 docs/SpacedRepetitionQuestionStats.md
 docs/StarMentor.md
@@ -797,6 +828,7 @@ docs/TrendEntry.md
 docs/TriggerRequest.md
 docs/TriggerResponse.md
 docs/TtsProviderEnum.md
+docs/Type2a5Enum.md
 docs/TypeC42Enum.md
 docs/Unit.md
 docs/UnitWithChildren.md
@@ -842,6 +874,10 @@ docs/UserPlatformSelfLinkForbidden.md
 docs/UserPlatformSelfLinkRequest.md
 docs/UserPlatformSelfLinkResponse.md
 docs/UserPlatformViewPostRequest.md
+docs/UserPolicyUpdate.md
+docs/UserPolicyUpdateError.md
+docs/UserPolicyUpdateForbidden.md
+docs/UserPolicyUpdateResponse.md
 docs/UserProxyBulkRequest.md
 docs/UserProxyGetResponse.md
 docs/UserProxyPostRequest.md
@@ -852,11 +888,16 @@ docs/UserSentimentCountView.md
 docs/UserSkill.md
 docs/UserSkillPointsPercentile.md
 docs/UserTrendByPeriod.md
-docs/V2Api.md
+docs/V2GlobalMentorSearchResponse.md
+docs/V2PersonalizedMentorsResponse.md
+docs/V2RecommendationResponse.md
 docs/ValidateSourceResponse.md
 docs/Value.md
 docs/ValueData.md
 docs/VectorResult.md
+docs/VeoVideoDetail.md
+docs/VeoVideoList.md
+docs/VeoVideoRequest.md
 docs/VerifyGCPMarketPlaceFailedResponse.md
 docs/VerifyGCPMarketPlaceRequest.md
 docs/VerifyGCPMarketPlaceResponse.md
@@ -897,6 +938,7 @@ iblai/api/ai_marketing_api.py
 iblai/api/ai_media_api.py
 iblai/api/ai_mentor_api.py
 iblai/api/ai_prompt_api.py
+iblai/api/ai_search_api.py
 iblai/api/analytics_api.py
 iblai/api/career_api.py
 iblai/api/catalog_api.py
@@ -912,7 +954,6 @@ iblai/api/reports_api.py
 iblai/api/scim_api.py
 iblai/api/search_api.py
 iblai/api/skills_api.py
-iblai/api/v2_api.py
 iblai/api_client.py
 iblai/api_response.py
 iblai/clients.py
@@ -928,6 +969,8 @@ iblai/models/__init__.py
 iblai/models/acceptance_enum.py
 iblai/models/access_enum.py
 iblai/models/access_times_heatmap.py
+iblai/models/accessible_mentors_by_email_request.py
+iblai/models/accessible_mentors_by_email_response.py
 iblai/models/action_breakdown.py
 iblai/models/activate_user_free_trial.py
 iblai/models/active_users_data.py
@@ -950,6 +993,8 @@ iblai/models/app.py
 iblai/models/apple_subscription_status_request.py
 iblai/models/apple_subscription_status_view.py
 iblai/models/apple_verify_transaction_id.py
+iblai/models/artifact.py
+iblai/models/artifact_list.py
 iblai/models/assertion.py
 iblai/models/associate_account_response.py
 iblai/models/associate_apple_account.py
@@ -958,6 +1003,7 @@ iblai/models/assumed_knowledge_level.py
 iblai/models/audio_to_text_request.py
 iblai/models/audio_to_text_response.py
 iblai/models/auth_token.py
+iblai/models/auth_type_enum.py
 iblai/models/auto_memory_prompt.py
 iblai/models/average.py
 iblai/models/average_data.py
@@ -1013,6 +1059,7 @@ iblai/models/component_block_type_enum.py
 iblai/models/configuration_item.py
 iblai/models/connected_service.py
 iblai/models/connected_service_provider_enum.py
+iblai/models/consumer_channel.py
 iblai/models/content_analytics.py
 iblai/models/content_averages.py
 iblai/models/content_details_content_info.py
@@ -1080,6 +1127,7 @@ iblai/models/course_license_update.py
 iblai/models/course_metadata_search_request.py
 iblai/models/course_metadata_update_request.py
 iblai/models/course_point.py
+iblai/models/course_recommendation.py
 iblai/models/course_review_info_response.py
 iblai/models/course_review_paginated_response.py
 iblai/models/course_review_request.py
@@ -1114,6 +1162,7 @@ iblai/models/discord_user_config.py
 iblai/models/discord_webhook.py
 iblai/models/document.py
 iblai/models/document_facet.py
+iblai/models/document_from_pool_request.py
 iblai/models/document_search_response.py
 iblai/models/document_settings_response.py
 iblai/models/education.py
@@ -1136,6 +1185,8 @@ iblai/models/entity_type_enum.py
 iblai/models/error_response.py
 iblai/models/experience.py
 iblai/models/external_service_info.py
+iblai/models/file_upload_url_request.py
+iblai/models/file_upload_url_response.py
 iblai/models/finance_details_response.py
 iblai/models/finance_filters.py
 iblai/models/free_usage_count.py
@@ -1274,7 +1325,13 @@ iblai/models/notification_source.py
 iblai/models/notification_source_type_enum.py
 iblai/models/notification_status_enum.py
 iblai/models/notification_template_data.py
+iblai/models/notification_template_detail.py
+iblai/models/notification_template_list.py
+iblai/models/notification_template_test.py
+iblai/models/notification_template_test_response.py
+iblai/models/notification_toggle.py
 iblai/models/notification_v1_campaigns_unsubscribe_retrieve200_response.py
+iblai/models/notification_v1_platforms_templates_reset_create200_response.py
 iblai/models/null_enum.py
 iblai/models/o_auth_start_response.py
 iblai/models/observation.py
@@ -1287,6 +1344,7 @@ iblai/models/overtime_meta.py
 iblai/models/overtime_with_change_info.py
 iblai/models/page_content.py
 iblai/models/paginated_ai_generated_image_list.py
+iblai/models/paginated_artifact_list_list.py
 iblai/models/paginated_assertions_response.py
 iblai/models/paginated_conversations_list.py
 iblai/models/paginated_course_access_request.py
@@ -1343,8 +1401,10 @@ iblai/models/paginated_user_license.py
 iblai/models/paginated_user_license_assignment.py
 iblai/models/paginated_user_license_group_assignment.py
 iblai/models/paginated_user_memory_list.py
+iblai/models/paginated_veo_video_list_list.py
 iblai/models/paginated_voice_list.py
 iblai/models/pagination.py
+iblai/models/patched_artifact.py
 iblai/models/patched_bot_command.py
 iblai/models/patched_bot_create.py
 iblai/models/patched_call_configuration.py
@@ -1362,7 +1422,10 @@ iblai/models/patched_media_resource.py
 iblai/models/patched_mentor_category_group_create.py
 iblai/models/patched_mentor_create.py
 iblai/models/patched_notification.py
+iblai/models/patched_notification_template_detail.py
+iblai/models/patched_notification_toggle.py
 iblai/models/patched_periodic_agent_create.py
+iblai/models/patched_platform_public_image_asset.py
 iblai/models/patched_platform_public_metadata.py
 iblai/models/patched_play_wright_script.py
 iblai/models/patched_project.py
@@ -1413,6 +1476,9 @@ iblai/models/periodic_agent.py
 iblai/models/periodic_agent_create.py
 iblai/models/periodic_agent_log.py
 iblai/models/periodic_agent_log_status_enum.py
+iblai/models/periodic_agent_statistics.py
+iblai/models/periodic_frequency_enum.py
+iblai/models/periodic_learner_scope_enum.py
 iblai/models/periodic_task.py
 iblai/models/perlearner_course_progress.py
 iblai/models/perlearner_course_progress_data.py
@@ -1449,6 +1515,9 @@ iblai/models/platform_list_status_enum.py
 iblai/models/platform_membership_config.py
 iblai/models/platform_membership_config_post_request.py
 iblai/models/platform_metrics.py
+iblai/models/platform_prompt.py
+iblai/models/platform_prompt_response.py
+iblai/models/platform_public_image_asset.py
 iblai/models/platform_public_metadata.py
 iblai/models/platform_skill_point_bulk_request.py
 iblai/models/platform_skill_point_bulk_response.py
@@ -1528,6 +1597,7 @@ iblai/models/recipient.py
 iblai/models/recommend_course_block.py
 iblai/models/recommend_course_response.py
 iblai/models/recommendation_search_api.py
+iblai/models/recommendation_type_enum.py
 iblai/models/recommended_courses_response.py
 iblai/models/redirect_token_request.py
 iblai/models/redirect_token_response.py
@@ -1606,6 +1676,7 @@ iblai/models/skills_metric.py
 iblai/models/slack_config.py
 iblai/models/slack_user_config.py
 iblai/models/slack_webhook.py
+iblai/models/spa.py
 iblai/models/spaced_repetition_learning_path.py
 iblai/models/spaced_repetition_question_stats.py
 iblai/models/star_mentor.py
@@ -1692,6 +1763,7 @@ iblai/models/trend_entry.py
 iblai/models/trigger_request.py
 iblai/models/trigger_response.py
 iblai/models/tts_provider_enum.py
+iblai/models/type2a5_enum.py
 iblai/models/type_c42_enum.py
 iblai/models/unit.py
 iblai/models/unit_with_children.py
@@ -1737,6 +1809,10 @@ iblai/models/user_platform_self_link_forbidden.py
 iblai/models/user_platform_self_link_request.py
 iblai/models/user_platform_self_link_response.py
 iblai/models/user_platform_view_post_request.py
+iblai/models/user_policy_update.py
+iblai/models/user_policy_update_error.py
+iblai/models/user_policy_update_forbidden.py
+iblai/models/user_policy_update_response.py
 iblai/models/user_proxy_bulk_request.py
 iblai/models/user_proxy_get_response.py
 iblai/models/user_proxy_post_request.py
@@ -1747,10 +1823,16 @@ iblai/models/user_sentiment_count_view.py
 iblai/models/user_skill.py
 iblai/models/user_skill_points_percentile.py
 iblai/models/user_trend_by_period.py
+iblai/models/v2_global_mentor_search_response.py
+iblai/models/v2_personalized_mentors_response.py
+iblai/models/v2_recommendation_response.py
 iblai/models/validate_source_response.py
 iblai/models/value.py
 iblai/models/value_data.py
 iblai/models/vector_result.py
+iblai/models/veo_video_detail.py
+iblai/models/veo_video_list.py
+iblai/models/veo_video_request.py
 iblai/models/verify_gcp_market_place_failed_response.py
 iblai/models/verify_gcp_market_place_request.py
 iblai/models/verify_gcp_market_place_response.py
@@ -1790,6 +1872,8 @@ test/__init__.py
 test/test_acceptance_enum.py
 test/test_access_enum.py
 test/test_access_times_heatmap.py
+test/test_accessible_mentors_by_email_request.py
+test/test_accessible_mentors_by_email_response.py
 test/test_action_breakdown.py
 test/test_activate_user_free_trial.py
 test/test_active_users_data.py
@@ -1812,6 +1896,7 @@ test/test_ai_marketing_api.py
 test/test_ai_media_api.py
 test/test_ai_mentor_api.py
 test/test_ai_prompt_api.py
+test/test_ai_search_api.py
 test/test_ai_user_profile_memory_relation.py
 test/test_ai_user_profile_request.py
 test/test_align_mentor_bubble_enum.py
@@ -1822,6 +1907,8 @@ test/test_app.py
 test/test_apple_subscription_status_request.py
 test/test_apple_subscription_status_view.py
 test/test_apple_verify_transaction_id.py
+test/test_artifact.py
+test/test_artifact_list.py
 test/test_assertion.py
 test/test_associate_account_response.py
 test/test_associate_apple_account.py
@@ -1830,6 +1917,7 @@ test/test_assumed_knowledge_level.py
 test/test_audio_to_text_request.py
 test/test_audio_to_text_response.py
 test/test_auth_token.py
+test/test_auth_type_enum.py
 test/test_auto_memory_prompt.py
 test/test_average.py
 test/test_average_data.py
@@ -1888,6 +1976,7 @@ test/test_component_block_type_enum.py
 test/test_configuration_item.py
 test/test_connected_service.py
 test/test_connected_service_provider_enum.py
+test/test_consumer_channel.py
 test/test_content_analytics.py
 test/test_content_averages.py
 test/test_content_details_content_info.py
@@ -1956,6 +2045,7 @@ test/test_course_license_update.py
 test/test_course_metadata_search_request.py
 test/test_course_metadata_update_request.py
 test/test_course_point.py
+test/test_course_recommendation.py
 test/test_course_review_info_response.py
 test/test_course_review_paginated_response.py
 test/test_course_review_request.py
@@ -1992,6 +2082,7 @@ test/test_discord_user_config.py
 test/test_discord_webhook.py
 test/test_document.py
 test/test_document_facet.py
+test/test_document_from_pool_request.py
 test/test_document_search_response.py
 test/test_document_settings_response.py
 test/test_education.py
@@ -2015,6 +2106,8 @@ test/test_error_response.py
 test/test_experience.py
 test/test_external_service_info.py
 test/test_features_api.py
+test/test_file_upload_url_request.py
+test/test_file_upload_url_response.py
 test/test_finance_details_response.py
 test/test_finance_filters.py
 test/test_free_usage_count.py
@@ -2154,7 +2247,13 @@ test/test_notification_source.py
 test/test_notification_source_type_enum.py
 test/test_notification_status_enum.py
 test/test_notification_template_data.py
+test/test_notification_template_detail.py
+test/test_notification_template_list.py
+test/test_notification_template_test.py
+test/test_notification_template_test_response.py
+test/test_notification_toggle.py
 test/test_notification_v1_campaigns_unsubscribe_retrieve200_response.py
+test/test_notification_v1_platforms_templates_reset_create200_response.py
 test/test_notifications_api.py
 test/test_null_enum.py
 test/test_o_auth_start_response.py
@@ -2168,6 +2267,7 @@ test/test_overtime_meta.py
 test/test_overtime_with_change_info.py
 test/test_page_content.py
 test/test_paginated_ai_generated_image_list.py
+test/test_paginated_artifact_list_list.py
 test/test_paginated_assertions_response.py
 test/test_paginated_conversations_list.py
 test/test_paginated_course_access_request.py
@@ -2224,8 +2324,10 @@ test/test_paginated_user_license.py
 test/test_paginated_user_license_assignment.py
 test/test_paginated_user_license_group_assignment.py
 test/test_paginated_user_memory_list.py
+test/test_paginated_veo_video_list_list.py
 test/test_paginated_voice_list.py
 test/test_pagination.py
+test/test_patched_artifact.py
 test/test_patched_bot_command.py
 test/test_patched_bot_create.py
 test/test_patched_call_configuration.py
@@ -2243,7 +2345,10 @@ test/test_patched_media_resource.py
 test/test_patched_mentor_category_group_create.py
 test/test_patched_mentor_create.py
 test/test_patched_notification.py
+test/test_patched_notification_template_detail.py
+test/test_patched_notification_toggle.py
 test/test_patched_periodic_agent_create.py
+test/test_patched_platform_public_image_asset.py
 test/test_patched_platform_public_metadata.py
 test/test_patched_play_wright_script.py
 test/test_patched_project.py
@@ -2294,6 +2399,9 @@ test/test_periodic_agent.py
 test/test_periodic_agent_create.py
 test/test_periodic_agent_log.py
 test/test_periodic_agent_log_status_enum.py
+test/test_periodic_agent_statistics.py
+test/test_periodic_frequency_enum.py
+test/test_periodic_learner_scope_enum.py
 test/test_periodic_task.py
 test/test_perlearner_course_progress.py
 test/test_perlearner_course_progress_data.py
@@ -2330,6 +2438,9 @@ test/test_platform_list_status_enum.py
 test/test_platform_membership_config.py
 test/test_platform_membership_config_post_request.py
 test/test_platform_metrics.py
+test/test_platform_prompt.py
+test/test_platform_prompt_response.py
+test/test_platform_public_image_asset.py
 test/test_platform_public_metadata.py
 test/test_platform_skill_point_bulk_request.py
 test/test_platform_skill_point_bulk_response.py
@@ -2409,6 +2520,7 @@ test/test_recipient.py
 test/test_recommend_course_block.py
 test/test_recommend_course_response.py
 test/test_recommendation_search_api.py
+test/test_recommendation_type_enum.py
 test/test_recommendations_api.py
 test/test_recommended_courses_response.py
 test/test_redirect_token_request.py
@@ -2492,6 +2604,7 @@ test/test_skills_metric.py
 test/test_slack_config.py
 test/test_slack_user_config.py
 test/test_slack_webhook.py
+test/test_spa.py
 test/test_spaced_repetition_learning_path.py
 test/test_spaced_repetition_question_stats.py
 test/test_star_mentor.py
@@ -2578,6 +2691,7 @@ test/test_trend_entry.py
 test/test_trigger_request.py
 test/test_trigger_response.py
 test/test_tts_provider_enum.py
+test/test_type2a5_enum.py
 test/test_type_c42_enum.py
 test/test_unit.py
 test/test_unit_with_children.py
@@ -2623,6 +2737,10 @@ test/test_user_platform_self_link_forbidden.py
 test/test_user_platform_self_link_request.py
 test/test_user_platform_self_link_response.py
 test/test_user_platform_view_post_request.py
+test/test_user_policy_update.py
+test/test_user_policy_update_error.py
+test/test_user_policy_update_forbidden.py
+test/test_user_policy_update_response.py
 test/test_user_proxy_bulk_request.py
 test/test_user_proxy_get_response.py
 test/test_user_proxy_post_request.py
@@ -2633,11 +2751,16 @@ test/test_user_sentiment_count_view.py
 test/test_user_skill.py
 test/test_user_skill_points_percentile.py
 test/test_user_trend_by_period.py
-test/test_v2_api.py
+test/test_v2_global_mentor_search_response.py
+test/test_v2_personalized_mentors_response.py
+test/test_v2_recommendation_response.py
 test/test_validate_source_response.py
 test/test_value.py
 test/test_value_data.py
 test/test_vector_result.py
+test/test_veo_video_detail.py
+test/test_veo_video_list.py
+test/test_veo_video_request.py
 test/test_verify_gcp_market_place_failed_response.py
 test/test_verify_gcp_market_place_request.py
 test/test_verify_gcp_market_place_response.py

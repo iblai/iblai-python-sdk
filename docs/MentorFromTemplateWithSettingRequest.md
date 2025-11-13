@@ -39,6 +39,12 @@ Name | Type | Description | Notes
 **marketing_conversations** | **object** |  | [optional] 
 **proactive_prompt** | **str** |  | [optional] 
 **disclaimer** | **str** |  | [optional] 
+**enable_disclaimer** | **bool** |  | [optional] 
+**embed_is_context_aware** | **bool** |  | [optional] 
+**embed_open_by_default** | **bool** |  | [optional] 
+**embed_show_attachment** | **bool** |  | [optional] 
+**embed_show_voice_call** | **bool** |  | [optional] 
+**embed_show_voice_record** | **bool** |  | [optional] 
 **placeholder_prompt** | **str** |  | [optional] 
 **moderation_system_prompt** | **str** |  | [optional] 
 **post_processing_prompt** | **str** |  | [optional] 
@@ -54,6 +60,7 @@ Name | Type | Description | Notes
 **enable_guided_prompts** | **bool** |  | [optional] 
 **mcp_servers** | **List[int]** |  | [optional] 
 **guided_prompt_instructions** | **str** |  | [optional] 
+**is_featured** | **bool** |  | [optional] [default to False]
 
 ## Example
 

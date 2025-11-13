@@ -3,7 +3,7 @@ import requests
 import typing as t
 
 
-from iblai.helpers.constants import DEFAULT_BASE_URL
+from iblai.helpers.constants import DEFAULT_BASE_URL, DEFAULT_TIMEOUT
 
 
 log = logging.getLogger(__name__)
@@ -24,13 +24,19 @@ def create_mentor(
         f"{request_base}/api/ai-mentor/orgs/{tenant}/users/{username}/mentor-with-settings/",
         headers=headers,
         json=settings,
+        timeout=DEFAULT_TIMEOUT
     )
     if resp and resp.ok:
-        return resp.json()
+        try:
+            return resp.json()
+        except (ValueError, TypeError) as e:
+            log.error("Failed to parse response as JSON: %s", str(e))
+            return None
     else:
         log.error(
             "Failed to create mentor (status=%s): %s",
             resp.status_code,
             resp.text,
         )
+        return None
 

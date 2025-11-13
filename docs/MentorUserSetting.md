@@ -6,6 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **reference_saved_memories** | **bool** |  | [optional] 
+**as_tenant_admin** | **bool** |  | [optional] [default to True]
 
 ## Example
 

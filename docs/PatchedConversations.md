@@ -20,6 +20,7 @@ Name | Type | Description | Notes
 **inserted_at** | **datetime** |  | [optional] [readonly] 
 **has_document** | **bool** |  | [optional] 
 **memory_tracked** | **bool** |  | [optional] 
+**enable_artifacts** | **bool** |  | [optional] 
 **llm_name** | **str** |  | [optional] 
 **llm_provider** | **str** |  | [optional] 
 **metadata** | **object** |  | [optional] 

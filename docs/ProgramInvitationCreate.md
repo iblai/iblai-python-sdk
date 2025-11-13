@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **created** | **datetime** | When the invitation was created | [optional] 
 **expired** | **datetime** | When the invitation expires | [optional] 
 **metadata** | **Dict[str, object]** | Additional metadata for the invitation | [optional] 
+**enrollment_config** | **Dict[str, object]** | Enrollment configuration (dates, etc.) | [optional] 
 
 ## Example
 

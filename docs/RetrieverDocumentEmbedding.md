@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **metadata** | **object** |  | [optional] 
 **document_name** | **str** |  | [optional] 
 **document_type** | **str** |  | [optional] 
+**username** | **str** |  | 
 **training_status** | **str** |  | [optional] 
 **pathway** | **str** |  | 
 **url** | **str** |  | [optional] 

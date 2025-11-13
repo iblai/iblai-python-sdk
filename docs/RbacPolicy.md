@@ -19,6 +19,7 @@ Name | Type | Description | Notes
 **users_to_remove** | **List[int]** | List of user IDs to remove from this Policy | [optional] 
 **groups_to_add** | **List[int]** | List of group IDs to add to this Policy | [optional] 
 **groups_to_remove** | **List[int]** | List of group IDs to remove from this Policy | [optional] 
+**is_internal** | **bool** | When True, this policy is internal to the system and cannot be viewed or modified by tenants via API endpoints. | [readonly] 
 
 ## Example
 

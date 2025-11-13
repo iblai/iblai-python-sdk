@@ -53,12 +53,22 @@ Method | HTTP request | Description
 [**core_platform_api_tokens_list**](CoreApi.md#core_platform_api_tokens_list) | **GET** /api/core/platform/api-tokens/ | 
 [**core_platform_config_site_create**](CoreApi.md#core_platform_config_site_create) | **POST** /api/core/platform/config/site/ | 
 [**core_platform_config_site_retrieve**](CoreApi.md#core_platform_config_site_retrieve) | **GET** /api/core/platform/config/site/ | 
+[**core_platform_configurations_available_settings_retrieve**](CoreApi.md#core_platform_configurations_available_settings_retrieve) | **GET** /api/core/platform/configurations/available-settings/ | 
 [**core_platform_configurations_create**](CoreApi.md#core_platform_configurations_create) | **POST** /api/core/platform/configurations/ | Set Platform Configurations
 [**core_platform_configurations_delete_config_destroy**](CoreApi.md#core_platform_configurations_delete_config_destroy) | **DELETE** /api/core/platform/configurations/delete-config/ | 
 [**core_platform_configurations_list**](CoreApi.md#core_platform_configurations_list) | **GET** /api/core/platform/configurations/ | List Platform Configurations
+[**core_platform_configurations_public_retrieve**](CoreApi.md#core_platform_configurations_public_retrieve) | **GET** /api/core/platform/configurations/public/ | 
 [**core_platform_create**](CoreApi.md#core_platform_create) | **POST** /api/core/platform/ | 
 [**core_platform_retrieve**](CoreApi.md#core_platform_retrieve) | **GET** /api/core/platform/ | 
+[**core_platform_users_policies_update**](CoreApi.md#core_platform_users_policies_update) | **PUT** /api/core/platform/users/policies/ | 
 [**core_platform_users_retrieve**](CoreApi.md#core_platform_users_retrieve) | **GET** /api/core/platform/users/ | 
+[**core_platforms_public_image_assets_create**](CoreApi.md#core_platforms_public_image_assets_create) | **POST** /api/core/platforms/{platform_key}/public-image-assets/ | 
+[**core_platforms_public_image_assets_destroy**](CoreApi.md#core_platforms_public_image_assets_destroy) | **DELETE** /api/core/platforms/{platform_key}/public-image-assets/{asset_id}/ | 
+[**core_platforms_public_image_assets_file_retrieve**](CoreApi.md#core_platforms_public_image_assets_file_retrieve) | **GET** /api/core/platforms/{platform_key}/public-image-assets/{asset_id}/file/ | 
+[**core_platforms_public_image_assets_list**](CoreApi.md#core_platforms_public_image_assets_list) | **GET** /api/core/platforms/{platform_key}/public-image-assets/ | 
+[**core_platforms_public_image_assets_partial_update**](CoreApi.md#core_platforms_public_image_assets_partial_update) | **PATCH** /api/core/platforms/{platform_key}/public-image-assets/{asset_id}/ | 
+[**core_platforms_public_image_assets_retrieve**](CoreApi.md#core_platforms_public_image_assets_retrieve) | **GET** /api/core/platforms/{platform_key}/public-image-assets/{asset_id}/ | 
+[**core_platforms_public_image_assets_update**](CoreApi.md#core_platforms_public_image_assets_update) | **PUT** /api/core/platforms/{platform_key}/public-image-assets/{asset_id}/ | 
 [**core_rbac_groups_create**](CoreApi.md#core_rbac_groups_create) | **POST** /api/core/rbac/groups/ | Create RBAC group
 [**core_rbac_groups_destroy**](CoreApi.md#core_rbac_groups_destroy) | **DELETE** /api/core/rbac/groups/{id}/ | Delete RBAC group
 [**core_rbac_groups_list**](CoreApi.md#core_rbac_groups_list) | **GET** /api/core/rbac/groups/ | List RBAC groups
@@ -3342,6 +3352,70 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **core_platform_configurations_available_settings_retrieve**
+> PlatformConfigurationList core_platform_configurations_available_settings_retrieve()
+
+Get all available settings that can be configured with current platform values
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.platform_configuration_list import PlatformConfigurationList
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+# Create an instance of the API class
+api_instance = iblai.CoreApi(api_client)
+
+try:
+    api_response = api_instance.core_platform_configurations_available_settings_retrieve()
+    print("The response of CoreApi->core_platform_configurations_available_settings_retrieve:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling CoreApi->core_platform_configurations_available_settings_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**PlatformConfigurationList**](PlatformConfigurationList.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **core_platform_configurations_create**
 > PlatformConfigurationSetResponse core_platform_configurations_create(platform_configuration_set)
 
@@ -3550,6 +3624,78 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **core_platform_configurations_public_retrieve**
+> PlatformConfigurationList core_platform_configurations_public_retrieve()
+
+Get public platform configurations for platform members
+
+Query Parameters:
+- platform_key: Platform key to get public configurations for
+
+Returns:
+- platform_key: The platform key
+- configurations: Dictionary of public config key-value pairs
+- count: Number of public configurations returned
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.platform_configuration_list import PlatformConfigurationList
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+# Create an instance of the API class
+api_instance = iblai.CoreApi(api_client)
+
+try:
+    api_response = api_instance.core_platform_configurations_public_retrieve()
+    print("The response of CoreApi->core_platform_configurations_public_retrieve:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling CoreApi->core_platform_configurations_public_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**PlatformConfigurationList**](PlatformConfigurationList.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **core_platform_create**
 > PlatformList core_platform_create(platform_update_post_request)
 
@@ -3711,19 +3857,71 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **core_platform_users_policies_update**
+> UserPolicyUpdateResponse core_platform_users_policies_update(user_policy_update)
+
+Bulk update user policies on a platform. Requires Ibl.Core/UserPolicies/write permission.
+
+Policy removals are processed before policy additions.
+
+### Example
+
+
+```python
+import iblai
+from iblai.models.user_policy_update import UserPolicyUpdate
+from iblai.models.user_policy_update_response import UserPolicyUpdateResponse
+from iblai.rest import ApiException
+from pprint import pprint
+
+# Create an instance of the API class
+api_instance = iblai.CoreApi(api_client)
+user_policy_update = [[{"user_id":42,"platform_key":"ibltest","policies_to_add":["Analytics Viewer"],"policies_to_remove":["Mentor Chat"]},{"user_id":43,"platform_key":"ibltest","policies_to_add":["Mentor Viewer","Mentor Editor"]}]] # List[UserPolicyUpdate] | 
+
+try:
+    api_response = api_instance.core_platform_users_policies_update(user_policy_update)
+    print("The response of CoreApi->core_platform_users_policies_update:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling CoreApi->core_platform_users_policies_update: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **user_policy_update** | [**List[UserPolicyUpdate]**](UserPolicyUpdate.md)|  | 
+
+### Return type
+
+[**UserPolicyUpdateResponse**](UserPolicyUpdateResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**400** |  |  -  |
+**403** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **core_platform_users_retrieve**
-> UserPlatformManagementListViewGetResponse core_platform_users_retrieve(page=page, page_size=page_size, platform_key=platform_key, platform_org=platform_org, query=query, sort=sort)
+> UserPlatformManagementListViewGetResponse core_platform_users_retrieve(page=page, page_size=page_size, platform_key=platform_key, platform_org=platform_org, query=query, return_policies=return_policies, sort=sort)
 
-Retrieve users associated with platform
-
-Params:
-platform_key
-platform_org
-
-query
-sort
-
-is_admin: Return tenant admin users
+Retrieve users associated with platform and optionally their policies when return_policies is set
 
 ### Example
 
@@ -3753,10 +3951,11 @@ page_size = 56 # int |  (optional)
 platform_key = 'platform_key_example' # str |  (optional)
 platform_org = 'platform_org_example' # str |  (optional)
 query = 'query_example' # str |  (optional)
+return_policies = 'return_policies_example' # str |  (optional)
 sort = 'sort_example' # str |  (optional)
 
 try:
-    api_response = api_instance.core_platform_users_retrieve(page=page, page_size=page_size, platform_key=platform_key, platform_org=platform_org, query=query, sort=sort)
+    api_response = api_instance.core_platform_users_retrieve(page=page, page_size=page_size, platform_key=platform_key, platform_org=platform_org, query=query, return_policies=return_policies, sort=sort)
     print("The response of CoreApi->core_platform_users_retrieve:\n")
     pprint(api_response)
 except Exception as e:
@@ -3775,6 +3974,7 @@ Name | Type | Description  | Notes
  **platform_key** | **str**|  | [optional] 
  **platform_org** | **str**|  | [optional] 
  **query** | **str**|  | [optional] 
+ **return_policies** | **str**|  | [optional] 
  **sort** | **str**|  | [optional] 
 
 ### Return type
@@ -3788,6 +3988,483 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **core_platforms_public_image_assets_create**
+> PlatformPublicImageAsset core_platforms_public_image_assets_create(platform_key, platform_public_image_asset)
+
+Shared functionality for platform public image asset views.
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.platform_public_image_asset import PlatformPublicImageAsset
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+# Create an instance of the API class
+api_instance = iblai.CoreApi(api_client)
+platform_key = 'platform_key_example' # str | 
+platform_public_image_asset = iblai.PlatformPublicImageAsset() # PlatformPublicImageAsset | 
+
+try:
+    api_response = api_instance.core_platforms_public_image_assets_create(platform_key, platform_public_image_asset)
+    print("The response of CoreApi->core_platforms_public_image_assets_create:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling CoreApi->core_platforms_public_image_assets_create: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **platform_key** | **str**|  | 
+ **platform_public_image_asset** | [**PlatformPublicImageAsset**](PlatformPublicImageAsset.md)|  | 
+
+### Return type
+
+[**PlatformPublicImageAsset**](PlatformPublicImageAsset.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **core_platforms_public_image_assets_destroy**
+> core_platforms_public_image_assets_destroy(asset_id, platform_key)
+
+Shared functionality for platform public image asset views.
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+# Create an instance of the API class
+api_instance = iblai.CoreApi(api_client)
+asset_id = 56 # int | 
+platform_key = 'platform_key_example' # str | 
+
+try:
+    api_instance.core_platforms_public_image_assets_destroy(asset_id, platform_key)
+except Exception as e:
+    print("Exception when calling CoreApi->core_platforms_public_image_assets_destroy: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **asset_id** | **int**|  | 
+ **platform_key** | **str**|  | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**204** | No response body |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **core_platforms_public_image_assets_file_retrieve**
+> Dict[str, object] core_platforms_public_image_assets_file_retrieve(asset_id, platform_key)
+
+Shared functionality for platform public image asset views.
+
+### Example
+
+
+```python
+import iblai
+from iblai.rest import ApiException
+from pprint import pprint
+
+# Create an instance of the API class
+api_instance = iblai.CoreApi(api_client)
+asset_id = 56 # int | 
+platform_key = 'platform_key_example' # str | 
+
+try:
+    api_response = api_instance.core_platforms_public_image_assets_file_retrieve(asset_id, platform_key)
+    print("The response of CoreApi->core_platforms_public_image_assets_file_retrieve:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling CoreApi->core_platforms_public_image_assets_file_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **asset_id** | **int**|  | 
+ **platform_key** | **str**|  | 
+
+### Return type
+
+**Dict[str, object]**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **core_platforms_public_image_assets_list**
+> List[PlatformPublicImageAsset] core_platforms_public_image_assets_list(platform_key)
+
+Shared functionality for platform public image asset views.
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.platform_public_image_asset import PlatformPublicImageAsset
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+# Create an instance of the API class
+api_instance = iblai.CoreApi(api_client)
+platform_key = 'platform_key_example' # str | 
+
+try:
+    api_response = api_instance.core_platforms_public_image_assets_list(platform_key)
+    print("The response of CoreApi->core_platforms_public_image_assets_list:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling CoreApi->core_platforms_public_image_assets_list: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **platform_key** | **str**|  | 
+
+### Return type
+
+[**List[PlatformPublicImageAsset]**](PlatformPublicImageAsset.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **core_platforms_public_image_assets_partial_update**
+> PlatformPublicImageAsset core_platforms_public_image_assets_partial_update(asset_id, platform_key, patched_platform_public_image_asset=patched_platform_public_image_asset)
+
+Shared functionality for platform public image asset views.
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.patched_platform_public_image_asset import PatchedPlatformPublicImageAsset
+from iblai.models.platform_public_image_asset import PlatformPublicImageAsset
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+# Create an instance of the API class
+api_instance = iblai.CoreApi(api_client)
+asset_id = 56 # int | 
+platform_key = 'platform_key_example' # str | 
+patched_platform_public_image_asset = iblai.PatchedPlatformPublicImageAsset() # PatchedPlatformPublicImageAsset |  (optional)
+
+try:
+    api_response = api_instance.core_platforms_public_image_assets_partial_update(asset_id, platform_key, patched_platform_public_image_asset=patched_platform_public_image_asset)
+    print("The response of CoreApi->core_platforms_public_image_assets_partial_update:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling CoreApi->core_platforms_public_image_assets_partial_update: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **asset_id** | **int**|  | 
+ **platform_key** | **str**|  | 
+ **patched_platform_public_image_asset** | [**PatchedPlatformPublicImageAsset**](PatchedPlatformPublicImageAsset.md)|  | [optional] 
+
+### Return type
+
+[**PlatformPublicImageAsset**](PlatformPublicImageAsset.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **core_platforms_public_image_assets_retrieve**
+> PlatformPublicImageAsset core_platforms_public_image_assets_retrieve(asset_id, platform_key)
+
+Shared functionality for platform public image asset views.
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.platform_public_image_asset import PlatformPublicImageAsset
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+# Create an instance of the API class
+api_instance = iblai.CoreApi(api_client)
+asset_id = 56 # int | 
+platform_key = 'platform_key_example' # str | 
+
+try:
+    api_response = api_instance.core_platforms_public_image_assets_retrieve(asset_id, platform_key)
+    print("The response of CoreApi->core_platforms_public_image_assets_retrieve:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling CoreApi->core_platforms_public_image_assets_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **asset_id** | **int**|  | 
+ **platform_key** | **str**|  | 
+
+### Return type
+
+[**PlatformPublicImageAsset**](PlatformPublicImageAsset.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **core_platforms_public_image_assets_update**
+> PlatformPublicImageAsset core_platforms_public_image_assets_update(asset_id, platform_key, platform_public_image_asset)
+
+Shared functionality for platform public image asset views.
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.platform_public_image_asset import PlatformPublicImageAsset
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+# Create an instance of the API class
+api_instance = iblai.CoreApi(api_client)
+asset_id = 56 # int | 
+platform_key = 'platform_key_example' # str | 
+platform_public_image_asset = iblai.PlatformPublicImageAsset() # PlatformPublicImageAsset | 
+
+try:
+    api_response = api_instance.core_platforms_public_image_assets_update(asset_id, platform_key, platform_public_image_asset)
+    print("The response of CoreApi->core_platforms_public_image_assets_update:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling CoreApi->core_platforms_public_image_assets_update: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **asset_id** | **int**|  | 
+ **platform_key** | **str**|  | 
+ **platform_public_image_asset** | [**PlatformPublicImageAsset**](PlatformPublicImageAsset.md)|  | 
+
+### Return type
+
+[**PlatformPublicImageAsset**](PlatformPublicImageAsset.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -3867,6 +4544,7 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **201** |  |  -  |
 **400** | Invalid input data. Common errors include: - Users do not belong to the specified platform - Invalid user IDs provided |  -  |
+**403** | Permission denied - insufficient RBAC permissions |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -3875,7 +4553,7 @@ Name | Type | Description  | Notes
 
 Delete RBAC group
 
-Delete an RBAC group and all associated group role assignments.
+Delete an RBAC group and all associated group role assignments. Cannot delete internal system groups.
 
 ### Example
 
@@ -3937,16 +4615,17 @@ void (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **204** | Group deleted successfully |  -  |
+**403** | Permission denied - insufficient RBAC permissions or attempting to delete internal system group |  -  |
 **404** | Group not found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **core_rbac_groups_list**
-> PaginatedRbacGroupList core_rbac_groups_list(platform_key, owner=owner, page=page, page_size=page_size)
+> PaginatedRbacGroupList core_rbac_groups_list(email=email, include_users=include_users, name=name, owner=owner, page=page, page_size=page_size, platform_key=platform_key, username=username)
 
 List RBAC groups
 
-Retrieve a list of RBAC groups. Can be filtered by platform_key.
+Retrieve a list of RBAC groups. Can be filtered by platform_key, owner, name, username, or email. Use include_users to control response payload.
 
 ### Example
 
@@ -3971,14 +4650,18 @@ client = get_platform_api_client(
 )
 # Create an instance of the API class
 api_instance = iblai.CoreApi(api_client)
-platform_key = 'platform_key_example' # str | Filter groups by platform key
+email = 'email_example' # str | Filter groups by email (exact match, case-insensitive) (optional)
+include_users = True # bool | Include user information in response (default: true) (optional) (default to True)
+name = 'name_example' # str | Filter groups by name (case-insensitive partial match) (optional)
 owner = 'owner_example' # str | Filter groups by owner username (optional)
 page = 56 # int | A page number within the paginated result set. (optional)
 page_size = 56 # int | Number of results to return per page. (optional)
+platform_key = 'platform_key_example' # str | Filter groups by platform key (optional)
+username = 'username_example' # str | Filter groups by username (exact match, case-insensitive) (optional)
 
 try:
     # List RBAC groups
-    api_response = api_instance.core_rbac_groups_list(platform_key, owner=owner, page=page, page_size=page_size)
+    api_response = api_instance.core_rbac_groups_list(email=email, include_users=include_users, name=name, owner=owner, page=page, page_size=page_size, platform_key=platform_key, username=username)
     print("The response of CoreApi->core_rbac_groups_list:\n")
     pprint(api_response)
 except Exception as e:
@@ -3992,10 +4675,14 @@ except Exception as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **platform_key** | **str**| Filter groups by platform key | 
+ **email** | **str**| Filter groups by email (exact match, case-insensitive) | [optional] 
+ **include_users** | **bool**| Include user information in response (default: true) | [optional] [default to True]
+ **name** | **str**| Filter groups by name (case-insensitive partial match) | [optional] 
  **owner** | **str**| Filter groups by owner username | [optional] 
  **page** | **int**| A page number within the paginated result set. | [optional] 
  **page_size** | **int**| Number of results to return per page. | [optional] 
+ **platform_key** | **str**| Filter groups by platform key | [optional] 
+ **username** | **str**| Filter groups by username (exact match, case-insensitive) | [optional] 
 
 ### Return type
 
@@ -4015,6 +4702,7 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** |  |  -  |
+**403** | Permission denied - insufficient RBAC permissions |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -4023,7 +4711,7 @@ Name | Type | Description  | Notes
 
 Partially update RBAC group
 
-Partially update an existing RBAC group. Platform validation applies for user assignments.
+Partially update an existing RBAC group. Platform validation applies for user assignments. Cannot update internal system groups.
 
 ### Example
 
@@ -4090,6 +4778,7 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** |  |  -  |
 **400** | Invalid input data. Common errors include: - Users do not belong to the specified platform - Invalid user IDs provided |  -  |
+**403** | Permission denied - insufficient RBAC permissions or attempting to edit internal system group |  -  |
 **404** | Group not found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -4162,6 +4851,7 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** |  |  -  |
+**403** | Permission denied - insufficient RBAC permissions |  -  |
 **404** | Group not found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -4171,7 +4861,7 @@ Name | Type | Description  | Notes
 
 Update RBAC group
 
-Update an existing RBAC group. Platform validation applies for user assignments.
+Update an existing RBAC group. Platform validation applies for user assignments. Cannot update internal system groups.
 
 ### Example
 
@@ -4237,6 +4927,7 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** |  |  -  |
 **400** | Invalid input data. Common errors include: - Users do not belong to the specified platform - Invalid user IDs provided |  -  |
+**403** | Permission denied - insufficient RBAC permissions or attempting to edit internal system group |  -  |
 **404** | Group not found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -4534,6 +5225,7 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **201** |  |  -  |
 **400** | Invalid input data. Common errors include: invalid user/group IDs, users/groups not belonging to the platform, or invalid resource paths. |  -  |
+**403** | Permission denied - insufficient RBAC permissions |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -4604,16 +5296,17 @@ void (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **204** | Policy deleted successfully |  -  |
+**403** | Permission denied - insufficient RBAC permissions |  -  |
 **404** | Policy not found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **core_rbac_policies_list**
-> PaginatedRbacPolicyList core_rbac_policies_list(page=page, page_size=page_size, platform_key=platform_key, role_id=role_id)
+> PaginatedRbacPolicyList core_rbac_policies_list(email=email, group=group, include_groups=include_groups, include_users=include_users, name=name, page=page, page_size=page_size, platform_key=platform_key, role_id=role_id, username=username)
 
 List RBAC policies
 
-Retrieve a list of RBAC policies. Can be filtered by platform_key or role_id.
+Retrieve a list of RBAC policies. Can be filtered by platform_key, role_id, name, username, email, or group. Use include_users and include_groups to control response payload.
 
 ### Example
 
@@ -4638,14 +5331,20 @@ client = get_platform_api_client(
 )
 # Create an instance of the API class
 api_instance = iblai.CoreApi(api_client)
+email = 'email_example' # str | Filter policies by email (exact match, case-insensitive) - includes users in policy or in policy's groups (optional)
+group = 'group_example' # str | Filter policies by group name (exact match, case-insensitive) (optional)
+include_groups = True # bool | Include group information in response (default: true) (optional) (default to True)
+include_users = True # bool | Include user information in response (default: true) (optional) (default to True)
+name = 'name_example' # str | Filter policies by name (case-insensitive partial match) (optional)
 page = 56 # int | A page number within the paginated result set. (optional)
 page_size = 56 # int | Number of results to return per page. (optional)
 platform_key = 'platform_key_example' # str | Filter policies by platform key (optional)
 role_id = 56 # int | Filter policies by role ID (optional)
+username = 'username_example' # str | Filter policies by username (exact match, case-insensitive) - includes users in policy or in policy's groups (optional)
 
 try:
     # List RBAC policies
-    api_response = api_instance.core_rbac_policies_list(page=page, page_size=page_size, platform_key=platform_key, role_id=role_id)
+    api_response = api_instance.core_rbac_policies_list(email=email, group=group, include_groups=include_groups, include_users=include_users, name=name, page=page, page_size=page_size, platform_key=platform_key, role_id=role_id, username=username)
     print("The response of CoreApi->core_rbac_policies_list:\n")
     pprint(api_response)
 except Exception as e:
@@ -4659,10 +5358,16 @@ except Exception as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **email** | **str**| Filter policies by email (exact match, case-insensitive) - includes users in policy or in policy&#39;s groups | [optional] 
+ **group** | **str**| Filter policies by group name (exact match, case-insensitive) | [optional] 
+ **include_groups** | **bool**| Include group information in response (default: true) | [optional] [default to True]
+ **include_users** | **bool**| Include user information in response (default: true) | [optional] [default to True]
+ **name** | **str**| Filter policies by name (case-insensitive partial match) | [optional] 
  **page** | **int**| A page number within the paginated result set. | [optional] 
  **page_size** | **int**| Number of results to return per page. | [optional] 
  **platform_key** | **str**| Filter policies by platform key | [optional] 
  **role_id** | **int**| Filter policies by role ID | [optional] 
+ **username** | **str**| Filter policies by username (exact match, case-insensitive) - includes users in policy or in policy&#39;s groups | [optional] 
 
 ### Return type
 
@@ -4682,6 +5387,7 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** |  |  -  |
+**403** | Permission denied - insufficient RBAC permissions |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -4757,6 +5463,7 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** |  |  -  |
 **400** | Invalid input data. Common errors include: invalid user/group IDs, users/groups not belonging to the platform, or invalid resource paths. |  -  |
+**403** | Permission denied - insufficient RBAC permissions |  -  |
 **404** | Policy not found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -4829,6 +5536,7 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** |  |  -  |
+**403** | Permission denied - insufficient RBAC permissions |  -  |
 **404** | Policy not found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -4904,6 +5612,7 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** |  |  -  |
 **400** | Invalid input data. Common errors include: invalid user/group IDs, users/groups not belonging to the platform, or invalid resource paths. |  -  |
+**403** | Permission denied - insufficient RBAC permissions |  -  |
 **404** | Policy not found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -4977,6 +5686,7 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **201** |  |  -  |
 **400** | Invalid input data |  -  |
+**403** | Permission denied - insufficient RBAC permissions |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -4985,7 +5695,7 @@ Name | Type | Description  | Notes
 
 Delete RBAC role
 
-Delete an RBAC role.
+Delete an RBAC role. WARNING: Deleting a role will remove all policies referencing it.
 
 ### Example
 
@@ -5047,16 +5757,17 @@ void (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **204** | Role deleted successfully |  -  |
+**403** | Permission denied - insufficient RBAC permissions |  -  |
 **404** | Role not found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **core_rbac_roles_list**
-> PaginatedRbacRoleList core_rbac_roles_list(page=page, page_size=page_size, platform_key=platform_key)
+> PaginatedRbacRoleList core_rbac_roles_list(name=name, page=page, page_size=page_size, platform_key=platform_key)
 
 List RBAC roles
 
-Retrieve a list of RBAC roles. Can be filtered by platform_key.
+Retrieve a list of RBAC roles. Can be filtered by platform_key and name.
 
 ### Example
 
@@ -5081,13 +5792,14 @@ client = get_platform_api_client(
 )
 # Create an instance of the API class
 api_instance = iblai.CoreApi(api_client)
+name = 'name_example' # str | Filter roles by name (case-insensitive partial match) (optional)
 page = 56 # int | A page number within the paginated result set. (optional)
 page_size = 56 # int | Number of results to return per page. (optional)
 platform_key = 'platform_key_example' # str | Filter roles by platform key (optional)
 
 try:
     # List RBAC roles
-    api_response = api_instance.core_rbac_roles_list(page=page, page_size=page_size, platform_key=platform_key)
+    api_response = api_instance.core_rbac_roles_list(name=name, page=page, page_size=page_size, platform_key=platform_key)
     print("The response of CoreApi->core_rbac_roles_list:\n")
     pprint(api_response)
 except Exception as e:
@@ -5101,6 +5813,7 @@ except Exception as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **name** | **str**| Filter roles by name (case-insensitive partial match) | [optional] 
  **page** | **int**| A page number within the paginated result set. | [optional] 
  **page_size** | **int**| Number of results to return per page. | [optional] 
  **platform_key** | **str**| Filter roles by platform key | [optional] 
@@ -5123,6 +5836,7 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** |  |  -  |
+**403** | Permission denied - insufficient RBAC permissions |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -5198,6 +5912,7 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** |  |  -  |
 **400** | Invalid input data |  -  |
+**403** | Permission denied - insufficient RBAC permissions |  -  |
 **404** | Role not found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -5270,6 +5985,7 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** |  |  -  |
+**403** | Permission denied - insufficient RBAC permissions |  -  |
 **404** | Role not found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -5345,6 +6061,7 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** |  |  -  |
 **400** | Invalid input data |  -  |
+**403** | Permission denied - insufficient RBAC permissions |  -  |
 **404** | Role not found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

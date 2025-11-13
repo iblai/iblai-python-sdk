@@ -8,6 +8,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** |  | [readonly] 
 **username** | **str** |  | [readonly] 
+**email** | **str** |  | [readonly] 
+**full_name** | **str** |  | [readonly] 
 **user** | **int** | edX user ID | [readonly] 
 **session** | **str** |  | [readonly] 
 **subject** | **str** |  | 

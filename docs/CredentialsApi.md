@@ -4,6 +4,8 @@ All URIs are relative to *https://base.manager.iblai.app*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**credentials_exim_credentials_course_export_retrieve**](CredentialsApi.md#credentials_exim_credentials_course_export_retrieve) | **GET** /api/credentials/exim/credentials/course/{course_id}/export/ | 
+[**credentials_exim_credentials_course_import_create**](CredentialsApi.md#credentials_exim_credentials_course_import_create) | **POST** /api/credentials/exim/credentials/course/{course_id}/import/ | 
 [**credentials_orgs_users_assertions_bulk_create**](CredentialsApi.md#credentials_orgs_users_assertions_bulk_create) | **POST** /api/credentials/orgs/{org}/users/{user_id}/{entity_id}/assertions/bulk/ | 
 [**credentials_orgs_users_assertions_create**](CredentialsApi.md#credentials_orgs_users_assertions_create) | **POST** /api/credentials/orgs/{org}/users/{user_id}/{entity_id}/assertions/ | 
 [**credentials_orgs_users_assertions_over_time_retrieve**](CredentialsApi.md#credentials_orgs_users_assertions_over_time_retrieve) | **GET** /api/credentials/orgs/{org}/users/{user_id}/assertions-over-time/ | 
@@ -34,6 +36,150 @@ Method | HTTP request | Description
 [**credentials_orgs_users_update**](CredentialsApi.md#credentials_orgs_users_update) | **PUT** /api/credentials/orgs/{org}/users/{user_id}/{entity_id} | 
 [**credentials_public_assertions_retrieve**](CredentialsApi.md#credentials_public_assertions_retrieve) | **GET** /api/credentials/public/assertions/{entity_id}/ | 
 
+
+# **credentials_exim_credentials_course_export_retrieve**
+> credentials_exim_credentials_course_export_retrieve(course_id)
+
+Export credential information for a specific course.
+
+Args:
+    request: The HTTP request object
+    course_id: Course ID to export credentials for
+
+Returns:
+    Response: JSON response with credential data
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+# Create an instance of the API class
+api_instance = iblai.CredentialsApi(api_client)
+course_id = 'course_id_example' # str | 
+
+try:
+    api_instance.credentials_exim_credentials_course_export_retrieve(course_id)
+except Exception as e:
+    print("Exception when calling CredentialsApi->credentials_exim_credentials_course_export_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **course_id** | **str**|  | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | No response body |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **credentials_exim_credentials_course_import_create**
+> credentials_exim_credentials_course_import_create(course_id)
+
+Import credential information for a specific course.
+
+Args:
+    request: The HTTP request object
+    course_id: Course ID to import credentials for
+
+Returns:
+    Response: JSON response with import results
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+# Create an instance of the API class
+api_instance = iblai.CredentialsApi(api_client)
+course_id = 'course_id_example' # str | 
+
+try:
+    api_instance.credentials_exim_credentials_course_import_create(course_id)
+except Exception as e:
+    print("Exception when calling CredentialsApi->credentials_exim_credentials_course_import_create: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **course_id** | **str**|  | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | No response body |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **credentials_orgs_users_assertions_bulk_create**
 > BulkCreateAssertion credentials_orgs_users_assertions_bulk_create(entity_id, org, user_id, bulk_create_assertion)

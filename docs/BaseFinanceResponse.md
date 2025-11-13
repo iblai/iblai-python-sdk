@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **metric** | **str** | The metric type that was requested | 
 **filters** | [**FinanceFilters**](FinanceFilters.md) | Applied filters for this query | 
-**value** | **float** | Primary metric value (cost in USD) | 
+**value** | **decimal.Decimal** | Primary metric value (cost in USD) | 
 **percentage_change** | **float** | Percentage change vs comparison period (null if no comparison) | 
 **overtime** | [**List[OvertimeData]**](OvertimeData.md) | Time series data for overtime visualization | 
 **period_info** | [**PeriodInfo**](PeriodInfo.md) | Information about the analysis period | 

@@ -5,7 +5,10 @@ All URIs are relative to *https://base.manager.iblai.app*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**ai_account_connected_services_callback_retrieve**](AiAccountApi.md#ai_account_connected_services_callback_retrieve) | **GET** /api/ai-account/connected-services/callback/ | 
-[**ai_account_connected_services_orgs_users_retrieve**](AiAccountApi.md#ai_account_connected_services_orgs_users_retrieve) | **GET** /api/ai-account/connected-services/orgs/{org}/users/{user_id}/{provider}/{service}/ | 
+[**ai_account_connected_services_orgs_users_destroy**](AiAccountApi.md#ai_account_connected_services_orgs_users_destroy) | **DELETE** /api/ai-account/connected-services/orgs/{org}/users/{user_id}/{id}/ | 
+[**ai_account_connected_services_orgs_users_list**](AiAccountApi.md#ai_account_connected_services_orgs_users_list) | **GET** /api/ai-account/connected-services/orgs/{org}/users/{user_id}/ | 
+[**ai_account_connected_services_orgs_users_retrieve**](AiAccountApi.md#ai_account_connected_services_orgs_users_retrieve) | **GET** /api/ai-account/connected-services/orgs/{org}/users/{user_id}/{id}/ | 
+[**ai_account_connected_services_orgs_users_retrieve2**](AiAccountApi.md#ai_account_connected_services_orgs_users_retrieve2) | **GET** /api/ai-account/connected-services/orgs/{org}/users/{user_id}/{provider}/{service}/ | 
 [**ai_account_orgs_credential_create**](AiAccountApi.md#ai_account_orgs_credential_create) | **POST** /api/ai-account/orgs/{org}/credential/ | 
 [**ai_account_orgs_credential_destroy**](AiAccountApi.md#ai_account_orgs_credential_destroy) | **DELETE** /api/ai-account/orgs/{org}/credential/ | 
 [**ai_account_orgs_credential_partial_update**](AiAccountApi.md#ai_account_orgs_credential_partial_update) | **PATCH** /api/ai-account/orgs/{org}/credential/ | 
@@ -30,6 +33,125 @@ Method | HTTP request | Description
 
 # **ai_account_connected_services_callback_retrieve**
 > ConnectedService ai_account_connected_services_callback_retrieve()
+
+### Example
+
+
+```python
+import iblai
+from iblai.models.connected_service import ConnectedService
+from iblai.rest import ApiException
+from pprint import pprint
+
+# Create an instance of the API class
+api_instance = iblai.AiAccountApi(api_client)
+
+try:
+    api_response = api_instance.ai_account_connected_services_callback_retrieve()
+    print("The response of AiAccountApi->ai_account_connected_services_callback_retrieve:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiAccountApi->ai_account_connected_services_callback_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**ConnectedService**](ConnectedService.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Callback for the OAuth flow |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ai_account_connected_services_orgs_users_destroy**
+> ai_account_connected_services_orgs_users_destroy(id, org, user_id)
+
+Mixin that includes the StudentTokenAuthentication and IsAdminUserOrStudent
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+# Create an instance of the API class
+api_instance = iblai.AiAccountApi(api_client)
+id = 56 # int | A unique integer value identifying this connected service.
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+
+try:
+    api_instance.ai_account_connected_services_orgs_users_destroy(id, org, user_id)
+except Exception as e:
+    print("Exception when calling AiAccountApi->ai_account_connected_services_orgs_users_destroy: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| A unique integer value identifying this connected service. | 
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**204** | No response body |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ai_account_connected_services_orgs_users_list**
+> List[ConnectedService] ai_account_connected_services_orgs_users_list(org, user_id, ordering=ordering, provider=provider, search=search, service=service)
 
 Mixin that includes the StudentTokenAuthentication and IsAdminUserOrStudent
 
@@ -56,20 +178,106 @@ client = get_platform_api_client(
 )
 # Create an instance of the API class
 api_instance = iblai.AiAccountApi(api_client)
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+ordering = 'ordering_example' # str | Which field to use when ordering the results. (optional)
+provider = 'provider_example' # str | * `google` - Google (optional)
+search = 'search_example' # str | A search term. (optional)
+service = 'service_example' # str | * `google_drive` - Google Drive * `google_document` - Google Document * `google_slides` - Google Slides * `google_calendar` - Google Calendar (optional)
 
 try:
-    api_response = api_instance.ai_account_connected_services_callback_retrieve()
-    print("The response of AiAccountApi->ai_account_connected_services_callback_retrieve:\n")
+    api_response = api_instance.ai_account_connected_services_orgs_users_list(org, user_id, ordering=ordering, provider=provider, search=search, service=service)
+    print("The response of AiAccountApi->ai_account_connected_services_orgs_users_list:\n")
     pprint(api_response)
 except Exception as e:
-    print("Exception when calling AiAccountApi->ai_account_connected_services_callback_retrieve: %s\n" % e)
+    print("Exception when calling AiAccountApi->ai_account_connected_services_orgs_users_list: %s\n" % e)
 ```
 
 
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+ **ordering** | **str**| Which field to use when ordering the results. | [optional] 
+ **provider** | **str**| * &#x60;google&#x60; - Google | [optional] 
+ **search** | **str**| A search term. | [optional] 
+ **service** | **str**| * &#x60;google_drive&#x60; - Google Drive * &#x60;google_document&#x60; - Google Document * &#x60;google_slides&#x60; - Google Slides * &#x60;google_calendar&#x60; - Google Calendar | [optional] 
+
+### Return type
+
+[**List[ConnectedService]**](ConnectedService.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ai_account_connected_services_orgs_users_retrieve**
+> ConnectedService ai_account_connected_services_orgs_users_retrieve(id, org, user_id)
+
+Mixin that includes the StudentTokenAuthentication and IsAdminUserOrStudent
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.connected_service import ConnectedService
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+# Create an instance of the API class
+api_instance = iblai.AiAccountApi(api_client)
+id = 56 # int | A unique integer value identifying this connected service.
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+
+try:
+    api_response = api_instance.ai_account_connected_services_orgs_users_retrieve(id, org, user_id)
+    print("The response of AiAccountApi->ai_account_connected_services_orgs_users_retrieve:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiAccountApi->ai_account_connected_services_orgs_users_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| A unique integer value identifying this connected service. | 
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
 
 ### Return type
 
@@ -88,12 +296,12 @@ This endpoint does not need any parameter.
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Callback for the OAuth flow |  -  |
+**200** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **ai_account_connected_services_orgs_users_retrieve**
-> OAuthStartResponse ai_account_connected_services_orgs_users_retrieve(org, provider, service, user_id)
+# **ai_account_connected_services_orgs_users_retrieve2**
+> OAuthStartResponse ai_account_connected_services_orgs_users_retrieve2(org, provider, service, user_id)
 
 Mixin that includes the StudentTokenAuthentication and IsAdminUserOrStudent
 
@@ -126,11 +334,11 @@ service = 'service_example' # str |
 user_id = 'user_id_example' # str | 
 
 try:
-    api_response = api_instance.ai_account_connected_services_orgs_users_retrieve(org, provider, service, user_id)
-    print("The response of AiAccountApi->ai_account_connected_services_orgs_users_retrieve:\n")
+    api_response = api_instance.ai_account_connected_services_orgs_users_retrieve2(org, provider, service, user_id)
+    print("The response of AiAccountApi->ai_account_connected_services_orgs_users_retrieve2:\n")
     pprint(api_response)
 except Exception as e:
-    print("Exception when calling AiAccountApi->ai_account_connected_services_orgs_users_retrieve: %s\n" % e)
+    print("Exception when calling AiAccountApi->ai_account_connected_services_orgs_users_retrieve2: %s\n" % e)
 ```
 
 

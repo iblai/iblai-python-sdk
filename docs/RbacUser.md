@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** | edX user ID | [readonly] 
 **username** | **str** | edX username | [optional] 
+**email** | **str** | edX email | [optional] 
 
 ## Example
 

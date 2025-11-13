@@ -5,6 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**id** | **int** |  | [readonly] 
 **name** | **str** |  | 
 **unique_id** | **str** |  | [optional] 
 **flow** | **object** | The langflow json for the mentor | [optional] 
@@ -24,9 +25,16 @@ Name | Type | Description | Notes
 **openai_voice** | **int** |  | [optional] 
 **categories** | [**List[MentorCategory]**](MentorCategory.md) |  | 
 **types** | [**List[MentorType]**](MentorType.md) |  | 
+**is_featured** | **bool** | Whether the mentor is featured or not. | [optional] 
 **subjects** | [**List[Subject]**](Subject.md) |  | 
 **proactive_prompt** | **str** | Prompt template used to start a conversation with the user when greeting_type is proactive_prompt. This will be sent to the LLM so it can respond naturally | [optional] 
 **disclaimer** | **str** | Disclaimer to be shown to the user when the mentor is used. | [optional] 
+**enable_disclaimer** | **bool** |  | [optional] 
+**embed_is_context_aware** | **bool** | Allow embedded mentor to read content on the embedded web page. | [optional] 
+**embed_open_by_default** | **bool** | Open mentor embed iframe by default. | [optional] 
+**embed_show_attachment** | **bool** | Show attachments on embedded mentor. | [optional] 
+**embed_show_voice_call** | **bool** | Show voice call button on embedded mentor. | [optional] 
+**embed_show_voice_record** | **bool** | Show voice recording button on embedded mentor. | [optional] 
 **placeholder_prompt** | **str** | Placeholder to be shown in the input text area when the mentor is used. | [optional] 
 **moderation_system_prompt** | **str** | The prompt for the moderation system. This prompt must clearly distinguish between &#39;Approapriate&#39; and &#39;Not Appropriate&#39; queries. | [optional] 
 **post_processing_prompt** | **str** | Prompt to be used to alter or modify final llm response into any desired form. | [optional] 

@@ -3,7 +3,7 @@ import requests
 import typing as t
 
 
-from iblai.helpers.constants import DEFAULT_BASE_URL
+from iblai.helpers.constants import DEFAULT_BASE_URL, DEFAULT_TIMEOUT
 
 
 log = logging.getLogger(__name__)
@@ -30,17 +30,23 @@ def add_llm_credential(
     response = requests.post(
         f"{request_base}/api/ai-account/orgs/{tenant}/credential/",
         headers=headers,
-        json=data
+        json=data,
+        timeout=DEFAULT_TIMEOUT
     )
 
     if response and response.ok:
-        return response.json()
+        try:
+            return response.json()
+        except (ValueError, TypeError) as e:
+            log.error("Failed to parse response as JSON: %s", str(e))
+            return None
     else:
         log.error(
             "Failed to add LLM credentials (status=%s): %s",
             response.status_code,
             response.text,
         )
+        return None
 
 
 def get_llm_credentials(
@@ -58,14 +64,20 @@ def get_llm_credentials(
     }
     response = requests.get(
         f"{request_base}/api/ai-account/orgs/{tenant}/credential/",
-        headers=headers
+        headers=headers,
+        timeout=DEFAULT_TIMEOUT
     )
 
     if response and response.ok:
-        return response.json()
+        try:
+            return response.json()
+        except (ValueError, TypeError) as e:
+            log.error("Failed to parse response as JSON: %s", str(e))
+            return None
     else:
         log.error(
             "Failed to query LLM credentials (status=%s): %s",
             response.status_code,
             response.text,
         )
+        return None

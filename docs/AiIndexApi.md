@@ -5,6 +5,7 @@ All URIs are relative to *https://base.manager.iblai.app*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**ai_index_orgs_users_documents_destroy**](AiIndexApi.md#ai_index_orgs_users_documents_destroy) | **DELETE** /api/ai-index/orgs/{org}/users/{user_id}/documents/{document_id}/ | 
+[**ai_index_orgs_users_documents_document_from_pool_create**](AiIndexApi.md#ai_index_orgs_users_documents_document_from_pool_create) | **POST** /api/ai-index/orgs/{org}/users/{user_id}/documents/document-from-pool/ | 
 [**ai_index_orgs_users_documents_pathways_list**](AiIndexApi.md#ai_index_orgs_users_documents_pathways_list) | **GET** /api/ai-index/orgs/{org}/users/{user_id}/documents/pathways/{pathway}/ | 
 [**ai_index_orgs_users_documents_retrieve**](AiIndexApi.md#ai_index_orgs_users_documents_retrieve) | **GET** /api/ai-index/orgs/{org}/users/{user_id}/documents/{document_id}/ | 
 [**ai_index_orgs_users_documents_search_create**](AiIndexApi.md#ai_index_orgs_users_documents_search_create) | **POST** /api/ai-index/orgs/{org}/users/{user_id}/documents/search/ | 
@@ -102,6 +103,85 @@ void (empty response body)
 |-------------|-------------|------------------|
 **204** | Document successfully deleted |  -  |
 **404** | Document not found |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ai_index_orgs_users_documents_document_from_pool_create**
+> TrainDocumentViewResponse ai_index_orgs_users_documents_document_from_pool_create(org, user_id, document_from_pool_request)
+
+Train a document from the document pool
+
+Sample request:
+```json
+{"document_id": 3, "to_pathway": "7c43ec09-3d37-489c-a461-8d73df1d91c7"}
+```
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.document_from_pool_request import DocumentFromPoolRequest
+from iblai.models.train_document_view_response import TrainDocumentViewResponse
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+# Create an instance of the API class
+api_instance = iblai.AiIndexApi(api_client)
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+document_from_pool_request = iblai.DocumentFromPoolRequest() # DocumentFromPoolRequest | 
+
+try:
+    api_response = api_instance.ai_index_orgs_users_documents_document_from_pool_create(org, user_id, document_from_pool_request)
+    print("The response of AiIndexApi->ai_index_orgs_users_documents_document_from_pool_create:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiIndexApi->ai_index_orgs_users_documents_document_from_pool_create: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+ **document_from_pool_request** | [**DocumentFromPoolRequest**](DocumentFromPoolRequest.md)|  | 
+
+### Return type
+
+[**TrainDocumentViewResponse**](TrainDocumentViewResponse.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**400** | Invalid request data |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -704,7 +784,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **ai_index_orgs_users_documents_train_create**
-> TrainDocumentViewResponse ai_index_orgs_users_documents_train_create(org, user_id, pathway, type, url=url, text=text, translate=translate, file=file, access=access, branch=branch, google_drive_auth_data=google_drive_auth_data, dropbox_auth_data=dropbox_auth_data, crawler_max_depth=crawler_max_depth, crawler_max_pages_limit=crawler_max_pages_limit, crawler_max_concurrency=crawler_max_concurrency, crawler_match_patterns=crawler_match_patterns, crawler_pattern_type=crawler_pattern_type, custom_metadata=custom_metadata, add_to_document_pool=add_to_document_pool)
+> TrainDocumentViewResponse ai_index_orgs_users_documents_train_create(org, user_id, type, pathway=pathway, url=url, text=text, translate=translate, file=file, access=access, branch=branch, google_drive_auth_data=google_drive_auth_data, dropbox_auth_data=dropbox_auth_data, crawler_max_depth=crawler_max_depth, crawler_max_pages_limit=crawler_max_pages_limit, crawler_max_concurrency=crawler_max_concurrency, crawler_match_patterns=crawler_match_patterns, crawler_pattern_type=crawler_pattern_type, custom_metadata=custom_metadata, add_to_document_pool=add_to_document_pool, document_pool_only=document_pool_only, user_image_description=user_image_description)
 
 Train a document through a worker process.
 
@@ -749,8 +829,8 @@ client = get_platform_api_client(
 api_instance = iblai.AiIndexApi(api_client)
 org = 'org_example' # str | 
 user_id = 'user_id_example' # str | 
-pathway = 'pathway_example' # str | Pathway for document to be trained in
 type = 'type_example' # str | Type of document e.g file
+pathway = 'pathway_example' # str | Pathway for document to be trained in (optional)
 url = 'url_example' # str | Url of the document to be trained (optional)
 text = 'text_example' # str | Search text for wikipedia (optional)
 translate = False # bool | If file should be translated (optional) (default to False)
@@ -766,9 +846,11 @@ crawler_match_patterns = ['crawler_match_patterns_example'] # List[str] | The pa
 crawler_pattern_type = iblai.CrawlerPatternTypeEnum() # CrawlerPatternTypeEnum | Pattern type for the crawler  * `glob` - Glob * `regex` - Regex (optional)
 custom_metadata = None # object | Custom metadata to attach to the trained document. Must be a flat JSON object with string keys and string, number, or boolean values. (optional)
 add_to_document_pool = False # bool | Adds document to the pool or not. (optional) (default to False)
+document_pool_only = False # bool | Only adds document to document pool. Requires pathway to be empty. (optional) (default to False)
+user_image_description = 'user_image_description_example' # str | Description of an image submitted by the user for RAG. (optional)
 
 try:
-    api_response = api_instance.ai_index_orgs_users_documents_train_create(org, user_id, pathway, type, url=url, text=text, translate=translate, file=file, access=access, branch=branch, google_drive_auth_data=google_drive_auth_data, dropbox_auth_data=dropbox_auth_data, crawler_max_depth=crawler_max_depth, crawler_max_pages_limit=crawler_max_pages_limit, crawler_max_concurrency=crawler_max_concurrency, crawler_match_patterns=crawler_match_patterns, crawler_pattern_type=crawler_pattern_type, custom_metadata=custom_metadata, add_to_document_pool=add_to_document_pool)
+    api_response = api_instance.ai_index_orgs_users_documents_train_create(org, user_id, type, pathway=pathway, url=url, text=text, translate=translate, file=file, access=access, branch=branch, google_drive_auth_data=google_drive_auth_data, dropbox_auth_data=dropbox_auth_data, crawler_max_depth=crawler_max_depth, crawler_max_pages_limit=crawler_max_pages_limit, crawler_max_concurrency=crawler_max_concurrency, crawler_match_patterns=crawler_match_patterns, crawler_pattern_type=crawler_pattern_type, custom_metadata=custom_metadata, add_to_document_pool=add_to_document_pool, document_pool_only=document_pool_only, user_image_description=user_image_description)
     print("The response of AiIndexApi->ai_index_orgs_users_documents_train_create:\n")
     pprint(api_response)
 except Exception as e:
@@ -784,8 +866,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **org** | **str**|  | 
  **user_id** | **str**|  | 
- **pathway** | **str**| Pathway for document to be trained in | 
  **type** | **str**| Type of document e.g file | 
+ **pathway** | **str**| Pathway for document to be trained in | [optional] 
  **url** | **str**| Url of the document to be trained | [optional] 
  **text** | **str**| Search text for wikipedia | [optional] 
  **translate** | **bool**| If file should be translated | [optional] [default to False]
@@ -801,6 +883,8 @@ Name | Type | Description  | Notes
  **crawler_pattern_type** | [**CrawlerPatternTypeEnum**](CrawlerPatternTypeEnum.md)| Pattern type for the crawler  * &#x60;glob&#x60; - Glob * &#x60;regex&#x60; - Regex | [optional] 
  **custom_metadata** | [**object**](object.md)| Custom metadata to attach to the trained document. Must be a flat JSON object with string keys and string, number, or boolean values. | [optional] 
  **add_to_document_pool** | **bool**| Adds document to the pool or not. | [optional] [default to False]
+ **document_pool_only** | **bool**| Only adds document to document pool. Requires pathway to be empty. | [optional] [default to False]
+ **user_image_description** | **str**| Description of an image submitted by the user for RAG. | [optional] 
 
 ### Return type
 

@@ -44,6 +44,7 @@ add_llm_credential(credential_name, credential_value, tenant, api_token, base_ur
 ### Chatting with a mentor
 
 ```python
+import asyncio
 from iblai.helpers import (
     create_mentor,
     upload_document_to_mentor,
@@ -52,31 +53,37 @@ from iblai.helpers import (
     chat_with_mentor_async
 )
 
-tenant = "new-platform"
-username = "my-user"
-base_url = "https://base.manager.iblai.app/"
-asgi_base_url = "wss://asgi.data.iblai.app"
-api_token = "<MY_ACCESS_TOKEN>"
+async def main():
+    tenant = "new-platform"
+    username = "my-user"
+    base_url = "https://base.manager.iblai.app/"
+    asgi_base_url = "wss://asgi.data.iblai.app"
+    api_token = "<MY_ACCESS_TOKEN>"
 
-mentor_name = "My New Mentor"
-mentor_settings = {
-    "new_mentor_name": mentor_name,
-    "display_name": mentor_name,
-}
+    mentor_name = "My New Mentor"
+    mentor_settings = {
+        "new_mentor_name": mentor_name,
+        "display_name": mentor_name,
+    }
 
-mentor_data = await create_mentor(tenant, username, mentor_settings, api_token, base_url)
-await upload_document_to_mentor(
-    mentor_name=mentor_name,
-    file_path="doc.pdf",
-    tenant, username, api_token, base_url
-)
+    mentor_data = await create_mentor(tenant, username, mentor_settings, api_token, base_url)
+    await upload_document_to_mentor(
+        mentor_name=mentor_name,
+        file_path="doc.pdf",
+        tenant, username, api_token, base_url
+    )
 
-await wait_for_document_training_to_complete(mentor_name, tenant, username, api_token, base_url)
+    await wait_for_document_training_to_complete(mentor_name, tenant, username, api_token, base_url)
 
-session_id = await create_chat_session(mentor_name, tenant, username, base_url)
-await chat_with_mentor_async(
-    prompt, session_id, mentor_name, tenant, username, api_token, asgi_base_url
-)
+    session_id = await create_chat_session(mentor_name, tenant, username, base_url)
+
+    prompt = "What is the main topic of the document?"
+    async for token in chat_with_mentor_async(
+        prompt, session_id, mentor_name, tenant, username, api_token, asgi_base_url
+    ):
+        print(token, end="")
+
+asyncio.run(main())
 ```
 
 

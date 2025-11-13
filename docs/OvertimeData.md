@@ -7,7 +7,7 @@ Individual overtime data point.
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **var_date** | **str** | Date in YYYY-MM-DD format | 
-**value** | **float** | Cost value for this time period | 
+**value** | **decimal.Decimal** | Cost value for this time period | 
 
 ## Example
 

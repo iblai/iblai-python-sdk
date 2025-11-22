@@ -1,15 +1,19 @@
 # ConnectedService
 
+Serializer for representing connected OAuth services.  Includes both the legacy `service` / `scope` string values and structured representations so that consumers can reason about individual scope names.
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** |  | [readonly] 
-**provider** | [**ConnectedServiceProviderEnum**](ConnectedServiceProviderEnum.md) |  | 
-**service** | [**ServiceEnum**](ServiceEnum.md) |  | 
+**provider** | **str** |  | 
+**service** | **str** |  | [optional] 
 **expires_at** | **datetime** |  | [optional] 
-**scope** | **str** |  | 
+**scope** | **str** |  | [optional] 
+**scope_names** | **List[str]** | Return the canonical list of scope identifiers for the connection. | [readonly] 
+**scopes** | **List[str]** | Return the OAuth scope strings associated with the connection. | [readonly] 
+**token_type** | **str** |  | [optional] 
 **service_info** | [**ExternalServiceInfo**](ExternalServiceInfo.md) |  | [readonly] 
 
 ## Example

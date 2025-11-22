@@ -6,34 +6,41 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**credentials_exim_credentials_course_export_retrieve**](CredentialsApi.md#credentials_exim_credentials_course_export_retrieve) | **GET** /api/credentials/exim/credentials/course/{course_id}/export/ | 
 [**credentials_exim_credentials_course_import_create**](CredentialsApi.md#credentials_exim_credentials_course_import_create) | **POST** /api/credentials/exim/credentials/course/{course_id}/import/ | 
-[**credentials_orgs_users_assertions_bulk_create**](CredentialsApi.md#credentials_orgs_users_assertions_bulk_create) | **POST** /api/credentials/orgs/{org}/users/{user_id}/{entity_id}/assertions/bulk/ | 
-[**credentials_orgs_users_assertions_create**](CredentialsApi.md#credentials_orgs_users_assertions_create) | **POST** /api/credentials/orgs/{org}/users/{user_id}/{entity_id}/assertions/ | 
-[**credentials_orgs_users_assertions_over_time_retrieve**](CredentialsApi.md#credentials_orgs_users_assertions_over_time_retrieve) | **GET** /api/credentials/orgs/{org}/users/{user_id}/assertions-over-time/ | 
-[**credentials_orgs_users_assertions_retrieve**](CredentialsApi.md#credentials_orgs_users_assertions_retrieve) | **GET** /api/credentials/orgs/{org}/users/{user_id}/assertions/ | 
-[**credentials_orgs_users_assertions_retrieve2**](CredentialsApi.md#credentials_orgs_users_assertions_retrieve2) | **GET** /api/credentials/orgs/{org}/users/{user_id}/assertions/{entity_id} | 
-[**credentials_orgs_users_assertions_retrieve3**](CredentialsApi.md#credentials_orgs_users_assertions_retrieve3) | **GET** /api/credentials/orgs/{org}/users/{user_id}/{entity_id}/assertions/ | 
-[**credentials_orgs_users_assertions_update**](CredentialsApi.md#credentials_orgs_users_assertions_update) | **PUT** /api/credentials/orgs/{org}/users/{user_id}/assertions/{entity_id} | 
-[**credentials_orgs_users_assignments_destroy**](CredentialsApi.md#credentials_orgs_users_assignments_destroy) | **DELETE** /api/credentials/orgs/{org}/users/{user_id}/assignments/{assignment_id} | 
-[**credentials_orgs_users_assignments_groups_create**](CredentialsApi.md#credentials_orgs_users_assignments_groups_create) | **POST** /api/credentials/orgs/{org}/users/{user_id}/assignments/groups/ | 
-[**credentials_orgs_users_assignments_groups_retrieve**](CredentialsApi.md#credentials_orgs_users_assignments_groups_retrieve) | **GET** /api/credentials/orgs/{org}/users/{user_id}/assignments/groups/ | 
-[**credentials_orgs_users_assignments_users_create**](CredentialsApi.md#credentials_orgs_users_assignments_users_create) | **POST** /api/credentials/orgs/{org}/users/{user_id}/assignments/users/ | 
-[**credentials_orgs_users_assignments_users_retrieve**](CredentialsApi.md#credentials_orgs_users_assignments_users_retrieve) | **GET** /api/credentials/orgs/{org}/users/{user_id}/assignments/users/ | 
-[**credentials_orgs_users_course_assertions_over_time_retrieve**](CredentialsApi.md#credentials_orgs_users_course_assertions_over_time_retrieve) | **GET** /api/credentials/orgs/{org}/users/{user_id}/course-assertions-over-time/ | 
-[**credentials_orgs_users_course_credentials_list**](CredentialsApi.md#credentials_orgs_users_course_credentials_list) | **GET** /api/credentials/orgs/{org}/users/{user_id}/course-credentials/ | 
-[**credentials_orgs_users_create**](CredentialsApi.md#credentials_orgs_users_create) | **POST** /api/credentials/orgs/{org}/users/{user_id}/ | 
-[**credentials_orgs_users_credentials_over_time_retrieve**](CredentialsApi.md#credentials_orgs_users_credentials_over_time_retrieve) | **GET** /api/credentials/orgs/{org}/users/{user_id}/credentials-over-time/ | 
-[**credentials_orgs_users_destroy**](CredentialsApi.md#credentials_orgs_users_destroy) | **DELETE** /api/credentials/orgs/{org}/users/{user_id}/{entity_id} | 
-[**credentials_orgs_users_images_create**](CredentialsApi.md#credentials_orgs_users_images_create) | **POST** /api/credentials/orgs/{org}/users/{user_id}/images/ | 
-[**credentials_orgs_users_images_retrieve**](CredentialsApi.md#credentials_orgs_users_images_retrieve) | **GET** /api/credentials/orgs/{org}/users/{user_id}/images/ | 
-[**credentials_orgs_users_issuers_authority_create**](CredentialsApi.md#credentials_orgs_users_issuers_authority_create) | **POST** /api/credentials/orgs/{org}/users/{user_id}/issuers/authority/ | 
-[**credentials_orgs_users_issuers_create**](CredentialsApi.md#credentials_orgs_users_issuers_create) | **POST** /api/credentials/orgs/{org}/users/{user_id}/issuers/ | 
-[**credentials_orgs_users_issuers_destroy**](CredentialsApi.md#credentials_orgs_users_issuers_destroy) | **DELETE** /api/credentials/orgs/{org}/users/{user_id}/issuers/{entity_id} | 
-[**credentials_orgs_users_issuers_retrieve**](CredentialsApi.md#credentials_orgs_users_issuers_retrieve) | **GET** /api/credentials/orgs/{org}/users/{user_id}/issuers/ | 
-[**credentials_orgs_users_issuers_retrieve2**](CredentialsApi.md#credentials_orgs_users_issuers_retrieve2) | **GET** /api/credentials/orgs/{org}/users/{user_id}/issuers/{entity_id} | 
-[**credentials_orgs_users_issuers_update**](CredentialsApi.md#credentials_orgs_users_issuers_update) | **PUT** /api/credentials/orgs/{org}/users/{user_id}/issuers/{entity_id} | 
-[**credentials_orgs_users_retrieve**](CredentialsApi.md#credentials_orgs_users_retrieve) | **GET** /api/credentials/orgs/{org}/users/{user_id}/ | 
-[**credentials_orgs_users_retrieve2**](CredentialsApi.md#credentials_orgs_users_retrieve2) | **GET** /api/credentials/orgs/{org}/users/{user_id}/{entity_id} | 
-[**credentials_orgs_users_update**](CredentialsApi.md#credentials_orgs_users_update) | **PUT** /api/credentials/orgs/{org}/users/{user_id}/{entity_id} | 
+[**credentials_orgs_users_assertions_bulk_create**](CredentialsApi.md#credentials_orgs_users_assertions_bulk_create) | **POST** /api/credentials/orgs/{platform_key}/users/{username}/{entity_id}/assertions/bulk/ | 
+[**credentials_orgs_users_assertions_create**](CredentialsApi.md#credentials_orgs_users_assertions_create) | **POST** /api/credentials/orgs/{platform_key}/users/{username}/{entity_id}/assertions/ | 
+[**credentials_orgs_users_assertions_over_time_retrieve**](CredentialsApi.md#credentials_orgs_users_assertions_over_time_retrieve) | **GET** /api/credentials/orgs/{platform_key}/users/{username}/assertions-over-time/ | 
+[**credentials_orgs_users_assertions_retrieve**](CredentialsApi.md#credentials_orgs_users_assertions_retrieve) | **GET** /api/credentials/orgs/{platform_key}/users/{username}/assertions/ | 
+[**credentials_orgs_users_assertions_retrieve2**](CredentialsApi.md#credentials_orgs_users_assertions_retrieve2) | **GET** /api/credentials/orgs/{platform_key}/users/{username}/assertions/{entity_id} | 
+[**credentials_orgs_users_assertions_retrieve3**](CredentialsApi.md#credentials_orgs_users_assertions_retrieve3) | **GET** /api/credentials/orgs/{platform_key}/users/{username}/{entity_id}/assertions/ | 
+[**credentials_orgs_users_assertions_update**](CredentialsApi.md#credentials_orgs_users_assertions_update) | **PUT** /api/credentials/orgs/{platform_key}/users/{username}/assertions/{entity_id} | 
+[**credentials_orgs_users_assignments_destroy**](CredentialsApi.md#credentials_orgs_users_assignments_destroy) | **DELETE** /api/credentials/orgs/{platform_key}/users/{username}/assignments/{assignment_id} | 
+[**credentials_orgs_users_assignments_groups_create**](CredentialsApi.md#credentials_orgs_users_assignments_groups_create) | **POST** /api/credentials/orgs/{platform_key}/users/{username}/assignments/groups/ | 
+[**credentials_orgs_users_assignments_groups_retrieve**](CredentialsApi.md#credentials_orgs_users_assignments_groups_retrieve) | **GET** /api/credentials/orgs/{platform_key}/users/{username}/assignments/groups/ | 
+[**credentials_orgs_users_assignments_users_create**](CredentialsApi.md#credentials_orgs_users_assignments_users_create) | **POST** /api/credentials/orgs/{platform_key}/users/{username}/assignments/users/ | 
+[**credentials_orgs_users_assignments_users_retrieve**](CredentialsApi.md#credentials_orgs_users_assignments_users_retrieve) | **GET** /api/credentials/orgs/{platform_key}/users/{username}/assignments/users/ | 
+[**credentials_orgs_users_course_assertions_over_time_retrieve**](CredentialsApi.md#credentials_orgs_users_course_assertions_over_time_retrieve) | **GET** /api/credentials/orgs/{platform_key}/users/{username}/course-assertions-over-time/ | 
+[**credentials_orgs_users_course_credentials_list**](CredentialsApi.md#credentials_orgs_users_course_credentials_list) | **GET** /api/credentials/orgs/{platform_key}/users/{username}/course-credentials/ | 
+[**credentials_orgs_users_create**](CredentialsApi.md#credentials_orgs_users_create) | **POST** /api/credentials/orgs/{platform_key}/users/{username}/ | 
+[**credentials_orgs_users_credentials_over_time_retrieve**](CredentialsApi.md#credentials_orgs_users_credentials_over_time_retrieve) | **GET** /api/credentials/orgs/{platform_key}/users/{username}/credentials-over-time/ | 
+[**credentials_orgs_users_destroy**](CredentialsApi.md#credentials_orgs_users_destroy) | **DELETE** /api/credentials/orgs/{platform_key}/users/{username}/{entity_id} | 
+[**credentials_orgs_users_external_mapping_create**](CredentialsApi.md#credentials_orgs_users_external_mapping_create) | **POST** /api/credentials/orgs/{platform_key}/users/{username}/external-mapping/ | 
+[**credentials_orgs_users_external_mapping_destroy**](CredentialsApi.md#credentials_orgs_users_external_mapping_destroy) | **DELETE** /api/credentials/orgs/{platform_key}/users/{username}/external-mapping/ | 
+[**credentials_orgs_users_external_mapping_retrieve**](CredentialsApi.md#credentials_orgs_users_external_mapping_retrieve) | **GET** /api/credentials/orgs/{platform_key}/users/{username}/external-mapping/ | 
+[**credentials_orgs_users_images_create**](CredentialsApi.md#credentials_orgs_users_images_create) | **POST** /api/credentials/orgs/{platform_key}/users/{username}/images/ | 
+[**credentials_orgs_users_images_retrieve**](CredentialsApi.md#credentials_orgs_users_images_retrieve) | **GET** /api/credentials/orgs/{platform_key}/users/{username}/images/ | 
+[**credentials_orgs_users_issuers_authority_create**](CredentialsApi.md#credentials_orgs_users_issuers_authority_create) | **POST** /api/credentials/orgs/{platform_key}/users/{username}/issuers/authority/ | 
+[**credentials_orgs_users_issuers_create**](CredentialsApi.md#credentials_orgs_users_issuers_create) | **POST** /api/credentials/orgs/{platform_key}/users/{username}/issuers/ | 
+[**credentials_orgs_users_issuers_destroy**](CredentialsApi.md#credentials_orgs_users_issuers_destroy) | **DELETE** /api/credentials/orgs/{platform_key}/users/{username}/issuers/{entity_id} | 
+[**credentials_orgs_users_issuers_retrieve**](CredentialsApi.md#credentials_orgs_users_issuers_retrieve) | **GET** /api/credentials/orgs/{platform_key}/users/{username}/issuers/ | 
+[**credentials_orgs_users_issuers_retrieve2**](CredentialsApi.md#credentials_orgs_users_issuers_retrieve2) | **GET** /api/credentials/orgs/{platform_key}/users/{username}/issuers/{entity_id} | 
+[**credentials_orgs_users_issuers_update**](CredentialsApi.md#credentials_orgs_users_issuers_update) | **PUT** /api/credentials/orgs/{platform_key}/users/{username}/issuers/{entity_id} | 
+[**credentials_orgs_users_provider_config_create**](CredentialsApi.md#credentials_orgs_users_provider_config_create) | **POST** /api/credentials/orgs/{platform_key}/users/{username}/provider-config/ | 
+[**credentials_orgs_users_provider_config_destroy**](CredentialsApi.md#credentials_orgs_users_provider_config_destroy) | **DELETE** /api/credentials/orgs/{platform_key}/users/{username}/provider-config/ | 
+[**credentials_orgs_users_provider_config_retrieve**](CredentialsApi.md#credentials_orgs_users_provider_config_retrieve) | **GET** /api/credentials/orgs/{platform_key}/users/{username}/provider-config/ | 
+[**credentials_orgs_users_retrieve**](CredentialsApi.md#credentials_orgs_users_retrieve) | **GET** /api/credentials/orgs/{platform_key}/users/{username}/ | 
+[**credentials_orgs_users_retrieve2**](CredentialsApi.md#credentials_orgs_users_retrieve2) | **GET** /api/credentials/orgs/{platform_key}/users/{username}/{entity_id} | 
+[**credentials_orgs_users_update**](CredentialsApi.md#credentials_orgs_users_update) | **PUT** /api/credentials/orgs/{platform_key}/users/{username}/{entity_id} | 
+[**credentials_providers_retrieve**](CredentialsApi.md#credentials_providers_retrieve) | **GET** /api/credentials/providers/ | 
 [**credentials_public_assertions_retrieve**](CredentialsApi.md#credentials_public_assertions_retrieve) | **GET** /api/credentials/public/assertions/{entity_id}/ | 
 
 
@@ -182,7 +189,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **credentials_orgs_users_assertions_bulk_create**
-> BulkCreateAssertion credentials_orgs_users_assertions_bulk_create(entity_id, org, user_id, bulk_create_assertion)
+> BulkCreateAssertion credentials_orgs_users_assertions_bulk_create(entity_id, platform_key, username, bulk_create_assertion)
 
 Endpoint to issue credential assertions in bulk for a specific credential.
 
@@ -236,12 +243,12 @@ client = get_platform_api_client(
 # Create an instance of the API class
 api_instance = iblai.CredentialsApi(api_client)
 entity_id = 'entity_id_example' # str | 
-org = 'org_example' # str | 
-user_id = 'user_id_example' # str | 
+platform_key = 'platform_key_example' # str | 
+username = 'username_example' # str | 
 bulk_create_assertion = iblai.BulkCreateAssertion() # BulkCreateAssertion | 
 
 try:
-    api_response = api_instance.credentials_orgs_users_assertions_bulk_create(entity_id, org, user_id, bulk_create_assertion)
+    api_response = api_instance.credentials_orgs_users_assertions_bulk_create(entity_id, platform_key, username, bulk_create_assertion)
     print("The response of CredentialsApi->credentials_orgs_users_assertions_bulk_create:\n")
     pprint(api_response)
 except Exception as e:
@@ -256,8 +263,8 @@ except Exception as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **entity_id** | **str**|  | 
- **org** | **str**|  | 
- **user_id** | **str**|  | 
+ **platform_key** | **str**|  | 
+ **username** | **str**|  | 
  **bulk_create_assertion** | [**BulkCreateAssertion**](BulkCreateAssertion.md)|  | 
 
 ### Return type
@@ -282,7 +289,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **credentials_orgs_users_assertions_create**
-> Assertion credentials_orgs_users_assertions_create(entity_id, org, user_id, assertion)
+> Assertion credentials_orgs_users_assertions_create(entity_id, platform_key, username, assertion)
 
 Endpoint to issue and retrieve credential assertions for a specific credential.
 
@@ -337,12 +344,12 @@ client = get_platform_api_client(
 # Create an instance of the API class
 api_instance = iblai.CredentialsApi(api_client)
 entity_id = 'entity_id_example' # str | 
-org = 'org_example' # str | 
-user_id = 'user_id_example' # str | 
+platform_key = 'platform_key_example' # str | 
+username = 'username_example' # str | 
 assertion = iblai.Assertion() # Assertion | 
 
 try:
-    api_response = api_instance.credentials_orgs_users_assertions_create(entity_id, org, user_id, assertion)
+    api_response = api_instance.credentials_orgs_users_assertions_create(entity_id, platform_key, username, assertion)
     print("The response of CredentialsApi->credentials_orgs_users_assertions_create:\n")
     pprint(api_response)
 except Exception as e:
@@ -357,8 +364,8 @@ except Exception as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **entity_id** | **str**|  | 
- **org** | **str**|  | 
- **user_id** | **str**|  | 
+ **platform_key** | **str**|  | 
+ **username** | **str**|  | 
  **assertion** | [**Assertion**](Assertion.md)|  | 
 
 ### Return type
@@ -383,7 +390,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **credentials_orgs_users_assertions_over_time_retrieve**
-> OvertimeWithChangeInfo credentials_orgs_users_assertions_over_time_retrieve(org, user_id, department_id=department_id, end_date=end_date, format=format, include_main_platform=include_main_platform, start_date=start_date)
+> OvertimeWithChangeInfo credentials_orgs_users_assertions_over_time_retrieve(platform_key, username, department_id=department_id, end_date=end_date, format=format, include_main_platform=include_main_platform, start_date=start_date)
 
 Get all credentials of a given tenant
 
@@ -410,8 +417,8 @@ client = get_platform_api_client(
 )
 # Create an instance of the API class
 api_instance = iblai.CredentialsApi(api_client)
-org = 'org_example' # str | 
-user_id = 'user_id_example' # str | 
+platform_key = 'platform_key_example' # str | 
+username = 'username_example' # str | 
 department_id = 56 # int | When `department_mode=1` is passed, it allows to filter data for only user content groups for the specified department  (optional)
 end_date = 'end_date_example' # str | end date. ISO 8601 (optional)
 format = json # str | Format  * `json` - json (optional) (default to json)
@@ -419,7 +426,7 @@ include_main_platform = True # bool | Include main platform data (optional) (def
 start_date = 'start_date_example' # str | start date. ISO 8601 (optional)
 
 try:
-    api_response = api_instance.credentials_orgs_users_assertions_over_time_retrieve(org, user_id, department_id=department_id, end_date=end_date, format=format, include_main_platform=include_main_platform, start_date=start_date)
+    api_response = api_instance.credentials_orgs_users_assertions_over_time_retrieve(platform_key, username, department_id=department_id, end_date=end_date, format=format, include_main_platform=include_main_platform, start_date=start_date)
     print("The response of CredentialsApi->credentials_orgs_users_assertions_over_time_retrieve:\n")
     pprint(api_response)
 except Exception as e:
@@ -433,8 +440,8 @@ except Exception as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **org** | **str**|  | 
- **user_id** | **str**|  | 
+ **platform_key** | **str**|  | 
+ **username** | **str**|  | 
  **department_id** | **int**| When &#x60;department_mode&#x3D;1&#x60; is passed, it allows to filter data for only user content groups for the specified department  | [optional] 
  **end_date** | **str**| end date. ISO 8601 | [optional] 
  **format** | **str**| Format  * &#x60;json&#x60; - json | [optional] [default to json]
@@ -463,7 +470,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **credentials_orgs_users_assertions_retrieve**
-> PaginatedAssertionsResponse credentials_orgs_users_assertions_retrieve(org, user_id, course=course, exclude_main_tenant_assertions=exclude_main_tenant_assertions, include_expired=include_expired, include_revoked=include_revoked, page=page, page_size=page_size)
+> PaginatedAssertionsResponse credentials_orgs_users_assertions_retrieve(platform_key, username, course=course, exclude_main_tenant_assertions=exclude_main_tenant_assertions, include_expired=include_expired, include_revoked=include_revoked, page=page, page_size=page_size)
 
 Endpoint to retrieve all credential assertions for a user within an organization.
 
@@ -512,8 +519,8 @@ client = get_platform_api_client(
 )
 # Create an instance of the API class
 api_instance = iblai.CredentialsApi(api_client)
-org = 'org_example' # str | 
-user_id = 'user_id_example' # str | 
+platform_key = 'platform_key_example' # str | 
+username = 'username_example' # str | 
 course = 'course_example' # str |  (optional)
 exclude_main_tenant_assertions = True # bool |  (optional)
 include_expired = True # bool |  (optional)
@@ -522,7 +529,7 @@ page = 56 # int |  (optional)
 page_size = 56 # int |  (optional)
 
 try:
-    api_response = api_instance.credentials_orgs_users_assertions_retrieve(org, user_id, course=course, exclude_main_tenant_assertions=exclude_main_tenant_assertions, include_expired=include_expired, include_revoked=include_revoked, page=page, page_size=page_size)
+    api_response = api_instance.credentials_orgs_users_assertions_retrieve(platform_key, username, course=course, exclude_main_tenant_assertions=exclude_main_tenant_assertions, include_expired=include_expired, include_revoked=include_revoked, page=page, page_size=page_size)
     print("The response of CredentialsApi->credentials_orgs_users_assertions_retrieve:\n")
     pprint(api_response)
 except Exception as e:
@@ -536,8 +543,8 @@ except Exception as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **org** | **str**|  | 
- **user_id** | **str**|  | 
+ **platform_key** | **str**|  | 
+ **username** | **str**|  | 
  **course** | **str**|  | [optional] 
  **exclude_main_tenant_assertions** | **bool**|  | [optional] 
  **include_expired** | **bool**|  | [optional] 
@@ -567,7 +574,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **credentials_orgs_users_assertions_retrieve2**
-> Assertion credentials_orgs_users_assertions_retrieve2(entity_id, org, user_id)
+> Assertion credentials_orgs_users_assertions_retrieve2(entity_id, platform_key, username)
 
 Endpoint to retrieve and update a specific credential assertion.
 
@@ -623,11 +630,11 @@ client = get_platform_api_client(
 # Create an instance of the API class
 api_instance = iblai.CredentialsApi(api_client)
 entity_id = 'entity_id_example' # str | 
-org = 'org_example' # str | 
-user_id = 'user_id_example' # str | 
+platform_key = 'platform_key_example' # str | 
+username = 'username_example' # str | 
 
 try:
-    api_response = api_instance.credentials_orgs_users_assertions_retrieve2(entity_id, org, user_id)
+    api_response = api_instance.credentials_orgs_users_assertions_retrieve2(entity_id, platform_key, username)
     print("The response of CredentialsApi->credentials_orgs_users_assertions_retrieve2:\n")
     pprint(api_response)
 except Exception as e:
@@ -642,8 +649,8 @@ except Exception as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **entity_id** | **str**|  | 
- **org** | **str**|  | 
- **user_id** | **str**|  | 
+ **platform_key** | **str**|  | 
+ **username** | **str**|  | 
 
 ### Return type
 
@@ -667,7 +674,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **credentials_orgs_users_assertions_retrieve3**
-> PaginatedAssertionsResponse credentials_orgs_users_assertions_retrieve3(entity_id, org, user_id)
+> PaginatedAssertionsResponse credentials_orgs_users_assertions_retrieve3(entity_id, platform_key, username)
 
 Endpoint to issue and retrieve credential assertions for a specific credential.
 
@@ -722,11 +729,11 @@ client = get_platform_api_client(
 # Create an instance of the API class
 api_instance = iblai.CredentialsApi(api_client)
 entity_id = 'entity_id_example' # str | 
-org = 'org_example' # str | 
-user_id = 'user_id_example' # str | 
+platform_key = 'platform_key_example' # str | 
+username = 'username_example' # str | 
 
 try:
-    api_response = api_instance.credentials_orgs_users_assertions_retrieve3(entity_id, org, user_id)
+    api_response = api_instance.credentials_orgs_users_assertions_retrieve3(entity_id, platform_key, username)
     print("The response of CredentialsApi->credentials_orgs_users_assertions_retrieve3:\n")
     pprint(api_response)
 except Exception as e:
@@ -741,8 +748,8 @@ except Exception as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **entity_id** | **str**|  | 
- **org** | **str**|  | 
- **user_id** | **str**|  | 
+ **platform_key** | **str**|  | 
+ **username** | **str**|  | 
 
 ### Return type
 
@@ -766,7 +773,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **credentials_orgs_users_assertions_update**
-> Assertion credentials_orgs_users_assertions_update(entity_id, org, user_id, assertion)
+> Assertion credentials_orgs_users_assertions_update(entity_id, platform_key, username, assertion)
 
 Endpoint to retrieve and update a specific credential assertion.
 
@@ -822,12 +829,12 @@ client = get_platform_api_client(
 # Create an instance of the API class
 api_instance = iblai.CredentialsApi(api_client)
 entity_id = 'entity_id_example' # str | 
-org = 'org_example' # str | 
-user_id = 'user_id_example' # str | 
+platform_key = 'platform_key_example' # str | 
+username = 'username_example' # str | 
 assertion = iblai.Assertion() # Assertion | 
 
 try:
-    api_response = api_instance.credentials_orgs_users_assertions_update(entity_id, org, user_id, assertion)
+    api_response = api_instance.credentials_orgs_users_assertions_update(entity_id, platform_key, username, assertion)
     print("The response of CredentialsApi->credentials_orgs_users_assertions_update:\n")
     pprint(api_response)
 except Exception as e:
@@ -842,8 +849,8 @@ except Exception as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **entity_id** | **str**|  | 
- **org** | **str**|  | 
- **user_id** | **str**|  | 
+ **platform_key** | **str**|  | 
+ **username** | **str**|  | 
  **assertion** | [**Assertion**](Assertion.md)|  | 
 
 ### Return type
@@ -868,7 +875,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **credentials_orgs_users_assignments_destroy**
-> credentials_orgs_users_assignments_destroy(assignment_id, org, user_id)
+> credentials_orgs_users_assignments_destroy(assignment_id, platform_key, username)
 
 Delete a credential assignment using its entity_id.
 Only platform admins and department admins can delete assignments.
@@ -896,11 +903,11 @@ client = get_platform_api_client(
 # Create an instance of the API class
 api_instance = iblai.CredentialsApi(api_client)
 assignment_id = 'assignment_id_example' # str | 
-org = 'org_example' # str | 
-user_id = 'user_id_example' # str | 
+platform_key = 'platform_key_example' # str | 
+username = 'username_example' # str | 
 
 try:
-    api_instance.credentials_orgs_users_assignments_destroy(assignment_id, org, user_id)
+    api_instance.credentials_orgs_users_assignments_destroy(assignment_id, platform_key, username)
 except Exception as e:
     print("Exception when calling CredentialsApi->credentials_orgs_users_assignments_destroy: %s\n" % e)
 ```
@@ -913,8 +920,8 @@ except Exception as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **assignment_id** | **str**|  | 
- **org** | **str**|  | 
- **user_id** | **str**|  | 
+ **platform_key** | **str**|  | 
+ **username** | **str**|  | 
 
 ### Return type
 
@@ -938,7 +945,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **credentials_orgs_users_assignments_groups_create**
-> credentials_orgs_users_assignments_groups_create(org, user_id)
+> credentials_orgs_users_assignments_groups_create(platform_key, username)
 
 Create group assignment with department access validation
 
@@ -964,11 +971,11 @@ client = get_platform_api_client(
 )
 # Create an instance of the API class
 api_instance = iblai.CredentialsApi(api_client)
-org = 'org_example' # str | 
-user_id = 'user_id_example' # str | 
+platform_key = 'platform_key_example' # str | 
+username = 'username_example' # str | 
 
 try:
-    api_instance.credentials_orgs_users_assignments_groups_create(org, user_id)
+    api_instance.credentials_orgs_users_assignments_groups_create(platform_key, username)
 except Exception as e:
     print("Exception when calling CredentialsApi->credentials_orgs_users_assignments_groups_create: %s\n" % e)
 ```
@@ -980,8 +987,8 @@ except Exception as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **org** | **str**|  | 
- **user_id** | **str**|  | 
+ **platform_key** | **str**|  | 
+ **username** | **str**|  | 
 
 ### Return type
 
@@ -1005,7 +1012,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **credentials_orgs_users_assignments_groups_retrieve**
-> credentials_orgs_users_assignments_groups_retrieve(org, user_id)
+> credentials_orgs_users_assignments_groups_retrieve(platform_key, username)
 
 Get group assignments with department-aware filtering
 
@@ -1031,11 +1038,11 @@ client = get_platform_api_client(
 )
 # Create an instance of the API class
 api_instance = iblai.CredentialsApi(api_client)
-org = 'org_example' # str | 
-user_id = 'user_id_example' # str | 
+platform_key = 'platform_key_example' # str | 
+username = 'username_example' # str | 
 
 try:
-    api_instance.credentials_orgs_users_assignments_groups_retrieve(org, user_id)
+    api_instance.credentials_orgs_users_assignments_groups_retrieve(platform_key, username)
 except Exception as e:
     print("Exception when calling CredentialsApi->credentials_orgs_users_assignments_groups_retrieve: %s\n" % e)
 ```
@@ -1047,8 +1054,8 @@ except Exception as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **org** | **str**|  | 
- **user_id** | **str**|  | 
+ **platform_key** | **str**|  | 
+ **username** | **str**|  | 
 
 ### Return type
 
@@ -1072,7 +1079,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **credentials_orgs_users_assignments_users_create**
-> credentials_orgs_users_assignments_users_create(org, user_id)
+> credentials_orgs_users_assignments_users_create(platform_key, username)
 
 Create assignments with department access validation
 
@@ -1098,11 +1105,11 @@ client = get_platform_api_client(
 )
 # Create an instance of the API class
 api_instance = iblai.CredentialsApi(api_client)
-org = 'org_example' # str | 
-user_id = 'user_id_example' # str | 
+platform_key = 'platform_key_example' # str | 
+username = 'username_example' # str | 
 
 try:
-    api_instance.credentials_orgs_users_assignments_users_create(org, user_id)
+    api_instance.credentials_orgs_users_assignments_users_create(platform_key, username)
 except Exception as e:
     print("Exception when calling CredentialsApi->credentials_orgs_users_assignments_users_create: %s\n" % e)
 ```
@@ -1114,8 +1121,8 @@ except Exception as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **org** | **str**|  | 
- **user_id** | **str**|  | 
+ **platform_key** | **str**|  | 
+ **username** | **str**|  | 
 
 ### Return type
 
@@ -1139,7 +1146,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **credentials_orgs_users_assignments_users_retrieve**
-> credentials_orgs_users_assignments_users_retrieve(org, user_id)
+> credentials_orgs_users_assignments_users_retrieve(platform_key, username)
 
 Get assignments and their corresponding assertions based on user role:
 - Regular users: get only their own assignments
@@ -1168,11 +1175,11 @@ client = get_platform_api_client(
 )
 # Create an instance of the API class
 api_instance = iblai.CredentialsApi(api_client)
-org = 'org_example' # str | 
-user_id = 'user_id_example' # str | 
+platform_key = 'platform_key_example' # str | 
+username = 'username_example' # str | 
 
 try:
-    api_instance.credentials_orgs_users_assignments_users_retrieve(org, user_id)
+    api_instance.credentials_orgs_users_assignments_users_retrieve(platform_key, username)
 except Exception as e:
     print("Exception when calling CredentialsApi->credentials_orgs_users_assignments_users_retrieve: %s\n" % e)
 ```
@@ -1184,8 +1191,8 @@ except Exception as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **org** | **str**|  | 
- **user_id** | **str**|  | 
+ **platform_key** | **str**|  | 
+ **username** | **str**|  | 
 
 ### Return type
 
@@ -1209,7 +1216,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **credentials_orgs_users_course_assertions_over_time_retrieve**
-> OverTime credentials_orgs_users_course_assertions_over_time_retrieve(org, user_id, department_id=department_id, end_date=end_date, format=format, include_main_platform=include_main_platform, start_date=start_date)
+> OverTime credentials_orgs_users_course_assertions_over_time_retrieve(platform_key, username, department_id=department_id, end_date=end_date, format=format, include_main_platform=include_main_platform, start_date=start_date)
 
 Get all credentials of a given tenant
 
@@ -1236,8 +1243,8 @@ client = get_platform_api_client(
 )
 # Create an instance of the API class
 api_instance = iblai.CredentialsApi(api_client)
-org = 'org_example' # str | 
-user_id = 'user_id_example' # str | 
+platform_key = 'platform_key_example' # str | 
+username = 'username_example' # str | 
 department_id = 56 # int | When `department_mode=1` is passed, it allows to filter data for only user content groups for the specified department  (optional)
 end_date = 'end_date_example' # str | end date. ISO 8601 (optional)
 format = json # str | Format  * `json` - json (optional) (default to json)
@@ -1245,7 +1252,7 @@ include_main_platform = True # bool | Include main platform data (optional) (def
 start_date = 'start_date_example' # str | start date. ISO 8601 (optional)
 
 try:
-    api_response = api_instance.credentials_orgs_users_course_assertions_over_time_retrieve(org, user_id, department_id=department_id, end_date=end_date, format=format, include_main_platform=include_main_platform, start_date=start_date)
+    api_response = api_instance.credentials_orgs_users_course_assertions_over_time_retrieve(platform_key, username, department_id=department_id, end_date=end_date, format=format, include_main_platform=include_main_platform, start_date=start_date)
     print("The response of CredentialsApi->credentials_orgs_users_course_assertions_over_time_retrieve:\n")
     pprint(api_response)
 except Exception as e:
@@ -1259,8 +1266,8 @@ except Exception as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **org** | **str**|  | 
- **user_id** | **str**|  | 
+ **platform_key** | **str**|  | 
+ **username** | **str**|  | 
  **department_id** | **int**| When &#x60;department_mode&#x3D;1&#x60; is passed, it allows to filter data for only user content groups for the specified department  | [optional] 
  **end_date** | **str**| end date. ISO 8601 | [optional] 
  **format** | **str**| Format  * &#x60;json&#x60; - json | [optional] [default to json]
@@ -1289,7 +1296,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **credentials_orgs_users_course_credentials_list**
-> credentials_orgs_users_course_credentials_list(org, user_id, page=page, page_size=page_size)
+> credentials_orgs_users_course_credentials_list(platform_key, username, page=page, page_size=page_size)
 
 Endpoint to retrieve the credentials of a given tenant grouped by course.
 
@@ -1335,13 +1342,13 @@ client = get_platform_api_client(
 )
 # Create an instance of the API class
 api_instance = iblai.CredentialsApi(api_client)
-org = 'org_example' # str | 
-user_id = 'user_id_example' # str | 
+platform_key = 'platform_key_example' # str | 
+username = 'username_example' # str | 
 page = 56 # int | A page number within the paginated result set. (optional)
 page_size = 56 # int | Number of results to return per page. (optional)
 
 try:
-    api_instance.credentials_orgs_users_course_credentials_list(org, user_id, page=page, page_size=page_size)
+    api_instance.credentials_orgs_users_course_credentials_list(platform_key, username, page=page, page_size=page_size)
 except Exception as e:
     print("Exception when calling CredentialsApi->credentials_orgs_users_course_credentials_list: %s\n" % e)
 ```
@@ -1353,8 +1360,8 @@ except Exception as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **org** | **str**|  | 
- **user_id** | **str**|  | 
+ **platform_key** | **str**|  | 
+ **username** | **str**|  | 
  **page** | **int**| A page number within the paginated result set. | [optional] 
  **page_size** | **int**| Number of results to return per page. | [optional] 
 
@@ -1380,7 +1387,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **credentials_orgs_users_create**
-> Credential credentials_orgs_users_create(org, user_id, credential)
+> Credential credentials_orgs_users_create(platform_key, username, credential)
 
 API View for managing credentials across a platform.
 
@@ -1482,12 +1489,12 @@ client = get_platform_api_client(
 )
 # Create an instance of the API class
 api_instance = iblai.CredentialsApi(api_client)
-org = 'org_example' # str | 
-user_id = 'user_id_example' # str | 
+platform_key = 'platform_key_example' # str | 
+username = 'username_example' # str | 
 credential = iblai.Credential() # Credential | 
 
 try:
-    api_response = api_instance.credentials_orgs_users_create(org, user_id, credential)
+    api_response = api_instance.credentials_orgs_users_create(platform_key, username, credential)
     print("The response of CredentialsApi->credentials_orgs_users_create:\n")
     pprint(api_response)
 except Exception as e:
@@ -1501,8 +1508,8 @@ except Exception as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **org** | **str**|  | 
- **user_id** | **str**|  | 
+ **platform_key** | **str**|  | 
+ **username** | **str**|  | 
  **credential** | [**Credential**](Credential.md)|  | 
 
 ### Return type
@@ -1527,7 +1534,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **credentials_orgs_users_credentials_over_time_retrieve**
-> OverTime credentials_orgs_users_credentials_over_time_retrieve(org, user_id, department_id=department_id, end_date=end_date, format=format, include_main_platform=include_main_platform, start_date=start_date)
+> OverTime credentials_orgs_users_credentials_over_time_retrieve(platform_key, username, department_id=department_id, end_date=end_date, format=format, include_main_platform=include_main_platform, start_date=start_date)
 
 Get all credentials of a given tenant
 
@@ -1554,8 +1561,8 @@ client = get_platform_api_client(
 )
 # Create an instance of the API class
 api_instance = iblai.CredentialsApi(api_client)
-org = 'org_example' # str | 
-user_id = 'user_id_example' # str | 
+platform_key = 'platform_key_example' # str | 
+username = 'username_example' # str | 
 department_id = 56 # int | When `department_mode=1` is passed, it allows to filter data for only user content groups for the specified department  (optional)
 end_date = 'end_date_example' # str | end date. ISO 8601 (optional)
 format = json # str | Format  * `json` - json (optional) (default to json)
@@ -1563,7 +1570,7 @@ include_main_platform = True # bool | Include main platform data (optional) (def
 start_date = 'start_date_example' # str | start date. ISO 8601 (optional)
 
 try:
-    api_response = api_instance.credentials_orgs_users_credentials_over_time_retrieve(org, user_id, department_id=department_id, end_date=end_date, format=format, include_main_platform=include_main_platform, start_date=start_date)
+    api_response = api_instance.credentials_orgs_users_credentials_over_time_retrieve(platform_key, username, department_id=department_id, end_date=end_date, format=format, include_main_platform=include_main_platform, start_date=start_date)
     print("The response of CredentialsApi->credentials_orgs_users_credentials_over_time_retrieve:\n")
     pprint(api_response)
 except Exception as e:
@@ -1577,8 +1584,8 @@ except Exception as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **org** | **str**|  | 
- **user_id** | **str**|  | 
+ **platform_key** | **str**|  | 
+ **username** | **str**|  | 
  **department_id** | **int**| When &#x60;department_mode&#x3D;1&#x60; is passed, it allows to filter data for only user content groups for the specified department  | [optional] 
  **end_date** | **str**| end date. ISO 8601 | [optional] 
  **format** | **str**| Format  * &#x60;json&#x60; - json | [optional] [default to json]
@@ -1607,7 +1614,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **credentials_orgs_users_destroy**
-> credentials_orgs_users_destroy(entity_id, org, user_id)
+> credentials_orgs_users_destroy(entity_id, platform_key, username)
 
 API View for managing individual credentials.
 
@@ -1687,11 +1694,11 @@ client = get_platform_api_client(
 # Create an instance of the API class
 api_instance = iblai.CredentialsApi(api_client)
 entity_id = 'entity_id_example' # str | 
-org = 'org_example' # str | 
-user_id = 'user_id_example' # str | 
+platform_key = 'platform_key_example' # str | 
+username = 'username_example' # str | 
 
 try:
-    api_instance.credentials_orgs_users_destroy(entity_id, org, user_id)
+    api_instance.credentials_orgs_users_destroy(entity_id, platform_key, username)
 except Exception as e:
     print("Exception when calling CredentialsApi->credentials_orgs_users_destroy: %s\n" % e)
 ```
@@ -1704,8 +1711,8 @@ except Exception as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **entity_id** | **str**|  | 
- **org** | **str**|  | 
- **user_id** | **str**|  | 
+ **platform_key** | **str**|  | 
+ **username** | **str**|  | 
 
 ### Return type
 
@@ -1728,8 +1735,249 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **credentials_orgs_users_external_mapping_create**
+> ExternalCredentialMapping credentials_orgs_users_external_mapping_create(platform_key, username, external_credential_mapping)
+
+Create or update an external credential mapping.
+
+If a mapping doesn't exist for the credential + platform + provider combination,
+it will be created. If it exists, it will be updated.
+
+Request Body:
+    {
+        "credential_id": "credential-entity-id",  // Required
+        "provider_name": "accredible",            // Required
+        "external_template_id": "123456",         // Optional
+        "metadata": {}                            // Optional
+    }
+
+Returns:
+    - 201 Created: When creating a new mapping
+    - 200 OK: When updating an existing mapping
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.external_credential_mapping import ExternalCredentialMapping
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+# Create an instance of the API class
+api_instance = iblai.CredentialsApi(api_client)
+platform_key = 'platform_key_example' # str | 
+username = 'username_example' # str | 
+external_credential_mapping = iblai.ExternalCredentialMapping() # ExternalCredentialMapping | 
+
+try:
+    api_response = api_instance.credentials_orgs_users_external_mapping_create(platform_key, username, external_credential_mapping)
+    print("The response of CredentialsApi->credentials_orgs_users_external_mapping_create:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling CredentialsApi->credentials_orgs_users_external_mapping_create: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **platform_key** | **str**|  | 
+ **username** | **str**|  | 
+ **external_credential_mapping** | [**ExternalCredentialMapping**](ExternalCredentialMapping.md)|  | 
+
+### Return type
+
+[**ExternalCredentialMapping**](ExternalCredentialMapping.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **credentials_orgs_users_external_mapping_destroy**
+> credentials_orgs_users_external_mapping_destroy(platform_key, username)
+
+Delete an external credential mapping.
+
+Request Body:
+    {
+        "credential_id": "credential-entity-id",  // Required
+        "provider_name": "accredible"             // Required
+    }
+
+Returns:
+    A JSON response confirming deletion
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+# Create an instance of the API class
+api_instance = iblai.CredentialsApi(api_client)
+platform_key = 'platform_key_example' # str | 
+username = 'username_example' # str | 
+
+try:
+    api_instance.credentials_orgs_users_external_mapping_destroy(platform_key, username)
+except Exception as e:
+    print("Exception when calling CredentialsApi->credentials_orgs_users_external_mapping_destroy: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **platform_key** | **str**|  | 
+ **username** | **str**|  | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**204** | No response body |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **credentials_orgs_users_external_mapping_retrieve**
+> ExternalCredentialMapping credentials_orgs_users_external_mapping_retrieve(platform_key, username)
+
+Retrieve external credential mappings for the platform.
+
+Query Parameters:
+    credential_id (str, optional): Filter by credential entity_id
+    provider_name (str, optional): Filter by provider name
+    page (int, optional): Page number
+    page_size (int, optional): Items per page
+
+Returns all mappings for the platform if the user is an admin.
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.external_credential_mapping import ExternalCredentialMapping
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+# Create an instance of the API class
+api_instance = iblai.CredentialsApi(api_client)
+platform_key = 'platform_key_example' # str | 
+username = 'username_example' # str | 
+
+try:
+    api_response = api_instance.credentials_orgs_users_external_mapping_retrieve(platform_key, username)
+    print("The response of CredentialsApi->credentials_orgs_users_external_mapping_retrieve:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling CredentialsApi->credentials_orgs_users_external_mapping_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **platform_key** | **str**|  | 
+ **username** | **str**|  | 
+
+### Return type
+
+[**ExternalCredentialMapping**](ExternalCredentialMapping.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **credentials_orgs_users_images_create**
-> UploadedImage credentials_orgs_users_images_create(org, user_id, uploaded_image=uploaded_image)
+> UploadedImage credentials_orgs_users_images_create(platform_key, username, uploaded_image=uploaded_image)
 
 API View for managing uploaded images for credentials.
 
@@ -1808,12 +2056,12 @@ client = get_platform_api_client(
 )
 # Create an instance of the API class
 api_instance = iblai.CredentialsApi(api_client)
-org = 'org_example' # str | 
-user_id = 'user_id_example' # str | 
+platform_key = 'platform_key_example' # str | 
+username = 'username_example' # str | 
 uploaded_image = iblai.UploadedImage() # UploadedImage |  (optional)
 
 try:
-    api_response = api_instance.credentials_orgs_users_images_create(org, user_id, uploaded_image=uploaded_image)
+    api_response = api_instance.credentials_orgs_users_images_create(platform_key, username, uploaded_image=uploaded_image)
     print("The response of CredentialsApi->credentials_orgs_users_images_create:\n")
     pprint(api_response)
 except Exception as e:
@@ -1827,8 +2075,8 @@ except Exception as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **org** | **str**|  | 
- **user_id** | **str**|  | 
+ **platform_key** | **str**|  | 
+ **username** | **str**|  | 
  **uploaded_image** | [**UploadedImage**](UploadedImage.md)|  | [optional] 
 
 ### Return type
@@ -1853,7 +2101,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **credentials_orgs_users_images_retrieve**
-> UploadedImage credentials_orgs_users_images_retrieve(org, user_id)
+> UploadedImage credentials_orgs_users_images_retrieve(platform_key, username)
 
 API View for managing uploaded images for credentials.
 
@@ -1932,11 +2180,11 @@ client = get_platform_api_client(
 )
 # Create an instance of the API class
 api_instance = iblai.CredentialsApi(api_client)
-org = 'org_example' # str | 
-user_id = 'user_id_example' # str | 
+platform_key = 'platform_key_example' # str | 
+username = 'username_example' # str | 
 
 try:
-    api_response = api_instance.credentials_orgs_users_images_retrieve(org, user_id)
+    api_response = api_instance.credentials_orgs_users_images_retrieve(platform_key, username)
     print("The response of CredentialsApi->credentials_orgs_users_images_retrieve:\n")
     pprint(api_response)
 except Exception as e:
@@ -1950,8 +2198,8 @@ except Exception as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **org** | **str**|  | 
- **user_id** | **str**|  | 
+ **platform_key** | **str**|  | 
+ **username** | **str**|  | 
 
 ### Return type
 
@@ -1975,7 +2223,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **credentials_orgs_users_issuers_authority_create**
-> IssuerAuthority credentials_orgs_users_issuers_authority_create(org, user_id, issuer_authority)
+> IssuerAuthority credentials_orgs_users_issuers_authority_create(platform_key, username, issuer_authority)
 
 API View for managing issuer authorities (signatories).
 
@@ -2042,12 +2290,12 @@ client = get_platform_api_client(
 )
 # Create an instance of the API class
 api_instance = iblai.CredentialsApi(api_client)
-org = 'org_example' # str | 
-user_id = 'user_id_example' # str | 
+platform_key = 'platform_key_example' # str | 
+username = 'username_example' # str | 
 issuer_authority = iblai.IssuerAuthority() # IssuerAuthority | 
 
 try:
-    api_response = api_instance.credentials_orgs_users_issuers_authority_create(org, user_id, issuer_authority)
+    api_response = api_instance.credentials_orgs_users_issuers_authority_create(platform_key, username, issuer_authority)
     print("The response of CredentialsApi->credentials_orgs_users_issuers_authority_create:\n")
     pprint(api_response)
 except Exception as e:
@@ -2061,8 +2309,8 @@ except Exception as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **org** | **str**|  | 
- **user_id** | **str**|  | 
+ **platform_key** | **str**|  | 
+ **username** | **str**|  | 
  **issuer_authority** | [**IssuerAuthority**](IssuerAuthority.md)|  | 
 
 ### Return type
@@ -2087,7 +2335,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **credentials_orgs_users_issuers_create**
-> Issuer credentials_orgs_users_issuers_create(org, q, user_id, issuer)
+> Issuer credentials_orgs_users_issuers_create(platform_key, q, username, issuer)
 
 API View for managing credential issuers.
 
@@ -2174,13 +2422,13 @@ client = get_platform_api_client(
 )
 # Create an instance of the API class
 api_instance = iblai.CredentialsApi(api_client)
-org = 'org_example' # str | 
+platform_key = 'platform_key_example' # str | 
 q = 'q_example' # str | 
-user_id = 'user_id_example' # str | 
+username = 'username_example' # str | 
 issuer = iblai.Issuer() # Issuer | 
 
 try:
-    api_response = api_instance.credentials_orgs_users_issuers_create(org, q, user_id, issuer)
+    api_response = api_instance.credentials_orgs_users_issuers_create(platform_key, q, username, issuer)
     print("The response of CredentialsApi->credentials_orgs_users_issuers_create:\n")
     pprint(api_response)
 except Exception as e:
@@ -2194,9 +2442,9 @@ except Exception as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **org** | **str**|  | 
+ **platform_key** | **str**|  | 
  **q** | **str**|  | 
- **user_id** | **str**|  | 
+ **username** | **str**|  | 
  **issuer** | [**Issuer**](Issuer.md)|  | 
 
 ### Return type
@@ -2221,7 +2469,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **credentials_orgs_users_issuers_destroy**
-> credentials_orgs_users_issuers_destroy(entity_id, org, user_id)
+> credentials_orgs_users_issuers_destroy(entity_id, platform_key, username)
 
 API View for managing individual issuers.
 
@@ -2312,11 +2560,11 @@ client = get_platform_api_client(
 # Create an instance of the API class
 api_instance = iblai.CredentialsApi(api_client)
 entity_id = 'entity_id_example' # str | 
-org = 'org_example' # str | 
-user_id = 'user_id_example' # str | 
+platform_key = 'platform_key_example' # str | 
+username = 'username_example' # str | 
 
 try:
-    api_instance.credentials_orgs_users_issuers_destroy(entity_id, org, user_id)
+    api_instance.credentials_orgs_users_issuers_destroy(entity_id, platform_key, username)
 except Exception as e:
     print("Exception when calling CredentialsApi->credentials_orgs_users_issuers_destroy: %s\n" % e)
 ```
@@ -2329,8 +2577,8 @@ except Exception as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **entity_id** | **str**|  | 
- **org** | **str**|  | 
- **user_id** | **str**|  | 
+ **platform_key** | **str**|  | 
+ **username** | **str**|  | 
 
 ### Return type
 
@@ -2354,7 +2602,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **credentials_orgs_users_issuers_retrieve**
-> Issuer credentials_orgs_users_issuers_retrieve(org, q, user_id)
+> Issuer credentials_orgs_users_issuers_retrieve(platform_key, q, username)
 
 API View for managing credential issuers.
 
@@ -2441,12 +2689,12 @@ client = get_platform_api_client(
 )
 # Create an instance of the API class
 api_instance = iblai.CredentialsApi(api_client)
-org = 'org_example' # str | 
+platform_key = 'platform_key_example' # str | 
 q = 'q_example' # str | 
-user_id = 'user_id_example' # str | 
+username = 'username_example' # str | 
 
 try:
-    api_response = api_instance.credentials_orgs_users_issuers_retrieve(org, q, user_id)
+    api_response = api_instance.credentials_orgs_users_issuers_retrieve(platform_key, q, username)
     print("The response of CredentialsApi->credentials_orgs_users_issuers_retrieve:\n")
     pprint(api_response)
 except Exception as e:
@@ -2460,9 +2708,9 @@ except Exception as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **org** | **str**|  | 
+ **platform_key** | **str**|  | 
  **q** | **str**|  | 
- **user_id** | **str**|  | 
+ **username** | **str**|  | 
 
 ### Return type
 
@@ -2486,7 +2734,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **credentials_orgs_users_issuers_retrieve2**
-> Issuer credentials_orgs_users_issuers_retrieve2(entity_id, org, user_id)
+> Issuer credentials_orgs_users_issuers_retrieve2(entity_id, platform_key, username)
 
 API View for managing individual issuers.
 
@@ -2578,11 +2826,11 @@ client = get_platform_api_client(
 # Create an instance of the API class
 api_instance = iblai.CredentialsApi(api_client)
 entity_id = 'entity_id_example' # str | 
-org = 'org_example' # str | 
-user_id = 'user_id_example' # str | 
+platform_key = 'platform_key_example' # str | 
+username = 'username_example' # str | 
 
 try:
-    api_response = api_instance.credentials_orgs_users_issuers_retrieve2(entity_id, org, user_id)
+    api_response = api_instance.credentials_orgs_users_issuers_retrieve2(entity_id, platform_key, username)
     print("The response of CredentialsApi->credentials_orgs_users_issuers_retrieve2:\n")
     pprint(api_response)
 except Exception as e:
@@ -2597,8 +2845,8 @@ except Exception as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **entity_id** | **str**|  | 
- **org** | **str**|  | 
- **user_id** | **str**|  | 
+ **platform_key** | **str**|  | 
+ **username** | **str**|  | 
 
 ### Return type
 
@@ -2622,7 +2870,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **credentials_orgs_users_issuers_update**
-> Issuer credentials_orgs_users_issuers_update(entity_id, org, user_id, issuer)
+> Issuer credentials_orgs_users_issuers_update(entity_id, platform_key, username, issuer)
 
 API View for managing individual issuers.
 
@@ -2714,12 +2962,12 @@ client = get_platform_api_client(
 # Create an instance of the API class
 api_instance = iblai.CredentialsApi(api_client)
 entity_id = 'entity_id_example' # str | 
-org = 'org_example' # str | 
-user_id = 'user_id_example' # str | 
+platform_key = 'platform_key_example' # str | 
+username = 'username_example' # str | 
 issuer = iblai.Issuer() # Issuer | 
 
 try:
-    api_response = api_instance.credentials_orgs_users_issuers_update(entity_id, org, user_id, issuer)
+    api_response = api_instance.credentials_orgs_users_issuers_update(entity_id, platform_key, username, issuer)
     print("The response of CredentialsApi->credentials_orgs_users_issuers_update:\n")
     pprint(api_response)
 except Exception as e:
@@ -2734,8 +2982,8 @@ except Exception as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **entity_id** | **str**|  | 
- **org** | **str**|  | 
- **user_id** | **str**|  | 
+ **platform_key** | **str**|  | 
+ **username** | **str**|  | 
  **issuer** | [**Issuer**](Issuer.md)|  | 
 
 ### Return type
@@ -2759,8 +3007,243 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **credentials_orgs_users_provider_config_create**
+> CredentialProviderConfig credentials_orgs_users_provider_config_create(platform_key, username, credential_provider_config)
+
+Create or update a provider configuration.
+
+If a configuration doesn't exist for the platform and provider, it will be created.
+If it exists, it will be updated.
+
+Request Body:
+    {
+        "provider_name": "accredible",  // Required
+        "config": {...},                 // Optional
+        "enabled": true                  // Optional
+    }
+
+Returns:
+    - 201 Created: When creating a new configuration
+    - 200 OK: When updating an existing configuration
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.credential_provider_config import CredentialProviderConfig
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+# Create an instance of the API class
+api_instance = iblai.CredentialsApi(api_client)
+platform_key = 'platform_key_example' # str | 
+username = 'username_example' # str | 
+credential_provider_config = iblai.CredentialProviderConfig() # CredentialProviderConfig | 
+
+try:
+    api_response = api_instance.credentials_orgs_users_provider_config_create(platform_key, username, credential_provider_config)
+    print("The response of CredentialsApi->credentials_orgs_users_provider_config_create:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling CredentialsApi->credentials_orgs_users_provider_config_create: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **platform_key** | **str**|  | 
+ **username** | **str**|  | 
+ **credential_provider_config** | [**CredentialProviderConfig**](CredentialProviderConfig.md)|  | 
+
+### Return type
+
+[**CredentialProviderConfig**](CredentialProviderConfig.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **credentials_orgs_users_provider_config_destroy**
+> credentials_orgs_users_provider_config_destroy(platform_key, username)
+
+Deactivate a provider configuration (sets enabled=False).
+
+Request Body:
+    {
+        "provider_name": "accredible"  // Required
+    }
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+# Create an instance of the API class
+api_instance = iblai.CredentialsApi(api_client)
+platform_key = 'platform_key_example' # str | 
+username = 'username_example' # str | 
+
+try:
+    api_instance.credentials_orgs_users_provider_config_destroy(platform_key, username)
+except Exception as e:
+    print("Exception when calling CredentialsApi->credentials_orgs_users_provider_config_destroy: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **platform_key** | **str**|  | 
+ **username** | **str**|  | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**204** | No response body |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **credentials_orgs_users_provider_config_retrieve**
+> CredentialProviderConfig credentials_orgs_users_provider_config_retrieve(platform_key, username)
+
+Retrieve provider configurations for the platform.
+
+Query Parameters:
+    provider_name (str, optional): Filter to a specific provider
+    page (int, optional): Page number
+    page_size (int, optional): Items per page
+
+Returns all configurations for the platform if the user is an admin.
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.credential_provider_config import CredentialProviderConfig
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+# Create an instance of the API class
+api_instance = iblai.CredentialsApi(api_client)
+platform_key = 'platform_key_example' # str | 
+username = 'username_example' # str | 
+
+try:
+    api_response = api_instance.credentials_orgs_users_provider_config_retrieve(platform_key, username)
+    print("The response of CredentialsApi->credentials_orgs_users_provider_config_retrieve:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling CredentialsApi->credentials_orgs_users_provider_config_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **platform_key** | **str**|  | 
+ **username** | **str**|  | 
+
+### Return type
+
+[**CredentialProviderConfig**](CredentialProviderConfig.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **credentials_orgs_users_retrieve**
-> Credential credentials_orgs_users_retrieve(org, user_id)
+> Credential credentials_orgs_users_retrieve(platform_key, username)
 
 Get all credentials for a platform with search and pagination support.
 
@@ -2795,11 +3278,11 @@ client = get_platform_api_client(
 )
 # Create an instance of the API class
 api_instance = iblai.CredentialsApi(api_client)
-org = 'org_example' # str | 
-user_id = 'user_id_example' # str | 
+platform_key = 'platform_key_example' # str | 
+username = 'username_example' # str | 
 
 try:
-    api_response = api_instance.credentials_orgs_users_retrieve(org, user_id)
+    api_response = api_instance.credentials_orgs_users_retrieve(platform_key, username)
     print("The response of CredentialsApi->credentials_orgs_users_retrieve:\n")
     pprint(api_response)
 except Exception as e:
@@ -2813,8 +3296,8 @@ except Exception as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **org** | **str**|  | 
- **user_id** | **str**|  | 
+ **platform_key** | **str**|  | 
+ **username** | **str**|  | 
 
 ### Return type
 
@@ -2838,7 +3321,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **credentials_orgs_users_retrieve2**
-> Credential credentials_orgs_users_retrieve2(entity_id, org, user_id)
+> Credential credentials_orgs_users_retrieve2(entity_id, platform_key, username)
 
 API View for managing individual credentials.
 
@@ -2919,11 +3402,11 @@ client = get_platform_api_client(
 # Create an instance of the API class
 api_instance = iblai.CredentialsApi(api_client)
 entity_id = 'entity_id_example' # str | 
-org = 'org_example' # str | 
-user_id = 'user_id_example' # str | 
+platform_key = 'platform_key_example' # str | 
+username = 'username_example' # str | 
 
 try:
-    api_response = api_instance.credentials_orgs_users_retrieve2(entity_id, org, user_id)
+    api_response = api_instance.credentials_orgs_users_retrieve2(entity_id, platform_key, username)
     print("The response of CredentialsApi->credentials_orgs_users_retrieve2:\n")
     pprint(api_response)
 except Exception as e:
@@ -2938,8 +3421,8 @@ except Exception as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **entity_id** | **str**|  | 
- **org** | **str**|  | 
- **user_id** | **str**|  | 
+ **platform_key** | **str**|  | 
+ **username** | **str**|  | 
 
 ### Return type
 
@@ -2963,7 +3446,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **credentials_orgs_users_update**
-> Credential credentials_orgs_users_update(entity_id, org, user_id, credential)
+> Credential credentials_orgs_users_update(entity_id, platform_key, username, credential)
 
 API View for managing individual credentials.
 
@@ -3044,12 +3527,12 @@ client = get_platform_api_client(
 # Create an instance of the API class
 api_instance = iblai.CredentialsApi(api_client)
 entity_id = 'entity_id_example' # str | 
-org = 'org_example' # str | 
-user_id = 'user_id_example' # str | 
+platform_key = 'platform_key_example' # str | 
+username = 'username_example' # str | 
 credential = iblai.Credential() # Credential | 
 
 try:
-    api_response = api_instance.credentials_orgs_users_update(entity_id, org, user_id, credential)
+    api_response = api_instance.credentials_orgs_users_update(entity_id, platform_key, username, credential)
     print("The response of CredentialsApi->credentials_orgs_users_update:\n")
     pprint(api_response)
 except Exception as e:
@@ -3064,8 +3547,8 @@ except Exception as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **entity_id** | **str**|  | 
- **org** | **str**|  | 
- **user_id** | **str**|  | 
+ **platform_key** | **str**|  | 
+ **username** | **str**|  | 
  **credential** | [**Credential**](Credential.md)|  | 
 
 ### Return type
@@ -3086,6 +3569,67 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **credentials_providers_retrieve**
+> credentials_providers_retrieve()
+
+Get list of enabled credential providers with pagination.
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+# Create an instance of the API class
+api_instance = iblai.CredentialsApi(api_client)
+
+try:
+    api_instance.credentials_providers_retrieve()
+except Exception as e:
+    print("Exception when calling CredentialsApi->credentials_providers_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | No response body |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

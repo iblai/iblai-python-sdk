@@ -25,10 +25,14 @@ Method | HTTP request | Description
 [**ai_account_orgs_llm_credential_retrieve**](AiAccountApi.md#ai_account_orgs_llm_credential_retrieve) | **GET** /api/ai-account/orgs/{org}/llm-credential/ | 
 [**ai_account_orgs_masked_integration_credential_list**](AiAccountApi.md#ai_account_orgs_masked_integration_credential_list) | **GET** /api/ai-account/orgs/{org}/masked-integration-credential/ | 
 [**ai_account_orgs_masked_llm_credential_retrieve**](AiAccountApi.md#ai_account_orgs_masked_llm_credential_retrieve) | **GET** /api/ai-account/orgs/{org}/masked-llm-credential/ | 
+[**ai_account_orgs_oauth_services_list**](AiAccountApi.md#ai_account_orgs_oauth_services_list) | **GET** /api/ai-account/orgs/{org}/oauth-services/ | 
+[**ai_account_orgs_oauth_services_scopes_list**](AiAccountApi.md#ai_account_orgs_oauth_services_scopes_list) | **GET** /api/ai-account/orgs/{org}/oauth-services/{service_name}/scopes/ | 
 [**ai_account_orgs_use_default_llm_key_create**](AiAccountApi.md#ai_account_orgs_use_default_llm_key_create) | **POST** /api/ai-account/orgs/{org}/use-default-llm-key/ | 
 [**ai_account_orgs_use_free_trial_create**](AiAccountApi.md#ai_account_orgs_use_free_trial_create) | **POST** /api/ai-account/orgs/{org}/use-free-trial/ | 
 [**ai_account_orgs_users_default_llm_key_usage_retrieve**](AiAccountApi.md#ai_account_orgs_users_default_llm_key_usage_retrieve) | **GET** /api/ai-account/orgs/{org}/users/{user_id}/default-llm-key-usage | 
 [**ai_account_orgs_users_free_trial_retrieve**](AiAccountApi.md#ai_account_orgs_users_free_trial_retrieve) | **GET** /api/ai-account/orgs/{org}/users/{user_id}/free-trial | 
+[**ai_account_orgs_users_tenant_settings_create**](AiAccountApi.md#ai_account_orgs_users_tenant_settings_create) | **POST** /api/ai-account/orgs/{org}/users/{user_id}/tenant-settings/ | 
+[**ai_account_orgs_users_tenant_settings_retrieve**](AiAccountApi.md#ai_account_orgs_users_tenant_settings_retrieve) | **GET** /api/ai-account/orgs/{org}/users/{user_id}/tenant-settings/ | 
 
 
 # **ai_account_connected_services_callback_retrieve**
@@ -181,9 +185,9 @@ api_instance = iblai.AiAccountApi(api_client)
 org = 'org_example' # str | 
 user_id = 'user_id_example' # str | 
 ordering = 'ordering_example' # str | Which field to use when ordering the results. (optional)
-provider = 'provider_example' # str | * `google` - Google (optional)
+provider = 'provider_example' # str |  (optional)
 search = 'search_example' # str | A search term. (optional)
-service = 'service_example' # str | * `google_drive` - Google Drive * `google_document` - Google Document * `google_slides` - Google Slides * `google_calendar` - Google Calendar (optional)
+service = 'service_example' # str |  (optional)
 
 try:
     api_response = api_instance.ai_account_connected_services_orgs_users_list(org, user_id, ordering=ordering, provider=provider, search=search, service=service)
@@ -203,9 +207,9 @@ Name | Type | Description  | Notes
  **org** | **str**|  | 
  **user_id** | **str**|  | 
  **ordering** | **str**| Which field to use when ordering the results. | [optional] 
- **provider** | **str**| * &#x60;google&#x60; - Google | [optional] 
+ **provider** | **str**|  | [optional] 
  **search** | **str**| A search term. | [optional] 
- **service** | **str**| * &#x60;google_drive&#x60; - Google Drive * &#x60;google_document&#x60; - Google Document * &#x60;google_slides&#x60; - Google Slides * &#x60;google_calendar&#x60; - Google Calendar | [optional] 
+ **service** | **str**|  | [optional] 
 
 ### Return type
 
@@ -1682,6 +1686,151 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **ai_account_orgs_oauth_services_list**
+> List[OAuthProvider] ai_account_orgs_oauth_services_list(org)
+
+Return the list of OAuth services that can be used for connected services.
+
+Query Parameters:
+    name (optional): Filter by exact service name (case-insensitive).
+    include_disabled (optional): Set to `true` to include disabled services.
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.o_auth_provider import OAuthProvider
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+# Create an instance of the API class
+api_instance = iblai.AiAccountApi(api_client)
+org = 'org_example' # str | 
+
+try:
+    api_response = api_instance.ai_account_orgs_oauth_services_list(org)
+    print("The response of AiAccountApi->ai_account_orgs_oauth_services_list:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiAccountApi->ai_account_orgs_oauth_services_list: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **org** | **str**|  | 
+
+### Return type
+
+[**List[OAuthProvider]**](OAuthProvider.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ai_account_orgs_oauth_services_scopes_list**
+> List[OAuthService] ai_account_orgs_oauth_services_scopes_list(org, service_name)
+
+Return the available scopes for the specified OAuth service.
+
+Query Parameters:
+    include_disabled (optional): Set to `true` to include scopes from disabled services.
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.o_auth_service import OAuthService
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+# Create an instance of the API class
+api_instance = iblai.AiAccountApi(api_client)
+org = 'org_example' # str | 
+service_name = 'service_name_example' # str | 
+
+try:
+    api_response = api_instance.ai_account_orgs_oauth_services_scopes_list(org, service_name)
+    print("The response of AiAccountApi->ai_account_orgs_oauth_services_scopes_list:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiAccountApi->ai_account_orgs_oauth_services_scopes_list: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **org** | **str**|  | 
+ **service_name** | **str**|  | 
+
+### Return type
+
+[**List[OAuthService]**](OAuthService.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **ai_account_orgs_use_default_llm_key_create**
 > AiAccountOrgsUseDefaultLlmKeyCreate200Response ai_account_orgs_use_default_llm_key_create(org, use_main_creds)
 
@@ -1981,6 +2130,159 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**AiAccountOrgsUsersFreeTrialRetrieve200Response**](AiAccountOrgsUsersFreeTrialRetrieve200Response.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ai_account_orgs_users_tenant_settings_create**
+> TenantSetting ai_account_orgs_users_tenant_settings_create(org, user_id, tenant_setting=tenant_setting)
+
+Example Request:
+
+```
+{"teams_bot_mentor": "f2116cf2-95c7-4c1f-b19e-666ad529439f"}
+```
+The value here is the mentor's unique id
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.tenant_setting import TenantSetting
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+# Create an instance of the API class
+api_instance = iblai.AiAccountApi(api_client)
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+tenant_setting = iblai.TenantSetting() # TenantSetting |  (optional)
+
+try:
+    api_response = api_instance.ai_account_orgs_users_tenant_settings_create(org, user_id, tenant_setting=tenant_setting)
+    print("The response of AiAccountApi->ai_account_orgs_users_tenant_settings_create:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiAccountApi->ai_account_orgs_users_tenant_settings_create: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+ **tenant_setting** | [**TenantSetting**](TenantSetting.md)|  | [optional] 
+
+### Return type
+
+[**TenantSetting**](TenantSetting.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ai_account_orgs_users_tenant_settings_retrieve**
+> TenantSetting ai_account_orgs_users_tenant_settings_retrieve(org, user_id)
+
+Get a platform's settings
+
+Example response:
+```
+{"teams_bot_mentor": "f2116cf2-95c7-4c1f-b19e-666ad529439f"}
+
+```
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.tenant_setting import TenantSetting
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+# Create an instance of the API class
+api_instance = iblai.AiAccountApi(api_client)
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+
+try:
+    api_response = api_instance.ai_account_orgs_users_tenant_settings_retrieve(org, user_id)
+    print("The response of AiAccountApi->ai_account_orgs_users_tenant_settings_retrieve:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiAccountApi->ai_account_orgs_users_tenant_settings_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+
+### Return type
+
+[**TenantSetting**](TenantSetting.md)
 
 ### Authorization
 

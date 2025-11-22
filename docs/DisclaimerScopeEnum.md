@@ -1,4 +1,4 @@
-# ScopeEnum
+# DisclaimerScopeEnum
 
 * `platform` - Platform * `mentor` - Mentor
 

@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** |  | [optional] [readonly] 
-**scope** | [**ScopeEnum**](ScopeEnum.md) |  | [optional] 
+**scope** | [**DisclaimerScopeEnum**](DisclaimerScopeEnum.md) |  | [optional] 
 **platform** | **int** | Platform to which the disclaimer applies.  | [optional] [readonly] 
 **content** | **str** |  | [optional] 
 **title** | **str** |  | [optional] 

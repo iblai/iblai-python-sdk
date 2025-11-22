@@ -47,6 +47,8 @@ docs/AppleSubscriptionStatusView.md
 docs/AppleVerifyTransactionId.md
 docs/Artifact.md
 docs/ArtifactList.md
+docs/ArtifactVersion.md
+docs/ArtifactVersionList.md
 docs/Assertion.md
 docs/AssociateAccountResponse.md
 docs/AssociateAppleAccount.md
@@ -112,7 +114,6 @@ docs/ComponentBlock.md
 docs/ComponentBlockTypeEnum.md
 docs/ConfigurationItem.md
 docs/ConnectedService.md
-docs/ConnectedServiceProviderEnum.md
 docs/ConsumerChannel.md
 docs/ContentAnalytics.md
 docs/ContentAverages.md
@@ -194,6 +195,7 @@ docs/CourseSuggestionCreate.md
 docs/CourseSuggestionDetail.md
 docs/CrawlerPatternTypeEnum.md
 docs/Credential.md
+docs/CredentialProviderConfig.md
 docs/CredentialRequest.md
 docs/CredentialsApi.md
 docs/CrontabSchedule.md
@@ -214,6 +216,7 @@ docs/DetailedGradeView.md
 docs/DetailedGradeViewData.md
 docs/Disclaimer.md
 docs/DisclaimerAgreement.md
+docs/DisclaimerScopeEnum.md
 docs/DiscordConfig.md
 docs/DiscordUserConfig.md
 docs/DiscordWebhook.md
@@ -241,6 +244,7 @@ docs/Entity.md
 docs/EntityTypeEnum.md
 docs/ErrorResponse.md
 docs/Experience.md
+docs/ExternalCredentialMapping.md
 docs/ExternalServiceInfo.md
 docs/FeaturesApi.md
 docs/FileUploadURLRequest.md
@@ -311,6 +315,8 @@ docs/LtiMentor.md
 docs/LtiMentorCourseXBlock.md
 docs/LtiTool.md
 docs/MCPServer.md
+docs/MCPServerConnection.md
+docs/MCPServerConnectionScopeEnum.md
 docs/ManagerAuthToken.md
 docs/MarkAllReadRequest.md
 docs/MarkAllReadResponse.md
@@ -393,6 +399,8 @@ docs/NotificationV1CampaignsUnsubscribeRetrieve200Response.md
 docs/NotificationV1PlatformsTemplatesResetCreate200Response.md
 docs/NotificationsApi.md
 docs/NullEnum.md
+docs/OAuthProvider.md
+docs/OAuthService.md
 docs/OAuthStartResponse.md
 docs/Observation.md
 docs/OnboardingStatusUpdate.md
@@ -405,6 +413,7 @@ docs/OvertimeWithChangeInfo.md
 docs/PageContent.md
 docs/PaginatedAIGeneratedImageList.md
 docs/PaginatedArtifactListList.md
+docs/PaginatedArtifactVersionListList.md
 docs/PaginatedAssertionsResponse.md
 docs/PaginatedConversationsList.md
 docs/PaginatedCourseAccessRequest.md
@@ -425,6 +434,7 @@ docs/PaginatedHeygenMarketingVideoListList.md
 docs/PaginatedHeygenTemplateResponseSingleList.md
 docs/PaginatedHumanSupportTicketList.md
 docs/PaginatedJobRunList.md
+docs/PaginatedMCPServerConnectionList.md
 docs/PaginatedMCPServerList.md
 docs/PaginatedMentorList.md
 docs/PaginatedModerationLogList.md
@@ -478,6 +488,7 @@ docs/PatchedDiscordUserConfig.md
 docs/PatchedHumanSupportTicket.md
 docs/PatchedLLMCredentialRequest.md
 docs/PatchedMCPServer.md
+docs/PatchedMCPServerConnection.md
 docs/PatchedMediaResource.md
 docs/PatchedMentorCategoryGroupCreate.md
 docs/PatchedMentorCreate.md
@@ -711,7 +722,6 @@ docs/SCIMUserResponse.md
 docs/ScanWebhookRequest.md
 docs/ScanWebhookResponse.md
 docs/ScimApi.md
-docs/ScopeEnum.md
 docs/SearchApi.md
 docs/Section.md
 docs/SectionWithChildren.md
@@ -719,13 +729,13 @@ docs/SeedMentorsView.md
 docs/SendNotification.md
 docs/SendResponse.md
 docs/SentimentSummary.md
-docs/ServiceEnum.md
 docs/SessionBrowserScreenshot.md
 docs/SessionChartPoint.md
 docs/SessionDetail.md
 docs/SessionMemoryAttachment.md
 docs/SessionMemoryStorage.md
 docs/SessionsChart.md
+docs/SetCurrentVersionRequest.md
 docs/SetStudentLLMAccess.md
 docs/SetStudentMentorCreationPermission.md
 docs/ShareableMentorLink.md
@@ -781,6 +791,7 @@ docs/TenantLaunchFailed.md
 docs/TenantLaunchRequest.md
 docs/TenantLaunchResponse.md
 docs/TenantMentorTraces.md
+docs/TenantSetting.md
 docs/TestSMTPCredentials.md
 docs/TestSMTPResponse.md
 docs/ThemeEnum.md
@@ -995,6 +1006,8 @@ iblai/models/apple_subscription_status_view.py
 iblai/models/apple_verify_transaction_id.py
 iblai/models/artifact.py
 iblai/models/artifact_list.py
+iblai/models/artifact_version.py
+iblai/models/artifact_version_list.py
 iblai/models/assertion.py
 iblai/models/associate_account_response.py
 iblai/models/associate_apple_account.py
@@ -1058,7 +1071,6 @@ iblai/models/component_block.py
 iblai/models/component_block_type_enum.py
 iblai/models/configuration_item.py
 iblai/models/connected_service.py
-iblai/models/connected_service_provider_enum.py
 iblai/models/consumer_channel.py
 iblai/models/content_analytics.py
 iblai/models/content_averages.py
@@ -1139,6 +1151,7 @@ iblai/models/course_suggestion_create.py
 iblai/models/course_suggestion_detail.py
 iblai/models/crawler_pattern_type_enum.py
 iblai/models/credential.py
+iblai/models/credential_provider_config.py
 iblai/models/credential_request.py
 iblai/models/crontab_schedule.py
 iblai/models/current_users_response.py
@@ -1157,6 +1170,7 @@ iblai/models/detailed_grade_view.py
 iblai/models/detailed_grade_view_data.py
 iblai/models/disclaimer.py
 iblai/models/disclaimer_agreement.py
+iblai/models/disclaimer_scope_enum.py
 iblai/models/discord_config.py
 iblai/models/discord_user_config.py
 iblai/models/discord_webhook.py
@@ -1184,6 +1198,7 @@ iblai/models/entity.py
 iblai/models/entity_type_enum.py
 iblai/models/error_response.py
 iblai/models/experience.py
+iblai/models/external_credential_mapping.py
 iblai/models/external_service_info.py
 iblai/models/file_upload_url_request.py
 iblai/models/file_upload_url_response.py
@@ -1258,6 +1273,8 @@ iblai/models/mark_all_read_response.py
 iblai/models/masked_integration_credential.py
 iblai/models/masked_llm_credential.py
 iblai/models/mcp_server.py
+iblai/models/mcp_server_connection.py
+iblai/models/mcp_server_connection_scope_enum.py
 iblai/models/media_resource.py
 iblai/models/media_type_enum.py
 iblai/models/memory_component_data.py
@@ -1333,6 +1350,8 @@ iblai/models/notification_toggle.py
 iblai/models/notification_v1_campaigns_unsubscribe_retrieve200_response.py
 iblai/models/notification_v1_platforms_templates_reset_create200_response.py
 iblai/models/null_enum.py
+iblai/models/o_auth_provider.py
+iblai/models/o_auth_service.py
 iblai/models/o_auth_start_response.py
 iblai/models/observation.py
 iblai/models/onboarding_status_update.py
@@ -1345,6 +1364,7 @@ iblai/models/overtime_with_change_info.py
 iblai/models/page_content.py
 iblai/models/paginated_ai_generated_image_list.py
 iblai/models/paginated_artifact_list_list.py
+iblai/models/paginated_artifact_version_list_list.py
 iblai/models/paginated_assertions_response.py
 iblai/models/paginated_conversations_list.py
 iblai/models/paginated_course_access_request.py
@@ -1365,6 +1385,7 @@ iblai/models/paginated_heygen_marketing_video_list_list.py
 iblai/models/paginated_heygen_template_response_single_list.py
 iblai/models/paginated_human_support_ticket_list.py
 iblai/models/paginated_job_run_list.py
+iblai/models/paginated_mcp_server_connection_list.py
 iblai/models/paginated_mcp_server_list.py
 iblai/models/paginated_mentor_list.py
 iblai/models/paginated_moderation_log_list.py
@@ -1418,6 +1439,7 @@ iblai/models/patched_discord_user_config.py
 iblai/models/patched_human_support_ticket.py
 iblai/models/patched_llm_credential_request.py
 iblai/models/patched_mcp_server.py
+iblai/models/patched_mcp_server_connection.py
 iblai/models/patched_media_resource.py
 iblai/models/patched_mentor_category_group_create.py
 iblai/models/patched_mentor_create.py
@@ -1648,20 +1670,19 @@ iblai/models/scim_phone_number.py
 iblai/models/scim_user_create_request.py
 iblai/models/scim_user_list_response.py
 iblai/models/scim_user_response.py
-iblai/models/scope_enum.py
 iblai/models/section.py
 iblai/models/section_with_children.py
 iblai/models/seed_mentors_view.py
 iblai/models/send_notification.py
 iblai/models/send_response.py
 iblai/models/sentiment_summary.py
-iblai/models/service_enum.py
 iblai/models/session_browser_screenshot.py
 iblai/models/session_chart_point.py
 iblai/models/session_detail.py
 iblai/models/session_memory_attachment.py
 iblai/models/session_memory_storage.py
 iblai/models/sessions_chart.py
+iblai/models/set_current_version_request.py
 iblai/models/set_student_llm_access.py
 iblai/models/set_student_mentor_creation_permission.py
 iblai/models/shareable_mentor_link.py
@@ -1716,6 +1737,7 @@ iblai/models/tenant_launch_failed.py
 iblai/models/tenant_launch_request.py
 iblai/models/tenant_launch_response.py
 iblai/models/tenant_mentor_traces.py
+iblai/models/tenant_setting.py
 iblai/models/test_smtp_credentials.py
 iblai/models/test_smtp_response.py
 iblai/models/theme_enum.py
@@ -1909,6 +1931,8 @@ test/test_apple_subscription_status_view.py
 test/test_apple_verify_transaction_id.py
 test/test_artifact.py
 test/test_artifact_list.py
+test/test_artifact_version.py
+test/test_artifact_version_list.py
 test/test_assertion.py
 test/test_associate_account_response.py
 test/test_associate_apple_account.py
@@ -1975,7 +1999,6 @@ test/test_component_block.py
 test/test_component_block_type_enum.py
 test/test_configuration_item.py
 test/test_connected_service.py
-test/test_connected_service_provider_enum.py
 test/test_consumer_channel.py
 test/test_content_analytics.py
 test/test_content_averages.py
@@ -2057,6 +2080,7 @@ test/test_course_suggestion_create.py
 test/test_course_suggestion_detail.py
 test/test_crawler_pattern_type_enum.py
 test/test_credential.py
+test/test_credential_provider_config.py
 test/test_credential_request.py
 test/test_credentials_api.py
 test/test_crontab_schedule.py
@@ -2077,6 +2101,7 @@ test/test_detailed_grade_view.py
 test/test_detailed_grade_view_data.py
 test/test_disclaimer.py
 test/test_disclaimer_agreement.py
+test/test_disclaimer_scope_enum.py
 test/test_discord_config.py
 test/test_discord_user_config.py
 test/test_discord_webhook.py
@@ -2104,6 +2129,7 @@ test/test_entity.py
 test/test_entity_type_enum.py
 test/test_error_response.py
 test/test_experience.py
+test/test_external_credential_mapping.py
 test/test_external_service_info.py
 test/test_features_api.py
 test/test_file_upload_url_request.py
@@ -2179,6 +2205,8 @@ test/test_mark_all_read_response.py
 test/test_masked_integration_credential.py
 test/test_masked_llm_credential.py
 test/test_mcp_server.py
+test/test_mcp_server_connection.py
+test/test_mcp_server_connection_scope_enum.py
 test/test_media_api.py
 test/test_media_resource.py
 test/test_media_type_enum.py
@@ -2256,6 +2284,8 @@ test/test_notification_v1_campaigns_unsubscribe_retrieve200_response.py
 test/test_notification_v1_platforms_templates_reset_create200_response.py
 test/test_notifications_api.py
 test/test_null_enum.py
+test/test_o_auth_provider.py
+test/test_o_auth_service.py
 test/test_o_auth_start_response.py
 test/test_observation.py
 test/test_onboarding_status_update.py
@@ -2268,6 +2298,7 @@ test/test_overtime_with_change_info.py
 test/test_page_content.py
 test/test_paginated_ai_generated_image_list.py
 test/test_paginated_artifact_list_list.py
+test/test_paginated_artifact_version_list_list.py
 test/test_paginated_assertions_response.py
 test/test_paginated_conversations_list.py
 test/test_paginated_course_access_request.py
@@ -2288,6 +2319,7 @@ test/test_paginated_heygen_marketing_video_list_list.py
 test/test_paginated_heygen_template_response_single_list.py
 test/test_paginated_human_support_ticket_list.py
 test/test_paginated_job_run_list.py
+test/test_paginated_mcp_server_connection_list.py
 test/test_paginated_mcp_server_list.py
 test/test_paginated_mentor_list.py
 test/test_paginated_moderation_log_list.py
@@ -2341,6 +2373,7 @@ test/test_patched_discord_user_config.py
 test/test_patched_human_support_ticket.py
 test/test_patched_llm_credential_request.py
 test/test_patched_mcp_server.py
+test/test_patched_mcp_server_connection.py
 test/test_patched_media_resource.py
 test/test_patched_mentor_category_group_create.py
 test/test_patched_mentor_create.py
@@ -2574,7 +2607,6 @@ test/test_scim_phone_number.py
 test/test_scim_user_create_request.py
 test/test_scim_user_list_response.py
 test/test_scim_user_response.py
-test/test_scope_enum.py
 test/test_search_api.py
 test/test_section.py
 test/test_section_with_children.py
@@ -2582,13 +2614,13 @@ test/test_seed_mentors_view.py
 test/test_send_notification.py
 test/test_send_response.py
 test/test_sentiment_summary.py
-test/test_service_enum.py
 test/test_session_browser_screenshot.py
 test/test_session_chart_point.py
 test/test_session_detail.py
 test/test_session_memory_attachment.py
 test/test_session_memory_storage.py
 test/test_sessions_chart.py
+test/test_set_current_version_request.py
 test/test_set_student_llm_access.py
 test/test_set_student_mentor_creation_permission.py
 test/test_shareable_mentor_link.py
@@ -2644,6 +2676,7 @@ test/test_tenant_launch_failed.py
 test/test_tenant_launch_request.py
 test/test_tenant_launch_response.py
 test/test_tenant_mentor_traces.py
+test/test_tenant_setting.py
 test/test_test_smtp_credentials.py
 test/test_test_smtp_response.py
 test/test_theme_enum.py

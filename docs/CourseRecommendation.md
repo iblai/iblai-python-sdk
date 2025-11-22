@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **platform_key** | **str** | Platform/tenant key this course belongs to (extracted from course_id or metadata) | [optional] 
 **description** | **str** | Course description (priority: description &gt; short_description &gt; overview with HTML stripped) | [optional] 
 **short_description** | **str** | Course short description from edx_data | [optional] 
+**edx_data** | **Dict[str, object]** | Full edx_data from CourseInfo model (includes all edX metadata) | [optional] 
 
 ## Example
 

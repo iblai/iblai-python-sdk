@@ -46,6 +46,7 @@ Method | HTTP request | Description
 [**ai_bot_v1_bots_webhooks_discord_create**](AiBotApi.md#ai_bot_v1_bots_webhooks_discord_create) | **POST** /api/ai-bot/v1/bots/webhooks/{org}/discord/{name}/ | 
 [**ai_bot_v1_bots_webhooks_slack_create**](AiBotApi.md#ai_bot_v1_bots_webhooks_slack_create) | **POST** /api/ai-bot/v1/bots/webhooks/{org}/slack/{name}/ | 
 [**ai_bot_v1_bots_webhooks_teams_create**](AiBotApi.md#ai_bot_v1_bots_webhooks_teams_create) | **POST** /api/ai-bot/v1/bots/webhooks/{org}/teams/{name}/ | 
+[**ai_bot_v1_bots_webhooks_teams_retrieve**](AiBotApi.md#ai_bot_v1_bots_webhooks_teams_retrieve) | **GET** /api/ai-bot/v1/bots/webhooks/{org}/teams/{name}/ | 
 [**ai_bot_v1_bots_webhooks_webex_create**](AiBotApi.md#ai_bot_v1_bots_webhooks_webex_create) | **POST** /api/ai-bot/v1/bots/webhooks/{org}/webex/{name}/ | 
 [**ai_bot_v1_bots_webhooks_whatsapp_create**](AiBotApi.md#ai_bot_v1_bots_webhooks_whatsapp_create) | **POST** /api/ai-bot/v1/bots/webhooks/{org}/whatsapp/{name}/ | 
 [**ai_bot_v1_bots_webhooks_whatsapp_retrieve**](AiBotApi.md#ai_bot_v1_bots_webhooks_whatsapp_retrieve) | **GET** /api/ai-bot/v1/bots/webhooks/{org}/whatsapp/{name}/ | 
@@ -3002,6 +3003,62 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ai_bot_v1_bots_webhooks_teams_retrieve**
+> TeamsWebhook ai_bot_v1_bots_webhooks_teams_retrieve(name, org)
+
+### Example
+
+
+```python
+import iblai
+from iblai.models.teams_webhook import TeamsWebhook
+from iblai.rest import ApiException
+from pprint import pprint
+
+# Create an instance of the API class
+api_instance = iblai.AiBotApi(api_client)
+name = 'name_example' # str | 
+org = 'org_example' # str | 
+
+try:
+    api_response = api_instance.ai_bot_v1_bots_webhooks_teams_retrieve(name, org)
+    print("The response of AiBotApi->ai_bot_v1_bots_webhooks_teams_retrieve:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiBotApi->ai_bot_v1_bots_webhooks_teams_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **str**|  | 
+ **org** | **str**|  | 
+
+### Return type
+
+[**TeamsWebhook**](TeamsWebhook.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 ### HTTP response details

@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **recently_accessed_at** | **str** |  | [readonly] 
 **platform_key** | **str** |  | [readonly] 
 **last_accessed_by** | **str** |  | [readonly] 
+**created_by** | **str** |  | [readonly] 
 
 ## Example
 

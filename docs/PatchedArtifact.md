@@ -18,6 +18,8 @@ Name | Type | Description | Notes
 **metadata** | **object** | Additional metadata for the artifact | [optional] 
 **username** | **str** | Username of the student who owns this artifact | [optional] [readonly] 
 **session_id** | **str** | UUID of the session that generated this artifact | [optional] [readonly] 
+**current_version_number** | **int** | Version number of the current version | [optional] [readonly] 
+**version_count** | **int** | Total number of versions for this artifact | [optional] [readonly] 
 
 ## Example
 

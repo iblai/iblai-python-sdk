@@ -841,7 +841,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v2_global_mentor_search**
-> V2GlobalMentorSearchResponse v2_global_mentor_search(platform_key, category=category, created_by=created_by, include_main_public_mentors=include_main_public_mentors, limit=limit, llm=llm, offset=offset, query=query, subjects=subjects, tenant=tenant, types=types, visibility=visibility)
+> V2GlobalMentorSearchResponse v2_global_mentor_search(category=category, created_by=created_by, include_main_public_mentors=include_main_public_mentors, limit=limit, llm=llm, offset=offset, platform_key=platform_key, query=query, subjects=subjects, tenant=tenant, types=types, visibility=visibility)
 
 Search and filter AI mentors across the platform
 
@@ -859,9 +859,14 @@ Search and filter AI mentors across the platform
         - Personalized results
         - Access to tenant-specific mentors
 
+        **Required Parameters (Authenticated Users):**
+        - `platform_key` OR `tenant`: Platform key for RBAC enforcement (required for authenticated requests)
+          - Use `platform_key` (preferred) or `tenant` (backward compatibility) - both serve the same purpose
+          - If both are provided, `platform_key` takes precedence
+
         **Available Filters:**
         - `query`: Search term to filter mentors by name or description
-        - `tenant`: Filter by tenant/organization platform key(s)
+        - `tenant`: Filter by tenant/organization platform key(s) - can also be used as alias for `platform_key` (backward compatibility)
         - `category`: Filter by mentor category (comma-separated)
         - `subjects`: Filter by mentor subject (comma-separated)
         - `types`: Filter by mentor type (comma-separated)
@@ -878,7 +883,8 @@ Search and filter AI mentors across the platform
         Notes:
         - Detail view is removed; use the ibl_ai_mentor app for mentor details
         - include_main_public_mentors=true shows only VIEWABLE_BY_ANYONE mentors from the main tenant across tenants
-        - For authenticated requests, platform_key is required when username is provided
+        - For authenticated requests, either `platform_key` or `tenant` is required when username is provided
+        - `tenant` parameter serves dual purpose: as a filter for multiple tenants, or as an alias for `platform_key` (backward compatibility)
         - Frontend uses `llm` parameter name (backend maps to `llm_provider` automatically)
         
 
@@ -905,22 +911,22 @@ client = get_platform_api_client(
 )
 # Create an instance of the API class
 api_instance = iblai.AiSearchApi(api_client)
-platform_key = 'platform_key_example' # str | Platform key for RBAC enforcement
 category = 'category_example' # str | Mentor category filter (optional)
 created_by = 'created_by_example' # str | Filter mentors created by specific user (for personalized search) (optional)
 include_main_public_mentors = False # bool | Include main tenant public mentors (VIEWABLE_BY_ANYONE) when true (optional) (default to False)
 limit = 56 # int | Number of results per page (optional)
 llm = 'llm_example' # str | LLM provider filter (optional)
 offset = 56 # int | Number of results to skip (optional)
+platform_key = 'platform_key_example' # str | Platform key for RBAC enforcement. Required for authenticated requests. Can also use 'tenant' parameter as an alias (backward compatibility). (optional)
 query = 'query_example' # str | Search query for mentors (optional)
 subjects = 'subjects_example' # str | Mentor subject filter (optional)
-tenant = 'tenant_example' # str | Tenant key(s) (CSV) (optional)
+tenant = 'tenant_example' # str | Tenant key(s) (CSV). Can be used as a filter for multiple tenants, or as an alias for 'platform_key' in authenticated requests (backward compatibility). (optional)
 types = 'types_example' # str | Mentor type filter (optional)
 visibility = 'visibility_example' # str | Mentor visibility filter (viewable_by_anyone, viewable_by_tenant_students, viewable_by_tenant_admins) (optional)
 
 try:
     # Search and filter AI mentors across the platform
-    api_response = api_instance.v2_global_mentor_search(platform_key, category=category, created_by=created_by, include_main_public_mentors=include_main_public_mentors, limit=limit, llm=llm, offset=offset, query=query, subjects=subjects, tenant=tenant, types=types, visibility=visibility)
+    api_response = api_instance.v2_global_mentor_search(category=category, created_by=created_by, include_main_public_mentors=include_main_public_mentors, limit=limit, llm=llm, offset=offset, platform_key=platform_key, query=query, subjects=subjects, tenant=tenant, types=types, visibility=visibility)
     print("The response of AiSearchApi->v2_global_mentor_search:\n")
     pprint(api_response)
 except Exception as e:
@@ -934,16 +940,16 @@ except Exception as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **platform_key** | **str**| Platform key for RBAC enforcement | 
  **category** | **str**| Mentor category filter | [optional] 
  **created_by** | **str**| Filter mentors created by specific user (for personalized search) | [optional] 
  **include_main_public_mentors** | **bool**| Include main tenant public mentors (VIEWABLE_BY_ANYONE) when true | [optional] [default to False]
  **limit** | **int**| Number of results per page | [optional] 
  **llm** | **str**| LLM provider filter | [optional] 
  **offset** | **int**| Number of results to skip | [optional] 
+ **platform_key** | **str**| Platform key for RBAC enforcement. Required for authenticated requests. Can also use &#39;tenant&#39; parameter as an alias (backward compatibility). | [optional] 
  **query** | **str**| Search query for mentors | [optional] 
  **subjects** | **str**| Mentor subject filter | [optional] 
- **tenant** | **str**| Tenant key(s) (CSV) | [optional] 
+ **tenant** | **str**| Tenant key(s) (CSV). Can be used as a filter for multiple tenants, or as an alias for &#39;platform_key&#39; in authenticated requests (backward compatibility). | [optional] 
  **types** | **str**| Mentor type filter | [optional] 
  **visibility** | **str**| Mentor visibility filter (viewable_by_anyone, viewable_by_tenant_students, viewable_by_tenant_admins) | [optional] 
 
@@ -971,7 +977,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v2_personalized_mentors**
-> V2PersonalizedMentorsResponse v2_personalized_mentors(platform_key, audience=audience, category=category, limit=limit, llm_providers=llm_providers, offset=offset, order_by=order_by, order_direction=order_direction, query=query, return_facet=return_facet, tags=tags, username=username, visibility=visibility)
+> V2PersonalizedMentorsResponse v2_personalized_mentors(audience=audience, category=category, limit=limit, llm_providers=llm_providers, offset=offset, order_by=order_by, order_direction=order_direction, platform_key=platform_key, query=query, return_facet=return_facet, tags=tags, tenant=tenant, username=username, visibility=visibility)
 
 Get mentors created by a specific user
 
@@ -982,7 +988,9 @@ Get mentors created by a specific user
 
         **Authentication Required:**
         - username: Required for personalized mentor access
-        - platform_key: Required for tenant-specific content
+        - platform_key OR tenant: Required for tenant-specific content (both serve the same purpose)
+          - Use `platform_key` (preferred) or `tenant` (backward compatibility)
+          - If both are provided, `platform_key` takes precedence
 
         **Features:**
         - User's own mentors only
@@ -1015,7 +1023,6 @@ client = get_platform_api_client(
 )
 # Create an instance of the API class
 api_instance = iblai.AiSearchApi(api_client)
-platform_key = 'platform_key_example' # str | Platform key for authentication
 audience = ['audience_example'] # List[str] | Filter by audience (optional)
 category = 'category_example' # str | Mentor category filter (optional)
 limit = 56 # int | Number of results per page (optional)
@@ -1023,15 +1030,17 @@ llm_providers = ['llm_providers_example'] # List[str] | Filter by LLM provider (
 offset = 56 # int | Number of results to skip (optional)
 order_by = 'order_by_example' # str | Field to sort by (optional)
 order_direction = 'order_direction_example' # str | Sort direction  * `asc` - asc * `desc` - desc (optional)
+platform_key = 'platform_key_example' # str | Platform key for authentication. Required for authenticated requests. Can also use 'tenant' parameter as an alias (backward compatibility). (optional)
 query = 'query_example' # str | Search query for personalized mentors (optional)
 return_facet = True # bool | Include facet data in response (optional)
 tags = ['tags_example'] # List[str] | Filter by tags (optional)
+tenant = 'tenant_example' # str | Tenant key (alias for 'platform_key' for backward compatibility). Can be used instead of 'platform_key' - both serve the same purpose. (optional)
 username = 'username_example' # str | Username for authentication (required for unauthenticated requests) (optional)
 visibility = ['visibility_example'] # List[str] | Filter by visibility (optional)
 
 try:
     # Get mentors created by a specific user
-    api_response = api_instance.v2_personalized_mentors(platform_key, audience=audience, category=category, limit=limit, llm_providers=llm_providers, offset=offset, order_by=order_by, order_direction=order_direction, query=query, return_facet=return_facet, tags=tags, username=username, visibility=visibility)
+    api_response = api_instance.v2_personalized_mentors(audience=audience, category=category, limit=limit, llm_providers=llm_providers, offset=offset, order_by=order_by, order_direction=order_direction, platform_key=platform_key, query=query, return_facet=return_facet, tags=tags, tenant=tenant, username=username, visibility=visibility)
     print("The response of AiSearchApi->v2_personalized_mentors:\n")
     pprint(api_response)
 except Exception as e:
@@ -1045,7 +1054,6 @@ except Exception as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **platform_key** | **str**| Platform key for authentication | 
  **audience** | [**List[str]**](str.md)| Filter by audience | [optional] 
  **category** | **str**| Mentor category filter | [optional] 
  **limit** | **int**| Number of results per page | [optional] 
@@ -1053,9 +1061,11 @@ Name | Type | Description  | Notes
  **offset** | **int**| Number of results to skip | [optional] 
  **order_by** | **str**| Field to sort by | [optional] 
  **order_direction** | **str**| Sort direction  * &#x60;asc&#x60; - asc * &#x60;desc&#x60; - desc | [optional] 
+ **platform_key** | **str**| Platform key for authentication. Required for authenticated requests. Can also use &#39;tenant&#39; parameter as an alias (backward compatibility). | [optional] 
  **query** | **str**| Search query for personalized mentors | [optional] 
  **return_facet** | **bool**| Include facet data in response | [optional] 
  **tags** | [**List[str]**](str.md)| Filter by tags | [optional] 
+ **tenant** | **str**| Tenant key (alias for &#39;platform_key&#39; for backward compatibility). Can be used instead of &#39;platform_key&#39; - both serve the same purpose. | [optional] 
  **username** | **str**| Username for authentication (required for unauthenticated requests) | [optional] 
  **visibility** | [**List[str]**](str.md)| Filter by visibility | [optional] 
 

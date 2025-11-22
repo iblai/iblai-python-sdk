@@ -32,11 +32,15 @@ Method | HTTP request | Description
 [**ai_mentor_orgs_users_ai_user_profile_memory_create**](AiMentorApi.md#ai_mentor_orgs_users_ai_user_profile_memory_create) | **POST** /api/ai-mentor/orgs/{org}/users/{user_id}/ai-user-profile-memory/ | 
 [**ai_mentor_orgs_users_ai_user_profile_memory_destroy**](AiMentorApi.md#ai_mentor_orgs_users_ai_user_profile_memory_destroy) | **DELETE** /api/ai-mentor/orgs/{org}/users/{user_id}/ai-user-profile-memory/{tag}/ | 
 [**ai_mentor_orgs_users_ai_user_profile_memory_list**](AiMentorApi.md#ai_mentor_orgs_users_ai_user_profile_memory_list) | **GET** /api/ai-mentor/orgs/{org}/users/{user_id}/ai-user-profile-memory/ | 
+[**ai_mentor_orgs_users_artifacts_create**](AiMentorApi.md#ai_mentor_orgs_users_artifacts_create) | **POST** /api/ai-mentor/orgs/{org}/users/{user_id}/artifacts/ | Retrieve an artifact
 [**ai_mentor_orgs_users_artifacts_destroy**](AiMentorApi.md#ai_mentor_orgs_users_artifacts_destroy) | **DELETE** /api/ai-mentor/orgs/{org}/users/{user_id}/artifacts/{id}/ | Delete an artifact
 [**ai_mentor_orgs_users_artifacts_list**](AiMentorApi.md#ai_mentor_orgs_users_artifacts_list) | **GET** /api/ai-mentor/orgs/{org}/users/{user_id}/artifacts/ | List artifacts
 [**ai_mentor_orgs_users_artifacts_partial_update**](AiMentorApi.md#ai_mentor_orgs_users_artifacts_partial_update) | **PATCH** /api/ai-mentor/orgs/{org}/users/{user_id}/artifacts/{id}/ | Partially update an artifact
-[**ai_mentor_orgs_users_artifacts_retrieve**](AiMentorApi.md#ai_mentor_orgs_users_artifacts_retrieve) | **GET** /api/ai-mentor/orgs/{org}/users/{user_id}/artifacts/{id}/ | Retrieve an artifact
+[**ai_mentor_orgs_users_artifacts_retrieve**](AiMentorApi.md#ai_mentor_orgs_users_artifacts_retrieve) | **GET** /api/ai-mentor/orgs/{org}/users/{user_id}/artifacts/{id}/ | 
 [**ai_mentor_orgs_users_artifacts_update**](AiMentorApi.md#ai_mentor_orgs_users_artifacts_update) | **PUT** /api/ai-mentor/orgs/{org}/users/{user_id}/artifacts/{id}/ | Update an artifact
+[**ai_mentor_orgs_users_artifacts_versions_list**](AiMentorApi.md#ai_mentor_orgs_users_artifacts_versions_list) | **GET** /api/ai-mentor/orgs/{org}/users/{user_id}/artifacts/{id}/versions/ | List artifact versions
+[**ai_mentor_orgs_users_artifacts_versions_retrieve**](AiMentorApi.md#ai_mentor_orgs_users_artifacts_versions_retrieve) | **GET** /api/ai-mentor/orgs/{org}/users/{user_id}/artifacts/{id}/versions/{version_id}/ | Get specific artifact version
+[**ai_mentor_orgs_users_artifacts_versions_set_current_create**](AiMentorApi.md#ai_mentor_orgs_users_artifacts_versions_set_current_create) | **POST** /api/ai-mentor/orgs/{org}/users/{user_id}/artifacts/{id}/versions/set-current/ | Set artifact version as current
 [**ai_mentor_orgs_users_assumed_knowledge_create**](AiMentorApi.md#ai_mentor_orgs_users_assumed_knowledge_create) | **POST** /api/ai-mentor/orgs/{org}/users/{user_id}/assumed-knowledge/ | 
 [**ai_mentor_orgs_users_assumed_knowledge_retrieve**](AiMentorApi.md#ai_mentor_orgs_users_assumed_knowledge_retrieve) | **GET** /api/ai-mentor/orgs/{org}/users/{user_id}/assumed-knowledge/ | 
 [**ai_mentor_orgs_users_audio_to_text_create**](AiMentorApi.md#ai_mentor_orgs_users_audio_to_text_create) | **POST** /api/ai-mentor/orgs/{org}/users/{user_id}/audio-to-text/ | 
@@ -148,6 +152,12 @@ Method | HTTP request | Description
 [**ai_mentor_orgs_users_filtered_memories_list**](AiMentorApi.md#ai_mentor_orgs_users_filtered_memories_list) | **GET** /api/ai-mentor/orgs/{org}/users/{user_id}/filtered-memories/ | 
 [**ai_mentor_orgs_users_free_usage_count_retrieve**](AiMentorApi.md#ai_mentor_orgs_users_free_usage_count_retrieve) | **GET** /api/ai-mentor/orgs/{org}/users/{user_id}/free-usage-count | 
 [**ai_mentor_orgs_users_list**](AiMentorApi.md#ai_mentor_orgs_users_list) | **GET** /api/ai-mentor/orgs/{org}/users/{user_id}/ | 
+[**ai_mentor_orgs_users_mcp_server_connections_create**](AiMentorApi.md#ai_mentor_orgs_users_mcp_server_connections_create) | **POST** /api/ai-mentor/orgs/{org}/users/{user_id}/mcp-server-connections/ | 
+[**ai_mentor_orgs_users_mcp_server_connections_destroy**](AiMentorApi.md#ai_mentor_orgs_users_mcp_server_connections_destroy) | **DELETE** /api/ai-mentor/orgs/{org}/users/{user_id}/mcp-server-connections/{id}/ | 
+[**ai_mentor_orgs_users_mcp_server_connections_list**](AiMentorApi.md#ai_mentor_orgs_users_mcp_server_connections_list) | **GET** /api/ai-mentor/orgs/{org}/users/{user_id}/mcp-server-connections/ | 
+[**ai_mentor_orgs_users_mcp_server_connections_partial_update**](AiMentorApi.md#ai_mentor_orgs_users_mcp_server_connections_partial_update) | **PATCH** /api/ai-mentor/orgs/{org}/users/{user_id}/mcp-server-connections/{id}/ | 
+[**ai_mentor_orgs_users_mcp_server_connections_retrieve**](AiMentorApi.md#ai_mentor_orgs_users_mcp_server_connections_retrieve) | **GET** /api/ai-mentor/orgs/{org}/users/{user_id}/mcp-server-connections/{id}/ | 
+[**ai_mentor_orgs_users_mcp_server_connections_update**](AiMentorApi.md#ai_mentor_orgs_users_mcp_server_connections_update) | **PUT** /api/ai-mentor/orgs/{org}/users/{user_id}/mcp-server-connections/{id}/ | 
 [**ai_mentor_orgs_users_mcp_servers_create**](AiMentorApi.md#ai_mentor_orgs_users_mcp_servers_create) | **POST** /api/ai-mentor/orgs/{org}/users/{user_id}/mcp-servers/ | 
 [**ai_mentor_orgs_users_mcp_servers_destroy**](AiMentorApi.md#ai_mentor_orgs_users_mcp_servers_destroy) | **DELETE** /api/ai-mentor/orgs/{org}/users/{user_id}/mcp-servers/{id}/ | 
 [**ai_mentor_orgs_users_mcp_servers_list**](AiMentorApi.md#ai_mentor_orgs_users_mcp_servers_list) | **GET** /api/ai-mentor/orgs/{org}/users/{user_id}/mcp-servers/ | 
@@ -2473,6 +2483,84 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **ai_mentor_orgs_users_artifacts_create**
+> Artifact ai_mentor_orgs_users_artifacts_create(org, user_id, artifact)
+
+Retrieve an artifact
+
+Get detailed information about a specific artifact including its full content.
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.artifact import Artifact
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+# Create an instance of the API class
+api_instance = iblai.AiMentorApi(api_client)
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+artifact = iblai.Artifact() # Artifact | 
+
+try:
+    # Retrieve an artifact
+    api_response = api_instance.ai_mentor_orgs_users_artifacts_create(org, user_id, artifact)
+    print("The response of AiMentorApi->ai_mentor_orgs_users_artifacts_create:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiMentorApi->ai_mentor_orgs_users_artifacts_create: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+ **artifact** | [**Artifact**](Artifact.md)|  | 
+
+### Return type
+
+[**Artifact**](Artifact.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**401** | Authentication required |  -  |
+**403** | Permission denied |  -  |
+**404** | Artifact not found |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **ai_mentor_orgs_users_artifacts_destroy**
 > ai_mentor_orgs_users_artifacts_destroy(id, org, user_id)
 
@@ -2730,9 +2818,7 @@ Name | Type | Description  | Notes
 # **ai_mentor_orgs_users_artifacts_retrieve**
 > Artifact ai_mentor_orgs_users_artifacts_retrieve(id, org, user_id)
 
-Retrieve an artifact
-
-Get detailed information about a specific artifact including its full content.
+Retrieve a specific artifact.
 
 ### Example
 
@@ -2762,7 +2848,6 @@ org = 'org_example' # str |
 user_id = 'user_id_example' # str | 
 
 try:
-    # Retrieve an artifact
     api_response = api_instance.ai_mentor_orgs_users_artifacts_retrieve(id, org, user_id)
     print("The response of AiMentorApi->ai_mentor_orgs_users_artifacts_retrieve:\n")
     pprint(api_response)
@@ -2799,9 +2884,6 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** |  |  -  |
-**401** | Authentication required |  -  |
-**403** | Permission denied |  -  |
-**404** | Artifact not found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -2883,6 +2965,262 @@ Name | Type | Description  | Notes
 **401** | Authentication required |  -  |
 **403** | Permission denied |  -  |
 **404** | Artifact not found |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ai_mentor_orgs_users_artifacts_versions_list**
+> PaginatedArtifactVersionListList ai_mentor_orgs_users_artifacts_versions_list(id, org, user_id, chat_message_id=chat_message_id, file_extension=file_extension, llm_name=llm_name, llm_provider=llm_provider, mentor_id=mentor_id, ordering=ordering, page=page, page_size=page_size, search=search, session_id=session_id, username=username)
+
+List artifact versions
+
+Retrieve all versions for a specific artifact.
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.paginated_artifact_version_list_list import PaginatedArtifactVersionListList
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+# Create an instance of the API class
+api_instance = iblai.AiMentorApi(api_client)
+id = 56 # int | A unique integer value identifying this artifact.
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+chat_message_id = 'chat_message_id_example' # str |  (optional)
+file_extension = 'file_extension_example' # str |  (optional)
+llm_name = 'llm_name_example' # str |  (optional)
+llm_provider = 'llm_provider_example' # str |  (optional)
+mentor_id = 'mentor_id_example' # str |  (optional)
+ordering = 'ordering_example' # str | Which field to use when ordering the results. (optional)
+page = 56 # int | A page number within the paginated result set. (optional)
+page_size = 56 # int | Number of results to return per page. (optional)
+search = 'search_example' # str | A search term. (optional)
+session_id = 'session_id_example' # str |  (optional)
+username = 'username_example' # str |  (optional)
+
+try:
+    # List artifact versions
+    api_response = api_instance.ai_mentor_orgs_users_artifacts_versions_list(id, org, user_id, chat_message_id=chat_message_id, file_extension=file_extension, llm_name=llm_name, llm_provider=llm_provider, mentor_id=mentor_id, ordering=ordering, page=page, page_size=page_size, search=search, session_id=session_id, username=username)
+    print("The response of AiMentorApi->ai_mentor_orgs_users_artifacts_versions_list:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiMentorApi->ai_mentor_orgs_users_artifacts_versions_list: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| A unique integer value identifying this artifact. | 
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+ **chat_message_id** | **str**|  | [optional] 
+ **file_extension** | **str**|  | [optional] 
+ **llm_name** | **str**|  | [optional] 
+ **llm_provider** | **str**|  | [optional] 
+ **mentor_id** | **str**|  | [optional] 
+ **ordering** | **str**| Which field to use when ordering the results. | [optional] 
+ **page** | **int**| A page number within the paginated result set. | [optional] 
+ **page_size** | **int**| Number of results to return per page. | [optional] 
+ **search** | **str**| A search term. | [optional] 
+ **session_id** | **str**|  | [optional] 
+ **username** | **str**|  | [optional] 
+
+### Return type
+
+[**PaginatedArtifactVersionListList**](PaginatedArtifactVersionListList.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**404** | Artifact not found |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ai_mentor_orgs_users_artifacts_versions_retrieve**
+> ArtifactVersion ai_mentor_orgs_users_artifacts_versions_retrieve(id, org, user_id, version_id)
+
+Get specific artifact version
+
+Retrieve a specific version of an artifact by version ID.
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.artifact_version import ArtifactVersion
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+# Create an instance of the API class
+api_instance = iblai.AiMentorApi(api_client)
+id = 56 # int | A unique integer value identifying this artifact.
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+version_id = 56 # int | ID of the version to retrieve
+
+try:
+    # Get specific artifact version
+    api_response = api_instance.ai_mentor_orgs_users_artifacts_versions_retrieve(id, org, user_id, version_id)
+    print("The response of AiMentorApi->ai_mentor_orgs_users_artifacts_versions_retrieve:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiMentorApi->ai_mentor_orgs_users_artifacts_versions_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| A unique integer value identifying this artifact. | 
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+ **version_id** | **int**| ID of the version to retrieve | 
+
+### Return type
+
+[**ArtifactVersion**](ArtifactVersion.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**404** | Version not found |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ai_mentor_orgs_users_artifacts_versions_set_current_create**
+> ArtifactVersion ai_mentor_orgs_users_artifacts_versions_set_current_create(id, org, user_id, set_current_version_request)
+
+Set artifact version as current
+
+Mark a specific version as the current/active version for an artifact.
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.artifact_version import ArtifactVersion
+from iblai.models.set_current_version_request import SetCurrentVersionRequest
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+# Create an instance of the API class
+api_instance = iblai.AiMentorApi(api_client)
+id = 56 # int | A unique integer value identifying this artifact.
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+set_current_version_request = iblai.SetCurrentVersionRequest() # SetCurrentVersionRequest | 
+
+try:
+    # Set artifact version as current
+    api_response = api_instance.ai_mentor_orgs_users_artifacts_versions_set_current_create(id, org, user_id, set_current_version_request)
+    print("The response of AiMentorApi->ai_mentor_orgs_users_artifacts_versions_set_current_create:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiMentorApi->ai_mentor_orgs_users_artifacts_versions_set_current_create: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| A unique integer value identifying this artifact. | 
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+ **set_current_version_request** | [**SetCurrentVersionRequest**](SetCurrentVersionRequest.md)|  | 
+
+### Return type
+
+[**ArtifactVersion**](ArtifactVersion.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**400** | Invalid request |  -  |
+**404** | Version not found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -12484,8 +12822,476 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **ai_mentor_orgs_users_mcp_server_connections_create**
+> MCPServerConnection ai_mentor_orgs_users_mcp_server_connections_create(org, user_id, mcp_server_connection)
+
+ViewSet for MCP server connections.
+
+Tenant administrators can create user- or platform-scoped connections that
+encapsulate the authentication configuration for invoking an MCP server.
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.mcp_server_connection import MCPServerConnection
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+# Create an instance of the API class
+api_instance = iblai.AiMentorApi(api_client)
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+mcp_server_connection = iblai.MCPServerConnection() # MCPServerConnection | 
+
+try:
+    api_response = api_instance.ai_mentor_orgs_users_mcp_server_connections_create(org, user_id, mcp_server_connection)
+    print("The response of AiMentorApi->ai_mentor_orgs_users_mcp_server_connections_create:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiMentorApi->ai_mentor_orgs_users_mcp_server_connections_create: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+ **mcp_server_connection** | [**MCPServerConnection**](MCPServerConnection.md)|  | 
+
+### Return type
+
+[**MCPServerConnection**](MCPServerConnection.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ai_mentor_orgs_users_mcp_server_connections_destroy**
+> ai_mentor_orgs_users_mcp_server_connections_destroy(id, org, user_id)
+
+ViewSet for MCP server connections.
+
+Tenant administrators can create user- or platform-scoped connections that
+encapsulate the authentication configuration for invoking an MCP server.
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+# Create an instance of the API class
+api_instance = iblai.AiMentorApi(api_client)
+id = 56 # int | A unique integer value identifying this mcp server connection.
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+
+try:
+    api_instance.ai_mentor_orgs_users_mcp_server_connections_destroy(id, org, user_id)
+except Exception as e:
+    print("Exception when calling AiMentorApi->ai_mentor_orgs_users_mcp_server_connections_destroy: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| A unique integer value identifying this mcp server connection. | 
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**204** | No response body |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ai_mentor_orgs_users_mcp_server_connections_list**
+> PaginatedMCPServerConnectionList ai_mentor_orgs_users_mcp_server_connections_list(org, user_id, auth_type=auth_type, is_active=is_active, mentor=mentor, page=page, page_size=page_size, scope=scope, search=search, server=server, user=user)
+
+ViewSet for MCP server connections.
+
+Tenant administrators can create user- or platform-scoped connections that
+encapsulate the authentication configuration for invoking an MCP server.
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.paginated_mcp_server_connection_list import PaginatedMCPServerConnectionList
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+# Create an instance of the API class
+api_instance = iblai.AiMentorApi(api_client)
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+auth_type = 'auth_type_example' # str | * `none` - None * `token` - Token * `oauth2` - Oauth2 (optional)
+is_active = True # bool |  (optional)
+mentor = 'mentor_example' # str |  (optional)
+page = 56 # int | A page number within the paginated result set. (optional)
+page_size = 56 # int | Number of results to return per page. (optional)
+scope = 'scope_example' # str | Whether this connection is scoped to a user or shared across a platform.  * `user` - User * `mentor` - Mentor * `platform` - Platform (optional)
+search = 'search_example' # str | A search term. (optional)
+server = 3.4 # float |  (optional)
+user = 'user_example' # str |  (optional)
+
+try:
+    api_response = api_instance.ai_mentor_orgs_users_mcp_server_connections_list(org, user_id, auth_type=auth_type, is_active=is_active, mentor=mentor, page=page, page_size=page_size, scope=scope, search=search, server=server, user=user)
+    print("The response of AiMentorApi->ai_mentor_orgs_users_mcp_server_connections_list:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiMentorApi->ai_mentor_orgs_users_mcp_server_connections_list: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+ **auth_type** | **str**| * &#x60;none&#x60; - None * &#x60;token&#x60; - Token * &#x60;oauth2&#x60; - Oauth2 | [optional] 
+ **is_active** | **bool**|  | [optional] 
+ **mentor** | **str**|  | [optional] 
+ **page** | **int**| A page number within the paginated result set. | [optional] 
+ **page_size** | **int**| Number of results to return per page. | [optional] 
+ **scope** | **str**| Whether this connection is scoped to a user or shared across a platform.  * &#x60;user&#x60; - User * &#x60;mentor&#x60; - Mentor * &#x60;platform&#x60; - Platform | [optional] 
+ **search** | **str**| A search term. | [optional] 
+ **server** | **float**|  | [optional] 
+ **user** | **str**|  | [optional] 
+
+### Return type
+
+[**PaginatedMCPServerConnectionList**](PaginatedMCPServerConnectionList.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ai_mentor_orgs_users_mcp_server_connections_partial_update**
+> MCPServerConnection ai_mentor_orgs_users_mcp_server_connections_partial_update(id, org, user_id, patched_mcp_server_connection=patched_mcp_server_connection)
+
+ViewSet for MCP server connections.
+
+Tenant administrators can create user- or platform-scoped connections that
+encapsulate the authentication configuration for invoking an MCP server.
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.mcp_server_connection import MCPServerConnection
+from iblai.models.patched_mcp_server_connection import PatchedMCPServerConnection
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+# Create an instance of the API class
+api_instance = iblai.AiMentorApi(api_client)
+id = 56 # int | A unique integer value identifying this mcp server connection.
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+patched_mcp_server_connection = iblai.PatchedMCPServerConnection() # PatchedMCPServerConnection |  (optional)
+
+try:
+    api_response = api_instance.ai_mentor_orgs_users_mcp_server_connections_partial_update(id, org, user_id, patched_mcp_server_connection=patched_mcp_server_connection)
+    print("The response of AiMentorApi->ai_mentor_orgs_users_mcp_server_connections_partial_update:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiMentorApi->ai_mentor_orgs_users_mcp_server_connections_partial_update: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| A unique integer value identifying this mcp server connection. | 
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+ **patched_mcp_server_connection** | [**PatchedMCPServerConnection**](PatchedMCPServerConnection.md)|  | [optional] 
+
+### Return type
+
+[**MCPServerConnection**](MCPServerConnection.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ai_mentor_orgs_users_mcp_server_connections_retrieve**
+> MCPServerConnection ai_mentor_orgs_users_mcp_server_connections_retrieve(id, org, user_id)
+
+ViewSet for MCP server connections.
+
+Tenant administrators can create user- or platform-scoped connections that
+encapsulate the authentication configuration for invoking an MCP server.
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.mcp_server_connection import MCPServerConnection
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+# Create an instance of the API class
+api_instance = iblai.AiMentorApi(api_client)
+id = 56 # int | A unique integer value identifying this mcp server connection.
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+
+try:
+    api_response = api_instance.ai_mentor_orgs_users_mcp_server_connections_retrieve(id, org, user_id)
+    print("The response of AiMentorApi->ai_mentor_orgs_users_mcp_server_connections_retrieve:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiMentorApi->ai_mentor_orgs_users_mcp_server_connections_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| A unique integer value identifying this mcp server connection. | 
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+
+### Return type
+
+[**MCPServerConnection**](MCPServerConnection.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ai_mentor_orgs_users_mcp_server_connections_update**
+> MCPServerConnection ai_mentor_orgs_users_mcp_server_connections_update(id, org, user_id, mcp_server_connection)
+
+ViewSet for MCP server connections.
+
+Tenant administrators can create user- or platform-scoped connections that
+encapsulate the authentication configuration for invoking an MCP server.
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.mcp_server_connection import MCPServerConnection
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+# Create an instance of the API class
+api_instance = iblai.AiMentorApi(api_client)
+id = 56 # int | A unique integer value identifying this mcp server connection.
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+mcp_server_connection = iblai.MCPServerConnection() # MCPServerConnection | 
+
+try:
+    api_response = api_instance.ai_mentor_orgs_users_mcp_server_connections_update(id, org, user_id, mcp_server_connection)
+    print("The response of AiMentorApi->ai_mentor_orgs_users_mcp_server_connections_update:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiMentorApi->ai_mentor_orgs_users_mcp_server_connections_update: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| A unique integer value identifying this mcp server connection. | 
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+ **mcp_server_connection** | [**MCPServerConnection**](MCPServerConnection.md)|  | 
+
+### Return type
+
+[**MCPServerConnection**](MCPServerConnection.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **ai_mentor_orgs_users_mcp_servers_create**
-> MCPServer ai_mentor_orgs_users_mcp_servers_create(org, user_id, id, platform, name, url, platform_key, created_at, updated_at, description=description, image=image, transport=transport, credentials=credentials, extra_headers=extra_headers, is_featured=is_featured, auth_type=auth_type, is_enabled=is_enabled)
+> MCPServer ai_mentor_orgs_users_mcp_servers_create(org, user_id, id, platform, name, url, platform_key, oauth_service_data, created_at, updated_at, description=description, image=image, transport=transport, credentials=credentials, extra_headers=extra_headers, is_featured=is_featured, auth_type=auth_type, oauth_service=oauth_service, is_enabled=is_enabled)
 
 ViewSet for MCP Servers.
 
@@ -12525,19 +13331,21 @@ platform = 56 # int |
 name = 'name_example' # str | 
 url = 'url_example' # str | The url of the MCP server.
 platform_key = 'platform_key_example' # str | 
+oauth_service_data = iblai.OAuthService() # OAuthService | 
 created_at = '2013-10-20T19:20:30+01:00' # datetime | 
 updated_at = '2013-10-20T19:20:30+01:00' # datetime | 
 description = 'description_example' # str | A description of the MCP server. (optional)
 image = 'image_example' # str |  (optional)
 transport = iblai.TransportEnum() # TransportEnum |  (optional)
-credentials = 'credentials_example' # str | Authorization credentials to uauthenticate to the mcp server. if provided takes priority over connected service and headers. Token here must be the full authorization value. For example: `<scheme> <credentials>` (optional)
+credentials = 'credentials_example' # str | Authorization credentials to authenticate to the MCP server. If provided, these take priority over any headers configured on the server. Token here must be the full authorization value. For example: `<scheme> <credentials>` (optional)
 extra_headers = None # object | Headers to send to the MCP server. Useful for authentication, (optional)
 is_featured = True # bool | Featured mcp servers will be accessible to all other tenants. (optional)
 auth_type = iblai.AuthTypeEnum() # AuthTypeEnum | The type of authentication to use for the MCP server.  * `none` - None * `token` - Token * `oauth2` - Oauth2 (optional)
+oauth_service = 56 # int |  (optional)
 is_enabled = True # bool | Whether the MCP server is enabled or not. (optional)
 
 try:
-    api_response = api_instance.ai_mentor_orgs_users_mcp_servers_create(org, user_id, id, platform, name, url, platform_key, created_at, updated_at, description=description, image=image, transport=transport, credentials=credentials, extra_headers=extra_headers, is_featured=is_featured, auth_type=auth_type, is_enabled=is_enabled)
+    api_response = api_instance.ai_mentor_orgs_users_mcp_servers_create(org, user_id, id, platform, name, url, platform_key, oauth_service_data, created_at, updated_at, description=description, image=image, transport=transport, credentials=credentials, extra_headers=extra_headers, is_featured=is_featured, auth_type=auth_type, oauth_service=oauth_service, is_enabled=is_enabled)
     print("The response of AiMentorApi->ai_mentor_orgs_users_mcp_servers_create:\n")
     pprint(api_response)
 except Exception as e:
@@ -12558,15 +13366,17 @@ Name | Type | Description  | Notes
  **name** | **str**|  | 
  **url** | **str**| The url of the MCP server. | 
  **platform_key** | **str**|  | 
+ **oauth_service_data** | [**OAuthService**](OAuthService.md)|  | 
  **created_at** | **datetime**|  | 
  **updated_at** | **datetime**|  | 
  **description** | **str**| A description of the MCP server. | [optional] 
  **image** | **str**|  | [optional] 
  **transport** | [**TransportEnum**](TransportEnum.md)|  | [optional] 
- **credentials** | **str**| Authorization credentials to uauthenticate to the mcp server. if provided takes priority over connected service and headers. Token here must be the full authorization value. For example: &#x60;&lt;scheme&gt; &lt;credentials&gt;&#x60; | [optional] 
+ **credentials** | **str**| Authorization credentials to authenticate to the MCP server. If provided, these take priority over any headers configured on the server. Token here must be the full authorization value. For example: &#x60;&lt;scheme&gt; &lt;credentials&gt;&#x60; | [optional] 
  **extra_headers** | [**object**](object.md)| Headers to send to the MCP server. Useful for authentication, | [optional] 
  **is_featured** | **bool**| Featured mcp servers will be accessible to all other tenants. | [optional] 
  **auth_type** | [**AuthTypeEnum**](AuthTypeEnum.md)| The type of authentication to use for the MCP server.  * &#x60;none&#x60; - None * &#x60;token&#x60; - Token * &#x60;oauth2&#x60; - Oauth2 | [optional] 
+ **oauth_service** | **int**|  | [optional] 
  **is_enabled** | **bool**| Whether the MCP server is enabled or not. | [optional] 
 
 ### Return type
@@ -12752,7 +13562,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **ai_mentor_orgs_users_mcp_servers_partial_update**
-> MCPServer ai_mentor_orgs_users_mcp_servers_partial_update(id, org, user_id, id2=id2, platform=platform, name=name, description=description, url=url, image=image, transport=transport, credentials=credentials, extra_headers=extra_headers, platform_key=platform_key, is_featured=is_featured, auth_type=auth_type, is_enabled=is_enabled, created_at=created_at, updated_at=updated_at)
+> MCPServer ai_mentor_orgs_users_mcp_servers_partial_update(id, org, user_id, id2=id2, platform=platform, name=name, description=description, url=url, image=image, transport=transport, credentials=credentials, extra_headers=extra_headers, platform_key=platform_key, is_featured=is_featured, auth_type=auth_type, oauth_service=oauth_service, oauth_service_data=oauth_service_data, is_enabled=is_enabled, created_at=created_at, updated_at=updated_at)
 
 ViewSet for MCP Servers.
 
@@ -12795,17 +13605,19 @@ description = 'description_example' # str | A description of the MCP server. (op
 url = 'url_example' # str | The url of the MCP server. (optional)
 image = 'image_example' # str |  (optional)
 transport = iblai.TransportEnum() # TransportEnum |  (optional)
-credentials = 'credentials_example' # str | Authorization credentials to uauthenticate to the mcp server. if provided takes priority over connected service and headers. Token here must be the full authorization value. For example: `<scheme> <credentials>` (optional)
+credentials = 'credentials_example' # str | Authorization credentials to authenticate to the MCP server. If provided, these take priority over any headers configured on the server. Token here must be the full authorization value. For example: `<scheme> <credentials>` (optional)
 extra_headers = None # object | Headers to send to the MCP server. Useful for authentication, (optional)
 platform_key = 'platform_key_example' # str |  (optional)
 is_featured = True # bool | Featured mcp servers will be accessible to all other tenants. (optional)
 auth_type = iblai.AuthTypeEnum() # AuthTypeEnum | The type of authentication to use for the MCP server.  * `none` - None * `token` - Token * `oauth2` - Oauth2 (optional)
+oauth_service = 56 # int |  (optional)
+oauth_service_data = iblai.OAuthService() # OAuthService |  (optional)
 is_enabled = True # bool | Whether the MCP server is enabled or not. (optional)
 created_at = '2013-10-20T19:20:30+01:00' # datetime |  (optional)
 updated_at = '2013-10-20T19:20:30+01:00' # datetime |  (optional)
 
 try:
-    api_response = api_instance.ai_mentor_orgs_users_mcp_servers_partial_update(id, org, user_id, id2=id2, platform=platform, name=name, description=description, url=url, image=image, transport=transport, credentials=credentials, extra_headers=extra_headers, platform_key=platform_key, is_featured=is_featured, auth_type=auth_type, is_enabled=is_enabled, created_at=created_at, updated_at=updated_at)
+    api_response = api_instance.ai_mentor_orgs_users_mcp_servers_partial_update(id, org, user_id, id2=id2, platform=platform, name=name, description=description, url=url, image=image, transport=transport, credentials=credentials, extra_headers=extra_headers, platform_key=platform_key, is_featured=is_featured, auth_type=auth_type, oauth_service=oauth_service, oauth_service_data=oauth_service_data, is_enabled=is_enabled, created_at=created_at, updated_at=updated_at)
     print("The response of AiMentorApi->ai_mentor_orgs_users_mcp_servers_partial_update:\n")
     pprint(api_response)
 except Exception as e:
@@ -12829,11 +13641,13 @@ Name | Type | Description  | Notes
  **url** | **str**| The url of the MCP server. | [optional] 
  **image** | **str**|  | [optional] 
  **transport** | [**TransportEnum**](TransportEnum.md)|  | [optional] 
- **credentials** | **str**| Authorization credentials to uauthenticate to the mcp server. if provided takes priority over connected service and headers. Token here must be the full authorization value. For example: &#x60;&lt;scheme&gt; &lt;credentials&gt;&#x60; | [optional] 
+ **credentials** | **str**| Authorization credentials to authenticate to the MCP server. If provided, these take priority over any headers configured on the server. Token here must be the full authorization value. For example: &#x60;&lt;scheme&gt; &lt;credentials&gt;&#x60; | [optional] 
  **extra_headers** | [**object**](object.md)| Headers to send to the MCP server. Useful for authentication, | [optional] 
  **platform_key** | **str**|  | [optional] 
  **is_featured** | **bool**| Featured mcp servers will be accessible to all other tenants. | [optional] 
  **auth_type** | [**AuthTypeEnum**](AuthTypeEnum.md)| The type of authentication to use for the MCP server.  * &#x60;none&#x60; - None * &#x60;token&#x60; - Token * &#x60;oauth2&#x60; - Oauth2 | [optional] 
+ **oauth_service** | **int**|  | [optional] 
+ **oauth_service_data** | [**OAuthService**](OAuthService.md)|  | [optional] 
  **is_enabled** | **bool**| Whether the MCP server is enabled or not. | [optional] 
  **created_at** | **datetime**|  | [optional] 
  **updated_at** | **datetime**|  | [optional] 
@@ -12937,7 +13751,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **ai_mentor_orgs_users_mcp_servers_update**
-> MCPServer ai_mentor_orgs_users_mcp_servers_update(id, org, user_id, id2, platform, name, url, platform_key, created_at, updated_at, description=description, image=image, transport=transport, credentials=credentials, extra_headers=extra_headers, is_featured=is_featured, auth_type=auth_type, is_enabled=is_enabled)
+> MCPServer ai_mentor_orgs_users_mcp_servers_update(id, org, user_id, id2, platform, name, url, platform_key, oauth_service_data, created_at, updated_at, description=description, image=image, transport=transport, credentials=credentials, extra_headers=extra_headers, is_featured=is_featured, auth_type=auth_type, oauth_service=oauth_service, is_enabled=is_enabled)
 
 ViewSet for MCP Servers.
 
@@ -12978,19 +13792,21 @@ platform = 56 # int |
 name = 'name_example' # str | 
 url = 'url_example' # str | The url of the MCP server.
 platform_key = 'platform_key_example' # str | 
+oauth_service_data = iblai.OAuthService() # OAuthService | 
 created_at = '2013-10-20T19:20:30+01:00' # datetime | 
 updated_at = '2013-10-20T19:20:30+01:00' # datetime | 
 description = 'description_example' # str | A description of the MCP server. (optional)
 image = 'image_example' # str |  (optional)
 transport = iblai.TransportEnum() # TransportEnum |  (optional)
-credentials = 'credentials_example' # str | Authorization credentials to uauthenticate to the mcp server. if provided takes priority over connected service and headers. Token here must be the full authorization value. For example: `<scheme> <credentials>` (optional)
+credentials = 'credentials_example' # str | Authorization credentials to authenticate to the MCP server. If provided, these take priority over any headers configured on the server. Token here must be the full authorization value. For example: `<scheme> <credentials>` (optional)
 extra_headers = None # object | Headers to send to the MCP server. Useful for authentication, (optional)
 is_featured = True # bool | Featured mcp servers will be accessible to all other tenants. (optional)
 auth_type = iblai.AuthTypeEnum() # AuthTypeEnum | The type of authentication to use for the MCP server.  * `none` - None * `token` - Token * `oauth2` - Oauth2 (optional)
+oauth_service = 56 # int |  (optional)
 is_enabled = True # bool | Whether the MCP server is enabled or not. (optional)
 
 try:
-    api_response = api_instance.ai_mentor_orgs_users_mcp_servers_update(id, org, user_id, id2, platform, name, url, platform_key, created_at, updated_at, description=description, image=image, transport=transport, credentials=credentials, extra_headers=extra_headers, is_featured=is_featured, auth_type=auth_type, is_enabled=is_enabled)
+    api_response = api_instance.ai_mentor_orgs_users_mcp_servers_update(id, org, user_id, id2, platform, name, url, platform_key, oauth_service_data, created_at, updated_at, description=description, image=image, transport=transport, credentials=credentials, extra_headers=extra_headers, is_featured=is_featured, auth_type=auth_type, oauth_service=oauth_service, is_enabled=is_enabled)
     print("The response of AiMentorApi->ai_mentor_orgs_users_mcp_servers_update:\n")
     pprint(api_response)
 except Exception as e:
@@ -13012,15 +13828,17 @@ Name | Type | Description  | Notes
  **name** | **str**|  | 
  **url** | **str**| The url of the MCP server. | 
  **platform_key** | **str**|  | 
+ **oauth_service_data** | [**OAuthService**](OAuthService.md)|  | 
  **created_at** | **datetime**|  | 
  **updated_at** | **datetime**|  | 
  **description** | **str**| A description of the MCP server. | [optional] 
  **image** | **str**|  | [optional] 
  **transport** | [**TransportEnum**](TransportEnum.md)|  | [optional] 
- **credentials** | **str**| Authorization credentials to uauthenticate to the mcp server. if provided takes priority over connected service and headers. Token here must be the full authorization value. For example: &#x60;&lt;scheme&gt; &lt;credentials&gt;&#x60; | [optional] 
+ **credentials** | **str**| Authorization credentials to authenticate to the MCP server. If provided, these take priority over any headers configured on the server. Token here must be the full authorization value. For example: &#x60;&lt;scheme&gt; &lt;credentials&gt;&#x60; | [optional] 
  **extra_headers** | [**object**](object.md)| Headers to send to the MCP server. Useful for authentication, | [optional] 
  **is_featured** | **bool**| Featured mcp servers will be accessible to all other tenants. | [optional] 
  **auth_type** | [**AuthTypeEnum**](AuthTypeEnum.md)| The type of authentication to use for the MCP server.  * &#x60;none&#x60; - None * &#x60;token&#x60; - Token * &#x60;oauth2&#x60; - Oauth2 | [optional] 
+ **oauth_service** | **int**|  | [optional] 
  **is_enabled** | **bool**| Whether the MCP server is enabled or not. | [optional] 
 
 ### Return type
@@ -14750,7 +15568,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **ai_mentor_orgs_users_mentor_with_settings_create**
-> Mentor ai_mentor_orgs_users_mentor_with_settings_create(org, user_id, template_name, new_mentor_name, display_name=display_name, description=description, profile_image=profile_image, initial_message=initial_message, suggested_message=suggested_message, theme=theme, user_message_color=user_message_color, mentor_bubble_color=mentor_bubble_color, align_mentor_bubble=align_mentor_bubble, system_prompt=system_prompt, llm_provider=llm_provider, llm_name=llm_name, mentor_visibility=mentor_visibility, enable_image_generation=enable_image_generation, enable_web_browsing=enable_web_browsing, enable_code_interpreter=enable_code_interpreter, metadata=metadata, custom_css=custom_css, uploaded_profile_image=uploaded_profile_image, proactive_response=proactive_response, greeting_method=greeting_method, forkable=forkable, forkable_with_training_data=forkable_with_training_data, categories=categories, types=types, subjects=subjects, tool_slugs=tool_slugs, llm_temperature=llm_temperature, seo_tags=seo_tags, marketing_conversations=marketing_conversations, proactive_prompt=proactive_prompt, disclaimer=disclaimer, enable_disclaimer=enable_disclaimer, embed_is_context_aware=embed_is_context_aware, embed_open_by_default=embed_open_by_default, embed_show_attachment=embed_show_attachment, embed_show_voice_call=embed_show_voice_call, embed_show_voice_record=embed_show_voice_record, placeholder_prompt=placeholder_prompt, moderation_system_prompt=moderation_system_prompt, post_processing_prompt=post_processing_prompt, moderation_response=moderation_response, enable_moderation=enable_moderation, enable_multi_query_rag=enable_multi_query_rag, enable_post_processing_system=enable_post_processing_system, enable_openai_assistant=enable_openai_assistant, enable_total_grounding=enable_total_grounding, google_voice=google_voice, openai_voice=openai_voice, enable_suggested_prompts=enable_suggested_prompts, enable_guided_prompts=enable_guided_prompts, mcp_servers=mcp_servers, guided_prompt_instructions=guided_prompt_instructions, is_featured=is_featured)
+> Mentor ai_mentor_orgs_users_mentor_with_settings_create(org, user_id, template_name, new_mentor_name, display_name=display_name, description=description, profile_image=profile_image, initial_message=initial_message, suggested_message=suggested_message, theme=theme, user_message_color=user_message_color, mentor_bubble_color=mentor_bubble_color, align_mentor_bubble=align_mentor_bubble, system_prompt=system_prompt, llm_provider=llm_provider, llm_name=llm_name, mentor_visibility=mentor_visibility, enable_image_generation=enable_image_generation, enable_web_browsing=enable_web_browsing, enable_code_interpreter=enable_code_interpreter, metadata=metadata, custom_css=custom_css, uploaded_profile_image=uploaded_profile_image, proactive_response=proactive_response, greeting_method=greeting_method, forkable=forkable, forkable_with_training_data=forkable_with_training_data, categories=categories, types=types, subjects=subjects, tool_slugs=tool_slugs, llm_temperature=llm_temperature, seo_tags=seo_tags, marketing_conversations=marketing_conversations, proactive_prompt=proactive_prompt, disclaimer=disclaimer, enable_disclaimer=enable_disclaimer, show_attachment=show_attachment, show_voice_call=show_voice_call, show_voice_record=show_voice_record, show_rag_images=show_rag_images, embed_is_context_aware=embed_is_context_aware, embed_open_by_default=embed_open_by_default, embed_show_attachment=embed_show_attachment, embed_show_voice_call=embed_show_voice_call, embed_show_voice_record=embed_show_voice_record, placeholder_prompt=placeholder_prompt, moderation_system_prompt=moderation_system_prompt, post_processing_prompt=post_processing_prompt, moderation_response=moderation_response, enable_moderation=enable_moderation, enable_multi_query_rag=enable_multi_query_rag, enable_post_processing_system=enable_post_processing_system, enable_openai_assistant=enable_openai_assistant, enable_total_grounding=enable_total_grounding, google_voice=google_voice, openai_voice=openai_voice, enable_suggested_prompts=enable_suggested_prompts, enable_guided_prompts=enable_guided_prompts, mcp_servers=mcp_servers, guided_prompt_instructions=guided_prompt_instructions, is_featured=is_featured)
 
 View to create a mentor from a template with settings.
 
@@ -14817,6 +15635,10 @@ marketing_conversations = None # object |  (optional)
 proactive_prompt = 'proactive_prompt_example' # str |  (optional)
 disclaimer = 'disclaimer_example' # str |  (optional)
 enable_disclaimer = True # bool |  (optional)
+show_attachment = True # bool |  (optional)
+show_voice_call = True # bool |  (optional)
+show_voice_record = True # bool |  (optional)
+show_rag_images = True # bool |  (optional)
 embed_is_context_aware = True # bool |  (optional)
 embed_open_by_default = True # bool |  (optional)
 embed_show_attachment = True # bool |  (optional)
@@ -14840,7 +15662,7 @@ guided_prompt_instructions = 'guided_prompt_instructions_example' # str |  (opti
 is_featured = False # bool |  (optional) (default to False)
 
 try:
-    api_response = api_instance.ai_mentor_orgs_users_mentor_with_settings_create(org, user_id, template_name, new_mentor_name, display_name=display_name, description=description, profile_image=profile_image, initial_message=initial_message, suggested_message=suggested_message, theme=theme, user_message_color=user_message_color, mentor_bubble_color=mentor_bubble_color, align_mentor_bubble=align_mentor_bubble, system_prompt=system_prompt, llm_provider=llm_provider, llm_name=llm_name, mentor_visibility=mentor_visibility, enable_image_generation=enable_image_generation, enable_web_browsing=enable_web_browsing, enable_code_interpreter=enable_code_interpreter, metadata=metadata, custom_css=custom_css, uploaded_profile_image=uploaded_profile_image, proactive_response=proactive_response, greeting_method=greeting_method, forkable=forkable, forkable_with_training_data=forkable_with_training_data, categories=categories, types=types, subjects=subjects, tool_slugs=tool_slugs, llm_temperature=llm_temperature, seo_tags=seo_tags, marketing_conversations=marketing_conversations, proactive_prompt=proactive_prompt, disclaimer=disclaimer, enable_disclaimer=enable_disclaimer, embed_is_context_aware=embed_is_context_aware, embed_open_by_default=embed_open_by_default, embed_show_attachment=embed_show_attachment, embed_show_voice_call=embed_show_voice_call, embed_show_voice_record=embed_show_voice_record, placeholder_prompt=placeholder_prompt, moderation_system_prompt=moderation_system_prompt, post_processing_prompt=post_processing_prompt, moderation_response=moderation_response, enable_moderation=enable_moderation, enable_multi_query_rag=enable_multi_query_rag, enable_post_processing_system=enable_post_processing_system, enable_openai_assistant=enable_openai_assistant, enable_total_grounding=enable_total_grounding, google_voice=google_voice, openai_voice=openai_voice, enable_suggested_prompts=enable_suggested_prompts, enable_guided_prompts=enable_guided_prompts, mcp_servers=mcp_servers, guided_prompt_instructions=guided_prompt_instructions, is_featured=is_featured)
+    api_response = api_instance.ai_mentor_orgs_users_mentor_with_settings_create(org, user_id, template_name, new_mentor_name, display_name=display_name, description=description, profile_image=profile_image, initial_message=initial_message, suggested_message=suggested_message, theme=theme, user_message_color=user_message_color, mentor_bubble_color=mentor_bubble_color, align_mentor_bubble=align_mentor_bubble, system_prompt=system_prompt, llm_provider=llm_provider, llm_name=llm_name, mentor_visibility=mentor_visibility, enable_image_generation=enable_image_generation, enable_web_browsing=enable_web_browsing, enable_code_interpreter=enable_code_interpreter, metadata=metadata, custom_css=custom_css, uploaded_profile_image=uploaded_profile_image, proactive_response=proactive_response, greeting_method=greeting_method, forkable=forkable, forkable_with_training_data=forkable_with_training_data, categories=categories, types=types, subjects=subjects, tool_slugs=tool_slugs, llm_temperature=llm_temperature, seo_tags=seo_tags, marketing_conversations=marketing_conversations, proactive_prompt=proactive_prompt, disclaimer=disclaimer, enable_disclaimer=enable_disclaimer, show_attachment=show_attachment, show_voice_call=show_voice_call, show_voice_record=show_voice_record, show_rag_images=show_rag_images, embed_is_context_aware=embed_is_context_aware, embed_open_by_default=embed_open_by_default, embed_show_attachment=embed_show_attachment, embed_show_voice_call=embed_show_voice_call, embed_show_voice_record=embed_show_voice_record, placeholder_prompt=placeholder_prompt, moderation_system_prompt=moderation_system_prompt, post_processing_prompt=post_processing_prompt, moderation_response=moderation_response, enable_moderation=enable_moderation, enable_multi_query_rag=enable_multi_query_rag, enable_post_processing_system=enable_post_processing_system, enable_openai_assistant=enable_openai_assistant, enable_total_grounding=enable_total_grounding, google_voice=google_voice, openai_voice=openai_voice, enable_suggested_prompts=enable_suggested_prompts, enable_guided_prompts=enable_guided_prompts, mcp_servers=mcp_servers, guided_prompt_instructions=guided_prompt_instructions, is_featured=is_featured)
     print("The response of AiMentorApi->ai_mentor_orgs_users_mentor_with_settings_create:\n")
     pprint(api_response)
 except Exception as e:
@@ -14891,6 +15713,10 @@ Name | Type | Description  | Notes
  **proactive_prompt** | **str**|  | [optional] 
  **disclaimer** | **str**|  | [optional] 
  **enable_disclaimer** | **bool**|  | [optional] 
+ **show_attachment** | **bool**|  | [optional] 
+ **show_voice_call** | **bool**|  | [optional] 
+ **show_voice_record** | **bool**|  | [optional] 
+ **show_rag_images** | **bool**|  | [optional] 
  **embed_is_context_aware** | **bool**|  | [optional] 
  **embed_open_by_default** | **bool**|  | [optional] 
  **embed_show_attachment** | **bool**|  | [optional] 
@@ -17066,7 +17892,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **ai_mentor_orgs_users_mentors_settings_update**
-> MentorSettings ai_mentor_orgs_users_mentors_settings_update(mentor, org, user_id, department_id=department_id, mentor_name=mentor_name, template_name=template_name, display_name=display_name, profile_image=profile_image, initial_message=initial_message, suggested_message=suggested_message, theme=theme, user_message_color=user_message_color, mentor_bubble_color=mentor_bubble_color, align_mentor_bubble=align_mentor_bubble, system_prompt=system_prompt, llm_provider=llm_provider, llm_name=llm_name, featured=featured, disable_chathistory=disable_chathistory, metadata=metadata, custom_css=custom_css, department_id2=department_id2, mentor_visibility=mentor_visibility, enable_image_generation=enable_image_generation, enable_web_browsing=enable_web_browsing, enable_code_interpreter=enable_code_interpreter, allow_anonymous=allow_anonymous, forkable=forkable, forkable_with_training_data=forkable_with_training_data, mentor_description=mentor_description, uploaded_profile_image=uploaded_profile_image, proactive_response=proactive_response, greeting_method=greeting_method, can_use_tools=can_use_tools, tool_slugs=tool_slugs, llm_temperature=llm_temperature, proactive_prompt=proactive_prompt, disclaimer=disclaimer, placeholder_prompt=placeholder_prompt, moderation_system_prompt=moderation_system_prompt, post_processing_prompt=post_processing_prompt, moderation_response=moderation_response, enable_moderation=enable_moderation, enable_multi_query_rag=enable_multi_query_rag, enable_post_processing_system=enable_post_processing_system, enable_openai_assistant=enable_openai_assistant, enable_total_grounding=enable_total_grounding, enable_suggested_prompts=enable_suggested_prompts, enable_guided_prompts=enable_guided_prompts, mcp_servers=mcp_servers, embed_is_context_aware=embed_is_context_aware, embed_open_by_default=embed_open_by_default, embed_show_attachment=embed_show_attachment, embed_show_voice_call=embed_show_voice_call, embed_show_voice_record=embed_show_voice_record, google_voice=google_voice, openai_voice=openai_voice, guided_prompt_instructions=guided_prompt_instructions, safety_system_prompt=safety_system_prompt, safety_response=safety_response, enable_safety_system=enable_safety_system, enable_spaced_repetition=enable_spaced_repetition, enable_instruction_mode=enable_instruction_mode, enable_socratic_mode=enable_socratic_mode, is_guided_mentor=is_guided_mentor, is_featured=is_featured, enable_email_chat=enable_email_chat, categories=categories, types=types, subjects=subjects)
+> MentorSettings ai_mentor_orgs_users_mentors_settings_update(mentor, org, user_id, department_id=department_id, mentor_name=mentor_name, template_name=template_name, display_name=display_name, profile_image=profile_image, initial_message=initial_message, suggested_message=suggested_message, theme=theme, user_message_color=user_message_color, mentor_bubble_color=mentor_bubble_color, align_mentor_bubble=align_mentor_bubble, system_prompt=system_prompt, llm_provider=llm_provider, llm_name=llm_name, featured=featured, disable_chathistory=disable_chathistory, metadata=metadata, custom_css=custom_css, department_id2=department_id2, mentor_visibility=mentor_visibility, enable_image_generation=enable_image_generation, enable_web_browsing=enable_web_browsing, enable_code_interpreter=enable_code_interpreter, allow_anonymous=allow_anonymous, forkable=forkable, forkable_with_training_data=forkable_with_training_data, mentor_description=mentor_description, uploaded_profile_image=uploaded_profile_image, proactive_response=proactive_response, greeting_method=greeting_method, can_use_tools=can_use_tools, tool_slugs=tool_slugs, llm_temperature=llm_temperature, proactive_prompt=proactive_prompt, disclaimer=disclaimer, placeholder_prompt=placeholder_prompt, moderation_system_prompt=moderation_system_prompt, post_processing_prompt=post_processing_prompt, moderation_response=moderation_response, enable_moderation=enable_moderation, enable_multi_query_rag=enable_multi_query_rag, enable_post_processing_system=enable_post_processing_system, enable_openai_assistant=enable_openai_assistant, enable_total_grounding=enable_total_grounding, enable_suggested_prompts=enable_suggested_prompts, enable_guided_prompts=enable_guided_prompts, mcp_servers=mcp_servers, show_attachment=show_attachment, show_voice_call=show_voice_call, show_voice_record=show_voice_record, show_rag_images=show_rag_images, embed_is_context_aware=embed_is_context_aware, embed_open_by_default=embed_open_by_default, embed_show_attachment=embed_show_attachment, embed_show_voice_call=embed_show_voice_call, embed_show_voice_record=embed_show_voice_record, google_voice=google_voice, openai_voice=openai_voice, guided_prompt_instructions=guided_prompt_instructions, safety_system_prompt=safety_system_prompt, safety_response=safety_response, enable_safety_system=enable_safety_system, enable_spaced_repetition=enable_spaced_repetition, enable_instruction_mode=enable_instruction_mode, enable_socratic_mode=enable_socratic_mode, is_guided_mentor=is_guided_mentor, is_featured=is_featured, enable_email_chat=enable_email_chat, categories=categories, types=types, subjects=subjects)
 
 Update Mentor Settings
 
@@ -17146,6 +17972,10 @@ enable_total_grounding = True # bool |  (optional)
 enable_suggested_prompts = True # bool |  (optional)
 enable_guided_prompts = True # bool |  (optional)
 mcp_servers = [56] # List[int] |  (optional)
+show_attachment = True # bool |  (optional)
+show_voice_call = True # bool |  (optional)
+show_voice_record = True # bool |  (optional)
+show_rag_images = True # bool |  (optional)
 embed_is_context_aware = True # bool |  (optional)
 embed_open_by_default = True # bool |  (optional)
 embed_show_attachment = True # bool |  (optional)
@@ -17169,7 +17999,7 @@ subjects = [56] # List[int] |  (optional)
 
 try:
     # Update Mentor Settings
-    api_response = api_instance.ai_mentor_orgs_users_mentors_settings_update(mentor, org, user_id, department_id=department_id, mentor_name=mentor_name, template_name=template_name, display_name=display_name, profile_image=profile_image, initial_message=initial_message, suggested_message=suggested_message, theme=theme, user_message_color=user_message_color, mentor_bubble_color=mentor_bubble_color, align_mentor_bubble=align_mentor_bubble, system_prompt=system_prompt, llm_provider=llm_provider, llm_name=llm_name, featured=featured, disable_chathistory=disable_chathistory, metadata=metadata, custom_css=custom_css, department_id2=department_id2, mentor_visibility=mentor_visibility, enable_image_generation=enable_image_generation, enable_web_browsing=enable_web_browsing, enable_code_interpreter=enable_code_interpreter, allow_anonymous=allow_anonymous, forkable=forkable, forkable_with_training_data=forkable_with_training_data, mentor_description=mentor_description, uploaded_profile_image=uploaded_profile_image, proactive_response=proactive_response, greeting_method=greeting_method, can_use_tools=can_use_tools, tool_slugs=tool_slugs, llm_temperature=llm_temperature, proactive_prompt=proactive_prompt, disclaimer=disclaimer, placeholder_prompt=placeholder_prompt, moderation_system_prompt=moderation_system_prompt, post_processing_prompt=post_processing_prompt, moderation_response=moderation_response, enable_moderation=enable_moderation, enable_multi_query_rag=enable_multi_query_rag, enable_post_processing_system=enable_post_processing_system, enable_openai_assistant=enable_openai_assistant, enable_total_grounding=enable_total_grounding, enable_suggested_prompts=enable_suggested_prompts, enable_guided_prompts=enable_guided_prompts, mcp_servers=mcp_servers, embed_is_context_aware=embed_is_context_aware, embed_open_by_default=embed_open_by_default, embed_show_attachment=embed_show_attachment, embed_show_voice_call=embed_show_voice_call, embed_show_voice_record=embed_show_voice_record, google_voice=google_voice, openai_voice=openai_voice, guided_prompt_instructions=guided_prompt_instructions, safety_system_prompt=safety_system_prompt, safety_response=safety_response, enable_safety_system=enable_safety_system, enable_spaced_repetition=enable_spaced_repetition, enable_instruction_mode=enable_instruction_mode, enable_socratic_mode=enable_socratic_mode, is_guided_mentor=is_guided_mentor, is_featured=is_featured, enable_email_chat=enable_email_chat, categories=categories, types=types, subjects=subjects)
+    api_response = api_instance.ai_mentor_orgs_users_mentors_settings_update(mentor, org, user_id, department_id=department_id, mentor_name=mentor_name, template_name=template_name, display_name=display_name, profile_image=profile_image, initial_message=initial_message, suggested_message=suggested_message, theme=theme, user_message_color=user_message_color, mentor_bubble_color=mentor_bubble_color, align_mentor_bubble=align_mentor_bubble, system_prompt=system_prompt, llm_provider=llm_provider, llm_name=llm_name, featured=featured, disable_chathistory=disable_chathistory, metadata=metadata, custom_css=custom_css, department_id2=department_id2, mentor_visibility=mentor_visibility, enable_image_generation=enable_image_generation, enable_web_browsing=enable_web_browsing, enable_code_interpreter=enable_code_interpreter, allow_anonymous=allow_anonymous, forkable=forkable, forkable_with_training_data=forkable_with_training_data, mentor_description=mentor_description, uploaded_profile_image=uploaded_profile_image, proactive_response=proactive_response, greeting_method=greeting_method, can_use_tools=can_use_tools, tool_slugs=tool_slugs, llm_temperature=llm_temperature, proactive_prompt=proactive_prompt, disclaimer=disclaimer, placeholder_prompt=placeholder_prompt, moderation_system_prompt=moderation_system_prompt, post_processing_prompt=post_processing_prompt, moderation_response=moderation_response, enable_moderation=enable_moderation, enable_multi_query_rag=enable_multi_query_rag, enable_post_processing_system=enable_post_processing_system, enable_openai_assistant=enable_openai_assistant, enable_total_grounding=enable_total_grounding, enable_suggested_prompts=enable_suggested_prompts, enable_guided_prompts=enable_guided_prompts, mcp_servers=mcp_servers, show_attachment=show_attachment, show_voice_call=show_voice_call, show_voice_record=show_voice_record, show_rag_images=show_rag_images, embed_is_context_aware=embed_is_context_aware, embed_open_by_default=embed_open_by_default, embed_show_attachment=embed_show_attachment, embed_show_voice_call=embed_show_voice_call, embed_show_voice_record=embed_show_voice_record, google_voice=google_voice, openai_voice=openai_voice, guided_prompt_instructions=guided_prompt_instructions, safety_system_prompt=safety_system_prompt, safety_response=safety_response, enable_safety_system=enable_safety_system, enable_spaced_repetition=enable_spaced_repetition, enable_instruction_mode=enable_instruction_mode, enable_socratic_mode=enable_socratic_mode, is_guided_mentor=is_guided_mentor, is_featured=is_featured, enable_email_chat=enable_email_chat, categories=categories, types=types, subjects=subjects)
     print("The response of AiMentorApi->ai_mentor_orgs_users_mentors_settings_update:\n")
     pprint(api_response)
 except Exception as e:
@@ -17233,6 +18063,10 @@ Name | Type | Description  | Notes
  **enable_suggested_prompts** | **bool**|  | [optional] 
  **enable_guided_prompts** | **bool**|  | [optional] 
  **mcp_servers** | [**List[int]**](int.md)|  | [optional] 
+ **show_attachment** | **bool**|  | [optional] 
+ **show_voice_call** | **bool**|  | [optional] 
+ **show_voice_record** | **bool**|  | [optional] 
+ **show_rag_images** | **bool**|  | [optional] 
  **embed_is_context_aware** | **bool**|  | [optional] 
  **embed_open_by_default** | **bool**|  | [optional] 
  **embed_show_attachment** | **bool**|  | [optional] 

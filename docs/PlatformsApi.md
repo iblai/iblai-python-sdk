@@ -1122,7 +1122,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **platforms_items_subscribers_list**
-> PaginatedItemSubscriptionList platforms_items_subscribers_list(item_id, item_type, platform_key, page=page, page_size=page_size, status=status)
+> PaginatedItemSubscriptionList platforms_items_subscribers_list(item_id, item_type, platform_key, page=page, page_size=page_size, search=search, status=status)
 
 List item subscribers
 
@@ -1156,11 +1156,12 @@ item_type = 'item_type_example' # str |
 platform_key = 'platform_key_example' # str | 
 page = 56 # int | A page number within the paginated result set. (optional)
 page_size = 56 # int | Number of results to return per page. (optional)
+search = 'search_example' # str |  (optional)
 status = 'status_example' # str | * `active` - Active * `free` - Free Tier * `grandfathered` - Grandfathered * `trialing` - Trialing * `past_due` - Past Due * `canceled` - Canceled * `incomplete` - Incomplete (optional)
 
 try:
     # List item subscribers
-    api_response = api_instance.platforms_items_subscribers_list(item_id, item_type, platform_key, page=page, page_size=page_size, status=status)
+    api_response = api_instance.platforms_items_subscribers_list(item_id, item_type, platform_key, page=page, page_size=page_size, search=search, status=status)
     print("The response of PlatformsApi->platforms_items_subscribers_list:\n")
     pprint(api_response)
 except Exception as e:
@@ -1179,6 +1180,7 @@ Name | Type | Description  | Notes
  **platform_key** | **str**|  | 
  **page** | **int**| A page number within the paginated result set. | [optional] 
  **page_size** | **int**| Number of results to return per page. | [optional] 
+ **search** | **str**|  | [optional] 
  **status** | **str**| * &#x60;active&#x60; - Active * &#x60;free&#x60; - Free Tier * &#x60;grandfathered&#x60; - Grandfathered * &#x60;trialing&#x60; - Trialing * &#x60;past_due&#x60; - Past Due * &#x60;canceled&#x60; - Canceled * &#x60;incomplete&#x60; - Incomplete | [optional] 
 
 ### Return type
@@ -1355,7 +1357,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **platforms_my_subscriptions_list**
-> PaginatedItemSubscriptionListList platforms_my_subscriptions_list(platform_key, item_type=item_type, page=page, page_size=page_size, status=status)
+> PaginatedItemSubscriptionListList platforms_my_subscriptions_list(platform_key, item_type=item_type, page=page, page_size=page_size, search=search, status=status)
 
 List user subscriptions
 
@@ -1388,11 +1390,12 @@ platform_key = 'platform_key_example' # str |
 item_type = 'item_type_example' # str | * `mentor` - mentor * `course` - course * `program` - program * `pathway` - pathway (optional)
 page = 56 # int | A page number within the paginated result set. (optional)
 page_size = 56 # int | Number of results to return per page. (optional)
+search = 'search_example' # str |  (optional)
 status = 'status_example' # str | * `active` - Active * `free` - Free Tier * `grandfathered` - Grandfathered * `trialing` - Trialing * `past_due` - Past Due * `canceled` - Canceled * `incomplete` - Incomplete (optional)
 
 try:
     # List user subscriptions
-    api_response = api_instance.platforms_my_subscriptions_list(platform_key, item_type=item_type, page=page, page_size=page_size, status=status)
+    api_response = api_instance.platforms_my_subscriptions_list(platform_key, item_type=item_type, page=page, page_size=page_size, search=search, status=status)
     print("The response of PlatformsApi->platforms_my_subscriptions_list:\n")
     pprint(api_response)
 except Exception as e:
@@ -1410,6 +1413,7 @@ Name | Type | Description  | Notes
  **item_type** | **str**| * &#x60;mentor&#x60; - mentor * &#x60;course&#x60; - course * &#x60;program&#x60; - program * &#x60;pathway&#x60; - pathway | [optional] 
  **page** | **int**| A page number within the paginated result set. | [optional] 
  **page_size** | **int**| Number of results to return per page. | [optional] 
+ **search** | **str**|  | [optional] 
  **status** | **str**| * &#x60;active&#x60; - Active * &#x60;free&#x60; - Free Tier * &#x60;grandfathered&#x60; - Grandfathered * &#x60;trialing&#x60; - Trialing * &#x60;past_due&#x60; - Past Due * &#x60;canceled&#x60; - Canceled * &#x60;incomplete&#x60; - Incomplete | [optional] 
 
 ### Return type
@@ -1434,7 +1438,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **platforms_paywalls_list**
-> PaginatedItemPaywallConfigList platforms_paywalls_list(platform_key, is_enabled=is_enabled, item_type=item_type, page=page, page_size=page_size)
+> PaginatedItemPaywallConfigList platforms_paywalls_list(platform_key, is_enabled=is_enabled, item_type=item_type, page=page, page_size=page_size, search=search)
 
 List all platform paywall configurations
 
@@ -1468,10 +1472,11 @@ is_enabled = True # bool |  (optional)
 item_type = 'item_type_example' # str | * `mentor` - mentor * `course` - course * `program` - program * `pathway` - pathway (optional)
 page = 56 # int | A page number within the paginated result set. (optional)
 page_size = 56 # int | Number of results to return per page. (optional)
+search = 'search_example' # str |  (optional)
 
 try:
     # List all platform paywall configurations
-    api_response = api_instance.platforms_paywalls_list(platform_key, is_enabled=is_enabled, item_type=item_type, page=page, page_size=page_size)
+    api_response = api_instance.platforms_paywalls_list(platform_key, is_enabled=is_enabled, item_type=item_type, page=page, page_size=page_size, search=search)
     print("The response of PlatformsApi->platforms_paywalls_list:\n")
     pprint(api_response)
 except Exception as e:
@@ -1490,6 +1495,7 @@ Name | Type | Description  | Notes
  **item_type** | **str**| * &#x60;mentor&#x60; - mentor * &#x60;course&#x60; - course * &#x60;program&#x60; - program * &#x60;pathway&#x60; - pathway | [optional] 
  **page** | **int**| A page number within the paginated result set. | [optional] 
  **page_size** | **int**| Number of results to return per page. | [optional] 
+ **search** | **str**|  | [optional] 
 
 ### Return type
 
@@ -1584,7 +1590,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **platforms_subscribers_list**
-> PaginatedItemSubscriptionListList platforms_subscribers_list(platform_key, item_type=item_type, page=page, page_size=page_size, status=status)
+> PaginatedItemSubscriptionListList platforms_subscribers_list(platform_key, item_type=item_type, page=page, page_size=page_size, search=search, status=status)
 
 List all platform subscribers
 
@@ -1617,11 +1623,12 @@ platform_key = 'platform_key_example' # str |
 item_type = 'item_type_example' # str | * `mentor` - mentor * `course` - course * `program` - program * `pathway` - pathway (optional)
 page = 56 # int | A page number within the paginated result set. (optional)
 page_size = 56 # int | Number of results to return per page. (optional)
+search = 'search_example' # str |  (optional)
 status = 'status_example' # str | * `active` - Active * `free` - Free Tier * `grandfathered` - Grandfathered * `trialing` - Trialing * `past_due` - Past Due * `canceled` - Canceled * `incomplete` - Incomplete (optional)
 
 try:
     # List all platform subscribers
-    api_response = api_instance.platforms_subscribers_list(platform_key, item_type=item_type, page=page, page_size=page_size, status=status)
+    api_response = api_instance.platforms_subscribers_list(platform_key, item_type=item_type, page=page, page_size=page_size, search=search, status=status)
     print("The response of PlatformsApi->platforms_subscribers_list:\n")
     pprint(api_response)
 except Exception as e:
@@ -1639,6 +1646,7 @@ Name | Type | Description  | Notes
  **item_type** | **str**| * &#x60;mentor&#x60; - mentor * &#x60;course&#x60; - course * &#x60;program&#x60; - program * &#x60;pathway&#x60; - pathway | [optional] 
  **page** | **int**| A page number within the paginated result set. | [optional] 
  **page_size** | **int**| Number of results to return per page. | [optional] 
+ **search** | **str**|  | [optional] 
  **status** | **str**| * &#x60;active&#x60; - Active * &#x60;free&#x60; - Free Tier * &#x60;grandfathered&#x60; - Grandfathered * &#x60;trialing&#x60; - Trialing * &#x60;past_due&#x60; - Past Due * &#x60;canceled&#x60; - Canceled * &#x60;incomplete&#x60; - Incomplete | [optional] 
 
 ### Return type

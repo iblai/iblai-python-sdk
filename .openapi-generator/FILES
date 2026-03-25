@@ -389,6 +389,7 @@ docs/MemoryStatusRequestView.md
 docs/MemoryStatusView.md
 docs/Mentor.md
 docs/MentorAudience.md
+docs/MentorAuditLogEntry.md
 docs/MentorBreakdown.md
 docs/MentorCategory.md
 docs/MentorCategoryCreate.md
@@ -407,6 +408,7 @@ docs/MentorEvalReport.md
 docs/MentorEvalRequest.md
 docs/MentorFacet.md
 docs/MentorFork.md
+docs/MentorFromTemplate.md
 docs/MentorFromTemplateWithSettingRequest.md
 docs/MentorInteractions.md
 docs/MentorMemorySettingsRequest.md
@@ -505,6 +507,7 @@ docs/PaginatedItemSubscriptionListList.md
 docs/PaginatedJobRunList.md
 docs/PaginatedMCPServerConnectionList.md
 docs/PaginatedMCPServerList.md
+docs/PaginatedMentorAuditLogEntryList.md
 docs/PaginatedMentorList.md
 docs/PaginatedMentorSkillAssignmentList.md
 docs/PaginatedModerationLogList.md
@@ -571,7 +574,10 @@ docs/PatchedMCPServerConnection.md
 docs/PatchedMediaResource.md
 docs/PatchedMentorCategoryGroupCreate.md
 docs/PatchedMentorCreate.md
+docs/PatchedMentorFromTemplate.md
+docs/PatchedMentorSettings.md
 docs/PatchedMentorSkillAssignment.md
+docs/PatchedMentorWizard.md
 docs/PatchedNotification.md
 docs/PatchedNotificationTemplateDetail.md
 docs/PatchedNotificationToggle.md
@@ -586,6 +592,7 @@ docs/PatchedRbacPolicy.md
 docs/PatchedRbacRole.md
 docs/PatchedSCIMGroup.md
 docs/PatchedSCIMUserResponse.md
+docs/PatchedSeedMentorsView.md
 docs/PatchedSkillThreshold.md
 docs/PatchedSlackConfig.md
 docs/PatchedSlackUserConfig.md
@@ -1438,6 +1445,7 @@ iblai/models/memory_status_request_view.py
 iblai/models/memory_status_view.py
 iblai/models/mentor.py
 iblai/models/mentor_audience.py
+iblai/models/mentor_audit_log_entry.py
 iblai/models/mentor_breakdown.py
 iblai/models/mentor_category.py
 iblai/models/mentor_category_create.py
@@ -1456,6 +1464,7 @@ iblai/models/mentor_eval_report.py
 iblai/models/mentor_eval_request.py
 iblai/models/mentor_facet.py
 iblai/models/mentor_fork.py
+iblai/models/mentor_from_template.py
 iblai/models/mentor_from_template_with_setting_request.py
 iblai/models/mentor_interactions.py
 iblai/models/mentor_memory_settings_request.py
@@ -1553,6 +1562,7 @@ iblai/models/paginated_item_subscription_list_list.py
 iblai/models/paginated_job_run_list.py
 iblai/models/paginated_mcp_server_connection_list.py
 iblai/models/paginated_mcp_server_list.py
+iblai/models/paginated_mentor_audit_log_entry_list.py
 iblai/models/paginated_mentor_list.py
 iblai/models/paginated_mentor_skill_assignment_list.py
 iblai/models/paginated_moderation_log_list.py
@@ -1619,7 +1629,10 @@ iblai/models/patched_mcp_server_connection.py
 iblai/models/patched_media_resource.py
 iblai/models/patched_mentor_category_group_create.py
 iblai/models/patched_mentor_create.py
+iblai/models/patched_mentor_from_template.py
+iblai/models/patched_mentor_settings.py
 iblai/models/patched_mentor_skill_assignment.py
+iblai/models/patched_mentor_wizard.py
 iblai/models/patched_notification.py
 iblai/models/patched_notification_template_detail.py
 iblai/models/patched_notification_toggle.py
@@ -1634,6 +1647,7 @@ iblai/models/patched_rbac_policy.py
 iblai/models/patched_rbac_role.py
 iblai/models/patched_scim_group.py
 iblai/models/patched_scim_user_response.py
+iblai/models/patched_seed_mentors_view.py
 iblai/models/patched_skill_threshold.py
 iblai/models/patched_slack_config.py
 iblai/models/patched_slack_user_config.py
@@ -2464,6 +2478,7 @@ test/test_memory_status_request_view.py
 test/test_memory_status_view.py
 test/test_mentor.py
 test/test_mentor_audience.py
+test/test_mentor_audit_log_entry.py
 test/test_mentor_breakdown.py
 test/test_mentor_category.py
 test/test_mentor_category_create.py
@@ -2482,6 +2497,7 @@ test/test_mentor_eval_report.py
 test/test_mentor_eval_request.py
 test/test_mentor_facet.py
 test/test_mentor_fork.py
+test/test_mentor_from_template.py
 test/test_mentor_from_template_with_setting_request.py
 test/test_mentor_interactions.py
 test/test_mentor_memory_settings_request.py
@@ -2580,6 +2596,7 @@ test/test_paginated_item_subscription_list_list.py
 test/test_paginated_job_run_list.py
 test/test_paginated_mcp_server_connection_list.py
 test/test_paginated_mcp_server_list.py
+test/test_paginated_mentor_audit_log_entry_list.py
 test/test_paginated_mentor_list.py
 test/test_paginated_mentor_skill_assignment_list.py
 test/test_paginated_moderation_log_list.py
@@ -2646,7 +2663,10 @@ test/test_patched_mcp_server_connection.py
 test/test_patched_media_resource.py
 test/test_patched_mentor_category_group_create.py
 test/test_patched_mentor_create.py
+test/test_patched_mentor_from_template.py
+test/test_patched_mentor_settings.py
 test/test_patched_mentor_skill_assignment.py
+test/test_patched_mentor_wizard.py
 test/test_patched_notification.py
 test/test_patched_notification_template_detail.py
 test/test_patched_notification_toggle.py
@@ -2661,6 +2681,7 @@ test/test_patched_rbac_policy.py
 test/test_patched_rbac_role.py
 test/test_patched_scim_group.py
 test/test_patched_scim_user_response.py
+test/test_patched_seed_mentors_view.py
 test/test_patched_skill_threshold.py
 test/test_patched_slack_config.py
 test/test_patched_slack_user_config.py

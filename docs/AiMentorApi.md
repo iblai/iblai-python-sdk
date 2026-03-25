@@ -162,6 +162,9 @@ Method | HTTP request | Description
 [**ai_mentor_orgs_users_course_creation_tasks_start_retrieve2**](AiMentorApi.md#ai_mentor_orgs_users_course_creation_tasks_start_retrieve2) | **GET** /api/ai-mentor/orgs/{org}/users/{user_id}/course-creation/tasks/{id}/start/ | 
 [**ai_mentor_orgs_users_create**](AiMentorApi.md#ai_mentor_orgs_users_create) | **POST** /api/ai-mentor/orgs/{org}/users/{user_id}/ | 
 [**ai_mentor_orgs_users_create_mentor_wizard_create**](AiMentorApi.md#ai_mentor_orgs_users_create_mentor_wizard_create) | **POST** /api/ai-mentor/orgs/{org}/users/{user_id}/create-mentor-wizard/ | 
+[**ai_mentor_orgs_users_create_mentor_wizard_destroy**](AiMentorApi.md#ai_mentor_orgs_users_create_mentor_wizard_destroy) | **DELETE** /api/ai-mentor/orgs/{org}/users/{user_id}/create-mentor-wizard/ | 
+[**ai_mentor_orgs_users_create_mentor_wizard_partial_update**](AiMentorApi.md#ai_mentor_orgs_users_create_mentor_wizard_partial_update) | **PATCH** /api/ai-mentor/orgs/{org}/users/{user_id}/create-mentor-wizard/ | 
+[**ai_mentor_orgs_users_create_mentor_wizard_update**](AiMentorApi.md#ai_mentor_orgs_users_create_mentor_wizard_update) | **PUT** /api/ai-mentor/orgs/{org}/users/{user_id}/create-mentor-wizard/ | 
 [**ai_mentor_orgs_users_custom_instruction_create**](AiMentorApi.md#ai_mentor_orgs_users_custom_instruction_create) | **POST** /api/ai-mentor/orgs/{org}/users/{user_id}/custom-instruction/ | 
 [**ai_mentor_orgs_users_custom_instruction_retrieve**](AiMentorApi.md#ai_mentor_orgs_users_custom_instruction_retrieve) | **GET** /api/ai-mentor/orgs/{org}/users/{user_id}/custom-instruction/ | 
 [**ai_mentor_orgs_users_custom_instruction_update**](AiMentorApi.md#ai_mentor_orgs_users_custom_instruction_update) | **PUT** /api/ai-mentor/orgs/{org}/users/{user_id}/custom-instruction/ | 
@@ -234,10 +237,18 @@ Method | HTTP request | Description
 [**ai_mentor_orgs_users_mentor_feedback_update**](AiMentorApi.md#ai_mentor_orgs_users_mentor_feedback_update) | **PUT** /api/ai-mentor/orgs/{org}/users/{user_id}/mentor-feedback/{feedback_id}/ | 
 [**ai_mentor_orgs_users_mentor_llms_list**](AiMentorApi.md#ai_mentor_orgs_users_mentor_llms_list) | **GET** /api/ai-mentor/orgs/{org}/users/{user_id}/mentor-llms/ | 
 [**ai_mentor_orgs_users_mentor_memories_retrieve**](AiMentorApi.md#ai_mentor_orgs_users_mentor_memories_retrieve) | **GET** /api/ai-mentor/orgs/{org}/users/{user_id}/mentor-memories/ | 
+[**ai_mentor_orgs_users_mentor_seed_create**](AiMentorApi.md#ai_mentor_orgs_users_mentor_seed_create) | **POST** /api/ai-mentor/orgs/{org}/users/{user_id}/mentor/seed/ | 
+[**ai_mentor_orgs_users_mentor_seed_destroy**](AiMentorApi.md#ai_mentor_orgs_users_mentor_seed_destroy) | **DELETE** /api/ai-mentor/orgs/{org}/users/{user_id}/mentor/seed/ | 
+[**ai_mentor_orgs_users_mentor_seed_partial_update**](AiMentorApi.md#ai_mentor_orgs_users_mentor_seed_partial_update) | **PATCH** /api/ai-mentor/orgs/{org}/users/{user_id}/mentor/seed/ | 
 [**ai_mentor_orgs_users_mentor_seed_retrieve**](AiMentorApi.md#ai_mentor_orgs_users_mentor_seed_retrieve) | **GET** /api/ai-mentor/orgs/{org}/users/{user_id}/mentor/seed/ | 
+[**ai_mentor_orgs_users_mentor_seed_update**](AiMentorApi.md#ai_mentor_orgs_users_mentor_seed_update) | **PUT** /api/ai-mentor/orgs/{org}/users/{user_id}/mentor/seed/ | 
 [**ai_mentor_orgs_users_mentor_tools_list**](AiMentorApi.md#ai_mentor_orgs_users_mentor_tools_list) | **GET** /api/ai-mentor/orgs/{org}/users/{user_id}/mentor-tools/ | 
 [**ai_mentor_orgs_users_mentor_types_list**](AiMentorApi.md#ai_mentor_orgs_users_mentor_types_list) | **GET** /api/ai-mentor/orgs/{org}/users/{user_id}/mentor-types/ | 
 [**ai_mentor_orgs_users_mentor_with_settings_create**](AiMentorApi.md#ai_mentor_orgs_users_mentor_with_settings_create) | **POST** /api/ai-mentor/orgs/{org}/users/{user_id}/mentor-with-settings/ | 
+[**ai_mentor_orgs_users_mentor_with_settings_destroy**](AiMentorApi.md#ai_mentor_orgs_users_mentor_with_settings_destroy) | **DELETE** /api/ai-mentor/orgs/{org}/users/{user_id}/mentor-with-settings/ | 
+[**ai_mentor_orgs_users_mentor_with_settings_partial_update**](AiMentorApi.md#ai_mentor_orgs_users_mentor_with_settings_partial_update) | **PATCH** /api/ai-mentor/orgs/{org}/users/{user_id}/mentor-with-settings/ | 
+[**ai_mentor_orgs_users_mentor_with_settings_update**](AiMentorApi.md#ai_mentor_orgs_users_mentor_with_settings_update) | **PUT** /api/ai-mentor/orgs/{org}/users/{user_id}/mentor-with-settings/ | 
+[**ai_mentor_orgs_users_mentors_audit_logs_list**](AiMentorApi.md#ai_mentor_orgs_users_mentors_audit_logs_list) | **GET** /api/ai-mentor/orgs/{org}/users/{user_id}/mentors/audit-logs/ | List Mentor Audit Logs
 [**ai_mentor_orgs_users_mentors_auto_memory_prompt_create**](AiMentorApi.md#ai_mentor_orgs_users_mentors_auto_memory_prompt_create) | **POST** /api/ai-mentor/orgs/{org}/users/{user_id}/mentors/{mentor}/auto-memory-prompt/ | Set or reset auto memory prompt
 [**ai_mentor_orgs_users_mentors_auto_memory_prompt_retrieve**](AiMentorApi.md#ai_mentor_orgs_users_mentors_auto_memory_prompt_retrieve) | **GET** /api/ai-mentor/orgs/{org}/users/{user_id}/mentors/{mentor}/auto-memory-prompt/ | 
 [**ai_mentor_orgs_users_mentors_available_tools_list**](AiMentorApi.md#ai_mentor_orgs_users_mentors_available_tools_list) | **GET** /api/ai-mentor/orgs/{org}/users/{user_id}/mentors/{mentor}/available-tools/ | 
@@ -249,6 +260,9 @@ Method | HTTP request | Description
 [**ai_mentor_orgs_users_mentors_custom_voice_tts_create**](AiMentorApi.md#ai_mentor_orgs_users_mentors_custom_voice_tts_create) | **POST** /api/ai-mentor/orgs/{org}/users/{user_id}/mentors/{mentor}/custom-voice-tts/ | 
 [**ai_mentor_orgs_users_mentors_edit_scenarios_update**](AiMentorApi.md#ai_mentor_orgs_users_mentors_edit_scenarios_update) | **PUT** /api/ai-mentor/orgs/{org}/users/{user_id}/mentors/{mentor}/edit-scenarios/ | 
 [**ai_mentor_orgs_users_mentors_fork_create**](AiMentorApi.md#ai_mentor_orgs_users_mentors_fork_create) | **POST** /api/ai-mentor/orgs/{org}/users/{user_id}/mentors/{mentor}/fork/ | 
+[**ai_mentor_orgs_users_mentors_fork_destroy**](AiMentorApi.md#ai_mentor_orgs_users_mentors_fork_destroy) | **DELETE** /api/ai-mentor/orgs/{org}/users/{user_id}/mentors/{mentor}/fork/ | 
+[**ai_mentor_orgs_users_mentors_fork_partial_update**](AiMentorApi.md#ai_mentor_orgs_users_mentors_fork_partial_update) | **PATCH** /api/ai-mentor/orgs/{org}/users/{user_id}/mentors/{mentor}/fork/ | 
+[**ai_mentor_orgs_users_mentors_fork_update**](AiMentorApi.md#ai_mentor_orgs_users_mentors_fork_update) | **PUT** /api/ai-mentor/orgs/{org}/users/{user_id}/mentors/{mentor}/fork/ | 
 [**ai_mentor_orgs_users_mentors_historical_memory_retrieve**](AiMentorApi.md#ai_mentor_orgs_users_mentors_historical_memory_retrieve) | **GET** /api/ai-mentor/orgs/{org}/users/{user_id}/mentors/{mentor}/historical-memory/ | 
 [**ai_mentor_orgs_users_mentors_memory_progress_retrieve**](AiMentorApi.md#ai_mentor_orgs_users_mentors_memory_progress_retrieve) | **GET** /api/ai-mentor/orgs/{org}/users/{user_id}/mentors/{mentor}/memory-progress/ | 
 [**ai_mentor_orgs_users_mentors_memory_settings_create**](AiMentorApi.md#ai_mentor_orgs_users_mentors_memory_settings_create) | **POST** /api/ai-mentor/orgs/{org}/users/{user_id}/mentors/{mentor}/memory-settings/ | 
@@ -267,6 +281,9 @@ Method | HTTP request | Description
 [**ai_mentor_orgs_users_mentors_reports_mentor_eval_report_retrieve**](AiMentorApi.md#ai_mentor_orgs_users_mentors_reports_mentor_eval_report_retrieve) | **GET** /api/ai-mentor/orgs/{org}/users/{user_id}/mentors/{mentor}/reports/{report_id}/mentor-eval-report/ | 
 [**ai_mentor_orgs_users_mentors_retrieve**](AiMentorApi.md#ai_mentor_orgs_users_mentors_retrieve) | **GET** /api/ai-mentor/orgs/{org}/users/{user_id}/mentors/{mentor}/ | 
 [**ai_mentor_orgs_users_mentors_scenarios_retrieve**](AiMentorApi.md#ai_mentor_orgs_users_mentors_scenarios_retrieve) | **GET** /api/ai-mentor/orgs/{org}/users/{user_id}/mentors/{mentor}/scenarios/ | 
+[**ai_mentor_orgs_users_mentors_settings_create**](AiMentorApi.md#ai_mentor_orgs_users_mentors_settings_create) | **POST** /api/ai-mentor/orgs/{org}/users/{user_id}/mentors/{mentor}/settings/ | 
+[**ai_mentor_orgs_users_mentors_settings_destroy**](AiMentorApi.md#ai_mentor_orgs_users_mentors_settings_destroy) | **DELETE** /api/ai-mentor/orgs/{org}/users/{user_id}/mentors/{mentor}/settings/ | 
+[**ai_mentor_orgs_users_mentors_settings_partial_update**](AiMentorApi.md#ai_mentor_orgs_users_mentors_settings_partial_update) | **PATCH** /api/ai-mentor/orgs/{org}/users/{user_id}/mentors/{mentor}/settings/ | 
 [**ai_mentor_orgs_users_mentors_settings_retrieve**](AiMentorApi.md#ai_mentor_orgs_users_mentors_settings_retrieve) | **GET** /api/ai-mentor/orgs/{org}/users/{user_id}/mentors/{mentor}/settings/ | Retrieve Mentor Settings
 [**ai_mentor_orgs_users_mentors_settings_update**](AiMentorApi.md#ai_mentor_orgs_users_mentors_settings_update) | **PUT** /api/ai-mentor/orgs/{org}/users/{user_id}/mentors/{mentor}/settings/ | Update Mentor Settings
 [**ai_mentor_orgs_users_mentors_sharable_link_create**](AiMentorApi.md#ai_mentor_orgs_users_mentors_sharable_link_create) | **POST** /api/ai-mentor/orgs/{org}/users/{user_id}/mentors/{mentor}/sharable-link | 
@@ -12741,6 +12758,236 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **ai_mentor_orgs_users_create_mentor_wizard_destroy**
+> ai_mentor_orgs_users_create_mentor_wizard_destroy(org, user_id)
+
+API view for creating a mentor using the wizard interface.
+
+This view allows platform administrators to create new mentors with
+basic configuration through a simplified wizard process.
+
+Permissions:
+    - Restricted to platform administrators only
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+# Create an instance of the API class
+api_instance = iblai.AiMentorApi(api_client)
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+
+try:
+    api_instance.ai_mentor_orgs_users_create_mentor_wizard_destroy(org, user_id)
+except Exception as e:
+    print("Exception when calling AiMentorApi->ai_mentor_orgs_users_create_mentor_wizard_destroy: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**204** | No response body |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ai_mentor_orgs_users_create_mentor_wizard_partial_update**
+> MentorWizard ai_mentor_orgs_users_create_mentor_wizard_partial_update(org, user_id, patched_mentor_wizard=patched_mentor_wizard)
+
+API view for creating a mentor using the wizard interface.
+
+This view allows platform administrators to create new mentors with
+basic configuration through a simplified wizard process.
+
+Permissions:
+    - Restricted to platform administrators only
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.mentor_wizard import MentorWizard
+from iblai.models.patched_mentor_wizard import PatchedMentorWizard
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+# Create an instance of the API class
+api_instance = iblai.AiMentorApi(api_client)
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+patched_mentor_wizard = iblai.PatchedMentorWizard() # PatchedMentorWizard |  (optional)
+
+try:
+    api_response = api_instance.ai_mentor_orgs_users_create_mentor_wizard_partial_update(org, user_id, patched_mentor_wizard=patched_mentor_wizard)
+    print("The response of AiMentorApi->ai_mentor_orgs_users_create_mentor_wizard_partial_update:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiMentorApi->ai_mentor_orgs_users_create_mentor_wizard_partial_update: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+ **patched_mentor_wizard** | [**PatchedMentorWizard**](PatchedMentorWizard.md)|  | [optional] 
+
+### Return type
+
+[**MentorWizard**](MentorWizard.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ai_mentor_orgs_users_create_mentor_wizard_update**
+> MentorWizard ai_mentor_orgs_users_create_mentor_wizard_update(org, user_id, mentor_wizard)
+
+API view for creating a mentor using the wizard interface.
+
+This view allows platform administrators to create new mentors with
+basic configuration through a simplified wizard process.
+
+Permissions:
+    - Restricted to platform administrators only
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.mentor_wizard import MentorWizard
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+# Create an instance of the API class
+api_instance = iblai.AiMentorApi(api_client)
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+mentor_wizard = iblai.MentorWizard() # MentorWizard | 
+
+try:
+    api_response = api_instance.ai_mentor_orgs_users_create_mentor_wizard_update(org, user_id, mentor_wizard)
+    print("The response of AiMentorApi->ai_mentor_orgs_users_create_mentor_wizard_update:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiMentorApi->ai_mentor_orgs_users_create_mentor_wizard_update: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+ **mentor_wizard** | [**MentorWizard**](MentorWizard.md)|  | 
+
+### Return type
+
+[**MentorWizard**](MentorWizard.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **ai_mentor_orgs_users_custom_instruction_create**
 > CustomInstructionResponse ai_mentor_orgs_users_custom_instruction_create(org, user_id, custom_instruction_response=custom_instruction_response)
 
@@ -18956,6 +19203,236 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **ai_mentor_orgs_users_mentor_seed_create**
+> SeedMentorsView ai_mentor_orgs_users_mentor_seed_create(org, user_id, seed_mentors_view)
+
+API view for seeding mentors in a tenant.
+
+This view allows platform administrators to seed initial mentors
+in a tenant from predefined templates.
+
+Permissions:
+    - Restricted to platform administrators only
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.seed_mentors_view import SeedMentorsView
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+# Create an instance of the API class
+api_instance = iblai.AiMentorApi(api_client)
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+seed_mentors_view = iblai.SeedMentorsView() # SeedMentorsView | 
+
+try:
+    api_response = api_instance.ai_mentor_orgs_users_mentor_seed_create(org, user_id, seed_mentors_view)
+    print("The response of AiMentorApi->ai_mentor_orgs_users_mentor_seed_create:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiMentorApi->ai_mentor_orgs_users_mentor_seed_create: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+ **seed_mentors_view** | [**SeedMentorsView**](SeedMentorsView.md)|  | 
+
+### Return type
+
+[**SeedMentorsView**](SeedMentorsView.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ai_mentor_orgs_users_mentor_seed_destroy**
+> ai_mentor_orgs_users_mentor_seed_destroy(org, user_id)
+
+API view for seeding mentors in a tenant.
+
+This view allows platform administrators to seed initial mentors
+in a tenant from predefined templates.
+
+Permissions:
+    - Restricted to platform administrators only
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+# Create an instance of the API class
+api_instance = iblai.AiMentorApi(api_client)
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+
+try:
+    api_instance.ai_mentor_orgs_users_mentor_seed_destroy(org, user_id)
+except Exception as e:
+    print("Exception when calling AiMentorApi->ai_mentor_orgs_users_mentor_seed_destroy: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**204** | No response body |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ai_mentor_orgs_users_mentor_seed_partial_update**
+> SeedMentorsView ai_mentor_orgs_users_mentor_seed_partial_update(org, user_id, patched_seed_mentors_view=patched_seed_mentors_view)
+
+API view for seeding mentors in a tenant.
+
+This view allows platform administrators to seed initial mentors
+in a tenant from predefined templates.
+
+Permissions:
+    - Restricted to platform administrators only
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.patched_seed_mentors_view import PatchedSeedMentorsView
+from iblai.models.seed_mentors_view import SeedMentorsView
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+# Create an instance of the API class
+api_instance = iblai.AiMentorApi(api_client)
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+patched_seed_mentors_view = iblai.PatchedSeedMentorsView() # PatchedSeedMentorsView |  (optional)
+
+try:
+    api_response = api_instance.ai_mentor_orgs_users_mentor_seed_partial_update(org, user_id, patched_seed_mentors_view=patched_seed_mentors_view)
+    print("The response of AiMentorApi->ai_mentor_orgs_users_mentor_seed_partial_update:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiMentorApi->ai_mentor_orgs_users_mentor_seed_partial_update: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+ **patched_seed_mentors_view** | [**PatchedSeedMentorsView**](PatchedSeedMentorsView.md)|  | [optional] 
+
+### Return type
+
+[**SeedMentorsView**](SeedMentorsView.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **ai_mentor_orgs_users_mentor_seed_retrieve**
 > SeedMentorsView ai_mentor_orgs_users_mentor_seed_retrieve(org, user_id)
 
@@ -19035,6 +19512,84 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** |  |  -  |
 **400** | Seeding failed |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ai_mentor_orgs_users_mentor_seed_update**
+> SeedMentorsView ai_mentor_orgs_users_mentor_seed_update(org, user_id, seed_mentors_view)
+
+API view for seeding mentors in a tenant.
+
+This view allows platform administrators to seed initial mentors
+in a tenant from predefined templates.
+
+Permissions:
+    - Restricted to platform administrators only
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.seed_mentors_view import SeedMentorsView
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+# Create an instance of the API class
+api_instance = iblai.AiMentorApi(api_client)
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+seed_mentors_view = iblai.SeedMentorsView() # SeedMentorsView | 
+
+try:
+    api_response = api_instance.ai_mentor_orgs_users_mentor_seed_update(org, user_id, seed_mentors_view)
+    print("The response of AiMentorApi->ai_mentor_orgs_users_mentor_seed_update:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiMentorApi->ai_mentor_orgs_users_mentor_seed_update: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+ **seed_mentors_view** | [**SeedMentorsView**](SeedMentorsView.md)|  | 
+
+### Return type
+
+[**SeedMentorsView**](SeedMentorsView.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -19384,6 +19939,312 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ai_mentor_orgs_users_mentor_with_settings_destroy**
+> ai_mentor_orgs_users_mentor_with_settings_destroy(org, user_id)
+
+View to create a mentor from a template with settings.
+
+Accessible to tenant admins only.
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+# Create an instance of the API class
+api_instance = iblai.AiMentorApi(api_client)
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+
+try:
+    api_instance.ai_mentor_orgs_users_mentor_with_settings_destroy(org, user_id)
+except Exception as e:
+    print("Exception when calling AiMentorApi->ai_mentor_orgs_users_mentor_with_settings_destroy: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**204** | No response body |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ai_mentor_orgs_users_mentor_with_settings_partial_update**
+> MentorFromTemplate ai_mentor_orgs_users_mentor_with_settings_partial_update(org, user_id, detail=detail)
+
+View to create a mentor from a template with settings.
+
+Accessible to tenant admins only.
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.mentor_from_template import MentorFromTemplate
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+# Create an instance of the API class
+api_instance = iblai.AiMentorApi(api_client)
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+detail = 'detail_example' # str |  (optional)
+
+try:
+    api_response = api_instance.ai_mentor_orgs_users_mentor_with_settings_partial_update(org, user_id, detail=detail)
+    print("The response of AiMentorApi->ai_mentor_orgs_users_mentor_with_settings_partial_update:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiMentorApi->ai_mentor_orgs_users_mentor_with_settings_partial_update: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+ **detail** | **str**|  | [optional] 
+
+### Return type
+
+[**MentorFromTemplate**](MentorFromTemplate.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: multipart/form-data, application/x-www-form-urlencoded, application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ai_mentor_orgs_users_mentor_with_settings_update**
+> MentorFromTemplate ai_mentor_orgs_users_mentor_with_settings_update(org, user_id, detail)
+
+View to create a mentor from a template with settings.
+
+Accessible to tenant admins only.
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.mentor_from_template import MentorFromTemplate
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+# Create an instance of the API class
+api_instance = iblai.AiMentorApi(api_client)
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+detail = 'detail_example' # str | 
+
+try:
+    api_response = api_instance.ai_mentor_orgs_users_mentor_with_settings_update(org, user_id, detail)
+    print("The response of AiMentorApi->ai_mentor_orgs_users_mentor_with_settings_update:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiMentorApi->ai_mentor_orgs_users_mentor_with_settings_update: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+ **detail** | **str**|  | 
+
+### Return type
+
+[**MentorFromTemplate**](MentorFromTemplate.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: multipart/form-data, application/x-www-form-urlencoded, application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ai_mentor_orgs_users_mentors_audit_logs_list**
+> PaginatedMentorAuditLogEntryList ai_mentor_orgs_users_mentors_audit_logs_list(org, user_id, action=action, actor_username=actor_username, from_date=from_date, limit=limit, mentor=mentor, offset=offset, to_date=to_date)
+
+List Mentor Audit Logs
+
+Retrieve audit log entries for mentor-related models (Mentor, MentorSettings) within a specific organization. Only accessible to platform administrators. Supports filtering by mentor, action type, actor, and date range.
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.paginated_mentor_audit_log_entry_list import PaginatedMentorAuditLogEntryList
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+# Create an instance of the API class
+api_instance = iblai.AiMentorApi(api_client)
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+action = 56 # int | Filter by action type: 0=create, 1=update, 2=delete (optional)
+actor_username = 'actor_username_example' # str | Filter by actor's username (optional)
+from_date = 'from_date_example' # str | Inclusive lower bound on timestamp (ISO8601 date, e.g., 2024-01-01) (optional)
+limit = 56 # int | Number of results to return per page. (optional)
+mentor = 'mentor_example' # str | Filter by mentor unique_id (optional)
+offset = 56 # int | The initial index from which to return the results. (optional)
+to_date = 'to_date_example' # str | Inclusive upper bound on timestamp (ISO8601 date, e.g., 2024-12-31) (optional)
+
+try:
+    # List Mentor Audit Logs
+    api_response = api_instance.ai_mentor_orgs_users_mentors_audit_logs_list(org, user_id, action=action, actor_username=actor_username, from_date=from_date, limit=limit, mentor=mentor, offset=offset, to_date=to_date)
+    print("The response of AiMentorApi->ai_mentor_orgs_users_mentors_audit_logs_list:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiMentorApi->ai_mentor_orgs_users_mentors_audit_logs_list: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+ **action** | **int**| Filter by action type: 0&#x3D;create, 1&#x3D;update, 2&#x3D;delete | [optional] 
+ **actor_username** | **str**| Filter by actor&#39;s username | [optional] 
+ **from_date** | **str**| Inclusive lower bound on timestamp (ISO8601 date, e.g., 2024-01-01) | [optional] 
+ **limit** | **int**| Number of results to return per page. | [optional] 
+ **mentor** | **str**| Filter by mentor unique_id | [optional] 
+ **offset** | **int**| The initial index from which to return the results. | [optional] 
+ **to_date** | **str**| Inclusive upper bound on timestamp (ISO8601 date, e.g., 2024-12-31) | [optional] 
+
+### Return type
+
+[**PaginatedMentorAuditLogEntryList**](PaginatedMentorAuditLogEntryList.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**401** | Authentication required |  -  |
+**403** | Not a platform administrator |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -20322,6 +21183,231 @@ Name | Type | Description  | Notes
 **200** |  |  -  |
 **400** | Invalid data or fork failed |  -  |
 **404** | Mentor not found |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ai_mentor_orgs_users_mentors_fork_destroy**
+> ai_mentor_orgs_users_mentors_fork_destroy(mentor, org, user_id)
+
+API view for forking (cloning) a mentor.
+
+This view allows users to create a copy of an existing mentor
+with its settings and configurations.
+
+Permissions:
+    - Restricted to tenant admins and the student themselves
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+# Create an instance of the API class
+api_instance = iblai.AiMentorApi(api_client)
+mentor = 'mentor_example' # str | 
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+
+try:
+    api_instance.ai_mentor_orgs_users_mentors_fork_destroy(mentor, org, user_id)
+except Exception as e:
+    print("Exception when calling AiMentorApi->ai_mentor_orgs_users_mentors_fork_destroy: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **mentor** | **str**|  | 
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**204** | No response body |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ai_mentor_orgs_users_mentors_fork_partial_update**
+> ai_mentor_orgs_users_mentors_fork_partial_update(mentor, org, user_id)
+
+API view for forking (cloning) a mentor.
+
+This view allows users to create a copy of an existing mentor
+with its settings and configurations.
+
+Permissions:
+    - Restricted to tenant admins and the student themselves
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+# Create an instance of the API class
+api_instance = iblai.AiMentorApi(api_client)
+mentor = 'mentor_example' # str | 
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+
+try:
+    api_instance.ai_mentor_orgs_users_mentors_fork_partial_update(mentor, org, user_id)
+except Exception as e:
+    print("Exception when calling AiMentorApi->ai_mentor_orgs_users_mentors_fork_partial_update: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **mentor** | **str**|  | 
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | No response body |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ai_mentor_orgs_users_mentors_fork_update**
+> ai_mentor_orgs_users_mentors_fork_update(mentor, org, user_id)
+
+API view for forking (cloning) a mentor.
+
+This view allows users to create a copy of an existing mentor
+with its settings and configurations.
+
+Permissions:
+    - Restricted to tenant admins and the student themselves
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+# Create an instance of the API class
+api_instance = iblai.AiMentorApi(api_client)
+mentor = 'mentor_example' # str | 
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+
+try:
+    api_instance.ai_mentor_orgs_users_mentors_fork_update(mentor, org, user_id)
+except Exception as e:
+    print("Exception when calling AiMentorApi->ai_mentor_orgs_users_mentors_fork_update: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **mentor** | **str**|  | 
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | No response body |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -21717,6 +22803,634 @@ No authorization required
 |-------------|-------------|------------------|
 **200** |  |  -  |
 **404** | Mentor or scenarios not found |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ai_mentor_orgs_users_mentors_settings_create**
+> MentorSettings ai_mentor_orgs_users_mentors_settings_create(mentor, org, user_id, id, mentor2, mentor_slug, mentor_unique_id, mentor_id, metadata, enable_memory_component, enable_custom_javascript, allow_anonymous, enable_offline_mode, mentor_description, suggested_prompts, proactive_response, greeting_method, mentor_tools, can_use_tools, llm_name, proactive_prompt, study_mode_prompt, disclaimer, enable_disclaimer, show_attachment, show_voice_call, show_voice_record, show_rag_images, starter_prompts, embed_is_context_aware, embed_open_by_default, embed_show_attachment, embed_show_voice_call, embed_show_voice_record, show_explore_mentors, embed_icon_selection_data, placeholder_prompt, enable_email_chat, enable_spaced_repetition, enable_instruction_mode, enable_socratic_mode, is_guided_mentor, is_featured, enable_guided_prompts, save_flagged_prompts, enable_moderation, enable_multi_query_rag, enable_prompt_caching, enable_post_processing_system, enable_safety_system, forkable, forkable_with_training_data, mentor_name, categories, types, subjects, recently_accessed_at, created_by, created_at, updated_at, platform_key, llm_config, llm_provider, system_prompt, llm_temperature, safety_system_prompt, safety_response, moderation_system_prompt, post_processing_prompt, moderation_response, mcp_servers, department, disable_chathistory, call_configuration, guided_prompt_instructions, seo_tags, marketing_conversations, template_mentor, google_voice, openai_voice, enable_openai_assistant, enable_total_grounding, enable_suggested_prompts, is_deleted, department_id=department_id, display_name=display_name, profile_image=profile_image, initial_message=initial_message, suggested_message=suggested_message, theme=theme, user_message_color=user_message_color, mentor_bubble_color=mentor_bubble_color, align_mentor_bubble=align_mentor_bubble, mentor_visibility=mentor_visibility, enable_image_generation=enable_image_generation, enable_web_browsing=enable_web_browsing, enable_code_interpreter=enable_code_interpreter, custom_css=custom_css, custom_javascript=custom_javascript, embed_custom_image=embed_custom_image, is_lti_accessible=is_lti_accessible)
+
+API view to retrieve and update mentor settings.
+
+Permissions:
+    - Only accessible to tenant admins.
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.align_mentor_bubble_enum import AlignMentorBubbleEnum
+from iblai.models.mcp_server import MCPServer
+from iblai.models.mentor_category import MentorCategory
+from iblai.models.mentor_settings import MentorSettings
+from iblai.models.mentor_type import MentorType
+from iblai.models.subject import Subject
+from iblai.models.theme_enum import ThemeEnum
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+# Create an instance of the API class
+api_instance = iblai.AiMentorApi(api_client)
+mentor = 'mentor_example' # str | 
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+id = 56 # int | 
+mentor2 = 'mentor_example' # str | 
+mentor_slug = 'mentor_slug_example' # str | 
+mentor_unique_id = 'mentor_unique_id_example' # str | 
+mentor_id = 56 # int | 
+metadata = None # object | 
+enable_memory_component = True # bool | 
+enable_custom_javascript = True # bool | 
+allow_anonymous = True # bool | 
+enable_offline_mode = True # bool | 
+mentor_description = 'mentor_description_example' # str | 
+suggested_prompts = None # object | 
+proactive_response = 'proactive_response_example' # str | 
+greeting_method = 'greeting_method_example' # str | 
+mentor_tools = None # object | 
+can_use_tools = True # bool | 
+llm_name = 'llm_name_example' # str | 
+proactive_prompt = 'proactive_prompt_example' # str | 
+study_mode_prompt = 'study_mode_prompt_example' # str | 
+disclaimer = 'disclaimer_example' # str | 
+enable_disclaimer = True # bool | 
+show_attachment = True # bool | 
+show_voice_call = True # bool | 
+show_voice_record = True # bool | 
+show_rag_images = True # bool | 
+starter_prompts = 'starter_prompts_example' # str | 
+embed_is_context_aware = True # bool | 
+embed_open_by_default = True # bool | 
+embed_show_attachment = True # bool | 
+embed_show_voice_call = True # bool | 
+embed_show_voice_record = True # bool | 
+show_explore_mentors = True # bool | 
+embed_icon_selection_data = None # object | 
+placeholder_prompt = 'placeholder_prompt_example' # str | 
+enable_email_chat = True # bool | 
+enable_spaced_repetition = True # bool | 
+enable_instruction_mode = True # bool | 
+enable_socratic_mode = True # bool | 
+is_guided_mentor = True # bool | 
+is_featured = True # bool | 
+enable_guided_prompts = True # bool | 
+save_flagged_prompts = True # bool | 
+enable_moderation = True # bool | 
+enable_multi_query_rag = True # bool | 
+enable_prompt_caching = True # bool | 
+enable_post_processing_system = True # bool | 
+enable_safety_system = True # bool | 
+forkable = True # bool | 
+forkable_with_training_data = True # bool | 
+mentor_name = 'mentor_name_example' # str | 
+categories = [iblai.MentorCategory()] # List[MentorCategory] | 
+types = [iblai.MentorType()] # List[MentorType] | 
+subjects = [iblai.Subject()] # List[Subject] | 
+recently_accessed_at = '2013-10-20T19:20:30+01:00' # datetime | 
+created_by = 'created_by_example' # str | 
+created_at = '2013-10-20T19:20:30+01:00' # datetime | 
+updated_at = '2013-10-20T19:20:30+01:00' # datetime | 
+platform_key = 'platform_key_example' # str | 
+llm_config = None # object | 
+llm_provider = 'llm_provider_example' # str | 
+system_prompt = 'system_prompt_example' # str | 
+llm_temperature = 3.4 # float | 
+safety_system_prompt = 'safety_system_prompt_example' # str | 
+safety_response = 'safety_response_example' # str | 
+moderation_system_prompt = 'moderation_system_prompt_example' # str | 
+post_processing_prompt = 'post_processing_prompt_example' # str | 
+moderation_response = 'moderation_response_example' # str | 
+mcp_servers = [iblai.MCPServer()] # List[MCPServer] | 
+department = 'department_example' # str | 
+disable_chathistory = 'disable_chathistory_example' # str | 
+call_configuration = iblai.CallConfiguration() # CallConfiguration | 
+guided_prompt_instructions = 'guided_prompt_instructions_example' # str | 
+seo_tags = None # object | 
+marketing_conversations = None # object | 
+template_mentor = None # object | 
+google_voice = 'google_voice_example' # str | 
+openai_voice = 'openai_voice_example' # str | 
+enable_openai_assistant = True # bool | 
+enable_total_grounding = True # bool | 
+enable_suggested_prompts = True # bool | 
+is_deleted = True # bool | 
+department_id = 56 # int | Department to authorize users by (optional)
+display_name = 'display_name_example' # str |  (optional)
+profile_image = 'profile_image_example' # str |  (optional)
+initial_message = 'initial_message_example' # str |  (optional)
+suggested_message = 'suggested_message_example' # str |  (optional)
+theme = iblai.ThemeEnum() # ThemeEnum |  (optional)
+user_message_color = 'user_message_color_example' # str |  (optional)
+mentor_bubble_color = 'mentor_bubble_color_example' # str |  (optional)
+align_mentor_bubble = iblai.AlignMentorBubbleEnum() # AlignMentorBubbleEnum |  (optional)
+mentor_visibility = 'mentor_visibility_example' # str |  (optional)
+enable_image_generation = True # bool |  (optional)
+enable_web_browsing = True # bool |  (optional)
+enable_code_interpreter = True # bool |  (optional)
+custom_css = 'custom_css_example' # str |  (optional)
+custom_javascript = 'custom_javascript_example' # str |  (optional)
+embed_custom_image = 'embed_custom_image_example' # str |  (optional)
+is_lti_accessible = True # bool | Enables LTI access for this mentor. When True, LTI users can be granted access via RBAC policies. (optional)
+
+try:
+    api_response = api_instance.ai_mentor_orgs_users_mentors_settings_create(mentor, org, user_id, id, mentor2, mentor_slug, mentor_unique_id, mentor_id, metadata, enable_memory_component, enable_custom_javascript, allow_anonymous, enable_offline_mode, mentor_description, suggested_prompts, proactive_response, greeting_method, mentor_tools, can_use_tools, llm_name, proactive_prompt, study_mode_prompt, disclaimer, enable_disclaimer, show_attachment, show_voice_call, show_voice_record, show_rag_images, starter_prompts, embed_is_context_aware, embed_open_by_default, embed_show_attachment, embed_show_voice_call, embed_show_voice_record, show_explore_mentors, embed_icon_selection_data, placeholder_prompt, enable_email_chat, enable_spaced_repetition, enable_instruction_mode, enable_socratic_mode, is_guided_mentor, is_featured, enable_guided_prompts, save_flagged_prompts, enable_moderation, enable_multi_query_rag, enable_prompt_caching, enable_post_processing_system, enable_safety_system, forkable, forkable_with_training_data, mentor_name, categories, types, subjects, recently_accessed_at, created_by, created_at, updated_at, platform_key, llm_config, llm_provider, system_prompt, llm_temperature, safety_system_prompt, safety_response, moderation_system_prompt, post_processing_prompt, moderation_response, mcp_servers, department, disable_chathistory, call_configuration, guided_prompt_instructions, seo_tags, marketing_conversations, template_mentor, google_voice, openai_voice, enable_openai_assistant, enable_total_grounding, enable_suggested_prompts, is_deleted, department_id=department_id, display_name=display_name, profile_image=profile_image, initial_message=initial_message, suggested_message=suggested_message, theme=theme, user_message_color=user_message_color, mentor_bubble_color=mentor_bubble_color, align_mentor_bubble=align_mentor_bubble, mentor_visibility=mentor_visibility, enable_image_generation=enable_image_generation, enable_web_browsing=enable_web_browsing, enable_code_interpreter=enable_code_interpreter, custom_css=custom_css, custom_javascript=custom_javascript, embed_custom_image=embed_custom_image, is_lti_accessible=is_lti_accessible)
+    print("The response of AiMentorApi->ai_mentor_orgs_users_mentors_settings_create:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiMentorApi->ai_mentor_orgs_users_mentors_settings_create: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **mentor** | **str**|  | 
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+ **id** | **int**|  | 
+ **mentor2** | **str**|  | 
+ **mentor_slug** | **str**|  | 
+ **mentor_unique_id** | **str**|  | 
+ **mentor_id** | **int**|  | 
+ **metadata** | [**object**](object.md)|  | 
+ **enable_memory_component** | **bool**|  | 
+ **enable_custom_javascript** | **bool**|  | 
+ **allow_anonymous** | **bool**|  | 
+ **enable_offline_mode** | **bool**|  | 
+ **mentor_description** | **str**|  | 
+ **suggested_prompts** | [**object**](object.md)|  | 
+ **proactive_response** | **str**|  | 
+ **greeting_method** | **str**|  | 
+ **mentor_tools** | [**object**](object.md)|  | 
+ **can_use_tools** | **bool**|  | 
+ **llm_name** | **str**|  | 
+ **proactive_prompt** | **str**|  | 
+ **study_mode_prompt** | **str**|  | 
+ **disclaimer** | **str**|  | 
+ **enable_disclaimer** | **bool**|  | 
+ **show_attachment** | **bool**|  | 
+ **show_voice_call** | **bool**|  | 
+ **show_voice_record** | **bool**|  | 
+ **show_rag_images** | **bool**|  | 
+ **starter_prompts** | **str**|  | 
+ **embed_is_context_aware** | **bool**|  | 
+ **embed_open_by_default** | **bool**|  | 
+ **embed_show_attachment** | **bool**|  | 
+ **embed_show_voice_call** | **bool**|  | 
+ **embed_show_voice_record** | **bool**|  | 
+ **show_explore_mentors** | **bool**|  | 
+ **embed_icon_selection_data** | [**object**](object.md)|  | 
+ **placeholder_prompt** | **str**|  | 
+ **enable_email_chat** | **bool**|  | 
+ **enable_spaced_repetition** | **bool**|  | 
+ **enable_instruction_mode** | **bool**|  | 
+ **enable_socratic_mode** | **bool**|  | 
+ **is_guided_mentor** | **bool**|  | 
+ **is_featured** | **bool**|  | 
+ **enable_guided_prompts** | **bool**|  | 
+ **save_flagged_prompts** | **bool**|  | 
+ **enable_moderation** | **bool**|  | 
+ **enable_multi_query_rag** | **bool**|  | 
+ **enable_prompt_caching** | **bool**|  | 
+ **enable_post_processing_system** | **bool**|  | 
+ **enable_safety_system** | **bool**|  | 
+ **forkable** | **bool**|  | 
+ **forkable_with_training_data** | **bool**|  | 
+ **mentor_name** | **str**|  | 
+ **categories** | [**List[MentorCategory]**](MentorCategory.md)|  | 
+ **types** | [**List[MentorType]**](MentorType.md)|  | 
+ **subjects** | [**List[Subject]**](Subject.md)|  | 
+ **recently_accessed_at** | **datetime**|  | 
+ **created_by** | **str**|  | 
+ **created_at** | **datetime**|  | 
+ **updated_at** | **datetime**|  | 
+ **platform_key** | **str**|  | 
+ **llm_config** | [**object**](object.md)|  | 
+ **llm_provider** | **str**|  | 
+ **system_prompt** | **str**|  | 
+ **llm_temperature** | **float**|  | 
+ **safety_system_prompt** | **str**|  | 
+ **safety_response** | **str**|  | 
+ **moderation_system_prompt** | **str**|  | 
+ **post_processing_prompt** | **str**|  | 
+ **moderation_response** | **str**|  | 
+ **mcp_servers** | [**List[MCPServer]**](MCPServer.md)|  | 
+ **department** | **str**|  | 
+ **disable_chathistory** | **str**|  | 
+ **call_configuration** | [**CallConfiguration**](CallConfiguration.md)|  | 
+ **guided_prompt_instructions** | **str**|  | 
+ **seo_tags** | [**object**](object.md)|  | 
+ **marketing_conversations** | [**object**](object.md)|  | 
+ **template_mentor** | [**object**](object.md)|  | 
+ **google_voice** | **str**|  | 
+ **openai_voice** | **str**|  | 
+ **enable_openai_assistant** | **bool**|  | 
+ **enable_total_grounding** | **bool**|  | 
+ **enable_suggested_prompts** | **bool**|  | 
+ **is_deleted** | **bool**|  | 
+ **department_id** | **int**| Department to authorize users by | [optional] 
+ **display_name** | **str**|  | [optional] 
+ **profile_image** | **str**|  | [optional] 
+ **initial_message** | **str**|  | [optional] 
+ **suggested_message** | **str**|  | [optional] 
+ **theme** | [**ThemeEnum**](ThemeEnum.md)|  | [optional] 
+ **user_message_color** | **str**|  | [optional] 
+ **mentor_bubble_color** | **str**|  | [optional] 
+ **align_mentor_bubble** | [**AlignMentorBubbleEnum**](AlignMentorBubbleEnum.md)|  | [optional] 
+ **mentor_visibility** | **str**|  | [optional] 
+ **enable_image_generation** | **bool**|  | [optional] 
+ **enable_web_browsing** | **bool**|  | [optional] 
+ **enable_code_interpreter** | **bool**|  | [optional] 
+ **custom_css** | **str**|  | [optional] 
+ **custom_javascript** | **str**|  | [optional] 
+ **embed_custom_image** | **str**|  | [optional] 
+ **is_lti_accessible** | **bool**| Enables LTI access for this mentor. When True, LTI users can be granted access via RBAC policies. | [optional] 
+
+### Return type
+
+[**MentorSettings**](MentorSettings.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: multipart/form-data, application/x-www-form-urlencoded, application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ai_mentor_orgs_users_mentors_settings_destroy**
+> ai_mentor_orgs_users_mentors_settings_destroy(mentor, org, user_id, department_id=department_id)
+
+API view to retrieve and update mentor settings.
+
+Permissions:
+    - Only accessible to tenant admins.
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+# Create an instance of the API class
+api_instance = iblai.AiMentorApi(api_client)
+mentor = 'mentor_example' # str | 
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+department_id = 56 # int | Department to authorize users by (optional)
+
+try:
+    api_instance.ai_mentor_orgs_users_mentors_settings_destroy(mentor, org, user_id, department_id=department_id)
+except Exception as e:
+    print("Exception when calling AiMentorApi->ai_mentor_orgs_users_mentors_settings_destroy: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **mentor** | **str**|  | 
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+ **department_id** | **int**| Department to authorize users by | [optional] 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**204** | No response body |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ai_mentor_orgs_users_mentors_settings_partial_update**
+> MentorSettings ai_mentor_orgs_users_mentors_settings_partial_update(mentor, org, user_id, department_id=department_id, id=id, display_name=display_name, profile_image=profile_image, initial_message=initial_message, suggested_message=suggested_message, theme=theme, user_message_color=user_message_color, mentor_bubble_color=mentor_bubble_color, align_mentor_bubble=align_mentor_bubble, mentor2=mentor2, mentor_slug=mentor_slug, mentor_unique_id=mentor_unique_id, mentor_id=mentor_id, metadata=metadata, mentor_visibility=mentor_visibility, enable_image_generation=enable_image_generation, enable_web_browsing=enable_web_browsing, enable_code_interpreter=enable_code_interpreter, enable_memory_component=enable_memory_component, custom_css=custom_css, custom_javascript=custom_javascript, enable_custom_javascript=enable_custom_javascript, allow_anonymous=allow_anonymous, enable_offline_mode=enable_offline_mode, mentor_description=mentor_description, suggested_prompts=suggested_prompts, proactive_response=proactive_response, greeting_method=greeting_method, mentor_tools=mentor_tools, can_use_tools=can_use_tools, llm_name=llm_name, proactive_prompt=proactive_prompt, study_mode_prompt=study_mode_prompt, disclaimer=disclaimer, enable_disclaimer=enable_disclaimer, show_attachment=show_attachment, show_voice_call=show_voice_call, show_voice_record=show_voice_record, show_rag_images=show_rag_images, starter_prompts=starter_prompts, embed_is_context_aware=embed_is_context_aware, embed_open_by_default=embed_open_by_default, embed_show_attachment=embed_show_attachment, embed_show_voice_call=embed_show_voice_call, embed_show_voice_record=embed_show_voice_record, show_explore_mentors=show_explore_mentors, embed_icon_selection_data=embed_icon_selection_data, embed_custom_image=embed_custom_image, placeholder_prompt=placeholder_prompt, enable_email_chat=enable_email_chat, enable_spaced_repetition=enable_spaced_repetition, enable_instruction_mode=enable_instruction_mode, enable_socratic_mode=enable_socratic_mode, is_guided_mentor=is_guided_mentor, is_featured=is_featured, enable_guided_prompts=enable_guided_prompts, save_flagged_prompts=save_flagged_prompts, enable_moderation=enable_moderation, enable_multi_query_rag=enable_multi_query_rag, enable_prompt_caching=enable_prompt_caching, enable_post_processing_system=enable_post_processing_system, enable_safety_system=enable_safety_system, forkable=forkable, forkable_with_training_data=forkable_with_training_data, mentor_name=mentor_name, categories=categories, types=types, subjects=subjects, recently_accessed_at=recently_accessed_at, created_by=created_by, created_at=created_at, updated_at=updated_at, platform_key=platform_key, llm_config=llm_config, llm_provider=llm_provider, system_prompt=system_prompt, llm_temperature=llm_temperature, safety_system_prompt=safety_system_prompt, safety_response=safety_response, moderation_system_prompt=moderation_system_prompt, post_processing_prompt=post_processing_prompt, moderation_response=moderation_response, mcp_servers=mcp_servers, department=department, disable_chathistory=disable_chathistory, call_configuration=call_configuration, guided_prompt_instructions=guided_prompt_instructions, seo_tags=seo_tags, marketing_conversations=marketing_conversations, template_mentor=template_mentor, google_voice=google_voice, openai_voice=openai_voice, enable_openai_assistant=enable_openai_assistant, enable_total_grounding=enable_total_grounding, enable_suggested_prompts=enable_suggested_prompts, is_deleted=is_deleted, is_lti_accessible=is_lti_accessible)
+
+API view to retrieve and update mentor settings.
+
+Permissions:
+    - Only accessible to tenant admins.
+
+### Example
+
+* Api Key Authentication (PlatformApiKeyAuthentication):
+
+```python
+import iblai
+from iblai.models.align_mentor_bubble_enum import AlignMentorBubbleEnum
+from iblai.models.mcp_server import MCPServer
+from iblai.models.mentor_category import MentorCategory
+from iblai.models.mentor_settings import MentorSettings
+from iblai.models.mentor_type import MentorType
+from iblai.models.subject import Subject
+from iblai.models.theme_enum import ThemeEnum
+from iblai.rest import ApiException
+from pprint import pprint
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# The APIs use bearer tokens for authentication with a prefix of: `Api-Key`
+# You can generate an authenticated client using the following helper method
+client = get_platform_api_client(
+    host="https://base.manager.iblai.app", 
+    key=os.environ["API_KEY"]
+)
+# Create an instance of the API class
+api_instance = iblai.AiMentorApi(api_client)
+mentor = 'mentor_example' # str | 
+org = 'org_example' # str | 
+user_id = 'user_id_example' # str | 
+department_id = 56 # int | Department to authorize users by (optional)
+id = 56 # int |  (optional)
+display_name = 'display_name_example' # str |  (optional)
+profile_image = 'profile_image_example' # str |  (optional)
+initial_message = 'initial_message_example' # str |  (optional)
+suggested_message = 'suggested_message_example' # str |  (optional)
+theme = iblai.ThemeEnum() # ThemeEnum |  (optional)
+user_message_color = 'user_message_color_example' # str |  (optional)
+mentor_bubble_color = 'mentor_bubble_color_example' # str |  (optional)
+align_mentor_bubble = iblai.AlignMentorBubbleEnum() # AlignMentorBubbleEnum |  (optional)
+mentor2 = 'mentor_example' # str |  (optional)
+mentor_slug = 'mentor_slug_example' # str |  (optional)
+mentor_unique_id = 'mentor_unique_id_example' # str |  (optional)
+mentor_id = 56 # int |  (optional)
+metadata = None # object |  (optional)
+mentor_visibility = 'mentor_visibility_example' # str |  (optional)
+enable_image_generation = True # bool |  (optional)
+enable_web_browsing = True # bool |  (optional)
+enable_code_interpreter = True # bool |  (optional)
+enable_memory_component = True # bool |  (optional)
+custom_css = 'custom_css_example' # str |  (optional)
+custom_javascript = 'custom_javascript_example' # str |  (optional)
+enable_custom_javascript = True # bool |  (optional)
+allow_anonymous = True # bool |  (optional)
+enable_offline_mode = True # bool |  (optional)
+mentor_description = 'mentor_description_example' # str |  (optional)
+suggested_prompts = None # object |  (optional)
+proactive_response = 'proactive_response_example' # str |  (optional)
+greeting_method = 'greeting_method_example' # str |  (optional)
+mentor_tools = None # object |  (optional)
+can_use_tools = True # bool |  (optional)
+llm_name = 'llm_name_example' # str |  (optional)
+proactive_prompt = 'proactive_prompt_example' # str |  (optional)
+study_mode_prompt = 'study_mode_prompt_example' # str |  (optional)
+disclaimer = 'disclaimer_example' # str |  (optional)
+enable_disclaimer = True # bool |  (optional)
+show_attachment = True # bool |  (optional)
+show_voice_call = True # bool |  (optional)
+show_voice_record = True # bool |  (optional)
+show_rag_images = True # bool |  (optional)
+starter_prompts = 'starter_prompts_example' # str |  (optional)
+embed_is_context_aware = True # bool |  (optional)
+embed_open_by_default = True # bool |  (optional)
+embed_show_attachment = True # bool |  (optional)
+embed_show_voice_call = True # bool |  (optional)
+embed_show_voice_record = True # bool |  (optional)
+show_explore_mentors = True # bool |  (optional)
+embed_icon_selection_data = None # object |  (optional)
+embed_custom_image = 'embed_custom_image_example' # str |  (optional)
+placeholder_prompt = 'placeholder_prompt_example' # str |  (optional)
+enable_email_chat = True # bool |  (optional)
+enable_spaced_repetition = True # bool |  (optional)
+enable_instruction_mode = True # bool |  (optional)
+enable_socratic_mode = True # bool |  (optional)
+is_guided_mentor = True # bool |  (optional)
+is_featured = True # bool |  (optional)
+enable_guided_prompts = True # bool |  (optional)
+save_flagged_prompts = True # bool |  (optional)
+enable_moderation = True # bool |  (optional)
+enable_multi_query_rag = True # bool |  (optional)
+enable_prompt_caching = True # bool |  (optional)
+enable_post_processing_system = True # bool |  (optional)
+enable_safety_system = True # bool |  (optional)
+forkable = True # bool |  (optional)
+forkable_with_training_data = True # bool |  (optional)
+mentor_name = 'mentor_name_example' # str |  (optional)
+categories = [iblai.MentorCategory()] # List[MentorCategory] |  (optional)
+types = [iblai.MentorType()] # List[MentorType] |  (optional)
+subjects = [iblai.Subject()] # List[Subject] |  (optional)
+recently_accessed_at = '2013-10-20T19:20:30+01:00' # datetime |  (optional)
+created_by = 'created_by_example' # str |  (optional)
+created_at = '2013-10-20T19:20:30+01:00' # datetime |  (optional)
+updated_at = '2013-10-20T19:20:30+01:00' # datetime |  (optional)
+platform_key = 'platform_key_example' # str |  (optional)
+llm_config = None # object |  (optional)
+llm_provider = 'llm_provider_example' # str |  (optional)
+system_prompt = 'system_prompt_example' # str |  (optional)
+llm_temperature = 3.4 # float |  (optional)
+safety_system_prompt = 'safety_system_prompt_example' # str |  (optional)
+safety_response = 'safety_response_example' # str |  (optional)
+moderation_system_prompt = 'moderation_system_prompt_example' # str |  (optional)
+post_processing_prompt = 'post_processing_prompt_example' # str |  (optional)
+moderation_response = 'moderation_response_example' # str |  (optional)
+mcp_servers = [iblai.MCPServer()] # List[MCPServer] |  (optional)
+department = 'department_example' # str |  (optional)
+disable_chathistory = 'disable_chathistory_example' # str |  (optional)
+call_configuration = iblai.CallConfiguration() # CallConfiguration |  (optional)
+guided_prompt_instructions = 'guided_prompt_instructions_example' # str |  (optional)
+seo_tags = None # object |  (optional)
+marketing_conversations = None # object |  (optional)
+template_mentor = None # object |  (optional)
+google_voice = 'google_voice_example' # str |  (optional)
+openai_voice = 'openai_voice_example' # str |  (optional)
+enable_openai_assistant = True # bool |  (optional)
+enable_total_grounding = True # bool |  (optional)
+enable_suggested_prompts = True # bool |  (optional)
+is_deleted = True # bool |  (optional)
+is_lti_accessible = True # bool | Enables LTI access for this mentor. When True, LTI users can be granted access via RBAC policies. (optional)
+
+try:
+    api_response = api_instance.ai_mentor_orgs_users_mentors_settings_partial_update(mentor, org, user_id, department_id=department_id, id=id, display_name=display_name, profile_image=profile_image, initial_message=initial_message, suggested_message=suggested_message, theme=theme, user_message_color=user_message_color, mentor_bubble_color=mentor_bubble_color, align_mentor_bubble=align_mentor_bubble, mentor2=mentor2, mentor_slug=mentor_slug, mentor_unique_id=mentor_unique_id, mentor_id=mentor_id, metadata=metadata, mentor_visibility=mentor_visibility, enable_image_generation=enable_image_generation, enable_web_browsing=enable_web_browsing, enable_code_interpreter=enable_code_interpreter, enable_memory_component=enable_memory_component, custom_css=custom_css, custom_javascript=custom_javascript, enable_custom_javascript=enable_custom_javascript, allow_anonymous=allow_anonymous, enable_offline_mode=enable_offline_mode, mentor_description=mentor_description, suggested_prompts=suggested_prompts, proactive_response=proactive_response, greeting_method=greeting_method, mentor_tools=mentor_tools, can_use_tools=can_use_tools, llm_name=llm_name, proactive_prompt=proactive_prompt, study_mode_prompt=study_mode_prompt, disclaimer=disclaimer, enable_disclaimer=enable_disclaimer, show_attachment=show_attachment, show_voice_call=show_voice_call, show_voice_record=show_voice_record, show_rag_images=show_rag_images, starter_prompts=starter_prompts, embed_is_context_aware=embed_is_context_aware, embed_open_by_default=embed_open_by_default, embed_show_attachment=embed_show_attachment, embed_show_voice_call=embed_show_voice_call, embed_show_voice_record=embed_show_voice_record, show_explore_mentors=show_explore_mentors, embed_icon_selection_data=embed_icon_selection_data, embed_custom_image=embed_custom_image, placeholder_prompt=placeholder_prompt, enable_email_chat=enable_email_chat, enable_spaced_repetition=enable_spaced_repetition, enable_instruction_mode=enable_instruction_mode, enable_socratic_mode=enable_socratic_mode, is_guided_mentor=is_guided_mentor, is_featured=is_featured, enable_guided_prompts=enable_guided_prompts, save_flagged_prompts=save_flagged_prompts, enable_moderation=enable_moderation, enable_multi_query_rag=enable_multi_query_rag, enable_prompt_caching=enable_prompt_caching, enable_post_processing_system=enable_post_processing_system, enable_safety_system=enable_safety_system, forkable=forkable, forkable_with_training_data=forkable_with_training_data, mentor_name=mentor_name, categories=categories, types=types, subjects=subjects, recently_accessed_at=recently_accessed_at, created_by=created_by, created_at=created_at, updated_at=updated_at, platform_key=platform_key, llm_config=llm_config, llm_provider=llm_provider, system_prompt=system_prompt, llm_temperature=llm_temperature, safety_system_prompt=safety_system_prompt, safety_response=safety_response, moderation_system_prompt=moderation_system_prompt, post_processing_prompt=post_processing_prompt, moderation_response=moderation_response, mcp_servers=mcp_servers, department=department, disable_chathistory=disable_chathistory, call_configuration=call_configuration, guided_prompt_instructions=guided_prompt_instructions, seo_tags=seo_tags, marketing_conversations=marketing_conversations, template_mentor=template_mentor, google_voice=google_voice, openai_voice=openai_voice, enable_openai_assistant=enable_openai_assistant, enable_total_grounding=enable_total_grounding, enable_suggested_prompts=enable_suggested_prompts, is_deleted=is_deleted, is_lti_accessible=is_lti_accessible)
+    print("The response of AiMentorApi->ai_mentor_orgs_users_mentors_settings_partial_update:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiMentorApi->ai_mentor_orgs_users_mentors_settings_partial_update: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **mentor** | **str**|  | 
+ **org** | **str**|  | 
+ **user_id** | **str**|  | 
+ **department_id** | **int**| Department to authorize users by | [optional] 
+ **id** | **int**|  | [optional] 
+ **display_name** | **str**|  | [optional] 
+ **profile_image** | **str**|  | [optional] 
+ **initial_message** | **str**|  | [optional] 
+ **suggested_message** | **str**|  | [optional] 
+ **theme** | [**ThemeEnum**](ThemeEnum.md)|  | [optional] 
+ **user_message_color** | **str**|  | [optional] 
+ **mentor_bubble_color** | **str**|  | [optional] 
+ **align_mentor_bubble** | [**AlignMentorBubbleEnum**](AlignMentorBubbleEnum.md)|  | [optional] 
+ **mentor2** | **str**|  | [optional] 
+ **mentor_slug** | **str**|  | [optional] 
+ **mentor_unique_id** | **str**|  | [optional] 
+ **mentor_id** | **int**|  | [optional] 
+ **metadata** | [**object**](object.md)|  | [optional] 
+ **mentor_visibility** | **str**|  | [optional] 
+ **enable_image_generation** | **bool**|  | [optional] 
+ **enable_web_browsing** | **bool**|  | [optional] 
+ **enable_code_interpreter** | **bool**|  | [optional] 
+ **enable_memory_component** | **bool**|  | [optional] 
+ **custom_css** | **str**|  | [optional] 
+ **custom_javascript** | **str**|  | [optional] 
+ **enable_custom_javascript** | **bool**|  | [optional] 
+ **allow_anonymous** | **bool**|  | [optional] 
+ **enable_offline_mode** | **bool**|  | [optional] 
+ **mentor_description** | **str**|  | [optional] 
+ **suggested_prompts** | [**object**](object.md)|  | [optional] 
+ **proactive_response** | **str**|  | [optional] 
+ **greeting_method** | **str**|  | [optional] 
+ **mentor_tools** | [**object**](object.md)|  | [optional] 
+ **can_use_tools** | **bool**|  | [optional] 
+ **llm_name** | **str**|  | [optional] 
+ **proactive_prompt** | **str**|  | [optional] 
+ **study_mode_prompt** | **str**|  | [optional] 
+ **disclaimer** | **str**|  | [optional] 
+ **enable_disclaimer** | **bool**|  | [optional] 
+ **show_attachment** | **bool**|  | [optional] 
+ **show_voice_call** | **bool**|  | [optional] 
+ **show_voice_record** | **bool**|  | [optional] 
+ **show_rag_images** | **bool**|  | [optional] 
+ **starter_prompts** | **str**|  | [optional] 
+ **embed_is_context_aware** | **bool**|  | [optional] 
+ **embed_open_by_default** | **bool**|  | [optional] 
+ **embed_show_attachment** | **bool**|  | [optional] 
+ **embed_show_voice_call** | **bool**|  | [optional] 
+ **embed_show_voice_record** | **bool**|  | [optional] 
+ **show_explore_mentors** | **bool**|  | [optional] 
+ **embed_icon_selection_data** | [**object**](object.md)|  | [optional] 
+ **embed_custom_image** | **str**|  | [optional] 
+ **placeholder_prompt** | **str**|  | [optional] 
+ **enable_email_chat** | **bool**|  | [optional] 
+ **enable_spaced_repetition** | **bool**|  | [optional] 
+ **enable_instruction_mode** | **bool**|  | [optional] 
+ **enable_socratic_mode** | **bool**|  | [optional] 
+ **is_guided_mentor** | **bool**|  | [optional] 
+ **is_featured** | **bool**|  | [optional] 
+ **enable_guided_prompts** | **bool**|  | [optional] 
+ **save_flagged_prompts** | **bool**|  | [optional] 
+ **enable_moderation** | **bool**|  | [optional] 
+ **enable_multi_query_rag** | **bool**|  | [optional] 
+ **enable_prompt_caching** | **bool**|  | [optional] 
+ **enable_post_processing_system** | **bool**|  | [optional] 
+ **enable_safety_system** | **bool**|  | [optional] 
+ **forkable** | **bool**|  | [optional] 
+ **forkable_with_training_data** | **bool**|  | [optional] 
+ **mentor_name** | **str**|  | [optional] 
+ **categories** | [**List[MentorCategory]**](MentorCategory.md)|  | [optional] 
+ **types** | [**List[MentorType]**](MentorType.md)|  | [optional] 
+ **subjects** | [**List[Subject]**](Subject.md)|  | [optional] 
+ **recently_accessed_at** | **datetime**|  | [optional] 
+ **created_by** | **str**|  | [optional] 
+ **created_at** | **datetime**|  | [optional] 
+ **updated_at** | **datetime**|  | [optional] 
+ **platform_key** | **str**|  | [optional] 
+ **llm_config** | [**object**](object.md)|  | [optional] 
+ **llm_provider** | **str**|  | [optional] 
+ **system_prompt** | **str**|  | [optional] 
+ **llm_temperature** | **float**|  | [optional] 
+ **safety_system_prompt** | **str**|  | [optional] 
+ **safety_response** | **str**|  | [optional] 
+ **moderation_system_prompt** | **str**|  | [optional] 
+ **post_processing_prompt** | **str**|  | [optional] 
+ **moderation_response** | **str**|  | [optional] 
+ **mcp_servers** | [**List[MCPServer]**](MCPServer.md)|  | [optional] 
+ **department** | **str**|  | [optional] 
+ **disable_chathistory** | **str**|  | [optional] 
+ **call_configuration** | [**CallConfiguration**](CallConfiguration.md)|  | [optional] 
+ **guided_prompt_instructions** | **str**|  | [optional] 
+ **seo_tags** | [**object**](object.md)|  | [optional] 
+ **marketing_conversations** | [**object**](object.md)|  | [optional] 
+ **template_mentor** | [**object**](object.md)|  | [optional] 
+ **google_voice** | **str**|  | [optional] 
+ **openai_voice** | **str**|  | [optional] 
+ **enable_openai_assistant** | **bool**|  | [optional] 
+ **enable_total_grounding** | **bool**|  | [optional] 
+ **enable_suggested_prompts** | **bool**|  | [optional] 
+ **is_deleted** | **bool**|  | [optional] 
+ **is_lti_accessible** | **bool**| Enables LTI access for this mentor. When True, LTI users can be granted access via RBAC policies. | [optional] 
+
+### Return type
+
+[**MentorSettings**](MentorSettings.md)
+
+### Authorization
+
+[PlatformApiKeyAuthentication](../README.md#PlatformApiKeyAuthentication)
+
+### HTTP request headers
+
+ - **Content-Type**: multipart/form-data, application/x-www-form-urlencoded, application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

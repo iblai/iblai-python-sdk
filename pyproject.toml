@@ -1,6 +1,6 @@
 [project]
 name = "iblai"
-version = "4.202.1"
+version = "4.204.0"
 description = "ibl-data-manager"
 authors = [
   {name = "OpenAPI Generator Community",email = "team@openapitools.org"},

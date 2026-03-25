@@ -15,9 +15,7 @@ def invite_user_to_platform(
     """
     Invite user to platform by email
     """
-    request_base = base_url
-    if not base_url:
-        request_base = DEFAULT_BASE_URL
+    request_base = (base_url or DEFAULT_BASE_URL).rstrip("/")
 
     data = {
         "platform_key": tenant,

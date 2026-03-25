@@ -12,7 +12,6 @@ Name | Type | Description | Notes
 **interval** | [**IntervalEnum**](IntervalEnum.md) | Billing interval  * &#x60;month&#x60; - Monthly * &#x60;year&#x60; - Yearly * &#x60;one_time&#x60; - One Time | [optional] 
 **is_active** | **bool** | Whether this price is currently available for purchase | [optional] 
 **features** | **object** | List of features included in this tier | [optional] 
-**remark** | **str** | Optional label for this price tier (e.g., &#39;Most Popular&#39;, &#39;Best Value&#39;) | [optional] 
 **sort_order** | **int** | Display order for this price tier | [optional] 
 
 ## Example

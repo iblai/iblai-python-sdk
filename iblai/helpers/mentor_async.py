@@ -31,9 +31,7 @@ async def create_mentor_with_settings(
     Returns:
         httpx.Response: The HTTP response object
     """
-    request_base = base_url
-    if not base_url:
-        request_base = DEFAULT_BASE_URL
+    request_base = (base_url or DEFAULT_BASE_URL).rstrip("/")
 
     headers = {
         "Authorization": f"Api-Token {api_token}"
@@ -93,9 +91,7 @@ async def upload_document_to_mentor(
     mime_type, _ = mimetypes.guess_type(path)
     headers = {"Authorization": f"Api-Token {api_token}"}
 
-    request_base = base_url
-    if not base_url:
-        request_base = DEFAULT_BASE_URL
+    request_base = (base_url or DEFAULT_BASE_URL).rstrip("/")
 
     # Use context manager to ensure file is properly closed
     with open(path, "rb") as file_obj:
@@ -155,9 +151,7 @@ async def wait_for_document_training_to_complete(
     """
     headers = {"Authorization": f"Api-Token {api_token}"}
 
-    request_base = base_url
-    if not base_url:
-        request_base = DEFAULT_BASE_URL
+    request_base = (base_url or DEFAULT_BASE_URL).rstrip("/")
 
     retry_count = 0
 
@@ -208,9 +202,7 @@ async def wait_for_document_training_to_complete(
 
 
 async def create_chat_session(mentor_name: str, tenant: str, username: str, base_url: t.Optional[str] = None) -> str | None:
-    request_base = base_url
-    if not base_url:
-        request_base = DEFAULT_BASE_URL
+    request_base = (base_url or DEFAULT_BASE_URL).rstrip("/")
 
     # Generate a session id
     async with httpx.AsyncClient() as client:
@@ -265,9 +257,7 @@ async def chat_with_mentor_async(prompt: str, session_id: str, mentor: str, tena
     }
 
 
-    request_base = base_url
-    if not base_url:
-        request_base = DEFAULT_WEBSOCKET_URL
+    request_base = (base_url or DEFAULT_WEBSOCKET_URL).rstrip("/")
 
     ws = None
     try:

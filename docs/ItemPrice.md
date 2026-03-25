@@ -14,7 +14,6 @@ Name | Type | Description | Notes
 **stripe_price_id** | **str** | Stripe Price ID (on the connected account) | [readonly] 
 **is_active** | **bool** | Whether this price is currently available for purchase | [optional] 
 **features** | **object** | List of features included in this tier | [optional] 
-**remark** | **str** | Optional label for this price tier (e.g., &#39;Most Popular&#39;, &#39;Best Value&#39;) | [optional] 
 **sort_order** | **int** | Display order for this price tier | [optional] 
 **created_at** | **datetime** |  | [readonly] 
 **updated_at** | **datetime** |  | [readonly] 

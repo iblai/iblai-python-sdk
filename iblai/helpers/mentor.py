@@ -15,9 +15,7 @@ def create_mentor(
     """
     Create a new mentor with the provided settings.
     """
-    request_base = base_url
-    if not base_url:
-        request_base = DEFAULT_BASE_URL
+    request_base = (base_url or DEFAULT_BASE_URL).rstrip("/")
 
     headers = {"Authorization": f"Api-Token {api_token}"}
     resp = requests.post(

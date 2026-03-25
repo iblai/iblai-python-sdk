@@ -30,7 +30,7 @@ Please follow the [installation procedure](#installation--usage) and then run th
 
 The SDK requires a **Platform API Key** for authentication. This is different from JWT tokens or user session tokens.
 
-**How to obtain your API token:**
+**How to obtain your Platform API Key:**
 1. Log in to your ibl.ai admin dashboard
 2. Navigate to **Settings** → **API Keys**
 3. Create or copy an existing Platform API Key
@@ -51,7 +51,7 @@ api_token = "your-64-character-platform-api-key"
 ```python
 from iblai.helpers import add_llm_credential
 
-base_url = "https://base.manager.iblai.app/"
+base_url = "https://base.manager.iblai.app"
 api_token = "your-platform-api-key"  # Platform API Key from dashboard
 
 credential_name = "openai"
@@ -59,6 +59,7 @@ credential_value = "sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 tenant = "new-platform"
 
 add_llm_credential(credential_name, credential_value, tenant, api_token, base_url)
+
 ```
 
 ### Chatting with a mentor
@@ -76,7 +77,7 @@ from iblai.helpers import (
 async def main():
     tenant = "new-platform"
     username = "my-user"
-    base_url = "https://base.manager.iblai.app/"
+    base_url = "https://base.manager.iblai.app"
     asgi_base_url = "wss://asgi.data.iblai.app"
     api_token = "your-platform-api-key"  # Platform API Key from dashboard
 
@@ -134,8 +135,8 @@ asyncio.run(main())
 ```python
 from iblai.helpers import invite_user_to_platform
 
-base_url = "https://base.manager.iblai.app/"
-api_token = "<MY_ACCESS_TOKEN>"
+base_url = "https://base.manager.iblai.app"
+api_token = "your-platform-api-key"  # Platform API Key from dashboard
 
 tenant = "new-platform"
 email = "new-student@example.com"

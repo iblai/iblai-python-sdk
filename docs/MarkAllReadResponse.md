@@ -6,8 +6,8 @@ Serializer for the response when marking all notifications as read.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**message** | **str** |  | 
-**count** | **int** |  | 
+**message** | **str** | Status message after marking notifications as read | 
+**count** | **int** | Number of notifications marked as read | 
 
 ## Example
 

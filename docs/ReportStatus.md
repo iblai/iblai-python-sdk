@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **owner** | **str** | Report Owner | [optional] 
 **expires** | **str** | When report would expire and not available for download anymore | [optional] 
 **url** | **str** | Download link for report when available | [optional] 
+**created_at** | **str** | When the report was requested (ISO 8601) | [optional] 
 
 ## Example
 

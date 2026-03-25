@@ -6,9 +6,9 @@ Serializer for campaign exclusion requests.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**campaign_id** | **int** |  | [optional] 
-**campaign_title** | **str** |  | [optional] 
-**email** | **str** |  | [optional] 
+**campaign_id** | **int** | ID of the campaign to exclude from | [optional] 
+**campaign_title** | **str** | Title of the campaign to exclude from | [optional] 
+**email** | **str** | Email address to exclude from the campaign | [optional] 
 
 ## Example
 

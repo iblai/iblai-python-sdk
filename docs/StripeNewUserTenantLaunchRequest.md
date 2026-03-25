@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **name** | **str** | Organization name | 
 **key** | **str** | Unique key for the organization | 
 **ignore_user_exists** | **bool** |  | [optional] [default to False]
+**is_advertising** | **bool** | Advertising mode allows a platform to set custom usd balance to allocate for its members | [optional] [default to False]
 **stripe_checkout_id_alt** | **str** | Stripe Checkout Id to launch the tenant | 
 
 ## Example

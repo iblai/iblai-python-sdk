@@ -7,7 +7,7 @@ Request serializer for BulkPlatformInvitationView POST endpoint
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **invitation_data** | [**List[PlatformInvitationCreate]**](PlatformInvitationCreate.md) | List of invitation data objects | 
-**platform_key** | **str** | The platform key for permission validation | [optional] 
+**platform_key** | **str** | The platform key for permission validation | 
 
 ## Example
 

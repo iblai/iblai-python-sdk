@@ -20,9 +20,16 @@ Name | Type | Description | Notes
 **inserted_at** | **datetime** |  | [optional] [readonly] 
 **has_document** | **bool** |  | [optional] 
 **memory_tracked** | **bool** |  | [optional] 
+**enable_artifacts** | **bool** |  | [optional] 
+**is_shared** | **bool** |  | [optional] 
+**is_authenticated** | **bool** | False if session was created by an anonymous user | [optional] 
 **llm_name** | **str** |  | [optional] 
 **llm_provider** | **str** |  | [optional] 
 **metadata** | **object** |  | [optional] 
+**title** | **str** | AI-generated title summarizing the conversation | [optional] 
+**is_conversation** | **bool** | True if the session has both user and AI messages | [optional] 
+**message_count_human** | **int** | Count of human messages in this session | [optional] 
+**message_count_ai** | **int** | Count of AI messages in this session | [optional] 
 **tools** | **List[int]** |  | [optional] 
 
 ## Example

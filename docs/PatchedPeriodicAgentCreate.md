@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** |  | [optional] [readonly] 
-**mentor** | **int** |  | [optional] 
+**mentor** | **str** |  | [optional] 
 **title** | **str** |  | [optional] 
 **username** | **str** |  | [optional] [readonly] 
 **description** | **str** |  | [optional] 

@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** |  | [readonly] 
 **username** | **str** |  | [optional] 
+**email** | **str** |  | [readonly] 
 **platform_key** | **str** |  | 
 **mentor** | **int** |  | 
 **prompt** | **str** |  | 

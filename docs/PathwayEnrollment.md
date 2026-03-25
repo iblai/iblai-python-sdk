@@ -5,17 +5,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**user_id** | **int** |  | [optional] 
-**username** | **str** |  | [optional] 
-**pathway_id** | **str** |  | [optional] 
-**pathway_uuid** | **str** |  | [optional] 
-**platform_key** | **str** |  | [optional] 
-**org** | **str** |  | [optional] 
-**name** | **str** |  | [optional] 
-**slug** | **str** |  | [optional] 
-**created** | **datetime** | Date when enrollment began/activated | [optional] 
-**ended** | **datetime** | Date when enrollment ended/deactivated | [readonly] 
-**active** | **bool** | Whether the enrollment is active | [optional] 
+**created** | **datetime** |  | [optional] 
+**ended** | **datetime** |  | [optional] 
+**active** | **bool** |  | 
 
 ## Example
 

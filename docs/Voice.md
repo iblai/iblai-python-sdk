@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** |  | [readonly] 
 **name** | **str** |  | 
-**provider** | [**Provider637Enum**](Provider637Enum.md) |  | 
+**provider** | [**VoiceProviderEnum**](VoiceProviderEnum.md) |  | 
 **language** | **str** |  | [optional] 
 **description** | **str** |  | [optional] 
 **audio_url** | **str** |  | [readonly] 

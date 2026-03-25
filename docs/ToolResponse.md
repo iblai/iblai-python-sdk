@@ -9,11 +9,15 @@ Name | Type | Description | Notes
 **name** | **str** |  | 
 **display_name** | **str** |  | [optional] 
 **slug** | **str** |  | [optional] 
+**category** | [**ToolCategory**](ToolCategory.md) |  | [readonly] 
 **description** | **str** |  | [optional] 
+**logo** | **str** |  | [optional] 
 **metadata** | **object** |  | [optional] 
-**allow_retriever_mentors** | **bool** |  | [optional] 
+**allow_base_agent** | **bool** |  | [optional] 
 **allow_openai_agent** | **bool** |  | [optional] 
+**allow_openai_assistant** | **bool** |  | [optional] 
 **allow_google_agent** | **bool** |  | [optional] 
+**is_allowed** | **str** |  | [readonly] 
 
 ## Example
 

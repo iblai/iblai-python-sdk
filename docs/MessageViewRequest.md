@@ -7,6 +7,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **title** | **str** |  | [optional] 
 **tools** | **List[str]** | List of tools slugs to use | [optional] [default to []]
+**enable_artifacts** | **bool** |  | [optional] 
+**is_shared** | **bool** |  | [optional] 
 
 ## Example
 

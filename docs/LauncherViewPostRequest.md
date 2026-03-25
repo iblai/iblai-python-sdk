@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **lms_url** | **str** |  | [optional] 
 **cms_url** | **str** |  | [optional] 
 **portal_url** | **str** |  | [optional] 
+**use_default_hosts** | **bool** |  | [optional] 
 
 ## Example
 

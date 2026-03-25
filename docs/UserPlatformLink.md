@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **user_active** | **bool** |  | 
 **key** | **str** |  | 
 **org** | **str** |  | 
+**platform_name** | **str** |  | 
 **lms_url** | **str** |  | 
 **cms_url** | **str** |  | 
 **portal_url** | **str** |  | 
@@ -20,6 +21,8 @@ Name | Type | Description | Notes
 **expired_on** | **datetime** |  | [optional] 
 **public** | **str** |  | [readonly] 
 **active** | **bool** |  | [optional] 
+**is_enterprise** | **str** |  | [readonly] 
+**show_paywall** | **bool** |  | [readonly] 
 
 ## Example
 

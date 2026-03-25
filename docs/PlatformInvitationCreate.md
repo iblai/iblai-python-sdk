@@ -1,6 +1,6 @@
 # PlatformInvitationCreate
 
-Request serializer for PlatformInvitationView POST endpoint
+Request serializer for PlatformInvitationView POST endpoint  Supports new CSV format fields: - company_name (optional): Company name for the invited user - first_name (new): First name of the invited user - last_name (new): Last name of the invited user - user_group (new): Name of the UserGroup to assign the user to - user_group_owner_email (optional): Email of user who should own the group
 
 ## Properties
 
@@ -15,6 +15,11 @@ Name | Type | Description | Notes
 **created** | **datetime** | When the invitation was created | [optional] 
 **expired** | **datetime** | When the invitation expires | [optional] 
 **metadata** | **Dict[str, object]** | Additional metadata for the invitation | [optional] 
+**company_name** | **str** | Company name for the invited user | [optional] 
+**first_name** | **str** | First name of the invited user | [optional] 
+**last_name** | **str** | Last name of the invited user | [optional] 
+**user_group** | **str** | Name of the UserGroup to assign the user to | [optional] 
+**user_group_owner_email** | **str** | Email of user who should own the group (falls back to uploader) | [optional] 
 
 ## Example
 

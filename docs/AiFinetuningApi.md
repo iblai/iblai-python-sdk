@@ -22,8 +22,6 @@ Method | HTTP request | Description
 # **ai_finetuning_v1_org_user_datasets_create**
 > DataSetCreate ai_finetuning_v1_org_user_datasets_create(org, username, data_set_create)
 
-
-
 Mixin that includes the StudentTokenAuthentication and IsPlatformAdmin
 
 ### Example
@@ -47,7 +45,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiFinetuningApi(api_client)
 org = 'org_example' # str | 
@@ -83,7 +80,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -96,8 +93,6 @@ Name | Type | Description  | Notes
 
 # **ai_finetuning_v1_org_user_datasets_destroy**
 > ai_finetuning_v1_org_user_datasets_destroy(id, org, username)
-
-
 
 Mixin that includes the StudentTokenAuthentication and IsPlatformAdmin
 
@@ -121,7 +116,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiFinetuningApi(api_client)
 id = 'id_example' # str | A UUID string identifying this data set.
@@ -169,8 +163,6 @@ void (empty response body)
 # **ai_finetuning_v1_org_user_datasets_list**
 > PaginatedDataSetList ai_finetuning_v1_org_user_datasets_list(org, username, date_created=date_created, num_data_points=num_data_points, ordering=ordering, page=page, page_size=page_size, retry_attempts=retry_attempts, search=search, status=status)
 
-
-
 Mixin that includes the StudentTokenAuthentication and IsPlatformAdmin
 
 ### Example
@@ -194,7 +186,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiFinetuningApi(api_client)
 org = 'org_example' # str | 
@@ -258,8 +249,6 @@ Name | Type | Description  | Notes
 # **ai_finetuning_v1_org_user_datasets_partial_update**
 > DataSet ai_finetuning_v1_org_user_datasets_partial_update(id, org, username, patched_data_set=patched_data_set)
 
-
-
 Mixin that includes the StudentTokenAuthentication and IsPlatformAdmin
 
 ### Example
@@ -284,7 +273,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiFinetuningApi(api_client)
 id = 'id_example' # str | A UUID string identifying this data set.
@@ -322,7 +310,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -335,8 +323,6 @@ Name | Type | Description  | Notes
 
 # **ai_finetuning_v1_org_user_datasets_retrieve**
 > DataSet ai_finetuning_v1_org_user_datasets_retrieve(id, org, username)
-
-
 
 Mixin that includes the StudentTokenAuthentication and IsPlatformAdmin
 
@@ -361,7 +347,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiFinetuningApi(api_client)
 id = 'id_example' # str | A UUID string identifying this data set.
@@ -411,8 +396,6 @@ Name | Type | Description  | Notes
 # **ai_finetuning_v1_org_user_datasets_update**
 > DataSet ai_finetuning_v1_org_user_datasets_update(id, org, username, data_set)
 
-
-
 Mixin that includes the StudentTokenAuthentication and IsPlatformAdmin
 
 ### Example
@@ -436,7 +419,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiFinetuningApi(api_client)
 id = 'id_example' # str | A UUID string identifying this data set.
@@ -474,7 +456,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -487,8 +469,6 @@ Name | Type | Description  | Notes
 
 # **ai_finetuning_v1_org_user_trainings_create**
 > TrainingCreate ai_finetuning_v1_org_user_trainings_create(org, username, training_create)
-
-
 
 Mixin that includes the StudentTokenAuthentication and IsPlatformAdmin
 
@@ -513,7 +493,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiFinetuningApi(api_client)
 org = 'org_example' # str | 
@@ -549,7 +528,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -562,8 +541,6 @@ Name | Type | Description  | Notes
 
 # **ai_finetuning_v1_org_user_trainings_destroy**
 > ai_finetuning_v1_org_user_trainings_destroy(id, org, username)
-
-
 
 Mixin that includes the StudentTokenAuthentication and IsPlatformAdmin
 
@@ -587,7 +564,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiFinetuningApi(api_client)
 id = 'id_example' # str | A UUID string identifying this training.
@@ -635,9 +611,13 @@ void (empty response body)
 # **ai_finetuning_v1_org_user_trainings_finetuned_models_retrieve**
 > Training ai_finetuning_v1_org_user_trainings_finetuned_models_retrieve(org, username)
 
+Retrieves a paginated list of completed fine-tuned models, excluding those without a fine-tuned model.
+Filtering and pagination is allowed.
 
-
-Retrieves a paginated list of completed fine-tuned models, excluding those without a fine-tuned model. Filtering and pagination is allowed.  NB: This is only a helper endpoint. The same functionality can be achieved with the appropriate filters using the     training list endpoint. Returns:     Response: A paginated response containing the serialized fine-tuned models.
+NB: This is only a helper endpoint. The same functionality can be achieved with the appropriate filters using the
+    training list endpoint.
+Returns:
+    Response: A paginated response containing the serialized fine-tuned models.
 
 ### Example
 
@@ -660,7 +640,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiFinetuningApi(api_client)
 org = 'org_example' # str | 
@@ -708,8 +687,6 @@ Name | Type | Description  | Notes
 # **ai_finetuning_v1_org_user_trainings_list**
 > PaginatedTrainingList ai_finetuning_v1_org_user_trainings_list(org, username, base_model_name=base_model_name, dataset=dataset, date_created=date_created, fine_tuned_model=fine_tuned_model, last_modified=last_modified, ordering=ordering, page=page, page_size=page_size, preprocess_dataset=preprocess_dataset, provider=provider, search=search, status=status)
 
-
-
 Mixin that includes the StudentTokenAuthentication and IsPlatformAdmin
 
 ### Example
@@ -733,7 +710,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiFinetuningApi(api_client)
 org = 'org_example' # str | 
@@ -805,8 +781,6 @@ Name | Type | Description  | Notes
 # **ai_finetuning_v1_org_user_trainings_partial_update**
 > TrainingCreate ai_finetuning_v1_org_user_trainings_partial_update(id, org, username, patched_training_create=patched_training_create)
 
-
-
 Mixin that includes the StudentTokenAuthentication and IsPlatformAdmin
 
 ### Example
@@ -831,7 +805,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiFinetuningApi(api_client)
 id = 'id_example' # str | A UUID string identifying this training.
@@ -869,7 +842,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -882,8 +855,6 @@ Name | Type | Description  | Notes
 
 # **ai_finetuning_v1_org_user_trainings_retrieve**
 > Training ai_finetuning_v1_org_user_trainings_retrieve(id, org, username)
-
-
 
 Mixin that includes the StudentTokenAuthentication and IsPlatformAdmin
 
@@ -908,7 +879,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiFinetuningApi(api_client)
 id = 'id_example' # str | A UUID string identifying this training.
@@ -958,8 +928,6 @@ Name | Type | Description  | Notes
 # **ai_finetuning_v1_org_user_trainings_update**
 > TrainingCreate ai_finetuning_v1_org_user_trainings_update(id, org, username, training_create)
 
-
-
 Mixin that includes the StudentTokenAuthentication and IsPlatformAdmin
 
 ### Example
@@ -983,7 +951,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiFinetuningApi(api_client)
 id = 'id_example' # str | A UUID string identifying this training.
@@ -1021,7 +988,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details

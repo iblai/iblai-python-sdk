@@ -6,10 +6,10 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **str** |  | [readonly] 
-**username** | **str** |  | 
+**username** | **str** |  | [readonly] 
 **title** | **str** |  | [readonly] 
 **body** | **str** |  | [readonly] 
-**status** | [**MessageStatus**](MessageStatus.md) |  | [optional] 
+**status** | **str** |  | [optional] 
 **channel** | **str** |  | [readonly] 
 **context** | **object** |  | [optional] 
 **short_message** | **str** |  | [readonly] 

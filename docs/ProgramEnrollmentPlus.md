@@ -20,6 +20,7 @@ Name | Type | Description | Notes
 **expired** | **datetime** | Date when enrollment expires (null, if not expiring) | [optional] 
 **active** | **bool** | Whether the enrollment is active | [optional] 
 **metadata** | **object** |  | [optional] 
+**program_metadata** | **Dict[str, object]** | Return program&#39;s public metadata | [readonly] 
 
 ## Example
 

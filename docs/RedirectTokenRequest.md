@@ -6,6 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **url** | **str** |  | 
+**mentor_unique_id** | **str** | Optional mentor unique ID for RBAC ownership check | [optional] 
 
 ## Example
 

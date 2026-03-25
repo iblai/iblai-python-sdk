@@ -6,9 +6,9 @@ Serializer for campaign enablement requests.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**campaign_id** | **int** |  | [optional] 
-**campaign_title** | **str** |  | [optional] 
-**email** | **str** |  | [optional] 
+**campaign_id** | **int** | ID of the campaign to enable | [optional] 
+**campaign_title** | **str** | Title of the campaign to enable | [optional] 
+**email** | **str** | Email address to enable for the campaign | [optional] 
 
 ## Example
 

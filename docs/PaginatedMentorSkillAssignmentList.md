@@ -1,0 +1,32 @@
+# PaginatedMentorSkillAssignmentList
+
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**count** | **int** |  | 
+**next** | **str** |  | [optional] 
+**previous** | **str** |  | [optional] 
+**results** | [**List[MentorSkillAssignment]**](MentorSkillAssignment.md) |  | 
+
+## Example
+
+```python
+from iblai.models.paginated_mentor_skill_assignment_list import PaginatedMentorSkillAssignmentList
+
+# TODO update the JSON string below
+json = "{}"
+# create an instance of PaginatedMentorSkillAssignmentList from a JSON string
+paginated_mentor_skill_assignment_list_instance = PaginatedMentorSkillAssignmentList.from_json(json)
+# print the JSON string representation of the object
+print(PaginatedMentorSkillAssignmentList.to_json())
+
+# convert the object into a dict
+paginated_mentor_skill_assignment_list_dict = paginated_mentor_skill_assignment_list_instance.to_dict()
+# create an instance of PaginatedMentorSkillAssignmentList from a dict
+paginated_mentor_skill_assignment_list_from_dict = PaginatedMentorSkillAssignmentList.from_dict(paginated_mentor_skill_assignment_list_dict)
+```
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+

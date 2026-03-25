@@ -9,6 +9,8 @@ Name | Type | Description | Notes
 **next_page** | **int** |  | 
 **previous_page** | **int** |  | 
 **results** | **List[Dict[str, object]]** |  | 
+**allowed_policies** | **List[str]** |  | [optional] 
+**data** | **List[Dict[str, object]]** |  | [optional] 
 
 ## Example
 

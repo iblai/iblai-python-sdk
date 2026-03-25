@@ -36,8 +36,6 @@ Method | HTTP request | Description
 # **career_location_orgs_users_create**
 > career_location_orgs_users_create(org, username)
 
-
-
 API endpoint for managing user base locations
 
 ### Example
@@ -60,7 +58,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CareerApi(api_client)
 org = 'org_example' # str | 
@@ -106,8 +103,6 @@ void (empty response body)
 # **career_location_orgs_users_retrieve**
 > career_location_orgs_users_retrieve(org, username)
 
-
-
 API endpoint for managing user base locations
 
 ### Example
@@ -130,7 +125,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CareerApi(api_client)
 org = 'org_example' # str | 
@@ -176,8 +170,6 @@ void (empty response body)
 # **career_location_orgs_users_update**
 > career_location_orgs_users_update(org, username)
 
-
-
 API endpoint for managing user base locations
 
 ### Example
@@ -200,7 +192,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CareerApi(api_client)
 org = 'org_example' # str | 
@@ -246,8 +237,6 @@ void (empty response body)
 # **career_locations_orgs_retrieve**
 > career_locations_orgs_retrieve(org)
 
-
-
 Platform-wide location statistics (GET only)
 
 ### Example
@@ -257,7 +246,6 @@ Platform-wide location statistics (GET only)
 import iblai
 from iblai.rest import ApiException
 from pprint import pprint
-
 
 # Create an instance of the API class
 api_instance = iblai.CareerApi(api_client)
@@ -302,8 +290,6 @@ No authorization required
 # **career_orgs_companies_users_create**
 > Company career_orgs_companies_users_create(org, username, company)
 
-
-
 ### Example
 
 * Api Key Authentication (PlatformApiKeyAuthentication):
@@ -325,7 +311,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CareerApi(api_client)
 org = 'org_example' # str | 
@@ -361,7 +346,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -374,8 +359,6 @@ Name | Type | Description  | Notes
 
 # **career_orgs_companies_users_destroy**
 > career_orgs_companies_users_destroy(org, username)
-
-
 
 ### Example
 
@@ -397,7 +380,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CareerApi(api_client)
 org = 'org_example' # str | 
@@ -443,8 +425,6 @@ void (empty response body)
 # **career_orgs_companies_users_retrieve**
 > Company career_orgs_companies_users_retrieve(org, username)
 
-
-
 ### Example
 
 * Api Key Authentication (PlatformApiKeyAuthentication):
@@ -466,7 +446,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CareerApi(api_client)
 org = 'org_example' # str | 
@@ -514,8 +493,6 @@ Name | Type | Description  | Notes
 # **career_orgs_companies_users_update**
 > Company career_orgs_companies_users_update(org, username, company)
 
-
-
 ### Example
 
 * Api Key Authentication (PlatformApiKeyAuthentication):
@@ -537,7 +514,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CareerApi(api_client)
 org = 'org_example' # str | 
@@ -573,7 +549,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -586,8 +562,6 @@ Name | Type | Description  | Notes
 
 # **career_orgs_education_users_create**
 > Education career_orgs_education_users_create(org, username, education)
-
-
 
 ### Example
 
@@ -610,7 +584,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CareerApi(api_client)
 org = 'org_example' # str | 
@@ -646,7 +619,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -659,8 +632,6 @@ Name | Type | Description  | Notes
 
 # **career_orgs_education_users_destroy**
 > career_orgs_education_users_destroy(org, username)
-
-
 
 ### Example
 
@@ -682,7 +653,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CareerApi(api_client)
 org = 'org_example' # str | 
@@ -728,8 +698,6 @@ void (empty response body)
 # **career_orgs_education_users_retrieve**
 > Education career_orgs_education_users_retrieve(org, username)
 
-
-
 ### Example
 
 * Api Key Authentication (PlatformApiKeyAuthentication):
@@ -751,7 +719,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CareerApi(api_client)
 org = 'org_example' # str | 
@@ -799,8 +766,6 @@ Name | Type | Description  | Notes
 # **career_orgs_education_users_update**
 > Education career_orgs_education_users_update(org, username, education)
 
-
-
 ### Example
 
 * Api Key Authentication (PlatformApiKeyAuthentication):
@@ -822,7 +787,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CareerApi(api_client)
 org = 'org_example' # str | 
@@ -858,7 +822,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -871,8 +835,6 @@ Name | Type | Description  | Notes
 
 # **career_orgs_experience_users_create**
 > Experience career_orgs_experience_users_create(org, username, experience)
-
-
 
 ### Example
 
@@ -895,7 +857,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CareerApi(api_client)
 org = 'org_example' # str | 
@@ -931,7 +892,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -944,8 +905,6 @@ Name | Type | Description  | Notes
 
 # **career_orgs_experience_users_destroy**
 > career_orgs_experience_users_destroy(org, username)
-
-
 
 ### Example
 
@@ -967,7 +926,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CareerApi(api_client)
 org = 'org_example' # str | 
@@ -1013,8 +971,6 @@ void (empty response body)
 # **career_orgs_experience_users_retrieve**
 > Experience career_orgs_experience_users_retrieve(org, username)
 
-
-
 ### Example
 
 * Api Key Authentication (PlatformApiKeyAuthentication):
@@ -1036,7 +992,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CareerApi(api_client)
 org = 'org_example' # str | 
@@ -1084,8 +1039,6 @@ Name | Type | Description  | Notes
 # **career_orgs_experience_users_update**
 > Experience career_orgs_experience_users_update(org, username, experience)
 
-
-
 ### Example
 
 * Api Key Authentication (PlatformApiKeyAuthentication):
@@ -1107,7 +1060,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CareerApi(api_client)
 org = 'org_example' # str | 
@@ -1143,7 +1095,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -1156,8 +1108,6 @@ Name | Type | Description  | Notes
 
 # **career_orgs_institutions_users_create**
 > Institution career_orgs_institutions_users_create(org, username, institution)
-
-
 
 ### Example
 
@@ -1180,7 +1130,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CareerApi(api_client)
 org = 'org_example' # str | 
@@ -1216,7 +1165,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -1229,8 +1178,6 @@ Name | Type | Description  | Notes
 
 # **career_orgs_institutions_users_destroy**
 > career_orgs_institutions_users_destroy(org, username)
-
-
 
 ### Example
 
@@ -1252,7 +1199,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CareerApi(api_client)
 org = 'org_example' # str | 
@@ -1298,8 +1244,6 @@ void (empty response body)
 # **career_orgs_institutions_users_retrieve**
 > Institution career_orgs_institutions_users_retrieve(org, username)
 
-
-
 ### Example
 
 * Api Key Authentication (PlatformApiKeyAuthentication):
@@ -1321,7 +1265,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CareerApi(api_client)
 org = 'org_example' # str | 
@@ -1369,8 +1312,6 @@ Name | Type | Description  | Notes
 # **career_orgs_institutions_users_update**
 > Institution career_orgs_institutions_users_update(org, username, institution)
 
-
-
 ### Example
 
 * Api Key Authentication (PlatformApiKeyAuthentication):
@@ -1392,7 +1333,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CareerApi(api_client)
 org = 'org_example' # str | 
@@ -1428,7 +1368,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -1441,8 +1381,6 @@ Name | Type | Description  | Notes
 
 # **career_orgs_programs_users_create**
 > Program career_orgs_programs_users_create(org, username, program)
-
-
 
 ### Example
 
@@ -1465,7 +1403,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CareerApi(api_client)
 org = 'org_example' # str | 
@@ -1501,7 +1438,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -1514,8 +1451,6 @@ Name | Type | Description  | Notes
 
 # **career_orgs_programs_users_destroy**
 > career_orgs_programs_users_destroy(org, username)
-
-
 
 ### Example
 
@@ -1537,7 +1472,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CareerApi(api_client)
 org = 'org_example' # str | 
@@ -1583,8 +1517,6 @@ void (empty response body)
 # **career_orgs_programs_users_retrieve**
 > Program career_orgs_programs_users_retrieve(org, username)
 
-
-
 ### Example
 
 * Api Key Authentication (PlatformApiKeyAuthentication):
@@ -1606,7 +1538,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CareerApi(api_client)
 org = 'org_example' # str | 
@@ -1654,8 +1585,6 @@ Name | Type | Description  | Notes
 # **career_orgs_programs_users_update**
 > Program career_orgs_programs_users_update(org, username, program)
 
-
-
 ### Example
 
 * Api Key Authentication (PlatformApiKeyAuthentication):
@@ -1677,7 +1606,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CareerApi(api_client)
 org = 'org_example' # str | 
@@ -1713,7 +1641,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -1726,8 +1654,6 @@ Name | Type | Description  | Notes
 
 # **career_resume_orgs_users_create**
 > career_resume_orgs_users_create(org, username)
-
-
 
 ### Example
 
@@ -1749,7 +1675,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CareerApi(api_client)
 org = 'org_example' # str | 
@@ -1795,8 +1720,6 @@ void (empty response body)
 # **career_resume_orgs_users_retrieve**
 > career_resume_orgs_users_retrieve(org, username)
 
-
-
 ### Example
 
 * Api Key Authentication (PlatformApiKeyAuthentication):
@@ -1817,7 +1740,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CareerApi(api_client)
 org = 'org_example' # str | 
@@ -1863,8 +1785,6 @@ void (empty response body)
 # **career_resume_orgs_users_update**
 > career_resume_orgs_users_update(org, username)
 
-
-
 ### Example
 
 * Api Key Authentication (PlatformApiKeyAuthentication):
@@ -1885,7 +1805,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.CareerApi(api_client)
 org = 'org_example' # str | 

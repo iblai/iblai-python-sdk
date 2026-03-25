@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **title** | **str** | Title of the media resource | 
 **description** | **str** | Description of the media resource | [optional] 
 **media_type** | [**MediaTypeEnum**](MediaTypeEnum.md) | Type of media  * &#x60;video&#x60; - Video * &#x60;image&#x60; - Image * &#x60;document&#x60; - Document * &#x60;audio&#x60; - Audio * &#x60;other&#x60; - Other | 
-**item_type** | [**ItemTypeEnum**](ItemTypeEnum.md) | Type of item this media is associated with  * &#x60;course&#x60; - Course * &#x60;unit&#x60; - Unit * &#x60;resource&#x60; - Resource * &#x60;course_unit&#x60; - Course and Unit * &#x60;course_resource&#x60; - Course and Resource * &#x60;unit_resource&#x60; - Unit and Resource * &#x60;all&#x60; - Course, Unit, and Resource | [readonly] 
+**item_type** | [**MediaResourceItemTypeEnum**](MediaResourceItemTypeEnum.md) | Type of item this media is associated with  * &#x60;course&#x60; - Course * &#x60;unit&#x60; - Unit * &#x60;resource&#x60; - Resource * &#x60;course_unit&#x60; - Course and Unit * &#x60;course_resource&#x60; - Course and Resource * &#x60;unit_resource&#x60; - Unit and Resource * &#x60;all&#x60; - Course, Unit, and Resource | [readonly] 
 **course_id** | **str** | ID of the associated course | [optional] 
 **unit_id** | **str** | ID of the associated unit | [optional] 
 **item_id** | **str** | ID of the associated item (resource) | [optional] 

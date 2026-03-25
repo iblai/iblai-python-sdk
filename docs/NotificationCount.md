@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**status** | **str** |  | [optional] 
-**channel** | **str** |  | [optional] 
+**status** | [**Status3daEnum**](Status3daEnum.md) | Filter count by notification status  * &#x60;READ&#x60; - Read * &#x60;UNREAD&#x60; - Unread * &#x60;CANCELLED&#x60; - Cancelled | [optional] 
+**channel** | **str** | Filter count by delivery channel | [optional] 
 
 ## Example
 

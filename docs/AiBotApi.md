@@ -46,6 +46,7 @@ Method | HTTP request | Description
 [**ai_bot_v1_bots_webhooks_discord_create**](AiBotApi.md#ai_bot_v1_bots_webhooks_discord_create) | **POST** /api/ai-bot/v1/bots/webhooks/{org}/discord/{name}/ | 
 [**ai_bot_v1_bots_webhooks_slack_create**](AiBotApi.md#ai_bot_v1_bots_webhooks_slack_create) | **POST** /api/ai-bot/v1/bots/webhooks/{org}/slack/{name}/ | 
 [**ai_bot_v1_bots_webhooks_teams_create**](AiBotApi.md#ai_bot_v1_bots_webhooks_teams_create) | **POST** /api/ai-bot/v1/bots/webhooks/{org}/teams/{name}/ | 
+[**ai_bot_v1_bots_webhooks_teams_retrieve**](AiBotApi.md#ai_bot_v1_bots_webhooks_teams_retrieve) | **GET** /api/ai-bot/v1/bots/webhooks/{org}/teams/{name}/ | 
 [**ai_bot_v1_bots_webhooks_webex_create**](AiBotApi.md#ai_bot_v1_bots_webhooks_webex_create) | **POST** /api/ai-bot/v1/bots/webhooks/{org}/webex/{name}/ | 
 [**ai_bot_v1_bots_webhooks_whatsapp_create**](AiBotApi.md#ai_bot_v1_bots_webhooks_whatsapp_create) | **POST** /api/ai-bot/v1/bots/webhooks/{org}/whatsapp/{name}/ | 
 [**ai_bot_v1_bots_webhooks_whatsapp_retrieve**](AiBotApi.md#ai_bot_v1_bots_webhooks_whatsapp_retrieve) | **GET** /api/ai-bot/v1/bots/webhooks/{org}/whatsapp/{name}/ | 
@@ -60,9 +61,8 @@ Method | HTTP request | Description
 # **ai_bot_v1_bots_bot_commands_create**
 > BotCommand ai_bot_v1_bots_bot_commands_create(org, bot_command)
 
-
-
-Create slash commands for a specific bot eg. /iblai-baseline
+Create slash commands for a specific bot
+eg. /iblai-baseline
 
 ### Example
 
@@ -85,7 +85,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiBotApi(api_client)
 org = 'org_example' # str | 
@@ -119,7 +118,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -133,9 +132,8 @@ Name | Type | Description  | Notes
 # **ai_bot_v1_bots_bot_commands_destroy**
 > ai_bot_v1_bots_bot_commands_destroy(id, org)
 
-
-
-Create slash commands for a specific bot eg. /iblai-baseline
+Create slash commands for a specific bot
+eg. /iblai-baseline
 
 ### Example
 
@@ -157,7 +155,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiBotApi(api_client)
 id = 56 # int | A unique integer value identifying this bot command.
@@ -203,9 +200,8 @@ void (empty response body)
 # **ai_bot_v1_bots_bot_commands_list**
 > List[BotCommand] ai_bot_v1_bots_bot_commands_list(org)
 
-
-
-Create slash commands for a specific bot eg. /iblai-baseline
+Create slash commands for a specific bot
+eg. /iblai-baseline
 
 ### Example
 
@@ -228,7 +224,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiBotApi(api_client)
 org = 'org_example' # str | 
@@ -274,9 +269,8 @@ Name | Type | Description  | Notes
 # **ai_bot_v1_bots_bot_commands_partial_update**
 > BotCommand ai_bot_v1_bots_bot_commands_partial_update(id, org, patched_bot_command=patched_bot_command)
 
-
-
-Create slash commands for a specific bot eg. /iblai-baseline
+Create slash commands for a specific bot
+eg. /iblai-baseline
 
 ### Example
 
@@ -300,7 +294,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiBotApi(api_client)
 id = 56 # int | A unique integer value identifying this bot command.
@@ -336,7 +329,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -350,9 +343,8 @@ Name | Type | Description  | Notes
 # **ai_bot_v1_bots_bot_commands_retrieve**
 > BotCommand ai_bot_v1_bots_bot_commands_retrieve(id, org)
 
-
-
-Create slash commands for a specific bot eg. /iblai-baseline
+Create slash commands for a specific bot
+eg. /iblai-baseline
 
 ### Example
 
@@ -375,7 +367,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiBotApi(api_client)
 id = 56 # int | A unique integer value identifying this bot command.
@@ -423,9 +414,8 @@ Name | Type | Description  | Notes
 # **ai_bot_v1_bots_bot_commands_update**
 > BotCommand ai_bot_v1_bots_bot_commands_update(id, org, bot_command)
 
-
-
-Create slash commands for a specific bot eg. /iblai-baseline
+Create slash commands for a specific bot
+eg. /iblai-baseline
 
 ### Example
 
@@ -448,7 +438,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiBotApi(api_client)
 id = 56 # int | A unique integer value identifying this bot command.
@@ -484,7 +473,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -497,8 +486,6 @@ Name | Type | Description  | Notes
 
 # **ai_bot_v1_bots_bot_config_discord_partial_update**
 > DiscordConfig ai_bot_v1_bots_bot_config_discord_partial_update(id, org, patched_discord_config=patched_discord_config)
-
-
 
 Create modify and update bot information for a specific tenant.
 
@@ -524,7 +511,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiBotApi(api_client)
 id = 56 # int | A unique integer value identifying this bot.
@@ -560,7 +546,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -573,8 +559,6 @@ Name | Type | Description  | Notes
 
 # **ai_bot_v1_bots_bot_config_discord_retrieve**
 > DiscordConfig ai_bot_v1_bots_bot_config_discord_retrieve(id, org)
-
-
 
 Create modify and update bot information for a specific tenant.
 
@@ -599,7 +583,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiBotApi(api_client)
 id = 56 # int | A unique integer value identifying this bot.
@@ -647,8 +630,6 @@ Name | Type | Description  | Notes
 # **ai_bot_v1_bots_bot_config_slack_retrieve**
 > SlackConfig ai_bot_v1_bots_bot_config_slack_retrieve(id, org)
 
-
-
 Create modify and update bot information for a specific tenant.
 
 ### Example
@@ -672,7 +653,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiBotApi(api_client)
 id = 56 # int | A unique integer value identifying this bot.
@@ -720,8 +700,6 @@ Name | Type | Description  | Notes
 # **ai_bot_v1_bots_bot_config_slack_update_create**
 > SlackConfig ai_bot_v1_bots_bot_config_slack_update_create(id, org, slack_config)
 
-
-
 Create modify and update bot information for a specific tenant.
 
 ### Example
@@ -745,7 +723,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiBotApi(api_client)
 id = 56 # int | A unique integer value identifying this bot.
@@ -781,7 +758,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -794,8 +771,6 @@ Name | Type | Description  | Notes
 
 # **ai_bot_v1_bots_bot_config_slack_update_partial_update**
 > SlackConfig ai_bot_v1_bots_bot_config_slack_update_partial_update(id, org, patched_slack_config=patched_slack_config)
-
-
 
 Create modify and update bot information for a specific tenant.
 
@@ -821,7 +796,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiBotApi(api_client)
 id = 56 # int | A unique integer value identifying this bot.
@@ -857,7 +831,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -870,8 +844,6 @@ Name | Type | Description  | Notes
 
 # **ai_bot_v1_bots_bot_config_slack_update_update**
 > SlackConfig ai_bot_v1_bots_bot_config_slack_update_update(id, org, slack_config)
-
-
 
 Create modify and update bot information for a specific tenant.
 
@@ -896,7 +868,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiBotApi(api_client)
 id = 56 # int | A unique integer value identifying this bot.
@@ -932,7 +903,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -945,8 +916,6 @@ Name | Type | Description  | Notes
 
 # **ai_bot_v1_bots_bot_config_teams_retrieve**
 > TeamsConfig ai_bot_v1_bots_bot_config_teams_retrieve(id, org)
-
-
 
 Create modify and update bot information for a specific tenant.
 
@@ -971,7 +940,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiBotApi(api_client)
 id = 56 # int | A unique integer value identifying this bot.
@@ -1019,8 +987,6 @@ Name | Type | Description  | Notes
 # **ai_bot_v1_bots_bot_config_teams_update_create**
 > TeamsConfig ai_bot_v1_bots_bot_config_teams_update_create(id, org, teams_config)
 
-
-
 Create modify and update bot information for a specific tenant.
 
 ### Example
@@ -1044,7 +1010,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiBotApi(api_client)
 id = 56 # int | A unique integer value identifying this bot.
@@ -1080,7 +1045,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -1093,8 +1058,6 @@ Name | Type | Description  | Notes
 
 # **ai_bot_v1_bots_bot_config_teams_update_partial_update**
 > TeamsConfig ai_bot_v1_bots_bot_config_teams_update_partial_update(id, org, patched_teams_config=patched_teams_config)
-
-
 
 Create modify and update bot information for a specific tenant.
 
@@ -1120,7 +1083,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiBotApi(api_client)
 id = 56 # int | A unique integer value identifying this bot.
@@ -1156,7 +1118,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -1169,8 +1131,6 @@ Name | Type | Description  | Notes
 
 # **ai_bot_v1_bots_bot_config_teams_update_update**
 > TeamsConfig ai_bot_v1_bots_bot_config_teams_update_update(id, org, teams_config)
-
-
 
 Create modify and update bot information for a specific tenant.
 
@@ -1195,7 +1155,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiBotApi(api_client)
 id = 56 # int | A unique integer value identifying this bot.
@@ -1231,7 +1190,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -1244,8 +1203,6 @@ Name | Type | Description  | Notes
 
 # **ai_bot_v1_bots_bot_config_webex_partial_update**
 > WebexConfig ai_bot_v1_bots_bot_config_webex_partial_update(id, org, patched_webex_config=patched_webex_config)
-
-
 
 Create modify and update bot information for a specific tenant.
 
@@ -1271,7 +1228,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiBotApi(api_client)
 id = 56 # int | A unique integer value identifying this bot.
@@ -1307,7 +1263,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -1320,8 +1276,6 @@ Name | Type | Description  | Notes
 
 # **ai_bot_v1_bots_bot_config_webex_retrieve**
 > WebexConfig ai_bot_v1_bots_bot_config_webex_retrieve(id, org)
-
-
 
 Create modify and update bot information for a specific tenant.
 
@@ -1346,7 +1300,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiBotApi(api_client)
 id = 56 # int | A unique integer value identifying this bot.
@@ -1394,8 +1347,6 @@ Name | Type | Description  | Notes
 # **ai_bot_v1_bots_bot_config_whatsapp_retrieve**
 > WhatsappConfig ai_bot_v1_bots_bot_config_whatsapp_retrieve(id, org)
 
-
-
 Create modify and update bot information for a specific tenant.
 
 ### Example
@@ -1419,7 +1370,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiBotApi(api_client)
 id = 56 # int | A unique integer value identifying this bot.
@@ -1467,8 +1417,6 @@ Name | Type | Description  | Notes
 # **ai_bot_v1_bots_bot_create**
 > BotCreate ai_bot_v1_bots_bot_create(org, bot_create)
 
-
-
 Create modify and update bot information for a specific tenant.
 
 ### Example
@@ -1492,7 +1440,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiBotApi(api_client)
 org = 'org_example' # str | 
@@ -1526,7 +1473,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -1539,8 +1486,6 @@ Name | Type | Description  | Notes
 
 # **ai_bot_v1_bots_bot_destroy**
 > ai_bot_v1_bots_bot_destroy(id, org)
-
-
 
 Create modify and update bot information for a specific tenant.
 
@@ -1564,7 +1509,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiBotApi(api_client)
 id = 56 # int | A unique integer value identifying this bot.
@@ -1610,8 +1554,6 @@ void (empty response body)
 # **ai_bot_v1_bots_bot_list**
 > List[Bot] ai_bot_v1_bots_bot_list(org)
 
-
-
 Create modify and update bot information for a specific tenant.
 
 ### Example
@@ -1635,7 +1577,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiBotApi(api_client)
 org = 'org_example' # str | 
@@ -1681,8 +1622,6 @@ Name | Type | Description  | Notes
 # **ai_bot_v1_bots_bot_partial_update**
 > BotCreate ai_bot_v1_bots_bot_partial_update(id, org, patched_bot_create=patched_bot_create)
 
-
-
 Create modify and update bot information for a specific tenant.
 
 ### Example
@@ -1707,7 +1646,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiBotApi(api_client)
 id = 56 # int | A unique integer value identifying this bot.
@@ -1743,7 +1681,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -1756,8 +1694,6 @@ Name | Type | Description  | Notes
 
 # **ai_bot_v1_bots_bot_retrieve**
 > Bot ai_bot_v1_bots_bot_retrieve(id, org)
-
-
 
 Create modify and update bot information for a specific tenant.
 
@@ -1782,7 +1718,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiBotApi(api_client)
 id = 56 # int | A unique integer value identifying this bot.
@@ -1830,8 +1765,6 @@ Name | Type | Description  | Notes
 # **ai_bot_v1_bots_bot_update**
 > BotCreate ai_bot_v1_bots_bot_update(id, org, bot_create)
 
-
-
 Create modify and update bot information for a specific tenant.
 
 ### Example
@@ -1855,7 +1788,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiBotApi(api_client)
 id = 56 # int | A unique integer value identifying this bot.
@@ -1891,7 +1823,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -1904,8 +1836,6 @@ Name | Type | Description  | Notes
 
 # **ai_bot_v1_bots_bot_whatsapp_config_partial_update**
 > WhatsappConfig ai_bot_v1_bots_bot_whatsapp_config_partial_update(id, org, patched_whatsapp_config=patched_whatsapp_config)
-
-
 
 Create modify and update bot information for a specific tenant.
 
@@ -1931,7 +1861,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiBotApi(api_client)
 id = 56 # int | A unique integer value identifying this bot.
@@ -1967,7 +1896,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -1980,8 +1909,6 @@ Name | Type | Description  | Notes
 
 # **ai_bot_v1_bots_bot_whatsapp_config_update**
 > WhatsappConfig ai_bot_v1_bots_bot_whatsapp_config_update(id, org, whatsapp_config)
-
-
 
 Create modify and update bot information for a specific tenant.
 
@@ -2006,7 +1933,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiBotApi(api_client)
 id = 56 # int | A unique integer value identifying this bot.
@@ -2042,7 +1968,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -2056,9 +1982,9 @@ Name | Type | Description  | Notes
 # **ai_bot_v1_bots_discord_user_config_create**
 > DiscordUserConfig ai_bot_v1_bots_discord_user_config_create(org, discord_user_config)
 
-
-
-Setup discord user id linkage with discord bots this will be used to authenticate the user when interracting with discord bots. the user id can be copied from the discord app after tapping on the user profile.
+Setup discord user id linkage with discord bots
+this will be used to authenticate the user when interracting with discord bots.
+the user id can be copied from the discord app after tapping on the user profile.
 
 ### Example
 
@@ -2081,7 +2007,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiBotApi(api_client)
 org = 'org_example' # str | 
@@ -2115,7 +2040,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -2129,9 +2054,9 @@ Name | Type | Description  | Notes
 # **ai_bot_v1_bots_discord_user_config_destroy**
 > ai_bot_v1_bots_discord_user_config_destroy(id, org)
 
-
-
-Setup discord user id linkage with discord bots this will be used to authenticate the user when interracting with discord bots. the user id can be copied from the discord app after tapping on the user profile.
+Setup discord user id linkage with discord bots
+this will be used to authenticate the user when interracting with discord bots.
+the user id can be copied from the discord app after tapping on the user profile.
 
 ### Example
 
@@ -2153,7 +2078,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiBotApi(api_client)
 id = 56 # int | A unique integer value identifying this discord user config.
@@ -2199,9 +2123,9 @@ void (empty response body)
 # **ai_bot_v1_bots_discord_user_config_list**
 > List[DiscordUserConfig] ai_bot_v1_bots_discord_user_config_list(org)
 
-
-
-Setup discord user id linkage with discord bots this will be used to authenticate the user when interracting with discord bots. the user id can be copied from the discord app after tapping on the user profile.
+Setup discord user id linkage with discord bots
+this will be used to authenticate the user when interracting with discord bots.
+the user id can be copied from the discord app after tapping on the user profile.
 
 ### Example
 
@@ -2224,7 +2148,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiBotApi(api_client)
 org = 'org_example' # str | 
@@ -2270,9 +2193,9 @@ Name | Type | Description  | Notes
 # **ai_bot_v1_bots_discord_user_config_partial_update**
 > DiscordUserConfig ai_bot_v1_bots_discord_user_config_partial_update(id, org, patched_discord_user_config=patched_discord_user_config)
 
-
-
-Setup discord user id linkage with discord bots this will be used to authenticate the user when interracting with discord bots. the user id can be copied from the discord app after tapping on the user profile.
+Setup discord user id linkage with discord bots
+this will be used to authenticate the user when interracting with discord bots.
+the user id can be copied from the discord app after tapping on the user profile.
 
 ### Example
 
@@ -2296,7 +2219,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiBotApi(api_client)
 id = 56 # int | A unique integer value identifying this discord user config.
@@ -2332,7 +2254,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -2346,9 +2268,9 @@ Name | Type | Description  | Notes
 # **ai_bot_v1_bots_discord_user_config_retrieve**
 > DiscordUserConfig ai_bot_v1_bots_discord_user_config_retrieve(id, org)
 
-
-
-Setup discord user id linkage with discord bots this will be used to authenticate the user when interracting with discord bots. the user id can be copied from the discord app after tapping on the user profile.
+Setup discord user id linkage with discord bots
+this will be used to authenticate the user when interracting with discord bots.
+the user id can be copied from the discord app after tapping on the user profile.
 
 ### Example
 
@@ -2371,7 +2293,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiBotApi(api_client)
 id = 56 # int | A unique integer value identifying this discord user config.
@@ -2419,9 +2340,9 @@ Name | Type | Description  | Notes
 # **ai_bot_v1_bots_discord_user_config_update**
 > DiscordUserConfig ai_bot_v1_bots_discord_user_config_update(id, org, discord_user_config)
 
-
-
-Setup discord user id linkage with discord bots this will be used to authenticate the user when interracting with discord bots. the user id can be copied from the discord app after tapping on the user profile.
+Setup discord user id linkage with discord bots
+this will be used to authenticate the user when interracting with discord bots.
+the user id can be copied from the discord app after tapping on the user profile.
 
 ### Example
 
@@ -2444,7 +2365,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiBotApi(api_client)
 id = 56 # int | A unique integer value identifying this discord user config.
@@ -2480,7 +2400,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -2494,9 +2414,8 @@ Name | Type | Description  | Notes
 # **ai_bot_v1_bots_slack_user_config_create**
 > SlackUserConfig ai_bot_v1_bots_slack_user_config_create(org, slack_user_config)
 
-
-
-Setup slack username and domain linkage with slack bots this will be used to authenticate the user when interracting with slack bots.
+Setup slack username and domain linkage with slack bots
+this will be used to authenticate the user when interracting with slack bots.
 
 ### Example
 
@@ -2519,7 +2438,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiBotApi(api_client)
 org = 'org_example' # str | 
@@ -2553,7 +2471,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -2567,9 +2485,8 @@ Name | Type | Description  | Notes
 # **ai_bot_v1_bots_slack_user_config_destroy**
 > ai_bot_v1_bots_slack_user_config_destroy(id, org)
 
-
-
-Setup slack username and domain linkage with slack bots this will be used to authenticate the user when interracting with slack bots.
+Setup slack username and domain linkage with slack bots
+this will be used to authenticate the user when interracting with slack bots.
 
 ### Example
 
@@ -2591,7 +2508,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiBotApi(api_client)
 id = 56 # int | A unique integer value identifying this slack user config.
@@ -2637,9 +2553,8 @@ void (empty response body)
 # **ai_bot_v1_bots_slack_user_config_list**
 > List[SlackUserConfig] ai_bot_v1_bots_slack_user_config_list(org)
 
-
-
-Setup slack username and domain linkage with slack bots this will be used to authenticate the user when interracting with slack bots.
+Setup slack username and domain linkage with slack bots
+this will be used to authenticate the user when interracting with slack bots.
 
 ### Example
 
@@ -2662,7 +2577,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiBotApi(api_client)
 org = 'org_example' # str | 
@@ -2708,9 +2622,8 @@ Name | Type | Description  | Notes
 # **ai_bot_v1_bots_slack_user_config_partial_update**
 > SlackUserConfig ai_bot_v1_bots_slack_user_config_partial_update(id, org, patched_slack_user_config=patched_slack_user_config)
 
-
-
-Setup slack username and domain linkage with slack bots this will be used to authenticate the user when interracting with slack bots.
+Setup slack username and domain linkage with slack bots
+this will be used to authenticate the user when interracting with slack bots.
 
 ### Example
 
@@ -2734,7 +2647,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiBotApi(api_client)
 id = 56 # int | A unique integer value identifying this slack user config.
@@ -2770,7 +2682,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -2784,9 +2696,8 @@ Name | Type | Description  | Notes
 # **ai_bot_v1_bots_slack_user_config_retrieve**
 > SlackUserConfig ai_bot_v1_bots_slack_user_config_retrieve(id, org)
 
-
-
-Setup slack username and domain linkage with slack bots this will be used to authenticate the user when interracting with slack bots.
+Setup slack username and domain linkage with slack bots
+this will be used to authenticate the user when interracting with slack bots.
 
 ### Example
 
@@ -2809,7 +2720,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiBotApi(api_client)
 id = 56 # int | A unique integer value identifying this slack user config.
@@ -2857,9 +2767,8 @@ Name | Type | Description  | Notes
 # **ai_bot_v1_bots_slack_user_config_update**
 > SlackUserConfig ai_bot_v1_bots_slack_user_config_update(id, org, slack_user_config)
 
-
-
-Setup slack username and domain linkage with slack bots this will be used to authenticate the user when interracting with slack bots.
+Setup slack username and domain linkage with slack bots
+this will be used to authenticate the user when interracting with slack bots.
 
 ### Example
 
@@ -2882,7 +2791,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiBotApi(api_client)
 id = 56 # int | A unique integer value identifying this slack user config.
@@ -2918,7 +2826,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -2932,8 +2840,6 @@ Name | Type | Description  | Notes
 # **ai_bot_v1_bots_webhooks_discord_create**
 > DiscordWebhook ai_bot_v1_bots_webhooks_discord_create(name, org, discord_webhook)
 
-
-
 Webhook endpoint to receive and process discord messages.
 
 ### Example
@@ -2944,7 +2850,6 @@ import iblai
 from iblai.models.discord_webhook import DiscordWebhook
 from iblai.rest import ApiException
 from pprint import pprint
-
 
 # Create an instance of the API class
 api_instance = iblai.AiBotApi(api_client)
@@ -2995,8 +2900,6 @@ No authorization required
 # **ai_bot_v1_bots_webhooks_slack_create**
 > SlackWebhook ai_bot_v1_bots_webhooks_slack_create(name, org, slack_webhook)
 
-
-
 ### Example
 
 
@@ -3005,7 +2908,6 @@ import iblai
 from iblai.models.slack_webhook import SlackWebhook
 from iblai.rest import ApiException
 from pprint import pprint
-
 
 # Create an instance of the API class
 api_instance = iblai.AiBotApi(api_client)
@@ -3056,8 +2958,6 @@ No authorization required
 # **ai_bot_v1_bots_webhooks_teams_create**
 > TeamsWebhook ai_bot_v1_bots_webhooks_teams_create(name, org, teams_webhook=teams_webhook)
 
-
-
 ### Example
 
 
@@ -3066,7 +2966,6 @@ import iblai
 from iblai.models.teams_webhook import TeamsWebhook
 from iblai.rest import ApiException
 from pprint import pprint
-
 
 # Create an instance of the API class
 api_instance = iblai.AiBotApi(api_client)
@@ -3114,10 +3013,64 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **ai_bot_v1_bots_webhooks_teams_retrieve**
+> TeamsWebhook ai_bot_v1_bots_webhooks_teams_retrieve(name, org)
+
+### Example
+
+
+```python
+import iblai
+from iblai.models.teams_webhook import TeamsWebhook
+from iblai.rest import ApiException
+from pprint import pprint
+
+# Create an instance of the API class
+api_instance = iblai.AiBotApi(api_client)
+name = 'name_example' # str | 
+org = 'org_example' # str | 
+
+try:
+    api_response = api_instance.ai_bot_v1_bots_webhooks_teams_retrieve(name, org)
+    print("The response of AiBotApi->ai_bot_v1_bots_webhooks_teams_retrieve:\n")
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling AiBotApi->ai_bot_v1_bots_webhooks_teams_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **str**|  | 
+ **org** | **str**|  | 
+
+### Return type
+
+[**TeamsWebhook**](TeamsWebhook.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **ai_bot_v1_bots_webhooks_webex_create**
 > WebexWebhook ai_bot_v1_bots_webhooks_webex_create(name, org, webex_webhook)
-
-
 
 Webhook endpoint to receive and process discord messages.
 
@@ -3129,7 +3082,6 @@ import iblai
 from iblai.models.webex_webhook import WebexWebhook
 from iblai.rest import ApiException
 from pprint import pprint
-
 
 # Create an instance of the API class
 api_instance = iblai.AiBotApi(api_client)
@@ -3180,8 +3132,6 @@ No authorization required
 # **ai_bot_v1_bots_webhooks_whatsapp_create**
 > WhatAppWebHook ai_bot_v1_bots_webhooks_whatsapp_create(name, org, what_app_web_hook)
 
-
-
 Accept and process webhook events from whatsapp.
 
 ### Example
@@ -3192,7 +3142,6 @@ import iblai
 from iblai.models.what_app_web_hook import WhatAppWebHook
 from iblai.rest import ApiException
 from pprint import pprint
-
 
 # Create an instance of the API class
 api_instance = iblai.AiBotApi(api_client)
@@ -3243,9 +3192,8 @@ No authorization required
 # **ai_bot_v1_bots_webhooks_whatsapp_retrieve**
 > WhatAppWebHook ai_bot_v1_bots_webhooks_whatsapp_retrieve(name, org)
 
-
-
-Respond to whatsapp's webhook challenge. Parameters Required include the tenant key (org) and the name of the bot: (name)
+Respond to whatsapp's webhook challenge.
+Parameters Required include the tenant key (org) and the name of the bot: (name)
 
 ### Example
 
@@ -3255,7 +3203,6 @@ import iblai
 from iblai.models.what_app_web_hook import WhatAppWebHook
 from iblai.rest import ApiException
 from pprint import pprint
-
 
 # Create an instance of the API class
 api_instance = iblai.AiBotApi(api_client)
@@ -3304,9 +3251,8 @@ No authorization required
 # **ai_bot_v1_bots_whatsapp_user_config_create**
 > WhatsappUserConfig ai_bot_v1_bots_whatsapp_user_config_create(org, whatsapp_user_config)
 
-
-
-Setup phone number linkage with whatsapp bots This phone number will be used to authenticate and allow access to whatsapp bots.
+Setup phone number linkage with whatsapp bots
+This phone number will be used to authenticate and allow access to whatsapp bots.
 
 ### Example
 
@@ -3329,7 +3275,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiBotApi(api_client)
 org = 'org_example' # str | 
@@ -3363,7 +3308,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -3377,9 +3322,8 @@ Name | Type | Description  | Notes
 # **ai_bot_v1_bots_whatsapp_user_config_destroy**
 > ai_bot_v1_bots_whatsapp_user_config_destroy(id, org)
 
-
-
-Setup phone number linkage with whatsapp bots This phone number will be used to authenticate and allow access to whatsapp bots.
+Setup phone number linkage with whatsapp bots
+This phone number will be used to authenticate and allow access to whatsapp bots.
 
 ### Example
 
@@ -3401,7 +3345,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiBotApi(api_client)
 id = 56 # int | A unique integer value identifying this whatsapp user config.
@@ -3447,9 +3390,8 @@ void (empty response body)
 # **ai_bot_v1_bots_whatsapp_user_config_list**
 > List[WhatsappUserConfig] ai_bot_v1_bots_whatsapp_user_config_list(org)
 
-
-
-Setup phone number linkage with whatsapp bots This phone number will be used to authenticate and allow access to whatsapp bots.
+Setup phone number linkage with whatsapp bots
+This phone number will be used to authenticate and allow access to whatsapp bots.
 
 ### Example
 
@@ -3472,7 +3414,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiBotApi(api_client)
 org = 'org_example' # str | 
@@ -3518,9 +3459,8 @@ Name | Type | Description  | Notes
 # **ai_bot_v1_bots_whatsapp_user_config_partial_update**
 > WhatsappUserConfig ai_bot_v1_bots_whatsapp_user_config_partial_update(id, org, patched_whatsapp_user_config=patched_whatsapp_user_config)
 
-
-
-Setup phone number linkage with whatsapp bots This phone number will be used to authenticate and allow access to whatsapp bots.
+Setup phone number linkage with whatsapp bots
+This phone number will be used to authenticate and allow access to whatsapp bots.
 
 ### Example
 
@@ -3544,7 +3484,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiBotApi(api_client)
 id = 56 # int | A unique integer value identifying this whatsapp user config.
@@ -3580,7 +3519,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -3594,9 +3533,8 @@ Name | Type | Description  | Notes
 # **ai_bot_v1_bots_whatsapp_user_config_retrieve**
 > WhatsappUserConfig ai_bot_v1_bots_whatsapp_user_config_retrieve(id, org)
 
-
-
-Setup phone number linkage with whatsapp bots This phone number will be used to authenticate and allow access to whatsapp bots.
+Setup phone number linkage with whatsapp bots
+This phone number will be used to authenticate and allow access to whatsapp bots.
 
 ### Example
 
@@ -3619,7 +3557,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiBotApi(api_client)
 id = 56 # int | A unique integer value identifying this whatsapp user config.
@@ -3667,9 +3604,8 @@ Name | Type | Description  | Notes
 # **ai_bot_v1_bots_whatsapp_user_config_update**
 > WhatsappUserConfig ai_bot_v1_bots_whatsapp_user_config_update(id, org, whatsapp_user_config)
 
-
-
-Setup phone number linkage with whatsapp bots This phone number will be used to authenticate and allow access to whatsapp bots.
+Setup phone number linkage with whatsapp bots
+This phone number will be used to authenticate and allow access to whatsapp bots.
 
 ### Example
 
@@ -3692,7 +3628,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiBotApi(api_client)
 id = 56 # int | A unique integer value identifying this whatsapp user config.
@@ -3728,7 +3663,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details

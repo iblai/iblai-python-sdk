@@ -1,6 +1,6 @@
 # CourseInvitationCreate
 
-Request serializer for CourseInvitationView POST endpoint
+Request serializer for CourseInvitationView POST endpoint.  Supports CSV date fields for enrollment_config: - course_access_start_date: Maps to enrollment_config['started'] - course_access_expiration_date: Maps to enrollment_config['expired']
 
 ## Properties
 
@@ -15,6 +15,9 @@ Name | Type | Description | Notes
 **created** | **datetime** | When the invitation was created | [optional] 
 **expired** | **datetime** | When the invitation expires | [optional] 
 **metadata** | **Dict[str, object]** | Additional metadata for the invitation | [optional] 
+**enrollment_config** | **Dict[str, object]** | Enrollment configuration (dates, etc.) | [optional] 
+**course_access_start_date** | **datetime** | Course access start date (maps to enrollment_config[&#39;started&#39;]) | [optional] 
+**course_access_expiration_date** | **datetime** | Course access expiration date (maps to enrollment_config[&#39;expired&#39;]) | [optional] 
 
 ## Example
 

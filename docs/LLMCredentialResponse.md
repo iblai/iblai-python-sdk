@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **name** | **str** |  | 
 **value** | **object** |  | [optional] 
 **platform** | **str** | The platform key | 
+**service_info** | [**ExternalServiceInfo**](ExternalServiceInfo.md) |  | [readonly] 
 
 ## Example
 

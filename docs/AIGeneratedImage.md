@@ -6,9 +6,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** |  | [readonly] 
-**user** | **int** | edX user ID | 
+**user** | **int** | edX user ID | [optional] 
 **image** | **str** |  | 
-**platform** | **int** |  | 
+**platform** | **int** |  | [optional] 
 **prompt** | **str** |  | [optional] 
 **model** | **str** |  | [optional] 
 **provider** | **str** |  | [optional] 

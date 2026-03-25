@@ -7,6 +7,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **mentor** | **str** | Name of mentor | 
 **tools** | **List[str]** | List of tools slugs to use. Passing &#x60;null&#x60; will use all tools assigned to the mentor. For no tools, pass an empty list. | [optional] 
+**enable_artifacts** | **bool** |  | [optional] [default to False]
+**shareable_link_token** | **str** | Optional token for a mentor&#39;s shareable link | [optional] 
 
 ## Example
 

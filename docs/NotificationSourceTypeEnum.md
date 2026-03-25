@@ -1,6 +1,6 @@
 # NotificationSourceTypeEnum
 
-* `email` - email * `username` - username * `platform` - platform * `csv` - csv * `department` - department * `pathway` - pathway * `program` - program
+* `email` - email * `username` - username * `platform` - platform * `csv` - csv * `department` - department * `pathway` - pathway * `program` - program * `usergroup` - usergroup
 
 ## Enum
 
@@ -17,6 +17,8 @@
 * `PATHWAY` (value: `'pathway'`)
 
 * `PROGRAM` (value: `'program'`)
+
+* `USERGROUP` (value: `'usergroup'`)
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

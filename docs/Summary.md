@@ -1,14 +1,15 @@
 # Summary
 
+Summary metrics for the invoice.
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**num_products** | **int** | Total number of products | 
-**num_orders** | **int** | Total number of items ordered | 
-**net_revenue** | **float** | Total Net revenue | 
-**avg_order_value** | **float** | Average Net value per item sold | 
+**total_cost** | **decimal.Decimal** |  | 
+**total_sessions** | **int** |  | 
+**active_users** | **int** |  | 
+**cost_per_session** | **decimal.Decimal** |  | 
 
 ## Example
 

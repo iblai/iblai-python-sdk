@@ -7,6 +7,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **session_id** | **str** |  | 
 **tools** | [**List[ToolResponse]**](ToolResponse.md) |  | 
+**enable_artifacts** | **bool** |  | [optional] 
+**artifacts** | [**List[Artifact]**](Artifact.md) |  | 
 
 ## Example
 

@@ -19,8 +19,6 @@ Method | HTTP request | Description
 # **search_ai_search_retrieve**
 > MentorSearchResponse search_ai_search_retrieve(audience=audience, category=category, created_by=created_by, filter_facet=filter_facet, id=id, limit=limit, llm=llm, offset=offset, order_by=order_by, order_direction=order_direction, page=page, page_size=page_size, query=query, tags=tags, tenant=tenant, unique_id=unique_id)
 
-
-
 Legacy endpoint for backward compatible mentor search
 
 ### Example
@@ -31,7 +29,6 @@ import iblai
 from iblai.models.mentor_search_response import MentorSearchResponse
 from iblai.rest import ApiException
 from pprint import pprint
-
 
 # Create an instance of the API class
 api_instance = iblai.SearchApi(api_client)
@@ -110,9 +107,170 @@ No authorization required
 # **search_catalog_retrieve**
 > GlobalCatalogSearchResponse search_catalog_retrieve(allow_skill_search=allow_skill_search, alphabetical=alphabetical, certificate=certificate, content=content, course_id=course_id, duration=duration, language=language, level=level, limit=limit, offset=offset, order_ascending=order_ascending, order_by=order_by, pathway_id=pathway_id, price=price, program_id=program_id, program_type=program_type, promotion=promotion, query=query, resource_type=resource_type, return_facet=return_facet, return_items=return_items, self_paced=self_paced, skill_id=skill_id, skills=skills, subject=subject, tags=tags, tenant=tenant, topics=topics, update_facet=update_facet)
 
+Search and filter content across the learning catalog.
 
+This endpoint provides a powerful search interface for discovering content across
+multiple content types (courses, programs, pathways, skills, roles, resources).
+It supports full-text search, faceted filtering, and pagination.
 
-Search and filter content across the learning catalog.  This endpoint provides a powerful search interface for discovering content across multiple content types (courses, programs, pathways, skills, roles, resources). It supports full-text search, faceted filtering, and pagination.  Query Parameters:     query (str, optional): Search term to filter content by name or description     content (list, optional): Content types to include in results                              (courses, programs, pathways, skills, roles, resources)                              Default: [\"programs\", \"courses\", \"pathways\", \"skills\"]      # Filtering parameters     course_id (str, optional): Filter by specific course ID     program_id (str, optional): Filter by specific program ID     pathway_id (str, optional): Filter by specific pathway ID     skill_id (str, optional): Filter by specific skill ID     subject (list, optional): Filter by subject areas     tenant (list, optional): Filter by tenant/organization     topics (list, optional): Filter by topic areas     tags (list, optional): Filter by tags     level (list, optional): Filter by difficulty level     self_paced (list, optional): Filter by course format (self-paced, instructor-led)     promotion (list, optional): Filter by promotion status     language (list, optional): Filter by content language     certificate (list, optional): Filter by certificate type     program_type (list, optional): Filter by program type     duration (list, optional): Filter by course duration range     price (str, optional): Filter by price/audit status     resource_type (list, optional): Filter by resource type     skills (list, optional): Filter by skills      # Sorting and pagination     order_by (str, optional): Field to sort results by     order_ascending (bool, optional): Sort direction (default: false)     alphabetical (bool, optional): Sort alphabetically by name (default: false)     limit (int, optional): Number of results per page (default: 12, max: 100)     offset (int, optional): Starting position for pagination      # Response options     return_facet (bool, optional): Include facet data in response (default: true)     return_items (bool, optional): Include items in programs/pathways (default: false)     allow_skill_search (bool, optional): Enable skill-based search (default: false)     update_facet (str, optional): Force facet update  Returns:     A JSON response containing:     - results: List of content items with metadata     - count: Total number of matching items     - next: URL for the next page of results (if available)     - previous: URL for the previous page of results (if available)     - current_page: Current page number     - total_pages: Total number of pages     - facets: Aggregated counts for each filter category (if requested)  Each content item contains type-specific fields:     - Courses:         {             \"id\": 123,             \"type\": \"course\",             \"course_id\": \"CS101\",             \"name\": \"Introduction to Computer Science\",             \"description\": \"Learn the fundamentals of computer science\",             \"short_description\": \"CS fundamentals\",             \"image_url\": \"https://example.com/images/cs101.jpg\",             \"level\": \"Beginner\",             \"subject\": \"Computer Science\",             \"topics\": [\"Programming\", \"Algorithms\"],             \"tags\": [\"python\", \"coding\"],             \"language\": \"English\",             \"tenant\": \"example-university\",             \"self_paced\": true,             \"duration\": \"6 weeks\",             \"certificate\": \"Professional Certificate\",             \"price\": \"Free\",             \"skills\": [                 {\"id\": 1, \"name\": \"Python Programming\"},                 {\"id\": 2, \"name\": \"Algorithms\"}             ],             \"url\": \"https://example.com/courses/cs101\"         }      - Programs:         {             \"id\": 456,             \"type\": \"program\",             \"program_id\": \"PROG123\",             \"name\": \"Data Science Program\",             \"description\": \"Comprehensive data science curriculum\",             \"short_description\": \"Learn data science\",             \"image_url\": \"https://example.com/images/datascience.jpg\",             \"level\": \"Intermediate\",             \"subject\": \"Data Science\",             \"topics\": [\"Machine Learning\", \"Statistics\"],             \"program_type\": \"Professional Certificate\",             \"courses\": [                 {\"id\": 123, \"name\": \"Introduction to Python\"},                 {\"id\": 124, \"name\": \"Statistics for Data Science\"}             ],             \"url\": \"https://example.com/programs/prog123\"         }      - Pathways:         {             \"id\": 789,             \"type\": \"pathway\",             \"pathway_id\": \"PATH456\",             \"name\": \"Software Engineering Career Path\",             \"description\": \"Complete pathway to become a software engineer\",             \"image_url\": \"https://example.com/images/swe-path.jpg\",             \"programs\": [                 {\"id\": 456, \"name\": \"Programming Fundamentals\"},                 {\"id\": 457, \"name\": \"Web Development\"}             ],             \"url\": \"https://example.com/pathways/path456\"         }      - Skills:         {             \"id\": 321,             \"type\": \"skill\",             \"name\": \"Machine Learning\",             \"description\": \"Building systems that learn from data\",             \"courses\": [                 {\"id\": 125, \"name\": \"Machine Learning Fundamentals\"}             ],             \"related_skills\": [                 {\"id\": 322, \"name\": \"Deep Learning\"}             ]         }      - Roles:         {             \"id\": 654,             \"type\": \"role\",             \"name\": \"Data Scientist\",             \"description\": \"Professional who analyzes and interprets complex data\",             \"skills\": [                 {\"id\": 321, \"name\": \"Machine Learning\"},                 {\"id\": 323, \"name\": \"Data Analysis\"}             ],             \"recommended_courses\": [                 {\"id\": 125, \"name\": \"Machine Learning Fundamentals\"}             ]         }      - Resources:         {             \"id\": 987,             \"type\": \"resource\",             \"name\": \"Python Cheat Sheet\",             \"description\": \"Quick reference guide for Python\",             \"resource_type\": \"PDF\",             \"url\": \"https://example.com/resources/python-cheatsheet.pdf\",             \"topics\": [\"Programming\", \"Python\"]         }  Error Responses:     500 Internal Server Error: If an unexpected error occurs during processing  Notes:     - Results are cached for performance     - The 'resources' content type is only included by default if IBL_ENABLE_RESOURCES_IN_FACET is true     - For debugging, add ?debug=true to see detailed information about skill matching
+Query Parameters:
+    query (str, optional): Search term to filter content by name or description
+    content (list, optional): Content types to include in results
+                             (courses, programs, pathways, skills, roles, resources)
+                             Default: ["programs", "courses", "pathways", "skills"]
+
+    # Filtering parameters
+    course_id (str, optional): Filter by specific course ID
+    program_id (str, optional): Filter by specific program ID
+    pathway_id (str, optional): Filter by specific pathway ID
+    skill_id (str, optional): Filter by specific skill ID
+    subject (list, optional): Filter by subject areas
+    tenant (list, optional): Filter by tenant/organization
+    topics (list, optional): Filter by topic areas
+    tags (list, optional): Filter by tags
+    level (list, optional): Filter by difficulty level
+    self_paced (list, optional): Filter by course format (self-paced, instructor-led)
+    promotion (list, optional): Filter by promotion status
+    language (list, optional): Filter by content language
+    certificate (list, optional): Filter by certificate type
+    program_type (list, optional): Filter by program type
+    duration (list, optional): Filter by course duration range
+    price (str, optional): Filter by price/audit status
+    resource_type (list, optional): Filter by resource type
+    skills (list, optional): Filter by skills
+
+    # Sorting and pagination
+    order_by (str, optional): Field to sort results by
+    order_ascending (bool, optional): Sort direction (default: false)
+    alphabetical (bool, optional): Sort alphabetically by name (default: false)
+    limit (int, optional): Number of results per page (default: 12, max: 100)
+    offset (int, optional): Starting position for pagination
+
+    # Response options
+    return_facet (bool, optional): Include facet data in response (default: true)
+    return_items (bool, optional): Include items in programs/pathways (default: false)
+    allow_skill_search (bool, optional): Enable skill-based search (default: false)
+    update_facet (str, optional): Force facet update
+
+Returns:
+    A JSON response containing:
+    - results: List of content items with metadata
+    - count: Total number of matching items
+    - next: URL for the next page of results (if available)
+    - previous: URL for the previous page of results (if available)
+    - current_page: Current page number
+    - total_pages: Total number of pages
+    - facets: Aggregated counts for each filter category (if requested)
+
+Each content item contains type-specific fields:
+    - Courses:
+        {
+            "id": 123,
+            "type": "course",
+            "course_id": "CS101",
+            "name": "Introduction to Computer Science",
+            "description": "Learn the fundamentals of computer science",
+            "short_description": "CS fundamentals",
+            "image_url": "https://example.com/images/cs101.jpg",
+            "level": "Beginner",
+            "subject": "Computer Science",
+            "topics": ["Programming", "Algorithms"],
+            "tags": ["python", "coding"],
+            "language": "English",
+            "tenant": "example-university",
+            "self_paced": true,
+            "duration": "6 weeks",
+            "certificate": "Professional Certificate",
+            "price": "Free",
+            "skills": [
+                {"id": 1, "name": "Python Programming"},
+                {"id": 2, "name": "Algorithms"}
+            ],
+            "url": "https://example.com/courses/cs101"
+        }
+
+    - Programs:
+        {
+            "id": 456,
+            "type": "program",
+            "program_id": "PROG123",
+            "name": "Data Science Program",
+            "description": "Comprehensive data science curriculum",
+            "short_description": "Learn data science",
+            "image_url": "https://example.com/images/datascience.jpg",
+            "level": "Intermediate",
+            "subject": "Data Science",
+            "topics": ["Machine Learning", "Statistics"],
+            "program_type": "Professional Certificate",
+            "courses": [
+                {"id": 123, "name": "Introduction to Python"},
+                {"id": 124, "name": "Statistics for Data Science"}
+            ],
+            "url": "https://example.com/programs/prog123"
+        }
+
+    - Pathways:
+        {
+            "id": 789,
+            "type": "pathway",
+            "pathway_id": "PATH456",
+            "name": "Software Engineering Career Path",
+            "description": "Complete pathway to become a software engineer",
+            "image_url": "https://example.com/images/swe-path.jpg",
+            "programs": [
+                {"id": 456, "name": "Programming Fundamentals"},
+                {"id": 457, "name": "Web Development"}
+            ],
+            "url": "https://example.com/pathways/path456"
+        }
+
+    - Skills:
+        {
+            "id": 321,
+            "type": "skill",
+            "name": "Machine Learning",
+            "description": "Building systems that learn from data",
+            "courses": [
+                {"id": 125, "name": "Machine Learning Fundamentals"}
+            ],
+            "related_skills": [
+                {"id": 322, "name": "Deep Learning"}
+            ]
+        }
+
+    - Roles:
+        {
+            "id": 654,
+            "type": "role",
+            "name": "Data Scientist",
+            "description": "Professional who analyzes and interprets complex data",
+            "skills": [
+                {"id": 321, "name": "Machine Learning"},
+                {"id": 323, "name": "Data Analysis"}
+            ],
+            "recommended_courses": [
+                {"id": 125, "name": "Machine Learning Fundamentals"}
+            ]
+        }
+
+    - Resources:
+        {
+            "id": 987,
+            "type": "resource",
+            "name": "Python Cheat Sheet",
+            "description": "Quick reference guide for Python",
+            "resource_type": "PDF",
+            "url": "https://example.com/resources/python-cheatsheet.pdf",
+            "topics": ["Programming", "Python"]
+        }
+
+Error Responses:
+    500 Internal Server Error: If an unexpected error occurs during processing
+
+Notes:
+    - Results are cached for performance
+    - The 'resources' content type is only included by default if IBL_ENABLE_RESOURCES_IN_FACET is true
+    - For debugging, add ?debug=true to see detailed information about skill matching
 
 ### Example
 
@@ -122,7 +280,6 @@ import iblai
 from iblai.models.global_catalog_search_response import GlobalCatalogSearchResponse
 from iblai.rest import ApiException
 from pprint import pprint
-
 
 # Create an instance of the API class
 api_instance = iblai.SearchApi(api_client)
@@ -152,7 +309,7 @@ skill_id = 'skill_id_example' # str | Filter by specific skill ID (optional)
 skills = ['skills_example'] # List[str] | Filter by skills (optional)
 subject = ['subject_example'] # List[str] | Filter by subject areas (optional)
 tags = ['tags_example'] # List[str] | Filter by tags (optional)
-tenant = ['tenant_example'] # List[str] | Filter by tenant/organization (optional)
+tenant = 'tenant_example' # str | Filter by tenant/organization (optional)
 topics = ['topics_example'] # List[str] | Filter by topic areas (optional)
 update_facet = 'update_facet_example' # str | Force facet update (optional)
 
@@ -197,7 +354,7 @@ Name | Type | Description  | Notes
  **skills** | [**List[str]**](str.md)| Filter by skills | [optional] 
  **subject** | [**List[str]**](str.md)| Filter by subject areas | [optional] 
  **tags** | [**List[str]**](str.md)| Filter by tags | [optional] 
- **tenant** | [**List[str]**](str.md)| Filter by tenant/organization | [optional] 
+ **tenant** | **str**| Filter by tenant/organization | [optional] 
  **topics** | [**List[str]**](str.md)| Filter by topic areas | [optional] 
  **update_facet** | **str**| Force facet update | [optional] 
 
@@ -227,8 +384,6 @@ No authorization required
 # **search_mentors_documents_retrieve**
 > DocumentSearchResponse search_mentors_documents_retrieve(mentor_unique_id, access=access, document_type=document_type, limit=limit, offset=offset, order_by=order_by, order_direction=order_direction, platform_key=platform_key, query=query, training_status=training_status)
 
-
-
 Search and filter documents associated with a specific mentor
 
 ### Example
@@ -239,7 +394,6 @@ import iblai
 from iblai.models.document_search_response import DocumentSearchResponse
 from iblai.rest import ApiException
 from pprint import pprint
-
 
 # Create an instance of the API class
 api_instance = iblai.SearchApi(api_client)
@@ -305,11 +459,119 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **search_mentors_retrieve**
-> MentorSearchResponse search_mentors_retrieve(audience=audience, category=category, created_by=created_by, featured=featured, id=id, limit=limit, llm=llm, offset=offset, order_by=order_by, order_direction=order_direction, query=query, tags=tags, tenant=tenant, unique_id=unique_id)
+> MentorSearchResponse search_mentors_retrieve(audience=audience, category=category, created_by=created_by, featured=featured, id=id, include_main_public_mentors=include_main_public_mentors, limit=limit, llm=llm, offset=offset, order_by=order_by, order_direction=order_direction, query=query, tags=tags, tenant=tenant, unique_id=unique_id)
 
+Search and filter AI mentors across the platform.
 
+This endpoint provides a powerful search interface for discovering AI mentors
+with support for filtering, pagination, and detailed mentor information.
 
-Search and filter AI mentors across the platform.  This endpoint provides a powerful search interface for discovering AI mentors with support for filtering, pagination, and detailed mentor information.  Query Parameters:     # Identification parameters (for detail view)     id (int, optional): Retrieve a specific mentor by ID     unique_id (uuid, optional): Retrieve a specific mentor by UUID      # Search and filtering parameters     query (str, optional): Search term to filter mentors by name or description     tenant (str, optional): Filter by tenant/organization     llm (list, optional): Filter by language model type     audience (list, optional): Filter by target audience     category (list, optional): Filter by mentor category     tags (list, optional): Filter by tags     created_by (str, optional): Filter mentors created by specific user      # Sorting and pagination     order_by (str, optional): Field to sort results by ('created_at', 'recently_accessed_at')     order_direction (str, optional): Sort direction ('asc' or 'desc', default: 'desc')     limit (int, optional): Number of results per page (default: 12, max: 100)     offset (int, optional): Starting position for pagination  Returns:     For detail view (when id or unique_id is provided):         A JSON response containing a single mentor's details:         {             \"id\": 123,             \"unique_id\": \"550e8400-e29b-41d4-a716-446655440000\",             \"name\": \"Professor Smith\",             \"description\": \"AI mentor specializing in computer science\",             \"image_url\": \"https://example.com/images/prof-smith.jpg\",             \"llm\": {                 \"id\": 1,                 \"name\": \"GPT-4\",                 \"description\": \"Advanced language model\"             },             \"audience\": {                 \"id\": 2,                 \"name\": \"College Students\",                 \"description\": \"For university-level learners\"             },             \"category\": \"Computer Science\",             \"tags\": [\"programming\", \"algorithms\", \"data structures\"],             \"created_at\": \"2023-01-15T12:00:00Z\",             \"recently_accessed_at\": \"2023-06-20T15:30:00Z\",             \"platform\": {                 \"id\": 1,                 \"name\": \"Example University\",                 \"key\": \"example-university\"             },             \"visibility\": \"public\",             \"settings\": {                 \"temperature\": 0.7,                 \"max_tokens\": 1024,                 \"system_prompt\": \"You are Professor Smith, an expert in computer science...\"             }         }      For list view:         A JSON response containing:         {             \"results\": [                 {                     \"id\": 123,                     \"unique_id\": \"550e8400-e29b-41d4-a716-446655440000\",                     \"name\": \"Professor Smith\",                     \"description\": \"AI mentor specializing in computer science\",                     \"image_url\": \"https://example.com/images/prof-smith.jpg\",                     \"llm\": {\"id\": 1, \"name\": \"GPT-4\"},                     \"audience\": {\"id\": 2, \"name\": \"College Students\"},                     \"category\": \"Computer Science\",                     \"tags\": [\"programming\", \"algorithms\"],                     \"created_at\": \"2023-01-15T12:00:00Z\",                     \"recently_accessed_at\": \"2023-06-20T15:30:00Z\"                 },                 // Additional mentor objects...             ],             \"count\": 50,             \"next\": \"https://api.example.com/api/search/mentors/?limit=12&offset=12\",             \"previous\": null,             \"current_page\": 1,             \"num_pages\": 5,             \"facets\": {                 \"llm\": [                     {\"key\": \"GPT-4\", \"doc_count\": 30},                     {\"key\": \"Claude\", \"doc_count\": 20}                 ],                 \"audience\": [                     {\"key\": \"College Students\", \"doc_count\": 35},                     {\"key\": \"Professionals\", \"doc_count\": 15}                 ],                 \"category\": [                     {\"key\": \"Computer Science\", \"doc_count\": 25},                     {\"key\": \"Mathematics\", \"doc_count\": 15},                     {\"key\": \"Business\", \"doc_count\": 10}                 ]             }         }  Error Responses:     400 Bad Request: If the request parameters are invalid     404 Not Found: If the requested mentor doesn't exist     500 Internal Server Error: If an unexpected error occurs  Notes:     - Results are cached for performance     - Public mentors are visible to all users     - Private mentors are only visible to authorized users
+Query Parameters:
+    # Identification parameters (for detail view)
+    id (int, optional): Retrieve a specific mentor by ID
+    unique_id (uuid, optional): Retrieve a specific mentor by UUID
+
+    # Search and filtering parameters
+    query (str, optional): Search term to filter mentors by name or description
+    tenant (str, optional): Filter by tenant/organization
+    llm (list, optional): Filter by language model type
+    audience (list, optional): Filter by target audience
+    category (list, optional): Filter by mentor category
+    tags (list, optional): Filter by tags
+    created_by (str, optional): Filter mentors created by specific user
+
+    # Sorting and pagination
+    order_by (str, optional): Field to sort results by ('created_at', 'recently_accessed_at')
+    order_direction (str, optional): Sort direction ('asc' or 'desc', default: 'desc')
+    limit (int, optional): Number of results per page (default: 12, max: 100)
+    offset (int, optional): Starting position for pagination
+
+Returns:
+    For detail view (when id or unique_id is provided):
+        A JSON response containing a single mentor's details:
+        {
+            "id": 123,
+            "unique_id": "550e8400-e29b-41d4-a716-446655440000",
+            "name": "Professor Smith",
+            "description": "AI mentor specializing in computer science",
+            "image_url": "https://example.com/images/prof-smith.jpg",
+            "llm": {
+                "id": 1,
+                "name": "GPT-4",
+                "description": "Advanced language model"
+            },
+            "audience": {
+                "id": 2,
+                "name": "College Students",
+                "description": "For university-level learners"
+            },
+            "category": "Computer Science",
+            "tags": ["programming", "algorithms", "data structures"],
+            "created_at": "2023-01-15T12:00:00Z",
+            "recently_accessed_at": "2023-06-20T15:30:00Z",
+            "platform": {
+                "id": 1,
+                "name": "Example University",
+                "key": "example-university"
+            },
+            "visibility": "public",
+            "settings": {
+                "temperature": 0.7,
+                "max_tokens": 1024,
+                "system_prompt": "You are Professor Smith, an expert in computer science..."
+            }
+        }
+
+    For list view:
+        A JSON response containing:
+        {
+            "results": [
+                {
+                    "id": 123,
+                    "unique_id": "550e8400-e29b-41d4-a716-446655440000",
+                    "name": "Professor Smith",
+                    "description": "AI mentor specializing in computer science",
+                    "image_url": "https://example.com/images/prof-smith.jpg",
+                    "llm": {"id": 1, "name": "GPT-4"},
+                    "audience": {"id": 2, "name": "College Students"},
+                    "category": "Computer Science",
+                    "tags": ["programming", "algorithms"],
+                    "created_at": "2023-01-15T12:00:00Z",
+                    "recently_accessed_at": "2023-06-20T15:30:00Z"
+                },
+                // Additional mentor objects...
+            ],
+            "count": 50,
+            "next": "https://api.example.com/api/search/mentors/?limit=12&offset=12",
+            "previous": null,
+            "current_page": 1,
+            "num_pages": 5,
+            "facets": {
+                "llm": [
+                    {"key": "GPT-4", "doc_count": 30},
+                    {"key": "Claude", "doc_count": 20}
+                ],
+                "audience": [
+                    {"key": "College Students", "doc_count": 35},
+                    {"key": "Professionals", "doc_count": 15}
+                ],
+                "category": [
+                    {"key": "Computer Science", "doc_count": 25},
+                    {"key": "Mathematics", "doc_count": 15},
+                    {"key": "Business", "doc_count": 10}
+                ]
+            }
+        }
+
+Error Responses:
+    400 Bad Request: If the request parameters are invalid
+    404 Not Found: If the requested mentor doesn't exist
+    500 Internal Server Error: If an unexpected error occurs
+
+Notes:
+    - Results are cached for performance
+    - Public mentors are visible to all users
+    - Private mentors are only visible to authorized users
 
 ### Example
 
@@ -320,7 +582,6 @@ from iblai.models.mentor_search_response import MentorSearchResponse
 from iblai.rest import ApiException
 from pprint import pprint
 
-
 # Create an instance of the API class
 api_instance = iblai.SearchApi(api_client)
 audience = ['audience_example'] # List[str] | Filter by target audience (optional)
@@ -328,6 +589,7 @@ category = ['category_example'] # List[str] | Filter by mentor category (optiona
 created_by = 'created_by_example' # str | Filter mentors created by specific user (optional)
 featured = True # bool | Filter by featured status (optional)
 id = 56 # int | Retrieve a specific mentor by ID (optional)
+include_main_public_mentors = False # bool | Include public mentors from main tenant (optional) (default to False)
 limit = 12 # int | Number of results per page (optional) (default to 12)
 llm = ['llm_example'] # List[str] | Filter by language model type (optional)
 offset = 0 # int | Starting position for pagination (optional) (default to 0)
@@ -339,7 +601,7 @@ tenant = 'tenant_example' # str | Filter by tenant/organization (optional)
 unique_id = 'unique_id_example' # str | Retrieve a specific mentor by UUID (optional)
 
 try:
-    api_response = api_instance.search_mentors_retrieve(audience=audience, category=category, created_by=created_by, featured=featured, id=id, limit=limit, llm=llm, offset=offset, order_by=order_by, order_direction=order_direction, query=query, tags=tags, tenant=tenant, unique_id=unique_id)
+    api_response = api_instance.search_mentors_retrieve(audience=audience, category=category, created_by=created_by, featured=featured, id=id, include_main_public_mentors=include_main_public_mentors, limit=limit, llm=llm, offset=offset, order_by=order_by, order_direction=order_direction, query=query, tags=tags, tenant=tenant, unique_id=unique_id)
     print("The response of SearchApi->search_mentors_retrieve:\n")
     pprint(api_response)
 except Exception as e:
@@ -358,6 +620,7 @@ Name | Type | Description  | Notes
  **created_by** | **str**| Filter mentors created by specific user | [optional] 
  **featured** | **bool**| Filter by featured status | [optional] 
  **id** | **int**| Retrieve a specific mentor by ID | [optional] 
+ **include_main_public_mentors** | **bool**| Include public mentors from main tenant | [optional] [default to False]
  **limit** | **int**| Number of results per page | [optional] [default to 12]
  **llm** | [**List[str]**](str.md)| Filter by language model type | [optional] 
  **offset** | **int**| Starting position for pagination | [optional] [default to 0]
@@ -392,11 +655,17 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **search_orgs_users_mentors_retrieve**
-> MentorSearchResponse search_orgs_users_mentors_retrieve(org, username, audience=audience, category=category, created_by=created_by, featured=featured, id=id, limit=limit, llm=llm, offset=offset, order_by=order_by, order_direction=order_direction, query=query, tags=tags, tenant=tenant, unique_id=unique_id)
+> MentorSearchResponse search_orgs_users_mentors_retrieve(org, username, audience=audience, category=category, created_by=created_by, featured=featured, id=id, include_main_public_mentors=include_main_public_mentors, limit=limit, llm=llm, offset=offset, order_by=order_by, order_direction=order_direction, query=query, tags=tags, tenant=tenant, unique_id=unique_id)
 
+Handle GET requests for tenant-specific mentor search.
 
+Args:
+    request: HTTP request object
+    org: Tenant/organization key
+    username: Username of the user making the request
 
-Handle GET requests for tenant-specific mentor search.  Args:     request: HTTP request object     org: Tenant/organization key     username: Username of the user making the request  Returns:     Response: DRF Response object with search results
+Returns:
+    Response: DRF Response object with search results
 
 ### Example
 
@@ -407,7 +676,6 @@ from iblai.models.mentor_search_response import MentorSearchResponse
 from iblai.rest import ApiException
 from pprint import pprint
 
-
 # Create an instance of the API class
 api_instance = iblai.SearchApi(api_client)
 org = 'org_example' # str | 
@@ -417,6 +685,7 @@ category = ['category_example'] # List[str] | Filter by mentor category (optiona
 created_by = 'created_by_example' # str | Filter mentors created by specific user (optional)
 featured = True # bool | Filter by featured status (optional)
 id = 56 # int | Retrieve a specific mentor by ID (optional)
+include_main_public_mentors = False # bool | Include public mentors from main tenant (optional) (default to False)
 limit = 12 # int | Number of results per page (optional) (default to 12)
 llm = ['llm_example'] # List[str] | Filter by language model type (optional)
 offset = 0 # int | Starting position for pagination (optional) (default to 0)
@@ -428,7 +697,7 @@ tenant = 'tenant_example' # str | Filter by tenant/organization (optional)
 unique_id = 'unique_id_example' # str | Retrieve a specific mentor by UUID (optional)
 
 try:
-    api_response = api_instance.search_orgs_users_mentors_retrieve(org, username, audience=audience, category=category, created_by=created_by, featured=featured, id=id, limit=limit, llm=llm, offset=offset, order_by=order_by, order_direction=order_direction, query=query, tags=tags, tenant=tenant, unique_id=unique_id)
+    api_response = api_instance.search_orgs_users_mentors_retrieve(org, username, audience=audience, category=category, created_by=created_by, featured=featured, id=id, include_main_public_mentors=include_main_public_mentors, limit=limit, llm=llm, offset=offset, order_by=order_by, order_direction=order_direction, query=query, tags=tags, tenant=tenant, unique_id=unique_id)
     print("The response of SearchApi->search_orgs_users_mentors_retrieve:\n")
     pprint(api_response)
 except Exception as e:
@@ -449,6 +718,7 @@ Name | Type | Description  | Notes
  **created_by** | **str**| Filter mentors created by specific user | [optional] 
  **featured** | **bool**| Filter by featured status | [optional] 
  **id** | **int**| Retrieve a specific mentor by ID | [optional] 
+ **include_main_public_mentors** | **bool**| Include public mentors from main tenant | [optional] [default to False]
  **limit** | **int**| Number of results per page | [optional] [default to 12]
  **llm** | [**List[str]**](str.md)| Filter by language model type | [optional] 
  **offset** | **int**| Starting position for pagination | [optional] [default to 0]
@@ -478,16 +748,43 @@ No authorization required
 |-------------|-------------|------------------|
 **200** |  |  -  |
 **400** | Bad request |  -  |
+**403** | Forbidden - user does not have access |  -  |
 **500** | Server error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **search_orgs_users_prompts_retrieve**
-> PromptSearchResponse search_orgs_users_prompts_retrieve(org, username, alphabetical=alphabetical, category=category, filter_facet=filter_facet, language=language, limit=limit, mentor=mentor, offset=offset, order_direction=order_direction, query=query, sort_by=sort_by, style=style, tenant=tenant, tone=tone)
+> PromptSearchResponse search_orgs_users_prompts_retrieve(org, username, alphabetical=alphabetical, category=category, created_by=created_by, filter_facet=filter_facet, language=language, limit=limit, mentor=mentor, offset=offset, order_direction=order_direction, query=query, sort_by=sort_by, style=style, tenant=tenant, tone=tone)
 
+Search and filter AI prompts for a specific user within a tenant.
 
+This endpoint extends the base prompt search functionality but filters results
+to only show prompts that are available to a specific user within a specific
+organization/tenant.
 
-Search and filter AI prompts for a specific user within a tenant.  This endpoint extends the base prompt search functionality but filters results to only show prompts that are available to a specific user within a specific organization/tenant.  Path Parameters:     org (str): The organization/tenant identifier     username (str): The username to filter prompts for  Query Parameters:     Same as PromptSearchView, plus:      # Identification parameters (for detail view)     id (int, optional): Retrieve a specific prompt by ID  Returns:     Same format as PromptSearchView, but filtered to only include prompts     that the specified user has access to within the specified organization.  Error Responses:     400 Bad Request: If the request parameters are invalid     403 Forbidden: If the requested prompt exists but the user doesn't have access     404 Not Found: If the requested prompt doesn't exist     500 Internal Server Error: If an unexpected error occurs  Access Control:     - Results are filtered based on user's permissions within the organization     - Private prompts are only visible to authorized users
+Path Parameters:
+    org (str): The organization/tenant identifier
+    username (str): The username to filter prompts for
+
+Query Parameters:
+    Same as PromptSearchView, plus:
+
+    # Identification parameters (for detail view)
+    id (int, optional): Retrieve a specific prompt by ID
+
+Returns:
+    Same format as PromptSearchView, but filtered to only include prompts
+    that the specified user has access to within the specified organization.
+
+Error Responses:
+    400 Bad Request: If the request parameters are invalid
+    403 Forbidden: If the requested prompt exists but the user doesn't have access
+    404 Not Found: If the requested prompt doesn't exist
+    500 Internal Server Error: If an unexpected error occurs
+
+Access Control:
+    - Results are filtered based on user's permissions within the organization
+    - Private prompts are only visible to authorized users
 
 ### Example
 
@@ -498,13 +795,13 @@ from iblai.models.prompt_search_response import PromptSearchResponse
 from iblai.rest import ApiException
 from pprint import pprint
 
-
 # Create an instance of the API class
 api_instance = iblai.SearchApi(api_client)
 org = 'org_example' # str | 
 username = 'username_example' # str | 
 alphabetical = False # bool | Sort alphabetically (optional) (default to False)
 category = 'category_example' # str | Filter by prompt category (optional)
+created_by = 'created_by_example' # str | Filter prompts created by specific user (optional)
 filter_facet = True # bool | If true, return only facets without results (optional)
 language = 'language_example' # str | Filter by prompt language (optional)
 limit = 10 # int | Number of results per page (optional) (default to 10)
@@ -518,7 +815,7 @@ tenant = 'tenant_example' # str | Filter by tenant/organization (optional)
 tone = 'tone_example' # str | Filter by prompt tone (optional)
 
 try:
-    api_response = api_instance.search_orgs_users_prompts_retrieve(org, username, alphabetical=alphabetical, category=category, filter_facet=filter_facet, language=language, limit=limit, mentor=mentor, offset=offset, order_direction=order_direction, query=query, sort_by=sort_by, style=style, tenant=tenant, tone=tone)
+    api_response = api_instance.search_orgs_users_prompts_retrieve(org, username, alphabetical=alphabetical, category=category, created_by=created_by, filter_facet=filter_facet, language=language, limit=limit, mentor=mentor, offset=offset, order_direction=order_direction, query=query, sort_by=sort_by, style=style, tenant=tenant, tone=tone)
     print("The response of SearchApi->search_orgs_users_prompts_retrieve:\n")
     pprint(api_response)
 except Exception as e:
@@ -536,6 +833,7 @@ Name | Type | Description  | Notes
  **username** | **str**|  | 
  **alphabetical** | **bool**| Sort alphabetically | [optional] [default to False]
  **category** | **str**| Filter by prompt category | [optional] 
+ **created_by** | **str**| Filter prompts created by specific user | [optional] 
  **filter_facet** | **bool**| If true, return only facets without results | [optional] 
  **language** | **str**| Filter by prompt language | [optional] 
  **limit** | **int**| Number of results per page | [optional] [default to 10]
@@ -574,9 +872,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **search_orgs_users_recommended_retrieve**
-> RecommendedCoursesResponse search_orgs_users_recommended_retrieve(org, username, certificate=certificate, content=content, course_id=course_id, duration=duration, language=language, level=level, limit=limit, offset=offset, pathway_id=pathway_id, price=price, program_id=program_id, program_type=program_type, query=query, resource_id=resource_id, resource_type=resource_type, role_id=role_id, self_paced=self_paced, skill_id=skill_id, skills=skills, subject=subject, tags=tags, topics=topics)
-
-
+> RecommendedCoursesResponse search_orgs_users_recommended_retrieve(org, username, certificate=certificate, content=content, course_id=course_id, duration=duration, language=language, level=level, limit=limit, offset=offset, pathway_id=pathway_id, price=price, program_id=program_id, program_type=program_type, query=query, resource_id=resource_id, resource_type=resource_type, role_id=role_id, self_paced=self_paced, skill_id=skill_id, skills=skills, subject=subject, tags=tags, tenant=tenant, topics=topics)
 
 Determine whether to serve a detail view or a list view.
 
@@ -601,7 +897,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.SearchApi(api_client)
 org = 'org_example' # str | 
@@ -627,10 +922,11 @@ skill_id = 'skill_id_example' # str | Retrieve a specific skill by ID (optional)
 skills = ['skills_example'] # List[str] | Filter by skills (optional)
 subject = ['subject_example'] # List[str] | Filter by subject areas (optional)
 tags = ['tags_example'] # List[str] | Filter by tags (optional)
+tenant = 'tenant_example' # str | Filter by tenant/organization (optional)
 topics = ['topics_example'] # List[str] | Filter by topic areas (optional)
 
 try:
-    api_response = api_instance.search_orgs_users_recommended_retrieve(org, username, certificate=certificate, content=content, course_id=course_id, duration=duration, language=language, level=level, limit=limit, offset=offset, pathway_id=pathway_id, price=price, program_id=program_id, program_type=program_type, query=query, resource_id=resource_id, resource_type=resource_type, role_id=role_id, self_paced=self_paced, skill_id=skill_id, skills=skills, subject=subject, tags=tags, topics=topics)
+    api_response = api_instance.search_orgs_users_recommended_retrieve(org, username, certificate=certificate, content=content, course_id=course_id, duration=duration, language=language, level=level, limit=limit, offset=offset, pathway_id=pathway_id, price=price, program_id=program_id, program_type=program_type, query=query, resource_id=resource_id, resource_type=resource_type, role_id=role_id, self_paced=self_paced, skill_id=skill_id, skills=skills, subject=subject, tags=tags, tenant=tenant, topics=topics)
     print("The response of SearchApi->search_orgs_users_recommended_retrieve:\n")
     pprint(api_response)
 except Exception as e:
@@ -667,6 +963,7 @@ Name | Type | Description  | Notes
  **skills** | [**List[str]**](str.md)| Filter by skills | [optional] 
  **subject** | [**List[str]**](str.md)| Filter by subject areas | [optional] 
  **tags** | [**List[str]**](str.md)| Filter by tags | [optional] 
+ **tenant** | **str**| Filter by tenant/organization | [optional] 
  **topics** | [**List[str]**](str.md)| Filter by topic areas | [optional] 
 
 ### Return type
@@ -696,9 +993,9 @@ Name | Type | Description  | Notes
 # **search_personalized_catalog_retrieve**
 > Dict[str, object] search_personalized_catalog_retrieve(username, allow_skill_search=allow_skill_search, alphabetical=alphabetical, certificate=certificate, content=content, course_id=course_id, duration=duration, language=language, level=level, limit=limit, offset=offset, order_ascending=order_ascending, order_by=order_by, pathway_id=pathway_id, price=price, program_id=program_id, program_type=program_type, promotion=promotion, query=query, recommended=recommended, resource_id=resource_id, resource_type=resource_type, return_facet=return_facet, return_items=return_items, role_id=role_id, self_paced=self_paced, skill_id=skill_id, skills=skills, subject=subject, tags=tags, tenant=tenant, topics=topics, update_facet=update_facet)
 
-
-
-Determine whether to serve a detail view or a list view. If any detail-identifying parameters are present (course_id, program_id, etc.) the detail view is returned; otherwise the aggregated list view is returned.
+Determine whether to serve a detail view or a list view.
+If any detail-identifying parameters are present (course_id, program_id, etc.)
+the detail view is returned; otherwise the aggregated list view is returned.
 
 ### Example
 
@@ -707,7 +1004,6 @@ Determine whether to serve a detail view or a list view. If any detail-identifyi
 import iblai
 from iblai.rest import ApiException
 from pprint import pprint
-
 
 # Create an instance of the API class
 api_instance = iblai.SearchApi(api_client)
@@ -741,7 +1037,7 @@ skill_id = 'skill_id_example' # str | Retrieve a specific skill by ID (optional)
 skills = ['skills_example'] # List[str] | Filter by skills (optional)
 subject = ['subject_example'] # List[str] | Filter by subject areas (optional)
 tags = ['tags_example'] # List[str] | Filter by tags (optional)
-tenant = ['tenant_example'] # List[str] | Filter by tenant/organization (optional)
+tenant = 'tenant_example' # str | Filter by tenant/organization (optional)
 topics = ['topics_example'] # List[str] | Filter by topic areas (optional)
 update_facet = 'update_facet_example' # str | Force facet update (optional)
 
@@ -790,7 +1086,7 @@ Name | Type | Description  | Notes
  **skills** | [**List[str]**](str.md)| Filter by skills | [optional] 
  **subject** | [**List[str]**](str.md)| Filter by subject areas | [optional] 
  **tags** | [**List[str]**](str.md)| Filter by tags | [optional] 
- **tenant** | [**List[str]**](str.md)| Filter by tenant/organization | [optional] 
+ **tenant** | **str**| Filter by tenant/organization | [optional] 
  **topics** | [**List[str]**](str.md)| Filter by topic areas | [optional] 
  **update_facet** | **str**| Force facet update | [optional] 
 
@@ -816,11 +1112,117 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **search_prompts_retrieve**
-> PromptSearchResponse search_prompts_retrieve(alphabetical=alphabetical, category=category, filter_facet=filter_facet, language=language, limit=limit, mentor=mentor, offset=offset, order_direction=order_direction, query=query, sort_by=sort_by, style=style, tenant=tenant, tone=tone)
+> PromptSearchResponse search_prompts_retrieve(alphabetical=alphabetical, category=category, created_by=created_by, filter_facet=filter_facet, language=language, limit=limit, mentor=mentor, offset=offset, order_direction=order_direction, query=query, sort_by=sort_by, style=style, tenant=tenant, tone=tone)
 
+Search and filter AI prompts across the platform.
 
+This endpoint provides a search interface for discovering AI prompts
+with support for filtering, pagination, and detailed prompt information.
 
-Search and filter AI prompts across the platform.  This endpoint provides a search interface for discovering AI prompts with support for filtering, pagination, and detailed prompt information.  Query Parameters:     # Identification parameters (for detail view)     id (int, optional): Retrieve a specific prompt by ID      # Search and filtering parameters     query (str, optional): Search term to filter prompts by name or content     category (str, optional): Filter by prompt category     language (str, optional): Filter by prompt language     style (str, optional): Filter by writing style     tone (str, optional): Filter by tone     tenant (str, optional): Filter by tenant/organization     mentor (str, optional): Filter by associated mentor (UUID)      # Sorting and pagination     sort_by (str, optional): Field to sort results by     order_direction (str, optional): Sort direction ('asc' or 'desc', default: 'desc')     alphabetical (bool, optional): Sort alphabetically by name (default: false)     limit (int, optional): Number of results per page (default: 10)     offset (int, optional): Starting position for pagination      # Special parameters     filter_facet (any, optional): If present, return only facets without results  Returns:     For detail view (when id is provided):         A JSON response containing a single prompt's details:         {             \"id\": 456,             \"name\": \"Essay Writing Guide\",             \"content\": \"Write a well-structured essay on the following topic: {{topic}}...\",             \"category\": \"Academic Writing\",             \"language\": \"English\",             \"style\": \"Formal\",             \"tone\": \"Professional\",             \"mentor\": {                 \"id\": 123,                 \"unique_id\": \"550e8400-e29b-41d4-a716-446655440000\",                 \"name\": \"Professor Smith\"             },             \"platform\": {                 \"id\": 1,                 \"name\": \"Example University\",                 \"key\": \"example-university\"             },             \"created_at\": \"2023-02-10T09:15:00Z\",             \"updated_at\": \"2023-05-05T14:20:00Z\",             \"visibility\": \"public\",             \"variables\": [\"topic\", \"length\", \"style\"]         }      For list view:         A JSON response containing:         {             \"results\": [                 {                     \"id\": 456,                     \"name\": \"Essay Writing Guide\",                     \"content\": \"Write a well-structured essay on the following topic: {{topic}}...\",                     \"category\": \"Academic Writing\",                     \"language\": \"English\",                     \"style\": \"Formal\",                     \"tone\": \"Professional\",                     \"mentor\": {\"id\": 123, \"name\": \"Professor Smith\"},                     \"created_at\": \"2023-02-10T09:15:00Z\",                     \"updated_at\": \"2023-05-05T14:20:00Z\"                 },                 // Additional prompt objects...             ],             \"count\": 30,             \"next\": \"?limit=10&offset=10\",             \"previous\": null,             \"current_page\": 1,             \"num_pages\": 3,             \"facets\": {                 \"category\": [                     {\"key\": \"Academic Writing\", \"doc_count\": 15},                     {\"key\": \"Creative Writing\", \"doc_count\": 10},                     {\"key\": \"Technical Documentation\", \"doc_count\": 5}                 ],                 \"language\": [                     {\"key\": \"English\", \"doc_count\": 25},                     {\"key\": \"Spanish\", \"doc_count\": 5}                 ],                 \"style\": [                     {\"key\": \"Formal\", \"doc_count\": 20},                     {\"key\": \"Casual\", \"doc_count\": 10}                 ],                 \"tone\": [                     {\"key\": \"Professional\", \"doc_count\": 15},                     {\"key\": \"Friendly\", \"doc_count\": 10},                     {\"key\": \"Technical\", \"doc_count\": 5}                 ]             }         }  Error Responses:     400 Bad Request: If the request parameters are invalid     403 Forbidden: If the requested prompt exists but is not publicly available     404 Not Found: If the requested prompt doesn't exist     500 Internal Server Error: If an unexpected error occurs  Notes:     - Only publicly available prompts are returned by default     - When filtering by mentor, the mentor ID must be a valid UUID
+Query Parameters:
+    # Identification parameters (for detail view)
+    id (int, optional): Retrieve a specific prompt by ID
+
+    # Search and filtering parameters
+    query (str, optional): Search term to filter prompts by name or content
+    category (str, optional): Filter by prompt category
+    language (str, optional): Filter by prompt language
+    style (str, optional): Filter by writing style
+    tone (str, optional): Filter by tone
+    tenant (str, optional): Filter by tenant/organization
+    mentor (str, optional): Filter by associated mentor (UUID)
+
+    # Sorting and pagination
+    sort_by (str, optional): Field to sort results by
+    order_direction (str, optional): Sort direction ('asc' or 'desc', default: 'desc')
+    alphabetical (bool, optional): Sort alphabetically by name (default: false)
+    limit (int, optional): Number of results per page (default: 10)
+    offset (int, optional): Starting position for pagination
+
+    # Special parameters
+    filter_facet (any, optional): If present, return only facets without results
+
+Returns:
+    For detail view (when id is provided):
+        A JSON response containing a single prompt's details:
+        {
+            "id": 456,
+            "name": "Essay Writing Guide",
+            "content": "Write a well-structured essay on the following topic: {{topic}}...",
+            "category": "Academic Writing",
+            "language": "English",
+            "style": "Formal",
+            "tone": "Professional",
+            "mentor": {
+                "id": 123,
+                "unique_id": "550e8400-e29b-41d4-a716-446655440000",
+                "name": "Professor Smith"
+            },
+            "platform": {
+                "id": 1,
+                "name": "Example University",
+                "key": "example-university"
+            },
+            "created_at": "2023-02-10T09:15:00Z",
+            "updated_at": "2023-05-05T14:20:00Z",
+            "visibility": "public",
+            "variables": ["topic", "length", "style"]
+        }
+
+    For list view:
+        A JSON response containing:
+        {
+            "results": [
+                {
+                    "id": 456,
+                    "name": "Essay Writing Guide",
+                    "content": "Write a well-structured essay on the following topic: {{topic}}...",
+                    "category": "Academic Writing",
+                    "language": "English",
+                    "style": "Formal",
+                    "tone": "Professional",
+                    "mentor": {"id": 123, "name": "Professor Smith"},
+                    "created_at": "2023-02-10T09:15:00Z",
+                    "updated_at": "2023-05-05T14:20:00Z"
+                },
+                // Additional prompt objects...
+            ],
+            "count": 30,
+            "next": "?limit=10&offset=10",
+            "previous": null,
+            "current_page": 1,
+            "num_pages": 3,
+            "facets": {
+                "category": [
+                    {"key": "Academic Writing", "doc_count": 15},
+                    {"key": "Creative Writing", "doc_count": 10},
+                    {"key": "Technical Documentation", "doc_count": 5}
+                ],
+                "language": [
+                    {"key": "English", "doc_count": 25},
+                    {"key": "Spanish", "doc_count": 5}
+                ],
+                "style": [
+                    {"key": "Formal", "doc_count": 20},
+                    {"key": "Casual", "doc_count": 10}
+                ],
+                "tone": [
+                    {"key": "Professional", "doc_count": 15},
+                    {"key": "Friendly", "doc_count": 10},
+                    {"key": "Technical", "doc_count": 5}
+                ]
+            }
+        }
+
+Error Responses:
+    400 Bad Request: If the request parameters are invalid
+    403 Forbidden: If the requested prompt exists but is not publicly available
+    404 Not Found: If the requested prompt doesn't exist
+    500 Internal Server Error: If an unexpected error occurs
+
+Notes:
+    - Only publicly available prompts are returned by default
+    - When filtering by mentor, the mentor ID must be a valid UUID
 
 ### Example
 
@@ -831,11 +1233,11 @@ from iblai.models.prompt_search_response import PromptSearchResponse
 from iblai.rest import ApiException
 from pprint import pprint
 
-
 # Create an instance of the API class
 api_instance = iblai.SearchApi(api_client)
 alphabetical = False # bool | Sort alphabetically (optional) (default to False)
 category = 'category_example' # str | Filter by prompt category (optional)
+created_by = 'created_by_example' # str | Filter prompts created by specific user (optional)
 filter_facet = True # bool | If true, return only facets without results (optional)
 language = 'language_example' # str | Filter by prompt language (optional)
 limit = 10 # int | Number of results per page (optional) (default to 10)
@@ -849,7 +1251,7 @@ tenant = 'tenant_example' # str | Filter by tenant/organization (optional)
 tone = 'tone_example' # str | Filter by prompt tone (optional)
 
 try:
-    api_response = api_instance.search_prompts_retrieve(alphabetical=alphabetical, category=category, filter_facet=filter_facet, language=language, limit=limit, mentor=mentor, offset=offset, order_direction=order_direction, query=query, sort_by=sort_by, style=style, tenant=tenant, tone=tone)
+    api_response = api_instance.search_prompts_retrieve(alphabetical=alphabetical, category=category, created_by=created_by, filter_facet=filter_facet, language=language, limit=limit, mentor=mentor, offset=offset, order_direction=order_direction, query=query, sort_by=sort_by, style=style, tenant=tenant, tone=tone)
     print("The response of SearchApi->search_prompts_retrieve:\n")
     pprint(api_response)
 except Exception as e:
@@ -865,6 +1267,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **alphabetical** | **bool**| Sort alphabetically | [optional] [default to False]
  **category** | **str**| Filter by prompt category | [optional] 
+ **created_by** | **str**| Filter prompts created by specific user | [optional] 
  **filter_facet** | **bool**| If true, return only facets without results | [optional] 
  **language** | **str**| Filter by prompt language | [optional] 
  **limit** | **int**| Number of results per page | [optional] [default to 10]
@@ -903,9 +1306,94 @@ No authorization required
 # **search_users_orgs_users_retrieve**
 > UserSearchResponse search_users_orgs_users_retrieve(org, username, department=department, education__degree=education__degree, education__field_of_study=education__field_of_study, education__institution=education__institution, include_membership_data=include_membership_data, limit=limit, offset=offset, q=q, user_resume__company=user_resume__company, user_resume__industry=user_resume__industry, user_resume__job_title=user_resume__job_title, user_resume__location=user_resume__location, user_resume__skills=user_resume__skills)
 
+Search and filter users within a specific organization/tenant.
 
+This endpoint provides a search interface for discovering users within an organization,
+with support for filtering by departments, pagination, and faceted filtering.
 
-Search and filter users within a specific organization/tenant.  This endpoint provides a search interface for discovering users within an organization, with support for filtering by departments, pagination, and faceted filtering.  Path Parameters:     org (str): The organization/tenant identifier     username (str): The username of the user making the request  Query Parameters:     # Search parameters     query (str, optional): Search term to filter users by name, username, or email      # Department filtering     department_mode (bool, optional): Enable department-based filtering (default: false)     user_department (bool, optional): Legacy parameter for department_mode (default: false)     department (list, optional): Filter by specific departments      # Additional filters     role (list, optional): Filter by user role     status (list, optional): Filter by user status (active, inactive)     joined_date (list, optional): Filter by join date range     last_login (list, optional): Filter by last login date range      # Pagination     limit (int, optional): Number of results per page (default: 10)     offset (int, optional): Starting position for pagination  Returns:     A JSON response containing:     ```     {         \"results\": [             {                 \"id\": 123,                 \"username\": \"john.doe\",                 \"email\": \"john.doe@example.com\",                 \"first_name\": \"John\",                 \"last_name\": \"Doe\",                 \"full_name\": \"John Doe\",                 \"profile_image\": \"https://example.com/profiles/john-doe.jpg\",                 \"role\": \"Student\",                 \"departments\": [\"Computer Science\", \"Data Science\"],                 \"status\": \"active\",                 \"joined_date\": \"2023-01-15T12:00:00Z\",                 \"last_login\": \"2023-06-20T15:30:00Z\",                 \"metadata\": {                     \"location\": \"New York\",                     \"title\": \"Software Engineer\",                     \"bio\": \"Experienced software engineer with a passion for education\"                 }             },             // Additional user objects...         ],         \"count\": 50,         \"next\": \"https://api.example.com/api/search/users/example-org/admin/?limit=10&offset=10\",         \"previous\": null,         \"current_page\": 1,         \"total_pages\": 5,         \"facets\": {             \"role\": [                 {\"key\": \"Student\", \"doc_count\": 30},                 {\"key\": \"Instructor\", \"doc_count\": 15},                 {\"key\": \"Admin\", \"doc_count\": 5}             ],             \"department\": [                 {\"key\": \"Computer Science\", \"doc_count\": 20},                 {\"key\": \"Data Science\", \"doc_count\": 15},                 {\"key\": \"Business\", \"doc_count\": 10},                 {\"key\": \"Engineering\", \"doc_count\": 5}             ],             \"status\": [                 {\"key\": \"active\", \"doc_count\": 45},                 {\"key\": \"inactive\", \"doc_count\": 5}             ]         }     }     ``` Error Responses:     400 Bad Request: If the request parameters are invalid     403 Forbidden: If the user doesn't have department admin privileges (when using department_mode)     404 Not Found: If the user or organization doesn't exist     500 Internal Server Error: If an unexpected error occurs  Access Control:     - The requesting user must have an active account in the specified organization     - When department_mode is enabled, the user must be an admin of at least one department     - Department filtering restricts results to users in departments where the requesting user is an admin
+Path Parameters:
+    org (str): The organization/tenant identifier
+    username (str): The username of the user making the request
+
+Query Parameters:
+    # Search parameters
+    query (str, optional): Search term to filter users by name, username, or email
+
+    # Department filtering
+    department_mode (bool, optional): Enable department-based filtering (default: false)
+    user_department (bool, optional): Legacy parameter for department_mode (default: false)
+    department (list, optional): Filter by specific departments
+
+    # Additional filters
+    role (list, optional): Filter by user role
+    status (list, optional): Filter by user status (active, inactive)
+    joined_date (list, optional): Filter by join date range
+    last_login (list, optional): Filter by last login date range
+
+    # Pagination
+    limit (int, optional): Number of results per page (default: 10)
+    offset (int, optional): Starting position for pagination
+
+Returns:
+    A JSON response containing:
+    ```
+    {
+        "results": [
+            {
+                "id": 123,
+                "username": "john.doe",
+                "email": "john.doe@example.com",
+                "first_name": "John",
+                "last_name": "Doe",
+                "full_name": "John Doe",
+                "profile_image": "https://example.com/profiles/john-doe.jpg",
+                "role": "Student",
+                "departments": ["Computer Science", "Data Science"],
+                "status": "active",
+                "joined_date": "2023-01-15T12:00:00Z",
+                "last_login": "2023-06-20T15:30:00Z",
+                "metadata": {
+                    "location": "New York",
+                    "title": "Software Engineer",
+                    "bio": "Experienced software engineer with a passion for education"
+                }
+            },
+            // Additional user objects...
+        ],
+        "count": 50,
+        "next": "https://api.example.com/api/search/users/example-org/admin/?limit=10&offset=10",
+        "previous": null,
+        "current_page": 1,
+        "total_pages": 5,
+        "facets": {
+            "role": [
+                {"key": "Student", "doc_count": 30},
+                {"key": "Instructor", "doc_count": 15},
+                {"key": "Admin", "doc_count": 5}
+            ],
+            "department": [
+                {"key": "Computer Science", "doc_count": 20},
+                {"key": "Data Science", "doc_count": 15},
+                {"key": "Business", "doc_count": 10},
+                {"key": "Engineering", "doc_count": 5}
+            ],
+            "status": [
+                {"key": "active", "doc_count": 45},
+                {"key": "inactive", "doc_count": 5}
+            ]
+        }
+    }
+    ```
+Error Responses:
+    400 Bad Request: If the request parameters are invalid
+    403 Forbidden: If the user doesn't have department admin privileges (when using department_mode)
+    404 Not Found: If the user or organization doesn't exist
+    500 Internal Server Error: If an unexpected error occurs
+
+Access Control:
+    - The requesting user must have an active account in the specified organization
+    - When department_mode is enabled, the user must be an admin of at least one department
+    - Department filtering restricts results to users in departments where the requesting user is an admin
 
 ### Example
 
@@ -928,7 +1416,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.SearchApi(api_client)
 org = 'org_example' # str | 

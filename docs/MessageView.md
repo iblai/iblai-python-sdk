@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **count** | **int** |  | 
 **title** | **str** |  | 
+**is_shared** | **bool** |  | 
 **proactive_prompt** | **str** |  | 
 **mentor_unique_id** | **str** |  | 
 **platform_key** | **str** |  | 

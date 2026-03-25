@@ -8,9 +8,11 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **sku** | **str** | Product SKU | [optional] 
 **product** | **str** | Alternative to SKU | [optional] 
+**tenant** | **str** | Tenant type to create after successful checkout | 
 **success_url** | **str** | URL to redirect after successful payment | 
 **cancel_url** | **str** | URL to redirect if checkout cancelled | 
 **mode** | [**StripeCheckoutSessionRequestModeEnum**](StripeCheckoutSessionRequestModeEnum.md) | Checkout mode  * &#x60;subscription&#x60; - subscription * &#x60;payment&#x60; - payment * &#x60;setup&#x60; - setup | [optional] 
+**period** | [**PeriodEnum**](PeriodEnum.md) | Billing period  * &#x60;weekly&#x60; - weekly * &#x60;monthly&#x60; - monthly * &#x60;yearly&#x60; - yearly | [optional] 
 **metered** | **bool** | Whether to use metered billing | [optional] [default to False]
 **quantity** | **int** | Subscription quantity | [optional] [default to 1]
 **coupon** | **str** | Coupon code to apply | [optional] 

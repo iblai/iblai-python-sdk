@@ -1,15 +1,18 @@
 # UserInfo
 
+Serializer for user information.
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **int** | edX user ID | 
-**username** | **str** | edX username | [optional] 
+**user_id** | **int** |  | 
+**username** | **str** |  | 
 **email** | **str** |  | 
-**active** | **bool** |  | 
-**edx_data** | **object** |  | 
+**name** | **str** |  | 
+**is_active** | **bool** |  | [optional] [default to True]
+**last_active** | **datetime** |  | [optional] 
+**date_joined** | **datetime** |  | [optional] 
 
 ## Example
 

@@ -11,6 +11,8 @@ Name | Type | Description | Notes
 **platform** | [**RbacPlatform**](RbacPlatform.md) | Platform information (read-only) | [optional] [readonly] 
 **platform_key** | **str** | Platform key where this role belongs | [optional] 
 **actions** | **List[str]** | List of actions/permissions this role can perform (e.g., [&#39;Ibl.Mentor/Settings/read&#39;, &#39;Ibl.Mentor/Settings/write&#39;]) | [optional] 
+**data_actions** | **List[str]** | List of data actions/permissions this role can perform for field-level access (e.g., [&#39;Ibl.Mentor/Settings/name/read&#39;, &#39;Ibl.Mentor/Settings/email/write&#39;]) | [optional] 
+**is_internal** | **bool** | When True, this role is internal to the system and cannot be viewed or modified by tenants via API endpoints. | [optional] [readonly] 
 
 ## Example
 

@@ -7,29 +7,33 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **str** |  | 
 **trace_id** | **str** |  | 
-**project_id** | **str** |  | 
 **type** | **str** |  | 
+**parent_observation_id** | **str** |  | [optional] 
 **start_time** | **datetime** |  | 
-**end_time** | **datetime** |  | 
+**end_time** | **datetime** |  | [optional] 
 **name** | **str** |  | 
-**metadata** | **Dict[str, object]** |  | 
-**parent_observation_id** | **str** |  | 
+**metadata** | **object** |  | 
 **level** | **str** |  | 
-**status_message** | **str** |  | 
-**version** | **str** |  | 
-**created_at** | **datetime** |  | 
-**model** | **str** |  | 
-**model_parameters** | **Dict[str, object]** |  | 
-**input** | **object** |  | 
-**output** | **object** |  | 
-**prompt_tokens** | **int** |  | 
-**completion_tokens** | **int** |  | 
-**total_tokens** | **int** |  | 
-**unit** | **str** |  | 
-**completion_start_time** | **datetime** |  | 
-**prompt_id** | **str** |  | 
-**usage** | **Dict[str, object]** |  | [optional] 
-**price** | **float** |  | 
+**status_message** | **str** |  | [optional] 
+**version** | **str** |  | [optional] 
+**input** | **str** |  | [optional] 
+**output** | **str** |  | [optional] 
+**provided_model_name** | **str** |  | [optional] 
+**internal_model_id** | **str** |  | [optional] 
+**model_parameters** | **str** |  | [optional] 
+**provided_usage_details** | **str** |  | 
+**usage_details** | **str** |  | 
+**provided_cost_details** | **str** |  | 
+**cost_details** | **str** |  | 
+**total_cost** | **decimal.Decimal** |  | [optional] 
+**completion_start_time** | **datetime** |  | [optional] 
+**prompt_id** | **str** |  | [optional] 
+**prompt_name** | **str** |  | [optional] 
+**prompt_version** | **int** |  | [optional] 
+**created_at** | **datetime** |  | [readonly] 
+**updated_at** | **datetime** |  | [optional] 
+**event_ts** | **datetime** |  | 
+**is_deleted** | **int** |  | 
 
 ## Example
 

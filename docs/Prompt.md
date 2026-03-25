@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 **prompt** | **str** |  | 
 **title** | **str** |  | [optional] 
 **description** | **str** |  | [optional] 
-**prompt_visibility** | [**PatchedPromptPromptVisibility**](PatchedPromptPromptVisibility.md) |  | [optional] 
+**prompt_visibility** | **str** |  | [optional] 
 **created_at** | **datetime** |  | [readonly] 
 **updated_at** | **datetime** |  | [readonly] 
 **created_by** | **str** |  | [optional] 

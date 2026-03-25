@@ -6,8 +6,13 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **report_name** | **str** | Report slug, this is passed when calling the create report endpoint | [optional] 
-**params** | **Dict[str, object]** | Advanced report filtering. e,g: {&#39;username&#39;: &#39;username1, username2&#39; } | [optional] 
-**query** | **str** |  Advanced Query to run the report, supports SQL Like queries.   e.g For date type filtering  date_joined &gt; &#39;2021-01-01&#39;   See https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.query.html#pandas.DataFrame.query          | [optional] 
+**start_date** | **date** | Start date for the report | [optional] 
+**end_date** | **date** | End date for the report | [optional] 
+**mentor** | **str** | Mentor ID for the report (Only for mentor reports) | [optional] 
+**course_id** | **str** | Course ID for the report (Only for course reports) | [optional] 
+**usergroup_ids** | **List[int]** | Optional list of usergroup IDs to filter results | [optional] 
+**source** | **str** | Domain/host the report is being requested from (e.g. analytics.example.com) | [optional] 
+**query** | **str** |  Advanced Query to run the report, supports SQL Like queries. This runs against the final result after all filters are applied.  e.g For date type filtering  date_joined &gt; &#39;2021-01-01&#39;   See https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.query.html#pandas.DataFrame.query          | [optional] 
 
 ## Example
 

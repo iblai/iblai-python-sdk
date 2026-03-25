@@ -5,16 +5,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **int** |  | [readonly] 
-**total_topics** | **int** |  | 
-**number_of_messages** | **int** |  | 
-**number_of_conversations** | **int** |  | 
-**user_sentiment** | **str** |  | 
-**user_ratings** | **str** |  | 
 **name** | **str** |  | 
-**metadata** | **object** |  | [optional] 
-**created_at** | **datetime** |  | [readonly] 
-**platform** | **int** |  | [optional] 
+**messages** | **int** |  | 
+**conversations** | **int** |  | 
+**sessions** | **int** |  | 
+**average_rating** | **str** |  | [optional] 
+**rating_count** | **int** |  | [optional] 
 
 ## Example
 

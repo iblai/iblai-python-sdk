@@ -6,6 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ai_prompts** | **List[str]** |  | 
+**results** | [**List[GuidedPrompt]**](GuidedPrompt.md) |  | 
 
 ## Example
 

@@ -12,8 +12,6 @@ Method | HTTP request | Description
 # **ai_marketing_orgs_users_heygen_videos_create**
 > HeygenMarketingVideoList ai_marketing_orgs_users_heygen_videos_create(org, user_id, heygen_marketing_video_list=heygen_marketing_video_list)
 
-
-
 Mixin that includes the StudentTokenAuthentication and IsPlatformAdmin
 
 ### Example
@@ -37,7 +35,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMarketingApi(api_client)
 org = 'org_example' # str | 
@@ -73,7 +70,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Content-Type**: application/json, application/scim+json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -86,8 +83,6 @@ Name | Type | Description  | Notes
 
 # **ai_marketing_orgs_users_heygen_videos_list**
 > PaginatedHeygenMarketingVideoListList ai_marketing_orgs_users_heygen_videos_list(org, user_id, page=page, page_size=page_size)
-
-
 
 Mixin that includes the StudentTokenAuthentication and IsPlatformAdmin
 
@@ -112,7 +107,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMarketingApi(api_client)
 org = 'org_example' # str | 
@@ -164,8 +158,6 @@ Name | Type | Description  | Notes
 # **ai_marketing_orgs_users_heygen_videos_retrieve**
 > HeygenMarketingVideoDetail ai_marketing_orgs_users_heygen_videos_retrieve(name, org, user_id)
 
-
-
 Mixin that includes the StudentTokenAuthentication and IsPlatformAdmin
 
 ### Example
@@ -189,7 +181,6 @@ client = get_platform_api_client(
     host="https://base.manager.iblai.app", 
     key=os.environ["API_KEY"]
 )
-
 # Create an instance of the API class
 api_instance = iblai.AiMarketingApi(api_client)
 name = 'name_example' # str | 

@@ -12,9 +12,11 @@ Name | Type | Description | Notes
 **platform_key** | **str** | The platform key | [optional] 
 **name** | **str** | Optional name of the group | [optional] 
 **description** | **str** | Optional group description | [optional] 
+**owner** | [**RbacUser**](RbacUser.md) |  | [optional] [readonly] 
 **users** | [**List[RbacUser]**](RbacUser.md) |  | [optional] [readonly] 
 **users_to_add** | **List[int]** | List of user IDs to add to this group | [optional] 
 **users_to_remove** | **List[int]** | List of user IDs to remove from this group | [optional] 
+**is_internal** | **bool** | When True, this group is internal to the system and cannot be viewed or modified by tenants via API endpoints. | [optional] [readonly] 
 
 ## Example
 

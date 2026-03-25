@@ -11,6 +11,8 @@ Name | Type | Description | Notes
 **source** | **str** |  | [optional] 
 **score** | **float** |  | [optional] 
 **confidence_level** | **float** |  | [optional] 
+**llm_provider** | **str** |  | [optional] [default to 'openai']
+**llm_model** | **str** |  | [optional] [default to 'gpt-4o-mini']
 
 ## Example
 

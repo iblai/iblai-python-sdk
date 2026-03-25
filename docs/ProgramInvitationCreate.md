@@ -1,6 +1,6 @@
 # ProgramInvitationCreate
 
-Request serializer for ProgramInvitationView POST endpoint
+Request serializer for ProgramInvitationView POST endpoint.  Supports CSV date fields for enrollment_config: - program_access_start_date: Maps to enrollment_config['started'] - program_access_expiration_date: Maps to enrollment_config['expired']
 
 ## Properties
 
@@ -15,6 +15,9 @@ Name | Type | Description | Notes
 **created** | **datetime** | When the invitation was created | [optional] 
 **expired** | **datetime** | When the invitation expires | [optional] 
 **metadata** | **Dict[str, object]** | Additional metadata for the invitation | [optional] 
+**enrollment_config** | **Dict[str, object]** | Enrollment configuration (dates, etc.) | [optional] 
+**program_access_start_date** | **datetime** | Program access start date (maps to enrollment_config[&#39;started&#39;]) | [optional] 
+**program_access_expiration_date** | **datetime** | Program access expiration date (maps to enrollment_config[&#39;expired&#39;]) | [optional] 
 
 ## Example
 
